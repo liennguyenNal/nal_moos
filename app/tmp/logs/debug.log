@@ -1,0 +1,400 @@
+2015-08-27 09:46:42 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 09:46:42 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 09:46:48 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:02:10 Notice: Notice (8): Undefined offset: 0 in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 72]
+Trace:
+LoginComponent::login() - APP/Controller/Component/LoginComponent.php, line 72
+UsersController::login() - APP/Controller/UsersController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:10:24 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:10:24 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:11:39 Notice: Notice (8): Undefined offset: 0 in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 72]
+Trace:
+LoginComponent::login() - APP/Controller/Component/LoginComponent.php, line 72
+UsersController::login() - APP/Controller/UsersController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:11:40 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:11:40 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:13:08 Notice: Notice (8): Undefined offset: 0 in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 72]
+Trace:
+LoginComponent::login() - APP/Controller/Component/LoginComponent.php, line 72
+UsersController::login() - APP/Controller/UsersController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:13:08 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:13:08 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:17:48 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:17:48 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:17:48 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+ExceptionRenderer::_getController() - CORE/Cake/Error/ExceptionRenderer.php, line 155
+ExceptionRenderer::__construct() - CORE/Cake/Error/ExceptionRenderer.php, line 92
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 126
+[main] - [internal], line ??
+
+2015-08-27 10:17:48 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+ExceptionRenderer::_getController() - CORE/Cake/Error/ExceptionRenderer.php, line 155
+ExceptionRenderer::__construct() - CORE/Cake/Error/ExceptionRenderer.php, line 92
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 126
+[main] - [internal], line ??
+
+2015-08-27 10:19:00 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:19:00 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:19:20 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:19:20 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:19:22 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 10:19:22 Notice: Notice (8): Undefined index: Administrator in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 43]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 43
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:04:07 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:04:08 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:16:27 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 11]
+Trace:
+include - APP/View/Users/change_password.ctp, line 11
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:16:27 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 17]
+Trace:
+include - APP/View/Users/change_password.ctp, line 17
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:16:27 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 23]
+Trace:
+include - APP/View/Users/change_password.ctp, line 23
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:02 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 11]
+Trace:
+include - APP/View/Users/change_password.ctp, line 11
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:02 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 17]
+Trace:
+include - APP/View/Users/change_password.ctp, line 17
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:02 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 23]
+Trace:
+include - APP/View/Users/change_password.ctp, line 23
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:35 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 11]
+Trace:
+include - APP/View/Users/change_password.ctp, line 11
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:35 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 17]
+Trace:
+include - APP/View/Users/change_password.ctp, line 17
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 11:17:35 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/change_password.ctp, line 23]
+Trace:
+include - APP/View/Users/change_password.ctp, line 23
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 12:05:53 Notice: Notice (8): Undefined variable: login_error_msg in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 18]
+Trace:
+include - APP/View/Users/login.ctp, line 18
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 12:05:53 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-27 12:06:02 Notice: Notice (8): Undefined variable: username in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 25]
+Trace:
+include - APP/View/Users/login.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

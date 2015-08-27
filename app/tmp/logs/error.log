@@ -1,0 +1,185 @@
+2015-08-27 06:00:50 Error: Fatal Error (64): Call-time pass-by-reference has been removed in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php, line 20]
+2015-08-27 06:00:50 Error: [FatalErrorException] Call-time pass-by-reference has been removed
+Request URL: /moos/users/login
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Call-time pass-...', '/Users/trandinh...', 20)
+#1 [internal function]: ErrorHandler::handleError(64, 'Call-time pass-...', '/Users/trandinh...', 20, Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Call-time pass-...', '/Users/trandinh...', 20, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-27 06:06:26 Error: Fatal Error (1): Call to a member function create() on null in [/Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp, line 17]
+2015-08-27 06:06:26 Error: [FatalErrorException] Call to a member function create() on null
+Request URL: /moos/users/login
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/trandinh...', 17)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/trandinh...', 17, Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/trandinh...', 17, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-27 06:06:41 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /moos/users/login
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/login.ctp(17): FormHelper->create('User', Array)
+#9 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(971): include('/Users/trandinh...')
+#10 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(933): View->_evaluate('/Users/trandinh...', Array)
+#11 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(473): View->_render('/Users/trandinh...')
+#12 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-08-27 06:13:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'field list'
+Request URL: /moos/users/login
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(AppModel), Array)
+#5 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Users/trandinhtri/Documents/workspace/www/moos/app/Controller/Component/LoginComponent.php(57): Model->find('all', Array)
+#7 /Users/trandinhtri/Documents/workspace/www/moos/app/Controller/UsersController.php(91): LoginComponent->login(NULL, NULL)
+#8 [internal function]: UsersController->login()
+#9 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-08-27 10:02:10 Error: [MissingViewException] View file "Users/profile.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/profile.ctp',
+)
+Request URL: /moos/users/profile
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-08-27 10:17:48 Error: [MissingHelperException] Helper class s_first_nameHelper could not be found.
+Exception Attributes: array (
+  'class' => 's_first_nameHelper',
+  'plugin' => false,
+)
+Request URL: /moos/users/profile
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('s_first_name')
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(858): HelperCollection->__isset('s_first_name')
+#2 /Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/profile.ctp(1): View->__get('s_first_name')
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(971): include('/Users/trandinh...')
+#4 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(933): View->_evaluate('/Users/trandinh...', Array)
+#5 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(473): View->_render('/Users/trandinh...')
+#6 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#7 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-08-27 10:20:45 Error: [MissingHelperException] Helper class s_first_nameHelper could not be found.
+Exception Attributes: array (
+  'class' => 's_first_nameHelper',
+  'plugin' => false,
+)
+Request URL: /moos/users/profile
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('s_first_name')
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(858): HelperCollection->__isset('s_first_name')
+#2 /Users/trandinhtri/Documents/workspace/www/moos/app/View/Users/profile.ctp(1): View->__get('s_first_name')
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(971): include('/Users/trandinh...')
+#4 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(933): View->_evaluate('/Users/trandinh...', Array)
+#5 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(473): View->_render('/Users/trandinh...')
+#6 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#7 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-08-27 11:11:31 Error: [MissingActionException] Action UsersController::edit_profie() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'edit_profie',
+)
+Request URL: /moos/users/edit_profie
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-08-27 11:11:40 Error: [MissingViewException] View file "Users/change_password.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/change_password.ctp',
+)
+Request URL: /moos/users/change_password
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-08-27 11:38:09 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/UsersController.php, line 129]
+2015-08-27 11:38:09 Error: [InternalErrorException] Internal Server Error
+Request URL: /moos/users/change_password
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/trandinh...', 129)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/trandinh...', 129, Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/trandinh...', 129, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-27 11:38:46 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [/Users/trandinhtri/Documents/workspace/www/moos/app/Controller/UsersController.php, line 129]
+2015-08-27 11:38:46 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /moos/users/change_password
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/trandinh...', 129)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/trandinh...', 129, Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/trandinh...', 129, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-27 11:39:07 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/trandinhtri/Documents/workspace/www/moos/app/Model/User.php, line 84]
+2015-08-27 11:39:07 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /moos/users/change_password
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/trandinh...', 84)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/trandinh...', 84, Array)
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/trandinh...', 84, Array)
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-27 11:44:38 Error: [MissingTableException] Table roles for model Role was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'roles',
+  'class' => 'Role',
+  'ds' => 'default',
+)
+Request URL: /moos/users/change_password
+Stack Trace:
+#0 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(3648): Model->setSource('roles')
+#1 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#2 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(2525): Model->schema()
+#3 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(1749): DboSource->fields(Object(AppModel), 'Role', '')
+#4 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Datasource/DboSource.php(1101): DboSource->generateAssociationQuery(Object(User), Object(AppModel), 'belongsTo', 'Role', Array, Array, false)
+#5 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#6 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('first', Array)
+#7 /Users/trandinhtri/Documents/workspace/www/moos/app/Controller/UsersController.php(118): Model->find('first', Array)
+#8 [internal function]: UsersController->change_password()
+#9 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/trandinhtri/Documents/workspace/www/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 /Users/trandinhtri/Documents/workspace/www/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
