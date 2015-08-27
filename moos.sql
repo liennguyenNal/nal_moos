@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Aug 26, 2015 at 12:47 PM
+-- Generation Time: Aug 27, 2015 at 12:30 PM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `administrator` (
   `last_login_time` datetime DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ CREATE TABLE `approved_rounds` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `articles` (
   `updated_by` int(11) DEFAULT NULL,
   `is_publish` tinyint(1) NOT NULL DEFAULT '0',
   `view_count` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE `careers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,24 @@ CREATE TABLE `cities` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `created` datetime DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '1: Un-read, 2: Read, 3: Answer',
+  `updated` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -107,7 +124,7 @@ CREATE TABLE `family_structures` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -119,7 +136,7 @@ CREATE TABLE `health_insurrances` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -129,23 +146,27 @@ CREATE TABLE `health_insurrances` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `first_name_kana` varchar(255) NOT NULL,
-  `last_name_kana` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name_kana` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name_kana` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `date_of_birth` int(11) NOT NULL,
   `day_of_birth` int(11) NOT NULL,
   `month_of_birth` int(11) NOT NULL,
   `year_of_birth` int(11) NOT NULL,
-  `genre` varchar(6) NOT NULL,
+  `genre` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   `married_status` int(11) NOT NULL,
   `family_structure` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL,
   `approved_round_id` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
 
 -- --------------------------------------------------------
 
@@ -169,7 +190,7 @@ CREATE TABLE `user_address` (
   `home_phone` varchar(20) DEFAULT NULL,
   `day_phone` varchar(20) NOT NULL,
   `updated` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -199,7 +220,7 @@ CREATE TABLE `user_companies` (
   `health_insurrance_type` int(11) NOT NULL,
   `working_status` int(11) NOT NULL,
   `note` text
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -216,7 +237,7 @@ CREATE TABLE `user_debts` (
   `money_per_month` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -251,7 +272,7 @@ CREATE TABLE `user_guardians` (
   `residence_status` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -267,7 +288,7 @@ CREATE TABLE `user_parkings` (
   `license_plate` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -288,7 +309,7 @@ CREATE TABLE `user_relations` (
   `address` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -316,6 +337,12 @@ ALTER TABLE `careers`
 -- Indexes for table `cities`
 --
 ALTER TABLE `cities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -392,6 +419,11 @@ ALTER TABLE `careers`
 ALTER TABLE `cities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `family_structures`
 --
 ALTER TABLE `family_structures`
@@ -405,7 +437,7 @@ ALTER TABLE `health_insurrances`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user_address`
 --
