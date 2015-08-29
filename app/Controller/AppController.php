@@ -49,30 +49,34 @@ class AppController extends Controller {
                 {
                      
                         $this->layout = "/admin/default";
-                        $user = $this->Session->read('User');
-                        
+                        $user = $this->Session->read('Administrator');
+                        //print_r($user);die;
                         if($user){
                             $this->set('s_username', $this->s_username);
+                            
                             $this->set('s_email',  $this->s_email);
-                            $this->set('s_fullname', $this->s_fullname);
+                           
+                            $this->set('s_first_name', $this->s_first_name);
+                            $this->set('s_last_name', $this->s_last_name);
                           
                         }
                         else {
                            if($this->action != "admin_login")
                                $this->redirect("/admin/users/login");
                            else {
-                               
+                               //echo 2323232;die;
                            }
                         }
-                        //echo $this->s_username; die;
-                    
+                        //echo $this->action; die;
+                    $this->set('menu', '');
                 }
                 else {
-                     $this->layout = "/default";
+                     //$this->layout = "/default";
                 }
         }
         else {
             $user = $this->Session->read('User');
+            //print_r($user);die;
             if($user){
                 $this->set('s_first_name', $this->s_first_name);
                 $this->set('s_last_name', $this->s_last_name);

@@ -73,4 +73,23 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
+
+	public function index(){
+		$this->layout = null;
+		//print_r("this is hom page"); die;
+
+
+	}
+	public function faq(){
+		$this->layout = null;
+		//print_r("this is hom page"); die;
+
+		
+	}
+	public function campaign(){
+		$this->layout = null;
+		//print_r("this is hom page"); die;
+
+		
+	}
 }
