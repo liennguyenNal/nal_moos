@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Article');
 
 /**
  * Displays a view
@@ -75,21 +75,22 @@ class PagesController extends AppController {
 	}
 
 	public function index(){
-		$this->layout = null;
+		//$this->layout = null;
 		//print_r("this is hom page"); die;
-
+		$articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>4));
+		$this->set('articles', $articles);
 
 	}
 	public function faq(){
-		$this->layout = null;
+		//$this->layout = null;
 		//print_r("this is hom page"); die;
-
+		$this->set('menu','faq');
 		
 	}
 	public function campaign(){
-		$this->layout = null;
+		//$this->layout = null;
 		//print_r("this is hom page"); die;
-
+		$this->set('menu','campaign');
 		
 	}
 }

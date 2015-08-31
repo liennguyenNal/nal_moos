@@ -7,7 +7,7 @@
            <ul class="breadcrumb">
               <li><a href="#">Home</a></li>
               
-              <li><a href="#">News</a></li>
+              <li><a href="<?php echo $this->webroot; ?>admin/articles/">News</a></li>
               <li class="active">Edit</li>
             </ul>
         </div>
@@ -17,8 +17,9 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="well bs-component">
+        <?php echo $this->element('admin/flash');?>
          <!--  <form class="form-horizontal"> -->
-          <?php echo $this->Form->create("Article", array('action'=>'edit', 'class'=>'form-horizontal')) ?>
+          <?php echo $this->Form->create("Article", array('action'=>'edit', 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data')) ?>
             <fieldset>
               <legend>Create News</legend>
               <div class="form-group">
@@ -28,7 +29,21 @@
                   <?php echo $this->Form->input('title', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Title of News','div'=>false))?>
                 </div>
               </div>
-              
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Small Image</label>
+                <div class="col-lg-10">
+                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
+                  <?php echo $this->Form->input('small_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Small Image','div'=>false))?>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Large Image</label>
+                <div class="col-lg-10">
+                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
+                  <?php echo $this->Form->input('large_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Small Image','div'=>false))?>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">Short Decription<span></span></label>
                 <div class="col-lg-10">
@@ -44,6 +59,14 @@
                   
                 </div>
               </div>
+              
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Author</label>
+                <div class="col-lg-10">
+                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
+                  <?php echo $this->Form->input('author', array('type'=>'text', 'id'=>"author", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Author','div'=>false))?>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label"></label>
                 <div class="col-lg-10">
@@ -55,7 +78,6 @@
                   </div>
                 </div>
               </div>
-
               <?php echo $this->Form->hidden('id');?>
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">

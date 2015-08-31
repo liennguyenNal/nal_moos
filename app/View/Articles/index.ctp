@@ -5,22 +5,21 @@
          <ul class="breadcrumb">
             <li><a href="#">Home</a></li>
             
-            <li class="active">News</li>
+            <li class="active">All News</li>
           </ul>
       </div>
     </div>
   </div>
- 
+  
   <div class="row">
     <div class="col-lg-12">
       <div class="page-header">
-        <h1 id="tables">News</h1>
+        <h1 id="tables">All News</h1>
       </div>
 
       <div class="bs-component">
         <table class="table table-striped table-hover ">
           
-          <tbody>
           <?php foreach ($articles as $article) { 
             ?>
             <tr>
@@ -43,14 +42,7 @@
       </div><!-- /example -->
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-lg-6">
-
-        <p class="bs-component">
-          <a href="<?php echo $this->webroot;?>articles/" class="btn btn-primary">All News</a>
-        </p>
-    </div>    
-  </div>
+  <?php echo $this->element('admin/paginate');?>
+ 
 
 </div>

@@ -17,7 +17,7 @@ class ContactsController extends AppController{
     }
 
     public function index(){
-    	$this->layout = null;
+    	//$this->layout = null;
     	if($this->data){
            $this->Contact->set($this->data);
            $valid = $this->Contact->validates();

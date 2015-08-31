@@ -21,7 +21,7 @@
             <?php echo $login_error_msg;?>
       </div>
       <?php } ?>
-      <?php echo $this->Form->create("User", array('action'=>'login')) ?>
+     <form action="login" method="POST" >
         <p><input type="text" name="data[User][email]" value="<?php echo $email;?>" placeholder="Email"></p>
         <p><input type="password" name="data[User][password]" value="" placeholder="Password"></p>
         <p class="remember_me">

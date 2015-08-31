@@ -5,7 +5,7 @@
          <ul class="breadcrumb">
             <li><a href="#">Home</a></li>
             
-            <li class="active">Articles</li>
+            <li class="active">News</li>
           </ul>
       </div>
     </div>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-lg-12">
       
-       
+       <?php echo $this->element('flash');?>
       
       <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
@@ -36,6 +36,7 @@
           <thead>
             <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Title</th>
               <th>Short Content</th>
               <th>Created</th>
@@ -49,11 +50,15 @@
             ?>
             <tr>
               <td><?php echo $i;?></td>
-              <td><?php echo $article['Article']['title'] ?></td>
+              <td><img  style="height:100px;width:70px"  src="<?php echo $this->webroot?>images/upload/news/small/<?php echo $article['Article']['small_image'];?>"></td>
+              <td><a href="<?php echo $this->webroot?>admin/articles/view/<?php echo $article['Article']['id'] ?>"><?php echo $article['Article']['title'] ?></a></td>
               <td><?php echo $article['Article']['short_content'] ?></td>
               <td><?php echo $article['Article']['created'] ?></td>
               <td><?php if($article['Article']['is_published']) echo "Published"; else echo "Draft"; ?></td>
-              <td><a href="delete/<?php echo $article['Article']['id'] ?>">Delete</a> &nbsp; <a href="edit/<?php echo $article['Article']['id'] ?>">Edit</a> </td>
+              <td>
+                <a href="<?php echo $this->webroot?>admin/articles/view/<?php echo $article['Article']['id'] ?>">View</a> 
+                <a href="<?php echo $this->webroot?>admin/articles/delete/<?php echo $article['Article']['id'] ?>" onclick="return confirm('Do you want delete this news?')">Delete</a> 
+                <a href="<?php echo $this->webroot?>admin/articles/edit/<?php echo $article['Article']['id'] ?>">Edit</a> </td>
             </tr>
           <?php } ?>
           </tbody>

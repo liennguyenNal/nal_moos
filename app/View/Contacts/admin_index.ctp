@@ -32,6 +32,7 @@
       </div>
 
       <div class="bs-component">
+      <?php echo $this->element('flash');?>
         <table class="table table-striped table-hover ">
           <thead>
             <tr>

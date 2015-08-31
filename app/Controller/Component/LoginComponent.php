@@ -34,7 +34,7 @@ class LoginComponent extends Object
         {
                 
                 $this->controller->isAdmin = 0;
-                $this->controller->user_id = $this->session['User']['id'];           
+                $this->controller->s_user_id = $this->session['User']['id'];           
                 $this->controller->s_email = $this->session['User']['email'] ;
                 $this->controller->s_first_name =  $this->session['User']['first_name'] ;
                 $this->controller->s_last_name =  $this->session['User']['last_name'] ;
@@ -46,7 +46,7 @@ class LoginComponent extends Object
             if($this->session['Administrator'])
             {
                 //echo 121212;die;    
-                $this->controller->user_id = $this->session['Administrator']['id'];           
+                $this->controller->s_user_id = $this->session['Administrator']['id'];           
                 $this->controller->s_email = $this->session['Administrator']['email'] ;
                 $this->controller->s_first_name =  $this->session['Administrator']['first_name'] ;
                 $this->controller->s_last_name =  $this->session['Administrator']['last_name'] ;

@@ -162,7 +162,7 @@ class UsersController extends AppController{
     
     function admin_login(){
         $this->layout = null;
-        
+        $this->Session->delete("User");
         if($this->data){
             //print_r($this->data); die;
             $username = $this->data['User']['username'];
@@ -175,13 +175,13 @@ class UsersController extends AppController{
     }
     
     function admin_logout(){
-        $this->Session->delete("User");
+        $this->Session->delete("Administrator");
         $this->redirect("/admin/users/login");
     }
     function login(){
       $this->layout = null;
        // echo $this->layout; die;
-       
+       $this->Session->delete("Administrator");
         if($this->data){
             //print_r($this->data); die;
             $username = $this->data['User']['email'];

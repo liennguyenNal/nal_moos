@@ -52,12 +52,14 @@ class AppController extends Controller {
                         $user = $this->Session->read('Administrator');
                         //print_r($user);die;
                         if($user){
+                             $this->set('s_user_id', $this->userid);
                             $this->set('s_username', $this->s_username);
                             
                             $this->set('s_email',  $this->s_email);
                            
                             $this->set('s_first_name', $this->s_first_name);
                             $this->set('s_last_name', $this->s_last_name);
+                            $this->set('is_admin', 1);
                           
                         }
                         else {
@@ -78,6 +80,7 @@ class AppController extends Controller {
             $user = $this->Session->read('User');
             //print_r($user);die;
             if($user){
+                 $this->set('s_user_id', $this->s_user_id);
                 $this->set('s_first_name', $this->s_first_name);
                 $this->set('s_last_name', $this->s_last_name);
                 //$this->set('s_first_name_kana', $this->s_first_name);
