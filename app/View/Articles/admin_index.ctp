@@ -1,3 +1,4 @@
+
 <div class="page-header">
   <div class="row">
     <div class="col-lg-4">
@@ -15,11 +16,20 @@
       
        <?php echo $this->element('flash');?>
       
-      <form class="navbar-form navbar-left" role="search">
+      <!-- <form class="navbar-form navbar-left" role="search"> -->
+      <?php echo $this->Form->create('Article', array('action'=>'index', 'class'=>'navbar-form navbar-left', 'role'=>'search', 'type' => 'get'))?>
           <div class="form-group">
-            <input type="text" name="keyword" class="form-control" placeholder="Search">
+            <!-- <input type="text" name="keyword" class="form-control" placeholder="Search"> -->
+            <?php echo $this->Form->input('keyword', array('type'=>'text', 'id'=>"keyword", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Keyword','div'=>false, 'value'=>$keyword ))?>
           </div>
-          <button type="submit" class="btn btn-default">検索</button>
+          <button type="button" class="btn btn-default" onclick="javascript:search();">検索</button>
+          <script type="text/javascript">
+            function search(){
+              
+              var url = '<?php echo $this->webroot; ?>admin/articles/index';
+              window.location.href = url + '/keyword:' + $('#keyword').val();
+            }
+          </script>
         </form>
 
 

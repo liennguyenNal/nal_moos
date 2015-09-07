@@ -50,17 +50,33 @@
 				<td><?php echo $contact['Contact']['content']?></td>
 
 			</tr>
-			
+			<tr>
+				<td style="background-color:#E6E6E6"><b>Status</b></td>
+				
+				<td>
+					<?php if($contact['Contact']['status'] == 1) echo "No Processing yet";
+						elseif($contact['Contact']['status'] == 2) echo "Processing";
+						else if($contact['Contact']['status'] == 3) echo "Completed";
+						else echo "Un-define";
+
+					?>
+				</td>
+
+			</tr>
 			
           </tbody>
         </table> 
-        <!-- <div class="form-group">
+         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->webroot;?>admin/contacts/edit_profile'">Edit Profile</button>
-              <button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->webroot;?>admin/contacts/change_password'"> Change Password</button>
+            	<?php if($contact['Contact']['status'] < 2){ ?>
+              <button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->webroot;?>admin/contacts/change_status/<?php echo $contact['Contact']['id']?>/2'">Processing</button>
+              <?php } ?>
+              <?php if($contact['Contact']['status'] < 3){ ?>
+              <button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->webroot;?>admin/contacts/change_status/<?php echo $contact['Contact']['id']?>/3'"> Completed</button>
+              <?php }?>
             </div>
           </div>
-      </div> -->
+      </div>
     </div>
 
   </div>

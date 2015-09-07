@@ -13,7 +13,7 @@ class ArticlesController extends AppController{
      
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->set('menu' , 'artice');
+        $this->set('menu' , 'article');
       }
     function admin_index(){
       // $articles = $this->Article->find('all', array('conditions'=>array(),
@@ -24,13 +24,25 @@ class ArticlesController extends AppController{
     // we prepare our query, the cakephp way!
 
       $conditions = array();
-      if($this->request->query['keyword']){
-        $keyword = $this->request->query['keyword'];
+      if($this->params['named']['keyword']){
+        $keyword = $this->request->params['named']['keyword'];
          $conditions = array("Article.title LIKE '%$keyword%'" );
+         $this->set('keyword', $keyword);
       }
+      //$this->Paginator->settings['paramType'] = 'querystring';
+      //print_r($this->params['named']['keyword']); die;
+      // $urls = $this->request->query; $getv = "";
+      // foreach($urls as $key=>$value)
+      // {
+      // if($key == 'url') continue; // we need to ignor the url field
+      // $getv .= urlencode($key)."=".urlencode($value)."&"; // making the passing parameters
+      // }
+      // $getv = substr_replace($getv ,"",-1); 
+      //  $this->set('getv', $getv);
+      // echo $getv; die;
         $this->paginate = array(
             'conditions' => $conditions,
-            'limit' => 20,
+            'limit' => 10,
             'order' => array('id' => 'desc')
         );
          
@@ -56,31 +68,33 @@ class ArticlesController extends AppController{
                     
                     $path = "images/upload/news/small/";
                     $image = $this->uploadImage($this->data['Article']['small_image_file'], $path, 200, 400, $errors);
+                    $l_path = "images/upload/news/big/";
+                    $l_image = $this->uploadFile($this->data['Article']['large_image_file'], $l_path, $errors);
                     //echo $image; die;
                     if(!$errors){
                         $article['Article']['small_image'] = $image;
                     }
                     else {
-                      print_r($errors); die;
+                      //print_r($errors); die;
 
                     }
                 }
-                if($this->data['Article']['large_image_file']){
+                // if($this->data['Article']['large_image_file']){
                     
-                    $path = "images/upload/news/big/";
-                    $l_image = $this->uploadFile($this->data['Article']['large_image_file'], $path, $errors);
-                    //echo $image; die;
-                    if(!$errors){
-                        $article['Article']['large_image'] = $l_image;
-                    }
-                    else {
-                      print_r($errors); die;
+                //     $path = "images/upload/news/big/";
+                //     $l_image = $this->uploadFile($this->data['Article']['large_image_file'], $path, $errors);
+                //     //echo $image; die;
+                //     if(!$errors){
+                //         $article['Article']['large_image'] = $l_image;
+                //     }
+                //     else {
+                //       print_r($errors); die;
 
-                    }
-                }
+                //     }
+                // }
                if($this->Article->save($article, false)){
-                  $this->Session->setFlash('Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success'));
-                   $this->redirect("index");
+                  $this->Session->setFlash( 'Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
+                   $this->redirect( "index" );
                }
            }
            
@@ -89,7 +103,7 @@ class ArticlesController extends AppController{
        else {
           
            if($id){
-               $article = $this->Article->read(null, $id);
+               $article = $this->Article->read( null, $id );
                $this->data = $article;
            }
        }
@@ -97,34 +111,34 @@ class ArticlesController extends AppController{
     
     function admin_delete($id){
         if($id){
-            $this->Article->delete($id);
-            $this->redirect('index');
+            $this->Article->delete( $id );
+            $this->redirect( 'index' );
         }
     }
 
     function admin_view($id){
       if($id){
-         $article = $this->Article->read(null, $id);
+         $article = $this->Article->read( null, $id );
          
-         if($article){
-          $this->set( 'article', $article);
+         if( $article ){
+          $this->set( 'article', $article );
          }
          else {
-            $this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
-            $this->redirect("index");
+            $this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+            $this->redirect( "index" );
          }
       }
       else {
-        $this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
-        $this->redirect("index");
+        $this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
+        $this->redirect( "index" );
       }
     }
 
-    function view($id){
+    function view( $id ){
       if($id){
-         $article = $this->Article->read(null, $id);
+         $article = $this->Article->read( null, $id );
          
-         if($article){
+         if( $article ){
           $this->set( 'article', $article);
          }
          else {

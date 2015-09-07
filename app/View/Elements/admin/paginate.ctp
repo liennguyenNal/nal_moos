@@ -1,4 +1,9 @@
+<?php 
 
+$this->Paginator->options(array('url' => $this->passedArgs)); 
+//print_r($this->Paginator->options); die;
+//$this->Paginator->options(array('url' => array("0", "1", "2","3"),  "?"=>$getv));
+?>
 <div class="col-lg-4">
   <div class="bs-component">
     <ul class="pagination">
@@ -22,7 +27,7 @@
         }
          
         // the 'number' page buttons
-        echo $this->MyPaginator->numbers( array( 'modulus' => 5 , 'tag'=>'li') );
+        echo $this->MyPaginator->numbers( array( 'modulus' => 5 , 'tag'=>'li', 'url'=>$this->passedArgs) );
          
         // for the 'next' button
         if($this->Paginator->hasNext()){

@@ -42,7 +42,7 @@
 			<tr>
 				<td style="background-color:#E6E6E6"><b>First Name - Kana</b></td>
 				
-				<td><?php echo $user['Administrator']['last_name']?></td>
+				<td><?php echo $user['Administrator']['first_name_kana']?></td>
 
 			</tr>
 			<tr>
@@ -60,7 +60,7 @@
               <button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->webroot;?>admin/users/change_password'"> Change Password</button>
             </div>
           </div>
-      </div><!-- /example -->
+      </div>
     </div>
 
   </div>

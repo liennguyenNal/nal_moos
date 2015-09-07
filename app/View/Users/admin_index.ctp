@@ -80,24 +80,34 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Email(ID)</th>
+                <th>Username</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>First Name Kana</th>
+                <th>Last Name Kana</th>
                 <th>Age</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-            <?php foreach ($users as $user) { ?>
+            <?php $i = 0; foreach ($users as $user) { $i++;?>
               <tr>
-                <td>1</td>
-                <td><?php echo $user['User']['email'] ?></td>
+                <td><?php echo $i;?></td>
+                <td><?php if($user['User']['username'])echo $user['User']['username']; else echo "N/A" ;?></td>
                 <td><?php echo $user['User']['first_name'] ?></td>
                 <td><?php echo $user['User']['last_name'] ?></td>
+                 <td><?php echo $user['User']['first_name_kana'] ?></td>
+                <td><?php echo $user['User']['last_name_kana'] ?></td>
                 <td><?php echo date('Y') - $user['User']['year_of_birth'] ?></td>
-                <td><?php echo $user['User']['status'] ?></td>
-                <td><a href="#">View</a> &nbsp; &nbsp; </td>
+                <td><?php 
+                  if($user['User']['status_id'] == 0) echo "Reject"; 
+                   if($user['User']['status_id'] == 1) echo "Register"; 
+                   else if($user['User']['status_id'] == 2) echo "Confirm Registered";
+                    else if($user['User']['status_id'] == 3) echo "Completed";
+                   ?>
+                </td>
+                <td><a href="<?php echo $this->webroot;?>admin/users/view/<?php echo $user['User']['id']?>">View</a> &nbsp; &nbsp; </td>
               </tr>
             <?php } ?>
             </tbody>

@@ -52,7 +52,7 @@ class AppController extends Controller {
                         $user = $this->Session->read('Administrator');
                         //print_r($user);die;
                         if($user){
-                             $this->set('s_user_id', $this->userid);
+                             $this->set('s_admin_id', $this->userid);
                             $this->set('s_username', $this->s_username);
                             
                             $this->set('s_email',  $this->s_email);

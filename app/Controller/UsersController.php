@@ -7,7 +7,7 @@
 
 
 class UsersController extends AppController{
-    var $uses = array('User', 'Administrator');
+    var $uses = array('User', 'Administrator',  'City' ,'FamilyStructure', 'UserCompany', 'UserAddress', 'WorkingStatus' , 'MarriedStatus');
     var $components = array('Login', 'Util', 'Session');
     var $helpers = array('Html');
      
@@ -22,6 +22,7 @@ class UsersController extends AppController{
       }
         $this->paginate = array(
             'conditions' => $conditions,
+            'contain' => array('UserCompany', 'UserAddress'),
             'limit' => 20,
             'order' => array('id' => 'desc')
         );
@@ -178,13 +179,68 @@ class UsersController extends AppController{
         $this->Session->delete("Administrator");
         $this->redirect("/admin/users/login");
     }
+
+    /*
+    * Admin Profile
+    *
+    */
+    function admin_view($id){
+     
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $this->set('user', $user);
+      //print_r($user);die;
+      
+    }
+
+    function admin_approve_register($id){
+
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      if($user['User']['status_id'] == 1){
+        $user['User']['status_id'] = 2;
+        $username = str_replace(" ", "_", $user['User']['first_name_kana'] ). "_" .  str_replace(" ", "_", $user['User']['last_name_kana']) . "_" . $id;
+        $password = $this->Util->createRandomPassword(10);
+        $user['User']['username'] = $username;
+        $user['User']['password'] = md5($password);
+        //print_r($user); die;
+        if($this->User->save($user, false)){
+          //echo $password; die;
+          $this->Session->setFlash("Has been approved Successful with username:  $username , and password: $password", 'default',array('class' => 'alert alert-dismissible alert-success"'));
+          $this->redirect('view/' . $id);
+        }
+        else {
+          $this->Session->setFlash('Cannot approved this customer', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+          $this->redirect('view/' . $id);
+        }
+      }
+      else {
+          $this->Session->setFlash('Cannot approved this customer', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+          $this->redirect('view/' . $id);
+      }
+    }
+
+    function admin_reject_register($id){
+
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user['User']['status_id'] = 0;
+      
+      if($this->User->save($user, false)){
+        $this->Session->setFlash('Reject Successful', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+        $this->redirect('view/'. $id);
+      }
+      else {
+          $this->Session->setFlash('Cannot reject this customer', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+          $this->redirect('view/' . $id);
+      }
+
+    }
+
     function login(){
       $this->layout = null;
        // echo $this->layout; die;
        $this->Session->delete("Administrator");
         if($this->data){
             //print_r($this->data); die;
-            $username = $this->data['User']['email'];
+            $username = $this->data['User']['username'];
             $password = $this->data['User']['password'];
             $this->Login->login($username, $password);
         }
@@ -198,6 +254,8 @@ class UsersController extends AppController{
     function profile(){
 
       $user = $this->Session->read('User');
+      $user_id = $user['User']['id'];
+      $user = $this->User->read(null, $user_id);
       //print_r($user);die;
       if ( $user ){
         $this->set('user', $user);
@@ -223,26 +281,26 @@ class UsersController extends AppController{
               if ($this->data['User']['password'] == $this->data['User']['confirm_password']){
                 $user['User']['password'] = md5($this->data['User']['password']);
                 if ($this->User->save($user, false) ){
-                  $this->Session->setFlash('Change Password successful!','default', array('class' => 'error'));
+                  $this->Session->setFlash('Change Password successful!', 'default',array('class' => 'alert alert-dismissible alert-info"'));
                   $this->redirect('profile');
                 }
                 else {
-                  $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'error'));
+                  $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                 }
               }
               else {
-                  $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'error'));
+                  $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                 }
             }
             else {
               $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
-                array('class' => 'error'));
+                array('class' => 'alert alert-dismissible alert-info'));
             }
 
           }
           else {
              $this->Session->setFlash("Old Password is not match", 'default',
-                array('class' => 'error'));
+                array('class' => 'alert alert-dismissible alert-info'));
           }
         }
       }
@@ -257,14 +315,162 @@ class UsersController extends AppController{
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
         $this->set('user', $user);
         if($this->data){
+           $this->User->set($this->data);
+           $valid = $this->User->validates();
+           if($valid){
+              $user = $this->data;
 
+             
+              //print_r($user);die;
+               if($this->User->save($user, false)){
+                  $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+                   $this->redirect("profile");
+               }
+           }
+           else {
+              // echo 1111; die;
+           }
+        }
+        else {
+
+          $this->data = $user;
         }
 
       }
     }
 
     
+    function register(){
+      $married_statuses = $this->MarriedStatus->find( 'list' );
+      $this->set( 'married_statuses', $married_statuses);
 
+      $working_statuses = $this->WorkingStatus->find( 'list' );
+      $this->set( 'working_statuses', $working_statuses);
+
+      $family_structures = $this->FamilyStructure->find( 'list' );
+      $this->set( 'family_structures', $family_structures );
+     
+      $cities = $this->City->find('list');
+      $this->set('cities', $cities);
+      if( $this->data ){
+        $this->User->set( $this->data );
+        $this->UserAddress->set( $this->data );
+        $this->UserCompany->set( $this->data );
+        //$this->User->validates();
+
+        if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+          // if($this->User->save($user, false)){
+          //     $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+          //      $this->redirect("profile");
+          //  }
+          $this->Session->write( 'user_register', $this->data );
+          $this->redirect( "register_confirmation" );
+        }
+      }
+
+    }
+    function register_confirmation(){
+      $user = $this->Session->read( 'user_register' );
+      if( $user ) {
+          $user['User']['married_status'] = $this->MarriedStatus->getNameById($user['User']['married_status_id']);
+          $user['User']['family_structure'] = $this->FamilyStructure->getNameById($user['User']['family_structure_id']);
+          $user['UserCompany']['working_status'] = $this->WorkingStatus->getNameById($user['UserCompany']['working_status_id']);
+          $user['UserAddress']['city'] = $this->City->getNameById($user['UserAddress']['city_id']);
+          $this->set('user', $user);
+
+          if($this->data){
+             if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
+                //save company info
+                $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
+                
+
+                //save address
+                $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
+                
+                if( $this->User->save( $user, false ) ){
+                  //$user_id = $this->User->getLastInsertId();
+                  $this->Session->setFlash('You has been register successful! ','default', array('class' => 'alert alert-dismissible alert-success'));
+                  $this->redirect( "register_successful" );
+                }
+                else {
+                  $this->UserAddress->delete($this->UserAddress->getLastInsertId());
+                  $this->UserCompany->delete($this->UserCompany->getLastInsertId());
+                  $this->redirect( "register" );
+                  $this->Session->setFlash("Cannot Save Data", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                }
+             
+            }
+            else {
+              $this->redirect( "register" );
+              $this->Session->setFlash("Cannot Save Data", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+            }
+              
+            
+          }
+      }
+      else {
+
+      }
+
+    }
+
+    function register_successful(){
+      $this->Session->delete('user_register');
+    }
+
+    function my_page(){
+      $id = $this->s_user_id;
+     //echo $id; die;
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $this->set('user', $user);
+    }
+
+    function edit_register_info(){
+        $id = $this->s_user_id;
+     //echo $id; die;
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $this->set('user', $user);
+      if($user){
+        
+        //echo 111; die;  
+        // $this->data['UserCompany'] = $user['UserCompany'][0];
+        //print_r($this->data); die;
+        if($this->data){
+          //print_r($this->data); die;
+          
+           $this->User->set( $this->data );
+           $this->UserAddress->set( $this->data );
+           $this->UserCompany->set( $this->data );
+          //$this->User->validates();
+
+           if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+            // if($this->User->save($user, false)){
+            //     $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+            //      $this->redirect("profile");
+            //  }
+            if($this->User->save($this->data['User'], false) && $this->UserAddress->save($this->data['UserAddress'], false) && $this->UserCompany->save($this->data['UserCompany'], false)){
+              $this->Session->setFlash('Your Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+              $this->redirect( "my_page" );
+            }
+          }
+        }
+        else {
+          $married_statuses = $this->MarriedStatus->find( 'list' );
+          $this->set( 'married_statuses', $married_statuses);
+
+          $working_statuses = $this->WorkingStatus->find( 'list' );
+          $this->set( 'working_statuses', $working_statuses);
+
+          $family_structures = $this->FamilyStructure->find( 'list' );
+          $this->set( 'family_structures', $family_structures );
+
+          $cities = $this->City->find('list');
+          $this->set('cities', $cities);
+          $this->data = $user;
+        }
+      }
+
+    }
 
 }
 ?>

@@ -5,9 +5,9 @@
       <div class="col-lg-4">
         <div class="bs-component">
            <ul class="breadcrumb">
-              <li><a href="#">Home</a></li>
+              <li><a href="<?php echo $this->webroot;?>">Home</a></li>
               
-              <li><a href="<?php echo $this->webroot?>admin/users/profile">My Profile</a></li>
+              <li><a href="<?php echo $this->webroot;?>users/profile">My Profile</a></li>
               <li class="active">Edit</li>
             </ul>
         </div>
@@ -21,45 +21,39 @@
           <?php echo $this->Form->create("User", array('action'=>'edit_profile', 'class'=>'form-horizontal')) ?>
             <fieldset>
               <legend>Edit Profile</legend>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('Administrator.email', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Email','div'=>false))?>
-                </div>
-              </div>
+              
                <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">First name</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('Administrator.first_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'First Name','div'=>false))?>
+                  <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'First Name','div'=>false))?>
                 </div>
               </div>
                <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('Administrator.last_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Last Name','div'=>false))?>
+                  <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Last Name','div'=>false))?>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">First name</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('Administrator.first_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'First Name Kana','div'=>false))?>
+                  <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'First Name Kana','div'=>false))?>
                 </div>
               </div>
                <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('Administrator.last_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Last Name Kana','div'=>false))?>
+                  <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Last Name Kana','div'=>false))?>
                 </div>
               </div>
-              <?php echo $this->Form->hidden('Administrator.id');?>
+              <?php echo $this->Form->hidden('User.id');?>
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="reset" onclick="location.href='<?php echo $this->webroot;?>admin/users/profile'" class="btn btn-default">キャンセル</button>
+                  <button type="reset" onclick="location.href='<?php echo $this->webroot;?>users/profile'" class="btn btn-default">キャンセル</button>
                   <button type="submit" class="btn btn-primary">送信</button>
                 </div>
               </div>

@@ -46,7 +46,7 @@ class LoginComponent extends Object
             if($this->session['Administrator'])
             {
                 //echo 121212;die;    
-                $this->controller->s_user_id = $this->session['Administrator']['id'];           
+                $this->controller->s_admin_id = $this->session['Administrator']['id'];           
                 $this->controller->s_email = $this->session['Administrator']['email'] ;
                 $this->controller->s_first_name =  $this->session['Administrator']['first_name'] ;
                 $this->controller->s_last_name =  $this->session['Administrator']['last_name'] ;
@@ -67,8 +67,8 @@ class LoginComponent extends Object
     {
     	//echo $password; die;
         $user = $this->controller->User->find('first', array ( 
-            'fields'=>array ( 'id', 'email', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana' ),
-            'conditions'=>array( "User.email" => $username)));
+            'fields'=>array ( 'id', 'username', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana' ),
+            'conditions'=>array( "User.username" => $username, "User.password" => md5($password) ) ) );
     	//print_r($user);die;
     	if($user)
     	{
@@ -80,7 +80,7 @@ class LoginComponent extends Object
     		//update last login
     		//$this->controller->User->query("update users set last_login_date=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user[0]['User']['id'] . "'");
     		if ($user){
-               
+               //echo 111; die;
                 $this->controller->redirect('/users/profile');
             }
     		else {

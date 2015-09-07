@@ -30,20 +30,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Small Image</label>
+                <label for="inputEmail" class="col-lg-2 control-label">Image</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
                   <?php echo $this->Form->input('small_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Small Image','div'=>false))?>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Large Image</label>
-                <div class="col-lg-10">
-                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('large_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Small Image','div'=>false))?>
-                </div>
-              </div>
-
+             
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">Short Decription<span></span></label>
                 <div class="col-lg-10">

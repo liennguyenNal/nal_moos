@@ -200,7 +200,7 @@ class UtilComponent extends Object {
     }
 
     function createRandomPassword($length) {
-        $chars = "234567890abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $chars = "1234567890abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $i = 0;
         $password = "";
         while ($i <= $length) {

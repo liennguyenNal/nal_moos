@@ -67,7 +67,8 @@
 </div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+<script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
 <script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
 
 <script type="text/javascript">

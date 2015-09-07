@@ -7,7 +7,7 @@
            <ul class="breadcrumb">
               <li><a href="#">Home</a></li>
               
-              <li><a href="#">My Profile</a></li>
+              <li><a href="<?php echo $this->webroot;?>admin/users/profile">My Profile</a></li>
               <li class="active">Change Password</li>
             </ul>
         </div>

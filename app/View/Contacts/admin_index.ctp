@@ -1,3 +1,4 @@
+<?php $this->Paginator->options(array('url' => $this->passedArgs));?>
 <div class="page-header">
   <div class="row">
     <div class="col-lg-4">
@@ -17,13 +18,32 @@
       
       <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" name="keyword" class="form-control" placeholder="Search">
+            <input type="text" id="keyword" class="form-control" placeholder="Search" value="<?php echo $keyword;?>">
+            <!-- <select class="form-control" id="select" name="status">
+                    <option value=""><font><font>All </font></font></option>
+                    <option value="1"><font><font>No process yet</font></font></option>
+                    <option value="2"><font><font>Processing</font></font></option>
+                    <option value="3"><font><font>Completed</font></font></option>
+                    
+            </select> -->
+            <?php 
+              echo $this->Form->input('status', array('options' => array(1=>"No Processing",2=> "Processing",3=>"Completed"), 'empty' => '-- All --', 'class'=>'form-control', 'div'=>false, 'label'=>false, 'id'=>'status', 'value'=>$status));
+            ?>
           </div>
-          <button type="submit" class="btn btn-default">検索</button>
+          <button type="button" class="btn btn-default" onclick="search()">検索</button>
+          <script type="text/javascript">
+            function search(){
+              
+              var url = '<?php echo $this->webroot; ?>admin/contacts/index';
+              if($('#keyword').val() != '') url = url + '/keyword:' + $('#keyword').val();
+              if($('#status').val() != '') url = url + '/status:' + $('#status').val();
+              window.location.href = url ;
+            }
+          </script>
         </form>
 
 
-    </div>
+    </div>  
   </div>
   <div class="row">
     <div class="col-lg-12">
@@ -37,8 +57,8 @@
           <thead>
             <tr>
               <th>#</th>
-               <th>Email</th>
-               <th>Name</th>
+              <th>Email</th>
+              <th>Name</th>
               <th>Title</th>
               <th>Created</th>
               

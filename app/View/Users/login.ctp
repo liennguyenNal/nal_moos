@@ -22,7 +22,7 @@
       </div>
       <?php } ?>
      <form action="login" method="POST" >
-        <p><input type="text" name="data[User][email]" value="<?php echo $email;?>" placeholder="Email"></p>
+        <p><input type="text" name="data[User][username]" value="<?php echo $email;?>" placeholder="Username"></p>
         <p><input type="password" name="data[User][password]" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>

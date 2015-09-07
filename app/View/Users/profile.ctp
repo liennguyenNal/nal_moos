@@ -22,12 +22,7 @@
           
           <tbody>
          
-            <tr>
-				<td style="background-color:#E6E6E6"><b>Email</b></td>
-				
-				<td><?php echo $user['User']['email']?></td>
-
-			</tr>
+           
 			<tr>
 				<td style="background-color:#E6E6E6;width:200px"><b>First Name</b></td>
 				
@@ -43,13 +38,43 @@
 			<tr>
 				<td style="background-color:#E6E6E6"><b>First Name - Kana</b></td>
 				
-				<td><?php echo $user['User']['last_name']?></td>
+				<td><?php echo $user['User']['first_name_kana']?></td>
 
 			</tr>
 			<tr>
 				<td style="background-color:#E6E6E6"><b>Last Name Kana</b></td>
 				
 				<td><?php echo $user['User']['last_name_kana']?></td>
+
+			</tr>
+			<tr>
+				<td style="background-color:#E6E6E6;width:200px"><b>Genre</b></td>
+				
+				<td><?php echo $user['User']['genre']?></td>
+
+			</tr>
+			 <tr>
+				<td style="background-color:#E6E6E6"><b>Birthday</b></td>
+				
+				<td><?php echo $user['User']['year_of_birth'] . "/" . $user['User']['month_of_birth'] . "/ " . $user['User']['day_of_birth']?></td>
+
+			</tr>
+			<tr>
+				<td style="background-color:#E6E6E6;width:200px"><b>Marial Status</b></td>
+				
+				<td><?php echo $user['MarriedStatus']['name'];?></td>
+
+			</tr>
+			<tr>
+				<td style="background-color:#E6E6E6;width:200px"><b>Family</b></td>
+				
+				<td><?php echo $user['FamilyStructure']['name'];?></td>
+
+			</tr>
+			<tr>
+				<td style="background-color:#E6E6E6;width:200px"><b>Genre</b></td>
+				
+				<td><?php echo $user['User']['genre']?></td>
 
 			</tr>
 			<!-- <tr>
