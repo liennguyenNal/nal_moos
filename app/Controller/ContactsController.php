@@ -74,31 +74,71 @@ class ContactsController extends AppController {
     }
 
     function admin_view($id){
+      if(!$id){
+         $id = $this->data['Contact']['id'];
+      }
     	$contact = $this->Contact->read( null, $id );
     	if($contact){
     		$this->set( 'contact', $contact );
+        if($this->data){
+         
+          $contact = $this->Contact->read( null, $id );
+          $contact['Contact']['status'] = $this->data['Contact']['status'] ;
+          $contact['Contact']['comment'] = $this->data['Contact']['comment'] ;
+          $this->Session->write('contact', $contact);
+          $this->redirect('change_confirm');
+        }
     	}
     	else {
     		$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
     		$this->redirect( 'index' );
     	}
     }
-
-
-    function admin_change_status($id, $status){    
-     $contact = $this->Contact->read( null, $id );
-      if($contact){
-        $contact['Contact']['status'] = $status;
-        if ($this->Contact->save( $contact, false ) ){
-          $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
-          $this->redirect("index");
+    function admin_change_confirm(){
+      $contact = $this->Session->read( 'contact' );
+      if($this->data){
+         if($contact){
+          //$contact['Contact']['status'] = $status;
+          if ($this->Contact->save( $contact, false ) ){
+            $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            $this->redirect("index");
+          }
         }
+        else {
+          $this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+          $this->redirect( 'index' );
+        }
+    
       }
       else {
-        $this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
-        $this->redirect( 'index' );
+        $this->data = $contact;
       }
+    }    
+
+    function admin_change_status(){    
+
+     $contact = $this->Session->read( 'contact' );
+    if($this->data){
+
+      
+        if($contact){
+          //$contact['Contact']['status'] = $status;
+          if ($this->Contact->save( $contact, false ) ){
+            $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            $this->redirect("index");
+          }
+        }
+        else {
+          $this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+          $this->redirect( 'index' );
+        }
     
+      
     }
+    else {
+      $this->data= $contact; 
+    }
+  }
+
 }
 ?>

@@ -7,8 +7,8 @@
 
 class User extends AppModel {
     var $name = 'User';
-    //var $hasMany = array('UserAddress', 'UserCompany');
-    var $belongsTo = array('MarriedStatus', 'FamilyStructure', 'UserAddress', 'UserCompany');
+    var $hasMany = array('ExpectArea');
+    var $belongsTo = array('MarriedStatus', 'FamilyStructure', 'UserAddress', 'UserCompany', 'Pref');
     var $actsAs = array('Containable');
      var $validate = array( 
         
@@ -31,12 +31,6 @@ class User extends AppModel {
            'rule' => 'notBlank',
            'message'=>'This field is required'            
         ), 
-        'age_of_birth' => array(
-               
-               'rule' => 'notBlank',
-                'message'=>'This field is required'
-            
-        ),
         'year_of_birth' => array(
                 
                 'rule' => 'notBlank',
@@ -63,11 +57,58 @@ class User extends AppModel {
                 'message'=>'This field is required'
             
         ), 
-        'family_structure_id' => array(
+
+        'phone' => array(
+            'rule2'=>array(
+                     'rule' => 'validate_phone',
+                     'message'=> "Input least one field of phone"
+                ),
+            'rule1'=>array('rule' => 'numeric',
+                'allowEmpty' => true,
+                'message'=>'Must be a numeric',
+
+                )
+            
+        ),
+        'home_phone'=>array(
+            
+            'rule2'=>array(
+                     'rule' => 'validate_phone',
+                     'allowEmpty' => true,
+                     'message'=> "Input least one field of phone"
+                ),
+            'rule1'=>array('rule' => 'numeric',
+                'allowEmpty' => true,
+                'message'=>'Must be a numeric'
+                )
+        ),
+
+        'email' => array(
+            'rule1'=>array(
+                'rule' => 'email',
+                'message'=> 'Invalid email format'
+            ),
+            'rule2'=>array(
+                 'rule' => 'notBlank',
+                 'message'=> "This field is required"
+            )
+        ), 
+        'email_confirm' => array(
+            'rule1'=>array(
+                'rule' => 'email',
+                'message'=> 'Invalid email format'
+            ),
+            'compare'    => array(
+                'rule'      => array('validate_confirm_email'), 
+                'message' => 'The email confirmation don\'t match.',
+            )
+        ),
+        'agree' => array(
                'rule' => 'notBlank',
                 'message'=>'This field is required'
             
-        ) 
+        )
+
         // 'password' => array(
         //     'length' => array(
         //         'rule'      => array('between', 8, 40),
@@ -96,9 +137,16 @@ class User extends AppModel {
         // ),   
 
     );
-
+    public function validate_confirm_email(){
+        return $this->data[$this->alias]['email'] === $this->data[$this->alias]['email_confirm'];
+    }
     public function validate_passwords() {
         return $this->data[$this->alias]['password'] === $this->data[$this->alias]['confirm_password'];
+    }
+
+    public function validate_phone() {
+        //echo 123;die;
+        return $this->data[$this->alias]['phone'] != "" || $this->data[$this->alias]['home_phone']!="";
     }
 }
 ?>

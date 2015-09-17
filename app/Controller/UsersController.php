@@ -7,21 +7,29 @@
 
 
 class UsersController extends AppController{
-    var $uses = array('User', 'Administrator',  'City' ,'FamilyStructure', 'UserCompany', 'UserAddress', 'WorkingStatus' , 'MarriedStatus');
+    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'WorkingStatus' , 'MarriedStatus');
     var $components = array('Login', 'Util', 'Session');
     var $helpers = array('Html');
      
         
     function admin_index(){
-        //$users = $this->User->find('all');
-        //$this->set('users', $users);
-       $conditions = array();
-      if($this->request->query['keyword']){
-        $keyword = $this->request->query['keyword'];
-         $conditions = array("User.email LIKE '%$keyword%'" );
+        
+      $criteria = "1=1 ";
+      if($this->params['named']['keyword']){
+        $keyword = $this->params['named']['keyword'];
+        $criteria .= " AND (User.first_name LIKE '%$keyword%' OR User.last_name LIKE '%$keyword%' OR User.first_name_kana LIKE '%$keyword%'
+            OR User.last_name_kana LIKE '%$keyword% OR User.email LIKE '%$keyword%
+          ) " ;
+        $this->set('keyword', $keyword);
+      }
+      if($this->params['named']['type']){
+        //echo $this->params['named']['type']; die;
+        $status_id = $this->params['named']['type'];
+        $criteria .= " AND User.status_id = '$status_id'" ;
+        $this->set('status', $status);
       }
         $this->paginate = array(
-            'conditions' => $conditions,
+            'conditions' => $criteria,
             'contain' => array('UserCompany', 'UserAddress'),
             'limit' => 20,
             'order' => array('id' => 'desc')
@@ -49,13 +57,11 @@ class UsersController extends AppController{
                   $user['User']['birthday']= $birthday;
                   
                }
-               //print_r($user);die;
                if($this->User->save($user, false)){
                    $this->redirect("index");
                }
            }
            else {
-              // echo 1111; die;
            }
        }
        else {
@@ -186,15 +192,30 @@ class UsersController extends AppController{
     */
     function admin_view($id){
      
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure',  'ExpectArea')));
       $this->set('user', $user);
-      //print_r($user);die;
+      $married_statuses = $this->MarriedStatus->find( 'list' );
+      $this->set( 'married_statuses', $married_statuses);
+
+      $working_statuses = $this->WorkingStatus->find( 'list' );
+      $this->set( 'working_statuses', $working_statuses);
+
+
+      $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
+      $this->data = $user;
+
+      if($user['User']['status_id'] > 1) {
+
+        $this->render('admin_view_2');
+      }
+
       
     }
 
     function admin_approve_register($id){
 
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure', 'ExpectArea')));
       if($user['User']['status_id'] == 1){
         $user['User']['status_id'] = 2;
         $username = str_replace(" ", "_", $user['User']['first_name_kana'] ). "_" .  str_replace(" ", "_", $user['User']['last_name_kana']) . "_" . $id;
@@ -224,7 +245,7 @@ class UsersController extends AppController{
       $user['User']['status_id'] = 0;
       
       if($this->User->save($user, false)){
-        $this->Session->setFlash('Reject Successful', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+        $this->Session->setFlash("Reject successful", 'default',array('class' => 'alert alert-dismissible alert-success"'));
         $this->redirect('view/'. $id);
       }
       else {
@@ -233,7 +254,23 @@ class UsersController extends AppController{
       }
 
     }
+    function admin_delete_users(){
 
+      if($this->data){
+        foreach ($this->data['ids'] as $id) {
+          $this->User->create();
+          $this->User->delete($id);
+           
+        }
+        $this->Session->setFlash("Some users has been deleted successful", 'default',array('class' => 'alert alert-dismissible alert-success"'));
+        $this->redirect('index');
+      }
+      else {
+        $this->Session->setFlash('Cannot delete users', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+        $this->redirect('index');
+      }
+
+    }
     function login(){
       $this->layout = null;
        // echo $this->layout; die;
@@ -256,7 +293,6 @@ class UsersController extends AppController{
       $user = $this->Session->read('User');
       $user_id = $user['User']['id'];
       $user = $this->User->read(null, $user_id);
-      //print_r($user);die;
       if ( $user ){
         $this->set('user', $user);
       }
@@ -321,14 +357,12 @@ class UsersController extends AppController{
               $user = $this->data;
 
              
-              //print_r($user);die;
                if($this->User->save($user, false)){
                   $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
                    $this->redirect("profile");
                }
            }
            else {
-              // echo 1111; die;
            }
         }
         else {
@@ -347,23 +381,18 @@ class UsersController extends AppController{
       $working_statuses = $this->WorkingStatus->find( 'list' );
       $this->set( 'working_statuses', $working_statuses);
 
-      $family_structures = $this->FamilyStructure->find( 'list' );
-      $this->set( 'family_structures', $family_structures );
      
-      $cities = $this->City->find('list');
-      $this->set('cities', $cities);
+      $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
       if( $this->data ){
         $this->User->set( $this->data );
         $this->UserAddress->set( $this->data );
         $this->UserCompany->set( $this->data );
-        //$this->User->validates();
 
         if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
-          // if($this->User->save($user, false)){
-          //     $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
-          //      $this->redirect("profile");
-          //  }
+          
           $this->Session->write( 'user_register', $this->data );
+
           $this->redirect( "register_confirmation" );
         }
       }
@@ -373,22 +402,33 @@ class UsersController extends AppController{
       $user = $this->Session->read( 'user_register' );
       if( $user ) {
           $user['User']['married_status'] = $this->MarriedStatus->getNameById($user['User']['married_status_id']);
-          $user['User']['family_structure'] = $this->FamilyStructure->getNameById($user['User']['family_structure_id']);
+          // $user['User']['family_structure'] = $this->FamilyStructure->getNameById($user['User']['family_structure_id']);
           $user['UserCompany']['working_status'] = $this->WorkingStatus->getNameById($user['UserCompany']['working_status_id']);
-          $user['UserAddress']['city'] = $this->City->getNameById($user['UserAddress']['city_id']);
-          $this->set('user', $user);
+          $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
 
+          $this->set('user', $user);
+          
           if($this->data){
+             // print_r($this->data); die;
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
+
                 //save company info
-                $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
-                
+                $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();                
 
                 //save address
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
                 
                 if( $this->User->save( $user, false ) ){
-                  //$user_id = $this->User->getLastInsertId();
+
+                  $user_id = $this->User->getLastInsertId();
+                  // print_r($user_id); die;
+                  foreach ($user['ExpectArea'] as $item) {
+                    $item['user_id'] = $user_id;
+                    $this->ExpectArea->create();
+                    $this->ExpectArea->save($item, false);
+                  }
+                  
+
                   $this->Session->setFlash('You has been register successful! ','default', array('class' => 'alert alert-dismissible alert-success'));
                   $this->redirect( "register_successful" );
                 }
@@ -401,11 +441,24 @@ class UsersController extends AppController{
              
             }
             else {
+              $this->data = $user;
               $this->redirect( "register" );
               $this->Session->setFlash("Cannot Save Data", 'default',array('class' => 'alert alert-dismissible alert-info"'));
             }
               
             
+          }
+          else {
+            $married_statuses = $this->MarriedStatus->find( 'list' );
+            $this->set( 'married_statuses', $married_statuses);
+
+            $working_statuses = $this->WorkingStatus->find( 'list' );
+            $this->set( 'working_statuses', $working_statuses);
+
+           
+            $prefs = $this->Pref->find('list');
+            $this->set('prefs', $prefs);
+            $this->data = $user;
           }
       }
       else {
@@ -461,11 +514,9 @@ class UsersController extends AppController{
           $working_statuses = $this->WorkingStatus->find( 'list' );
           $this->set( 'working_statuses', $working_statuses);
 
-          $family_structures = $this->FamilyStructure->find( 'list' );
-          $this->set( 'family_structures', $family_structures );
 
-          $cities = $this->City->find('list');
-          $this->set('cities', $cities);
+          $prefs = $this->Pref->find('list');
+          $this->set('prefs', $prefs);
           $this->data = $user;
         }
       }

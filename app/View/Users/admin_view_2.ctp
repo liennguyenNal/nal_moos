@@ -18,12 +18,18 @@
       <div class="page-header">
         <h1 id="tables">Customer</h1>
       </div>
-      
+      <?php echo $this->element('flash');?>
       <div class="bs-component">
-      	
+      	<ul class="nav nav-tabs">
+            <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+            <!-- <li><a href="#profile" data-toggle="tab">愚見数則</a></li> -->
+            <li class="disabled"><a>Others</a></li>
+            
+    	</ul>
 
-    	
-       <?php echo $this->Form->create("User", array('action'=>'register', 'id'=>'form', 'class'=>'form-horizontal', 'inputDefaults' => array(
+    	<div id="myTabContent" class="tab-content">
+          	<div class="tab-pane fade active in" id="profile">
+		       <?php echo $this->Form->create("User", array('action'=>'register', 'id'=>'form', 'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after',  'error'  ) ) ) ) ?>
         <div class="well bs-component">
        
@@ -101,6 +107,9 @@
                 
                   <div class="col-lg-10">
                    
+                    <?php 
+                		
+              		?>
                    <?php 
                     echo $this->Form->radio('married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false));
                   ?>  
@@ -120,18 +129,18 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Prefectures<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">City<span style="color:red">*<span></label>
                 <div class="col-lg-10">
                   <?php 
-                  echo $this->Form->select('UserAddress.pref_id', $cities, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref', 'empty'=>'-- Select  --'));
+                  echo $this->Form->select('UserAddress.city_id', $cities, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --'));
                 ?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">City/ Ward<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">Ward/Town<span style="color:red">*<span></label>
                 <div class="col-lg-10">
                   <?php 
-                  	 echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'2 - 5 - 1','div'=>false));
+                  echo $this->Form->select('UserAddress.ward_id', $wards, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select Ward/Town --'));
                 ?>
                 </div>
               </div>
@@ -179,10 +188,12 @@
             </div>
               
 
+              
+
             <div class="well bs-component">
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Working Type<span style="color:red">*<span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">Working Status<span style="color:red">*<span></label>
                   <div class="col-lg-10">
                    
                     <?php 
@@ -228,24 +239,26 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Prefectures<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">City<span style="color:red">*</span></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --', 'value'=>$item['pref_id']));
+                    echo $this->Form->select('ExpectArea.1.city_id', $cities, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --', 'value'=>$item['city_id']));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Ward/Town<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                     <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['city']))?>
+                    <?php 
+                    echo $this->Form->select('ExpectArea.1.ward_id', $wards, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'city','empty'=>'-- Select Ward/Town --','value'=>$item['ward_id']));
+                  ?>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Address<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">Area<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['address']))?>
+                    <?php echo $this->Form->input('ExpectArea.1.area', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['area']))?>
                   </div>
                 </div>
               </fieldset>
@@ -317,21 +330,6 @@
 			          modal: true,
 			          buttons: {
 			            "Delete": function() {
-			             $( "#dialog-reconfirm-delete" ).dialog("open");
-			              $( this ).dialog( "close" );
-			            },
-			            Cancel: function() {
-			              agree = false;
-			              $( this ).dialog( "close" );
-			            }
-			          }
-			        });
-			        $( "#dialog-reconfirm-delete" ).dialog({
-			          autoOpen: false,
-			          resizable: true,
-			          modal: true,
-			          buttons: {
-			            "Delete": function() {
 			              window.location.href='<?php echo $this->webroot;?>admin/users/delete/<?php echo $user['User']['id']?>';
 			              $( this ).dialog( "close" );
 			            },
@@ -378,7 +376,8 @@
 			      });
 			    </script>
 		      
-	        
+	        </div>
+        </div>
         
     </div>
 
@@ -386,9 +385,7 @@
   <div id="dialog-confirm-delete" title="Delete?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
   </div>
-  <div id="dialog-reconfirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
-  </div>
+  
    <div id="dialog-confirm-approve" title="Approve?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be approved. Are you sure?</p>
   </div>

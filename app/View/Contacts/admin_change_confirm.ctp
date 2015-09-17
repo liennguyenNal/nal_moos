@@ -14,15 +14,12 @@
 <div class="row">
 
     <div class="col-lg-12">
-      <div class="page-header">
-        <h1 id="tables">View Contact</h1>
-      </div>
-
+      
       <div class="bs-component">
       	
-      	<?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
+      	<?php echo $this->Form->create("Contact", array('action'=>'change_confirm', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
-              <legend>Contact Us</legend>
+              <legend>Confirm Save Change Contact </legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">Name</label>
                 <div class="col-lg-10">
@@ -90,16 +87,10 @@
               
               
             </fieldset>
-          </form>
-          <script type="text/javascript">
-          $( document ).ready(function() {
-            var $curr = $( "#start" );
-            $('#form').find(':input:not(:button):not(:disabled)').prop('disabled',true);
-
-          });
-        </script>
+          
+          
         <div class="bs-component">
-            <?php echo $this->Form->create("Contact", array('action'=>'view', 'id'=>'form1', 'class'=>'form-horizontal')) ?>
+            
             <div class="form-group">
                 <label for="email" class="col-lg-2 control-label">Date Send</label>
                 <div class="col-lg-10">
@@ -129,40 +120,23 @@
                   
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
-                      <button type="button" class="btn btn-danger" id="btn-delete" > Delete </button>
+                     
 
-                      <button type="submit" class="btn btn-primary" id="btn-change">Save Change</button>
+                      <button type="submit" class="btn btn-primary" id="btn-change">Confirm</button>
                       
                       <button type="button" class="btn btn-default" id="btn-cancel" >Cancel</button>
                     </div>
                     <script type="text/javascript">
-                      $(document).ready(function(){ 
+                      $( document ).ready(function() {
+                        var $curr = $( "#start" );
+                        $('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
+
                          $('#btn-cancel').on('click', function() {
                 
                              window.location.href='<?php echo $this->webroot;?>admin/contacts';
                           
                         });
-                         $('#btn-delete').on('click', function() {
-                           $( "#dialog-confirm-delete" ).dialog("open");
-                             
-                          
-                        });
-
-                         $( "#dialog-confirm-delete" ).dialog({
-                          autoOpen: false,
-                          resizable: true,
-                          modal: true,
-                          buttons: {
-                            "Delete": function() {
-                              window.location.href="<?php echo $this->webroot;?>admin/contacts/delete/<?php echo $contact['Contact']['id']?>";
-                              $( this ).dialog( "close" );
-                            },
-                            Cancel: function() {
-                              agree = false;
-                              $( this ).dialog( "close" );
-                            }
-                          }
-                        });
+                       
                        });
                     </script>
                 </div>

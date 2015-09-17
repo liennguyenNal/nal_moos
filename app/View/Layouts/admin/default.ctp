@@ -9,6 +9,8 @@
   <title>Honoka</title>
 
   <link rel="stylesheet" type="text/css" href="<?php echo $this->webroot; ?>css/admin/bootstrap.css">
+  <script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
+<script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
   <style type="text/css">
   body { padding-top: 80px; }
   @media ( min-width: 768px ) {
@@ -68,8 +70,7 @@
 
 
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
-<script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
+
 
 <script type="text/javascript">
   $('.bs-component [data-toggle="popover"]').popover();

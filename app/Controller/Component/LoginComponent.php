@@ -90,7 +90,7 @@ class LoginComponent extends Object
     	}
     	else 
     	{
-    		$this->controller->set('email', $username);
+    		$this->controller->set('username', $username);
             $this->controller->set('login_error_msg', 'Incorrect username or password. Please try again!');
     	}
     }
@@ -120,11 +120,11 @@ class LoginComponent extends Object
             //$this->controller->User->query("update users set last_login_date=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user[0]['User']['id'] . "'");
             if ($user){
                //echo "/admin/users/profile";die;
-                $this->controller->redirect('/admin/users/profile');
-                $this->controller->set('login_error_msg', 'Incorrect username or password. Please try again!');
+                $this->controller->redirect('/admin/users');
+               
             }
             else {                    
-                  // echo 2232323; die;
+                   $this->controller->set('login_error_msg', 'Incorrect username or password. Please try again!');
             }
         }
         else 

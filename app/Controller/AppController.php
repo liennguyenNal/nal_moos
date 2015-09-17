@@ -41,6 +41,7 @@ class AppController extends Controller {
     public $helpers = array('Html', 'Form', 'Session');
     public function beforeFilter(){
         parent::beforeFilter();
+        //Configure::write('Config.language', 'jpa');
         if(isset($this->params['prefix']))
         {
               
