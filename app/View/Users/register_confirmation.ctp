@@ -24,146 +24,158 @@
          
          
             <fieldset>
-              <legend>Account Information</legend>
+              <legend>会員登録フォ一ム</legend>
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label for="inputEmail" class="col-lg-2 control-label">Name<span style="color:red">*</span></label>
+                  <label for="inputEmail">申込人氏名<span style="color:red">*</span></label>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"title", 'label'=>"First", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'First Name','div'=>false))?>
+                      <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'山田','div'=>false))?>
                    
-                      <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"title", 'label'=>"Last", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'Last Name','div'=>false))?>
+                      <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'雪','div'=>false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>"First Kana", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'First Name Kana','div'=>false))?>              
+                      <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false))?>              
                                        
-                      <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>"Last Kana", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'Last Name Kana','div'=>false))?>
+                      <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'ユキ','div'=>false))?>
                     </div>
                   </div>
                 </td>
               </tr>
              <tr>
-             <td> <label for="inputEmail" >Genre<span style="color:red">*</span></label></td>
+             <td> <label for="inputEmail">性的<span style="color:red">*</span></label></td>
               <td>
                 <div class="form-group">
                 
                   <div class="col-lg-10">
                     <?php 
-                		echo $this->Form->radio('genre', array('male'=>"Male",'Female'=> "Female"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false));
-              		?>	
+                    echo $this->Form->radio('genre', array('male'=>"男性",'Female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+                  ?>  
                   </div>
                 </div>
               </td>
               </tr>
               <tr>
-                <td> <label for="inputEmail" >Birthday<span style="color:red">*</span></label></td>
+                <td> <label for="inputEmail" >生年月日<span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                    
                     <div class="col-lg-10">
-                    	
-                      Year
+                      
+                      年
                       <?php 
-                      $years = array_combine(range(date("Y") , 1930), range(date("Y"), 1930));
-                  		echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year'));
-                		?>
-    	              Month
-    	              <?php 
-    	              	$months = array_combine(range(1, 12), range(1, 12));
-                  		echo $this->Form->select('month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
-                		?>
-    	              Day
-    	              <?php 
-    	              $dates = array_combine(range(1, 31), range(1, 31));
-                  		echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
-                		?>
-                   	Age: <span><?php echo date("Y") - $user['User']['year_of_birth'];?></span>
+                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+                      echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year', 'onchange'=>'calculate_age()'));
+                    ?>
+                    月
+                    <?php 
+                      $months = array_combine(range(1, 12), range(1, 12));
+                      echo $this->Form->select('month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
+                    ?>
+                    日
+                    <?php 
+                    $dates = array_combine(range(1, 31), range(1, 31));
+                      echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
+                    ?>
+                      歳 : <span id="age">0</span>
+                    <script type="text/javascript">
+
+                    function calculate_age(){
+                      var d = new Date();
+                      var n = d.getFullYear();
+                      $("#age").html(n - $("#year").val());
+                    }
+                    </script>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" >Married Status<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail" >婚姻<span style="color:red">*</span></label></td>
                 <td>
                 <div class="form-group">
                 
                   <div class="col-lg-10">
                    
+                    <?php 
+                    //echo $this->Form->select('married_status_id', $married_statuses, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'empty'=>'-- Select One --'));
+                  ?>
                    <?php 
-                    echo $this->Form->radio('married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false));
+                    echo $this->Form->radio('married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1));
                   ?>  
                   </div>
                 </div>
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" >Address<span style="color:red">*</span></td>
+                <td><label for="inputEmail" >現住所<span style="color:red">*</span></td>
                 <td>
                   <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Post Number<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">〒</label>
                 <div class="col-lg-10" >
-                  <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'Post Number 1','div'=>false))?>
-                  <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'Post Number 2','div'=>false))?>
+                  <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
+                  <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
                  
+
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Prefectures<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
                 <div class="col-lg-10">
                   <?php 
-                  echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref', 'empty'=>'-- Select  --'));
+                  echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
                 ?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">City/ Ward<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
                 <div class="col-lg-10">
                   <?php 
-                  	 echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'2 - 5 - 1','div'=>false));
+                    echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control','div'=>false));
                 ?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">House Num<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">番地</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'2 - 5 - 1','div'=>false))?>
+                  <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">House Name<span style="color:red">*<span></label>
+                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
+                  <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
                 </div>
               </div>
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail">Email<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail">メールアドレス<span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
                     <div class="col-lg-10">                 
-                      <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Email','div'=>false))?>
+                      <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'form-control', "placeholder"=>'sample@gmail.com','div'=>false))?>
                     </div>
                   </div>
                 </td>
               </tr>
                
               <tr>
-                <td><label for="inputEmail" class="col-lg-2 control-label">Phone<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail">電話番号<span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"title", 'label'=>'Hand Phone', 'class'=>'form-control', "placeholder"=>'Hand Phone','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
+                      <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', "placeholder"=>'09001234567','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
                    
-                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"title", 'label'=>'Home Phone', 'class'=>'form-control', "placeholder"=>'Home Phone','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
+                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control', "placeholder"=>'0398765432','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
                     </div>
                   </div>
                   </td>
@@ -173,22 +185,27 @@
             </div>
               
 
+             
+
             <div class="well bs-component">
+
+
+              <!-- <hr style="border: 0; height: 1px;background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);" /> -->
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Working Type<span style="color:red">*<span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $working_statuses, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-- Select One --'));
+                    echo $this->Form->select('UserCompany.working_status_id', $working_statuses, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Time Worked<span style="color:red">*<span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' Year&nbsp;' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' Month&nbsp;', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
                   </div>
                 </div>
 
@@ -196,9 +213,9 @@
                     
                  
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Tax of Month<span style="color:red">*<span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">税込月収</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
                   </div>
                 </div>
                 
@@ -207,39 +224,40 @@
               </fieldset>
           
             </div>
-            <h4>Expect area</h4>
+            <h4>ご希望エリア　※最大５エリアまで</h4>
             <section id="expect-area">
             <?php foreach ($user['ExpectArea'] as $item) {?>
             <div class="well bs-component" id='expect-area-content' >
               <fieldset>
 
                   <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Post Number<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*</span></label>
                   <div class="col-lg-10" >
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"title",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'Post Number 1','div'=>false, 'value'=>$item['post_num_1']))?>
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"title",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'Post Number 2','div'=>false, 'value'=>$item['post_num_2']))?>
+                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
+                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
                     
+                   
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Prefectures<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*</span></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --', 'value'=>$item['pref_id']));
+                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Ward/Town<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                     <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['city']))?>
+                     <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Address<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">地城<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['address']))?>
+                    <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
                   </div>
                 </div>
               </fieldset>
@@ -261,8 +279,8 @@
         	<div class="form-group">
 	            <div class="col-lg-10 col-lg-offset-2">
 	              <input type="hidden" name="data[User][confirm]" id="confirm" value="1" />
-	              <button type="button" class="btn btn-default" onclick="window.history.back();">Cancel</button>
-	              <button type="submit" class="btn btn-primary" > Confirm</button>
+	              <button type="button" class="btn btn-default" onclick="window.history.back();">キャンセル</button>
+	              <button type="submit" class="btn btn-primary" > 確認します</button>
 	            </div>
 	          </div>
 	      	</div>

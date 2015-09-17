@@ -19,68 +19,67 @@
       	
       	<?php echo $this->Form->create("Contact", array('action'=>'change_confirm', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
-              <legend>Confirm Save Change Contact </legend>
+             
+              <legend>お問い合わせフオ一ム</legend>
               <div class="form-group">
-                <label for="name" class="col-lg-2 control-label">Name</label>
+                <label for="name" class="col-lg-2 control-label">お名前</label>
                 <div class="col-lg-10">
                   <table>
                     <tr >
                       <td>
 
-                        <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>'First name', 'class'=>'form-control', "placeholder"=>'First Name','div'=>false))?>
+                        <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>'姓', 'class'=>'form-control', "placeholder"=>'山田','div'=>false))?>
                       </td>
                        <td style="padding-left:20px">
 
-                        <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>'Last name', 'class'=>'form-control', "placeholder"=>'Last Name','div'=>false))?>
+                        <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>'名', 'class'=>'form-control', "placeholder"=>'雪','div'=>false))?>
                       </td>
                     </tr>
                     <tr>
                       <td>
 
-                        <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>'First name kana', 'class'=>'form-control', "placeholder"=>'First Name kana','div'=>false))?>
+                        <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>'セイ', 'class'=>'form-control', "placeholder"=>'ヤマダ','div'=>false))?>
                       </td>
                        <td style="padding-left:20px">
 
-                        <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>'Last name kana', 'class'=>'form-control', "placeholder"=>'Last Name Kana','div'=>false))?>
+                        <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>'メイ', 'class'=>'form-control', "placeholder"=>'ユキ','div'=>false))?>
                       </td>
                     </tr>
                   </table>
                 </div>
               </div>
               <div class="form-group">
-                  <label for="title" class="col-lg-2 control-label">Contact Type</label>
+                  <label for="title" class="col-lg-2 control-label">問合せ分類</label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->radio('type', array("1" => "Normal","2"=> "Media","3"=> "Construction Company", "4"=> "Other"), array( 'class'=>'radio','style'=>'display:inline; padding:10px, padding-left:100px;margin:10px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+                    echo $this->Form->radio('type', array("1" => "一殷のお客様","2"=> "メディア関係","3"=> "建設会社", "4"=> "その他"), array( 'class'=>'radio','style'=>'display:inline; padding:10px, padding-left:100px;margin:10px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
                   ?>  
                   </div>
                 </div>
               <div class="form-group">
-                <label for="title" class="col-lg-2 control-label">Company Name</label>
+                <label for="title" class="col-lg-2 control-label">会社名(法人の場合)</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('company', array('type'=>'text', 'id'=>"comapny_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Company Name','div'=>false))?>
+                  <?php echo $this->Form->input('company', array('type'=>'text', 'id'=>"comapny_name", 'label'=>false, 'class'=>'form-control', 'div'=>false))?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
+                <label for="inputEmail" class="col-lg-2 control-label">電話番号</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Your Name','div'=>false))?>
+                  <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'div'=>false))?>
                 </div>
               </div>
               
               <div class="form-group">
-                <label for="email" class="col-lg-2 control-label">Email</label>
+                <label for="email" class="col-lg-2 control-label">メールアドレス</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Your Email','div'=>false))?>
+                  <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'form-control', 'div'=>false))?>
                 </div>
               </div>            
               
-              
-             
               <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Content</span></label>
+                <label for="textArea" class="col-lg-2 control-label">お問い合わせ内容</span></label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Content', 'rows'=>10,'div'=>false))?>
+                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', 'rows'=>10,'div'=>false))?>
                   
                 </div>
               </div>
@@ -91,8 +90,8 @@
           
         <div class="bs-component">
             
-            <div class="form-group">
-                <label for="email" class="col-lg-2 control-label">Date Send</label>
+             <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">問合せ日時</label>
                 <div class="col-lg-10">
                   <?php echo $contact['Contact']['created'];?>
                 </div>
@@ -100,15 +99,15 @@
               
              
               <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Process</span></label>
+                <label for="textArea" class="col-lg-2 control-label">対応伏況</span></label>
                 <div class="col-lg-10">
                   <?php 
-                    $statuses = array("2"=>"Resolved", "3"=>"Rejected");
+                    $statuses = array("2"=>"解決します", "3"=>"拒絶します");
                   echo $this->Form->select('status', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'status' , ));?>
                 </div>
               </div>
              <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Comment</span></label>
+                <label for="textArea" class="col-lg-2 control-label">対応内容</span></label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('comment', array('type'=>'textarea', 'id'=>"comment", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Comment', 'rows'=>10,'div'=>false))?>
                   
