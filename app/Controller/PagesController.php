@@ -77,20 +77,23 @@ class PagesController extends AppController {
 	public function index(){
 		//$this->layout = null;
 		//print_r("this is hom page"); die;
-		$articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>4));
-		$this->set('articles', $articles);
+		// $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>4));
+		// $this->set('articles', $articles);
 
 	}
 	public function faq(){
 		//$this->layout = null;
 		//print_r("this is hom page"); die;
 		$this->set('menu','faq');
-		
 	}
 	public function campaign(){
-		//$this->layout = null;
+		$this->layout = null;
 		//print_r("this is hom page"); die;
-		$this->set('menu','campaign');
+		//$this->set('menu','campaign');
+		
+	}
+	public function landing_page(){
+		$this->layout = null;
 		
 	}
 }
