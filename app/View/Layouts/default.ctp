@@ -1,93 +1,46 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <title>[:. MOOS .:]</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="mô tả website" />
+  <meta name="keywords" content="những từ khóa của website bạn" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>MOOS</title>
-
-  <link rel="stylesheet" type="text/css" href="<?php echo $this->webroot; ?>css/admin/bootstrap.css">
-  <script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
-  <script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
-  <style type="text/css">
-  body { padding-top: 80px; }
-  @media ( min-width: 768px ) {
-    #banner {
-      min-height: 300px;
-      border-bottom: none;
-    }
-    .bs-docs-section {
-      margin-top: 8em;
-    }
-    .bs-component {
-      position: relative;
-    }
-    .bs-component .modal {
-      position: relative;
-      top: auto;
-      right: auto;
-      left: auto;
-      bottom: auto;
-      z-index: 1;
-      display: block;
-    }
-    .bs-component .modal-dialog {
-      width: 90%;
-    }
-    .bs-component .popover {
-      position: relative;
-      display: inline-block;
-      width: 220px;
-      margin: 20px;
-    }
-    .nav-tabs {
-      margin-bottom: 15px;
-    }
-    .progress {
-      margin-bottom: 10px;
-    }
-  }
-  </style>
-
-  <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- <link rel="icon" href="img/front/favicon.ico" type="image/x-icon" /> -->
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
 </head>
-<body>
-
-<header>
-  <?php echo $this->element('top')?>
-</header>
-
-<div class="container">
-    <?php echo $this->fetch('content'); ?>
-
-</div>
-
-
-
-
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-
-  $('#anti-yu-gothic-button').on('click', function() {
-    if ( $('body').hasClass('no-thank-yu') ) {
-      $('body').removeClass('no-thank-yu');
-      $(this).text('游ゴシックを無効にする').removeClass('btn-primary').addClass('btn-danger');
-      $("#anti-yu-gothic-message").html('現在デモページは游ゴシックの指定が<span class="text-primary">有効</span>になっています。');
-    }
-    else {
-      $('body').addClass('no-thank-yu');
-      $(this).text('游ゴシックを有効にする').removeClass('btn-danger').addClass('btn-primary');
-      $("#anti-yu-gothic-message").html('現在デモページは游ゴシックの指定が<span class="text-danger">無効</span>になっています。');
-    }
-  });
-</script>
-
+<body class="page">
+  <div id="wrapper">    
+    <header id="head-container">
+      <!-- top -->
+      <?php echo $this->element('top'); ?>
+    </header>
+    <nav id="menu-page">
+      <!-- menu -->
+      <?php echo $this->element('menu'); ?>
+    </nav>    
+    <section id="content-container">
+      <?php echo $this->fetch('content'); ?>
+    </section>
+  </div>
+  <footer id="footer-container" class="footer-page">
+    <?php echo $this->element('footer'); ?>
+  </footer>
+  
+  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </body>
 </html>
+
