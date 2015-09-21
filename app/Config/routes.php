@@ -31,6 +31,7 @@
 	Router::connect('/contact', array('controller' => 'contacts', 'action' => 'index'));
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'faq'));
 	Router::connect('/campaign', array('controller' => 'pages', 'action' => 'campaign'));
+	Router::connect('/register', array('controller' => 'users', 'action' => 'register'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
