@@ -7,8 +7,8 @@
 
 class User extends AppModel {
     var $name = 'User';
-    var $hasMany = array('ExpectArea');
-    var $belongsTo = array('MarriedStatus', 'FamilyStructure', 'UserAddress', 'UserCompany', 'Pref');
+    var $hasMany = array('ExpectArea', 'UserRelation', 'UserAttachment');
+    var $belongsTo = array('MarriedStatus',  'UserAddress', 'UserCompany', 'UserPartner', 'UserGuarantor');
     var $actsAs = array('Containable');
      var $validate = array( 
         
@@ -91,6 +91,10 @@ class User extends AppModel {
             'rule2'=>array(
                  'rule' => 'notBlank',
                  'message'=> "This field is required"
+            ),
+            'rule3'=>array(
+                'rule' => 'isUnique',
+                'message' => 'Email already registered'
             )
         ), 
         'email_confirm' => array(
@@ -107,7 +111,22 @@ class User extends AppModel {
                'rule' => 'notBlank',
                 'message'=>'This field is required'
             
-        )
+        ),
+        'debt_count' => array(
+               'rule' => 'notBlank',
+                'message'=>'This field is required'
+            
+        ),
+        'debt_value_total' => array(
+               'rule' => 'notBlank',
+                'message'=>'This field is required'
+            
+        ),
+        'debt_pay_per_month' => array(
+               'rule' => 'notBlank',
+                'message'=>'This field is required'
+            
+        ),
 
         // 'password' => array(
         //     'length' => array(

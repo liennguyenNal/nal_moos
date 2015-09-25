@@ -32,8 +32,18 @@ class UserAddress extends AppModel {
         ),  
         'address' =>array(
         	'rule' => 'notBlank',
-        )
-     
+        ),
+
+        'residence_id' =>array(
+            'rule' => 'notBlank',
+        ),
+        'housing_cost' =>array(
+            'rule' => 'notBlank',
+        ),
+        
+        'year_residence' =>array(
+            'rule' => 'notBlank',
+        ),
 
     );
 

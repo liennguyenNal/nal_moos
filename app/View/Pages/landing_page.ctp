@@ -18,6 +18,9 @@
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+	<script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+  	<script src="<?php echo $this->webroot; ?>js/jquery.autoKana.js"></script>
+  	<script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
 </head>
 <body>
 	<div id="wrapper">		
@@ -38,7 +41,7 @@
 				<div class="container-fluid">
 					<img class="img-banner" src="<?php echo $this->webroot; ?>img/images/banner-01.png" alt="banner"/>
 					<div class="block-link">
-						<a href="<?php echo $this->webroot; ?>register"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
+						<a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
 					</div>
 				</div>
 			</div>
@@ -149,223 +152,408 @@
 					<div class="container-fluid">
 						<div class="title-content"></div>
 						<div class="content-from">
-							<div class="content-from-block">
-								<div class="content-from-title">
-									<h2>営業活動は一切ありません／仮審査のお申し込みも併せて承ります</h2>
-									<span>以下のメールフォームより会員登録をお願いいたします。</span>
-								</div>
-								<div class="content-from-how">
-									<table class="from">
-										<tbody>
-											<tr>
-												<td class="label-text"><label>申込人氏名</label><span>必須</span></td>
-												<td>
-													<div class="block-input">
-														<span class="w-auto">姓</span>
-														<input class="w198" type="text" name="" value="" placeholder="山田">
-														<span class="w-auto">名</span>
-														<input class="w198" type="text" name="" value="" placeholder="太郎">
-													</div>
-													<div class="block-input">
-														<span class="w-auto">セイ</span>
-														<input class="w198" type="text" name="" value="" placeholder="ヤマダ">
-														<span class="w-auto">メイ</span>
-														<input class="w198" type="text" name="" value="" placeholder="タロウ">
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>性別</label><span>必須</span></td>
-												<td>
-													<div class="form-radio">
-														<form>
-															<div class="block-input-radio">
-																<input type="radio" name="sex" value="1" id="1"><label for="1">男性</label>
-															</div>
-															<div class="block-input-radio">
-																<input type="radio" name="sex" value="1" id="2"><label for="2">女性</label>
-															</div>
-														</form>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>生年月日</label><span>必須</span></td>
-												<td>
-													<div class="select">
-														<select>
-															<option>--</option>
-														</select>
-														<span>no</span>
-														<select>
-															<option>--</option>
-														</select>
-														<span>no</span>
-														<select>
-															<option>--</option>
-														</select>
-														<span>no</span>
-														<span class="style">（00歳）</span>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>婚姻</label><span>必須</span></td>
-												<td>
-													<div class="form-radio">
-														<form>
-															<div class="block-input-radio">
-																<input type="radio" name="sex" value="1" id="3"><label for="3">既婚</label>
-															</div>
-															<div class="block-input-radio">
-																<input type="radio" name="sex" value="1" id="4"><label for="4">独身</label>
-															</div>
-														</form>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>現住所</label><span>必須</span></td>
-												<td>
-													<div class="block-input">
-														<span class="w-auto1">〒</span>
-														<input class="w40" type="text" name="" value="" placeholder="101">
-														<span class="w-auto1">-</span>
-														<input class="w80" type="text" name="" value="" placeholder="0000">
-														<a href="#" class="style-link">郵便番号から住所を検索</a>
-													</div>
-													<div class="block-input">
-														<span class="w78">都道府県</span>
-														<input class="w198" type="text" name="" value="" placeholder="東京都">
-													</div>
-													<div class="block-input">
-														<span class="w78">市区町村</span>
-														<input class="w198" type="text" name="" value="" placeholder="千代田区神田多町">
-													</div>
-													<div class="block-input">
-														<span class="w78">番地</span>
-														<input class="w198" type="text" name="" value="" placeholder="2-5-1">
-													</div>
-													<div class="block-input">
-														<span class="w78">建物</span>
-														<input class="w198" type="text" name="" value="" placeholder="神田ビルディング2001号">
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>婚姻</label><span>必須</span></td>
-												<td>
-													<div class="block-input fix-padding">
-														<span class="w78">携帯電話</span>
-														<input class="w198" type="text" name="" value="" placeholder="09012345678">
-														<span class="w43">自宅</span>
-														<input class="w198" type="text" name="" value="" placeholder="0312345678">
-													</div>
-													<span class="black">※どちらかひとつ必須</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>メールアドレス</label><span>必須</span></td>
-												<td><input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"><span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span></td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>メールアドレス（確認）</label><span>必須</span></td>
-												<td><input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"></td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>職業</label><span>必須</span></td>
-												<td>
-													<div class="select">
-														<select class="w198">
-															<option>正社員</option>
-														</select>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>勤続年数</label><span>必須</span></td>
-												<td>
-													<div class="block-input">
-														<input class="w40" type="text" name="" value="" placeholder="00">
-														<span class="w-auto1">年</span>
-														<input class="w40" type="text" name="" value="" placeholder="00">
-														<span class="w-auto1">月</span>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="label-text"><label>税込月収</label><span>必須</span></td>
-												<td>
-													<div class="block-input">
-														<input class="w108" type="text" name="" value="" placeholder="00">
-														<span class="w-auto1">円</span>
-													</div>
-												</td>
-											</tr>
-											
-										</tbody>
-									</table>
-								</div>
-								<div class="content-from-title fix">
-									<h2>ご希望エリア</h2>
-									<span>※最大5エリアまで／※選択条件によりご希望に添えない場合がございます。</span>
-								</div>
-								<div class="content-from-how">
-									<table class="from">
-										<tbody>
-											<tr>
-												<td class="label-text"><label>希望エリア1</label><span>必須</span></td>
-												<td>
-													<div class="block-input">
-														<span class="w-auto1">〒</span>
-														<input class="w40" type="text" name="" value="" placeholder="101">
-														<span class="w-auto1">-</span>
-														<input class="w80" type="text" name="" value="" placeholder="0000">
-														<a href="#" class="style-link">郵便番号から住所を検索</a>
-													</div>
-													<div class="block-input">
-														<span class="w78">都道府県</span>
-														<input class="w198" type="text" name="" value="" placeholder="東京都">
-													</div>
-													<div class="block-input">
-														<span class="w78">市区町村</span>
-														<input class="w198" type="text" name="" value="" placeholder="千代田区神田多町">
-													</div>
-													<div class="block-input">
-														<span class="w78">地域</span>
-														<input class="w198" type="text" name="" value="" placeholder="1〜4丁目、◯◯◯中学校区">
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="link-form">
-									<a href="#">希望エリアを追加</a>
-								</div>
-								
-								<div class="block-note">
-									<p>個人情報の取り扱いについて</p>
-									<form>
-										<div class="block-input-radio">
-											<input type="radio" name="sex" value="1" id="5"><label for="5"> ご記入いただきました個人情報は、本申込書に関するお客様へのご連絡、商品の情報提供、弊社が主催・実施する個別相談会・イベント情報などをご提供する場合に使用させていただきます。 また、これらの個人情報は、適切な安全対策のもと管理しております。</label>
-										</div>
-										<div class="block-input-radio">
-											<input type="radio" name="sex" value="1" id="6"><label for="6">原則としてお客様の同意なく第三者へ開示・提供いたしません。</label>
-										</div>
-										<div class="block-input-radio">
-											<input type="radio" name="sex" value="1" id="7"><label for="7">個人情報の取り扱いについて同意いただけない場合は、上記のサービスが受けられなくなる場合があります。</label>
-										</div>
-									</form>
-									<span class="span">上記内容に同意いただける方は、下記にチェックを入れ送信確認へお進みください。</span>
-									<div class="block-button">
-										<div class="block-input-check">
-											<div class="block"><input type="checkbox" name="sex" value="1" id="8"><label for="8">上記内容に同意します。</label></div><span class="red">※必須</span>
-										</div>
-										<button type="button"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></button>
+							<?php echo $this->element('flash'); ?>
+           					<?php echo $this->Form->create('User', array('action'=>'register')); ?>
+								<div class="content-from-block">
+									<div class="content-from-title">
+										<h2>営業活動は一切ありません／仮審査のお申し込みも併せて承ります</h2>
+										<span>以下のメールフォームより会員登録をお願いいたします。</span>
 									</div>
+									<div class="content-from-how">
+										<table class="from">
+											<tbody>
+												<tr>
+													<td class="label-text"><label>申込人氏名</label><span>必須</span></td>
+													<td>
+														<div class="block-input">
+															<div class="div-style">
+																<span class="w-auto">姓</span>
+																<!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
+																<?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'山田','div'=>false))
+                                ?>
+															</div>
+															<div class="div-style">
+																<span class="w-auto">名</span>
+																<!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
+																<?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'雪','div'=>false))
+                                ?>
+															</div>
+														</div>
+														<div class="block-input">
+															<div class="div-style">
+																<span class="w-auto">セイ</span>
+																<!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
+																<?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤマダ','div'=>false))
+                                ?>
+															</div>
+															<div class="div-style">
+																<span class="w-auto">メイ</span>
+																<!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
+																<?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ユキ','div'=>false))
+                                ?>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>性別</label><span>必須</span></td>
+													<td>
+														<div class="form-radio">
+															<div class="form-w">
+																<div class="block-input-radio">
+																	<?php 
+									                                    echo $this->Form->radio('genre', array('male'=>"男性"), array('label'=>false, 'legend'=>false, 'default'=>false));
+									                                  ?>
+																</div>
+																<div class="block-input-radio">
+																<?php 
+								                                    echo $this->Form->radio('genre', array('Female'=> "女性"), array('label'=>false, 'legend'=>false, 'default'=>false));
+								                                  ?>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>生年月日</label><span>必須</span></td>
+													<td>
+														<div class="select">
+															<?php 
+								                                $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
+								                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()'));
+								                              ?>
+															<span>年</span>
+															<?php 
+								                                $months = array_combine(range(1, 12), range(1, 12));
+								                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month'));
+								                              ?>
+															<span>月</span>
+															<?php 
+								                                $dates = array_combine(range(1, 31), range(1, 31));
+								                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day'));
+								                              ?>
+															<span>日</span>
+															<!-- <span class="style">（00歳）</span> -->
+															<span class="style" id="age">0</span>歳
+															<!-- Script tinh tuoi -->
+							                                <script type="text/javascript">
+							                                	function calculate_age(){
+							                                  		var d = new Date();
+							                                  		var n = d.getFullYear();
+							                                  		$("#age").html(n - $("#year").val());
+							                               		}
+							                                </script>
+							                                <!-- End script -->
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>婚姻</label><span>必須</span></td>
+													<td>
+														<div class="form-radio">
+															<div class="form-w">
+																<div class="form-w">
+																<div class="block-input-radio">
+																	<?php 
+									                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'class'=>'fix-pd'));
+									                                  ?> 
+																</div>
+															</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>現住所</label><span>必須</span></td>
+													<td>
+														<div class="block-input">
+															<span class="w-auto1">〒</span>
+															<?php 
+								                                echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
+								                              ?>
+															<span class="w-auto1">-</span>
+															<?php 
+								                                echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>'0001','div'=>false))
+								                              ?>
+															<a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));">郵使番号から住所を検索</a>
+															<!-- Script tim dia chi buu dien -->
+								                              <script type="text/javascript">
+								                                function find_address(obj){
+								                                 var p =  obj.parent().parent().parent();
+								                                 var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
+								                                    
+								                                  $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
+								                                    function(json) {
+								                                      p.find("select[id*='pref_id']").val(json.pref_id);
+								                                      p.find("input[id*='city']").val(json.ward);
+								                                      p.find("input[id*='address']").val(json.addr1);
+								                                  });
+								                              }
+								                              </script>
+								                            <!-- End script -->
+														</div>
+														<div class="block-input">
+															<span class="w78">都道府県</span>
+															<div class="select">
+																<?php 
+									                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
+									                              ?>
+															</div>
+														</div>
+														<div class="block-input">
+															<span class="w78">市区町村</span>
+															<?php 
+								                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'千代田区神田多町'));
+								                              ?>
+														</div>
+														<div class="block-input">
+															<span class="w78">番地</span>
+															<?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>'2-5-1'))
+                              								?>
+														</div>
+														<div class="block-input">
+															<span class="w78">建物</span>
+															<?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'神田ビルディング2001号','div'=>false))
+                              								?>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>婚姻</label><span>必須</span></td>
+													<td>
+														<div class="block-input fix-padding">
+															<div class="div-style">
+																<span class="w78">携帯電話</span>
+																<?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false))
+                                								?>
+															</div>
+															<div class="div-style">
+																<span class="w43">自宅</span>
+																<?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'0312345678','div'=>false))
+                                								?>
+															</div>
+														</div>
+														<span class="black">※どちらかひとつ必須</span>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>メールアドレス</label><span>必須</span></td>
+													<td>
+														<?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
+                            							?>
+														<span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>メールアドレス（確認）</label><span>必須</span></td>
+													<td>
+														<?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
+                            							?>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>職業</label><span>必須</span></td>
+													<td>
+														<div class="select">
+															<?php 
+								                                echo $this->Form->select('UserCompany.working_status_id', $working_statuses, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社員'));
+								                              ?>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>勤続年数</label><span>必須</span></td>
+													<td>
+														<div class="block-input">
+															<?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
+                              								?>
+															<span class="w-auto1">年</span>
+															<?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
+                              								?>
+															<span class="w-auto1">月</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="label-text"><label>税込月収</label><span>必須</span></td>
+													<td>
+														<div class="block-input">
+															<?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'00'))
+                              								?>
+															<span class="w-auto1">円</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="content-from-title fix">
+										<h2>ご希望エリア</h2>
+										<span>※最大5エリアまで／※選択条件によりご希望に添えない場合がございます。</span>
+									</div>
+									<section id="expect-area">
+									<div class="content-from-how" id='expect-area-content'>
+										<table class="from">
+											<tbody>
+												<tr>
+													<td class="label-text"><label>希望エリア1</label><span>必須</span></td>
+													<td>
+														<div class="block-input">
+															<span class="w-auto1">〒</span>
+															<?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
+                              								?>
+															<span class="w-auto1">-</span>
+															<?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0000','div'=>false))
+                              								?>
+															<a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));">郵使番号から住所を検索</a>
+														</div>
+														<div class="block-input">
+															<span class="w78">都道府県</span>
+															<div class="select">
+															<?php 
+								                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
+								                              ?>
+															</div>
+														</div>
+														<div class="block-input">
+															<span class="w78">市区町村</span>
+															<?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'千代田区神田多町','div'=>false))
+                              								?>
+														</div>
+														<div class="block-input">
+															<span class="w78">地域</span>
+															<?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'1〜4丁目、◯◯◯中学校区','div'=>false))
+                              								?>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									</section>
+									
+									<!-- Button remove -->			
+									<div class="link-form" id='remove' style="display:none">
+					                    <a href="javascript:void(0)" class="style-link" id='btn-remove' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;" onclick="javascript:_remove($(this));"> - 希望エリアを追加</a>
+					                </div>
+									<!-- End button remove -->
+
+									<!-- Button add -->
+					                <div class="link-form">
+					                    <a href="javascript:void(0)" class="style-link" id='btn-add' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;"> + 希望エリアを追加</a>
+					                </div>
+					                <!-- End button add -->
+
+					                <!-- Script add new area -->
+					                  <script type="text/javascript">
+					                    $(this).autoKana('#first_name', '#first_name_kana', {katakana:false, toggle:false});
+					                    $(this).autoKana('#last_name', '#last_name_kana', {katakana:false, toggle:false});
+
+
+					                    var num_area = 1;
+
+					                    var order_object = 2;
+					                    function replaceAll(find, replace, str) {
+					                      return str.replace(new RegExp(find, 'g'), replace);
+					                    }
+					                    
+					                    function find_address(obj){
+					                       var p =  obj.parent().parent().parent();
+					                       var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
+					                       var loader = p.find("div[id*='loader']");
+					                            
+					                          loader.show();
+					                          
+					                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
+					                          function(json) {
+					                            loader.hide();
+					                            //alert(p.find("select[id*='pref_id']").val());
+					                            p.find("select[id*='pref_id']").val(json.pref_id);
+					                            p.find("input[id*='city']").val(json.ward);
+					                            p.find("input[id*='address']").val(json.addr1);
+					                        });
+					                    }
+
+					                    function _remove (obj) {
+					                      // body...
+					                      num_area--; 
+					                      //alert(obj.parent().parent().html());
+					                      obj.parent().remove();
+					                    }
+
+					                    $('#btn-add').on('click', function() {
+					                      if( num_area < 5 ){
+					                       var area = $('#expect-area-content').clone(true, true);
+					                       
+
+					                       area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
+					                       order_object++;
+					                       
+					                        area.append($('#remove').clone(true, true).html());
+					                       
+					                        $('#expect-area').append(area);
+					                        num_area++;
+					                      }
+					                      else {
+					                        alert('Cannot add more item');
+					                      }
+					                    });
+
+					                  $(function() {
+					                    $( "#dialog-message" ).dialog({
+					                      autoOpen : false,
+					                      modal: true,
+					                      buttons: {
+					                        Ok: function() {
+					                          $( this ).dialog( "close" );
+					                        }
+					                      }
+					                    });
+
+					                    $( "#form" ).submit(function( event ) {
+					                      if( $( "#agree" ).is(':checked') ){
+					                        
+
+					                      }
+					                      else {
+					                       
+					                        $( "#dialog-message" ).dialog("open");
+					                        event.preventDefault();
+					                      }
+					                    });
+					                  });
+					                </script>
+					                <!-- End script -->
+									
+									<div class="block-note">
+					                  <p>個人情報の取り扱いについて</p>
+					                  <div class="block-input-radio">
+					                    ◯ ご記入いただきました個人情報は、本申込書に関するお客様へのご連絡、商品の情報提供、弊社が主催・実施する個別相談会・イベント情報などをご提供する場合に使用させていただきます。 また、これらの個人情報は、適切な安全対策のもと管理しております。</label>
+					                  </div>
+					                  <div class="block-input-radio">
+					                    ◯ 原則としてお客様の同意なく第三者へ開示・提供いたしません。</label>
+					                  </div>
+					                  <div class="block-input-radio">
+					                    ◯ 個人情報の取り扱いについて同意いただけない場合は、上記のサービスが受けられなくなる場合があります。</label>
+					                  </div>
+					                  <span class="span">上記内容に同意いただける方は、下記にチェックを入れ送信確認へお進みください。</span>
+					                  <div class="block-button">
+					                    <div class="block-input-check">
+					                      <div class="block">
+					                        <!-- <input type="checkbox" name="sex" value="1" id="8"> -->
+					                        <?php
+					                          echo $this->Form->input('User.agree',array('type'=>'checkbox','options'=>array(1),'div'=>false, 'id'=>'agree','label'=>false));
+					                        ?>
+					                        <label for="8">上記内容に同意します。</label>
+					                      </div>
+					                      <span class="red">※必須</span>
+					                    </div>
+					                    <!-- <button type="button"><img src="img/front/contact.png" alt="送信確認"/></button> -->
+					                    <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></button>
+					                  </div>
+					                </div>
 								</div>
-							</div>
+							</form>
 						</div>
 						<div class="footer-from">
 							<span></span>
@@ -373,7 +561,6 @@
 					</div>
 				</div>
 			</div>
-			
 		</section>
 	</div>
 	<footer id="footer-container">
@@ -385,9 +572,9 @@
 			</div>
 		</div>
 	</footer>
-	<script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	
 	<script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
-	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+  	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+  	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </body>
 </html>

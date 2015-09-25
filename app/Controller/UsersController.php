@@ -7,9 +7,9 @@
 
 
 class UsersController extends AppController{
-    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'WorkingStatus' , 'MarriedStatus');
-    var $components = array('Login', 'Util', 'Session');
-    var $helpers = array('Html');
+    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment');
+    var $components = array('Login', 'Util', 'Session', 'RequestHandler');
+    var $helpers = array('Html' , 'Js');
      
         
     function admin_index(){
@@ -42,7 +42,7 @@ class UsersController extends AppController{
         $this->set('users', $users);
     }
     
-    function admin_edit($id=null){
+    function admin_edit( $id=null ){
         
        
        if($this->data){
@@ -192,13 +192,14 @@ class UsersController extends AppController{
     */
     function admin_view($id){
      
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure',  'ExpectArea')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' ,  'ExpectArea')));
+      //print_r($user['ExpectArea']); die;
       $this->set('user', $user);
       $married_statuses = $this->MarriedStatus->find( 'list' );
       $this->set( 'married_statuses', $married_statuses);
 
-      $working_statuses = $this->WorkingStatus->find( 'list' );
-      $this->set( 'working_statuses', $working_statuses);
+      $works = $this->Work->find( 'list' );
+      $this->set( 'works', $works);
 
 
       $prefs = $this->Pref->find('list');
@@ -215,17 +216,28 @@ class UsersController extends AppController{
 
     function admin_approve_register($id){
 
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure', 'ExpectArea')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' ,  'ExpectArea')));
       if($user['User']['status_id'] == 1){
         $user['User']['status_id'] = 2;
-        $username = str_replace(" ", "_", $user['User']['first_name_kana'] ). "_" .  str_replace(" ", "_", $user['User']['last_name_kana']) . "_" . $id;
+        //$username = str_replace(" ", "_", $user['User']['first_name_kana'] ). "_" .  str_replace(" ", "_", $user['User']['last_name_kana']) . "_" . $id;
         $password = $this->Util->createRandomPassword(10);
-        $user['User']['username'] = $username;
-        $user['User']['password'] = md5($password);
+        $access_token  = $this->Util->createRandomPassword(30);
+
+        $user['User']['access_token'] = $access_token;
+
         //print_r($user); die;
-        if($this->User->save($user, false)){
-          //echo $password; die;
-          $this->Session->setFlash("Has been approved Successful with username:  $username , and password: $password", 'default',array('class' => 'alert alert-dismissible alert-success"'));
+        if($this->User->save( $user, false )){
+          // Send email to user
+           $Email = new CakeEmail("gmail");
+            $Email->template('approve_basic_reigster', 'register');
+            $Email->emailFormat('html');
+            $Email->to($user['User']['email']);
+            $Email->from('moos@nal.vn');
+            $Email->subject("Approve Registration");
+            $Email->viewVars(array('user' => $user, 'password'=>$password));
+            $Email->send();
+          $email = $user['User']['email'];
+          $this->Session->setFlash("Has been approved Successful with Email: $email   , and password: $password", 'default',array('class' => 'alert alert-dismissible alert-success"'));
           $this->redirect('view/' . $id);
         }
         else {
@@ -241,7 +253,7 @@ class UsersController extends AppController{
 
     function admin_reject_register($id){
 
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' )));
       $user['User']['status_id'] = 0;
       
       if($this->User->save($user, false)){
@@ -277,9 +289,9 @@ class UsersController extends AppController{
        $this->Session->delete("Administrator");
         if($this->data){
             //print_r($this->data); die;
-            $username = $this->data['User']['username'];
+            $email = $this->data['User']['email'];
             $password = $this->data['User']['password'];
-            $this->Login->login($username, $password);
+            $this->Login->login($email, $password);
         }
     }
     
@@ -298,6 +310,53 @@ class UsersController extends AppController{
       }
       else {
         $this->redirect('login');
+      }
+    }
+
+    function create_password($email=null, $access_token=null){
+       if($this->data){
+        $email = $this->data['User']['email'];
+        $access_token = $this->data['access_token']['access_token'];
+
+        $user = $this->User->find('first', array('conditions'=>array( 'User.email'=>$email, 'User.access_token'=>$access_token)));
+        if( $user ){
+         
+            if($this->data['User']['password'] && strlen($this->data['User']['password']) >= 8){
+              if ($this->data['User']['password'] == $this->data['User']['confirm_password']){
+                $user['User']['password'] = md5($this->data['User']['password']);
+                //clear access token
+                $user['User']['access_token'] = null; 
+                if ($this->User->save($user, false) ){
+                  $this->Session->setFlash('Change Password successful!', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                  $this->redirect('profile');
+                }
+                else {
+                  $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                }
+              }
+              else {
+                  $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                }
+            }
+            else {
+              $this->Session->setFlash("Length of password is too short (8 - 30 charracters)", 'default',
+                array('class' => 'alert alert-dismissible alert-info'));
+            }
+        }
+      }
+      else {
+        if($access_token && $email){
+          $user = $this->User->find('first', array('conditions'=>array( 'User.email'=>$email, 'User.access_token'=>$access_token)));
+          if($user){
+            $this->data = $user;
+            $this->set('user', $user);
+
+          }
+          else $this->redirect("/");
+        }
+        else {
+          $this->redirect("/");
+        }
       }
     }
     /*
@@ -375,16 +434,19 @@ class UsersController extends AppController{
 
     
     function register(){
+      $this->layout = "default_new";
       $married_statuses = $this->MarriedStatus->find( 'list' );
       $this->set( 'married_statuses', $married_statuses);
 
-      $working_statuses = $this->WorkingStatus->find( 'list' );
-      $this->set( 'working_statuses', $working_statuses);
-
+      $works = $this->Work->find( 'list' );
+      $this->set( 'works', $works);
+      $careers = $this->Career->find('list');
+      $this->set('careers', $careers);
      
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
       if( $this->data ){
+        //print_r($this->data['ExpectArea']); die;
         $this->User->set( $this->data );
         $this->UserAddress->set( $this->data );
         $this->UserCompany->set( $this->data );
@@ -399,16 +461,18 @@ class UsersController extends AppController{
 
     }
     function register_confirmation(){
+      $this->layout = "default_new";
       $user = $this->Session->read( 'user_register' );
       if( $user ) {
           $user['User']['married_status'] = $this->MarriedStatus->getNameById($user['User']['married_status_id']);
-          // $user['User']['family_structure'] = $this->FamilyStructure->getNameById($user['User']['family_structure_id']);
-          $user['UserCompany']['working_status'] = $this->WorkingStatus->getNameById($user['UserCompany']['working_status_id']);
+          $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
           $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
 
           $this->set('user', $user);
+
           
           if($this->data){
+             //print_r($user['ExpectArea']); die;
              // print_r($this->data); die;
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
 
@@ -421,13 +485,31 @@ class UsersController extends AppController{
                 if( $this->User->save( $user, false ) ){
 
                   $user_id = $this->User->getLastInsertId();
-                  // print_r($user_id); die;
                   foreach ($user['ExpectArea'] as $item) {
                     $item['user_id'] = $user_id;
                     $this->ExpectArea->create();
                     $this->ExpectArea->save($item, false);
                   }
-                  
+                  //send mail to customer
+                  $Email = new CakeEmail("gmail");
+                  $Email->template('register_success', 'register');
+                  $Email->emailFormat('html');
+                  $Email->to($user['User']['email']);
+                  $Email->from('moos@nal.vn');
+                  $Email->subject("Registration");
+                  $Email->viewVars(array('user' => $user));
+                  $Email->send();
+
+                  //send mail to Admin
+
+                  // $Email = new CakeEmail("gmail");
+                  // $Email->template('register_success', 'register');
+                  // $Email->emailFormat('html');
+                  // $Email->to($user['User']['email']);
+                  // $Email->from('moos@nal.vn');
+                  // $Email->subject("Registration");
+                  // $Email->viewVars(array('user' => $user));
+                  // $Email->send();
 
                   $this->Session->setFlash('You has been register successful! ','default', array('class' => 'alert alert-dismissible alert-success'));
                   $this->redirect( "register_successful" );
@@ -452,8 +534,8 @@ class UsersController extends AppController{
             $married_statuses = $this->MarriedStatus->find( 'list' );
             $this->set( 'married_statuses', $married_statuses);
 
-            $working_statuses = $this->WorkingStatus->find( 'list' );
-            $this->set( 'working_statuses', $working_statuses);
+            $works = $this->Work->find( 'list' );
+            $this->set( 'works', $works);
 
            
             $prefs = $this->Pref->find('list');
@@ -468,20 +550,101 @@ class UsersController extends AppController{
     }
 
     function register_successful(){
+      $this->layout = null;
       $this->Session->delete('user_register');
     }
 
     function my_page(){
       $id = $this->s_user_id;
+      if($id){
      //echo $id; die;
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+      $this->data = $user;
+     //print_r($user['User']['gender']); die;
+      $married_statuses = $this->MarriedStatus->find( 'list' );
+      $this->set( 'married_statuses', $married_statuses);
+
+      $works = $this->Work->find( 'list' );
+      $this->set( 'works', $works);
+
+      $residences = $this->Residence->find('list');
+      $this->set('residences', $residences);
+
+      $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
+
+      $careers = $this->Career->find('list');
+      $this->set('careers', $careers);
+
+      $insurances = $this->Insurance->find('list');
+      $this->set('insurances', $insurances);
+      
+      $attachment_types = $this->AttachmentType->find('all');
+      $this->set('attachment_types', $attachment_types);
       $this->set('user', $user);
+
+      if($this->data){
+        // change status
+      }
+    }
+    else $this->redirect('login');
+
+    }
+
+    function update_basic_info(){
+      if($this->request->is('ajax')){
+        $married_statuses = $this->MarriedStatus->find( 'list' );
+        $this->set( 'married_statuses', $married_statuses);
+
+        $works = $this->Work->find( 'list' );
+        $this->set( 'works', $works);
+
+        $residences = $this->Residence->find('list');
+        $this->set('residences', $residences);
+
+        $prefs = $this->Pref->find('list');
+        $this->set('prefs', $prefs);
+
+        $careers = $this->Career->find('list');
+        $this->set('careers', $careers);
+
+        $insurances = $this->Insurance->find('list');
+        $this->set('insurances', $insurances);
+
+        $id = $this->s_user_id;
+       //echo $id; die;
+        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+        $this->set('user', $user);
+        if($user){
+
+            if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+            
+            if($this->User->save($this->data['User'], false) && $this->UserAddress->save($this->data['UserAddress'], false) && $this->UserCompany->save($this->data['UserCompany'], false)){
+              foreach ($this->data['ExpectArea'] as $item) {
+
+                $item['user_id'] = $id;
+                if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
+                  $this->ExpectArea->create();
+                  $this->ExpectArea->save($item, false);
+                }
+              }
+              //reload data
+              $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+              $this->set('user', $user);
+
+              $this->Session->setFlash('Basic Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+              $this->render('ajax_update_basic_info');
+            }
+          }
+        }
+      }
+
     }
 
     function edit_register_info(){
         $id = $this->s_user_id;
      //echo $id; die;
-      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' , 'FamilyStructure')));
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' )));
       $this->set('user', $user);
       if($user){
         
@@ -511,8 +674,8 @@ class UsersController extends AppController{
           $married_statuses = $this->MarriedStatus->find( 'list' );
           $this->set( 'married_statuses', $married_statuses);
 
-          $working_statuses = $this->WorkingStatus->find( 'list' );
-          $this->set( 'working_statuses', $working_statuses);
+          $works = $this->Work->find( 'list' );
+          $this->set( 'works', $works);
 
 
           $prefs = $this->Pref->find('list');

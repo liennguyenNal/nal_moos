@@ -17,7 +17,7 @@ class ContactsController extends AppController {
     }
 
     public function index(){
-    	//$this->layout = null;
+    	$this->layout = "default_new";
     	if($this->data){
            $this->Contact->set( $this->data );
            $valid = $this->Contact->validates();
@@ -25,8 +25,8 @@ class ContactsController extends AppController {
 
                $contact = $this->data;               
                if($this->Contact->save( $contact, false) ) {
-                	$this->Session->setFlash('Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
-                  $this->redirect("index");
+                	//$this->Session->setFlash('Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
+                  $this->redirect("contact_successful");
                }
 
            }
@@ -138,6 +138,10 @@ class ContactsController extends AppController {
     else {
       $this->data= $contact; 
     }
+  }
+
+  function contact_successful() {
+    $this->layout = null;
   }
 
 }

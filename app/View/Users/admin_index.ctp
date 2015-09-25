@@ -98,8 +98,8 @@
             <thead>
               <tr>
                 <th><input type="checkbox" id="chk-all"></th>
-                <th>ID</th>
-                <th>Username</th>
+                <th>No</th>
+                <th>Email ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>First Name Kana</th>
@@ -114,7 +114,7 @@
               <tr>
               <td><input type="checkbox" id="chk[]" name="ids[]" value="<?php echo $user['User']['id']?>" class="checkbox"></td>
                 <td><?php echo $i;?></td>
-                <td><?php if($user['User']['username'])echo $user['User']['username']; else echo "N/A" ;?></td>
+                <td><?php echo $user['User']['email'] ?></td>
                 <td><?php echo $user['User']['first_name'] ?></td>
                 <td><?php echo $user['User']['last_name'] ?></td>
                  <td><?php echo $user['User']['first_name_kana'] ?></td>

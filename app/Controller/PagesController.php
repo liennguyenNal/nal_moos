@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Article');
+	public $uses = array('Article',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress' , 'MarriedStatus');
 
 /**
  * Displays a view
@@ -75,18 +75,19 @@ class PagesController extends AppController {
 	}
 
 	public function index(){
-		//$this->layout = null;
+		$this->layout = 'default_new';
 		//print_r("this is hom page"); die;
 		// $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>4));
 		// $this->set('articles', $articles);
 
 	}
 	public function faq(){
-		//$this->layout = null;
+		$this->layout = 'default_new';
 		//print_r("this is hom page"); die;
 		$this->set('menu','faq');
 	}
 	public function campaign(){
+		$this->layout = 'default_new';
 		$this->layout = null;
 		//print_r("this is hom page"); die;
 		//$this->set('menu','campaign');
@@ -94,6 +95,23 @@ class PagesController extends AppController {
 	}
 	public function landing_page(){
 		$this->layout = null;
-		
+		//$this->layout = new Layout();
+		$married_statuses = $this->MarriedStatus->find( 'list' );
+      	$this->set( 'married_statuses', $married_statuses);
+
+      
+     
+      	$prefs = $this->Pref->find('list');
+      	$this->set('prefs', $prefs);
+      	if( $this->data ){
+        	$this->User->set( $this->data );
+        	$this->UserAddress->set( $this->data );
+        	$this->UserCompany->set( $this->data );
+
+        if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+          $this->Session->write( 'user_register', $this->data );
+          $this->redirect( "register_confirmation" );
+        }
+      }
 	}
 }

@@ -12,4 +12,11 @@ $(document).ready(function(){
 		$("#menu-page ul").toggle(200);
 	});
 	
+	$(".icon-scroll").click(function(){
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;	
+	});
+	
+	$('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
+	
 });

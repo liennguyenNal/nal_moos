@@ -73,8 +73,5 @@
     </div>
   </div>
   <div class="block-link-page">
-    <a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
-  </div>
-  <div class="block-menu-footer">
-    <?php echo $this->element('menu-footer'); ?>s
+    <a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-home.png" alt="無料会員登録"/></a>
   </div>

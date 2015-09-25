@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Honoka</title>
+  <title>MOOS - システム管理</title>
 
   <link rel="stylesheet" type="text/css" href="<?php echo $this->webroot; ?>css/admin/bootstrap.css">
   <script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>

@@ -20,6 +20,7 @@
  */
 App::uses('Controller', 'Controller');
 
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Application Controller
  *
@@ -38,7 +39,7 @@ class AppController extends Controller {
     var $s_email = "";
     var $uses = array('User', 'Administrator');
     var $components = array('Login', 'Session', 'Upload');
-    public $helpers = array('Html', 'Form', 'Session');
+    public $helpers = array('Html', 'Form', 'Session', 'Js' => array('Jquery'));
     public function beforeFilter(){
         parent::beforeFilter();
         //Configure::write('Config.language', 'jpa');
@@ -145,5 +146,15 @@ class AppController extends Controller {
             $this->Session->setFlash($msg, 'default',
                 array('class' => 'alert alert-info'));
             
+    }
+
+    
+    function _send_mail($from, $to, $subject, $content){
+
+      $Email = new CakeEmail();
+      $Email->from(array($from => 'MOOS Site'));
+      $Email->to($to);
+      $Email->subject($subject);
+      $Email->send($content);
     }
 }

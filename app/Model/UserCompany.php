@@ -12,61 +12,67 @@ class UserCompany extends AppModel {
 
     var $validate = array( 
         
-        'name' => array(
+        'work_id' => array(
             'rule' => 'notBlank',
-            'on'=>'update'
+            'message'=>'Choose a work'
             
-        ),   
-        'name_kana' => array(
+        ) ,
+        'insurance_id' => array(
             'rule' => 'notBlank',
-           	'on'=>'update'
-        ),  
-        'post_num' =>array(
-        	'required'=>true,
-        	'on'=>'update'
-        ),
-        'address' =>array(
-        	'required'=>true,
-        	'on'=>'update'
-        ),
-        'address_kana' =>array(
-        	'required'=>true,
-        	 'message'=> "This field is required",	
-        	'on'=>'update'
-        ),
-
-        'year_worked' => array(
-            'rule1'=>array('rule' => 'numeric',
-                'message'=>'Must be a numeric'
-                ),
-            'rule2'=>array(
-                     'rule' => 'notBlank',
-                     'message'=> "This field is required"
-                )
+            'message'=>'Choose a Insurance Type'
             
-        ),   
+        ) 
 
-        'month_worked' => array(
-            'rule1'=>array('rule' => 'numeric',
-                'message'=>'Must be a numeric'
-                ),
-            'rule2'=>array(
-                     'rule' => 'notBlank',
-                     'message'=> "This field is required"
-                )
-            
-        ),
+        // 'name_kana' => array(
+        //     'rule' => 'notBlank',
+        //    	'on'=>'update'
+        // ),  
+        // 'post_num' =>array(
+        // 	'required'=>true,
+        // 	'on'=>'update'
+        // ),
+        // 'address' =>array(
+        // 	'required'=>true,
+        // 	'on'=>'update'
+        // ),
+        // 'address_kana' =>array(
+        // 	'required'=>true,
+        // 	 'message'=> "This field is required",	
+        // 	'on'=>'update'
+        // ),
 
-        'tax_of_month' => array(
-            'rule1'=>array('rule' => 'numeric',
-                'message'=>'Must be a numeric'
-                ),
-            'rule2'=>array(
-                     'rule' => 'notBlank',
-                     'message'=> "This field is required"
-                )
+        // 'year_worked' => array(
+        //     'rule1'=>array('rule' => 'numeric',
+        //         'message'=>'Must be a numeric'
+        //         ),
+        //     'rule2'=>array(
+        //              'rule' => 'notBlank',
+        //              'message'=> "This field is required"
+        //         )
             
-        ),      
+        // ),   
+
+        // 'month_worked' => array(
+        //     'rule1'=>array('rule' => 'numeric',
+        //         'message'=>'Must be a numeric'
+        //         ),
+        //     'rule2'=>array(
+        //              'rule' => 'notBlank',
+        //              'message'=> "This field is required"
+        //         )
+            
+        // ),
+
+        // 'tax_of_month' => array(
+        //     'rule1'=>array('rule' => 'numeric',
+        //         'message'=>'Must be a numeric'
+        //         ),
+        //     'rule2'=>array(
+        //              'rule' => 'notBlank',
+        //              'message'=> "This field is required"
+        //         )
+            
+        // ),      
 
     );
 

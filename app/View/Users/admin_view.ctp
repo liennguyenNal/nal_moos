@@ -203,7 +203,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $working_statuses, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+                    echo $this->Form->select('UserCompany.working_status_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
                   ?>
                   </div>
                 </div>
@@ -239,8 +239,8 @@
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*</span></label>
                   <div class="col-lg-10" >
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
+                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false, 'value'=>$item["post_num_1"]))?>
+                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false, 'value'=>$item["post_num_2"]))?>
                     
                    
                   </div>
@@ -249,21 +249,21 @@
                   <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*</span></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
+                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'value'=>$item["pref_id"] , 'empty'=>'青森県'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                     <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
+                     <?php echo $this->Form->input('ExpectArea.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["city"]))?>
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">地城<span style="color:red">*</span></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
+                    <?php echo $this->Form->input("ExpectArea.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["address"]))?>
                   </div>
                 </div>
               </fieldset>

@@ -45,14 +45,12 @@ class LoginComponent extends Object
         
             if($this->session['Administrator'])
             {
-                //echo 121212;die;    
                 $this->controller->s_admin_id = $this->session['Administrator']['id'];           
                 $this->controller->s_email = $this->session['Administrator']['email'] ;
                 $this->controller->s_first_name =  $this->session['Administrator']['first_name'] ;
                 $this->controller->s_last_name =  $this->session['Administrator']['last_name'] ;
                 $this->controller->s_username = $this->session['Administrator']['username'] ;
                 $this->controller->isAdmin = 1;
-                //print_r($this->session['User']); die;
             }
         }
     }
@@ -63,25 +61,29 @@ class LoginComponent extends Object
      * @param text $username
      * @param text $password
      */
-    function login($username, $password)
+    function login($email, $password)
     {
-    	//echo $password; die;
         $user = $this->controller->User->find('first', array ( 
-            'fields'=>array ( 'id', 'username', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana' ),
-            'conditions'=>array( "User.username" => $username, "User.password" => md5($password) ) ) );
-    	//print_r($user);die;
+            'fields'=>array ( 'id', 'email', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana' ),
+            'conditions'=>array( "User.email" => $email, "User.password" => md5($password) ) ) );
+    
     	if($user)
     	{
     		
     		$this->session = $user;
     		
-    		$this->controller->Session->write('User', $this->session);
+    		$this->controller->Session->write('User', $this->session);    		
     		
-    		//update last login
-    		//$this->controller->User->query("update users set last_login_date=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user[0]['User']['id'] . "'");
+    		
     		if ($user){
-               //echo 111; die;
-                $this->controller->redirect('/users/profile');
+               //  $is_first_login = false;
+               //  if(!$user['User']['last_login_time'])$is_first_login = true;
+               // //update last login IP & time
+               //  $this->controller->User->query("update users set last_login_time=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user['User']['id'] . "'");
+               //  if($is_first_login) 
+               //      $this->controller->redirect('/users/create_password');
+               //  else 
+                    $this->controller->redirect('/users/my_page');
             }
     		else {
                     
@@ -107,20 +109,19 @@ class LoginComponent extends Object
         $user = $this->controller->Administrator->find('first', array ( 
             'fields'=>array ( 'id', 'email', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana' ),
             'conditions'=>array( "Administrator.username" => $username, "Administrator.password" => md5($password))));
-        //echo $username; die;
+        //echo $password; die;
         if($user)
         {
             
             $this->session = $user;
             
             $this->controller->Session->write('Administrator', $this->session);
-            //print_r($this->session); die;
-            
+
             //update last login
             //$this->controller->User->query("update users set last_login_date=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user[0]['User']['id'] . "'");
             if ($user){
-               //echo "/admin/users/profile";die;
-                $this->controller->redirect('/admin/users');
+               
+                $this->controller->redirect('/admin/users/');
                
             }
             else {                    

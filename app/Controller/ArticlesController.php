@@ -153,6 +153,7 @@ class ArticlesController extends AppController{
     }
 
     function index(){
+      
       $conditions = array();
       if($this->request->query['keyword']){
         $keyword = $this->request->query['keyword'];
