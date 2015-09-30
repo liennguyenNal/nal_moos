@@ -50,7 +50,7 @@
               <th>Title</th>
               <th>Short Content</th>
               <th>Created</th>
-              
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>

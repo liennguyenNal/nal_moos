@@ -15,14 +15,8 @@
   <section class="container">
     <div class="login">
       <h1>Admin Login - Moos</h1>
-      <?php if($login_error_msg){?> 
-
-      <div class="error">
-            <?php echo $login_error_msg;?>
-      </div>
-      <?php } ?>
       <?php echo $this->Form->create("User", array('action'=>'login')) ?>
-        <p><input type="text" name="data[User][username]" value="<?php echo $username;?>" placeholder="Username"></p>
+        <p><input type="text" name="data[User][username]" value="" placeholder="Username"></p>
         <p><input type="password" name="data[User][password]" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>

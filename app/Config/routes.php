@@ -30,12 +30,15 @@
 
 	Router::connect('/contact', array('controller' => 'contacts', 'action' => 'index'));
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'faq'));
-	Router::connect('/campaign', array('controller' => 'pages', 'action' => 'campaign'));
 	Router::connect('/register', array('controller' => 'users', 'action' => 'register'));
+	Router::connect('/create_password/:email/:access_token', array('controller' => 'users', 'action' => 'create_password'));
+	Router::connect('/change_password/:email/:access_token', array('controller' => 'users', 'action' => 'change_password'));
+	Router::connect('/email_change_password', array('controller' => 'users', 'action' => 'email_change_password'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/pages/landing_page', array('controller' => 'pages', 'action' => 'landing_page'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

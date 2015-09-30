@@ -43,6 +43,9 @@ class AppController extends Controller {
     public function beforeFilter(){
         parent::beforeFilter();
         //Configure::write('Config.language', 'jpa');
+        
+        Configure::write('Config.language', 'ja');
+
         if(isset($this->params['prefix']))
         {
               

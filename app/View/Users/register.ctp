@@ -26,24 +26,24 @@
         <div class="content">
           <div class="container-fluid">
             <div class="content-from">
-            <?php echo $this->element('flash'); ?>
-            <?php echo $this->Form->create('User', array('action'=>'/register')); ?>
+              <?php echo $this->element('flash'); ?>
+              <?php echo $this->Form->create('User', array('action'=>'/register')); ?>
                 <div class="content-from-block">
                   <div class="content-from-how">
                     <table class="from">
                       <tbody>
                         <tr>
-                          <td class="label-text"><label>申込人氏名</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.username'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
                               <div class="div-style">
-                                <span class="w-auto">姓</span>
+                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
                                 <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'山田','div'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w-auto">名</span>
+                                <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
                                 <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'雪','div'=>false))
                                 ?>
@@ -51,13 +51,13 @@
                             </div>
                             <div class="block-input">
                               <div class="div-style">
-                                <span class="w-auto">セイ</span>
+                                <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
                                 <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤマダ','div'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w-auto">メイ</span>
+                                <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
                                 <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ユキ','div'=>false))
                                 ?>
@@ -66,13 +66,13 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>性別</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.gender'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="form-radio">
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <?php 
-                                    echo $this->Form->radio('gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd'));
+                                    echo $this->Form->radio('gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd'));
                                   ?>
                                 </div>
                               </div>
@@ -80,29 +80,29 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>生年月日</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.birthday'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="select">
                               <?php 
                                 $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
                                 echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()'));
                               ?>
-                              <span>年</span>
+                              <span><?php echo __('user.register.year'); ?></span>
                               <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
                                 echo $this->Form->select('month_of_birth', $months, array('id'=>'month'));
                               ?>
-                              <span>月</span>
+                              <span><?php echo __('user.register.month'); ?></span>
                               <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
                                 echo $this->Form->select('day_of_birth', $dates, array('id'=>'day'));
                               ?>
-                              <span>日</span>
+                              <span><?php echo __('user.register.day'); ?></span>
                               <!-- <span class="style">（00歳）</span> -->
                               <span class="style" id="s-age">0</span>
                               <?php echo $this->Form->input('age_of_birth', array('type'=>'hidden', 'id'=>"age", 'label'=>false, 'class'=>'w198', "placeholder"=>'00','div'=>false))
                               ?>
-                              <span class="style">歳</span>
+                              <span class="style"><?php echo __('user.register.age'); ?></span>
                               <!-- Script tinh tuoi -->
                               <script type="text/javascript">
                                 function calculate_age(){
@@ -117,7 +117,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>婚姻</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.married'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="form-radio">
                               <div class="form-w">
@@ -131,10 +131,10 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>現住所</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
-                              <span class="w-auto1">〒</span>
+                              <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
                               <?php 
                                 echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
                               ?>
@@ -142,7 +142,7 @@
                               <?php 
                                 echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>'0001','div'=>false))
                               ?>
-                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));">郵使番号から住所を検索</a>
+                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                               <!-- Script tim dia chi buu dien -->
                               <script type="text/javascript">
                                 function find_address(obj){
@@ -160,7 +160,7 @@
                               <!-- End script -->
                             </div>
                             <div class="block-input">
-                              <span class="w78">都道府県</span>
+                              <span class="w78"><?php echo __('user.register.pref'); ?></span>
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
@@ -169,20 +169,20 @@
                               </div>
                             </div>
                             <div class="block-input">
-                              <span class="w78">市区町村</span>
+                              <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
                               <?php 
                                 echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'千代田区神田多町'));
                               ?>
                             </div>
                             <div class="block-input">
-                              <span class="w78">番地</span>
+                              <span class="w78"><?php echo __('user.register.street'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="2-5-1"> -->
                               <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>'2-5-1'))
                               ?>
                             </div>
                             <div class="block-input">
-                              <span class="w78">建物</span>
+                              <span class="w78"><?php echo __('user.register.house'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="神田ビルディング2001号"> -->
                               <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'神田ビルディング2001号','div'=>false))
                               ?>
@@ -190,17 +190,17 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>婚姻</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.phone'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input fix-padding">
                               <div class="div-style">
-                                <span class="w78">携帯電話</span>
+                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="09012345678"> -->
                                 <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w43">自宅</span>
+                                <span class="w43"><?php echo __('user.register.homephone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="0312345678"> -->
                                 <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'0312345678','div'=>false))
                                 ?>
@@ -210,7 +210,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>メールアドレス</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
                             <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
@@ -219,7 +219,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>メールアドレス（確認）</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.confirmemail'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
                             <?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
@@ -227,7 +227,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>職業</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.work'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="select">
                               <?php 
@@ -237,28 +237,28 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>勤続年数</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.experience'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
                               <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
                               <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
                               ?>
-                              <span class="w-auto1">年</span>
+                              <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                               <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
                               <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
                               ?>
-                              <span class="w-auto1">月</span>
+                              <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
                             </div>
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>税込月収</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'00'))
+                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'00'))
                               ?>
-                              <span class="w-auto1">円</span>
+                              <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
                           </td>
                         </tr>
@@ -275,10 +275,10 @@
                     <table class="from">
                       <tbody>
                         <tr>
-                          <td class="label-text"><label>希望エリア1</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.area') ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
-                              <span class="w-auto1">〒</span>
+                              <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
                               <!-- <input class="w40" type="text" name="" value="" placeholder="101"> -->
                               <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
                               ?>
@@ -287,10 +287,10 @@
                               <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0000','div'=>false))
                               ?>
                               <!-- <a href="#" class="style-link">郵便番号から住所を検索</a> -->
-                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));">郵使番号から住所を検索</a>
+                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                             </div>
                             <div class="block-input">
-                              <span class="w78">都道府県</span>
+                              <span class="w78"><?php echo ('user.register.pref'); ?></span>
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
@@ -299,13 +299,13 @@
                               </div>
                             </div>
                             <div class="block-input">
-                              <span class="w78">市区町村</span>
+                              <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
                               <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'千代田区神田多町','div'=>false))
                               ?>
                             </div>
                             <div class="block-input">
-                              <span class="w78">地域</span>
+                              <span class="w78"><?php echo __('user.register.street'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="1〜4丁目、◯◯◯中学校区"> -->
                               <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'1〜4丁目、◯◯◯中学校区','div'=>false))
                               ?>
@@ -318,12 +318,12 @@
                   </section>
 
                   <div class="link-form" id='remove' style="display:none">
-                    <a href="javascript:void(0)" class="style-link" id='btn-remove' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;" onclick="javascript:_remove($(this));"> - 希望エリアを追加</a>
+                    <a href="javascript:void(0)" class="style-link" id='btn-remove' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;" onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
                   </div>
 
                   <div class="link-form">
                     <!-- <a href="#">希望エリアを追加</a> -->
-                    <a href="javascript:void(0)" class="style-link" id='btn-add' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;"> + 希望エリアを追加</a>
+                    <a href="javascript:void(0)" class="style-link" id='btn-add' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;"><?php echo __('user.register.add'); ?></a>
                   </div>
                   
                   <!-- Script add new area -->

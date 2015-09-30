@@ -27,18 +27,18 @@
                       <tbody>
                         <tr>
                           <td class="label-text">
-                            <label>お名前</label><span>必須</span>
+                            <label><?php echo __('user.contact.username'); ?></label><span><?php echo __('global.require'); ?></span>
                           </td>
                           <td>
                             <div class="block-input">
                               <div class="div-style">
-                                <span class="w-auto">姓</span>
+                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
                                 <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'山田','div'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w-auto">名</span>
+                                <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
                                 <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'雪','div'=>false))
                                 ?>
@@ -46,13 +46,13 @@
                             </div>
                             <div class="block-input">
                               <div class="div-style">
-                                <span class="w-auto">セイ</span>
+                                <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
                                 <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤマダ','div'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w-auto">メイ</span>
+                                <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
                                 <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ユキ','div'=>false))
                                 ?>
@@ -61,30 +61,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>問合せ分類</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.contact.type-company'); ?></label><span>必須</span></td>
                           <td>
                             <div class="form-radio">
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <!-- <input type="radio" name="sex" value="1" id="1"><label for="1">男性</label> -->
                                   <?php 
-                                    echo $this->Form->radio('genre', array('1'=>"一殷のお客様"), array('label'=>false, 'legend'=>false, 'default'=>false));
-                                  ?>
-                                </div>
-                                <div class="block-input-radio">
-                                  <!-- <input type="radio" name="sex" value="1" id="2"><label for="2">女性</label> -->
-                                  <?php 
-                                    echo $this->Form->radio('genre', array('2'=> "メディア関係"), array('label'=>false, 'legend'=>false, 'default'=>false));
-                                  ?>
-                                </div>
-                                <div class="block-input-radio">
-                                  <?php 
-                                    echo $this->Form->radio('genre', array('3'=> "建設会社"), array('label'=>false, 'legend'=>false, 'default'=>false));
-                                  ?>
-                                </div>
-                                <div class="block-input-radio">
-                                  <?php 
-                                    echo $this->Form->radio('genre', array('4'=> "その他"), array('label'=>false, 'legend'=>false, 'default'=>false));
+                                    echo $this->Form->radio('type', array('1'=> __('user.contact.customer'), '2'=> __('user.contact.marketing'), '3' => __('user.contact.constructure'), '4' => __('global.other')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd'));
                                   ?>
                                 </div>
                               </div>
@@ -92,7 +76,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>会社名（法人の場合）</label></td>
+                          <td class="label-text"><label><?php echo __('user.contact.company-name'); ?></label></td>
                           <td>
                             <div class="block-input">
                               <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
@@ -102,17 +86,17 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>電話番号</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label><span>必須</span></td>
                           <td>
                             <div class="block-input fix-padding">
                               <div class="div-style">
-                                <span class="w78">携帯電話</span>
+                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="09012345678"> -->
                                 <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'09012345678'))
                                 ?>
                               </div>
                               <div class="div-style">
-                                <span class="w43">自宅</span>
+                                <span class="w43"><?php echo __('user.register.homephone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="0312345678"> -->
                                 <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'0312345678'))
                                 ?>
@@ -122,7 +106,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>メールアドレス</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
                             <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'placeholder'=>'sample@gmail.com'))
@@ -131,7 +115,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>メールアドレス（確認）</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.register.confirmemail'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
                             <?php echo $this->Form->input('email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'placeholder'=>'sample@gmail.com'))
@@ -139,7 +123,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label>お問い合わせ内容</label><span>必須</span></td>
+                          <td class="label-text"><label><?php echo __('user.contact.content'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <textarea rows="4" cols="50"></textarea> -->
                             <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'rows'=>4, 'cols'=> 50, 'div'=>false))

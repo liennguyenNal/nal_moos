@@ -1,0 +1,181 @@
+
+msgid "user.register.username"
+msgstr "申込人氏名"
+
+msgid "user.register.firstname"
+msgstr "姓"
+
+msgid "user.register.lastname"
+msgstr "名"
+
+msgid "user.register.firstnamekana"
+msgstr "セイ"
+
+msgid "user.register.lastnamekana"
+msgstr "メイ"
+
+msgid "user.register.gender"
+msgstr "性別"
+
+msgid "global.require"
+msgstr "必須"
+
+msgid "user.register.male"
+msgstr "男性"
+
+msgid "user.register.female"
+msgstr "女性"
+
+msgid "user.register.birthday"
+msgstr "生年月日"
+
+msgid "user.register.year"
+msgstr "年"
+
+msgid "user.register.month"
+msgstr "月"
+
+msgid "user.register.day"
+msgstr "日"
+
+msgid "user.register.age"
+msgstr "歳"
+
+msgid "user.register.married"
+msgstr "婚姻"
+
+msgid "user.register.address"
+msgstr "現住所"
+
+msgid "user.register.post"
+msgstr "〒"
+
+msgid "user.register.findaddress"
+msgstr "郵使番号から住所を検索"
+
+msgid "user.register.pref"
+msgstr "都道府県"
+
+msgid "user.register.city"
+msgstr "市区町村"
+
+msgid "user.register.street"
+msgstr "番地"
+
+msgid "user.register.house"
+msgstr "建物"
+
+msgid "user.register.phone"
+msgstr "婚姻"
+
+msgid "user.register.mobiphone"
+msgstr "携帯電話"
+
+msgid "user.register.homephone"
+msgstr "自宅"
+
+msgid "user.register.1or2"
+msgstr "※どちらかひとつ必須"
+
+msgid "user.register.email"
+msgstr "メールアドレス"
+
+msgid "user.register.confirmemail"
+msgstr "メールアドレス（確認）"
+
+msgid "user.register.work"
+msgstr "職業"
+
+msgid "user.register.experience"
+msgstr "勤続年数"
+
+msgid "user.register.tax"
+msgstr "税込月収"
+
+msgid "user.register.yen"
+msgstr "円"
+
+msgid "user.register.area"
+msgstr "希望エリア"
+
+msgid "user.register.remove"
+msgstr " - 希望エリアを追加"
+
+msgid "user.register.add"
+msgstr " + 希望エリアを追加"
+
+msgid "user.register.submit"
+msgstr "変更する"
+
+msgid "user.register.cancle"
+msgstr "キャンセル"
+
+
+
+msgid "user.contact.username"
+msgstr "お名前"
+
+msgid "user.contact.type-company"
+msgstr "問合せ分類"
+
+msgid "user.contact.customer"
+msgstr "一殷のお客様"
+
+msgid "user.contact.marketing"
+msgstr "メディア関係"
+
+msgid "user.contact.constructure"
+msgstr "建設会社"
+
+msgid "global.other"
+msgstr "その他"
+
+msgid "user.contact.company-name"
+msgstr "会社名（法人の場合）"
+
+msgid "user.contact.company-phone"
+msgstr "電話番号"
+
+msgid "user.contact.content"
+msgstr "お問い合わせ内容"
+
+
+msgid "user.login.id"
+msgstr "ID"
+
+msgid "global.password"
+msgstr "パスワード"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

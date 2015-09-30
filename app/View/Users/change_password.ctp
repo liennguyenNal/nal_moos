@@ -1,58 +1,128 @@
-
-<div class="page-header">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="bs-component">
-           <ul class="breadcrumb">
-              <li><a href="#">Home</a></li>
-              
-              <li><a href="<?php echo $this->webroot;?>admin/users/profile">My Profile</a></li>
-              <li class="active">Change Password</li>
-            </ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[:. MOOS .:]</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="mô tả website" />
+  <meta name="keywords" content="những từ khóa của website bạn" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- <link rel="icon" href="img/front/favicon.ico" type="image/x-icon" /> -->
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+</head>
+<body class="page">
+  <div id="wrapper">    
+    <header id="head-container">
+      <div class="container-fluid">
+        <h1 id="logo" class="float-none">
+          <a href="<?php echo $this->webroot; ?>"></a>
+        </h1>
+      </div>
+    </header>
+        
+    <section id="content-container">
+      <div class="welcome-sup-page">
+        <div class="container-fluid">
+          <h2>ようこそゲスト様</h2>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="well bs-component">
-          <?php echo $this->element('flash');?>
-         <!--  <form class="form-horizontal"> -->
-          <?php echo $this->Form->create("User", array('action'=>'change_password', 'class'=>'form-horizontal')) ?>
-            <fieldset>
-              <legend>Change Your Password</legend>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Old Password</label>
-                <div class="col-lg-10">
-                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('old_password', array('type'=>'password', 'id'=>"old_password", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Old password','div'=>false))?>
-                </div>
-              </div>
-              
-             <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">New Password</label>
-                <div class="col-lg-10">
-                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('password', array('type'=>'password', 'id'=>"password", 'label'=>false, 'class'=>'form-control', "placeholder"=>'New Password','div'=>false))?>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Confirm Password</label>
-                <div class="col-lg-10">
-                  <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('confirm_password', array('type'=>'password', 'id'=>"confirm_password", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Confirm New Password','div'=>false))?>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="reset" class="btn btn-default" onclick="location.href='<?php echo $this->webroot;?>admin/users/profile'">キャンセル</button>
-                  <button type="submit" class="btn btn-primary">保存</button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+      <div class="title-sup-page">
+        <div class="container-fluid">
+          <h3>パスワード設定</h3>
         </div>
       </div>
-      
+      <div class="from-login">
+        <div class="container-fluid">
+          <div class="from-ldpage">
+            <div class="content">
+              <div class="container-fluid">
+                <div class="content-from">
+                  <?php echo $this->element('flash');?>
+                  <?php echo $this->Form->create("User", array('action'=>'change_password')) ?>
+                    <div class="content-from-block">
+                      <div class="content-from-how">
+                        <table class="from">
+                          <tbody>
+                            <tr>
+                              <td class="label-text"><label>パスワード</label><span>必須</span></td>
+                              <td>
+                                <div class="block-input fix-padding">
+                                  <div class="div-style">
+                                    <!-- <input disabled class="w198" type="text" name="" value="※半角英数字、8文字以上" placeholder=""> -->
+                                    <?php echo $this->Form->input('password', array('type'=>'password', 'id'=>"password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))?>
+                                    <span class="style">※半角英数字、8文字以上</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="label-text"><label>パスワード（確認）</label><span>必須</span></td>
+                              <td>
+                                <div class="block-input fix-padding">
+                                  <div class="div-style">
+                                    <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
+                                    <?php echo $this->Form->input('confirm_password', array('type'=>'password', 'id'=>"confirm_password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))?>
+                                    <span class="style">※半角英数字、8文字以上</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p class="note note-fix">※パスワードは、半角英数（a-z）、数字（0-9）、及びピリオド（.）、アンダースコア（_）、ダッシュ（-）を使用することができます。</br>アルファベットと数字を混在させてください。先頭の文字はアルファベットまたは数字にしてください。ピリオドを連続して使用することはできません。</p>
+                      <div class="block-note">
+                        <div class="block-button">
+                          <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/text-from-a.png" alt="送信する"/></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="block-menu-footer">
+    <div class="container-fluid">
+      <ul>
+        <li><a href="#">家賃でもらえる家とは</a></li>
+        <li><a href="#">申し込みの流れ</a></li>
+        <li><a href="<?php echo $this->webroot; ?>faq">よくある質問</a></li>
+        <li><a href="#">仮審査申し込み</a></li>
+        <li><a href="<?php echo $this->webroot; ?>contact">お問い合わせ</a></li>
+        <li><a href="#">運営会社</a></li>
+        <li><a href="#">個人情報保護方針</a></li>
+      </ul>
     </div>
   </div>
+  <footer id="footer-container" class="footer-page">
+    <div class="container-fluid">   
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <img src="<?php echo $this->webroot; ?>img/front/footer.png" alt=""/>
+          <p>Copyright © RENESYS All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+</body>
+</html>
+
+

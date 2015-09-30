@@ -1,2 +1,2 @@
-1526983553
-a:15:{i:0;s:13:"administrator";i:1;s:15:"approved_rounds";i:2;s:8:"articles";i:3;s:7:"careers";i:4;s:6:"cities";i:5;s:8:"contacts";i:6;s:17:"family_structures";i:7;s:18:"health_insurrances";i:8;s:12:"user_address";i:9;s:14:"user_companies";i:10;s:10:"user_debts";i:11;s:14:"user_guardians";i:12;s:13:"user_parkings";i:13;s:14:"user_relations";i:14;s:5:"users";}
+1529828251
+a:21:{i:0;s:13:"administrator";i:1;s:8:"articles";i:2;s:16:"attachment_types";i:3;s:7:"careers";i:4;s:6:"cities";i:5;s:8:"contacts";i:6;s:12:"expect_areas";i:7;s:10:"insurances";i:8;s:16:"married_statuses";i:9;s:5:"prefs";i:10;s:10:"residences";i:11;s:14:"user_addresses";i:12;s:16:"user_attachments";i:13;s:14:"user_companies";i:14;s:15:"user_guarantors";i:15;s:14:"user_guardians";i:16;s:13:"user_partners";i:17;s:14:"user_relations";i:18;s:5:"users";i:19;s:5:"works";i:20;s:8:"zipcodes";}

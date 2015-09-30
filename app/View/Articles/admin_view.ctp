@@ -1,3 +1,4 @@
+<?php //var_dump($article['Article']['large_image']); die; ?>
 <div class="page-header">
   <div class="row">
     <div class="col-lg-4">

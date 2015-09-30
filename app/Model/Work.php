@@ -4,7 +4,7 @@ class Work extends AppModel{
 
 	 function getNameById($id){
 	 	$item = $this->read(null, $id);
-	 	return $item['WorkingStatus']['name'];
+	 	return $item['Work']['name'];
 	 }
 
 }

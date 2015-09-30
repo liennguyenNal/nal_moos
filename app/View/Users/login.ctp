@@ -51,14 +51,14 @@
                 <div class="container-fluid">
                   <div class="content-from">
                     <div class="content-from-block">
-                      <p class="note">パスワードを忘れた方は<a href="forgot_password">こちら</a>
+                      <p class="note">パスワードを忘れた方は<a href="reset_password">こちら</a>
                         </br>会員登録がお済みでない方は<a href="register">こちら</a>
                       </p>
                       <div class="content-from-how">
                         <table class="from">
                           <tbody>
                             <tr>
-                              <td class="label-text"><label>ID</label><span>必須</span></td>
+                              <td class="label-text"><label><?php echo __('user.login.id'); ?></label><span><?php echo __('global.require'); ?></span></td>
                               <td>
                                 <div class="block-input">
                                   <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
@@ -67,7 +67,7 @@
                               </td>
                             </tr>
                             <tr>
-                              <td class="label-text"><label>パスワード</label><span>必須</span></td>
+                              <td class="label-text"><label><?php echo __('global.password'); ?></label><span><?php echo __('global.require'); ?></span></td>
                               <td>
                                 <div class="block-input">
                                   <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->

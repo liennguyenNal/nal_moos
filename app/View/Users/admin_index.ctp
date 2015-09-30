@@ -14,7 +14,6 @@
       <div class="col-lg-12">
         <button type="button" class="btn btn-primary" id="btn-export" > Export CSV</button>
      </div>
-     
    </div>
     <div class="col-lg-12" style="padding-top:20px">
       

@@ -58,26 +58,26 @@
             <tr>
               <th>#</th>
               <th>Email</th>
-              <th>Name</th>
-              <th>Title</th>
+              <th>Full Name</th>
+              <th>Company</th>
               <th>Created</th>
-              
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
           <?php $i = 0;
-          	foreach ($contacts as $contact) { 
-          	$i++;
-          	?>
+            foreach ($contacts as $contact) { 
+            $i++;
+            ?>
             <tr>
               <td><?php echo $i;?></td>
               <td><?php echo $contact['Contact']['email'] ?></td>
-              <td><?php echo $contact['Contact']['name'] ?></td>
-              <td><?php echo $contact['Contact']['title'] ?></td>
+              <td><?php echo $contact['Contact']['first_name'].' '.$contact['Contact']['last_name']?></td>
+              <td><?php echo $contact['Contact']['company'] ?></td>
               
               <td><?php echo $contact['Contact']['created'] ?></td>
-              
+              <td><?php if($contact['Contact']['status']==1){echo 'No Processing';} if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></td>
               <td><a href="<?php echo $this->webroot;?>admin/contacts/delete/<?php echo $contact['Contact']['id'] ?>" onclick="return confirm('Do you want to delete this contact')">Delete</a> &nbsp; <a href="<?php echo $this->webroot;?>admin/contacts/view/<?php echo $contact['Contact']['id'] ?>">View</a> </td>
             </tr>
           <?php } ?>

@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Article',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress' , 'MarriedStatus');
+	public $uses = array('Article',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress' , 'MarriedStatus', 'Work', 'Career');
 
 /**
  * Displays a view
@@ -95,22 +95,24 @@ class PagesController extends AppController {
 	}
 	public function landing_page(){
 		$this->layout = null;
-		//$this->layout = new Layout();
-		$married_statuses = $this->MarriedStatus->find( 'list' );
+      	$married_statuses = $this->MarriedStatus->find( 'list' );
       	$this->set( 'married_statuses', $married_statuses);
-
-      
+      	$works = $this->Work->find( 'list' );
+        $this->set( 'works', $works);
+      	$careers = $this->Career->find('list');
+      	$this->set('careers', $careers);
      
       	$prefs = $this->Pref->find('list');
       	$this->set('prefs', $prefs);
       	if( $this->data ){
+        	//print_r($this->data['ExpectArea']); die;
         	$this->User->set( $this->data );
         	$this->UserAddress->set( $this->data );
         	$this->UserCompany->set( $this->data );
 
         if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
-          $this->Session->write( 'user_register', $this->data );
-          $this->redirect( "register_confirmation" );
+        	$this->Session->write( 'user_register', $this->data );
+        	$this->redirect( "register_confirmation" );
         }
       }
 	}

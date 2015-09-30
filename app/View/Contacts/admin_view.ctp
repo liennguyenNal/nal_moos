@@ -1,14 +1,15 @@
+
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  <div class="col-lg-4">
     <div class="bs-component">
-		 <ul class="breadcrumb">
-		    <li><a href="<?php echo $this->webroot;?>">Home</a></li>
-		     <li><a href="<?php echo $this->webroot;?>admin/contacts">Contacts</a></li>
-		    <li class="active">View</li>
-		  </ul>
-	</div>
+     <ul class="breadcrumb">
+        <li><a href="<?php echo $this->webroot;?>">Home</a></li>
+         <li><a href="<?php echo $this->webroot;?>admin/contacts">Contacts</a></li>
+        <li class="active">View</li>
+      </ul>
+  </div>
 </div>
 
 <div class="row">
@@ -17,8 +18,9 @@
       
 
       <div class="bs-component">
-      	
-      	<?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
+        
+        
+        <?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
               <legend>お問い合わせフオ一ム</legend>
@@ -77,12 +79,7 @@
                 </div>
               </div>            
               
-              <div class="form-group">
-                <label for="email" class="col-lg-2 control-label">メールアドレス(確認)</label>
-                <div class="col-lg-10">
-                  <?php echo $this->Form->input('email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'form-control', 'div'=>false))?>
-                </div>
-              </div>
+              
              
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">お問い合わせ内容</span></label>
@@ -123,7 +120,7 @@
              <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">対応内容</span></label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('comment', array('type'=>'textarea', 'id'=>"comment", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Comment', 'rows'=>10,'div'=>false))?>
+                  <?php echo $this->Form->input('comment', array('type'=>'textarea', 'id'=>"comment", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Comment', 'rows'=>10,'div'=>false, 'enabled'))?>
                   
                 </div>
               </div>
@@ -173,6 +170,7 @@
               </div>
           </div>
         </div>
+      
       </div>
     </div>
 

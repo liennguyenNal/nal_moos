@@ -54,7 +54,20 @@ class ArticlesController extends AppController{
     }
     
     function admin_edit($id=null){
+        //var_dump($id); die;
+      $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
+      if($article['Article']['small_image'] and $this->data['Article']['small_image_file']){
+        $file = new File("images/upload/news/small/".$article['Article']['small_image']);
+        $file->delete();
+
+      }
+      if($article['Article']['large_image'] and $this->data['Article']['small_image_file']){
+        $file = new File("images/upload/news/big/".$article['Article']['large_image']);
+        $file->delete();
         
+      }
+      
+
        
       if($this->data){
            
@@ -69,21 +82,19 @@ class ArticlesController extends AppController{
                     $path = "images/upload/news/small/";
                     $image = $this->uploadImage($this->data['Article']['small_image_file'], $path, 200, 400, $errors);
                     $l_path = "images/upload/news/big/";
-                    $l_image = $this->uploadFile($this->data['Article']['large_image_file'], $l_path, $errors);
-                    //echo $image; die;
+                    $l_image = $this->uploadFile($this->data['Article']['small_image_file'], $l_path, $errors);
+                    //var_dump($image); var_dump($l_image); die;
                     if(!$errors){
                         $article['Article']['small_image'] = $image;
+                        $article['Article']['large_image'] = $image;
                     }
-                    else {
-                      //print_r($errors); die;
-
-                    }
+                    
                 }
                 // if($this->data['Article']['large_image_file']){
                     
                 //     $path = "images/upload/news/big/";
                 //     $l_image = $this->uploadFile($this->data['Article']['large_image_file'], $path, $errors);
-                //     //echo $image; die;
+                //     echo $image; die;
                 //     if(!$errors){
                 //         $article['Article']['large_image'] = $l_image;
                 //     }
@@ -107,6 +118,8 @@ class ArticlesController extends AppController{
                $this->data = $article;
            }
        }
+      
+
     }
     
     function admin_delete($id){
