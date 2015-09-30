@@ -7,8 +7,8 @@
 
 class UserAttachment extends AppModel {
     var $name = 'UserAttachment';
-    
-
+ 	var $belongsTo = array('AttachmentType');   
+ 	
     function getFilename($user_id, $type_id){
     	$item = $this->find('first', array('conditions'=>array('user_id'=>$user_id, 'attachment_type_id'=>$type_id)));
     	return $item['UserAttachment']['filename'];

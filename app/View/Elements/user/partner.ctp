@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-lg-12">
         <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserPartnerEdit' ,'class'=>'form-horizontal', 'inputDefaults' => array(
-        'format' => array('before', 'label', 'between', 'input', 'after',  'error'  ) ) ) ) ?>
+        'format' => array('before', 'label', 'between', 'input', 'after' ) ) ) ) ?>
         <div class="well bs-component">
        
          <!--  <form class="form-horizontal"> -->
@@ -25,17 +25,17 @@
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('UserPartner.first_name', array('type'=>'text', 'id'=>"p_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'山田','div'=>false))?>
+                      <?php echo $this->Form->input('UserPartner.first_name', array('type'=>'text', 'id'=>"p_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' , 'div'=>false, 'required' => false))?>
                    
-                      <?php echo $this->Form->input('UserPartner.last_name', array('type'=>'text', 'id'=>"p_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'雪','div'=>false))?>
+                      <?php echo $this->Form->input('UserPartner.last_name', array('type'=>'text', 'id'=>"p_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false, 'required' => false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('UserPartner.first_name_kana', array('type'=>'text', 'id'=>"p_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false))?>              
+                      <?php echo $this->Form->input('UserPartner.first_name_kana', array('type'=>'text', 'id'=>"p_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>              
                                        
-                      <?php echo $this->Form->input('UserPartner.last_name_kana', array('type'=>'text', 'id'=>"p_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'ユキ','div'=>false))?>
+                      <?php echo $this->Form->input('UserPartner.last_name_kana', array('type'=>'text', 'id'=>"p_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>
                     </div>
                   </div>
                 </td>
@@ -51,7 +51,7 @@
                   
                     <div class="col-lg-10">
                       <?php 
-                      echo $this->Form->radio('UserPartner.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+                      echo $this->Form->radio('UserPartner.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
                     ?>  
                     </div>
                   </div>
@@ -67,17 +67,17 @@
                       年
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
-                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()'));
+                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false));
                     ?>
                     月
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
-                      echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
+                      echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required' => false));
                     ?>
                     日
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                      echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
+                      echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required' => false));
                     ?>
                       歳 : <span id="p-age">0</span>
                     <script type="text/javascript">
@@ -144,9 +144,9 @@
                   <label for="inputEmail" class="col-lg-2 control-label">Company Name</label>
                   <div class="col-lg-10">
                   Hira
-                    <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false, 'required' => false, 'required' => false))?>
                     Kana
-                    <?php echo $this->Form->input('UserPartner.company_kana', array('type'=>'text', 'id'=>"p-company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_kana', array('type'=>'text', 'id'=>"p-company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 
@@ -162,8 +162,8 @@
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">〒</label>
                   <div class="col-lg-10" >
-                    <?php echo $this->Form->input('UserPartner.company_post_num_1', array('type'=>'text', 'id'=>"p_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
-                    <?php echo $this->Form->input('UserPartner.company_post_num_2', array('type'=>'text', 'id'=>"p_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_post_num_1', array('type'=>'text', 'id'=>"p_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
+                    <?php echo $this->Form->input('UserPartner.company_post_num_2', array('type'=>'text', 'id'=>"p_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
                     <button type="button" class="btn btn-primary" id="btn-partner-company-address">郵使番号から住所を検索</button>
                     <img id="c-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
                     <script type="text/javascript">
@@ -188,7 +188,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'青森県'));
+                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'青森県', 'required' => false));
                   ?>
                   </div>
                 </div>
@@ -196,20 +196,20 @@
                   <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
                   <div class="col-lg-10">
                     <?php 
-                      echo $this->Form->input('UserPartner.company_city', array('type'=>'text', 'id'=>"p_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false));
+                      echo $this->Form->input('UserPartner.company_city', array('type'=>'text', 'id'=>"p_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required' => false));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">番地</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_address', array('type'=>'text', 'id'=>"p_company_address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_address', array('type'=>'text', 'id'=>"p_company_address", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">建物</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_house_name', array('type'=>'text', 'id'=>"p_company_house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_house_name', array('type'=>'text', 'id'=>"p_company_house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 </td>
@@ -219,13 +219,13 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Fax</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 
@@ -233,33 +233,33 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">職業</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'青森県'));?>
+                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'青森県', 'required' => false));?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Description</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Department</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
 
                <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Position</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                    <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserPartner.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
+                    <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
                   </div>
                 </div>
                
@@ -268,8 +268,8 @@
                    <label for="inputEmail" class="col-lg-2 control-label">Salary Type</label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->radio('UserPartner.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'p_change_type($(this))'));
-                    echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:150px; display:inline' ))
+                    echo $this->Form->radio('UserPartner.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'p_change_type($(this))', 'required' => false));
+                    echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:150px; display:inline' , 'required' => false))
                   ?>  
                   </div>
                   <script type="text/javascript">
@@ -286,21 +286,21 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
+                    <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>円
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Salary Year</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
+                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>円
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">給料日</label>
                   <div class="col-lg-10">
                     <?php 
-                      echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
-                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline' ))
+                      echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
+                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline', 'required' => false ))
                     ?>  
                   </div>
                 </div>
@@ -326,14 +326,65 @@
            
             <?php echo $this->element('/user/relation');?>
            
-              
+        
+          
+              <?php echo $this->Form->hidden('UserPartner.is_confirm', array('value'=> $is_confirm, 'id'=>'partner_id'))?>
+              <?php if($user['User']['status_id'] == 2){?>
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary" id="btn-confirm-partner" >Confirm</button>
+                  <button type="button" class="btn btn-primary" id="btn-save-partner" >Save</button>
+                  <button type="button" class="btn btn-default" id="btn-cancel-partner" >Cancel</button>
                 </div>
               </div>
-           
-            
+               <?php }
+              else {?>
+                <script type="text/javascript" charset="utf-8" async defer>
+                $('#UserPartnerEdit').find(':button').hide();
+                $('#UserPartnerEdit').find(':input').prop('disabled',true);
+                </script>
+              <?php }?>
+               
+                <script type="text/javascript" >
+                <?php if($is_confirm == 1){?>
+                  $('#btn-confirm-partner').hide();
+                  $('#btn-save-partner').show();
+                  $('#btn-cancel-partner').show();
+                  $('#UserPartnerEdit').find(':button:not(#btn-save-partner):not(#btn-cancel-partner)').hide();
+                  $('#UserPartnerEdit').find(':input:not(:disabled):not(:hidden):not(#btn-save-partner):not(#btn-cancel-partner)').prop('disabled',true);
+                <?php }else {?>
+                   $('#btn-confirm-partner').show();
+                  $('#btn-save-partner').hide();
+                  $('#btn-cancel-partner').hide();
+                <?php } ?>    
+
+                  
+                   $('#btn-cancel-partner').on('click', function() {
+                      $('#UserPartnerEdit').find(':input:not(#btn-save-partner):not(#btn-cancel-partner)').prop('disabled',false);
+                      $('#btn-cancel-partner').hide();
+                      $('#btn-save-partner').hide();
+                      $('#btn-confirm-partner').show();
+                      $('#UserPartnerEdit').find(':button:not(#btn-save-partner):not(#btn-cancel-partner)').show();
+                      $('#partner_id').val("");
+
+                   });
+                  $('#btn-save-partner').on('click', function(){
+                      $.ajax({
+                        url: "<?php echo $this->webroot?>user_partners/edit", 
+                        'method':'POST',
+                        'data':"data[UserPartner][is_confirm]=1",
+                        success: function(result){
+                          $("#partner").html(result);
+                          $.ajax({
+                             url: "<?php echo $this->webroot?>users/reload_dashboard",
+                              success: function(result){
+                                $('#home').html(result);
+                              }
+                          });
+                    }});
+                  });
+                </script>
+                 
            
 
         </form>
@@ -348,7 +399,7 @@
          $this->Js->request(
           array('action' => 'edit', 'controller' => 'user_partners'),
           array(
-              'update' => '#UserPartnerEdit',
+              'update' => '#partner',
               'data' => $data,
               'async' => true,    
               'dataExpression'=>true,

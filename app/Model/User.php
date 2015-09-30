@@ -33,8 +33,7 @@ class User extends AppModel {
         ), 
         'year_of_birth' => array(
                 
-                'rule' => 'notBlank',
-                'message'=>'This field is required'
+                'rule' => 'notBlank'
             
         ),   
         'month_of_birth' => array(
@@ -57,7 +56,16 @@ class User extends AppModel {
                 'message'=>'This field is required'
             
         ), 
-
+        'live_with_family' => array(
+               'rule' => 'notBlank',
+                'message'=>'This field is required'
+            
+        ), 
+        'num_child' => array(
+               'rule' => 'notBlank',
+                'message'=>'This field is required'
+            
+        ), 
         'phone' => array(
             'rule2'=>array(
                      'rule' => 'validate_phone',
@@ -86,38 +94,38 @@ class User extends AppModel {
         'email' => array(
             'rule1'=>array(
                 'rule' => 'email',
-                'message'=> 'Invalid email format'
+                'message'=> 'Invalid email format',
+                'on'=>'create'
             ),
             'rule2'=>array(
                  'rule' => 'notBlank',
-                 'message'=> "This field is required"
+                 'message'=> "This field is required",
+                 'on'=>'create'
             ),
             'rule3'=>array(
                 'rule' => 'isUnique',
-                'message' => 'Email already registered'
+                'message' => 'Email already registered',
+                'on'=>'create'
             )
         ), 
         'email_confirm' => array(
             'rule1'=>array(
                 'rule' => 'email',
-                'message'=> 'Invalid email format'
+                'message'=> 'Invalid email format',
+                'on'=>'create'
             ),
             'compare'    => array(
                 'rule'      => array('validate_confirm_email'), 
                 'message' => 'The email confirmation don\'t match.',
+                'on'=>'create'
             )
-        ),
-        'agree' => array(
-               'rule' => 'notBlank',
-                'message'=>'This field is required'
-            
         ),
         'debt_count' => array(
                'rule' => 'notBlank',
                 'message'=>'This field is required'
             
         ),
-        'debt_value_total' => array(
+        'debt_total_value' => array(
                'rule' => 'notBlank',
                 'message'=>'This field is required'
             
@@ -167,5 +175,14 @@ class User extends AppModel {
         //echo 123;die;
         return $this->data[$this->alias]['phone'] != "" || $this->data[$this->alias]['home_phone']!="";
     }
+
+    function checkRequired($check)
+    {
+         if($check) return true; 
+         return false;
+       //return true;
+    }
+
+
 }
 ?>

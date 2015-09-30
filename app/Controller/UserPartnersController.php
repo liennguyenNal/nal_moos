@@ -27,26 +27,33 @@ class UserPartnersController extends AppController {
 	      $insurances = $this->Insurance->find('list');
 	      $this->set('insurances', $insurances);
 
-			$user = $this->Session->read('User');
+			 $id = $this->s_user_id;
+       //echo $id; die;
+        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+        $this->set('user', $user);
       
-			if($user){
+			if($user['User']['status_id'] == "2"){
 
 				$user_id = $user['User']['id'];
-				if($this->data){
-					//print_r($this->data['UserRelation']); die;
-					$partner_id = $this->data['UserPartner']['id'];
-					$this->UserPartner->set($this->data);
-					$user = $this->User->read(null, $user_id);
+				if($this->data['UserPartner']){
+					if($this->data['UserPartner']['is_confirm']){
+						$user_partner = $this->Session->read('user_partner');
 
-					$valid = $this->UserPartner->validates();
-					if($valid){
-						
-						if($this->UserPartner->save($this->data, false)){
-							foreach ($this->data['UserRelation'] as $item) {
+						$partner_id = $user_partner['UserPartner']['id'];
+						$this->UserPartner->set($user_partner);
+						$user = $this->User->read(null, $user_id);
+
+						// $valid = $this->UserPartner->validates();
+						// if($valid){
+							
+						if($this->UserPartner->save($user_partner, false)){
+							foreach ($user_partner['UserRelation'] as $item) {
 								//print_r($item); die;
 			                    $item['user_id'] = $user_id;
 			                    $this->UserRelation->create();
-			                    if(!$this->UserRelation->save($item, false)) {echo "Cannot save"; die; }
+			                    if(!$this->UserRelation->save($item, false)) {
+
+			                    }
 			                  }
 
 							if(!$partner_id)
@@ -56,12 +63,26 @@ class UserPartnersController extends AppController {
 							if($this->User->save($user, false)){
 								$user = $this->User->find('first', array('conditions'=>array('User.id'=>$user_id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea', 'UserRelation' )));
       							$this->data = $user;
+      							$this->set('user', $user);
 								$this->Session->setFlash('Partner Info has been saved successful!','default', array('class' => 'alert alert-dismissible alert-success'));
 							}
 						}
+							
 						
-					}
 
+						//$this->set('is_confirm', 0);
+					}
+					else {
+						$user_partner = $this->data;
+						$this->Session->write('user_partner', $user_partner);
+
+						$this->data['UserPartner'] = $user_partner['UserPartner'];
+						$user_partner['User']['status_id'] = $user['User']['status_id'];
+						//print_r($this->data);die;
+						 $this->set('user', $user_partner);
+						//echo 1; die;
+						$this->set('is_confirm', 1);
+					}
 					
 
 
