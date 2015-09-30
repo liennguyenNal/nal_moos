@@ -21,20 +21,20 @@ class UserCompany extends AppModel {
             'rule' => 'notBlank',
             'message'=>'Choose a Insurance Type'
             
-        ) 
+        ),
 
-        // 'name_kana' => array(
-        //     'rule' => 'notBlank',
-        //    	'on'=>'update'
-        // ),  
-        // 'post_num' =>array(
-        // 	'required'=>true,
-        // 	'on'=>'update'
-        // ),
-        // 'address' =>array(
-        // 	'required'=>true,
-        // 	'on'=>'update'
-        // ),
+        'name_kana' => array(
+            'rule' => 'notBlank',
+           	'on'=>'update'
+        ),  
+        'post_num' =>array(
+        	'required'=>true,
+        	'on'=>'update'
+        ),
+        'address' =>array(
+        	'required'=>true,
+        	'on'=>'update'
+        )
         // 'address_kana' =>array(
         // 	'required'=>true,
         // 	 'message'=> "This field is required",	
@@ -86,6 +86,9 @@ class UserCompany extends AppModel {
 	    return $results;
 	}
 
+    function validate_user_company($item){
+        return null;
+    }
 }
 
 ?>

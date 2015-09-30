@@ -1,11 +1,12 @@
 <h4>同居人</h4>
+
+<section id="relation-area">
 <?php 
 if(sizeof($user['UserRelation']) >0 )
 	$len = sizeof($user['UserRelation']);
 else $len = 1;
 for($i =0; $i< $len; $i++){?>
 
-<section id="relation-area">
 <div class="well bs-component" id="relation-area-content" >
 
 	<fieldset>
@@ -19,17 +20,17 @@ for($i =0; $i< $len; $i++){?>
 	          <td>
 	            <div class="form-group">
 	              <div class="col-lg-10">
-	                <?php echo $this->Form->input("UserRelation.$i.first_name", array('type'=>'text', 'id'=>"r_first_name_$i", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'山田','div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.first_name", array('type'=>'text', 'id'=>"r_first_name_$i", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false))?>
 	             
-	                <?php echo $this->Form->input("UserRelation.$i.last_name", array('type'=>'text', 'id'=>"r_last_name_$i", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'雪','div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.last_name", array('type'=>'text', 'id'=>"r_last_name_$i", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false))?>
 	              </div>
 	            </div>
 	            <div class="form-group">
 	              
 	              <div class="col-lg-10">
-	                <?php echo $this->Form->input("UserRelation.$i.first_name_kana", array('type'=>'text', 'id'=>"r_first_name_kana_$i", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false))?>              
+	                <?php echo $this->Form->input("UserRelation.$i.first_name_kana", array('type'=>'text', 'id'=>"r_first_name_kana_$i", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>              
 	                                 
-	                <?php echo $this->Form->input("UserRelation.$i.last_name_kana", array('type'=>'text', 'id'=>"r_last_name_kana_$i", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'ユキ','div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.last_name_kana", array('type'=>'text', 'id'=>"r_last_name_kana_$i", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>
 	              </div>
 	            </div>
 	          </td>
@@ -57,7 +58,7 @@ for($i =0; $i< $len; $i++){?>
 	                  年
 	                  <?php 
 	                  $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
-	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_relation_age($(this))'));
+	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))'));
 	                ?>
 	                月
 	                <?php 
@@ -73,14 +74,10 @@ for($i =0; $i< $len; $i++){?>
 	                <script type="text/javascript">
 	                var d = new Date();
 	                  var n = d.getFullYear();
-	                 $("#p-age-$i").val("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
+	                 $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
 	                function calculate_relation_age(obj){
-	                	//alert(obj.val());
 	                	var age = n - obj.val();
-	                	//alert(obj.parent().parent().find('span').html());
 	                	obj.parent().parent().find('span').html(age);
-	                  
-	                  //$("#p-age").html(n - $("#p-year").val());
 	                }
 	                </script>
 	                </div>
@@ -89,7 +86,7 @@ for($i =0; $i< $len; $i++){?>
 	          </tr>
 	          <tr>
 	            <td>Relation</td>
-	            <td><?php echo $this->Form->input("UserRelation.$i.relate", array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'form-control',"placeholder"=>'ユキ','div'=>false))?>
+	            <td><?php echo $this->Form->input("UserRelation.$i.relate", array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'form-control', 'div'=>false))?>
 	            </td>
 	          </tr>
 	          <tr>
@@ -124,13 +121,16 @@ for($i =0; $i< $len; $i++){?>
 	</fieldset>
 	  
 </div>
-</section>
 <script type="text/javascript">
 	 
 	 $(this).autoKana('#r_first_name_<?php echo $i?>', '#r_first_name_kana_<?php echo $i?>', {katakana:false, toggle:false});
     $(this).autoKana('#r_last_name_<?php echo $i?>', '#r_last_name_kana_<?php echo $i?>', {katakana:false, toggle:false});
+
 </script>
+
 <?php } ?>
+</section>
+
 <section id='remove'  style='display:none'>
   <div class='form-group'>
     <div class='col-lg-10 col-lg-offset-2'>
@@ -153,7 +153,7 @@ for($i =0; $i< $len; $i++){?>
 
     var num_area = 1;
 
-    var order_object = 1;
+    var order_object = "<?php echo $len; ?>";
     function replaceAll(find, replace, str) {
       return str.replace(new RegExp(find, 'g'), replace);
     }
@@ -165,18 +165,25 @@ for($i =0; $i< $len; $i++){?>
       //alert(obj.parent().parent().html());
       obj.parent().parent().parent().remove();
     }
+     
 
     $('#btn-add-relation').on('click', function() {
+    	var kana_script = '$(this).autoKana("#r_first_name_'+　order_object +'", "#r_first_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
+    	kana_script += '$(this).autoKana("#r_last_name_'+　order_object +'", "#r_last_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
     	
       if( num_area < 5 ){
+     	
        var area = $('#relation-area-content').clone(true, true);
         
        area.html(area.html().replace(/\[0\]/g, '['+ order_object + ']' ).replace(/_0/g, '_'+ order_object));
-       order_object++;
-       	area.find("input").val('');
-        area.append($('#remove').clone(true, true).html());
        
+       	area.find("input").val('');
+      
+    
+        area.append($('#remove').clone(true, true).html() );
+       $('<script>' + kana_script +'</' + 'script>').appendTo(area);
         $('#relation-area').append(area);
+        order_object++;
         num_area++;
       }
       else {

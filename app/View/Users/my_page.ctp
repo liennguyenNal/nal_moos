@@ -21,8 +21,8 @@
       
       	<div class="bs-component">
           <ul class="nav nav-tabs">
-            <li ><a href="#home" data-toggle="tab">マイページトップ</a></li>
-            <li class="active"><a href="#basic" data-toggle="tab">申込人</a></li>
+            <li class="active"><a href="#home" data-toggle="tab">マイページトップ</a></li>
+            <li ><a href="#basic" data-toggle="tab">申込人</a></li>
             <li><a href="#partner" data-toggle="tab">配偶者／同居人</a></li>
             <li><a href="#guarantor" data-toggle="tab"> 連帯保証人 </a></li>
              <?php if($user['User']['need_more_guarantor']){?>
@@ -31,11 +31,11 @@
             <li><a href="#attach" data-toggle="tab">  添付書類 </a></li>
           </ul>
           <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade " id="home">
+            <div class="tab-pane fade active in" id="home">
            
             	<?php echo $this->element('/user/dashboard');?>
             </div>
-            <div class="tab-pane fade active in" id="basic">
+            <div class="tab-pane fade" id="basic">
             	
              	<?php echo $this->element('/user/basic_info');?>
             </div>

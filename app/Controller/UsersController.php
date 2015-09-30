@@ -7,7 +7,7 @@
 
 
 class UsersController extends AppController{
-    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment');
+    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'WorkRequired');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
     var $helpers = array('Html' , 'Js');
      
@@ -757,6 +757,9 @@ class UsersController extends AppController{
       if($id){
       $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
       $this->data = $user;
+
+      $validations = $this->_validate($user);
+      $this->set('validations', $validations);
       $married_statuses = $this->MarriedStatus->find( 'list' );
       $this->set( 'married_statuses', $married_statuses);
 
@@ -781,9 +784,10 @@ class UsersController extends AppController{
 
       if($this->data){
 
-      }
+      
       } else $this->redirect('login');
     }
+  }
 
 
     /**
@@ -811,32 +815,76 @@ class UsersController extends AppController{
         $this->set('insurances', $insurances);
 
         $id = $this->s_user_id;
-
+       //echo $id; die;
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
         $this->set('user', $user);
-        if($user){
+        // if($user){
 
-            if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+        //     if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
             
-            if($this->User->save($this->data['User'], false) && $this->UserAddress->save($this->data['UserAddress'], false) && $this->UserCompany->save($this->data['UserCompany'], false)){
-              foreach ($this->data['ExpectArea'] as $item) {
+        //       if($this->User->save($this->data['User'], false) && $this->UserAddress->save($this->data['UserAddress'], false) && $this->UserCompany->save($this->data['UserCompany'], false)){
+        //         foreach ($this->data['ExpectArea'] as $item) {
 
-                $item['user_id'] = $id;
-                if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
-                  $this->ExpectArea->create();
-                  $this->ExpectArea->save($item, false);
+        //           $item['user_id'] = $id;
+        //           if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
+        //             $this->ExpectArea->create();
+        //             $this->ExpectArea->save($item, false);
+        //           }
+        //         }
+        //         //reload data
+        //         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+        //         $this->set('user', $user);
+
+        //         $this->Session->setFlash('Basic Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+        //         $this->render('ajax_update_basic_info');
+        //       }
+        //     }
+        // }
+         //print_r($this->data);die;
+        if($this->data['User']){
+
+          if($this->data['User']['is_confirm']){
+
+            $user_info = $this->Session->read('user_info');
+            //print_r($user_info);die;
+              if($this->User->save($user_info['User'], false) && $this->UserAddress->save($user_info['UserAddress'], false) && $this->UserCompany->save($user_info['UserCompany'], false)){
+                //print_r($user_info['UserAddress']); die;
+                  foreach ($user_info['ExpectArea'] as $item) {
+
+                    $item['user_id'] = $id;
+                    if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
+                      $this->ExpectArea->create();
+                      $this->ExpectArea->save($item, false);
+                    }
+                  }
+                  //reload data
+                  $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+                  $this->set('user', $user);
+                  $this->data = $user;
+                  $this->Session->setFlash('Basic Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+                  //$this->render('ajax_update_basic_info');
                 }
-              }
-              
-              $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
-              $this->set('user', $user);
-
-              $this->Session->setFlash('Basic Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
-              $this->render('ajax_update_basic_info');
-            }
+                $this->set('is_confirm', "");
           }
+          else {
+            $user_info = $this->data;
+           
+            $this->Session->write('user_info', $user_info);
+            //print_r($this->Session->read('user_info'));die;
+            $this->data['User'] = $user_info['User'];
+            $user_info['User']['status_id'] = $user['User']['status_id'];
+            //print_r($this->data);die;
+             $this->set('user', $user_info);
+            //echo 1; die;
+            $this->set('is_confirm', 1);
+
+          }
+          
         }
+        $this->render('ajax_update_basic_info');
+         
       }
+
     }
 
     
@@ -848,7 +896,12 @@ class UsersController extends AppController{
       $id = $this->s_user_id;
       $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' )));
       $this->set('user', $user);
-      if($user){
+      if($user['User']['status_id'] == "2"){
+        
+        //echo 111; die;  
+        // $this->data['UserCompany'] = $user['UserCompany'][0];
+        //print_r($this->data); die;
+
         if($this->data){
 
            $this->User->set( $this->data );
@@ -875,5 +928,400 @@ class UsersController extends AppController{
         }
       }
     }
+
+
+    function _validate($user){
+       $result = array(
+        'error'=>0,
+        'User'=>array(
+            'UserInfo'=> array('key'=>'Basic Info', 'error'=>0, 'fields'=>array()),
+            'UserAddress'=> array('key'=>'User Address', 'error'=>0, 'fields'=>array()),
+            'UserContact'=> array('key'=>'User Contact', 'error'=>0, 'fields'=>array()),
+            'UserCompany'=> array('key'=>'User Company', 'error'=>0, 'fields'=>array()),
+            'UserDebt'=> array('key'=>' User Debt', 'error'=>0, 'fields'=>array()),
+            'UserResidence'=>array('key'=>'User Residence', 'error'=>0, 'fields'=>array()),
+            'ExpectArea'=>array('key'=>'Expect Area', 'error'=>0, 'fields'=>array())
+          ),
+        'UserPartner'=>array(
+            'UserPartnerInfo'=> array('key'=>'Partner Info', 'error'=>0, 'fields'=>array()),
+            'UserPartnerContact'=> array('key'=>'UserPartnerContact', 'error'=>0, 'fields'=>array()),
+            'UserPartnerCompany'=> array('key'=>'Partner Company', 'error'=>0, 'fields'=>array()),
+            'UserPartnerRelation'=> array('key'=>'Partner Relation', 'error'=>0, 'fields'=>array())
+          ),
+        'UserGuarantor'=>array(
+            'UserGuarantorInfo'=> array('key'=>'Guarantor Info', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorAddress'=> array('key'=>'Guarantor Address', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorCompany'=> array('key'=>'Guarantor Company', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorContact'=> array('key'=>'Guarantor Contact', 'error'=>0, 'fields'=>array())
+          ),
+        'UserAttachment'=> array('key'=>'File Attachment', 'error'=>0, 'fields'=>array())
+      );
+      $this->User->set($user);
+      if(!$this->User->validates()){
+        $user_info_fields = array('first_name'=> 'First name', 'last_name' =>' Last Name', 'first_name_kana'=>'First Name Kana', 'last_name_kana'=>'Last Name Kana', 'gender'=>'Gender', 'live_with_family' => 'Live with Family', 'num_child' =>'Number of Children');
+        
+        $user_contact_fields = array('email'=> 'Email Contact', 'phone'=>'Phone Number', 'home_phone'=>'home_phone', 'contact_type'=>'Contact Type');
+       
+        $user_debt_fields = array('debt_count'=>'Debt Num', 'debt_total_value'=>'Debt Total Value','debt_pay_per_month'=>'Debt pay perment');
+        
+         $result['error'] = 1;
+         $result['User']['UserInfo']['fields'] = array();
+         $result['User']['UserContact']['fields'] = array();
+        foreach ($this->User->invalidFields() as $key => $value) {
+          if(array_key_exists($key, $user_info_fields)){
+            array_push($result['User']['UserInfo']['fields'], $user_info_fields[$key]);
+            $result['User']['UserInfo']['error'] = 1;
+          }
+          else if(array_key_exists($key, $user_contact_fields)){
+            array_push($result['User']['UserContact']['fields'], $user_contact_fields[$key]);
+            $result['User']['UserContact']['error'] = 1;
+          }
+          else if(array_key_exists($key, $user_debt_fields)){
+            array_push($result['User']['UserDebt']['fields'], $user_debt_fields[$key]);
+            $result['User']['UserDebt']['error'] = 1;
+          }
+          
+        }
+      }
+
+      $this->UserCompany->set($user);
+      //if(!$this->UserCompany->validates()){
+      //  $result['error'] = 1;
+         $user_company_fields = array('work_id'=>'Work', 'insurance_id'=>'Insurance');
+         $user_comapany_required_fields = array( 'name'=>'Name', 'name_kana'=>'Name Kana', 'post_num_1'=>'Post Num 1', 'post_num_2'=>'Post Num 2', 'pref_id' =>'Pref ID',
+          'city'=>'City', 'address'=>'Address', 'phone'=>'Phone', 'fax'=>'Fax', 'career_id'=>'Career ID', 'position'=>'Position', 'department'=>'Department', 'description'=>'Description', 
+          'month_worked'=> 'Month worked', 'year_worked'=>'Year Worked', 'salary_month'=>'Salary Month', 'salary_year'=>'Salary Year', 'salary_receive_id' => 'Salary Recieve Type', 'salary_type'=>'Salary Type', 'insurance_id'=>'Insurance');
+          // foreach ($this->UserCompany->invalidFields() as $key => $value) {
+          //    if(array_key_exists($key, $user_company_fields)){
+          //        array_push($result['User']['UserCompany']['fields'], $user_company_fields[$key]);
+          //       $result['User']['UserCompany']['error'] = 1;
+          //    }
+          //  }
+          if( $user['UserCompany']['work_id'] ){
+            $requireds = $this->WorkRequired->find('first', array('conditions'=>array('WorkRequired.work_id'=>$user['UserCompany']['work_id'])));
+            //print_r($requireds['WorkRequired'] ); die;
+            foreach ($requireds['WorkRequired'] as $key => $value) {
+              if($value){
+                if(!$user['UserCompany'][$key]){
+                   array_push($result['User']['UserCompany']['fields'], $user_comapany_required_fields[$key]);
+                   $result['User']['UserCompany']['error'] = 1;
+                   $result['error'] = 1;
+                }
+              }
+            }
+          }
+          else {
+            $result['error'] = 1;
+             foreach ($user_company_fields as $key => $value) {
+       
+              array_push($result['User']['UserCompany']['fields'], $value);
+              $result['User']['UserCompany']['error'] = 1;
+            }
+          }
+          
+      //}
+      $this->UserAddress->set($user);
+      if(!$this->UserAddress->validates()){
+        //print_r($this->UserAddress->invalidFields()); die;
+          $result['error'] = 1;
+          $user_address_fields = array('post_num_1'=>'Address Post Num 1', 'post_num_2'=>'Addres Post Num 2' , 'pref_id' => 'Address Pref Id', 'city'=> 'Address City ', 'address'=>' House Address');
+          $user_residence_fields = array( 'residence_id' => ' Residence Id', 'housing_costs' => 'House Fee','year_residence' => 'Residence Year');
+          foreach ($this->UserAddress->invalidFields() as $key => $value) {
+             if(array_key_exists($key, $user_address_fields)){
+                 array_push($result['User']['UserAddress']['fields'], $user_address_fields[$key]);
+                $result['User']['UserAddress']['error'] = 1;
+             }
+             else if(array_key_exists($key, $user_residence_fields)){
+                array_push($result['User']['UserResidence']['fields'], $user_residence_fields[$key]);
+                $result['User']['UserResidence']['error'] = 1;
+             }
+          }
+      }
+      //foreach($user['ExpectArea'] as $item){
+       $user_expect_area_fields = array('post_num_1'=> 'Post Num 1', 'post_num_2'=> 'Post Num 2', 'pref_id' =>'Pref ID', 'city'=>'City', 'address'=>'Address');
+      if($user['ExpectArea']){
+
+        $this->ExpectArea->set($user['ExpectArea'][0]);
+        
+        if( !$this->ExpectArea->validates()){
+          $result['error'] = 1;
+          foreach ($this->ExpectArea->invalidFields() as $key => $value) {
+            if(array_key_exists($key, $user_expect_area_fields)){
+                 array_push($result['User']['ExpectArea']['fields'], $user_expect_area_fields[$key]);
+                $result['User']['ExpectArea']['error'] = 1;
+             }
+          }
+        }
+      }
+      else {
+        $result['User']['ExpectArea']['error'] = 1;
+      }
+
+
+      //}
+     $user_partner_info_fields = array('first_name'=> 'First name', 'last_name' =>' Last Name', 'first_name_kana'=>'First Name Kana', 'last_name_kana'=>'Last Name Kana', 'gender'=>'Gender', 
+            'year_of_birthday'=>' Year of Birthday', 'month_of_birth'=>'Month Of Birthday', 'day_of_birth'=> 'Day Of Birthday');
+      $user_partner_company_fields = array('work_id'=> 'Work ', 'insurance_id'=> 'Insurance Type');
+      $user_partner_contact_fields = array('phone'=> 'Phone Number');
+
+     $partner = $this->UserPartner->find('first',array( 'conditions'=>array( 'UserPartner.id'=> $user['UserPartner']['id'])));
+     if($partner){
+      $this->UserPartner->set($partner);
+      if(!$this->UserPartner->validates()){
+        //print_r($this->UserPartner->invalidFields()); die;
+        $result['error'] = 1;
+       
+
+        $result['UserPartner']['UserPartnerInfo']['fields'] = array();
+        $result['UserPartner']['UserPartnerCompany']['fields'] = array();
+        $result['UserPartner']['UserPartnerContact']['fields'] = array();
+      
+        foreach ($this->UserPartner->invalidFields() as $key => $value) {
+         
+          if (array_key_exists($key, $user_partner_info_fields)){
+            array_push($result['UserPartner']['UserPartnerInfo']['fields'], $user_partner_info_fields[$key]);
+            $result['UserPartner']['UserPartnerInfo']['error'] = 1;
+          }
+          else if(array_key_exists($key, $user_partner_company_fields)){
+            array_push($result['UserPartner']['UserPartnerCompany']['fields'], $user_partner_company_fields[$key]);
+            $result['UserPartner']['UserPartnerCompany']['error'] = 1;
+          }
+
+          else if(array_key_exists($key, $user_partner_contact_fields)){
+            array_push($result['UserPartner']['UserPartnerContact']['fields'], $user_partner_contact_fields[$key]);
+            $result['UserPartner']['UserPartnerContact']['error'] = 1;
+          }
+          
+        }
+      }
+    }
+    else {
+      foreach ($user_partner_info_fields as $key => $value) {
+       
+        array_push($result['UserPartner']['UserPartnerInfo']['fields'], $value);
+        $result['UserPartner']['UserPartnerInfo']['error'] = 1;
+      }
+      foreach ($user_partner_company_fields as $key => $value) {
+            array_push($result['UserPartner']['UserPartnerCompany']['fields'], $value);
+            $result['UserPartner']['UserPartnerCompany']['error'] = 1;
+      }
+
+      foreach ($user_partner_contact_fields as $key => $value) {
+        array_push($result['UserPartner']['UserPartnerContact']['fields'], $value);
+        $result['UserPartner']['UserPartnerContact']['error'] = 1;
+      }
+    }
+      //print_r( $result['UserPartner']); die;
+      if($user['UserRelation']){
+        //foreach ($user['User']['UserRelation'] as $item) {
+          $item = $user['UserRelation'][0];
+          //print_r($item);die;
+           $result['UserPartner']['UserPartnerRelation']['fields'] = array();
+           $user_partner_relation_fields = array('first_name'=> 'First name', 'last_name' =>' Last Name', 'first_name_kana'=>'First Name Kana', 'last_name_kana'=>'Last Name Kana', 'year_of_birthday'=>' Year of Birthday', 'month_of_birth'=>'Month Of Birthday', 'day_of_birth'=> 'Day Of Birthday', 'relate'=>'Relation');
+        $this->UserRelation->set($item);
+        if( !$this->UserRelation->validates()){
+          $result['error'] = 1;
+          foreach ($this->UserRelation->invalidFields() as $key => $value) {
+            if(array_key_exists($key, $user_partner_relation_fields)){
+                 array_push($result['UserPartner']['UserPartnerRelation']['fields'], $user_partner_relation_fields[$key]);
+                $result['UserPartner']['UserPartnerRelation']['error'] = 1;
+             }
+          }
+        }
+       
+      }
+      $guarantor = $this->UserGuarantor->find('first',array( 'conditions'=>array( 'UserGuarantor.id'=> $user['UserGuarantor']['id'])));
+      $user_guarantor_info_fields = array('first_name'=> 'First name', 'last_name' =>' Last Name', 'first_name_kana'=>'First Name Kana', 'last_name_kana'=>'Last Name Kana', 
+            'year_of_birthday'=>' Year of Birthday', 'month_of_birth'=>'Month Of Birthday', 'day_of_birth'=> 'Day Of Birthday', 'gender'=>'Gender' ,'live_with_family' => 'Live with Family', 'married_status' => 'Marial Status', 'relate'=>'Relationship');
+          $user_guarantor_company_fields = array('work_id'=>'Work ID', 'insurance_id'=>'Insurance' );
+          $user_guarantor_address_fields = array('post_num_1'=>'Address Post Num 1', 'post_num_2'=>'Addres Post Num 2' , 'pref_id' => 'Address Pref Id', 'city'=> 'Address City ', 
+            'address'=>' House Address','residence_id' => 'Residence Status', 'Year residence', 'housing_cost' => 'House Fee');
+          $user_guarantor_contact_fields = array('phone'=>'Phone', 'home_phone'=>'Home Phone', 'contact_type_id'=> 'Contact Type');  
+      if($guarantor){
+        $this->UserGuarantor->set($guarantor);
+        if(!$this->UserGuarantor->validates()){
+          //print_r($this->UserPartner->invalidFields()); die;
+          $result['error'] = 1;
+          
+
+          $result['UserGuarantor']['UserGuarantorInfo']['fields'] = array();
+          $result['UserGuarantor']['UserGuarantorAddress']['fields'] = array();
+          $result['UserGuarantor']['UserGuarantorContact']['fields'] = array();
+          $result['UserGuarantor']['UserGuarantorCompany']['fields'] = array();
+          foreach ($this->UserGuarantor->invalidFields() as $key => $value) {
+           
+            if (array_key_exists($key, $user_guarantor_info_fields)){
+              array_push($result['UserGuarantor']['UserGuarantorInfo']['fields'], $user_guarantor_info_fields[$key]);
+              $result['UserGuarantor']['UserGuarantorInfo']['error'] = 1;
+            }
+            else if(array_key_exists($key, $user_guarantor_company_fields)){
+                 array_push($result['UserGuarantor']['UserGuarantorCompany']['fields'], $user_guarantor_company_fields[$key]);
+              $result['UserGuarantor']['UserGuarantorCompany']['error'] = 1;
+            }
+
+            else if(array_key_exists($key, $user_guarantor_address_fields)){
+               array_push($result['UserGuarantor']['UserGuarantorAddress']['fields'], $user_guarantor_address_fields[$key]);
+              $result['UserGuarantor']['UserGuarantorAddress']['error'] = 1;
+            }
+            else if(array_key_exists($key, $user_guarantor_contact_fields)){
+              array_push($result['UserGuarantor']['UserGuarantorContact']['fields'], $user_guarantor_contact_fields[$key]);
+              $result['UserGuarantor']['UserGuarantorContact']['error'] = 1;
+            }
+            
+          }
+        }
+      }
+      else {
+        $result['error'] = 1;
+        $result['UserGuarantor']['UserGuarantorInfo']['error'] = 1;
+        foreach ($user_guarantor_info_fields as $key => $value) {
+           array_push($result['UserGuarantor']['UserGuarantorInfo']['fields'], $value);
+        }
+        $result['UserGuarantor']['UserGuarantorCompany']['error'] = 1;
+        foreach ($user_guarantor_company_fields as $key => $value) {
+           array_push($result['UserGuarantor']['UserGuarantorCompany']['fields'], $value);
+        }
+        $result['UserGuarantor']['UserGuarantorAddress']['error'] = 1;
+        foreach ($user_guarantor_address_fields as $key => $value) {
+           array_push($result['UserGuarantor']['UserGuarantorAddress']['fields'], $value);
+        }
+        $result['UserGuarantor']['UserGuarantorResidence']['error'] = 1;
+        foreach ($user_guarantor_contact_fields as $key => $value) {
+           array_push($result['UserGuarantor']['UserGuarantorContact']['fields'], $value);
+        }
+      }
+      if($user['UserAttachment']){
+        // $attachments = $this->UserAttachment->find('all', array('conditions'=>array('UserAttachment.user_id'=>$user['User']['id'])));
+        // foreach ($attachments as $attach) {
+        //   $attach['AttachmentType']['is_required']
+        // }
+        $attachment_types = $this->AttachmentType->find('all', array('conditions'=>array('AttachmentType.is_required'=>1)));
+        foreach ($attachment_types as $type) {
+          $attachment= $this->UserAttachment->find('all', array('conditions'=>array('UserAttachment.user_id'=>$user['User']['id'], 'UserAttachment.attachment_type_id'=>$type['AttachmentType']['id'])));
+          if(!$attachment){
+            //'UserAttachment'=> array('key'=>'File Attachment', 'error'=>0, 'fields'=>array())
+            
+            $result['error'] = 1;
+            $result['UserAttachment']['error'] = 1;
+            $result['UserAttachment']['error_msg'] = "";
+
+          }
+        }
+
+      }
+      else {
+        $result['error'] = 1;
+            $result['UserAttachment']['error'] = 1;
+            $result['UserAttachment']['error_msg'] = "";
+      }
+
+
+//die;
+      // $result = array(
+      //   'error'=>0,
+      //   'User'=>array(
+      //       'UserInfo'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserAddress'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserContact'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserCompany'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserDebt'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserResidence'=>array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'ExpectArea'=>array('key'=>'', 'error'=>0, 'fields'=>array())
+      //     ),
+      //   'UserPartner'=>array(
+      //       'UserParnerInfo'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserParnerAddress'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserParnerCompany'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserParnerRelation'=> array()
+      //     ),
+      //   'UserGuarantor'=>array(
+      //       'UserGuarantorInfo'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserGuarantorAddress'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserGuarantorCompany'=> array('key'=>'', 'error'=>0, 'fields'=>array()),
+      //       'UserGuarantorResidence'=> array('key'=>'', 'error'=>0, 'fields'=>array())
+      //     ),
+      //   'UserAttachment'=> array('key'=>'', 'error'=>0, 'fields'=>array())
+      // );
+      // $user_info_error_fields = $this->User->validate_user_info($user['User']);
+      // if($user_info_error_fields){
+      //   $result['User']['UserInfo']['error'] = 1;
+      //   $result['User']['UserInfo']['fields'] = $user_info_error_fields;
+      // }
+      // $user_address_error_fields = $this->UserAddress->validate_user_address($user['User']);
+      // if($user_info_error_fields){
+      //   $result['User']['UserAddress']['error'] = 1;
+      //   $result['User']['UserAddress']['fields'] = $user_address_error_fields;
+      // }
+
+      // $user_contact_error_fields = $this->User->validate_user_contact($user['User']);
+      // if($user_info_error_fields){
+      //   $result['User']['UserContact']['error'] = 1;
+      //   $result['User']['UserContact']['fields'] = $user_contact_error_fields;
+      // }
+      // $user_company_error_fields = $this->UserCompany->validate_user_company($user['User']);
+      // if($user_info_error_fields){
+      //   $result['User']['UserCompany']['error'] = 1;
+      //   $result['User']['UserCompany']['fields'] = $user_company_error_fields;
+      // }
+      
+      // $user_debt_error_fields = $this->User->validate_user_debt($user['User']);
+      // if($user_info_error_fields){
+      //   $result['User']['UserDebt']['error'] = 1;
+      //   $result['User']['UserDebt']['fields'] = $user_debt_error_fields;
+      // }
+      // $user_expect_area_error_fields = $this->ExpectArea->validate_user_info($user['ExpectArea']);
+      // if($user_info_error_fields){
+      //   $result['User']['ExpectArea']['error'] = 1;
+      //   $result['User']['ExpectArea']['fields'] = $user_expect_area_error_fields;
+      // }
+      // echo "<pre>";
+      // print_r($result);
+      // echo "</pre>";
+      // die;
+      return $result;
+    }    
+
+    function reload_dashboard(){
+      if($this->request->is('ajax')){
+         $id = $this->s_user_id;
+        if($id){
+       
+          $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+          $this->data = $user;
+          $this->set('user', $user);
+          $validations = $this->_validate($user);
+          $this->set('validations', $validations);
+          $this->render('ajax_reload_dashboard');
+
+        }
+      }
+    }
+
+    function update_account_info(){
+       $id = $this->s_user_id;
+      if($id){
+       //echo $id; die;
+        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+        $this->data = $user;
+        $validations = $this->_validate($user);
+        if(!$validations['error']){
+          $user['User']['status_id'] = 3;
+          if($this->User->save($user, false)){
+            $this->Session->setFlash('Your Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+              $this->redirect( "my_page" );
+            $this->redirect('My Page');
+
+          } 
+          else {
+            $this->Session->setFlash("Cannot Save Data", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+          }
+
+        }
+      }
+      else {
+        $this->redirect('login');
+      }
+    }
+
 }
 ?>
