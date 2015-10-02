@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Sep 30, 2015 at 04:05 AM
+-- Generation Time: Oct 02, 2015 at 04:01 AM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.10
 
@@ -200,6 +200,19 @@ CREATE TABLE `residences` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `statuses`
+--
+
+DROP TABLE IF EXISTS `statuses`;
+CREATE TABLE `statuses` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -240,7 +253,9 @@ CREATE TABLE `users` (
   `other_guarantor_id` int(11) DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL,
   `approved_register_date` datetime DEFAULT NULL,
-  `approved_date` datetime DEFAULT NULL
+  `approved_date` datetime DEFAULT NULL,
+  `payment_date` datetime DEFAULT NULL,
+  `max_payment` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -625,6 +640,12 @@ ALTER TABLE `prefs`
 -- Indexes for table `residences`
 --
 ALTER TABLE `residences`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `statuses`
+--
+ALTER TABLE `statuses`
   ADD PRIMARY KEY (`id`);
 
 --
