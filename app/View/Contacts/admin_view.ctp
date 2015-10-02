@@ -1,15 +1,15 @@
-
+ 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  <div class="col-lg-4">
     <div class="bs-component">
-     <ul class="breadcrumb">
-        <li><a href="<?php echo $this->webroot;?>">Home</a></li>
-         <li><a href="<?php echo $this->webroot;?>admin/contacts">Contacts</a></li>
-        <li class="active">View</li>
-      </ul>
-  </div>
+		 <ul class="breadcrumb">
+		    <li><a href="<?php echo $this->webroot;?>">Home</a></li>
+		     <li><a href="<?php echo $this->webroot;?>admin/contacts">Contacts</a></li>
+		    <li class="active">View</li>
+		  </ul>
+	</div>
 </div>
 
 <div class="row">
@@ -19,11 +19,11 @@
 
       <div class="bs-component">
         
-        
-        <?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
+      	
+      	<?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
-              <legend>お問い合わせフオ一ム</legend>
+              <legend>お問い合わせフオ一ム <?php if($contact['Contact']['status']==1){echo 'No Processing';}if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">お名前</label>
                 <div class="col-lg-10">
@@ -113,7 +113,9 @@
                 <label for="textArea" class="col-lg-2 control-label">対応伏況</span></label>
                 <div class="col-lg-10">
                   <?php 
-                    $statuses = array("2"=>"解決します", "3"=>"拒絶します");
+                  $statuses = array(1=>"No Processing",2=> "Processing",3=>"Completed");
+
+                    //$statuses = array("2"=>"解決します", "3"=>"拒絶します");
                   echo $this->Form->select('status', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'status' , ));?>
                 </div>
               </div>
@@ -130,9 +132,8 @@
                   
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
-                      <button type="button" class="btn btn-danger" id="btn-delete" >  削除します </button>
 
-                      <button type="submit" class="btn btn-primary" id="btn-change">変更する</button>
+                      <button type="submit" class="btn btn-primary" id="btn-change">Edit Contact</button>
                       
                       <button type="button" class="btn btn-default" id="btn-cancel" >一覧へ戻る</button>
                     </div>
@@ -140,14 +141,15 @@
                       $(document).ready(function(){ 
                          $('#btn-cancel').on('click', function() {
                 
-                             window.location.href='<?php echo $this->webroot;?>admin/contacts';
+                             window.location.href='<?php echo $this->webroot;?>admin/contacts/change_confirm/<?php echo $contact['Contact']['id']; ?>';
                           
                         });
-                         $('#btn-delete').on('click', function() {
-                           $( "#dialog-confirm-delete" ).dialog("open");
+
+                        //  $('#btn-delete').on('click', function() {
+                        //    $( "#dialog-confirm-delete" ).dialog("open");
                              
                           
-                        });
+                        // });
 
                          $( "#dialog-confirm-delete" ).dialog({
                           autoOpen: false,
