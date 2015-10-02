@@ -21,6 +21,8 @@
   
   <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
   <script src="<?php echo $this->webroot;?>js/jquery.autoKana.js"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/jquery-ui.css">
   <script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
   <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>

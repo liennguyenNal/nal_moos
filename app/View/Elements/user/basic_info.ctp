@@ -2,14 +2,14 @@
     <div class="from-ldpage">
       <div class="content">
         <div class="content-from">
-          <div class="block-warning">
-            <!-- WARNING -->
-          </div>
           <div class="title-tab title-tab-fix-mb">
             <h3>申込人基本情報</h3>
           </div>
           <!-- FORM -->
           <?php echo $this->element('flash');?>
+            <div class="block-warning" id="error-section" style="display:none">
+                <?php echo __('global.errors'); ?>
+            </div>
           <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo')) ?>
             <div class="content-from-block">
               <div class="content-from-how">
@@ -354,7 +354,7 @@
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.street'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.address', array('type'=>'text', 'id'=>"company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right'))
+                        <?php echo $this->Form->input('UserCompany.address', array('type'=>'text', 'id'=>"company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false))
                         ?>
                       </div>
                       <div class="block-input">
@@ -568,8 +568,18 @@
           </div>
           <section id="expect-area">
           <?php $i = 0; foreach($user['ExpectArea'] as $item){ $i++;?>
-              
+                
                 <div class="content-from-how" id="expect-area-content-<?php echo $i; ?>">
+                <?php if($i > 1){?>
+                     <div class="link-form style" >
+                        <div class="block-link">
+                           
+                           
+                                <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
+                           
+                        </div>
+                    </div>
+                <?php }?>
                   <table class="from">
                     <tbody>
                       <tr>
@@ -596,7 +606,7 @@
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.city'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'require'))
+                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
                           </div>
                           <div class="block-input">
@@ -613,22 +623,38 @@
               
               <?php } ?>
           </section>
-          
+
+            <div class="link-form style">
+                <div class="block-link">
+                    <a href="javascript:void(0)" class="style-link" id='btn-add'>+ 希望エリアを追加</a>
+                   
+                        
+                   
+                </div>
+            </div>
+            <section id="remove" style="display:none">
+                
+            
+            <div class="link-form style" >
+                <div class="block-link">
+                   
+                   
+                        <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
+                   
+                </div>
+            </div>
+            </section>
+<!-- 
           <div class="link-form style">
             <div class="block-link">
-              <!-- <a href="#">+ 希望エリアを追加</a> -->
-              <a href="javascript:void(0)" class="style-link" id='btn-add' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;"><?php echo __('user.register.add'); ?></a>
-              <!-- <a href="#">- 希望エリアを削除</a> -->
-              <!-- <a href="javascript:void(0)" class="style-link" id='btn-remove' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;" onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a> -->
-              <section id='remove'  style='display:none'>
-              <div class='form-group'>
-                <div class='col-lg-10 col-lg-offset-2'>
-                  <button type='button' id='btn-remove'  class='btn btn-primary' style='float:right' onclick="javascript:_remove($(this));"> - 希望エリアを削除</button>
-                </div>
-              </div>
-            </section>
+              <a href="javascript:void(0)" class="style-link" id='btn-add' ><?php echo __('user.register.add'); ?></a>
             </div>
-          </div>
+              <div id='remove' style="display:none">
+                <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+              </div>
+          </div> -->
+
+          
           <?php echo $this->Form->hidden('User.id')?>
 
             <!-- SCRIPT -->
@@ -637,12 +663,7 @@
                 $(this).autoKana('#first_name', '#first_name_kana', {katakana:true, toggle:false});
                 $(this).autoKana('#last_name', '#last_name_kana', {katakana:true, toggle:false});
 
-                var num_area = <?php echo sizeof($user['ExpectArea'])?>;
-
-                var order_object = <?php echo sizeof($user['ExpectArea'])?>;
-                function replaceAll(find, replace, str) {
-                  return str.replace(new RegExp(find, 'g'), replace);
-                }
+               
                 
                 function find_address(obj){
                    var p =  obj.parent().parent().parent();
@@ -660,28 +681,6 @@
                         p.find("input[id*='address']").val(json.addr1);
                     });
                 }
-
-                function _remove (obj) {
-                  num_area--;
-                  obj.parent().parent().parent().remove();
-                }
-
-                $('#btn-add').on('click', function() {
-                  if( num_area < 5 ){
-                   var area = $('#expect-area-content-1').clone();
-                    
-                   area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
-                   order_object++;
-                    area.find("input").val('');
-                    area.append($('#remove').clone(true, true).html());
-                   
-                    $('#expect-area').append(area);
-                    num_area++;
-                  }
-                  else {
-                    alert('Cannot add more item');
-                  }
-                });
               </script>
               <!-- END SCRIPT -->
         <?php echo $this->Form->hidden('User.is_confirm', array('value'=> 1, 'id'=>'user-info-id'))?>
@@ -706,7 +705,7 @@
                 $('#btn-save-user-info').hide();
                 $('#btn-cancel-user-info').hide();
                 $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info)').prop('disabled',true);
-                $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info)').hide();
+                $('#UserEditBasicInfo').find('a:not(#btn-edit-user-info)').hide();
                 //alert(edit);
               }
               else{
@@ -721,6 +720,7 @@
                $('#btn-edit-user-info').on('click', function() {
                   
                   $('#UserEditBasicInfo').find(':input').prop('disabled',false);
+                  $('#UserEditBasicInfo').find('a').show();
                   $('#btn-cancel-user-info').show();
                   $('#btn-save-user-info').show();
                   
@@ -742,25 +742,7 @@
                           $('#guarantor').html(result);
                         }
                     });
-
                });
-              $("#UserEditBasicInfo").submit(function() {
-
-                  var url = "<?php echo $this->webroot;?>users/update_basic_info"; // the script where you handle the form input.
-
-                  $.ajax({
-                         type: "POST",
-                         url: url,
-                         data: $("#UserEditBasicInfo").serialize(), // serializes the form's elements.
-                         success: function(result)
-                         {
-                             edit = 0;
-                             $('#basic').html(result);
-                         }
-                       });
-
-                  return false;
-              });
             </script>
         <!-- END MAIN SCRIPT -->
         </form>
@@ -768,3 +750,189 @@
       </div>
     </div>
 </div>
+
+<!-- SCRIPT VALIDATION -->
+<script>
+    var num_area1 = <?php echo sizeof($user['ExpectArea'])?>;
+    var order_object1 = <?php echo sizeof($user['ExpectArea'])?>;
+    //alert(order_object);
+
+    function replaceAll(find, replace, str) {
+        return str.replace(new RegExp(find, 'g'), replace);
+    }
+
+    $('#btn-add').on('click', function() {
+       // alert(num_area);
+    if( num_area1 < 5 ){
+        order_object1++;
+      var area = $('#expect-area-content-1').clone();
+      area.html(area.html().replace(/\[1\]/g, '['+ order_object1 + ']' ));
+      area.find("input").val('');
+      area.prepend($('#remove').clone().html());
+      $('#expect-area').append(area);
+      $('#UserEditBasicInfo').validate();
+      $("[id^='post_num_1']").each(function() {
+          $(this).rules("add", 
+          { 
+            number: true,
+            minlength: 3,
+            maxlength: 3,
+            messages: {
+                minlength: "<?php echo __('global.errors.minlength_3'); ?>"
+            }
+          });
+      });
+      $("[id^='post_num_2']").each(function() {
+          $(this).rules("add", 
+          { 
+            number: true,
+            minlength: 4,
+            maxlength: 4,
+            messages: {
+              minlength: "<?php echo __('global.errors.minlength_4'); ?>"
+            }
+          });
+      });
+      // $("[id^='pref_id']").each(function() {
+      //     $(this).rules("add", 
+      //     { 
+      //       required: true,
+      //       messages: {
+      //         required: "<?php echo __('global.errors.required'); ?>"
+      //       }
+      //     });
+      // });
+      // $("[id^='city']").each(function() {
+      //     $(this).rules("add", 
+      //     { 
+      //       required: true,
+      //       messages: {
+      //         required: "<?php echo __('global.errors.required'); ?>"
+      //       }
+      //     });
+      // });
+      // $("[id^='address']").each(function() {
+      //     $(this).rules("add", 
+      //     { 
+      //       required: true,
+      //       messages: {
+      //         required: "<?php echo __('global.errors.required'); ?>"
+      //       }
+      //     });
+      // });
+      order_object1++;
+      num_area1++;
+      if(num_area1 == 5){
+        $('#btn-add').hide();
+      }
+    }
+    else {
+      alert('Cannot add more item');
+    }
+  });
+
+    function _remove (obj) {
+        num_area1--;
+        obj.parent().parent().parent().remove();
+        $('#btn-add').show();
+    }
+
+    $.validator.addMethod("phone_number", function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }, "携帯電話を正しく入力してください。" );
+
+    $("#UserEditBasicInfo").validate({
+        rules: {
+            // 'data[User][first_name]': {required: true},
+            // 'data[User][last_name]': {required: true},
+            // 'data[User][first_name_kana]': {required: true},
+            // 'data[User][last_name_kana]': {required: true},
+            // 'data[User][gender]': {required: true},
+            // 'data[User][year_of_birth]': {required: true},
+            // 'data[User][month_of_birth]': {required: true},
+            // 'data[User][day_of_birth]': {required: true},
+            // 'data[User][married_status_id]': {required: true},
+            // 'data[User][live_with_family]': {required: true},
+            'data[User][num_child]': {number: true},
+            'data[UserAddress][post_num_1]': {number: true, minlength: 3, maxlength: 3},
+            'data[UserAddress][post_num_2]': {number: true, minlength: 4, maxlength: 4},
+            // 'data[UserAddress][city]': {required: true},
+            // 'data[UserAddress][house_name]': {required: true},
+            // 'data[UserAddress][residence_id]': {required: true},
+            'data[UserAddress][year_residence]': {number: true},
+            'data[UserAddress][housing_costs]': {number: true},
+            'data[User][phone]': {
+                required: function(element) {
+                return !$("#home_phone").val();
+              },
+                number: true,
+                phone_number: "^0[0-9]{9}"
+            },
+            'data[User][home_phone]': {
+                required: function(element) {
+                return  !$("#phone").val();
+              },
+                number: true,
+                phone_number: "[0-9]{11}"
+            },
+            // 'data[User][contact_type]': {required: true},
+            // 'data[UserCompany][work_id]': {required: true},
+            // 'data[UserCompany][name]': {required: true},
+            // 'data[UserCompany][name_kana]': {required: true},
+            'data[UserCompany][post_num_1]': {number: true, minlength: 3, maxlength: 3},
+            'data[UserCompany][post_num_2]': {number: true, minlength: 4, maxlength: 4},
+            // 'data[UserCompany][pref_id]': {required: true},
+            // 'data[UserCompany][city]': {required: true},
+            'data[UserCompany][phone]': {number: true, phone_number: "^0[0-9]{9}"},
+            'data[UserCompany][fax]': {number: true},
+            // 'data[UserCompany][description]': {required: true},
+            // 'data[UserCompany][department]': {required: true},
+            // 'data[UserCompany][position]': {required: true},
+            'data[UserCompany][year_worked]': {number: true},
+            'data[UserCompany][month_worked]': {number: true},
+            // 'data[UserCompany][salary_type_other]': {required: true},
+            'data[UserCompany][salary_month]': {number: true},
+            'data[UserCompany][salary_year]': {number: true},
+            'data[UserCompany][salary_date]': {number: true},
+            'data[User][debt_count]': {number: true},
+            'data[User][debt_total_value]': {number: true},
+            'data[User][debt_pay_per_month]': {number: true},
+            'data[ExpectArea][1][post_num_1]': {number: true, minlength: 3, maxlength: 3},
+            'data[ExpectArea][1][post_num_2]': {number: true, minlength: 4, maxlength: 4}
+            // 'data[ExpectArea][1][pref_id]': {required: true},
+            // 'data[ExpectArea][1][city]': {required: true}
+        },
+        messages: {
+
+        },
+        tooltip_options: {
+          
+        },
+        invalidHandler: function(event, validator) {
+          var errors = validator.numberOfInvalids();
+          if (errors) {
+            $("#error-section").show();
+          } else {
+            $("#error-section").hide();
+          }
+        },
+        submitHandler: function(form) {
+            var url = "<?php echo $this->webroot;?>users/update_basic_info";
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#UserEditBasicInfo").serialize(),
+                success: function(result)
+                {
+                    edit = 0;
+                    $('#basic').html(result);
+                }
+            });
+            return false;
+        }
+      });
+      jQuery.extend(jQuery.validator.messages, {
+          number: "<?php echo __('global.errors.number'); ?>"
+      });
+</script>

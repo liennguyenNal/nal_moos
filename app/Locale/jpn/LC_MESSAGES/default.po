@@ -346,6 +346,14 @@ msgstr "借入総額"
 msgid "user.my_page.basic_info.debt_month"	
 msgstr "月々返済額"
 
+msgid "global.errors.number"	
+msgstr "数字をご入力ください。"
+
+msgid "global.errors.minlength_3"	
+msgstr "３桁以下にご入力ください。"
+
+msgid "global.errors.minlength_4"	
+msgstr "４桁以下にご入力ください。"
 
 
 
