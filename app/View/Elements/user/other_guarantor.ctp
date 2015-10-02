@@ -9,7 +9,7 @@
 
     <div class="row">
       	<div class="col-lg-12">
-        	<?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserGuarantorEdit' ,'class'=>'form-horizontal', 'inputDefaults' => array(
+        	<?php echo $this->Form->create("User", array('action'=>'edit','id'=>'OtherGuarantorEdit' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         	'format' => array('before', 'label', 'between', 'input', 'after' ) ) ) ) ?>
 	        <div class="well bs-component">
 	       
@@ -25,23 +25,23 @@
 	                <td>
 	                  <div class="form-group">
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.first_name', array('type'=>'text', 'id'=>"g_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false, 'required'=>false))?>
 	                   
-	                      <?php echo $this->Form->input('UserGuarantor.last_name', array('type'=>'text', 'id'=>"g_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false , 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.last_name', array('type'=>'text', 'id'=>"og_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false , 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.first_name_kana', array('type'=>'text', 'id'=>"g_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required'=>false))?>              
+	                      <?php echo $this->Form->input('OtherGuarantor.first_name_kana', array('type'=>'text', 'id'=>"og_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required'=>false))?>              
 	                                       
-	                      <?php echo $this->Form->input('UserGuarantor.last_name_kana', array('type'=>'text', 'id'=>"g_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.last_name_kana', array('type'=>'text', 'id'=>"og_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                </td>
 	                <script type="text/javascript">
-	                	$(this).autoKana('#g_first_name', '#g_first_name_kana', {katakana:false, toggle:false});
-                		$(this).autoKana('#g_last_name', '#g_last_name_kana', {katakana:false, toggle:false});
+	                	$(this).autoKana('#og_first_name', '#og_first_name_kana', {katakana:false, toggle:false});
+                		$(this).autoKana('#og_last_name', '#og_last_name_kana', {katakana:false, toggle:false});
 	                </script>
 	              </tr>
 	             <tr>
@@ -51,7 +51,7 @@
 		                
 		                  <div class="col-lg-10">
 		                    <?php 
-		                		echo $this->Form->radio('UserGuarantor.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
+		                		echo $this->Form->radio('OtherGuarantor.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
 		              		?>	
 		                  </div>
 		                </div>
@@ -67,27 +67,27 @@
 	                      年
 	                      <?php 
 	                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
-	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year', 'onchange'=>'g_calculate_age1()', 'required'=>false));
+	                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'og−year', 'onchange'=>'g_calculate_age1()', 'required'=>false));
 	                		?>
 	    	              月
 	    	              <?php 
 	    	              	$months = array_combine(range(1, 12), range(1, 12));
-	                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false));
+	                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false));
 	                		?>
 	    	              日
 	    	              <?php 
 	    	              $dates = array_combine(range(1, 31), range(1, 31));
-	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
+	                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
-	                      歳 : <span id="g-age-1">0</span>
+	                      歳 : <span id="og-age">0</span>
 	                    
 	                    	 <script type="text/javascript">
 		                    var d = new Date();
 		                      var n = d.getFullYear();
-		                      $("#g-age-1").html(n - $("#g1−year").val());
+		                      $("#og-age").html(n - $("#og−year").val());
 		                    function g_calculate_age1(){
 		                      
-		                      $("#g-age-1").html(n - $("#g1−year").val());
+		                      $("#og-age").html(n - $("#og−year").val());
 		                    }
 		                    </script>
 	                    </div>
@@ -101,7 +101,7 @@
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>"有り" ,"2"=> "無し"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('OtherGuarantor.live_with_family', array("1"=>"有り" ,"2"=> "無し"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
@@ -114,7 +114,7 @@
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('UserGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('OtherGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
@@ -126,7 +126,7 @@
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.num_child', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.num_child', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false, 'required'=>false))?>
 	                   
 	                      
 	                    </div>
@@ -139,7 +139,7 @@
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.relate', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.relate', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                   
 	                      
 	                    </div>
@@ -160,21 +160,21 @@
 	                  <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*<span></label>
 		                <div class="col-lg-10" >
-		                  <?php echo $this->Form->input('UserGuarantor.post_num_1', array('type'=>'text', 'id'=>"g_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
-		                  <?php echo $this->Form->input('UserGuarantor.post_num_2', array('type'=>'text', 'id'=>"g_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-		                  <button type="button" class="btn btn-primary" id="btn-g-find-address">郵使番号から住所を検索</button>
+		                  <?php echo $this->Form->input('OtherGuarantor.post_num_1', array('type'=>'text', 'id'=>"og_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.post_num_2', array('type'=>'text', 'id'=>"og_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+		                  <button type="button" class="btn btn-primary" id="btn-og-find-address">郵使番号から住所を検索</button>
 		                  <img id="loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
 		                  <script type="text/javascript">
-		                    $('#btn-g-find-address').on('click', function() {
-		                         var loader = $('#loader');
+		                    $('#btn-og-find-address').on('click', function() {
+		                         var loader = $('#og_loader');
 		                        
 		                          loader.show();
-		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#g_post_num_1').val().trim() + $('#g_post_num_2').val().trim()}, 
+		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#og_post_num_1').val().trim() + $('#og_post_num_2').val().trim()}, 
 		                          function(json) {
 		                            loader.hide();
-		                            $("#g_pref_id").val(json.pref_id);
-		                            $("#g_city").val(json.ward);
-		                            $("#g_address").val(json.addr1);
+		                            $("#og_pref_id").val(json.pref_id);
+		                            $("#og_city").val(json.ward);
+		                            $("#og_address").val(json.addr1);
 		                        });
 		                    });
 		                  </script>
@@ -185,7 +185,7 @@
 		                <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*<span></label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                  echo $this->Form->select('UserGuarantor.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_pref_id', 'empty'=>'青森県', 'required'=>false));
+		                  echo $this->Form->select('OtherGuarantor.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'og_pref_id', 'empty'=>'-----', 'required'=>false));
 		                ?>
 		                </div>
 		              </div>
@@ -193,20 +193,20 @@
 		                <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*<span></label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                    echo $this->Form->input('UserGuarantor.city', array('type'=>'text', 'id'=>"g_city", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false));
+		                    echo $this->Form->input('OtherGuarantor.city', array('type'=>'text', 'id'=>"og_city", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false));
 		                ?>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">番地<span style="color:red">*<span></label>
 		                <div class="col-lg-10">
-		                  <?php echo $this->Form->input('UserGuarantor.address', array('type'=>'text', 'id'=>"g_address", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.address', array('type'=>'text', 'id'=>"og_address", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
 		                <div class="col-lg-10">
-		                  <?php echo $this->Form->input('UserGuarantor.house_name', array('type'=>'text', 'id'=>"g_house_name", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.house_name', array('type'=>'text', 'id'=>"og_house_name", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 		                </div>
 		              </div>
 	                </td>
@@ -217,7 +217,7 @@
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">                 
-	                      	<?php echo $this->Form->select('UserGuarantor.residence_id', $residences, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'residence_id', 'required'=>false)); ?>
+	                      	<?php echo $this->Form->select('OtherGuarantor.residence_id', $residences, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'residence_id', 'required'=>false)); ?>
 	                    </div>
 	                  </div>
 	                </td>
@@ -229,7 +229,7 @@
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">                 
-	                      <?php echo $this->Form->input('UserGuarantor.year_residence', array('type'=>'text', 'id'=>"year_residence",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.year_residence', array('type'=>'text', 'id'=>"year_residence",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                </td>
@@ -241,7 +241,7 @@
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">                 
-	                      <?php echo $this->Form->input('UserGuarantor.housing_cost', array('type'=>'text', 'id'=>"housing_cost",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.housing_cost', array('type'=>'text', 'id'=>"housing_cost",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                </td>
@@ -261,7 +261,7 @@
 		                  <div class="form-group">
 		                    
 		                    <div class="col-lg-10">                 
-		                      <?php echo $this->Form->input('UserGuarantor.email', array('type'=>'text', 'id'=>"email",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
+		                      <?php echo $this->Form->input('OtherGuarantor.email', array('type'=>'text', 'id'=>"email",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
 		                    </div>
 		                  </div>
 		                </td>
@@ -273,9 +273,9 @@
 		                  <div class="form-group">
 		                    
 		                    <div class="col-lg-10">
-		                      <?php echo $this->Form->input('UserGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', 'div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
+		                      <?php echo $this->Form->input('OtherGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', 'div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
 		                   
-		                      <?php echo $this->Form->input('UserGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
+		                      <?php echo $this->Form->input('OtherGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
 		                    </div>
 		                  </div>
 		                  </td>
@@ -287,7 +287,7 @@
 				                
 				                  <div class="col-lg-10">
 				                    <?php 
-				                		echo $this->Form->radio('UserGuarantor.contact_type_id', array('1'=>"携帯",'2'=> "自宅",'3'=> "勤務先"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+				                		echo $this->Form->radio('OtherGuarantor.contact_type_id', array('1'=>"携帯",'2'=> "自宅",'3'=> "勤務先"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
 				              		?>	
 				                  </div>
 				                </div>
@@ -310,7 +310,7 @@
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
-	                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
+	                    echo $this->Form->select('OtherGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
 	                  ?>
 	                  </div>
 	                </div>
@@ -318,13 +318,13 @@
 	                  <label for="inputEmail" class="col-lg-2 control-label">Company Name</label>
 	                  <div class="col-lg-10">
 	                  Hira
-	                    <?php echo $this->Form->input('UserGuarantor.company', array('type'=>'text', 'id'=>"g-company", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company', array('type'=>'text', 'id'=>"og-company", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
 	                    Kana
-	                    <?php echo $this->Form->input('UserGuarantor.company_kana', array('type'=>'text', 'id'=>"g-company-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_kana', array('type'=>'text', 'id'=>"og-company-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false))?>
 	                  </div>
 	                </div>
 	                <script type="text/javascript">
-                    $(this).autoKana('#g-company', '#g-company-kana', {katakana:false, toggle:false});
+                    $(this).autoKana('#og-company', '#og-company-kana', {katakana:false, toggle:false});
                   </script>
 
 	               
@@ -336,22 +336,22 @@
 	                  <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">〒</label>
 		                <div class="col-lg-10" >
-		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"g_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false))?>
-		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"g_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
-		                  <button type="button" class="btn btn-primary" id="btn-guarantor-company-address">郵使番号から住所を検索</button>
-		                  <img id="g-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
+		                  <?php echo $this->Form->input('OtherGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"og_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"og_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
+		                  <button type="button" class="btn btn-primary" id="btn-og-company-address">郵使番号から住所を検索</button>
+		                  <img id="og-company-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
 		                  <script type="text/javascript">
-		                    $('#btn-guarantor-company-address').on('click', function() {
-		                         var loader = $('#g-loader');
+		                    $('#btn-og-company-address').on('click', function() {
+		                         var loader = $('#og-company-loader');
 		                        
 		                          loader.show();
 		                         // alert($('#post_num_1').val().trim() + $('#post_num_2').val().trim());
-		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#g_company_post_num_1').val().trim() + $('#g_company_post_num_2').val().trim()}, 
+		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#og_company_post_num_1').val().trim() + $('#og_company_post_num_2').val().trim()}, 
 		                          function(json) {
 		                            loader.hide();
-		                            $("#g_company_pref_id").val(json.pref_id);
-		                            $("#g_company_city").val(json.ward);
-		                            $("#g_company_address").val(json.addr1);
+		                            $("#og_company_pref_id").val(json.pref_id);
+		                            $("#og_company_city").val(json.ward);
+		                            $("#og_company_address").val(json.addr1);
 		                        });
 		                    });
 		                  </script>
@@ -362,7 +362,7 @@
 		                <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                  echo $this->Form->select('UserGuarantor.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_company_pref_id', 'empty'=>'------'));
+		                  echo $this->Form->select('OtherGuarantor.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'og_company_pref_id', 'empty'=>'-----'));
 		                ?>
 		                </div>
 		              </div>
@@ -370,20 +370,20 @@
 		                <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                    echo $this->Form->input('UserGuarantor.company_city', array('type'=>'text', 'id'=>"g_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false));
+		                    echo $this->Form->input('OtherGuarantor.company_city', array('type'=>'text', 'id'=>"og_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false));
 		                ?>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">番地</label>
 		                <div class="col-lg-10">
-		                  <?php echo $this->Form->input('UserGuarantor.company_address', array('type'=>'text', 'id'=>"g_company_address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.company_address', array('type'=>'text', 'id'=>"og_company_address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
 		                <div class="col-lg-10">
-		                  <?php echo $this->Form->input('UserGuarantor.company_house_name', array('type'=>'text', 'id'=>"g_company_house_name", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
+		                  <?php echo $this->Form->input('OtherGuarantor.company_house_name', array('type'=>'text', 'id'=>"og_company_house_name", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
 		                </div>
 		              </div>
 	                </td>
@@ -393,13 +393,13 @@
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Fax</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                
@@ -407,63 +407,63 @@
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->select('UserGuarantor.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'-----', 'required'=>false));?>
+	                    <?php echo $this->Form->select('OtherGuarantor.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'-----', 'required'=>false));?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Description</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Department</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 
 	               <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Position</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-	                    <?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	               
 	               <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+	                    <?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Salary Year</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+	                    <?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                	 <label for="inputEmail" class="col-lg-2 control-label">Salary Type</label>
 	                  <div class="col-lg-10">
 	                    <?php 
-	                		echo $this->Form->radio('UserGuarantor.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
-	                		echo $this->Form->input('UserGuarantor.salary_type_other', array('type'=>'text', 'id'=>"g_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'required'=>false))
+	                		echo $this->Form->radio('OtherGuarantor.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'og_change_type($(this))'));
+	                		echo $this->Form->input('OtherGuarantor.salary_type_other', array('type'=>'text', 'id'=>"og_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'required'=>false))
 	              		?>	
 	                  </div>
 	                  	<script type="text/javascript">
-	                    function g_change_type(obj){
+	                    function og_change_type(obj){
 	                      
 	                        if(obj.val() == '4')
-	                        $('#g_salary_type_other').prop('disabled',false);
+	                        $('#og_salary_type_other').prop('disabled',false);
 	                        else {
-	                          $('#g_salary_type_other').prop('disabled',true);
+	                          $('#og_salary_type_other').prop('disabled',true);
 	                        }
 	                    }
 	                  </script>
@@ -474,8 +474,8 @@
 	                  <label for="inputEmail" class="col-lg-2 control-label">給料日</label>
 	                  <div class="col-lg-10">
 	                    <?php 
-		                		echo $this->Form->radio('UserGuarantor.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
-		                		echo $this->Form->input('UserGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'required'=>false))
+		                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+		                		echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'required'=>false))
 		              		?>	
 	                  </div>
 	                </div>
@@ -485,17 +485,17 @@
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
-	                    echo $this->Form->select('UserGuarantor.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----', 'required'=>false));
+	                    echo $this->Form->select('OtherGuarantor.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----', 'required'=>false));
 	                  ?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">Note</label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
-	                 <?php echo $this->Form->hidden('UserGuarantor.id')?>
+	                 <?php echo $this->Form->hidden('OtherGuarantor.id')?>
 	              </fieldset>
 	          
 	            </div>
@@ -505,9 +505,9 @@
 	            <?php if($user['User']['status_id'] == 2){?>
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="button" class="btn btn-primary" id="btn-edit-guarantor" >Update</button>
-                  <button type="submit" class="btn btn-primary" id="btn-save-guarantor" >Save</button>
-                  <button type="button" class="btn btn-default" id="btn-cancel-guarantor" >Cancel</button>
+                  <button type="button" class="btn btn-primary" id="btn-edit-other-guarantor" >Update</button>
+                  <button type="submit" class="btn btn-primary" id="btn-save-other-guarantor" >Save</button>
+                  <button type="button" class="btn btn-default" id="btn-cancel-other-guarantor" >Cancel</button>
                 </div>
               </div>
               <?php }
@@ -523,11 +523,11 @@
                 $( document ).ready(function() {
                   if(edit != 1){
                     //alert(edit);
-                    $('#btn-edit-guarantor').show();
-                    $('#btn-save-guarantor').hide();
-                    $('#btn-cancel-guarantor').hide();
-                    $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-                    $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').hide();
+                    $('#btn-edit-other-guarantor').show();
+                    $('#btn-save-other-guarantor').hide();
+                    $('#btn-cancel-other-guarantor').hide();
+                    $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor)').prop('disabled',true);
+                    $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').hide();
                   }
                   else{
                     $('#btn-cancel-guarantor').show();
@@ -540,44 +540,44 @@
                  
 
                     
-                   $('#btn-edit-guarantor').on('click', function() {
-                      $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').show();
-                      $('#UserGuarantorEdit').find(':input').prop('disabled',false);
-                      $('#btn-cancel-guarantor').show();
-                      $('#btn-save-guarantor').show();
+                   $('#btn-edit-other-guarantor').on('click', function() {
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').show();
+                      $('#OtherGuarantorEdit').find(':input').prop('disabled',false);
+                      $('#btn-cancel-other-guarantor').show();
+                      $('#btn-save-other-guarantor').show();
                       
                      
-                      $('#btn-edit-guarantor').hide();
+                      $('#btn-edit-other-guarantor').hide();
                       edit = 1;
 
                    });
-                   $('#btn-cancel-guarantor').on('click', function() {
-                      $('#btn-edit-guarantor').show();
-                      $('#btn-save-guarantor').hide();
-                      $('#btn-cancel-guarantor').hide();
-                      $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-                      $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').hide();
+                   $('#btn-cancel-other-guarantor').on('click', function() {
+                      $('#btn-edit-other-guarantor').show();
+                      $('#btn-save-other-guarantor').hide();
+                      $('#btn-cancel-other-guarantor').hide();
+                      $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor)').prop('disabled',true);
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').hide();
                       $.ajax({
-                           url: "<?php echo $this->webroot;?>user_guarantors/edit",
+                           url: "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor",
                             success: function(result){
                               edit = 0;
-                              $('#guarantor').html(result);
+                              $('#other_guarantor').html(result);
                             }
                         });
 
                    });
-                  $("#UserGuarantorEdit").submit(function() {
+                  $("#OtherGuarantorEdit").submit(function() {
 
-                      var url = "<?php echo $this->webroot;?>user_guarantors/edit_guarantor"; // the script where you handle the form input.
+                      var url = "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor"; // the script where you handle the form input.
 
                       $.ajax({
                              type: "POST",
                              url: url,
-                             data: $("#UserGuarantorEdit").serialize(), // serializes the form's elements.
+                             data: $("#OtherGuarantorEdit").serialize(), // serializes the form's elements.
                              success: function(result)
                              {
                                  edit = 0;
-                                 $('#guarantor').html(result);
+                                 $('#other_guarantor').html(result);
                                  $.ajax({
                                    url: "<?php echo $this->webroot?>users/reload_dashboard",
                                     success: function(result){

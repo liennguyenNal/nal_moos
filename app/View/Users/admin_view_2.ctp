@@ -1,396 +1,291 @@
+<script src="<?php echo $this->webroot;?>js/jquery.autoKana.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
 <div class="page-header" id="banner">
  <div class="col-lg-4">
     <div class="bs-component">
-		 <ul class="breadcrumb">
-		    <li><a href="#">Home</a></li>
-		    <li><a href="<?php echo $this->webroot?>admin/users/">Customers</a></li>
-		    <li class="active">View Customer </li>
-		  </ul>
-	</div>
+     <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="<?php echo $this->webroot?>admin/users/">Customers</a></li>
+        <li class="active">View Customer </li>
+      </ul>
+  </div>
 </div>
 
 <div class="row">
 
     <div class="col-lg-12">
-      <div class="page-header">
-        <h1 id="tables">Customer</h1>
-      </div>
-      <?php echo $this->element('flash');?>
-      <div class="bs-component">
-      	<ul class="nav nav-tabs">
-            <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-            <!-- <li><a href="#profile" data-toggle="tab">愚見数則</a></li> -->
-            <li class="disabled"><a>Others</a></li>
-            
-    	</ul>
-
-    	<div id="myTabContent" class="tab-content">
-          	<div class="tab-pane fade active in" id="profile">
-		       <?php echo $this->Form->create("User", array('action'=>'register', 'id'=>'form', 'class'=>'form-horizontal', 'inputDefaults' => array(
-        'format' => array('before', 'label', 'between', 'input', 'after',  'error'  ) ) ) ) ?>
-        <div class="well bs-component">
-       
-         
-         
-            <fieldset>
-              <legend>Account Information</legend>
-              <table class="table table-striped table-hover ">
-              <tr>
-                <td>
-                  <label for="inputEmail" class="col-lg-2 control-label">Name<span style="color:red">*</span></label>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"title", 'label'=>"First", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'First Name','div'=>false))?>
-                   
-                      <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"title", 'label'=>"Last", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'Last Name','div'=>false))?>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    
-                    <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>"First Kana", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'First Name Kana','div'=>false))?>              
-                                       
-                      <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"title", 'label'=>"Last Kana", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'Last Name Kana','div'=>false))?>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-             <tr>
-             <td> <label for="inputEmail" >Genre<span style="color:red">*</span></label></td>
-              <td>
-                <div class="form-group">
-                
-                  <div class="col-lg-10">
-                    <?php 
-                		echo $this->Form->radio('genre', array('male'=>"Male",'Female'=> "Female"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false));
-              		?>	
-                  </div>
-                </div>
-              </td>
-              </tr>
-              <tr>
-                <td> <label for="inputEmail" >Birthday<span style="color:red">*</span></label></td>
-                <td>
-                  <div class="form-group">
-                   
-                    <div class="col-lg-10">
-                    	
-                      Year
-                      <?php 
-                      $years = array_combine(range(date("Y") , 1930), range(date("Y"), 1930));
-                  		echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year'));
-                		?>
-    	              Month
-    	              <?php 
-    	              	$months = array_combine(range(1, 12), range(1, 12));
-                  		echo $this->Form->select('month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
-                		?>
-    	              Day
-    	              <?php 
-    	              $dates = array_combine(range(1, 31), range(1, 31));
-                  		echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
-                		?>
-                   	Age: <span><?php echo date("Y") - $user['User']['year_of_birth'];?></span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="inputEmail" >Married Status<span style="color:red">*</span></label></td>
-                <td>
-                <div class="form-group">
-                
-                  <div class="col-lg-10">
-                   
-                    <?php 
-                		
-              		?>
-                   <?php 
-                    echo $this->Form->radio('married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false));
-                  ?>  
-                  </div>
-                </div>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="inputEmail" >Address<span style="color:red">*</span></td>
-                <td>
-                  <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Post Number<span style="color:red">*<span></label>
-                <div class="col-lg-10" >
-                  <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'Post Number 1','div'=>false))?>
-                  <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'Post Number 2','div'=>false))?>
-                 
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">City<span style="color:red">*<span></label>
-                <div class="col-lg-10">
-                  <?php 
-                  echo $this->Form->select('UserAddress.city_id', $cities, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --'));
-                ?>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Ward/Town<span style="color:red">*<span></label>
-                <div class="col-lg-10">
-                  <?php 
-                  echo $this->Form->select('UserAddress.ward_id', $wards, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select Ward/Town --'));
-                ?>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">House Num<span style="color:red">*<span></label>
-                <div class="col-lg-10">
-                  <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'2 - 5 - 1','div'=>false))?>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">House Name<span style="color:red">*<span></label>
-                <div class="col-lg-10">
-                  <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
-                </div>
-              </div>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="inputEmail">Email<span style="color:red">*</span></label></td>
-                <td>
-                  <div class="form-group">
-                    
-                    <div class="col-lg-10">                 
-                      <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Email','div'=>false))?>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-               
-              <tr>
-                <td><label for="inputEmail" class="col-lg-2 control-label">Phone<span style="color:red">*</span></label></td>
-                <td>
-                  <div class="form-group">
-                    
-                    <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"title", 'label'=>'Hand Phone', 'class'=>'form-control', "placeholder"=>'Hand Phone','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
-                   
-                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"title", 'label'=>'Home Phone', 'class'=>'form-control', "placeholder"=>'Home Phone','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
-                    </div>
-                  </div>
-                  </td>
-                </tr>
-            </table>
-            </fieldset>
+      
+        <div class="bs-component">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">マイページトップ</a></li>
+            <li ><a href="#basic" data-toggle="tab">申込人</a></li>
+            <li><a href="#partner" data-toggle="tab">配偶者／同居人</a></li>
+            <li><a href="#guarantor" data-toggle="tab"> 連帯保証人 </a></li>
+             <?php if($user['User']['need_more_guarantor']){?>
+            <li><a href="#guarantor-2" data-toggle="tab"> 連帯保証人 2</a></li>
+            <?php } ?>
+            <li><a href="#attach" data-toggle="tab">  添付書類 </a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="home">
+           
+              <?php echo $this->element('/admin/user/dashboard');?>
             </div>
+            <div class="tab-pane fade" id="basic">
               
-
-              
-
-            <div class="well bs-component">
-              <fieldset>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Working Status<span style="color:red">*<span></label>
-                  <div class="col-lg-10">
-                   
-                    <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $working_statuses, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-- Select One --'));
-                  ?>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Time Worked<span style="color:red">*<span></label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' Year&nbsp;' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' Month&nbsp;', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                  </div>
-                </div>
-
-               
-                    
-                 
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Tax of Month<span style="color:red">*<span></label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
-                  </div>
-                </div>
-                
-
-               
-              </fieldset>
-          
+              <?php echo $this->element('/admin/user/basic_info');?>
             </div>
-            <h4>Expect area</h4>
-            <section id="expect-area">
-            <?php foreach ($user['ExpectArea'] as $item) {?>
-            <div class="well bs-component" id='expect-area-content' >
-              <fieldset>
-
-                  <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Post Number<span style="color:red">*</span></label>
-                  <div class="col-lg-10" >
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"title",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'Post Number 1','div'=>false, 'value'=>$item['post_num_1']))?>
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"title",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'Post Number 2','div'=>false, 'value'=>$item['post_num_2']))?>
-                    
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">City<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                    <?php 
-                    echo $this->Form->select('ExpectArea.1.city_id', $cities, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'city', 'empty'=>'-- Select City --', 'value'=>$item['city_id']));
-                  ?>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Ward/Town<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                    <?php 
-                    echo $this->Form->select('ExpectArea.1.ward_id', $wards, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'city','empty'=>'-- Select Ward/Town --','value'=>$item['ward_id']));
-                  ?>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Area<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input('ExpectArea.1.area', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item['area']))?>
-                  </div>
-                </div>
-              </fieldset>
+            <div class="tab-pane fade" id="partner">
               
+              <?php echo $this->element('/admin/user/partner');?>
+            </div>
+            <div class="tab-pane fade" id="guarantor">            
+              <?php echo $this->element('/admin/user/guarantor');?>
+            </div>
+            <?php if($user['User']['need_more_guarantor']){?>
+            <div class="tab-pane fade" id="guarantor-2">
+               <?php echo $this->element('/admin/user/other_guarantor');?>
             </div>
             <?php } ?>
-            </section>
-            <div >
 
+            <div class="tab-pane fade" id="attach">
+            
+              <?php echo $this->element('/admin/user/attachment');?>
+            </div>
 
-        </form>
-        <script type="text/javascript">
-        	$( document ).ready(function() {
-        		$('#form').find(':input:not(:button):not(:disabled)').prop('disabled',true);
-
-        	});
-        </script>
-		       
-		        <div class="form-group">
-		            <div class="col-lg-10 ">
-			            <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> Delete User</button>
-			            <div class="col-lg-offset-2" style="padding-left:150px">
-			            	 <?php if($user['User']['status_id'] == 1){?>
-				            <button type="button" class="btn btn-warning" id="btn-reject"> Reject Register</button>
-			              	<button type="button" class="btn btn-primary" id="btn-approve">Approve Register</button>
-			              	<?php } ?>
-			              	<button type="button" class="btn btn-default" id="btn-cancel" style="float:right">Cancel</button>
-		              	</div>
-		              	
-		            </div>
-		          </div>
-		      </div>
-		      <script type="text/javascript">
-			      function approve(){
-			      	if(confirm("Are you sure approve for this customer reigstration"))
-			      		window.location.href='<?php echo $this->webroot;?>admin/users/approve_register/<?php echo $user['User']['id']?>';
-			      }
-			      function reject(){
-			      	if(confirm("Are you sure reject for this customer reigstration"))
-			      		window.location.href='<?php echo $this->webroot;?>admin/users/reject_register/<?php echo $user['User']['id']?>';
-			      }
-			      $(document).ready(function(){ 
-			        
-
-			        $('#btn-delete').on('click', function() {
-			          
-			             $( "#dialog-confirm-delete" ).dialog("open");
-			         
-			        });
-			        $('#btn-reject').on('click', function() {
-			          
-			             $( "#dialog-confirm-reject" ).dialog("open");
-			         
-			        });
-			         $('#btn-approve').on('click', function() {
-			          
-			             $( "#dialog-confirm-approve" ).dialog("open");
-			          
-			        });
-			         $('#btn-cancel').on('click', function() {
-			          
-			             window.location.href='<?php echo $this->webroot;?>admin/users';
-			          
-			        });
-
-			        $( "#dialog-confirm-delete" ).dialog({
-			          autoOpen: false,
-			          resizable: true,
-			          modal: true,
-			          buttons: {
-			            "Delete": function() {
-			              window.location.href='<?php echo $this->webroot;?>admin/users/delete/<?php echo $user['User']['id']?>';
-			              $( this ).dialog( "close" );
-			            },
-			            Cancel: function() {
-			              agree = false;
-			              $( this ).dialog( "close" );
-			            }
-			          }
-			        });
-			        $( "#dialog-confirm-reject" ).dialog({
-			          autoOpen: false,
-			          resizable: true,
-			          modal: true,
-			          buttons: {
-			            "Reject": function() {
-			             	window.location.href='<?php echo $this->webroot;?>admin/users/reject_register/<?php echo $user['User']['id']?>';
-			              $( this ).dialog( "close" );
-			            },
-			            Cancel: function() {
-			              agree = false;
-			              $( this ).dialog( "close" );
-			            }
-			          }
-			        });
-			        
-			        $( "#dialog-confirm-approve" ).dialog({
-			          autoOpen: false,
-			          resizable: true,
-			          modal: true,
-			          buttons: {
-			            "Approve": function() {
-			              window.location.href='<?php echo $this->webroot;?>admin/users/approve_register/<?php echo $user['User']['id']?>';
-			              $( this ).dialog( "close" );
-			            },
-			            Cancel: function() {
-			              agree = false;
-			              $( this ).dialog( "close" );
-			            }
-			          }
-			        });
-
-			       
-			       
-			      });
-			    </script>
-		      
-	        </div>
+          </div>
         </div>
-        
+
     </div>
 
+    <div class="form-group">
+       
+        <div class="col-lg-10 ">
+          <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> <?php echo __('admin.user.delete_button')?></button>
+          <div class="col-lg-offset-2" style="padding-left:150px">
+             <?php if($user['User']['status_id']){?>
+             <?php if($user['User']['status_id'] == "3"){?>
+              <button type="button" class="btn btn-warning" id="btn-reject"> <?php echo __('admin.user.reject_button')?></button>
+
+              <button type="button" class="btn btn-success" id="btn-approve"><?php echo __('admin.user.approve_main_button')?></button>
+              <button type="button" class="btn btn-primary" id="btn-return"><?php echo __('admin.user.return_button')?></button>
+              <?php } else if($user['User']['status_id'] == "4"){?>
+                       <button type="button" class="btn btn-primary" id="btn-return"><?php echo __('admin.user.charged_button')?></button>
+              <?php }?>
+            <?php } ?>   
+              <button type="button" class="btn btn-default" id="btn-cancel" style="float:right"><?php echo __('admin.user.back_button')?></button>
+            </div>
+          
+        </div>
+
+      </div>
   </div>
-  <div id="dialog-confirm-delete" title="Delete?">
+          <script type="text/javascript">
+            function approve(){
+              if(confirm("Are you sure approve for this customer"))
+                window.location.href='<?php echo $this->webroot;?>admin/users/approve/<?php echo $user['User']['id']?>';
+            }
+            function reject(){
+              if(confirm("Are you sure reject for this customer"))
+                window.location.href='<?php echo $this->webroot;?>admin/users/reject/<?php echo $user['User']['id']?>';
+            }
+            $(document).ready(function(){ 
+              
+
+              $('#btn-delete').on('click', function() {
+                
+                   $( "#dialog-confirm-delete" ).dialog("open");
+               
+              });
+              $('#btn-reject').on('click', function() {
+                
+                   $( "#dialog-confirm-reject" ).dialog("open");
+               
+              });
+               $('#btn-approve').on('click', function() {
+                
+                   $( "#dialog-confirm-approve" ).dialog("open");
+                
+              });
+               $('#btn-cancel').on('click', function() {
+                
+                   window.location.href='<?php echo $this->webroot;?>admin/users';
+                
+              });
+
+              $( "#dialog-confirm-delete" ).dialog({
+                autoOpen: false,
+                resizable: true,
+                modal: true,
+                buttons: {
+                  "Delete": function() {
+                   $( "#dialog-reconfirm-delete" ).dialog("open");
+                    $( this ).dialog( "close" );
+                  },
+                  Cancel: function() {
+                    agree = false;
+                    $( this ).dialog( "close" );
+                  }
+                }
+              });
+              $( "#dialog-reconfirm-delete" ).dialog({
+                autoOpen: false,
+                resizable: true,
+                modal: true,
+                buttons: {
+                  "Delete": function() {
+                    window.location.href='<?php echo $this->webroot;?>admin/users/delete/<?php echo $user['User']['id']?>';
+                    $( this ).dialog( "close" );
+                  },
+                  Cancel: function() {
+                    agree = false;
+                    $( this ).dialog( "close" );
+                  }
+                }
+              });
+              $( "#dialog-confirm-reject" ).dialog({
+                autoOpen: false,
+                resizable: true,
+                modal: true,
+                buttons: {
+                  "Reject": function() {
+                    window.location.href='<?php echo $this->webroot;?>admin/users/reject/<?php echo $user['User']['id']?>';
+                    $( this ).dialog( "close" );
+                  },
+                  Cancel: function() {
+                    agree = false;
+                    $( this ).dialog( "close" );
+                  }
+                }
+              });
+              
+              $( "#dialog-confirm-approve" ).dialog({
+                autoOpen: false,
+                resizable: true,
+                modal: true,
+                buttons: {
+                  "Approve": function() {
+                    window.location.href='<?php echo $this->webroot;?>admin/users/approve/<?php echo $user['User']['id']?>';
+                    $( this ).dialog( "close" );
+                  },
+                  Cancel: function() {
+                    agree = false;
+                    $( this ).dialog( "close" );
+                  }
+                }
+              });
+
+
+              function return_user(){
+                // var required_update = $('#chk-required-update').val();
+                // var required_guarantor = $('#chk-required-guarantor').val();
+                // var required_file = $('#chk-required-file').val();
+                // $.ajax({
+                //     url: "<?php echo $this->webroot?>admin/users/return_user/<?php echo $user['User']['id']?>", 
+                //     'method':'POST',
+                //     'data':"data[User][required_update]=" + required_update + "data[User][required_update]=" + required_guarantor + "data[User][required_file]=" + required_file ,
+                //     success: function(result){
+                //       $("#basic").html(result);
+                //       $.ajax({
+                //          url: "<?php echo $this->webroot?>admin/users/reload_dashboard",
+                //           success: function(result){
+                //             $('#home').html(result);
+                //           }
+                //       });
+                //     }});
+                $('#ReturnUserForm').submit();
+              }
+              dialog_return = $( "#dialog-confirm-return" ).dialog({
+                autoOpen: false,
+                height: 450,
+                width: 650,
+                modal: true,
+                buttons: {
+                  "Return": return_user,
+                  Cancel: function() {
+                    dialog_return.dialog( "close" );
+                  }
+                }
+              });
+           
+              // form = dialog_return.find( "form" ).on( "submit", function( event ) {
+              //   event.preventDefault();
+              //   return_user();
+              // });
+           
+              $( "#btn-return" ).button().on( "click", function() {
+                dialog_return.dialog( "open" );
+              });
+              
+              dialog_set_max_payment = $( "#dialog-set-max_payment" ).dialog({
+                autoOpen: false,
+                height: 300,
+                width: 400,
+                modal: true,
+                buttons: {
+                  "Update": edit_max_payment_user,
+                  Cancel: function() {
+                    dialog_set_max_payment.dialog( "close" );
+                  }
+                }
+              });
+              $( "#btn-set-max-payment" ).button().on( "click", function() {
+                dialog_set_max_payment.dialog( "open" );
+              });
+              function edit_max_payment_user(){
+                 $('#EditMaxPaymentUserForm').submit();
+                
+              }
+              
+            });
+          </script>
+  </div>
+   <div id="dialog-confirm-delete" title="Delete?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
   </div>
-  
+  <div id="dialog-reconfirm-delete" title="Delete?">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+  </div>
    <div id="dialog-confirm-approve" title="Approve?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be approved. Are you sure?</p>
   </div>
   <div id="dialog-confirm-reject" title="Reject?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Reject this user. Are you sure?</p>
   </div>
+  
+  <div id="dialog-confirm-return" class="modal-dialog" title="Return Customer">
+    <p>This account will be return the customer </p>
+    <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
+        'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
+      <fieldset>
+        
+        <?php echo $this->Form->input('required', array('type'=>'select', 'multiple'=>'checkbox', 'options'=>array(1=>'Update Info', 2=>'Add more guarantor', 3=>'Upload more file'), 'class' => 'checkbox dialog-checkox', 'style' => 'width:100px; display:inline','label'=>false, 'div'=>false)); ?>
+        <textarea name="data[User][comment]" id="comment" style="width: 439px; height: 80px;margin-top:20px" ></textarea>
+        
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        <?php $this->Form->hidden('User.id')?>
+      </fieldset>
+    </form>
   </div>
-
+  <div id="dialog-set-max_payment" class="modal-dialog" title="Set max payment">
+    <p>Set max payment for user </p>
+    <?php echo $this->Form->create("User", array('action'=>'edit_max_payment','id'=>'EditMaxPaymentUserForm' ,'class'=>'form-horizontal' ) ) ?>
+      <fieldset>
+        
+        <input name="data[User][max_payment]" id="max_payment"  value="<?php echo $user['User']['max_payment'];?>" />
+        
+        <?php $this->Form->hidden('User.id')?>
+      </fieldset>
+    </form>
+  </div>
+  <style type="text/css" media="screen">
+    .dialog-checkox {
+      display: inline-block;
+      margin-left: 5px; 
+    }
+    .dialog-checkox label{
+      display: inline-block;
+      width: 200px;
+    }
+  </style>

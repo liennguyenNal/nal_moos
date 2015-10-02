@@ -160,9 +160,9 @@ for($i =0; $i< $len; $i++){?>
     
    
     function _remove_relation (obj) {
-      // body...
-      num_area--; 
-      //alert(obj.parent().parent().html());
+      // 
+      num--; 
+      $('#btn-add-relation').show();
       obj.parent().parent().parent().remove();
     }
      
@@ -171,7 +171,7 @@ for($i =0; $i< $len; $i++){?>
     	var kana_script = '$(this).autoKana("#r_first_name_'+　order_object +'", "#r_first_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
     	kana_script += '$(this).autoKana("#r_last_name_'+　order_object +'", "#r_last_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
     	
-      if( num_area < 5 ){
+      if( num < 5 ){
      	
        var area = $('#relation-area-content').clone(true, true);
         
@@ -184,7 +184,8 @@ for($i =0; $i< $len; $i++){?>
        $('<script>' + kana_script +'</' + 'script>').appendTo(area);
         $('#relation-area').append(area);
         order_object++;
-        num_area++;
+        num++;
+        if(num == 5) $('#btn-add-relation').hide();
       }
       else {
         alert('Cannot add more item');

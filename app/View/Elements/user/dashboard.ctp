@@ -111,6 +111,26 @@
                           </tr>
                           <?php } ?>
 
+                          <?php if($user['User']['need_more_guarantor']){?>
+                           <?php $i = 0; foreach ($validations['OtherGuarantor'] as $key => $value) { $i++; ?>
+                         
+                          <tr>
+                          <td><?php if($i == 1) echo __('user.my_page.guarantor') . " 2"; ?></td>
+                            <td>
+                             <?php echo $value['key']?>
+                            </td>
+                             <td>
+                                  <?php if($value['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+                            </td>
+
+                             <td>
+                              <?php foreach ($value['fields'] as $value) {
+                                echo $value . ", ";
+                              }?>
+                            </td>
+                          </tr>
+                          <?php } ?>
+                          <?php }?>
                           <tr>
                             <td><?php echo __('user.my_page.attachment')?></td>
                             <td>

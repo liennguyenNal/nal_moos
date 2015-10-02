@@ -136,7 +136,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+                    echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>
@@ -188,7 +188,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'青森県', 'required' => false));
+                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'-----', 'required' => false));
                   ?>
                   </div>
                 </div>
@@ -233,7 +233,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">職業</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'青森県', 'required' => false));?>
+                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'-----', 'required' => false));?>
                   </div>
                 </div>
                 <div class="form-group">
@@ -310,7 +310,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserPartner.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+                    echo $this->Form->select('UserPartner.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>

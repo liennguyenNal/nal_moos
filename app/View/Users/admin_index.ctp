@@ -24,18 +24,14 @@
         <tbody>
           <tr>
             <td margin-left:20px>
-              <label>Filter </label>
+              <label><?php echo __('admin.user.status')?> </label>
             
-               <select class="form-control" id="type" style="width:250px; display:inline">
-                    <option value="1">Registered</option>
-                    <option value="2">Updated</option>
-                    <option value="3">Finished</option>
-                  </select>
-                 
+               
+                 <?php echo  $this->Form->select('User.status_id', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year', 'required'=>false));?>
            
-              <label style="padding-left:20px">Select </label>
-            
-              <select class="form-control" id="" style="width:250px; display:inline; padding-left:20px"></select>
+              <label style="padding-left:20px"><?php echo __('admin.user.pref')?>  </label>
+              <?php echo  $this->Form->select('User.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year', 'required'=>false));?>
+              
               <label style="padding-left:20px">Keyword </label>
               <input class="form-control" style="width:250px; display:inline">
               <button type="button" style="float:right" class="btn btn-primary" id="btn-search">Search</button>

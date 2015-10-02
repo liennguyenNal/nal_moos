@@ -168,7 +168,7 @@
 	                <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*<span></label>
 	                <div class="col-lg-10">
 	                  <?php 
-	                  echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'required'=>false));
+	                  echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'-----', 'required'=>false));
 	                ?>
 	                </div>
 	              </div>
@@ -294,7 +294,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'----', 'required'=>false));
+                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----', 'required'=>false));
                   ?>
                   </div>
                 </div>
@@ -346,7 +346,7 @@
 	                <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
 	                <div class="col-lg-10">
 	                  <?php 
-	                  echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'青森県', 'required'=>false));
+	                  echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'-----', 'required'=>false));
 	                ?>
 	                </div>
 	              </div>
@@ -391,7 +391,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">職業</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->select('UserCompany.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'青森県', 'required'=>false));?>
+                    <?php echo $this->Form->select('UserCompany.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'-----', 'required'=>false));?>
                   </div>
                 </div>
                 <div class="form-group">
@@ -468,7 +468,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝', 'required'=>false));
+                    echo $this->Form->select('UserCompany.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----', 'required'=>false));
                   ?>
                   </div>
                 </div>
@@ -527,7 +527,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*</span></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'value'=>$item['pref_id'], 'required'=>false));
+                    echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'-----', 'value'=>$item['pref_id'], 'required'=>false));
                   ?>
                   </div>
                 </div>
@@ -600,7 +600,7 @@
                 function _remove (obj) {
                   // body...
                   num_area--; 
-                  //alert(obj.parent().parent().html());
+                  $('#btn-add').show();
                   obj.parent().parent().parent().remove();
                 }
 
@@ -615,6 +615,7 @@
                    
                     $('#expect-area').append(area);
                     num_area++;
+                    if(num_area == 5)$('#btn-add').hide();
                   }
                   else {
                     alert('Cannot add more item');
@@ -670,6 +671,7 @@
                    $('#btn-edit-user-info1').on('click', function() {
                       
                       $('#UserEditBasicInfo').find(':input').prop('disabled',false);
+                      $('#UserEditBasicInfo').find(':button').show();
                       $('#btn-cancel-user-info').show();
                       $('#btn-save-user-info').show();
                       

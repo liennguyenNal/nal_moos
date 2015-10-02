@@ -7,7 +7,9 @@
 
 
 class UsersController extends AppController{
-    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'WorkRequired');
+    var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 
+      'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'WorkRequired',
+      'Status');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
     var $helpers = array('Html' , 'Js');
      
@@ -16,6 +18,10 @@ class UsersController extends AppController{
      * @return response
      */
     function admin_index(){
+      $statuses = $this->Status->find('list');
+      $this->set('statuses', $statuses);
+      $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
       $criteria = "1=1 ";
       if($this->params['named']['keyword']){
         $keyword = $this->params['named']['keyword'];
@@ -398,9 +404,11 @@ class UsersController extends AppController{
         if($this->data){
           $comment = $this->data['User']['comment']; 
          $requireds =  $this->data['User']['required'] ;
-          //foreach($this->data['User']['required'] as $item){
-            
-          //}
+          foreach($this->data['User']['required'] as $item){
+            if($item == REQUEST_MORE_GUARANTOR_ID ){
+              $user['User']['need_more_guarantor'] = 1;
+            }  
+          }
      
 
           $user['User']['status_id'] = 2;
@@ -451,7 +459,36 @@ class UsersController extends AppController{
         }
       }
     }
+    function admin_process_payment($user_id){
+      $user = $this->User->read(null, $user_id);
+      if($user['User']['status_id'] == 4){
+          $user['User']['status_id'] = 5;
+          if($this->User->save($user, false)){
+              /**
+             * EMAIL Aprrove User Step 2
+             */
+            $Email = new CakeEmail('gmail');
+            $Email->template('process_payment_successful');
+            $Email->emailFormat('html');
+            $Email->to($user['User']['email']);
+            $Email->from('moos@nal.vn');
+            $Email->subject(__('admin.email.project_payment.title'));
+            $Email->viewVars(array('user' => $user));
+            $Email->send();
 
+            $this->Session->setFlash("Reject User successful", 'default',array('class' => 'alert alert-dismissible alert-success"'));
+            $this->redirect('view/'. $user_id);
+          }
+          else {
+
+             $this->Session->setFlash('Cannot Reject users', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+             $this->redirect('view/'. $user_id);
+          }
+      }
+      else {
+        $this->redirect("users/". $user_id);
+      }
+    }
     /**
      * USER LOGIN FUNCTION
      * @return response
@@ -893,10 +930,12 @@ class UsersController extends AppController{
      * @return response
      */
     function my_page(){
-      $this->layout=null;
+      //$this->layout=null;
       $id = $this->s_user_id;
       if($id){
-        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 
+          'UserGuarantor', 'OtherGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+        //print_r($user['OtherGuarantor']); die;
         $this->data = $user;
         $validations = $this->_validate($user);
         $this->set('validations', $validations);
@@ -1059,6 +1098,12 @@ class UsersController extends AppController{
             'UserPartnerRelation'=> array('key'=>'Partner Relation', 'error'=>0, 'fields'=>array())
           ),
         'UserGuarantor'=>array(
+            'UserGuarantorInfo'=> array('key'=>'Guarantor Info', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorAddress'=> array('key'=>'Guarantor Address', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorCompany'=> array('key'=>'Guarantor Company', 'error'=>0, 'fields'=>array()),
+            'UserGuarantorContact'=> array('key'=>'Guarantor Contact', 'error'=>0, 'fields'=>array())
+          ),
+        'OtherGuarantor'=>array(
             'UserGuarantorInfo'=> array('key'=>'Guarantor Info', 'error'=>0, 'fields'=>array()),
             'UserGuarantorAddress'=> array('key'=>'Guarantor Address', 'error'=>0, 'fields'=>array()),
             'UserGuarantorCompany'=> array('key'=>'Guarantor Company', 'error'=>0, 'fields'=>array()),
@@ -1295,11 +1340,70 @@ class UsersController extends AppController{
         foreach ($user_guarantor_address_fields as $key => $value) {
            array_push($result['UserGuarantor']['UserGuarantorAddress']['fields'], $value);
         }
-        $result['UserGuarantor']['UserGuarantorResidence']['error'] = 1;
+        $result['UserGuarantor']['UserGuarantorContact']['error'] = 1;
         foreach ($user_guarantor_contact_fields as $key => $value) {
            array_push($result['UserGuarantor']['UserGuarantorContact']['fields'], $value);
         }
       }
+
+      if($user['User']['need_more_guarantor']){
+        $other_guarantor = $this->UserGuarantor->find('first',array( 'conditions'=>array( 'UserGuarantor.id'=> $user['User']['other_guarantor_id'])));
+       
+        if($other_guarantor){
+          $this->UserGuarantor->set($other_guarantor);
+          if(!$this->UserGuarantor->validates()){
+            //print_r($this->UserPartner->invalidFields()); die;
+            $result['error'] = 1;
+            
+
+            $result['OtherGuarantor']['UserGuarantorInfo']['fields'] = array();
+            $result['OtherGuarantor']['UserGuarantorAddress']['fields'] = array();
+            $result['OtherGuarantor']['UserGuarantorContact']['fields'] = array();
+            $result['OtherGuarantor']['UserGuarantorCompany']['fields'] = array();
+            foreach ($this->UserGuarantor->invalidFields() as $key => $value) {
+             
+              if (array_key_exists($key, $user_guarantor_info_fields)){
+                array_push($result['OtherGuarantor']['UserGuarantorInfo']['fields'], $user_guarantor_info_fields[$key]);
+                $result['OtherGuarantor']['UserGuarantorInfo']['error'] = 1;
+              }
+              else if(array_key_exists($key, $user_guarantor_company_fields)){
+                   array_push($result['OtherGuarantor']['UserGuarantorCompany']['fields'], $user_guarantor_company_fields[$key]);
+                $result['OtherGuarantor']['UserGuarantorCompany']['error'] = 1;
+              }
+
+              else if(array_key_exists($key, $user_guarantor_address_fields)){
+                 array_push($result['OtherGuarantor']['UserGuarantorAddress']['fields'], $user_guarantor_address_fields[$key]);
+                $result['OtherGuarantor']['UserGuarantorAddress']['error'] = 1;
+              }
+              else if(array_key_exists($key, $user_guarantor_contact_fields)){
+                array_push($result['OtherGuarantor']['UserGuarantorContact']['fields'], $user_guarantor_contact_fields[$key]);
+                $result['OtherGuarantor']['UserGuarantorContact']['error'] = 1;
+              }
+              
+            }
+          }
+        }
+        else {
+          $result['error'] = 1;
+          $result['OtherGuarantor']['UserGuarantorInfo']['error'] = 1;
+          foreach ($user_guarantor_info_fields as $key => $value) {
+             array_push($result['OtherGuarantor']['UserGuarantorInfo']['fields'], $value);
+          }
+          $result['OtherGuarantor']['UserGuarantorCompany']['error'] = 1;
+          foreach ($user_guarantor_company_fields as $key => $value) {
+             array_push($result['OtherGuarantor']['UserGuarantorCompany']['fields'], $value);
+          }
+          $result['OtherGuarantor']['UserGuarantorAddress']['error'] = 1;
+          foreach ($user_guarantor_address_fields as $key => $value) {
+             array_push($result['OtherGuarantor']['UserGuarantorAddress']['fields'], $value);
+          }
+          $result['OtherGuarantor']['UserGuarantorContact']['error'] = 1;
+          foreach ($user_guarantor_contact_fields as $key => $value) {
+             array_push($result['OtherGuarantor']['UserGuarantorContact']['fields'], $value);
+          }
+        }
+      }
+     
       if($user['UserAttachment']){
         // $attachments = $this->UserAttachment->find('all', array('conditions'=>array('UserAttachment.user_id'=>$user['User']['id'])));
         // foreach ($attachments as $attach) {
