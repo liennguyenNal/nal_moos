@@ -1,4 +1,4 @@
- 
+
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -16,11 +16,9 @@
 
     <div class="col-lg-12">
       
-
       <div class="bs-component">
-        
       	
-      	<?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
+      	<?php echo $this->Form->create("Contact", array('action'=>'edit_confirm', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
               <legend>お問い合わせフオ一ム <?php if($contact['Contact']['status']==1){echo 'No Processing';}if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></legend>
@@ -79,8 +77,6 @@
                 </div>
               </div>            
               
-              
-             
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">お問い合わせ内容</span></label>
                 <div class="col-lg-10">
@@ -91,17 +87,11 @@
               
               
             </fieldset>
-          </form>
-          <script type="text/javascript">
-          $( document ).ready(function() {
-            var $curr = $( "#start" );
-            $('#form').find(':input:not(:button):not(:disabled)').prop('disabled',true);
-
-          });
-        </script>
+          
+          
         <div class="bs-component">
-            <?php echo $this->Form->create("Contact", array('action'=>'view', 'id'=>'form1', 'class'=>'form-horizontal')) ?>
-            <div class="form-group">
+            
+             <div class="form-group">
                 <label for="email" class="col-lg-2 control-label">問合せ日時</label>
                 <div class="col-lg-10">
                   <?php echo $contact['Contact']['created'];?>
@@ -113,7 +103,7 @@
                 <label for="textArea" class="col-lg-2 control-label">対応伏況</span></label>
                 <div class="col-lg-10">
                   <?php 
-                  $statuses = array(1=>"No Processing",2=> "Processing",3=>"Completed");
+                    $statuses = array(1=>"No Processing",2=> "Processing",3=>"Completed");
 
                     //$statuses = array("2"=>"解決します", "3"=>"拒絶します");
                   echo $this->Form->select('status', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'status' , ));?>
@@ -122,7 +112,7 @@
              <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">対応内容</span></label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('comment', array('type'=>'textarea', 'id'=>"comment", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Comment', 'rows'=>10,'div'=>false, 'enabled'))?>
+                  <?php echo $this->Form->input('comment', array('type'=>'textarea', 'id'=>"comment", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Comment', 'rows'=>10,'div'=>false))?>
                   
                 </div>
               </div>
@@ -132,52 +122,31 @@
                   
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
-
-                      <button type="submit" class="btn btn-primary" id="btn-change">Edit Contact</button>
+                     
+                      <button type="submit" class="btn btn-primary" id="btn-change">Confirm</button>
                       
-                      <button type="button" class="btn btn-default" id="btn-cancel" >一覧へ戻る</button>
+                      <button type="button" class="btn btn-default" id="btn-cancel" >Cancel</button>
                     </div>
                     <script type="text/javascript">
-                      $(document).ready(function(){ 
+                      $( document ).ready(function() {
+                        var $curr = $( "#start" );
+                        $('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
+
                          $('#btn-cancel').on('click', function() {
                 
                              window.location.href='<?php echo $this->webroot;?>admin/contacts/change_confirm/<?php echo $contact['Contact']['id']; ?>';
                           
                         });
-
-                        //  $('#btn-delete').on('click', function() {
-                        //    $( "#dialog-confirm-delete" ).dialog("open");
-                             
-                          
-                        // });
-
-                         $( "#dialog-confirm-delete" ).dialog({
-                          autoOpen: false,
-                          resizable: true,
-                          modal: true,
-                          buttons: {
-                            "Delete": function() {
-                              window.location.href="<?php echo $this->webroot;?>admin/contacts/delete/<?php echo $contact['Contact']['id']?>";
-                              $( this ).dialog( "close" );
-                            },
-                            Cancel: function() {
-                              agree = false;
-                              $( this ).dialog( "close" );
-                            }
-                          }
-                        });
+                       
                        });
                     </script>
                 </div>
               </div>
           </div>
         </div>
-      
       </div>
     </div>
 
   </div>
-<div id="dialog-confirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This contact will be deleted. Are you sure?</p>
-  </div>
+
   

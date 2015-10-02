@@ -6795,3 +6795,573 @@ Request URL: /moos/js/maps/swiper.jquery.min.js.map
 Stack Trace:
 #0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-10-02 08:53:44 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3026): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('first', Array)
+#7 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/Component/LoginComponent.php(69): Model->find('first', Array)
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/UsersController.php(465): LoginComponent->login('khanhlqvn', 'Khongduoc123')
+#9 [internal function]: UsersController->login()
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-02 08:53:54 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3026): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('first', Array)
+#7 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/Component/LoginComponent.php(69): Model->find('first', Array)
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/UsersController.php(465): LoginComponent->login('admin', '123456')
+#9 [internal function]: UsersController->login()
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-02 08:54:15 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:22 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:39 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:39 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:41 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:43 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:44 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:54:45 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:55:01 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:55:03 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:55:05 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:55:22 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:55:40 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /moos2_10/moos/admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3621): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('users')
+#5 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Applications/MAMP/htdocs/moos2_10/moos/app/View/Users/admin_login.ctp(18): FormHelper->create('User', Array)
+#9 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(971): include('/Applications/M...')
+#10 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(933): View->_evaluate('/Applications/M...', Array)
+#11 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/View/View.php(473): View->_render('/Applications/M...')
+#12 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#13 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-10-02 08:56:28 Error: [MissingTableException] Table work_requireds for model WorkRequired was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'work_requireds',
+  'class' => 'WorkRequired',
+  'ds' => 'default',
+)
+Request URL: /moos2_10/moos/admin/users/view/3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3648): Model->setSource('work_requireds')
+#1 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(3026): Model->getDataSource()
+#2 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('first', Array)
+#3 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/UsersController.php(1111): Model->find('first', Array)
+#4 /Applications/MAMP/htdocs/moos2_10/moos/app/Controller/UsersController.php(243): UsersController->_validate(Array)
+#5 [internal function]: UsersController->admin_view('3')
+#6 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 /Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-10-02 09:03:14 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /moos2_10/moos/images/upload/news/small/10940496_10204347907231652_7977209602242888804_n0.jpg
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-02 09:04:35 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:04:42 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:04:44 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /moos2_10/moos/images/upload/news/small/10940496_10204347907231652_7977209602242888804_n0.jpg
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-02 09:04:56 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:04:58 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /moos2_10/moos/images/upload/news/small/10940496_10204347907231652_7977209602242888804_n0.jpg
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-02 09:13:26 Error: [MissingControllerException] Controller class ArticleController could not be found.
+Exception Attributes: array (
+  'class' => 'ArticleController',
+  'plugin' => NULL,
+)
+Request URL: /moos2_10/moos/admin/article/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos2_10/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-02 09:14:05 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:17:56 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:18:09 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:19:26 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-02 09:20:56 Warning: Warning (512): Model "User" is not associated with model "Status" in [/Applications/MAMP/htdocs/moos2_10/moos/lib/Cake/Model/Behavior/ContainableBehavior.php, line 342]
+Trace:
+ContainableBehavior::containments() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 342
+ContainableBehavior::beforeFind() - CORE/Cake/Model/Behavior/ContainableBehavior.php, line 123
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Model::buildQuery() - CORE/Cake/Model/Model.php, line 3079
+Model::find() - CORE/Cake/Model/Model.php, line 2993
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 196
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1086
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

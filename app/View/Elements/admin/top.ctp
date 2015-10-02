@@ -12,13 +12,8 @@
 	    <ul class="nav navbar-nav">
 	      <li class="<?php  if($menu == 'contact') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/contacts">Contact</a></li>
 	      <li class="<?php  if($menu == 'customer') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/users/">Customers</a></li>
-	      <li class="dropdown <?php  if($menu == 'article') echo 'active'?>">
-	        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News <span class="caret"></span></a>
-	        <ul class="dropdown-menu" role="menu">
-	           <li><a href="<?php echo $this->webroot; ?>admin/articles">All News</li>
-	          <li><a href="<?php echo $this->webroot; ?>admin/articles/edit">Add News</a></li>
-	        </ul>
-	      </li>
+	      <li class="<?php  if($menu == 'article') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/articles/">News</a></li>
+
 	      
 	    </ul>
 

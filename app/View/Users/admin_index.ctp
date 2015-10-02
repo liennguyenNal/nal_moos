@@ -12,7 +12,9 @@
 	</div>
    <div class="form-group" >
       <div class="col-lg-12">
-        <button type="button" class="btn btn-primary" id="btn-export" > Export CSV</button>
+              <?php
+ echo $this->Html->link('Export CSV',array('controller'=>'users','action'=>'download'), array('target'=>'_blank','class'=>"btn btn-primary", 'id'=>"btn-export"));
+?>
      </div>
    </div>
     <div class="col-lg-12" style="padding-top:20px">
@@ -189,6 +191,7 @@
             }
           });
         
+        
         $( "#dialog-confirm-export" ).dialog({
           autoOpen: false,
           resizable: true,
@@ -197,6 +200,8 @@
             "Export": function() {
               
               $( this ).dialog( "close" );
+              window.location.href="<?php echo $this->webroot;?>admin/users/download";
+
             },
             Cancel: function() {
               agree = false;
@@ -205,9 +210,10 @@
           }
         });
 
-        $('#btn-export').on('click', function() {
+        $('#btn-export').on('click', function(event) {
           
              $( "#dialog-confirm-export" ).dialog("open");
+             event.preventDefault();
           
         });
        

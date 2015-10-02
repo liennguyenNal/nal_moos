@@ -9,12 +9,23 @@
 class UsersController extends AppController{
     var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'WorkRequired');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
-    var $helpers = array('Html' , 'Js');
+    //var $helpers = array('Html' , 'Js');
      
     /**
      * ADMIN VIEW FUNCTION
      * @return response
      */
+    var $helpers = array('Html', 'Form','Csv'); 
+
+    
+    function admin_download()
+    {
+        $this->set('users', $this->User->find('all'));
+        //var_dump($this->User->find('all')); die;
+        $this->layout = null;
+       $this->autoLayout = false;
+      Configure::write('debug', ’0′);
+    }
     function admin_index(){
       $criteria = "1=1 ";
       if($this->params['named']['keyword']){
