@@ -53,9 +53,6 @@ msgstr "〒"
 msgid "user.register.findaddress"
 msgstr "郵使番号から住所を検索"
 
-msgid "user.register.pref"
-msgstr "都道府県"
-
 msgid "user.register.city"
 msgstr "市区町村"
 
@@ -110,7 +107,11 @@ msgstr "変更する"
 msgid "user.register.cancle"
 msgstr "キャンセル"
 
+msgid "user.register.pre"
+msgstr "都道府県"
 
+msgid "user.register.pref"
+msgstr "都道府県"
 
 msgid "user.contact.username"
 msgstr "お名前"
@@ -145,6 +146,77 @@ msgstr "ID"
 
 msgid "global.password"
 msgstr "パスワード"
+
+msgid "global.errors"
+msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
+
+msgid "global.errors.required"
+msgstr "必須項目です。</br>全角で入力してください。"
+
+msgid "global.errors.email"
+msgstr "メールアドレスを正しく入力してください。"
+
+msgid "global.errors.equalTo"
+msgstr "入力したメールアドレスと一致しません。</br>再度メールアドレスを正確に入力してください。"
+
+msgid "user.my_page.status"
+msgstr "Tình trạng hồ sơ"
+
+msgid "user.my_page.register_date"
+
+msgstr "Register Date"
+
+msgid "user.my_page.update_date"
+
+msgstr "Ngày đăng ký thẩm tra"
+
+msgid "user.my_page.approve_date"
+
+msgstr "Ngày chấp nhận đăng ký lần 2"
+
+msgid "user.my_page.payment_date"
+
+msgstr "Ngày trả tiền"
+
+msgid "user.my_page.max_payment"
+
+msgstr "Giá thuê tối đa"
+
+msgid "user.my_page.object"
+msgstr "Đối tượng"
+
+msgid "user.my_page.infomation"	
+msgstr "Thông tin chi tiết"
+
+msgid "user.my_page.status"
+msgstr "Status"
+
+msgid "user.my_page.status.completed"	
+msgstr "Hoàn thành"
+
+msgid "user.my_page.status.un_completed"
+msgstr "Chưa hoàn thành"
+
+msgid "user.my_page.error_fields"
+msgstr "Thông tin bị lỗi"
+
+msgid "user.my_page.customer"	
+msgstr "Thông tin cơ bản"
+
+msgid "user.my_page.partner"	
+msgstr "Người sống cùng"
+
+msgid "user.my_page.guarantor"	
+msgstr "Người bảo lãnh"
+
+msgid "user.my_page.attachment"	
+msgstr "Hồ sơ đính kèm"
+
+msgid "admin.user.view.set_max_payment_button"
+msgstr "Thay đổi giá thuê tối đa"
+
+
+
 
 
 

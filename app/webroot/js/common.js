@@ -17,6 +17,10 @@ $(document).ready(function(){
 		return false;	
 	});
 	
-	$('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip('show');
+	})
+	
+	
 	
 });

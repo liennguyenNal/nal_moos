@@ -19,7 +19,10 @@
           <div class="container-fluid">
             <div class="content-from">
               <?php echo $this->element('flash');?>
-              <?php echo $this->Form->create("Contact", array('action'=>'index')); ?>
+              <div class="block-warning" id="error-section" style="display:none">
+                <?php echo __('global.errors'); ?>
+              </div>
+              <?php echo $this->Form->create("Contact", array('action'=>'index', 'id' => 'form-contact')); ?>
                 <div class="content-from-block">
                   <!-- <p class="note">パスワードを忘れた方は<a href="#">こちら</a></br>会員登録がお済みでない方は<a href="#">こちら</a></p> -->
                   <div class="content-from-how">
@@ -34,13 +37,13 @@
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
-                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'山田','div'=>false))
+                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
-                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'雪','div'=>false))
+                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -48,13 +51,13 @@
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
-                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤマダ','div'=>false))
+                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
-                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ユキ','div'=>false))
+                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -68,7 +71,7 @@
                                 <div class="block-input-radio">
                                   <!-- <input type="radio" name="sex" value="1" id="1"><label for="1">男性</label> -->
                                   <?php 
-                                    echo $this->Form->radio('type', array('1'=> __('user.contact.customer'), '2'=> __('user.contact.marketing'), '3' => __('user.contact.constructure'), '4' => __('global.other')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd'));
+                                    echo $this->Form->radio('type', array('1'=> __('user.contact.customer'), '2'=> __('user.contact.marketing'), '3' => __('user.contact.constructure'), '4' => __('global.other')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'required'=>false, 'data-placement' => 'right'));
                                   ?>
                                 </div>
                               </div>
@@ -80,7 +83,7 @@
                           <td>
                             <div class="block-input">
                               <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
-                              <?php echo $this->Form->input('company', array('type'=>'text', 'id'=>"comapny_name", 'label'=>false, 'class'=>'w198', 'div'=>false))
+                              <?php echo $this->Form->input('company', array('type'=>'text', 'id'=>"comapny_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false))
                               ?>
                             </div>
                           </td>
@@ -92,13 +95,13 @@
                               <div class="div-style">
                                 <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="09012345678"> -->
-                                <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'09012345678'))
+                                <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'required'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w43"><?php echo __('user.register.homephone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="0312345678"> -->
-                                <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'0312345678'))
+                                <?php echo $this->Form->input('home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'required'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -109,7 +112,7 @@
                           <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-                            <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'placeholder'=>'sample@gmail.com'))
+                            <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'required'=>false, 'data-placement' => 'right'))
                             ?>
                             <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
                           </td>
@@ -118,7 +121,7 @@
                           <td class="label-text"><label><?php echo __('user.register.confirmemail'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-                            <?php echo $this->Form->input('email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'placeholder'=>'sample@gmail.com'))
+                            <?php echo $this->Form->input('email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false,  'required'=>false, 'data-placement' => 'right'))
                             ?>
                           </td>
                         </tr>
@@ -126,7 +129,7 @@
                           <td class="label-text"><label><?php echo __('user.contact.content'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <textarea rows="4" cols="50"></textarea> -->
-                            <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'rows'=>4, 'cols'=> 50, 'div'=>false))
+                            <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'rows'=>4, 'cols'=> 50, 'div'=>false, 'required'=>false, 'data-placement' => 'right'))
                             ?>
                           </td>
                         </tr>
@@ -152,7 +155,7 @@
                         <div class="block">
                           <!-- <input type="checkbox" name="sex" value="1" id="8"> -->
                           <?php
-                          echo $this->Form->input('agree',array('type'=>'checkbox','options'=>array("1"=>"1"),'div'=>false, 'label'=>false));
+                          echo $this->Form->input('agree',array('type'=>'checkbox','options'=>array("1"=>"1"),'div'=>false, 'label'=>false, 'id' => 'agree', 'data-placement' => 'right'));
                           ?>
                           <label for="8">上記内容に同意します。</label>
                         </div>
@@ -164,8 +167,8 @@
                   </div>
                 </div>
                 <script type="text/javascript">
-                  $(this).autoKana('#first_name', '#first_name_kana', {katakana:false, toggle:false});
-                  $(this).autoKana('#last_name', '#last_name_kana', {katakana:false, toggle:false});
+                  $(this).autoKana('#first_name', '#first_name_kana', {katakana:true, toggle:false});
+                  $(this).autoKana('#last_name', '#last_name_kana', {katakana:true, toggle:false});
                 </script>
               </form>
             </div>
@@ -175,3 +178,66 @@
     </div>
   </div>
 </section>
+
+<!-- SCRIPT VALIDATION -->
+<script>
+  $.validator.addMethod(
+    "phone_number",
+    function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    },
+    "携帯電話を正しく入力してください。"
+  );
+  $("#form-contact").validate({
+    rules: {
+      'data[Contact][first_name]':{ required: true },
+      'data[Contact][first_name_kana]':{ required: true },
+      'data[Contact][last_name]':{ required: true },
+      'data[Contact][last_name_kana]':{ required: true },
+      'data[Contact][type]': { required: true },
+      'data[Contact][phone]': {
+        required: function(element) {
+          return !$("#home_phone").val();
+        },
+        phone_number: "^0[0-9]{9}",
+      },
+      'data[Contact][home_phone]': {
+        required: function(element) {
+           return  !$("#phone").val();
+        },
+        phone_number: "[0-9]{11}",
+      },
+      'data[Contact][email]': { required: true, email: true },
+      'data[Contact][email_confirm]': { required: true, equalTo: '#email' },
+      'data[Contact][content]': { required: true },
+      'data[Contact][agree]': { required: true },
+    },
+    messages: {
+      'data[Contact][first_name]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][first_name_kana]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][last_name]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][last_name_kana]':{ required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][type]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][phone]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][home_phone]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][email]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][email_confirm]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][content]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][agree]': { required: "<?php echo __('global.errors.required'); ?>" },
+    },
+    invalidHandler: function(event, validator) {
+      var errors = validator.numberOfInvalids();
+      if (errors) {
+        $("#error-section").show();
+        $('#form-contact').find('.tooltip-inner').append('<p></p>');
+      } else {
+        $("#error-section").hide();
+      }
+    }
+  });
+  jQuery.extend(jQuery.validator.messages, {
+      email: "<?php echo __('global.errors.email'); ?>",
+      equalTo: "<?php echo __('global.errors.equalTo'); ?>"
+  });
+</script>

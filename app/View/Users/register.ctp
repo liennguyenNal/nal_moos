@@ -27,7 +27,10 @@
           <div class="container-fluid">
             <div class="content-from">
               <?php echo $this->element('flash'); ?>
-              <?php echo $this->Form->create('User', array('action'=>'/register')); ?>
+              <div class="block-warning" id="error-section" style="display:none">
+                <?php echo __('global.errors'); ?>
+              </div>
+              <?php echo $this->Form->create('User', array('action'=>'/register', 'id' => 'form-register')); ?>
                 <div class="content-from-block">
                   <div class="content-from-how">
                     <table class="from">
@@ -39,13 +42,13 @@
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
-                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'山田','div'=>false))
+                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
-                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'雪','div'=>false))
+                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -53,13 +56,13 @@
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
-                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤマダ','div'=>false))
+                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
-                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ユキ','div'=>false))
+                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -72,7 +75,7 @@
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <?php 
-                                    echo $this->Form->radio('gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd'));
+                                    echo $this->Form->radio('gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd', 'data-placement' => 'right'));
                                   ?>
                                 </div>
                               </div>
@@ -85,17 +88,17 @@
                             <div class="select">
                               <?php 
                                 $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
-                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()'));
+                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
                               ?>
                               <span><?php echo __('user.register.year'); ?></span>
                               <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
-                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month'));
+                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right'));
                               ?>
                               <span><?php echo __('user.register.month'); ?></span>
                               <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
-                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day'));
+                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right'));
                               ?>
                               <span><?php echo __('user.register.day'); ?></span>
                               <!-- <span class="style">（00歳）</span> -->
@@ -123,7 +126,7 @@
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <?php 
-                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd'));
+                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right'));
                                   ?> 
                                 </div>
                               </div>
@@ -136,11 +139,11 @@
                             <div class="block-input">
                               <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
                               <?php 
-                                echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
+                                echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1">-</span>
                               <?php 
-                                echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>'0001','div'=>false))
+                                echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                               <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                               <!-- Script tim dia chi buu dien -->
@@ -164,7 +167,7 @@
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
-                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
+                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
                               ?>
                               </div>
                             </div>
@@ -172,19 +175,19 @@
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
                               <?php 
-                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'千代田区神田多町'));
+                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right'));
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.street'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="2-5-1"> -->
-                              <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>'2-5-1'))
+                              <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.house'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="神田ビルディング2001号"> -->
-                              <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'神田ビルディング2001号','div'=>false))
+                              <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>
                           </td>
@@ -196,13 +199,13 @@
                               <div class="div-style">
                                 <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="09012345678"> -->
-                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false))
+                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'required'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w43"><?php echo __('user.register.homephone'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="0312345678"> -->
-                                <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'0312345678','div'=>false))
+                                <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                             </div>
@@ -213,7 +216,7 @@
                           <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
+                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                             ?>    
                             <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
                           </td>
@@ -222,7 +225,7 @@
                           <td class="label-text"><label><?php echo __('user.register.confirmemail'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-                            <?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false))
+                            <?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                             ?>
                           </td>
                         </tr>
@@ -231,7 +234,7 @@
                           <td>
                             <div class="select">
                               <?php 
-                                echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'works', 'empty'=>'正社員'));
+                                echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'works', 'empty'=>'正社員', 'data-placement' => 'right'));
                               ?>
                             </div>
                           </td>
@@ -241,11 +244,11 @@
                           <td>
                             <div class="block-input">
                               <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
+                              <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                               <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00'))
+                              <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
                             </div>
@@ -256,7 +259,7 @@
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'00'))
+                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
@@ -280,34 +283,34 @@
                             <div class="block-input">
                               <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
                               <!-- <input class="w40" type="text" name="" value="" placeholder="101"> -->
-                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false))
+                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1">-</span>
                               <!-- <input class="w80" type="text" name="" value="" placeholder="0000"> -->
-                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0000','div'=>false))
+                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                               <!-- <a href="#" class="style-link">郵便番号から住所を検索</a> -->
                               <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                             </div>
                             <div class="block-input">
-                              <span class="w78"><?php echo ('user.register.pref'); ?></span>
+                              <span class="w78"><?php echo __('user.register.pref'); ?></span>
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
-                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
+                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
                               ?>
                               </div>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
-                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'千代田区神田多町','div'=>false))
+                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.street'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="1〜4丁目、◯◯◯中学校区"> -->
-                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'1〜4丁目、◯◯◯中学校区','div'=>false))
+                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>
                           </td>
@@ -328,17 +331,9 @@
                   
                   <!-- Script add new area -->
                   <script type="text/javascript">
-                    $(this).autoKana('#first_name', '#first_name_kana', {katakana:false, toggle:false});
-                    $(this).autoKana('#last_name', '#last_name_kana', {katakana:false, toggle:false});
+                    $(this).autoKana('#first_name', '#first_name_kana', {katakana:true, toggle:false});
+                    $(this).autoKana('#last_name', '#last_name_kana', {katakana:true, toggle:false});
 
-
-                    var num_area = 1;
-
-                    var order_object = 2;
-                    function replaceAll(find, replace, str) {
-                      return str.replace(new RegExp(find, 'g'), replace);
-                    }
-                    
                     function find_address(obj){
                        var p =  obj.parent().parent().parent();
                        var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
@@ -363,47 +358,8 @@
                       obj.parent().remove();
                     }
 
-                    $('#btn-add').on('click', function() {
-                      if( num_area < 5 ){
-                       var area = $('#expect-area-content').clone(true, true);
-                       
-
-                       area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
-                       order_object++;
-                       
-                        area.append($('#remove').clone(true, true).html());
-                       
-                        $('#expect-area').append(area);
-                        num_area++;
-                      }
-                      else {
-                        alert('Cannot add more item');
-                      }
-                    });
-
-                  $(function() {
-                    $( "#dialog-message" ).dialog({
-                      autoOpen : false,
-                      modal: true,
-                      buttons: {
-                        Ok: function() {
-                          $( this ).dialog( "close" );
-                        }
-                      }
-                    });
-
-                    $( "#form" ).submit(function( event ) {
-                      if( $( "#agree" ).is(':checked') ){
-                        
-
-                      }
-                      else {
-                       
-                        $( "#dialog-message" ).dialog("open");
-                        event.preventDefault();
-                      }
-                    });
-                  });
+                  
+                  
                 </script>
                 <!-- End script -->
 
@@ -424,7 +380,7 @@
                       <div class="block">
                         <!-- <input type="checkbox" name="sex" value="1" id="8"> -->
                         <?php
-                          echo $this->Form->input('User.agree',array('type'=>'checkbox','options'=>array(1),'div'=>false, 'id'=>'agree','label'=>false));
+                          echo $this->Form->input('User.agree',array('type'=>'checkbox','options'=>array(1),'div'=>false, 'id'=>'agree','label'=>false, 'data-placement' => 'right'));
                         ?>
                         <label for="8">上記内容に同意します。</label>
                       </div>
@@ -443,3 +399,212 @@
     </div>
   </div>
 </section>
+
+<!-- SCRIPT VALIDATION -->
+<script>
+  var num_area = 1;
+  var order_object = 2;
+
+  function replaceAll(find, replace, str) {
+    return str.replace(new RegExp(find, 'g'), replace);
+  }
+  $('#btn-add').on('click', function() {
+    if( num_area < 5 ){
+      var area = $('#expect-area-content').clone(true, true);
+      area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
+      area.append($('#remove').clone(true, true).html());
+      $('#expect-area').append(area);
+      $('#form-register').validate();
+      $("[id^='post_num_1']").each(function() {
+          $(this).rules("add", 
+          { 
+            required: true,
+            minlength: 3,
+            maxlength: 3,
+            messages: {
+              required: "<?php echo __('global.errors.required'); ?>"
+            }
+          });
+      });
+      $("[id^='post_num_2']").each(function() {
+          $(this).rules("add", 
+          { 
+            required: true,
+            minlength: 4,
+            maxlength: 4,
+            messages: {
+              required: "<?php echo __('global.errors.required'); ?>"
+            }
+          });
+      });
+      $("[id^='pref_id']").each(function() {
+          $(this).rules("add", 
+          { 
+            required: true,
+            messages: {
+              required: "<?php echo __('global.errors.required'); ?>"
+            }
+          });
+      });
+      $("[id^='city']").each(function() {
+          $(this).rules("add", 
+          { 
+            required: true,
+            messages: {
+              required: "<?php echo __('global.errors.required'); ?>"
+            }
+          });
+      });
+      $("[id^='address']").each(function() {
+          $(this).rules("add", 
+          { 
+            required: true,
+            messages: {
+              required: "<?php echo __('global.errors.required'); ?>"
+            }
+          });
+      });
+      order_object++;
+      num_area++;
+    }
+    else {
+      alert('Cannot add more item');
+    }
+  });
+
+  $.validator.addMethod(
+    "phone_number",
+    function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    },
+    "携帯電話を正しく入力してください。"
+  );
+
+  $("#form-register").validate({
+      rules: {
+        'data[User][first_name]': {required: true},
+        'data[User][last_name]': {required: true},
+        'data[User][first_name_kana]': {required: true},
+        'data[User][last_name_kana]': {required: true},
+        'data[User][gender]': {required: true},
+        'data[User][year_of_birth]': {required: true},
+        'data[User][month_of_birth]': {required: true},
+        'data[User][day_of_birth]': {required: true},
+        'data[User][married_status_id]': {required: true},
+        'data[UserAddress][post_num_1]': {
+          required: true,
+          number: true,
+          minlength: 3,
+          maxlength: 3
+        },
+        'data[UserAddress][post_num_2]': {
+          required: true,
+          number: true,
+          minlength: 4,
+          maxlength: 4
+        },
+        'data[UserAddress][pref_id]': {required: true},
+        'data[UserAddress][city]': {required: true},
+        'data[UserAddress][address]': {required: true},
+        'data[UserAddress][house_name]': {required: true},
+        'data[User][phone]': {
+          required: function(element) {
+            return !$("#home_phone").val();
+          },
+          phone_number: "^0[0-9]{9}"
+        },
+        'data[User][home_phone]': {
+          required: function(element) {
+             return  !$("#phone").val();
+          },
+          phone_number: "[0-9]{11}"
+        },
+        'data[User][email]': { 
+          required: true, 
+          email: true 
+        },
+        'data[User][email_confirm]': {
+          required: true, 
+          equalTo: 'data[User][email]'
+        },
+        'data[UserCompany][work_id]': {required: true},
+        'data[UserCompany][year_worked]': {
+          required: true,
+          number: true
+        },
+        'data[UserCompany][month_worked]': {
+          required: true,
+          number: true
+        },
+        'data[UserCompany][salary_year]': {
+          required: true,
+          number: true
+        },
+        'data[ExpectArea][1][post_num_1]': {
+          required: true,
+          number: true,
+          minlength: 3,
+          maxlength: 3
+        },
+        'data[ExpectArea][1][post_num_2]': {
+          required: true,
+          number: true,
+          minlength: 4,
+          maxlength: 4
+        },
+        'data[ExpectArea][1][pref_id]': {required: true},
+        'data[ExpectArea][1][city]': {required: true},
+        'data[ExpectArea][1][address]': {required: true},
+        'data[User][agree]': {required: true}
+      },
+      messages: {
+        'data[User][first_name]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][last_name]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][first_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][last_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][gender]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][year_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][month_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][day_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][married_status_id]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][post_num_1]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][post_num_2]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][address]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserAddress][house_name]': {required: '必須項目です。全角で入力してください。'},
+        'data[User][phone]': { required: "<?php echo __('global.errors.required'); ?>" },
+        'data[User][home_phone]': { required: "<?php echo __('global.errors.required'); ?>" },
+        'data[User][email]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][email_confirm]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserCompany][month_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[ExpectArea][1][post_num_1]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[ExpectArea][1][post_num_2]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[User][agree]': {required: "<?php echo __('global.errors.required'); ?>"}
+      },
+      invalidHandler: function(event, validator) {
+        var errors = validator.numberOfInvalids();
+        if (errors) {
+          $("#error-section").show();
+          $('#form-contact').find('.tooltip-inner').append('<p></p>');
+        } else {
+          $("#error-section").hide();
+        }
+      }
+    });
+    jQuery.extend(jQuery.validator.messages, {
+        email: "<?php echo __('global.errors.email'); ?>",
+        equalTo: "<?php echo __('global.errors.equalTo'); ?>"
+  });
+</script>
+
+
+
+
