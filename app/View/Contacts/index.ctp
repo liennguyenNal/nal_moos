@@ -230,14 +230,12 @@
       var errors = validator.numberOfInvalids();
       if (errors) {
         $("#error-section").show();
-        $('#form-contact').find('.tooltip-inner').append('<p></p>');
       } else {
         $("#error-section").hide();
       }
     }
   });
   jQuery.extend(jQuery.validator.messages, {
-      email: "<?php echo __('global.errors.email'); ?>",
-      equalTo: "<?php echo __('global.errors.equalTo'); ?>"
+      email: "<?php echo __('global.errors.email'); ?>"
   });
 </script>

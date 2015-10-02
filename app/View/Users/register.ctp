@@ -282,20 +282,16 @@
                           <td>
                             <div class="block-input">
                               <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                              <!-- <input class="w40" type="text" name="" value="" placeholder="101"> -->
                               <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                               <span class="w-auto1">-</span>
-                              <!-- <input class="w80" type="text" name="" value="" placeholder="0000"> -->
                               <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
-                              <!-- <a href="#" class="style-link">郵便番号から住所を検索</a> -->
                               <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.pref'); ?></span>
                               <div class="select">
-                              <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
                                 echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
                               ?>
@@ -303,13 +299,11 @@
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
-                              <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
                               <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.street'); ?></span>
-                              <!-- <input class="w198" type="text" name="" value="" placeholder="1〜4丁目、◯◯◯中学校区"> -->
                               <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                               ?>
                             </div>

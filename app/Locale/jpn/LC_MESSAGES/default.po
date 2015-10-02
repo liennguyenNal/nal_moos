@@ -107,9 +107,6 @@ msgstr "変更する"
 msgid "user.register.cancle"
 msgstr "キャンセル"
 
-msgid "user.register.pre"
-msgstr "都道府県"
-
 msgid "user.register.pref"
 msgstr "都道府県"
 
@@ -140,7 +137,6 @@ msgstr "電話番号"
 msgid "user.contact.content"
 msgstr "お問い合わせ内容"
 
-
 msgid "user.login.id"
 msgstr "ID"
 
@@ -150,11 +146,29 @@ msgstr "パスワード"
 msgid "global.errors"
 msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
 
+msgid "global.errors.create.password"
+msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
+
+msgid "global.errors.reset.password"
+msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
+
+msgid "global.errors.reset.email"
+msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
+
 msgid "global.errors.required"
 msgstr "必須項目です。</br>全角で入力してください。"
 
 msgid "global.errors.email"
 msgstr "メールアドレスを正しく入力してください。"
+
+msgid "global.errors.password"
+msgstr "必須項目です。</br>半角英数字で入力してください。</br>8文字以上で入力してください。"
+
+msgid "global.errors.equalTo.password"
+msgstr "入力したパスワードと一致しません。</br>再度パスワードを正確に入力してください。"
+
+msgid "global.errors.password.minlength"
+msgstr "8文字以上で入力してください。"
 
 msgid "global.errors.equalTo"
 msgstr "入力したメールアドレスと一致しません。</br>再度メールアドレスを正確に入力してください。"
@@ -215,10 +229,122 @@ msgstr "Hồ sơ đính kèm"
 msgid "admin.user.view.set_max_payment_button"
 msgstr "Thay đổi giá thuê tối đa"
 
+msgid "login.errors"
+msgstr "IDとパスワードが一致しませんでした。</br>ご確認の上、再度ご登録いただいた情報を入力してください。"
 
+msgid "login.errors.invalid"
+msgstr "Incorrect username or password. Please try again!"
 
+msgid "user.my_page.basic_info.family"	
+msgstr "家族との居住状況"
 
+msgid "user.my_page.basic_info.have_family"	
+msgstr "同居"
 
+msgid "user.my_page.basic_info.alone"	
+msgstr "別居"
+
+msgid "user.my_page.basic_info.num_children"	
+msgstr "子供の人数"
+
+msgid "user.my_page.basic_info.person"	
+msgstr "人"
+
+msgid "user.my_page.basic_info.residence"	
+msgstr "居住形態"
+
+msgid "user.my_page.basic_info.year_residence"	
+msgstr "居住年数"
+
+msgid "user.my_page.basic_info.house_cost"	
+msgstr "家賃"
+
+msgid "user.my_page.basic_info.contact_type"	
+msgstr "日中連絡先"
+
+msgid "user.my_page.basic_info.home_phone"	
+msgstr "自宅電話"
+
+msgid "user.my_page.basic_info.work_phone"	
+msgstr "勤務先"
+
+msgid "user.my_page.basic_info.company_name"	
+msgstr "会社名"
+
+msgid "user.my_page.basic_info.company_name_kana"	
+msgstr "フリガナ"
+
+msgid "user.my_page.basic_info.fax"	
+msgstr "FAX番号"
+
+msgid "user.my_page.basic_info.career"	
+msgstr "業界・業種"
+
+msgid "user.my_page.basic_info.description"	
+msgstr "職種・仕事内容"
+
+msgid "user.my_page.basic_info.department"	
+msgstr "部署名"
+
+msgid "user.my_page.basic_info.position"	
+msgstr "役職"
+
+msgid "user.my_page.basic_info.salary_type"	
+msgstr "日中連絡先"
+
+msgid "user.my_page.basic_info.salary_fix"	
+msgstr "固定給"
+
+msgid "user.my_page.basic_info.salary_bonus"	
+msgstr "一部歩合制"
+
+msgid "user.my_page.basic_info.salary_product"	
+msgstr "完全歩合制"
+
+msgid "user.my_page.basic_info.salary_year"	
+msgstr "税込年収"
+
+msgid "user.my_page.basic_info.salary_man"	
+msgstr "万円"
+
+msgid "user.my_page.basic_info.salary_receive"	
+msgstr "給料日"
+
+msgid "user.my_page.basic_info.salary_day"	
+msgstr "日払い"
+
+msgid "user.my_page.basic_info.salary_week"	
+msgstr "週払い"
+
+msgid "user.my_page.basic_info.salary_month"	
+msgstr "月払い"
+
+msgid "user.my_page.basic_info.salary_date"	
+msgstr "毎月"
+
+msgid "global.date"	
+msgstr "日"
+
+msgid "user.my_page.basic_info.insurances"	
+msgstr "健康保険種別"
+
+msgid "user.my_page.basic_info.note"	
+msgstr "備考"
+
+msgid "user.my_page.basic_info.debt"	
+msgstr "申込人借入金状況"
+
+msgid "user.my_page.basic_info.debt_count"	
+msgstr "借入件数"
+
+msgid "user.my_page.basic_info.count"	
+msgstr "件"
+
+msgid "user.my_page.basic_info.debt_total"	
+msgstr "借入総額"
+
+msgid "user.my_page.basic_info.debt_month"	
+msgstr "月々返済額"
 
 
 

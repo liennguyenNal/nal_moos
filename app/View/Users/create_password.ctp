@@ -18,6 +18,12 @@
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </head>
 <body class="page">
   <div id="wrapper">    
@@ -46,8 +52,10 @@
             <div class="content">
               <div class="container-fluid">
                 <div class="content-from">
-                  <?php echo $this->element('flash');?>
-                  <?php echo $this->Form->create("User", array('action'=>'create_password')) ?>
+                  <div class="block-warning" id="error-section" style="display:none">
+                    <?php echo __('global.errors.create.password'); ?>
+                  </div>
+                  <?php echo $this->Form->create("User", array('action'=>'create_password', 'id' => 'form-create-password')) ?>
                     <div class="content-from-block">
                       <div class="content-from-how">
                         <table class="from">
@@ -58,7 +66,7 @@
                                 <div class="block-input fix-padding">
                                   <div class="div-style">
                                     <!-- <input disabled class="w198" type="text" name="" value="※半角英数字、8文字以上" placeholder=""> -->
-                                    <?php echo $this->Form->input('password', array('type'=>'password', 'id'=>"password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))?>
+                                    <?php echo $this->Form->input('password', array('type'=>'password', 'id'=>"password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false, 'data-placement' => 'right'))?>
                                     <span class="style">※半角英数字、8文字以上</span>
                                     
                                   </div>
@@ -71,7 +79,7 @@
                                 <div class="block-input fix-padding">
                                   <div class="div-style">
                                     <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
-                                    <?php echo $this->Form->input('confirm_password', array('type'=>'password', 'id'=>"confirm_password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))?>
+                                    <?php echo $this->Form->input('confirm_password', array('type'=>'password', 'id'=>"confirm_password", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false, 'data-placement' => 'right'))?>
                                     <span class="style">※半角英数字、8文字以上</span>
                                   </div>
                                 </div>
@@ -121,10 +129,51 @@
       </div>
     </div>
   </footer>
-  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+  <!-- SCRIPT VALIDATION -->
+  <script>
+    $.validator.addMethod(
+      "password",
+      function(value, element, regexp) {
+          var re = new RegExp(regexp);
+          return this.optional(element) || re.test(value);
+      },
+      "Please type valid password"
+    );
+    $("#form-create-password").validate({
+      rules: {
+        'data[User][password]': {
+          required: true,
+          password: "^[a-z0-9_.-]",
+          minlength: 8
+        },
+        'data[User][confirm_password]': {
+          required: true,
+          equalTo: "#password"
+        }
+      },
+      messages: {
+        'data[User][password]': {
+          required: "<?php echo __('global.errors.required'); ?>"
+        },
+        'data[User][confirm_password]': {
+          required: "<?php echo __('global.errors.required'); ?>"
+        }
+      },
+      invalidHandler: function(event, validator) {
+        var errors = validator.numberOfInvalids();
+        if (errors) {
+          $("#error-section").show();
+        } else {
+          $("#error-section").hide();
+        }
+      }
+    });
+    jQuery.extend(jQuery.validator.messages, {
+      password: "<?php echo __('global.errors.password'); ?>",
+      equalTo: "<?php echo __('global.errors.equalTo.password'); ?>",
+      minlength: "<?php echo __('global.errors.password.minlength'); ?>"
+    });
+  </script>
 </body>
 </html>
 
