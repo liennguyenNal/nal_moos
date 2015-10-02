@@ -67,7 +67,7 @@
                       年
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
-                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false));
+                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year',  'required' => false));
                     ?>
                     月
                     <?php 
@@ -84,10 +84,7 @@
                     var d = new Date();
                       var n = d.getFullYear();
                       $("#p-age").html(n - $("#p-year").val());
-                    function calculate_p_age(){
-                      
-                      $("#p-age").html(n - $("#p-year").val());
-                    }
+                    
                     </script>
                     </div>
                   </div>
@@ -150,10 +147,7 @@
                   </div>
                 </div>
                 
-                <script type="text/javascript">
-                     $(this).autoKana('#p-company-name', '#p-company-name-kana', {katakana:false, toggle:false});
-                </script>
-               
+                
                     
             <table class="table table-striped table-hover ">
               <tr>
@@ -164,23 +158,7 @@
                   <div class="col-lg-10" >
                     <?php echo $this->Form->input('UserPartner.company_post_num_1', array('type'=>'text', 'id'=>"p_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
                     <?php echo $this->Form->input('UserPartner.company_post_num_2', array('type'=>'text', 'id'=>"p_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
-                    <button type="button" class="btn btn-primary" id="btn-partner-company-address">郵使番号から住所を検索</button>
-                    <img id="c-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
-                    <script type="text/javascript">
-                      $('#btn-partner-company-address').on('click', function() {
-                           var loader = $('#c-loader');
-                          
-                            loader.show();
-                           // alert($('#post_num_1').val().trim() + $('#post_num_2').val().trim());
-                          $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#p_company_post_num_1').val().trim() + $('#p_company_post_num_2').val().trim()}, 
-                            function(json) {
-                              loader.hide();
-                              $("#p_company_pref_id").val(json.pref_id);
-                              $("#p_company_city").val(json.ward);
-                              $("#p_company_address").val(json.addr1);
-                          });
-                      });
-                    </script>
+                    
 
                   </div>
                 </div>
@@ -272,16 +250,7 @@
                     echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:150px; display:inline' , 'required' => false))
                   ?>  
                   </div>
-                  <script type="text/javascript">
-                    function p_change_type(obj){
-                      
-                        if(obj.val() == '4')
-                        $('#p_salary_type_other').prop('disabled',false);
-                        else {
-                          $('#p_salary_type_other').prop('disabled',true);
-                        }
-                    }
-                  </script>
+                 
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
@@ -320,108 +289,25 @@
                     <?php echo $this->Form->input('UserPartner.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                   </div>
                 </div>
-                 <?php echo $this->Form->hidden('UserPartner.id')?>
               </fieldset>
           </div>
            
-            <?php echo $this->element('/user/relation');?>
+            <?php echo $this->element('/admin/user/relation');?>
            
         
           
-              <?php echo $this->Form->hidden('Partner.is_confirm', array('value'=> 1, 'id'=>'user-info-id'))?>
-              <?php if($user['User']['status_id'] == 2){?>
-              <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="button" class="btn btn-primary" id="btn-edit-partner" >Update</button>
-                  <button type="submit" class="btn btn-primary" id="btn-save-partner" >Save</button>
-                  <button type="button" class="btn btn-default" id="btn-cancel-partner" >Cancel</button>
-                </div>
-              </div>
-              <?php }
-              else {?>
-                <script type="text/javascript" charset="utf-8" async defer>
-                //$('#UserPartnerEdit').find(':button').hide();
-                //$('#UserPartnerEdit').find(':input').prop('disabled',true);
-
-                </script>
-              <?php }?>
-               
+             
                 <script type="text/javascript" >
-                var edit;
-                $( document ).ready(function() {
-                  if(edit != 1){
-                    //alert(edit);
-                    $('#btn-edit-partner').show();
-                    $('#btn-save-partner').hide();
-                    $('#btn-cancel-user-info').hide();
-                    $('#UserPartnerEdit').find(':input:not(#btn-edit-partner)').prop('disabled',true);
-                    $('#UserPartnerEdit').find(':button:not(#btn-edit-partner)').hide();
-                    //alert(edit);
-                  }
-                  else{
-                    $('#btn-cancel-partner').show();
-                    $('#btn-save-partner').show();
-                      
-                     
-                    $('#btn-edit-partner').hide();
-                  }
-                });
-                 
-
-                    
-                   $('#btn-edit-partner').on('click', function() {
-                      $('#UserPartnerEdit').find(':button:not(#btn-edit-partner)').show();
-                      $('#UserPartnerEdit').find(':input').prop('disabled',false);
-                      $('#btn-cancel-partner').show();
-                      $('#btn-save-partner').show();
-                      
-                     
-                      $('#btn-edit-partner').hide();
-                      edit = 1;
-
-                   });
-                   $('#btn-cancel-partner').on('click', function() {
-                      $('#btn-edit-partner').show();
-                      $('#btn-save-partner').hide();
-                      $('#btn-cancel-partner').hide();
-                      $('#UserPartnerEdit').find(':input:not(#btn-edit-partner)').prop('disabled',true);
-                      $('#UserPartnerEdit').find(':button:not(#btn-edit-partner)').hide();
-                      $.ajax({
-                           url: "<?php echo $this->webroot;?>user_partners/edit",
-                            success: function(result){
-                              edit = 0;
-                              $('#partner').html(result);
-                            }
-                        });
-
-                   });
-                  $("#UserPartnerEdit").submit(function() {
-
-                      var url = "<?php echo $this->webroot;?>user_partners/edit"; // the script where you handle the form input.
-
-                      $.ajax({
-                             type: "POST",
-                             url: url,
-                             data: $("#UserPartnerEdit").serialize(), // serializes the form's elements.
-                             success: function(result)
-                             {
-                                 edit = 0;
-                                 $('#partner').html(result);
-                                 $.ajax({
-                                   url: "<?php echo $this->webroot?>users/reload_dashboard",
-                                    success: function(result){
-                                      $('#home').html(result);
-                                    }
-                                });
-                             }
-                           });
-
-                      return false; // avoid to execute the actual submit of the form.
-                  });
+               
+                  $('#UserPartnerEdit').find(':input').prop('disabled',true);
+                
                 </script>
+                 
+           
 
         </form>
 
+       
         
       </div>
       

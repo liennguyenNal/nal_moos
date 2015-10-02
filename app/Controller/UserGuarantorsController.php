@@ -62,8 +62,8 @@ class UserGuarantorsController extends AppController {
 
 				// }
 				if($this->data['UserGuarantor']){
-					if($this->data['UserGuarantor']['is_confirm']){
-						$user_guarantor = $this->Session->read('user_guarantor');
+					
+						$user_guarantor = $this->data;
 						//print_r($user_guarantor); die;
 						 $partner_id = $user_guarantor['UserGuarantor']['id'];
 						$this->UserGuarantor->set($user_guarantor);
@@ -88,21 +88,15 @@ class UserGuarantorsController extends AppController {
 						
 
 						//$this->set('is_confirm', 0);
-					}
-					else {
-						$user_guarantor = $this->data;
-						$this->Session->write('user_guarantor', $user_guarantor);
-
-						$this->data['UserGuarantor'] = $user_guarantor['UserGuarantor'];
-						$user_guarantor['User']['status_id'] = $user['User']['status_id'];
-						//print_r($this->data);die;
-						 $this->set('user', $user_guarantor);
-						//echo 1; die;
-						$this->set('is_confirm', 1);
-					}
+					
 					
 
 
+				}
+				//cancel edit 
+				else {
+					$this->data = $user;
+					
 				}
 				$this->render('ajax_guarantor_edit');
 

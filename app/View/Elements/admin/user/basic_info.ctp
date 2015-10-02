@@ -33,7 +33,7 @@
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false, 'required'=>false))?>              
+                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>              
                                        
                       <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
                     </div>
@@ -80,10 +80,7 @@
                     var d = new Date();
                       var n = d.getFullYear();
                       $("#age").html(n - $("#year").val());
-                    function calculate_age(){
-                      
-                      $("#age").html(n - $("#year").val());
-                    }
+                    
                     </script>
                     </div>
                   </div>
@@ -144,23 +141,8 @@
 	                <div class="col-lg-10" >
 	                  <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
 	                  <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
-	                  <button type="button" class="btn btn-primary" id="btn-find-address">郵使番号から住所を検索</button>
-	                  <img id="loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
-	                  <script type="text/javascript">
-	                    $('#btn-find-address').on('click', function() {
-	                         var loader = $('#loader');
-	                        
-	                          loader.show();
-	                         // alert($('#post_num_1').val().trim() + $('#post_num_2').val().trim());
-	                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#post_num_1').val().trim() + $('#post_num_2').val().trim()}, 
-	                          function(json) {
-	                            loader.hide();
-	                            $("#pref_id").val(json.pref_id);
-	                            $("#city").val(json.ward);
-	                            $("#address").val(json.addr1);
-	                        });
-	                    });
-	                  </script>
+	                  
+	                  
 
 	                </div>
 	              </div>
@@ -231,7 +213,6 @@
               </tr>
                
               </table>
-               <?php echo $this->Form->hidden('UserAddress.id')?>
             </fieldset>
        </div>
         <div class="well bs-component">
@@ -307,10 +288,6 @@
                     <?php echo $this->Form->input('UserCompany.name_kana', array('type'=>'text', 'id'=>"company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>
                 </div>
-                
-                <script type="text/javascript">
-                     $(this).autoKana('#company-name', '#company-name-kana', {katakana:false, toggle:false});
-                </script>
                
                     
             <table class="table table-striped table-hover ">
@@ -322,23 +299,7 @@
 	                <div class="col-lg-10" >
 	                  <?php echo $this->Form->input('UserCompany.post_num_1', array('type'=>'text', 'id'=>"company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false, 'required'=>false))?>
 	                  <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false, 'required'=>false))?>
-	                  <button type="button" class="btn btn-primary" id="btn-find-company-address">郵使番号から住所を検索</button>
-	                  <img id="c-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
-	                  <script type="text/javascript">
-	                    $('#btn-find-company-address').on('click', function() {
-	                         var loader = $('#c-loader');
-	                        
-	                          loader.show();
-	                         // alert($('#post_num_1').val().trim() + $('#post_num_2').val().trim());
-	                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#company_post_num_1').val().trim() + $('#company_post_num_2').val().trim()}, 
-	                          function(json) {
-	                            loader.hide();
-	                            $("#company_pref_id").val(json.pref_id);
-	                            $("#company_city").val(json.ward);
-	                            $("#company_address").val(json.addr1);
-	                        });
-	                    });
-	                  </script>
+	                  
 
 	                </div>
 	              </div>
@@ -441,15 +402,7 @@
 
                 		echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:200px; display:inline', 'required'=>false))
               		?>	
-                  <script type="text/javascript">
-                    function change_type(obj){
-                        if(obj.val() == '4')
-                        $('#salary_type_other').prop('disabled',false);
-                        else {
-                          $('#salary_type_other').prop('disabled',true);
-                        }
-                    }
-                  </script>
+                  
                   </div>
                 </div>
 
@@ -478,7 +431,6 @@
                     <?php echo $this->Form->input('UserCompany.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
                 </div>
-                 <?php echo $this->Form->hidden('UserCompany.id')?>
               </fieldset>
           
             </div>
@@ -519,8 +471,7 @@
                   <div class="col-lg-10" >
                     <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'value'=>$item['post_num_1'], 'required'=>false))?>
                     <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false))?>
-                    <button type="button" class="btn btn-primary" style="float:right" id="btn-find-expect-address" onclick="javascript:find_address($(this));">郵使番号から住所を検索</button>
-                    <img id="loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
+                    
                   </div>
                 </div>
                 <div class="form-group">
@@ -551,189 +502,13 @@
             <?php } ?>
             </section>
             <div >
-            <section id='remove'  style='display:none'>
-              <div class='form-group'>
-                <div class='col-lg-10 col-lg-offset-2'>
-                  <button type='button' id='btn-remove'  class='btn btn-primary' style='float:right' onclick="javascript:_remove($(this));"> - 希望エリアを削除</button>
-                </div>
-              </div>
-            </section>
-             <?php echo $this->Form->hidden('User.id')?>
-                 
-             <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-2">
-                    
-                    <button type="button" class="btn btn-primary" style="float:right"  id='btn-add'> + 希望エリアを追加</button>
-                  </div>
-                </div>
-
-              <script type="text/javascript">
-              
-                $(this).autoKana('#first_name', '#first_name_kana', {katakana:false, toggle:false});
-                $(this).autoKana('#last_name', '#last_name_kana', {katakana:false, toggle:false});
-
-
-                var num_area = <?php echo sizeof($user['ExpectArea'])?>;
-
-                var order_object = <?php echo sizeof($user['ExpectArea'])?>;
-                function replaceAll(find, replace, str) {
-                  return str.replace(new RegExp(find, 'g'), replace);
-                }
-                
-                function find_address(obj){
-                   var p =  obj.parent().parent().parent();
-                   var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
-                   var loader = p.find("div[id*='loader']");
-                        
-                      loader.show();
-                      
-                    $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
-                      function(json) {
-                        loader.hide();
-                        //alert(p.find("select[id*='pref_id']").val());
-                        p.find("select[id*='pref_id']").val(json.pref_id);
-                        p.find("input[id*='city']").val(json.ward);
-                        p.find("input[id*='address']").val(json.addr1);
-                    });
-                }
-
-                function _remove (obj) {
-                  // body...
-                  num_area--; 
-                  //alert(obj.parent().parent().html());
-                  obj.parent().parent().parent().remove();
-                }
-
-                $('#btn-add').on('click', function() {
-                  if( num_area < 5 ){
-                   var area = $('#expect-area-content-1').clone();
-                    
-                   area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
-                   order_object++;
-                   	area.find("input").val('');
-                    area.append($('#remove').clone(true, true).html());
-                   
-                    $('#expect-area').append(area);
-                    num_area++;
-                  }
-                  else {
-                    alert('Cannot add more item');
-                  }
-                });
-              
-             
-             
-              </script>
-             
-              
-                <?php echo $this->Form->hidden('User.is_confirm', array('value'=> 1, 'id'=>'user-info-id'))?>
-              <?php if($user['User']['status_id'] == 2){?>
-              <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="button" class="btn btn-primary" id="btn-edit-user-info1" >Update</button>
-                  <button type="submit" class="btn btn-primary" id="btn-save-user-info" >Save</button>
-                  <button type="button" class="btn btn-default" id="btn-cancel-user-info" >Cancel</button>
-                </div>
-              </div>
-              <?php }
-              else {?>
-                <script type="text/javascript" charset="utf-8" async defer>
-                //$('#UserEditBasicInfo').find(':button').hide();
-                //$('#UserEditBasicInfo').find(':input').prop('disabled',true);
-
-                </script>
-              <?php }?>
-               
-                <script type="text/javascript" >
-                var edit;
-                $( document ).ready(function() {
-                  if(edit != 1){
-                    //alert(edit);
-                    $('#btn-edit-user-info1').show();
-                    $('#btn-save-user-info').hide();
-                    $('#btn-cancel-user-info').hide();
-                    $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info1)').prop('disabled',true);
-                    $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info1)').hide();
-                    //alert(edit);
-                  }
-                  else{
-                    $('#btn-cancel-user-info').show();
-                    $('#btn-save-user-info').show();
-                      
-                     
-                    $('#btn-edit-user-info1').hide();
-                  }
-                });
-                 
-
-                    
-                   $('#btn-edit-user-info1').on('click', function() {
-                      
-                      $('#UserEditBasicInfo').find(':input').prop('disabled',false);
-                      $('#btn-cancel-user-info').show();
-                      $('#btn-save-user-info').show();
-                      
-                     
-                      $('#btn-edit-user-info1').hide();
-                      edit = 1;
-
-                   });
-                   $('#btn-cancel-user-info').on('click', function() {
-                       $('#btn-edit-user-info1').show();
-                        $('#btn-save-user-info').hide();
-                        $('#btn-cancel-user-info').hide();
-                        $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info1)').prop('disabled',true);
-                        $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info1)').hide();
-                        $.ajax({
-                           url: "<?php echo $this->webroot;?>users/update_basic_info",
-                            success: function(result){
-                              edit = 0;
-                              $('#guarantor').html(result);
-                            }
-                        });
-
-                   });
-                  $("#UserEditBasicInfo").submit(function() {
-
-                      var url = "<?php echo $this->webroot;?>users/update_basic_info"; // the script where you handle the form input.
-
-                      $.ajax({
-                             type: "POST",
-                             url: url,
-                             data: $("#UserEditBasicInfo").serialize(), // serializes the form's elements.
-                             success: function(result)
-                             {
-                                 edit = 0;
-                                 $('#basic').html(result);
-                             }
-                           });
-
-                      return false; // avoid to execute the actual submit of the form.
-                  });
-                </script>
+           <script type="text/javascript" >
+              $('#UserEditBasicInfo').find(':input').prop('disabled',true);
+           </script>
 
         </form>
 
-       <!--  <?php
-	    // JsHelper should be loaded in $helpers in controller
-	    // Form ID: #ContactsContactForm
-	    // Div to use for AJAX response: #contactStatus
-	    $data = $this->Js->get('#UserEditBasicInfo')->serializeForm(array('isForm' => true, 'inline' => true));
-	    $this->Js->get('#UserEditBasicInfo')->event(
-	       'submit',
-	       $this->Js->request(
-	        array('action' => 'update_basic_info', 'controller' => 'users'),
-	        array(
-	            'update' => '#basic',
-	            'data' => $data,
-	            'async' => true,    
-	            'dataExpression'=>true,
-	            'method' => 'POST'
-	        )
-	      )
-	    );
-	    echo $this->Js->writeBuffer(); 
-	    ?> -->
+      
         </div>
       </div>
       

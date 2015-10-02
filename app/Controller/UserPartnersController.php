@@ -29,15 +29,15 @@ class UserPartnersController extends AppController {
 
 			 $id = $this->s_user_id;
        //echo $id; die;
-        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
-        $this->set('user', $user);
+         	$user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
+        	 $this->set('user', $user);
       
 			if($user['User']['status_id'] == "2"){
 
 				$user_id = $user['User']['id'];
 				if($this->data['UserPartner']){
-					if($this->data['UserPartner']['is_confirm']){
-						$user_partner = $this->Session->read('user_partner');
+					//if($this->data['UserPartner']['is_confirm']){
+						$user_partner = $this->data;
 
 						$partner_id = $user_partner['UserPartner']['id'];
 						$this->UserPartner->set($user_partner);
@@ -58,8 +58,8 @@ class UserPartnersController extends AppController {
 
 							if(!$partner_id)
 								$partner_id = $this->UserPartner->getLastInsertId();
-							//echo $partner_id; die;
-							$user['User']['user_partner_id'] = $partner_id;
+							if($partner_id)
+								$user['User']['user_partner_id'] = $partner_id;
 							if($this->User->save($user, false)){
 								$user = $this->User->find('first', array('conditions'=>array('User.id'=>$user_id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea', 'UserRelation' )));
       							$this->data = $user;
@@ -70,22 +70,14 @@ class UserPartnersController extends AppController {
 							
 						
 
-						//$this->set('is_confirm', 0);
-					}
-					else {
-						$user_partner = $this->data;
-						$this->Session->write('user_partner', $user_partner);
-
-						$this->data['UserPartner'] = $user_partner['UserPartner'];
-						$user_partner['User']['status_id'] = $user['User']['status_id'];
-						//print_r($this->data);die;
-						 $this->set('user', $user_partner);
-						//echo 1; die;
-						$this->set('is_confirm', 1);
-					}
 					
 
 
+				}
+				else {
+					
+					$this->data = $user;
+					
 				}
 				$this->render('ajax_partner_edit');
 

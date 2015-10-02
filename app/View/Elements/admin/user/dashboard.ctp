@@ -2,39 +2,39 @@
 <script src="<?php echo $this->webroot;?>js/jquery.fileupload.js"></script>
 <div class="page-header">
     <?php echo $this->element('flash');?>
-     <div class="row">
+    <div class="row">
         <div class="col-lg-12">
 
            <table class="table table-striped table-hover ">
               <tr>
                 <td colspan="3">
-                 <label><?php echo __('user.my_page.status'); ?> :</label>
-                 <?php print_r($user['Status']['name']); ?>
+                <label><?php echo __('user.my_page.status'); ?>  </label>
+                <?php echo $user['Status']['name'];?>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <label><?php echo __('user.my_page.register_date'); ?>: </label>
+                  <label><?php echo __('user.my_page.register_date'); ?> </label>
                   <?php echo substr($user['User']['created'], 0, 10);?>
 
                 </td>
                 <td>
-                   <label><?php echo __('user.my_page.update_date'); ?>: </label>
+                   <label><?php echo __('user.my_page.update_date'); ?> </label>
                     <?php echo substr($user['User']['updated_date'], 0, 10);?>
                 </td>
                 <td>
-                   <label><?php echo __('user.my_page.approve_date'); ?> :</label>
+                   <?php echo __('user.my_page.approve_date'); ?> 
                    <?php echo $user['User']['approved_date'];?>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <label><?php echo __('user.my_page.max_payment'); ?> :</label>
+                  <?php echo __('user.my_page.max_payment'); ?> 
                    <?php echo $user['User']['max_payment'];?>
-                
+                   <button type="button" class="btn btn-success" id="btn-set-max-payment"><?php echo __('admin.user.view.set_max_payment_button')?></button>
                 </td>
                 <td colspan="2">
-                    <label> <?php echo __('user.my_page.payment_date'); ?> :</label>
+                     <?php echo __('user.my_page.payment_date'); ?> 
                     <?php echo substr($user['User']['payment_date'], 0, 10);?>
                 </td>
               </tr>
@@ -49,22 +49,22 @@
 
               <table class="table table-striped table-hover ">
                 <thead>
-                  <th><?php echo __('user.my_page.object'); ?></th>
-                  <th><?php echo __('user.my_page.infomation'); ?></th>
-                  <th><?php echo __('user.my_page.status'); ?></th>
-                  <th><?php echo __('user.my_page.error_fields'); ?></th>
+                  <th>Object</th>
+                  <th>Information</th>
+                  <th>Status</th>
+                  <th>Fields Error</th>
                 </thead>
               	<tbody>
                   
                           <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) __('user.my_page.partner'); ?></td>
+                          <td><?php if($i == 1) echo "Customer Info"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed"?>
                             </td>
 
                              <td>
@@ -77,12 +77,12 @@
                           <?php $i = 0; foreach ($validations['UserPartner'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo __('user.my_page.partner'); ?></td>
+                          <td><?php if($i == 1) echo "Partner/Relation"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                  <?php if($value['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed" ?>
                             </td>
 
                              <td>
@@ -95,12 +95,12 @@
                           <?php $i = 0; foreach ($validations['UserGuarantor'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo __('user.my_page.guarantor'); ?></td>
+                          <td><?php if($i == 1) echo "Guarantor"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                  <?php if($value['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed"?>
                             </td>
 
                              <td>
@@ -112,12 +112,12 @@
                           <?php } ?>
 
                           <tr>
-                            <td><?php echo __('user.my_page.attachment')?></td>
+                            <td>Attachment</td>
                             <td>
                               <?php echo $validations['UserAttachment']['key'];?>
                             </td>
                             <td>
-                                <?php if($validations['UserAttachment']['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+                              <?php if($validations['UserAttachment']['error']) echo "Un-completed"; else echo "Completed" ?>
                             </td>
                             <td><?php if($validations['UserAttachment']['error']) echo $validations['UserAttachment']['error_msg'] ; ?></td>
                           </tr>
@@ -125,21 +125,7 @@
                         
                 </tbody>
                </table>
-               <?php if($user['User']['status_id'] == 2   && !$validations['error']) {?>
-                 <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-2">
-                    
-                    <button type="button" class="btn btn-primary" id='btn-update-info'> Send</button>
-                  </div>
-                </div>
-                <script type="text/javascript" charset="utf-8" async defer>
-                      $('#btn-update-info').on('click', function() {
-                        //alert(1111);
-                        window.location.href = '<?php echo $this->webroot?>users/update_account_info'
-                      });
-
-                </script>
-                <?php }?>
+               
 	        </div>
           </form>
         </div>
