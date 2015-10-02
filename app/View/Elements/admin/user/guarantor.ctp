@@ -67,7 +67,7 @@
 	                      年
 	                      <?php 
 	                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
-	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year', 'onchange'=>'g_calculate_age1()', 'required'=>false));
+	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year',  'required'=>false));
 	                		?>
 	    	              月
 	    	              <?php 
@@ -83,12 +83,9 @@
 	                    
 	                    	 <script type="text/javascript">
 		                    var d = new Date();
-		                      var n = d.getFullYear();
-		                      $("#g-age-1").html(n - $("#g1−year").val());
-		                    function g_calculate_age1(){
-		                      
-		                      $("#g-age-1").html(n - $("#g1−year").val());
-		                    }
+		                    var n = d.getFullYear();
+		                    $("#g-age-1").html(n - $("#g1−year").val());
+		                   
 		                    </script>
 	                    </div>
 	                  </div>
@@ -162,22 +159,7 @@
 		                <div class="col-lg-10" >
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_1', array('type'=>'text', 'id'=>"g_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_2', array('type'=>'text', 'id'=>"g_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-		                  <button type="button" class="btn btn-primary" id="btn-g-find-address">郵使番号から住所を検索</button>
-		                  <img id="loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
-		                  <script type="text/javascript">
-		                    $('#btn-g-find-address').on('click', function() {
-		                         var loader = $('#loader');
-		                        
-		                          loader.show();
-		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#g_post_num_1').val().trim() + $('#g_post_num_2').val().trim()}, 
-		                          function(json) {
-		                            loader.hide();
-		                            $("#g_pref_id").val(json.pref_id);
-		                            $("#g_city").val(json.ward);
-		                            $("#g_address").val(json.addr1);
-		                        });
-		                    });
-		                  </script>
+		                 
 
 		                </div>
 		              </div>
@@ -323,9 +305,6 @@
 	                    <?php echo $this->Form->input('UserGuarantor.company_kana', array('type'=>'text', 'id'=>"g-company-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false))?>
 	                  </div>
 	                </div>
-	                <script type="text/javascript">
-                    $(this).autoKana('#g-company', '#g-company-kana', {katakana:false, toggle:false});
-                  </script>
 
 	               
 	                    
@@ -338,23 +317,7 @@
 		                <div class="col-lg-10" >
 		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"g_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false))?>
 		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"g_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
-		                  <button type="button" class="btn btn-primary" id="btn-guarantor-company-address">郵使番号から住所を検索</button>
-		                  <img id="g-loader" style="vertical-align: middle; display: none" src="<?php echo $this->webroot;?>images/loader.gif" />
-		                  <script type="text/javascript">
-		                    $('#btn-guarantor-company-address').on('click', function() {
-		                         var loader = $('#g-loader');
-		                        
-		                          loader.show();
-		                         // alert($('#post_num_1').val().trim() + $('#post_num_2').val().trim());
-		                        $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#g_company_post_num_1').val().trim() + $('#g_company_post_num_2').val().trim()}, 
-		                          function(json) {
-		                            loader.hide();
-		                            $("#g_company_pref_id").val(json.pref_id);
-		                            $("#g_company_city").val(json.ward);
-		                            $("#g_company_address").val(json.addr1);
-		                        });
-		                    });
-		                  </script>
+		                  
 
 		                </div>
 		              </div>
@@ -495,106 +458,26 @@
 	                    <?php echo $this->Form->input('UserGuarantor.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
-	                 <?php echo $this->Form->hidden('UserGuarantor.id')?>
 	              </fieldset>
 	          
 	            </div>
 	             
 	             
 	              
-	            <?php if($user['User']['status_id'] == 2){?>
-              <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="button" class="btn btn-primary" id="btn-edit-guarantor" >Update</button>
-                  <button type="submit" class="btn btn-primary" id="btn-save-guarantor" >Save</button>
-                  <button type="button" class="btn btn-default" id="btn-cancel-guarantor" >Cancel</button>
-                </div>
-              </div>
-              <?php }
-              else {?>
-                <script type="text/javascript" charset="utf-8" async defer>
-                
-
-                </script>
-              <?php }?>
-               
+	           
                 <script type="text/javascript" >
-                var edit;
-                $( document ).ready(function() {
-                  if(edit != 1){
-                    //alert(edit);
-                    $('#btn-edit-guarantor').show();
-                    $('#btn-save-guarantor').hide();
-                    $('#btn-cancel-user-info').hide();
-                    $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-                    $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').hide();
-                  }
-                  else{
-                    $('#btn-cancel-guarantor').show();
-                    $('#btn-save-guarantor').show();
-                      
-                     
-                    $('#btn-edit-guarantor').hide();
-                  }
-                });
-                 
-
-                    
-                   $('#btn-edit-guarantor').on('click', function() {
-                      $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').show();
-                      $('#UserGuarantorEdit').find(':input').prop('disabled',false);
-                      $('#btn-cancel-guarantor').show();
-                      $('#btn-save-guarantor').show();
-                      
-                     
-                      $('#btn-edit-guarantor').hide();
-                      edit = 1;
-
-                   });
-                   $('#btn-cancel-guarantor').on('click', function() {
-                      $('#btn-edit-guarantor').show();
-                      $('#btn-save-guarantor').hide();
-                      $('#btn-cancel-guarantor').hide();
-                      $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-                      $('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').hide();
-                      $.ajax({
-                           url: "<?php echo $this->webroot;?>user_guarantors/edit",
-                            success: function(result){
-                              edit = 0;
-                              $('#guarantor').html(result);
-                            }
-                        });
-
-                   });
-                  $("#UserGuarantorEdit").submit(function() {
-
-                      var url = "<?php echo $this->webroot;?>user_guarantors/edit"; // the script where you handle the form input.
-
-                      $.ajax({
-                             type: "POST",
-                             url: url,
-                             data: $("#UserGuarantorEdit").serialize(), // serializes the form's elements.
-                             success: function(result)
-                             {
-                                 edit = 0;
-                                 $('#guarantor').html(result);
-                                 $.ajax({
-                                   url: "<?php echo $this->webroot?>users/reload_dashboard",
-                                    success: function(result){
-                                      $('#home').html(result);
-                                    }
-                                });
-                             }
-                           });
-
-                      return false; // avoid to execute the actual submit of the form.
-                  });
+                
+                  $('#UserGuarantorEdit').find(':input').prop('disabled',true);
+               
                 </script>
+             
+          	
+           
+            
+        	</form>
 
-        </form>
-
+       
         
-      </div>
-      
+      	</div>      
     </div>
-  </div>
+</div>

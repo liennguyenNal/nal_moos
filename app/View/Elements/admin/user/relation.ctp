@@ -2,9 +2,9 @@
 
 <section id="relation-area">
 <?php 
-if(sizeof($user['UserRelation']) >0 )
+
 	$len = sizeof($user['UserRelation']);
-else $len = 1;
+
 for($i =0; $i< $len; $i++){?>
 
 <div class="well bs-component" id="relation-area-content" >
@@ -114,85 +114,15 @@ for($i =0; $i< $len; $i++){?>
 	              </div>
 	              </td>
 	            </tr>
-	             <?php echo $this->Form->hidden("UserRelation.$i.id");?>
 	      </table>
 	    </div>
 	    
 	</fieldset>
 	  
 </div>
-<script type="text/javascript">
-	 
-	 $(this).autoKana('#r_first_name_<?php echo $i?>', '#r_first_name_kana_<?php echo $i?>', {katakana:false, toggle:false});
-    $(this).autoKana('#r_last_name_<?php echo $i?>', '#r_last_name_kana_<?php echo $i?>', {katakana:false, toggle:false});
 
-</script>
 
 <?php } ?>
 </section>
-
-<section id='remove'  style='display:none'>
-  <div class='form-group'>
-    <div class='col-lg-10 col-lg-offset-2'>
-      <button type='button' id='btn-remove-relation'  class='btn btn-primary' style='float:right' onclick="javascript:_remove_relation($(this));"> - Remove</button>
-    </div>
-  </div>
-</section>
-     
- <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        
-        <button type="button" class="btn btn-primary" style="float:right"  id='btn-add-relation'> + Add More</button>
-      </div>
-    </div>
-
-  <script type="text/javascript">
-  
-   
-
-
-    var num_area = <?php echo $len; ?>;
-
-    var order_object = "<?php echo $len; ?>";
-    function replaceAll(find, replace, str) {
-      return str.replace(new RegExp(find, 'g'), replace);
-    }
-    
-   
-    function _remove_relation (obj) {
-      // body...
-      num_area--; 
-      //alert(obj.parent().parent().html());
-      obj.parent().parent().parent().remove();
-    }
-     
-
-    $('#btn-add-relation').on('click', function() {
-    	var kana_script = '$(this).autoKana("#r_first_name_'+　order_object +'", "#r_first_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
-    	kana_script += '$(this).autoKana("#r_last_name_'+　order_object +'", "#r_last_name_kana_'+　order_object +'", {katakana:false, toggle:false});'
-    	
-      if( num_area < 5 ){
-     	
-       var area = $('#relation-area-content').clone(true, true);
-        
-       area.html(area.html().replace(/\[0\]/g, '['+ order_object + ']' ).replace(/_0/g, '_'+ order_object));
-       
-       	area.find("input").val('');
-      
-    
-        area.append($('#remove').clone(true, true).html() );
-       $('<script>' + kana_script +'</' + 'script>').appendTo(area);
-        $('#relation-area').append(area);
-        order_object++;
-        num_area++;
-      }
-      else {
-        alert('Cannot add more item');
-      }
-    });
-  
- 
- 
-  </script>
 
   
