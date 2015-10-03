@@ -830,3 +830,6 @@ ALTER TABLE `work_requireds`
 --
 ALTER TABLE `zipcodes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- add is_deleteed field to table users 
+ALTER TABLE `users` ADD `is_deleted` BOOLEAN NULL DEFAULT FALSE AFTER `max_payment`;

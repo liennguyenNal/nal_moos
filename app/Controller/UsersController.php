@@ -18,23 +18,51 @@ class UsersController extends AppController{
      * @return response
      */
     function admin_index(){
-      $statuses = $this->Status->find('list');
+      $statuses = $this->Status->find('list', array('conditions'=>array('Status.id <> 0')));
       $this->set('statuses', $statuses);
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
-      $criteria = "1=1 ";
-      if($this->params['named']['keyword']){
-        $keyword = $this->params['named']['keyword'];
-        $criteria .= " AND (User.first_name LIKE '%$keyword%' OR User.last_name LIKE '%$keyword%' OR User.first_name_kana LIKE '%$keyword%'
-            OR User.last_name_kana LIKE '%$keyword% OR User.email LIKE '%$keyword%
-          ) " ;
-        $this->set('keyword', $keyword);
-      }
-      if($this->params['named']['type']){
-        $status_id = $this->params['named']['type'];
+      $criteria = " User.is_deleted = 0";
+       if($this->params['named']['status']){
+        $status_id = $this->params['named']['status'];
         $criteria .= " AND User.status_id = '$status_id'" ;
-        $this->set('status', $status);
+        $this->set('status', $status_id);
       }
+      if($this->params['named']['city']){
+        $city = $this->params['named']['city'];
+         $criteria .= " AND UserAddress.city = '$city'" ;
+        
+        $this->set('city', $city);
+      }
+      if($this->params['named']['pref']){
+        $pref = $this->params['named']['pref'];
+         $criteria .= " AND UserAddress.pref_id = '$pref'" ;
+        
+        $this->set('pref', $pref);
+      }
+      
+       if($this->params['named']['from_register']){
+        $from_register = $this->params['named']['from_register'];
+        $criteria .= " AND User.created > '$from_register'" ;
+        //$this->set('status', $status);
+      }
+       if($this->params['named']['to_register']){
+        $to_register = $this->params['named']['to_register'];
+        $criteria .= " AND User.created < '$to_register'" ;
+        //$this->set('status', $status);
+      }
+     
+      if($this->params['named']['from_approve']){
+        $from_approve = $this->params['named']['from_approve'];
+        $criteria .= " AND User.approved_date > '$from_approve'" ;
+        //$this->set('status', $status);
+      }
+      if($this->params['named']['to_approve']){
+        $to_approve = $this->params['named']['to_approve'];
+        $criteria .= " AND User.approved_date > '$to_approve'" ;
+        //$this->set('status', $status);
+      }
+      //echo $criteria; die;
         $this->paginate = array(
             'conditions' => $criteria,
             'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
@@ -90,7 +118,7 @@ class UsersController extends AppController{
      */
     function admin_delete($id){
       if($id){
-          $user = $this->User->delete($id);
+          //$user = $this->User->delete($id);
           $user['User']['is_deleted'] = 1;
           if($this->User->save($user, false)){
              $this->Session->setFlash('An User has been deleted successful!','default', array('class' => 'alert alert-dismissible alert-success'));
@@ -336,7 +364,11 @@ class UsersController extends AppController{
       if($this->data){
         foreach ($this->data['ids'] as $id) {
           $this->User->create();
-          $this->User->delete($id);
+          $user = $this->User->read(null, $id);
+          $user['User']['is_deleted'] = 1;
+          if($this->User->save($user, false)){
+            
+          }
         }
         $this->Session->setFlash("Some users has been deleted successful", 'default',array('class' => 'alert alert-dismissible alert-success"'));
         $this->redirect('index');
@@ -1227,7 +1259,7 @@ class UsersController extends AppController{
       $user_partner_contact_fields = array('phone'=> 'Phone Number');
 
      $partner = $this->UserPartner->find('first',array( 'conditions'=>array( 'UserPartner.id'=> $user['UserPartner']['id'])));
-     if($partner){
+     if($partner && $user['User']['married_status_id'] == 1){
       $this->UserPartner->set($partner);
       if(!$this->UserPartner->validates()){
         //print_r($this->UserPartner->invalidFields()); die;
@@ -1274,6 +1306,7 @@ class UsersController extends AppController{
       }
     }
       //print_r( $result['UserPartner']); die;
+    if($user['User']['live_with_family']){
       if($user['UserRelation']){
         //foreach ($user['User']['UserRelation'] as $item) {
           $item = $user['UserRelation'][0];
@@ -1292,6 +1325,7 @@ class UsersController extends AppController{
         }
        
       }
+    }
       $guarantor = $this->UserGuarantor->find('first',array( 'conditions'=>array( 'UserGuarantor.id'=> $user['UserGuarantor']['id'])));
       $user_guarantor_info_fields = array('first_name'=> 'First name', 'last_name' =>' Last Name', 'first_name_kana'=>'First Name Kana', 'last_name_kana'=>'Last Name Kana', 
             'year_of_birthday'=>' Year of Birthday', 'month_of_birth'=>'Month Of Birthday', 'day_of_birth'=> 'Day Of Birthday', 'gender'=>'Gender' ,'live_with_family' => 'Live with Family', 'married_status' => 'Marial Status', 'relate'=>'Relationship');
@@ -1302,7 +1336,6 @@ class UsersController extends AppController{
       if($guarantor){
         $this->UserGuarantor->set($guarantor);
         if(!$this->UserGuarantor->validates()){
-          //print_r($this->UserPartner->invalidFields()); die;
           $result['error'] = 1;
           
 

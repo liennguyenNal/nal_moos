@@ -357,6 +357,155 @@ msgstr "４桁以下にご入力ください。"
 
 
 
+msgid "user.my_page.status"
+msgstr "Tình trạng hồ sơ"
+
+msgid "user.my_page.register_date"
+
+msgstr "Register Date"
+
+msgid "user.my_page.update_date"
+
+msgstr "Ngày đăng ký thẩm tra"
+
+msgid "user.my_page.approve_date"
+
+msgstr "Ngày chấp nhận đăng ký lần 2"
+
+msgid "user.my_page.payment_date"
+
+msgstr "Ngày trả tiền"
+
+msgid "user.my_page.max_payment"
+
+msgstr "Giá thuê tối đa"
+
+msgid "user.my_page.object"
+msgstr "Đối tượng"
+
+msgid "user.my_page.infomation"	
+msgstr "Thông tin chi tiết"
+
+msgid "user.my_page.status"
+msgstr "Status"
+
+msgid "user.my_page.status.completed"	
+msgstr "Hoàn thành"
+
+msgid "user.my_page.status.un_completed"
+msgstr "Chưa hoàn thành"
+
+msgid "user.my_page.error_fields"
+msgstr "Thông tin bị lỗi"
+
+msgid "user.my_page.customer"	
+msgstr "Thông tin cơ bản"
+
+msgid "user.my_page.partner"	
+msgstr "Người sống cùng"
+
+msgid "user.my_page.guarantor"	
+msgstr "Người bảo lãnh"
+
+msgid "user.my_page.attachment"	
+msgstr "Hồ sơ đính kèm"
+
+msgid "admin.user.view.set_max_payment_button"
+msgstr "Thay đổi giá thuê tối đa"
+
+
+msgid "admin.email.approve_user.title"
+msgstr "【家賃でもらえる家】審査申し込み"
+
+msgid "admin.email.reject_user.title"
+msgstr "【家賃でもらえる家】審査結果のご連絡"
+
+msgid "admin.email.return_user.title"
+msgstr "【家賃でもらえる家】審査結果のご連絡"
+
+msgid "admin.email.project_payment.title"
+msgstr "家賃でもらえる家】審査結果のご連絡"
+
+
+msgid "admin.register_users"
+msgstr "会員一覧"
+
+msgid "admin.register_user"
+msgstr "会員一覧"
+
+
+msgid "admin.register_users.view"
+msgstr "詳細"
+
+msgid "admin.register_users.infomation"
+msgstr "Register Users"
+
+msgid "admin.user.reject_button"
+msgstr "Reject User"
+
+msgid "admin.user.approve_button"
+msgstr "Register Users"
+
+msgid "admin.user.delete_button"
+msgstr "Delete"
+
+msgid "admin.user.charged_button"
+msgstr "Charged"
+
+msgid "admin.user.back_button"
+msgstr "Charged"
+
+msgid "admin.user.cancel_button"
+msgstr "Cancel"
+
+msgid "admin.user.status"
+msgstr "申し込み状況"
+
+msgid "admin.user.pref"
+msgstr "都道府県"
+
+
+msgid "admin.user.list_header.no"
+msgstr "番号"
+
+msgid "admin.user.list_header.id"
+msgstr "番号"
+
+msgid "admin.user.list_header.name"
+msgstr "番号"
+
+msgid "admin.user.list_header.work"
+msgstr "番号"
+
+msgid "admin.user.list_header.age"
+msgstr "番号"
+
+msgid "admin.user.list_header.pref"
+msgstr "都道府県"
+
+msgid "admin.user.list_header.city"
+msgstr "市区町村"
+
+msgid "admin.user.list_header.income_month"
+msgstr "月収"
+
+msgid "admin.user.list_header.status"
+msgstr "申し込み状況"
+
+msgid "admin.user.list_header.register_date"
+msgstr "登録申込日"
+
+msgid "admin.user.list_header.approve_date"
+msgstr "登録申込日"
+
+msgid "admin.user.export_csv"
+msgstr "CSVデータダウンロード"
+
+msgid "admin.user.search"
+msgstr "検索"
+
+
+
 
 
 
