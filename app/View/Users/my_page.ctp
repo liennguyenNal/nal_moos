@@ -9,12 +9,14 @@
       <div class="content-tab">
         <div class="container-fluid">
           <ul class="nav nav-tabs">
-            <li><a data-toggle="tab" href="#home">マイページトップ</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">マイページトップ</a></li>
             <li><a data-toggle="tab" href="#basic">申込人</a></li>
             <li><a data-toggle="tab" href="#partner">配偶者／同居人</a></li>
             <li><a data-toggle="tab" href="#guarantor">連帯保証人</a></li>
+            <?php if($user['User']['need_more_guarantor']){ ?>
             <li><a data-toggle="tab" href="#other_guarantor">連帯保証人 2</a></li>
-            <li class="active"><a data-toggle="tab" href="#attachment">添付書類</a></li>
+            <?php } ?>
+            <li ><a data-toggle="tab" href="#attachment">添付書類</a></li>
           </ul>
 
           <div class="tab-content">
