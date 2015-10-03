@@ -37,18 +37,26 @@
                       }
                      
                     ?>
+                    <?php  if(!$file_name){ ?>
                       <div class="upload-file">
                       
                          
-                         <?php  if(!$file_name){ ?>
+                         
                          <div id="file-<?php echo $i ?>"></div>
-                           <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span><input class="sp-hide" id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]" />
-                           <?php } else { ?>  
+                           <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span>
+                           <input class="sp-hide" id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]" />
+                       </div>
+                     <?php } else { ?>  
+                      <div class="upload-file">
                            <div id="file-<?php echo $i ?>"><?php echo $file_name;?><a onclick='delete_file(<?php echo $i ?>);' href='javascript:void(0)'> X </a></div>
-                        
-                        <input id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]"/>
+                           <section id="section-upload-<?php echo $i ?>" style="display:none">
+                             <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span>
+                           <input class="sp-hide" id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]" />
+                           </section>
+                           
+                     </div>
                       <?php } ?>
-                      </div>
+                      
       </td>
     </tr>
     <?php } ?>
@@ -76,6 +84,7 @@
                 if(data.result.error == '0'){
                   $('<p/>').html(data.result.filename + '<a onclick=\'delete_file($i);\' href=\'#\'> X </a>').appendTo('#file-$i');
                   $('#fileupload-$i').parent().find('.sp-hide').hide();
+
                   $.ajax({
                          url: reload_url,
                           success: function(result){
@@ -94,6 +103,7 @@
           $.ajax({url: "<?php echo $this->webroot;?>attachments/remove_file/" + id, success: function(result){
             $("#file-"+id).html("");
             $('#fileupload-'+id).parent().find('.sp-hide').show();
+            $("#section-upload-"+ id).show();
             $.ajax({
                url: '<?php echo $this->webroot?>users/reload_dashboard',
                 success: function(result){

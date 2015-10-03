@@ -520,7 +520,7 @@
         },
         'data[User][email_confirm]': {
           required: true, 
-          equalTo: 'data[User][email]'
+          equalTo: '#email'
         },
         'data[UserCompany][work_id]': {required: true},
         'data[UserCompany][year_worked]': {
