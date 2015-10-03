@@ -230,7 +230,6 @@
       var errors = validator.numberOfInvalids();
       if (errors) {
         $("#error-section").show();
-        $('#form-contact').find('.tooltip-inner').append('<p></p>');
       } else {
         $("#error-section").hide();
       }

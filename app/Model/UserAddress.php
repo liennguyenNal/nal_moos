@@ -2,8 +2,8 @@
 
 class UserAddress extends AppModel {
     var $name = 'UserAddress';
-    //var $belongsTo = array('User');
-    var $hasMany = array('City');
+    var $belongsTo = array('Pref');
+    
 
     var $validate = array( 
         
@@ -43,7 +43,8 @@ class UserAddress extends AppModel {
             'rule' => 'notBlank',
         ),
         'housing_costs' =>array(
-            'rule' => 'notBlank',
+            'rule' => 'checkResidence',
+
         ),
         
         'year_residence' =>array(
@@ -51,7 +52,15 @@ class UserAddress extends AppModel {
         )
 
     );
-
+    
+    function checkResidence($check){
+        if($this->data[$this->alias]['pref_id'] == 1 || $this->data[$this->alias]['pref_id'] == 2){
+            if($check) return true;
+            else 
+                return false;
+        }
+        return true;
+    }
 
 }
 ?>

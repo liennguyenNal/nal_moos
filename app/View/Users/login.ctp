@@ -19,6 +19,12 @@
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </head>
 <body class="page">
   <div id="wrapper">    
@@ -43,9 +49,17 @@
       </div>
 
       <!-- Login form -->
-      <form action="login" method="POST">
+      <form action="login" method="POST" id="form-login">
         <div class="from-login">
           <div class="container-fluid">
+            <?php if($login_error_msg){?>
+              <div class="block-warning">
+                <?php echo $login_error_msg;?>
+              </div>
+            <?php } ?>
+            <div class="block-warning" id="error-section" style="display:none">
+              <?php echo __('login.errors'); ?>
+            </div>
             <div class="from-ldpage">
               <div class="content">
                 <div class="container-fluid">
@@ -62,7 +76,7 @@
                               <td>
                                 <div class="block-input">
                                   <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
-                                  <input class="w198" type="text" name="data[User][email]" value="" placeholder="">
+                                  <input class="w198" type="text" name="data[User][email]" value="" placeholder="" data-placement="right">
                                 </div>
                               </td>
                             </tr>
@@ -71,7 +85,7 @@
                               <td>
                                 <div class="block-input">
                                   <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
-                                  <input class="w198" type="password" name="data[User][password]" value="" placeholder="">
+                                  <input class="w198" type="password" name="data[User][password]" value="" placeholder="" data-placement="right">
                                 </div>
                               </td>
                             </tr>
@@ -102,9 +116,39 @@
   <footer id="footer-container" class="footer-page">
     <?php echo $this->element('footer'); ?>
   </footer>
-  <script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
-  <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+
+  <!-- SCRIPT VALIDATION -->
+  <script>
+    $("#form-login").validate({
+      rules: {
+        'data[User][email]': {
+          required: true,
+          email: true
+        },
+        'data[User][password]': {
+          required: true
+        }
+      },
+      messages: {
+        'data[User][email]': {
+          required: "<?php echo __('global.errors.required'); ?>"
+        },
+        'data[User][password]': {
+          required: "<?php echo __('global.errors.required'); ?>"
+        }
+      },
+      invalidHandler: function(event, validator) {
+        var errors = validator.numberOfInvalids();
+        if (errors) {
+          $("#error-section").show();
+        } else {
+          $("#error-section").hide();
+        }
+      }
+    });
+    jQuery.extend(jQuery.validator.messages, {
+        email: "<?php echo __('global.errors.email'); ?>"
+    });
+  </script>
 </body>
 </html>

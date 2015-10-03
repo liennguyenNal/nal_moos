@@ -37,12 +37,14 @@ class UsersController extends AppController{
       }
         $this->paginate = array(
             'conditions' => $criteria,
-            'contain' => array('UserCompany', 'UserAddress', 'Status'),
+            'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
             'limit' => 20,
+            'recursive' => 3,
             'order' => array('id' => 'desc')
         );
         $users = $this->paginate('User');
         $this->set('users', $users);
+        //print_r($users[0]['UserCompany']['Work']);die;
     }
 
     
@@ -88,8 +90,13 @@ class UsersController extends AppController{
      */
     function admin_delete($id){
       if($id){
-          $this->User->delete($id);
-          $this->redirect('index');
+          $user = $this->User->delete($id);
+          $user['User']['is_deleted'] = 1;
+          if($this->User->save($user, false)){
+             $this->Session->setFlash('An User has been deleted successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+            $this->redirect('index');
+          }
+          
       }
     }
 

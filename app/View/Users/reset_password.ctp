@@ -18,15 +18,12 @@
 	<link rel="stylesheet" href="<?php echo $this->webroot;?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot;?>css/swiper.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot;?>css/common.css" type="text/css" media="screen" />
-	<style>
-		
-		.alert_reset{
-			color: red !important;
-			width:200px !important;
-		}
-
-	</style>
-
+	<script src="<?php echo $this->webroot; ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </head>
 <body class="page">
 	<div id="wrapper">		
@@ -54,6 +51,9 @@
 					<div class="from-ldpage">
 						<div class="content">
 							<div class="container-fluid">
+							<div class="block-warning" id="error-section" style="display:none">
+			                    <?php echo __('global.errors.reset.password'); ?>
+			                </div>
 								<div class="content-from">
 									<form id="form_reset" action="reset_password" method="POST" >
 										<div class="content-from-block">
@@ -65,7 +65,7 @@
 															<td class="label-text"><label>登録メールアドレス</label><span>必須</span></td>
 															<td>
 																<div class="block-input">
-																	<div><input class="w198" id="reset_email" type="text" name="email" >
+																	<div><input class="w198" id="reset_email" type="text" name="email" data-placement="right">
 	       															<span class="alert_reset"></span></div>
 																	
 																</div>
@@ -93,16 +93,16 @@
 
 	<div class="block-menu-footer">
 		<div class="container-fluid">
-			<ul>
-				<li><a href="#">家賃でもらえる家とは</a></li>
-				<li><a href="#">申し込みの流れ</a></li>
-				<li><a href="#">よくある質問</a></li>
-				<li><a href="#">無料会員登録</a></li>
-				<li><a href="#">お問い合わせ</a></li>
-				<li><a href="#">運営会社</a></li>
-				<li><a href="#">個人情報保護方針</a></li>
-			</ul>
-		</div>
+	      <ul>
+	        <li><a href="#">家賃でもらえる家とは</a></li>
+	        <li><a href="#">申し込みの流れ</a></li>
+	        <li><a href="<?php echo $this->webroot; ?>faq">よくある質問</a></li>
+	        <li><a href="#">仮審査申し込み</a></li>
+	        <li><a href="<?php echo $this->webroot; ?>contact">お問い合わせ</a></li>
+	        <li><a href="#">運営会社</a></li>
+	        <li><a href="#">個人情報保護方針</a></li>
+	      </ul>
+	    </div>
 	</div>
 
 	<footer id="footer-container" class="footer-page">
@@ -115,60 +115,48 @@
 			</div>
 		</div>
 	</footer>
-	<script src="<?php echo $this->webroot;?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
-	<script src="<?php echo $this->webroot;?>js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="<?php echo $this->webroot;?>js/swiper.jquery.min.js" type="text/javascript"></script>
-	<script src="<?php echo $this->webroot;?>js/common.js" type="text/javascript"></script>
+	<!-- SCRIPT VALIDATION -->
+  <script>
+    $("#form_reset").validate({
+      rules: {
+        'email': {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        'email': {
+          required: "<?php echo __('global.errors.required'); ?>"
+        }
+      },
+      invalidHandler: function(event, validator) {
+        var errors = validator.numberOfInvalids();
+        if (errors) {
+          $("#error-section").show();
+        } else {
+          $("#error-section").hide();
+        }
+      }
+    });
+    jQuery.extend(jQuery.validator.messages, {
+      email: "<?php echo __('global.errors.email'); ?>"
+    });
+  </script>
 
-	<script type="text/javascript">
-		function IsEmail(email) {
-			/*
-				to validate email
-			*/
-		  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		  return regex.test(email);
-		}
-
-
-		 jQuery(document).ready(function() { 
-	    	jQuery('.submit').click(function(event){
-
-	    		if(jQuery('#reset_email').val()==''){
-	    			jQuery('.alert_reset').html("Please type your email");
-		            // Prevent form submission
-		            
-	    		}
-	    		else{
-		         
-			        if(IsEmail(jQuery('#reset_email').val()) == false) {
-			            jQuery('.alert_reset').html("Email is not correct");
-			           
-			        }
-			        else{
-			        	
-				        jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){ 
-				        	
-				        	if(result== 'not'){
-				        		jQuery('.alert_reset').html("Email does not exist");
-				        		 
-				        	}
-				        	else{
-				        		jQuery('.alert_reset').html("");
-				        		jQuery('#form_reset').submit();
-				        	}
-				        	
-					    }});
-
-				        
-					    
-			    	}
-		    	}	
-			    
-		        
-	         
+  <script type="text/javascript">
+	jQuery(document).ready(function() { 
+	    jQuery('.submit').click(function(event){
+		    jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){
+	        	if(result== 'not'){
+	        		$('#error-section').show().html("<?php echo __('global.errors.reset.email'); ?>");
+	        	}
+	        	else{
+	        		$('#error-section').hide();
+	        		jQuery('#form_reset').submit();
+	        	}
+			}});
 	    });
 	});
 	</script>
-
 </body>
 </html>

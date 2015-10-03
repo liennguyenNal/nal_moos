@@ -7,8 +7,7 @@
 
 class UserCompany extends AppModel {
     var $name = 'UserCompany';
-    var $belongsTo = array('WorkingStatus');
-    var $hasMany = array('Pref');
+    var $belongsTo = array('Work', 'Pref');
 
     var $validate = array( 
         

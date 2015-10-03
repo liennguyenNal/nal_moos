@@ -1,4 +1,7 @@
+
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  <div class="col-lg-4">
@@ -20,7 +23,7 @@
       	<?php echo $this->Form->create("Contact", array('action'=>'change_confirm', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
-              <legend>お問い合わせフオ一ム</legend>
+              <legend>お問い合わせフオ一ム <?php if($contact['Contact']['status']==1){echo 'No Processing';}if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">お名前</label>
                 <div class="col-lg-10">
@@ -102,7 +105,7 @@
                 <label for="textArea" class="col-lg-2 control-label">対応伏況</span></label>
                 <div class="col-lg-10">
                   <?php 
-                    $statuses = array("2"=>"解決します", "3"=>"拒絶します");
+                    $statuses = array(1=>"No Processing",2=> "Processing",3=>"Completed");
                   echo $this->Form->select('status', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'status' , ));?>
                 </div>
               </div>
@@ -120,11 +123,19 @@
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
                      
-
-                      <button type="submit" class="btn btn-primary" id="btn-change">Confirm</button>
+                      <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
+                      <button type="submit" class="btn btn-primary" id="btn-change">Edit</button>
                       
-                      <button type="button" class="btn btn-default" id="btn-cancel" >Cancel</button>
+                      <button type="button" class="btn btn-default" id="btn-cancel" >Back to List</button>
                     </div>
+
+                    <div id="dialog-confirm-delete" title="Delete this users?">
+                        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All selected user will be deleted. Are you sure?</p>
+                      </div>
+
+                      <div id="dialog-confirm-delete1" title="Confirm delete this users?">
+                        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure?</p>
+                      </div>
                     <script type="text/javascript">
                       $( document ).ready(function() {
                         var $curr = $( "#start" );
@@ -137,6 +148,48 @@
                         });
                        
                        });
+
+                      $('#btn-delete').on('click', function() { 
+                        
+                           $("#dialog-confirm-delete").dialog("open");
+                             //event.preventDefault(); 
+
+                        
+                      });
+
+                      $("#dialog-confirm-delete").dialog({
+                        autoOpen: false,
+                        resizable: true,
+                        modal: true,
+                        buttons: {
+                          "Delete": function() {
+                            $( "#dialog-confirm-delete1" ).dialog("open");
+                            $( this ).dialog( "close" );
+                            event.preventDefault();
+                          },
+                          Cancel: function() {
+                            agree = false;
+                            $( this ).dialog( "close" );
+                          }
+                        }
+                      });
+                      $( "#dialog-confirm-delete1" ).dialog({
+                        autoOpen: false,
+                        resizable: true,
+                        modal: true,
+                        buttons: {
+                          "Delete": function() {
+                            
+                            $( this ).dialog( "close" );
+                             window.location.href="<?php echo $this->webroot;?>admin/contacts/delete/<?php echo $contact['Contact']['id']; ?>";
+
+                          },
+                          Cancel: function() {
+                            agree = false;
+                            $( this ).dialog( "close" );
+                          }
+                        }
+                      });
                     </script>
                 </div>
               </div>
@@ -146,7 +199,5 @@
     </div>
 
   </div>
-<div id="dialog-confirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This contact will be deleted. Are you sure?</p>
-  </div>
+
   

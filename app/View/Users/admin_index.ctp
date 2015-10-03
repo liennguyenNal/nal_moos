@@ -93,15 +93,18 @@
             <thead>
               <tr>
                 <th><input type="checkbox" id="chk-all"></th>
-                <th>No</th>
-                <th>Email ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>First Name Kana</th>
-                <th>Last Name Kana</th>
-                <th>Age</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th><?php echo __('admin.user.list_header.no'); ?></th>
+                <th><?php echo __('admin.user.list_header.id'); ?></th>
+                <th><?php echo __('admin.user.list_header.name'); ?></th>
+                <th><?php echo __('admin.user.list_header.age'); ?></th>
+                <th><?php echo __('admin.user.list_header.work'); ?></th>
+                <th><?php echo __('admin.user.list_header.income_month'); ?></th>
+                <th><?php echo __('admin.user.list_header.pref'); ?></th>
+                <th><?php echo __('admin.user.list_header.city'); ?></th>
+                <th><?php echo __('admin.user.list_header.status'); ?></th>
+                <th><?php echo __('admin.user.list_header.register_date'); ?></th>
+                <th><?php echo __('admin.user.list_header.approve_date'); ?></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -110,17 +113,15 @@
               <td><input type="checkbox" id="chk[]" name="ids[]" value="<?php echo $user['User']['id']?>" class="checkbox"></td>
                 <td><?php echo $i;?></td>
                 <td><?php echo $user['User']['email'] ?></td>
-                <td><?php echo $user['User']['first_name'] ?></td>
-                <td><?php echo $user['User']['last_name'] ?></td>
-                 <td><?php echo $user['User']['first_name_kana'] ?></td>
-                <td><?php echo $user['User']['last_name_kana'] ?></td>
-                <td><?php echo date('Y') - $user['User']['year_of_birth'] ?></td>
-                <td><?php 
-                  if($user['User']['status_id'] == 0) echo "Reject"; 
-                   if($user['User']['status_id'] == 1) echo "Register"; 
-                   else if($user['User']['status_id'] == 2) echo "Confirm Registered";
-                    else if($user['User']['status_id'] == 3) echo "Completed";
-                   ?>
+                <td><?php echo $user['User']['first_name'].$user['User']['last_name'] ?></td>
+                <td><?php echo date("Y") - $user['User']['year_of_birth'] ;?></td>
+                <td><?php echo $user['UserCompany']['Work']['name'] ?></td>
+                <td><?php echo $user['UserCompany']['salary_month'] ?></td>
+                <td><?php echo  $user['UserAddress']['Pref']['name'] ?></td>
+                <td><?php echo  $user['UserAddress']['city'] ?></td>
+                <td><?php echo $user['User']['status']; ?>
+                <td><?php echo $user['User']['created']; ?>
+                <td><?php echo $user['User']['approved_date']; ?>
                 </td>
                 <td>
                   <button type="button" class="btn btn-default" style="float:right" id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/users/view/<?php echo $user['User']['id']?>'"> 
@@ -150,40 +151,67 @@
             $(".checkbox").prop('checked', $(this).prop("checked"));
           });
         
-
-        $('#btn-delete').on('click', function() {
-          if ($("#form").find('input[name="ids[]"]:checked').length > 0){
-             $( "#dialog-confirm-delete" ).dialog("open");
-          }
-          else {
-            $( "#dialog-delete-message" ).dialog('open');
-          }
-        });
-
+        
+            $('#btn-delete').on('click', function() {
+              
+                 $( "#dialog-confirm-delete" ).dialog("open");
+             
+            });
         $( "#dialog-confirm-delete" ).dialog({
-          autoOpen: false,
-          resizable: true,
-          modal: true,
-          buttons: {
-            "Delete": function() {
-              $("#form").submit();
-              $( this ).dialog( "close" );
-            },
-            Cancel: function() {
-              agree = false;
-              $( this ).dialog( "close" );
-            }
-          }
-        });
-        $( "#dialog-delete-message" ).dialog({
-          autoOpen: false,
+            autoOpen: false,
+            resizable: true,
             modal: true,
             buttons: {
-              Ok: function() {
+              "Delete": function() {
+               $( "#dialog-reconfirm-delete" ).dialog("open");
+                $( this ).dialog( "close" );
+              },
+              Cancel: function() {
+                agree = false;
                 $( this ).dialog( "close" );
               }
             }
           });
+          $( "#dialog-reconfirm-delete" ).dialog({
+            autoOpen: false,
+            resizable: true,
+            modal: true,
+            buttons: {
+              "Delete": function() {
+                $("#form").submit();
+                $( this ).dialog( "close" );
+              },
+              Cancel: function() {
+                agree = false;
+                $( this ).dialog( "close" );
+              }
+            }
+          });
+
+        // $( "#dialog-confirm-delete" ).dialog({
+        //   autoOpen: false,
+        //   resizable: true,
+        //   modal: true,
+        //   buttons: {
+        //     "Delete": function() {
+        //       $("#form").submit();
+        //       $( this ).dialog( "close" );
+        //     },
+        //     Cancel: function() {
+        //       agree = false;
+        //       $( this ).dialog( "close" );
+        //     }
+        //   }
+        // });
+        // $( "#dialog-delete-message" ).dialog({
+        //   autoOpen: false,
+        //     modal: true,
+        //     buttons: {
+        //       Ok: function() {
+        //         $( this ).dialog( "close" );
+        //       }
+        //     }
+        //   });
         
         $( "#dialog-confirm-export" ).dialog({
           autoOpen: false,
@@ -212,14 +240,14 @@
     <?php echo $this->element('admin/paginate');?>
   </div>
 
-  <div id="dialog-confirm-delete" title="Delete this users?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All selected user will be deleted. Are you sure?</p>
   </div>
-  <div id="dialog-delete-message" title="Download complete">
-  <p>
-    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-    Select least one user to delete.
-  </p>
+   <div id="dialog-confirm-delete" title="Delete?">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
+  </div>
+  <div id="dialog-reconfirm-delete" title="Delete?">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+  </div>
+  
    <div id="dialog-confirm-export" title="Do you want to export CSV file?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Export all user to CSV file. Are you sure?</p>
   </div>
