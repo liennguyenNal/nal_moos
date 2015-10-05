@@ -107,6 +107,9 @@ msgstr "変更する"
 msgid "user.register.cancle"
 msgstr "キャンセル"
 
+msgid "user.register.pre"
+msgstr "都道府県"
+
 msgid "user.register.pref"
 msgstr "都道府県"
 
@@ -137,6 +140,7 @@ msgstr "電話番号"
 msgid "user.contact.content"
 msgstr "お問い合わせ内容"
 
+
 msgid "user.login.id"
 msgstr "ID"
 
@@ -146,17 +150,11 @@ msgstr "パスワード"
 msgid "global.errors"
 msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
 
-msgid "global.errors.create.password"
-msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
-
-msgid "global.errors.reset.password"
-msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
-
-msgid "global.errors.reset.email"
-msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
-
 msgid "global.errors.required"
 msgstr "必須項目です。</br>全角で入力してください。"
+
+msgid "global.errors.email"
+msgstr "メールアドレスを正しく入力してください。"
 
 msgid "global.errors.email"
 msgstr "メールアドレスを正しく入力してください。"
@@ -619,7 +617,16 @@ msgstr "完了"
 msgid "user.my_page.status.un_completed"
 msgstr "未完成"
 
-sgid "admin.user.search"
+msgid "user.register.company"	
+msgstr "会社名"
+
+msgid "global.errors.minlength_3"	
+msgstr "３桁以下にご入力ください。"
+
+msgid "global.errors.minlength_4"	
+msgstr "４桁以下にご入力ください。"
+
+msgid "admin.user.search"
 msgstr "検索"
 
 msgid "admin.contact.created_date"
@@ -673,6 +680,12 @@ msgstr "詳細"
 
 msgid "admin.articles.content"
 msgstr "内容"
+
+
+
+
+
+
 
 
 

@@ -290,7 +290,35 @@
             "<?php echo __('admin.user.export_csv')?>": function() {
               
               $( this ).dialog( "close" );
-              window.location.href="<?php echo $this->webroot;?>admin/users/download";
+                   var status = $("#status").val();
+                    var pref = $("#pref").val();
+                    var city = $("#city").val();
+
+                    var from_register ;
+                    if($("#from-year-register").val() && $("#from-month-register").val() && $("#from-day-register").val()){
+                      from_register = $("#from-year-register").val() + "-" + $("#from-month-register").val() + "-" + $("#from-day-register").val();
+                    }
+                    var to_register ;
+                    if($("#to-year-register").val() && $("#to-month-register").val()  && $("#to-day-register").val())
+                      to_register= $("#to-year-register").val() + "-" + $("#to-month-register").val() + "-" + $("#to-day-register").val();
+                    var from_approve ;
+                    if($("#from-year-approve").val() &&  $("#from-month-approve").val() && $("#from-day-approve").val())
+                      from_approve= $("#from-year-approve").val() + "-" + $("#from-month-approve").val() + "-" + $("#from-day-approve").val();
+                    
+                    var to_approve ;
+                    if($("#to-year-approve").val() && $("#to-month-approve").val() && $("#to-day-approve").val())
+                        to_approve= $("#to-year-approve").val() + "-" + $("#to-month-approve").val() + "-" + $("#to-day-approve").val();
+
+                    var action = "<?php echo $this->webroot;?>admin/users/download" ;
+                    if(action.lastIndexOf('index') == -1 ) action = action + '/index';
+                    if(status) action = action + "/status:" + status;
+                    if(pref) action = action + "/pref:" + pref;
+                    if(city) action = action + "/city:" + city;
+                    if(from_register) action = action + "/from_register:" + from_register;
+                    if(to_register) action = action + "/to_register:" + to_register;
+                    if(from_approve) action = action + "/from_approve:" + from_approve;
+                    if(to_approve) action = action + "/to_approve:" + to_approve;
+              window.location.href=action;
 
             },
             <?php echo __('admin.user.cancel_button')?>: function() {
@@ -320,7 +348,7 @@
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると2度と復元できません。</p>
   </div>
   
-   <div id="dialog-confirm-export" title="Do you want to export CSV file?">
+   <div id="dialog-confirm-export" title="CSVデータダウンロード">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Export all user to CSV file. Are you sure?</p>
   </div>
 </div>

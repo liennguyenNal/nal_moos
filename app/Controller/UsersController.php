@@ -26,18 +26,67 @@ class UsersController extends AppController{
     
     function admin_download()
     {
-        $this->set('users', $this->User->find('all'));
-        //var_dump($this->User->find('all')); die;
+         
+      $criteria = " User.is_deleted = 0";
+       if($this->params['named']['status']){
+        $status_id = $this->params['named']['status'];
+        $criteria .= " AND User.status_id = '$status_id'" ;
+        $this->set('status', $status_id);
+      }
+      if($this->params['named']['city']){
+        $city = $this->params['named']['city'];
+         $criteria .= " AND UserAddress.city = '$city'" ;
+        
+        $this->set('city', $city);
+      }
+      if($this->params['named']['pref']){
+        $pref = $this->params['named']['pref'];
+         $criteria .= " AND UserAddress.pref_id = '$pref'" ;
+        
+        $this->set('pref', $pref);
+      }
+      
+       if($this->params['named']['from_register']){
+        $from_register = $this->params['named']['from_register'];
+        $criteria .= " AND User.created > '$from_register'" ;
+        //$this->set('status', $status);
+      }
+       if($this->params['named']['to_register']){
+        $to_register = $this->params['named']['to_register'];
+        $criteria .= " AND User.created < '$to_register'" ;
+        //$this->set('status', $status);
+      }
+     
+      if($this->params['named']['from_approve']){
+        $from_approve = $this->params['named']['from_approve'];
+        $criteria .= " AND User.approved_date > '$from_approve'" ;
+        //$this->set('status', $status);
+      }
+      if($this->params['named']['to_approve']){
+        $to_approve = $this->params['named']['to_approve'];
+        $criteria .= " AND User.approved_date > '$to_approve'" ;
+        //$this->set('status', $status);
+      }
+      $users = $this->User->find('all', 
+        array('conditions'=>array($criteria), 
+          //'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
+          //'recursive' => 3,
+          //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city'), 
+          ));
+      Configure::write('debug', '2');
+        $this->set('users', $users);
+        var_dump($users); die;
         $this->layout = null;
        $this->autoLayout = false;
       Configure::write('debug', ’0′);
+
     }
     function admin_index(){
       $statuses = $this->Status->find('list', array('conditions'=>array('Status.id <> 0')));
       $this->set('statuses', $statuses);
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
-      $criteria = " User.is_deleted = 0";
+      $criteria = " User.is_deleted != 1 ";
        if($this->params['named']['status']){
         $status_id = $this->params['named']['status'];
         $criteria .= " AND User.status_id = '$status_id'" ;
