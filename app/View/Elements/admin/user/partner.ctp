@@ -20,22 +20,22 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label>申込人氏名<span style="color:red">*</span></label>
+                  <label><?php echo __('user.register.username'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('UserPartner.first_name', array('type'=>'text', 'id'=>"p_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' , 'div'=>false, 'required' => false))?>
+                      <?php echo $this->Form->input('UserPartner.first_name', array('type'=>'text', 'id'=>"p_first_name", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' , 'div'=>false, 'required' => false))?>
                    
-                      <?php echo $this->Form->input('UserPartner.last_name', array('type'=>'text', 'id'=>"p_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false, 'required' => false))?>
+                      <?php echo $this->Form->input('UserPartner.last_name', array('type'=>'text', 'id'=>"p_last_name", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false, 'required' => false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('UserPartner.first_name_kana', array('type'=>'text', 'id'=>"p_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>              
+                      <?php echo $this->Form->input('UserPartner.first_name_kana', array('type'=>'text', 'id'=>"p_first_name_kana", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>              
                                        
-                      <?php echo $this->Form->input('UserPartner.last_name_kana', array('type'=>'text', 'id'=>"p_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>
+                      <?php echo $this->Form->input('UserPartner.last_name_kana', array('type'=>'text', 'id'=>"p_last_name_kana", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required' => false))?>
                     </div>
                   </div>
                 </td>
@@ -45,36 +45,36 @@
                   </script>
               </tr>
              <tr>
-               <td> <label >性的<span style="color:red">*</span></label></td>
+               <td> <label ><?php echo __('user.register.gender') ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
                 <td>
                   <div class="form-group">
                   
                     <div class="col-lg-10">
                       <?php 
-                      echo $this->Form->radio('UserPartner.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
+                      echo $this->Form->radio('UserPartner.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
                     ?>  
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td> <label >生年月日<span style="color:red">*</span></label></td>
+                <td> <label ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
                 <td>
                   <div class="form-group">
                    
                     <div class="col-lg-10">
                       
-                      年
+                      <?php echo __('user.register.year'); ?>
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
                       echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year',  'required' => false));
                     ?>
-                    月
+                    <?php echo __('user.register.month'); ?>
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
                       echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required' => false));
                     ?>
-                    日
+                    <?php echo __('user.register.day'); ?>
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
                       echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required' => false));
@@ -98,12 +98,12 @@
         <div class="well bs-component">
            
             <fieldset>
-              <legend>Contact</legend>
+              <legend>配偶者連絡先情報</legend>
               <table class="table table-striped table-hover ">
                
                  
                 <tr>
-                  <td><label for="phone">電話番号<span style="color:red">*</span></label></td>
+                  <td><label for="phone"><?php echo __('user.partner.phone'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
                   <td>
                     <div class="form-group">
                       
@@ -126,23 +126,23 @@
         <div class="well bs-component">
 
 
-             <legend>Company</legend>
+             <legend>配偶者連絡先情報</legend>
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">職業<span style="color:red">*<span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+                    echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Company Name</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.partner.company'); ?></label>
                   <div class="col-lg-10">
-                  Hira
+                  <?php echo __('user.my_page.basic_info.company_name'); ?>
                     <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false, 'required' => false, 'required' => false))?>
-                    Kana
+                    <?php echo __('user.my_page.basic_info.company_name_kana'); ?>
                     <?php echo $this->Form->input('UserPartner.company_kana', array('type'=>'text', 'id'=>"p-company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false, 'required' => false))?>
                   </div>
                 </div>
@@ -151,10 +151,10 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" >Company Address<span style="color:red">*</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red"><?php echo __('global.require'); ?></span></td>
                 <td>
                   <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">〒</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
                   <div class="col-lg-10" >
                     <?php echo $this->Form->input('UserPartner.company_post_num_1', array('type'=>'text', 'id'=>"p_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
                     <?php echo $this->Form->input('UserPartner.company_post_num_2', array('type'=>'text', 'id'=>"p_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required' => false))?>
@@ -163,15 +163,15 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'青森県', 'required' => false));
+                    echo $this->Form->select('UserPartner.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'p_company_pref_id', 'empty'=>'--------', 'required' => false));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.city'); ?></label>
                   <div class="col-lg-10">
                     <?php 
                       echo $this->Form->input('UserPartner.company_city', array('type'=>'text', 'id'=>"p_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required' => false));
@@ -179,13 +179,13 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">番地</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.street'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_address', array('type'=>'text', 'id'=>"p_company_address", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">建物</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.house'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_house_name', array('type'=>'text', 'id'=>"p_company_house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'required' => false))?>
                   </div>
@@ -195,13 +195,13 @@
               </table>
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.contact.company-phone'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Fax</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.fax'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
@@ -209,73 +209,73 @@
                 
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.career'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'青森県', 'required' => false));?>
+                    <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'--------', 'required' => false));?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Description</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.description'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Department</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.department'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
 
                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Position</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.position'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.experience'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
-                    <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
+                    <?php echo $this->Form->input('UserPartner.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.year'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
+                    <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.month'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required' => false))?>
                   </div>
                 </div>
                
                
                 <div class="form-group">
-                   <label for="inputEmail" class="col-lg-2 control-label">Salary Type</label>
+                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.contact_type'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->radio('UserPartner.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'p_change_type($(this))', 'required' => false));
+                    echo $this->Form->radio('UserPartner.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'p_change_type($(this))', 'required' => false));
                     echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:150px; display:inline' , 'required' => false))
                   ?>  
                   </div>
                  
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_month'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>円
+                    <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?><?php echo __('user.register.yen'); ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Salary Year</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?>円
+                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required' => false))?><?php echo __('user.my_page.basic_info.salary_man'); ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">給料日</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_receive'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                      echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
-                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline', 'required' => false ))
+                      echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
+                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('global.date'), 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline', 'required' => false ))
                     ?>  
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">健康保険種別<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
                   <div class="col-lg-10">
                    
                     <?php 
@@ -284,7 +284,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Note</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.note'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserPartner.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                   </div>

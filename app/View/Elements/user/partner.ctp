@@ -56,7 +56,7 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                              echo $this->Form->radio('UserPartner.gender', array('male'=>"男性",'female'=> "女性"), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false, 'data-placement'=>'right'));
+                              echo $this->Form->radio('UserPartner.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false, 'data-placement'=>'right'));
                             ?>
                           </div>
                         </div>
