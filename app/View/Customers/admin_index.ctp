@@ -3,22 +3,16 @@
 <?php $paginator = $this->Paginator; ?>
 <div class="page-header">
 
-  <div class="col-lg-4">
+  <div class="row">
+    <div class="col-lg-4">
     <div class="bs-component">
-       <ul class="breadcrumb">
-          <li class="active">Users</li>
-        </ul>
+       
+          <h4 class="active">会員管理</h4>
+        
     </div>
   </div>
-   <div class="form-group" >
-      <div class="col-lg-12">
-      <?php
- //echo $this->Html->link('Export CSV',array('controller'=>'users','action'=>'download'), array('target'=>'_blank','class'=>"btn btn-primary", 'id'=>"btn-export"));
-?>
-        
-     </div>
-     
-   </div>
+  </div>
+  
   <div class="row">
     <div class="col-lg-12">
       
@@ -33,13 +27,16 @@
               //echo $this->Form->input('type', array('options' => array(1=>"Normal",2=> "Media",3=>"Contruction Company", 4=> "Others"), 'empty' => '-- All --', 'class'=>'form-control', 'style'=>"width:250px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
             ?>
             
-            Registerd Date: <input style="width:250px; display:inline;" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            ~ <input style="width:250px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
-            <div style="margin-top:20px;">Name<input style="width:250px; display:inline; " type="text" id="keyword" class="form-control" placeholder="Search" value="<?php echo $keyword; ?>">
-            E-mail<input style="width:250px; display:inline;" type="text" id="email" class="form-control" placeholder="Search" value="<?php echo $email; ?>"></div>
+            <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> <input style="width:150px; display:inline;" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
+            -- <input style="width:150px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
+            <div style="margin-top:20px;">
+             <label style="margin-left:20px;" for="title" >申込人氏名</label>
+             <input style="width:250px; display:inline; " type="text" id="keyword" class="form-control"  value="<?php echo $keyword; ?>">
+             <label style="margin-left:20px;" for="title" >メールアドレス</label>
+             <input style="width:150px; display:inline;" type="text" id="email" class="form-control"  value="<?php echo $email; ?>"></div>
             
           </div>
-          <div style="margin-top:10px;"><button style="float:right" type="button" class="btn btn-primary" id="btn-search" onclick="search()">Search</button></div>
+          <div style="margin-top:10px;"><button style="float:right" type="button" class="btn btn-primary" id="btn-search" onclick="search()"><?php echo __('admin.articles.search_button'); ?></button></div>
           <script type="text/javascript">
             function search(){
               
@@ -76,17 +73,17 @@
             <thead>
               <tr>
                 <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
-                <th>No</th>
-                <th>Email ID</th>
-                <th>Full Name</th>
+                <th>番号</th>
+                <th>メールアドレス</th>
+                <th>申込人氏名</th>
                 <th>Age</th>
-                <th>Phone</th>
-                <th>Gender</th>
-                <th>Registered Date</th>
+                <th>電話番号</th>
+                <th>性的</th>
+                <th><?php echo __('admin.user.list_header.register_date'); ?></th>
 
-                <th>Status</th>
+                <th><?php echo __('admin.user.list_header.status'); ?></th>
                 
-                <th>Action</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -110,7 +107,7 @@
                 </td>
                 <td>
                   <button type="button" class="btn btn-default"  id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/customers/view/<?php echo $user['User']['id']?>'"> 
-                    View
+                    <?php echo __('admin.articles.view_button'); ?>
                   </button>
                 </td>
               </tr>
@@ -119,9 +116,9 @@
             </tbody>
           </table> 
           <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-0">
+                <div class="col-lg-12 col-lg-offset-0">
                  
-                  <input id="btn-delete" type="submit" value="Delete">
+                  <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="<?php echo __('admin.user.delete_button'); ?>">
                 </div>
               </div>
           </div>
@@ -162,12 +159,12 @@
           resizable: true,
           modal: true,
           buttons: {
-            "Delete": function() {
+            "削除する": function() {
               $( "#dialog-confirm-delete1" ).dialog("open");
               $( this ).dialog( "close" );
               event.preventDefault();
             },
-            Cancel: function() {
+            'キャンセル': function() {
               agree = false;
               $( this ).dialog( "close" );
             }
@@ -178,12 +175,12 @@
           resizable: true,
           modal: true,
           buttons: {
-            "Delete": function() {
+            "削除する": function() {
               
               $( this ).dialog( "close" );
               $('#form').submit();
             },
-            Cancel: function() {
+            'キャンセル': function() {
               agree = false;
               $( this ).dialog( "close" );
             }
@@ -199,23 +196,7 @@
             }
           });
         
-        $( "#dialog-confirm-export" ).dialog({
-          autoOpen: false,
-          resizable: true,
-          modal: true,
-          buttons: {
-            "Export": function() {
-              
-              $( this ).dialog( "close" );
-              window.location.href="<?php echo $this->webroot;?>admin/users/download";
-
-            },
-            Cancel: function() {
-              agree = false;
-              $( this ).dialog( "close" );
-            }
-          }
-        });
+        
 
         $('#btn-export').on('click', function(event) {
           
@@ -229,21 +210,19 @@
     <?php echo $this->element('admin/paginate');?>
   </div>
 
-<div id="dialog-confirm-delete" title="Delete this users?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All selected user will be deleted. Are you sure?</p>
+  <div id="dialog-confirm-delete" title="削除">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>お知らせを削除しますか？</p>
   </div>
 
-  <div id="dialog-confirm-delete1" title="Confirm delete this users?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure?</p>
+  <div id="dialog-confirm-delete1" title="削除">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>お知らせを削除すると2度と復元できません。
+お知らせを削除しますか？</p>
   </div>
 
-  <div id="dialog-delete-message" title="Download complete">
+  <div id="dialog-delete-message" title="Delete Alert">
   <p>
     <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
     Select least one user to delete.
   </p>
   </div>
-   <div id="dialog-confirm-export" title="Do you want to export CSV file?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Export all user to CSV file. Are you sure?</p>
-  </div>
-
+</div>

@@ -619,7 +619,60 @@ msgstr "完了"
 msgid "user.my_page.status.un_completed"
 msgstr "未完成"
 
+sgid "admin.user.search"
+msgstr "検索"
 
+msgid "admin.contact.created_date"
+msgstr "問合せ日時"
+
+msgid "admin.contact.status"
+msgstr "対応伏況"
+
+msgid "admin.contact.comment"
+msgstr "対応内容"
+
+msgid "admin.articles.title"
+msgstr "タイトル"
+
+msgid "admin.articles.add_new"
+msgstr "新規作成"
+
+msgid "admin.articles.search_button"
+msgstr "検索"
+
+
+msgid "admin.articles.view_button"
+msgstr "詳細"
+
+msgid "admin.articles.content"
+msgstr "内容"
+
+msgid "admin.user.search"
+msgstr "検索"
+
+msgid "admin.contact.created_date"
+msgstr "問合せ日時"
+
+msgid "admin.contact.status"
+msgstr "対応伏況"
+
+msgid "admin.contact.comment"
+msgstr "対応内容"
+
+msgid "admin.articles.title"
+msgstr "タイトル"
+
+msgid "admin.articles.add_new"
+msgstr "新規作成"
+
+msgid "admin.articles.search_button"
+msgstr "検索"
+
+msgid "admin.articles.view_button"
+msgstr "詳細"
+
+msgid "admin.articles.content"
+msgstr "内容"
 
 
 

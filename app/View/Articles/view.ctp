@@ -3,11 +3,15 @@
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
-     
+    
+
     <section id="content-container">
-      <div class="welcome-sup-page">
+      <div class="menu-sup-page">
         <div class="container-fluid">
-          <h2>ようこそ<a href="#">MOOS</a>様</h2>
+          <ul>
+            <li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
+            <li><span>お知らせ一覧</span></li>
+          </ul>
         </div>
       </div>
       <div class="news-detail">

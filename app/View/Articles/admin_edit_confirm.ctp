@@ -1,18 +1,7 @@
 
 
 <div class="page-header">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="bs-component">
-           <ul class="breadcrumb">
-              <li><a href="#">Home</a></li>
-              
-              <li><a href="<?php echo $this->webroot; ?>admin/articles/">News</a></li>
-              <li class="active">Edit</li>
-            </ul>
-        </div>
-      </div>
-    </div>
+    
 
     <div class="row">
       <div class="col-lg-12">
@@ -27,7 +16,7 @@
               
              
               <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Title<span></span></label>
+                <label for="textArea" class="col-lg-2 control-label"><?php echo __('admin.articles.title'); ?><span></span></label>
                 <div class="col-lg-10">
                  <!--  <textarea class="form-control" rows="5" id="textArea"></textarea> -->
                   <?php echo $this->Form->input('title', array('type'=>'textbox', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Title','div'=>false, 'disabled'))?>
@@ -35,14 +24,14 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Content</span></label>
+                <label for="textArea" class="col-lg-2 control-label"><?php echo __('admin.articles.content'); ?></span></label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Content', 'rows'=>10,'div'=>false, 'disabled'))?>
                   
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Image</label>
+                <label for="inputEmail" class="col-lg-2 control-label">添付ファイル</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
                   <?php if( $article['Article']['large_image']){ ?>
@@ -53,7 +42,7 @@
               </div>
               
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Created Date</label>
+                <label for="inputEmail" class="col-lg-2 control-label">公開日</label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('created', array('type'=>'text', 'id'=>"created_date", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'))?>
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
@@ -90,8 +79,9 @@
               <input type="hidden" name="article_confirm" value="<?php echo htmlentities(serialize($article)); ?>">
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary">保存する</button>
                   <button id="btn-cancel" type="reset" class="btn btn-default">キャンセル</button>
-                  <button type="submit" class="btn btn-primary">送信</button>
+                  
                 </div>
               </div>
             </fieldset>
