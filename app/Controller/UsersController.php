@@ -1543,5 +1543,13 @@ class UsersController extends AppController{
       }
     }
 
+    function introduction() {
+      $this->layout = "default_new";
+    }
+
+    function work_flow() {
+      $this->layout = "default_new";
+    }
+
 }
 ?>

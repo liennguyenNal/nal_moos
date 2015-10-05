@@ -48,7 +48,9 @@
                        </div>
                      <?php } else { ?>  
                       <div class="upload-file">
-                           <div id="file-<?php echo $i ?>"><?php echo $file_name;?><a onclick='delete_file(<?php echo $i ?>);' href='javascript:void(0)'> X </a></div>
+                           <div id="file-<?php echo $i ?>"><?php echo $file_name;?>
+                            <a onclick='delete_file(<?php echo $i ?>);' href='javascript:void(0)' class="delete-file">&nbsp;x</a>
+                           </div>
                            <section id="section-upload-<?php echo $i ?>" style="display:none">
                              <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span>
                            <input class="sp-hide" id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]" />
@@ -82,7 +84,7 @@
               dataType: 'json',
               done: function (e, data) {
                 if(data.result.error == '0'){
-                  $('<p/>').html(data.result.filename + '<a onclick=\'delete_file($i);\' href=\'#\'> X </a>').appendTo('#file-$i');
+                  $('<p/>').html(data.result.filename + '<a class=\'delete-file\' onclick=\'delete_file($i);\' href=\'#\'>&nbsp;x</a>').appendTo('#file-$i');
                   $('#fileupload-$i').parent().find('.sp-hide').hide();
 
                   $.ajax({

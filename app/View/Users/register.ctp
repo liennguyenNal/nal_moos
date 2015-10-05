@@ -314,14 +314,19 @@
                   </div>
                   </section>
 
-                  <div class="link-form" id='remove' style="display:none">
-                    <a href="javascript:void(0)" class="style-link" id='btn-remove' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;" onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                  <div class="link-form style">
+                      <div class="block-link">
+                          <a href="javascript:void(0)" class="style-link" id='btn-add'><?php echo __('user.register.add'); ?></a>
+                      </div>
                   </div>
 
-                  <div class="link-form">
-                    <!-- <a href="#">希望エリアを追加</a> -->
-                    <a href="javascript:void(0)" class="style-link" id='btn-add' style="display: inline-block; background-color: #5f421e; color: #fff; padding: 5px 15px; border-radius: 3px; margin-left: 19px;"><?php echo __('user.register.add'); ?></a>
-                  </div>
+                  <section id="remove" style="display:none">
+                      <div class="link-form style" >
+                          <div class="block-link">
+                              <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                          </div>
+                      </div>
+                  </section>
                   
                   <!-- Script add new area -->
                   <script type="text/javascript">
@@ -346,10 +351,9 @@
                     }
 
                     function _remove (obj) {
-                      // body...
-                      num_area--; 
-                      //alert(obj.parent().parent().html());
-                      obj.parent().remove();
+                        num_area--; 
+                        obj.parent().parent().parent().remove();
+                        $('#btn-add').show();
                     }
 
                   
@@ -406,7 +410,7 @@
     if( num_area < 5 ){
       var area = $('#expect-area-content').clone(true, true);
       area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
-      area.append($('#remove').clone(true, true).html());
+      area.prepend($('#remove').clone(true, true).html());
       $('#expect-area').append(area);
       $('#form-register').validate();
       $("[id^='post_num_1']").each(function() {
@@ -460,6 +464,9 @@
       });
       order_object++;
       num_area++;
+      if(num_area == 5){
+        $('#btn-add').hide();
+      }
     }
     else {
       alert('Cannot add more item');

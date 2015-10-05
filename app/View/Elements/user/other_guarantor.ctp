@@ -272,7 +272,7 @@
 								<td>
 									<div class="select">
 										<?php 
-						                    echo $this->Form->select('OtherGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right'));
+						                    echo $this->Form->select('OtherGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right', 'required'=>false));
 						                ?>
 									</div>
 								</td>
@@ -408,7 +408,7 @@
 										<?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false))
+										<?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.month'); ?></span>
 									</div>
@@ -531,7 +531,7 @@
                     $('#btn-save-other-guarantor').hide();
                     $('#btn-cancel-other-guarantor').hide();
                     $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor)').prop('disabled',true);
-                    $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').hide();
+                     $('#OtherGuarantorEdit').find('a:not(#btn-edit-other-guarantor)').hide();
                   }
                   else{
                     $('#btn-cancel-guarantor').show();
@@ -547,6 +547,7 @@
                    $('#btn-edit-other-guarantor').on('click', function() {
                       $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').show();
                       $('#OtherGuarantorEdit').find(':input').prop('disabled',false);
+                      $('#OtherGuarantorEdit').find('a').show();
                       $('#btn-cancel-other-guarantor').show();
                       $('#btn-save-other-guarantor').show();
                       
@@ -605,16 +606,16 @@
     	},
     	'data[OtherGuarantor][year_residence]': {number: true},
     	'data[OtherGuarantor][phone]': {
-    		required: function(element) {
-                return !$("#home_phone").val();
-             },
+    		// required: function(element) {
+      //           return !$("#home_phone").val();
+      //        },
                 number: true,
                 phone_number: "^0[0-9]{9}"
     		},
     	'data[OtherGuarantor][home_phone]': {
-    		required: function(element) {
-                return  !$("#phone").val();
-              },
+    		// required: function(element) {
+      //           return  !$("#phone").val();
+      //         },
                 number: true,
                 phone_number: "[0-9]{11}"
         },
@@ -638,7 +639,8 @@
         'data[OtherGuarantor][year_worked]': {number: true},
         'data[OtherGuarantor][month_worked]': {number: true},
         'data[OtherGuarantor][income_month]': {number: true},
-        'data[OtherGuarantor][income_year]': {number: true}
+        'data[OtherGuarantor][income_year]': {number: true},
+        'data[OtherGuarantor][salary_date]': {number: true}
     },
     messages: {
     	'data[OtherGuarantor][post_num_1]': {

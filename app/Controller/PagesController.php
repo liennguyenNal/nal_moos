@@ -93,29 +93,37 @@ class PagesController extends AppController {
 		$this->layout = null;
 		//print_r("this is hom page"); die;
 		//$this->set('menu','campaign');
-		
 	}
-	public function landing_page(){
-		$this->layout = null;
-      	$married_statuses = $this->MarriedStatus->find( 'list' );
-      	$this->set( 'married_statuses', $married_statuses);
-      	$works = $this->Work->find( 'list' );
-        $this->set( 'works', $works);
-      	$careers = $this->Career->find('list');
-      	$this->set('careers', $careers);
-     
-      	$prefs = $this->Pref->find('list');
-      	$this->set('prefs', $prefs);
-      	if( $this->data ){
-        	//print_r($this->data['ExpectArea']); die;
-        	$this->User->set( $this->data );
-        	$this->UserAddress->set( $this->data );
-        	$this->UserCompany->set( $this->data );
 
+	public function landing_page(){
+  		$this->layout = null;
+      $married_statuses = $this->MarriedStatus->find( 'list' );
+      $this->set( 'married_statuses', $married_statuses);
+
+      $works = $this->Work->find( 'list' );
+      $this->set( 'works', $works);
+      $careers = $this->Career->find('list');
+      $this->set('careers', $careers);
+     
+      $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
+      if( $this->data ){
+        $this->User->set( $this->data );
+        $this->UserAddress->set( $this->data );
+        $this->UserCompany->set( $this->data );
         if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
-        	$this->Session->write( 'user_register', $this->data );
-        	$this->redirect( "register_confirmation" );
+          $this->Session->write( 'user_register', $this->data );
+          $this->redirect( "register_successful" );
         }
       }
 	}
+
+	/**
+     * USER REGISTER SUCCESSFUL VIEW
+     * @return response
+     */
+    function register_successful(){
+      	$this->layout = "default_new";
+      	$this->Session->delete('user_register');
+    }
 }

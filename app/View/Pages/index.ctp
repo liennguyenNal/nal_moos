@@ -37,22 +37,22 @@
       <ul>
         <li>
           <div class="block-news">
-            <a href="#" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-1.png" alt="news"/></a>
-            <h3><a href="#">「家賃でもらえる家。」とは</a></h3>
+            <a href="<?php echo $this->webroot; ?>introduction" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-1.png" alt="news"/></a>
+            <h3><a href="<?php echo $this->webroot; ?>introduction">「家賃でもらえる家。」とは</a></h3>
             <span class="icon"></span>
           </div>
         </li>
         <li>
           <div class="block-news">
-            <a href="#" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-2.png" alt="news"/></a>
-            <h3><a href="#">お申し込みまでの流れ</a></h3>
+            <a href="<?php echo $this->webroot; ?>work_flow" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-2.png" alt="news"/></a>
+            <h3><a href="<?php echo $this->webroot; ?>work_flow">お申し込みまでの流れ</a></h3>
             <span class="icon"></span>
           </div>
         </li>
         <li>
           <div class="block-news">
-            <a href="#" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-3.png" alt="news"/></a>
-            <h3><a href="#">よくある質問</a></h3>
+            <a href="<?php echo $this->webroot; ?>faq" class="img"><img src="<?php echo $this->webroot; ?>img/images/img-news-3.png" alt="news"/></a>
+            <h3><a href="<?php echo $this->webroot; ?>faq">よくある質問</a></h3>
             <span class="icon"></span>
           </div>
         </li>
@@ -74,5 +74,5 @@
     </div>
   </div>
   <div class="block-link-page">
-    <a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-home.png" alt="無料会員登録"/></a>
+    <a href="<?php echo $this->webroot; ?>register"><img src="<?php echo $this->webroot; ?>img/front/button-home.png" alt="無料会員登録"/></a>
   </div>

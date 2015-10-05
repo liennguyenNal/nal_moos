@@ -794,3 +794,2562 @@ Stack Trace:
 #1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-10-05 14:05:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:06:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:06:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:10:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:21:11 Error: [MissingViewException] View file "Emails/html/update_account.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Emails/html/update_account.ctp',
+)
+Request URL: /moos/users/update_account_info
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/View/View.php(470): View->_getViewFileName('update_account')
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1708): View->render('update_account', 'default')
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1561): CakeEmail->_renderTemplates('')
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1171): CakeEmail->_render(Array)
+#4 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(1528): CakeEmail->send()
+#5 [internal function]: UsersController->update_account_info()
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-10-05 14:21:21 Error: [MissingViewException] View file "Emails/html/update_account.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Emails/html/update_account.ctp',
+)
+Request URL: /moos/users/update_account_info
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/View/View.php(470): View->_getViewFileName('update_account')
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1708): View->render('update_account', 'default')
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1561): CakeEmail->_renderTemplates('')
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Network/Email/CakeEmail.php(1171): CakeEmail->_render(Array)
+#4 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(1528): CakeEmail->send()
+#5 [internal function]: UsersController->update_account_info()
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-10-05 14:28:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:29:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:41:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 14:46:04 Error: [MissingActionException] Action UsersController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'edit',
+)
+Request URL: /moos/users/edit/15
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 14:48:13 Error: [MissingActionException] Action UsersController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'edit',
+)
+Request URL: /moos/users/edit/15
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 14:48:53 Error: [MissingActionException] Action UsersController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'edit',
+)
+Request URL: /moos/users/edit/15
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 14:50:30 Error: [MissingActionException] Action UsersController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'edit',
+)
+Request URL: /moos/users/edit/15
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 14:56:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:02:59 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /moos//admin/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:03:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 15:03:08 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 15:03:13 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 15:04:04 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 147]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 147
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:04:58 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:05:30 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:05:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:09:57 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:10:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:10:37 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:10:37 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/basic_info.ctp, line 531]
+2015-10-05 15:10:37 Error: [InternalErrorException] Internal Server Error
+Request URL: /moos/users/my_page
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 531)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 531, Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 531, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-10-05 15:10:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:10:47 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:11:41 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:11:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:13:05 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:13:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:14:19 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:14:37 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:16:05 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:20:55 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:21:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:21:27 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:21:34 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:21:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:22:08 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:22:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:22:41 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:22:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:23:24 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:26:20 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:27:22 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:27:56 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:29:07 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:29:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:30:27 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:30:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:30:53 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:30:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:30:58 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:30:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:32:38 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:32:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:33:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:35:17 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:35:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:37:35 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:37:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:38:10 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:38:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:40:15 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:40:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:41:52 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:45:36 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:45:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:46:09 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:46:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:46:28 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:46:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:46:34 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:48:07 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:48:22 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:48:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:48:35 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:48:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:48:57 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:48:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:49:06 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:50:05 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:50:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:50:58 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:50:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 15:53:17 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:54:07 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:54:34 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:55:28 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:55:36 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:58:08 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:58:57 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 15:59:52 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:03:17 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:04:03 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:04:11 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:05:23 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:05:31 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:05:56 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:07:14 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:07:40 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:09:23 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:09:54 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:11:09 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:15:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:17:49 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:18:44 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:19:31 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:19:59 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:20:28 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:21:39 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:21:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:23:01 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:23:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:23:27 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:24:28 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:28:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:28:47 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:29:00 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:30:32 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:31:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:32:44 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:32:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:33:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:33:07 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:33:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:35:48 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:36:03 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:36:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:38:23 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:38:23 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 276]
+2015-10-05 16:38:23 Error: [InternalErrorException] Internal Server Error
+Request URL: /moos/users/my_page
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 276)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 276, Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 276, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-10-05 16:38:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:38:34 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:39:05 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:39:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:39:37 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:39:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:39:44 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:40:03 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:40:35 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:40:48 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:41:15 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:42:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:43:51 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:44:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:45:14 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:45:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:45:40 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:46:12 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:46:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:47:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 16:48:02 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:48:07 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 16:48:51 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 17:00:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /moos/admin/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 17:00:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:01:01 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:01:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:01:38 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/moos/lib/Cake/View/Helper/FormHelper.php, line 1569]
+Trace:
+FormHelper::radio() - CORE/Cake/View/Helper/FormHelper.php, line 1569
+include - APP/View/Customers/admin_view.ctp, line 116
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 17:02:05 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:02:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:02:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.is_deleted' in 'where clause'
+Request URL: /moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(3026): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/moos/lib/Cake/Model/Model.php(2998): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(1086): PaginatorComponent->paginate('User', Array, Array)
+#8 /Applications/MAMP/htdocs/moos/app/Controller/UsersController.php(88): Controller->paginate('User')
+#9 [internal function]: UsersController->admin_index()
+#10 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-10-05 17:03:48 Warning: Warning (2): Illegal string offset 'error' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 153]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 153
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 17:34:05 Error: [MissingActionException] Action PagesController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'favicon.ico',
+)
+Request URL: /moos/pages/favicon.ico
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 17:36:07 Error: [MissingActionException] Action PagesController::register_successful() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'register_successful',
+)
+Request URL: /moos/pages/register_successful
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 17:36:45 Error: [MissingActionException] Action PagesController::register_successful() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'register_successful',
+)
+Request URL: /moos/pages/register_successful
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 17:36:48 Error: [MissingActionException] Action PagesController::register_successful() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'register_successful',
+)
+Request URL: /moos/pages/register_successful
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 17:36:49 Error: [MissingActionException] Action PagesController::register_successful() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'register_successful',
+)
+Request URL: /moos/pages/register_successful
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-10-05 17:55:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 17:56:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:09:24 Error: [MissingViewException] View file "Users/introduction.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/introduction.ctp',
+)
+Request URL: /moos/introduction
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/moos/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Applications/MAMP/htdocs/moos/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-10-05 18:10:19 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-1.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:10:19 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-2.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:10:19 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-4.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:10:19 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-3.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:11:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-1.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:11:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-2.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:11:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-4.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:11:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-3.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-2.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-1.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-4.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-3.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:35 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-1.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:35 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-2.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:35 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-3.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:35 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-4.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /moos/js/maps/swiper.jquery.min.js.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-10-05 18:12:41 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /moos/img/images/home-1.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
