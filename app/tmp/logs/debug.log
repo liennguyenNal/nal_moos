@@ -4077,3 +4077,997 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
 [main] - APP/webroot/index.php, line 118
 
+2015-10-05 13:12:02 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:12:02 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:15:36 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:15:36 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:16:08 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:16:30 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:17:14 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_other_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 182
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:17:14 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:17:43 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_other_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 182
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:17:44 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:18:20 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:18:20 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:22:53 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:22:53 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:22:59 Notice: Notice (8): Undefined index: User in [/Applications/MAMP/htdocs/moos/app/Controller/UsersController.php, line 1057]
+Trace:
+UsersController::update_basic_info() - APP/Controller/UsersController.php, line 1057
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:23:17 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:23:17 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:23:23 Notice: Notice (8): Undefined index: User in [/Applications/MAMP/htdocs/moos/app/Controller/UsersController.php, line 1057]
+Trace:
+UsersController::update_basic_info() - APP/Controller/UsersController.php, line 1057
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:24:32 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:24:32 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:24:38 Notice: Notice (8): Undefined index: User in [/Applications/MAMP/htdocs/moos/app/Controller/UsersController.php, line 1057]
+Trace:
+UsersController::update_basic_info() - APP/Controller/UsersController.php, line 1057
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:25:00 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:25:00 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:25:04 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 39]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:25:04 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 65]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 65
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:25:04 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 103
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:10 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:10 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:15 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 39]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:15 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 65]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 65
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:15 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 103
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:55 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:26:56 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:00 Notice: Notice (8): Undefined index: OtherGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 149]
+Trace:
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 149
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:00 Notice: Notice (8): Undefined index: OtherGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 151]
+Trace:
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 151
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:00 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_other_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 182
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:43 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:43 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:51 Notice: Notice (8): Undefined index: User in [/Applications/MAMP/htdocs/moos/app/Controller/UsersController.php, line 1057]
+Trace:
+UsersController::update_basic_info() - APP/Controller/UsersController.php, line 1057
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:58 Notice: Notice (8): Undefined index: UserPartner in [/Applications/MAMP/htdocs/moos/app/Controller/UserPartnersController.php, line 38]
+Trace:
+UserPartnersController::edit() - APP/Controller/UserPartnersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:58 Notice: Notice (8): Undefined index: UserRelation in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/relation.ctp, line 7]
+Trace:
+include - APP/View/Elements/user/relation.ctp, line 7
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Elements/user/partner.ctp, line 372
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserPartners/ajax_partner_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserPartnersController::edit() - APP/Controller/UserPartnersController.php, line 82
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:27:58 Notice: Notice (8): Undefined index: UserRelation in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/relation.ctp, line 91]
+Trace:
+include - APP/View/Elements/user/relation.ctp, line 91
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Elements/user/partner.ctp, line 372
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserPartners/ajax_partner_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserPartnersController::edit() - APP/Controller/UserPartnersController.php, line 82
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:12 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:12 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:16 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 39]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:16 Notice: Notice (8): Undefined index: UserGuarantor in [/Applications/MAMP/htdocs/moos/app/Controller/UserGuarantorsController.php, line 65]
+Trace:
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 65
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:16 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 103
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:18 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 103
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:18 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:20 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit() - APP/Controller/UserGuarantorsController.php, line 103
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:20 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:25 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/UserGuarantors/ajax_other_guarantor_edit.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UserGuarantorsController::edit_other_guarantor() - APP/Controller/UserGuarantorsController.php, line 182
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:28:25 Notice: Notice (8): Undefined index: Status in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/dashboard.ctp, line 8]
+Trace:
+include - APP/View/Elements/user/dashboard.ctp, line 8
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/ajax_reload_dashboard.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+UsersController::reload_dashboard() - APP/Controller/UsersController.php, line 1502
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:29:01 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/guarantor.ctp, line 197]
+Trace:
+include - APP/View/Elements/user/guarantor.ctp, line 197
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:29:01 Notice: Notice (8): Use of undefined constant right - assumed 'right' in [/Applications/MAMP/htdocs/moos/app/View/Elements/user/other_guarantor.ctp, line 196]
+Trace:
+include - APP/View/Elements/user/other_guarantor.ctp, line 196
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Users/my_page.ctp, line 42
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:29 Notice: Notice (8): Undefined variable: login_error_msg in [/Applications/MAMP/htdocs/moos/app/View/Users/login.ctp, line 55]
+Trace:
+include - APP/View/Users/login.ctp, line 55
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:32 Notice: Notice (8): Undefined variable: s_user_id in [/Applications/MAMP/htdocs/moos/app/View/Elements/block-button.ctp, line 7]
+Trace:
+include - APP/View/Elements/block-button.ctp, line 7
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Layouts/default_new.ctp, line 43
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:37 Notice: Notice (8): Undefined offset: 4 in [/Applications/MAMP/htdocs/moos/app/View/Articles/view.ctp, line 26]
+Trace:
+include - APP/View/Articles/view.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:37 Notice: Notice (8): Undefined variable: s_user_id in [/Applications/MAMP/htdocs/moos/app/View/Elements/block-button.ctp, line 7]
+Trace:
+include - APP/View/Elements/block-button.ctp, line 7
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Layouts/default_new.ctp, line 43
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:38 Notice: Notice (8): Undefined index: Article in [/Applications/MAMP/htdocs/moos/app/Controller/ArticlesController.php, line 182]
+Trace:
+ArticlesController::view() - APP/Controller/ArticlesController.php, line 182
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:38 Notice: Notice (8): Undefined variable: articles_new in [/Applications/MAMP/htdocs/moos/app/Controller/ArticlesController.php, line 193]
+Trace:
+ArticlesController::view() - APP/Controller/ArticlesController.php, line 193
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:38 Notice: Notice (8): Undefined index: title in [/Applications/MAMP/htdocs/moos/app/View/Articles/view.ctp, line 17]
+Trace:
+include - APP/View/Articles/view.ctp, line 17
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:38 Notice: Notice (8): Undefined index: content in [/Applications/MAMP/htdocs/moos/app/View/Articles/view.ctp, line 20]
+Trace:
+include - APP/View/Articles/view.ctp, line 20
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:34:38 Notice: Notice (8): Undefined variable: s_user_id in [/Applications/MAMP/htdocs/moos/app/View/Elements/block-button.ctp, line 7]
+Trace:
+include - APP/View/Elements/block-button.ctp, line 7
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Layouts/default_new.ctp, line 43
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:35:01 Notice: Notice (8): Undefined offset: 4 in [/Applications/MAMP/htdocs/moos/app/View/Articles/view.ctp, line 26]
+Trace:
+include - APP/View/Articles/view.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 13:35:01 Notice: Notice (8): Undefined variable: s_user_id in [/Applications/MAMP/htdocs/moos/app/View/Elements/block-button.ctp, line 7]
+Trace:
+include - APP/View/Elements/block-button.ctp, line 7
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::_renderElement() - CORE/Cake/View/View.php, line 1227
+View::element() - CORE/Cake/View/View.php, line 418
+include - APP/View/Layouts/default_new.ctp, line 43
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

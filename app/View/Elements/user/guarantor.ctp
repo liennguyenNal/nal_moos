@@ -131,7 +131,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="label-text"><label><?php echo __('user.my_page.guaranto.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
+									<td class="label-text"><label><?php echo __('user.my_page.guarantor.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
 											<?php echo $this->Form->input('UserGuarantor.relate', array('type'=>'text', 'id'=>"relate", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
@@ -509,9 +509,9 @@
 				<div class="button-tab">
 					<!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
 					<!-- <a href="#" class="link-tab-1b"><img src="img/front/link-tab-3b.png" alt="キャンセル"/></a> -->
-					<button type="button" class="link-tab-1a" id="btn-edit-guarantor" >Update</button>
-		            <button type="submit" class="link-tab-1a" id="btn-save-guarantor" >Save</button>
-		            <button type="button" class="link-tab-1a" id="btn-cancel-guarantor" >Cancel</button>
+					<button type="button" class="link-tab-1a" id="btn-edit-guarantor"><img src="<?php echo $this->webroot; ?>img/front/Update.png" alt="Update"></button>
+		            <button type="submit" class="link-tab-1a" id="btn-save-guarantor"><img src="<?php echo $this->webroot; ?>img/front/Save.png" alt="Save"></button>
+		            <button type="button" class="link-tab-1b" id="btn-cancel-guarantor"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
 				</div>
 				 <?php } else { ?>
                 <script type="text/javascript" charset="utf-8" async defer></script>

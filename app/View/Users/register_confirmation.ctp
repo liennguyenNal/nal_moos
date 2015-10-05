@@ -276,21 +276,17 @@
                   <?php } ?>
                   </section>
   
-  <script type="text/javascript">
-
-          $( document ).ready(function() {
-            $('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
-
-
-          });
-          
-        </script>
+                <script type="text/javascript">
+                  $( document ).ready(function() {
+                    $('#form').find(':input:not(:button):not(:disabled):not(:hidden)').prop('disabled',true);
+                  });
+                </script>
 
                 <div class="block-note">
                   <div class="block-button">
                     <input type="hidden" name="data[User][Confirm]" value="1">
-                    <button type="button" onclick="window.history.back();"><?php echo __('user.register.cancle'); ?></button>
-                    <button type="submit"><?php echo __('user.register.submit'); ?></button>
+                    <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3.png" alt="変更する"></button>
+                    <button type="button" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"/></button>
                   </div>
                 </div>
               </form> 

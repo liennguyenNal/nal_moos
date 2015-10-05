@@ -152,6 +152,8 @@ class ArticlesController extends AppController{
     }
 
     function admin_view($id){
+
+
       if($id){
          $article = $this->Article->read( null, $id );
          $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
@@ -174,8 +176,21 @@ class ArticlesController extends AppController{
     }
 
     function view( $id ){
+      $this->layout = 'default_new';
       if($id){
          $article = $this->Article->read( null, $id );
+         $article['Article']['created']= date('Y-m-d',strtotime($article['Article']['created']));
+         $time= ($article['Article']['created']);
+         $arts = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
+          
+          foreach($arts as $art){
+            if(strtotime($article['Article']['created']) >= strtotime($art['Article']['created']) and $art['Article']['id']!=$id){
+              $art['Article']['created']= date('Y-m-d',strtotime($art['Article']['created']));
+              $articles_new[]= $art;
+            }
+          }
+          //var_dump($articles_new); die;
+          $this->set('articles', $articles_new);
          
          if( $article ){
           $this->set( 'article', $article);

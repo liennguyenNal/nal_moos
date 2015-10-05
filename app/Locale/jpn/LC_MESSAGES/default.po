@@ -173,58 +173,50 @@ msgstr "8文字以上で入力してください。"
 msgid "global.errors.equalTo"
 msgstr "入力したメールアドレスと一致しません。</br>再度メールアドレスを正確に入力してください。"
 
-msgid "user.my_page.status"
-msgstr "Tình trạng hồ sơ"
-
 msgid "user.my_page.register_date"
-
-msgstr "Register Date"
+msgstr "会員登録日"
 
 msgid "user.my_page.update_date"
-
-msgstr "Ngày đăng ký thẩm tra"
+msgstr "審査申請日"
 
 msgid "user.my_page.approve_date"
-
-msgstr "Ngày chấp nhận đăng ký lần 2"
+msgstr "審査承認日"
 
 msgid "user.my_page.payment_date"
-
-msgstr "Ngày trả tiền"
+msgstr "保証金確認日"
 
 msgid "user.my_page.max_payment"
-
-msgstr "Giá thuê tối đa"
+msgstr "上限賃料"
 
 msgid "user.my_page.object"
-msgstr "Đối tượng"
+msgstr "情報種別"
 
 msgid "user.my_page.infomation"	
-msgstr "Thông tin chi tiết"
+msgstr "項目"
 
 msgid "user.my_page.status"
-msgstr "Status"
+msgstr "登録状況"
 
 msgid "user.my_page.status.completed"	
-msgstr "Hoàn thành"
+msgstr "完了"
 
 msgid "user.my_page.status.un_completed"
-msgstr "Chưa hoàn thành"
+msgstr "未完了"
 
 msgid "user.my_page.error_fields"
-msgstr "Thông tin bị lỗi"
+msgstr "未記入項目"
 
 msgid "user.my_page.customer"	
-msgstr "Thông tin cơ bản"
+msgstr "申込人情報"
 
 msgid "user.my_page.partner"	
-msgstr "Người sống cùng"
+msgstr "配偶者／</br>同居人情報"
 
 msgid "user.my_page.guarantor"	
-msgstr "Người bảo lãnh"
+msgstr "連帯保証人</br>情報"
 
 msgid "user.my_page.attachment"	
-msgstr "Hồ sơ đính kèm"
+msgstr "添付書類"
 
 msgid "admin.user.view.set_max_payment_button"
 msgstr "Thay đổi giá thuê tối đa"
@@ -355,64 +347,8 @@ msgstr "３桁以下にご入力ください。"
 msgid "global.errors.minlength_4"	
 msgstr "４桁以下にご入力ください。"
 
-
-
-msgid "user.my_page.status"
-msgstr "Tình trạng hồ sơ"
-
-msgid "user.my_page.register_date"
-
-msgstr "Register Date"
-
-msgid "user.my_page.update_date"
-
-msgstr "Ngày đăng ký thẩm tra"
-
-msgid "user.my_page.approve_date"
-
-msgstr "Ngày chấp nhận đăng ký lần 2"
-
-msgid "user.my_page.payment_date"
-
-msgstr "Ngày trả tiền"
-
-msgid "user.my_page.max_payment"
-
-msgstr "Giá thuê tối đa"
-
-msgid "user.my_page.object"
-msgstr "Đối tượng"
-
-msgid "user.my_page.infomation"	
-msgstr "Thông tin chi tiết"
-
-msgid "user.my_page.status"
-msgstr "Status"
-
-msgid "user.my_page.status.completed"	
-msgstr "Hoàn thành"
-
-msgid "user.my_page.status.un_completed"
-msgstr "Chưa hoàn thành"
-
-msgid "user.my_page.error_fields"
-msgstr "Thông tin bị lỗi"
-
-msgid "user.my_page.customer"	
-msgstr "Thông tin cơ bản"
-
-msgid "user.my_page.partner"	
-msgstr "Người sống cùng"
-
-msgid "user.my_page.guarantor"	
-msgstr "Người bảo lãnh"
-
-msgid "user.my_page.attachment"	
-msgstr "Hồ sơ đính kèm"
-
-msgid "admin.user.view.set_max_payment_button"
-msgstr "Thay đổi giá thuê tối đa"
-
+msgid "user.my_page.guarantor.relationship"	
+msgstr "申込人との関係"
 
 msgid "admin.email.approve_user.title"
 msgstr "【家賃でもらえる家】審査申し込み"
@@ -503,6 +439,87 @@ msgstr "CSVデータダウンロード"
 
 msgid "admin.user.search"
 msgstr "検索"
+
+msgid "user.partner.phone"	
+msgstr "携帯電話番号"
+
+msgid "user.partner.company"	
+msgstr "会社名・屋号"
+
+msgid "user.partner.name"	
+msgstr "同居人氏名"
+
+msgid "user.partner.info"	
+msgstr "会社名・学校"
+
+msgid "user.partner.company"	
+msgstr "会社名・学校"
+
+msgid "user.dashboard.user.basic_info"
+msgstr "申込人 基本情報"
+
+msgid "user.dashboard.user.address"
+msgstr "申込人 住所情報"
+
+msgid "user.dashboard.user.contact"
+msgstr "申込人 連絡先情報"
+
+msgid "user.dashboard.user.contact"
+msgstr "申込人 住所情報"
+
+msgid "user.dashboard.user.company"
+msgstr "申込人 住所情報"
+
+msgid "user.dashboard.user.debt"
+msgstr "申込人 借入金情報"
+
+msgid "user.dashboard.user.debt"
+msgstr "申込人 住所情報"
+
+msgid "user.dashboard.user.residence"
+msgstr "申込人 住所情報"
+
+msgid "user.dashboard.user.expect_area"
+msgstr "申込人 希望エリア情報"
+
+msgid "user.partner.user.info"
+msgstr "配偶者 基本情報"
+
+msgid "user.partner.user.contact"
+msgstr "配偶者 連絡先情報"
+
+msgid "user.partner.user.company"
+msgstr "配偶者 勤務先情報"
+
+msgid "user.partner.user.relation"
+msgstr "同居人情報"
+
+msgid "user.guarantor.user.info"
+msgstr "保証人 基本情報"
+
+msgid "user.guarantor.user.address"
+msgstr "保証人 住所情報"
+
+msgid "user.guarantor.user.company"
+msgstr "保証人 連絡先情報"
+
+msgid "user.guarantor.user.contact"
+msgstr "保証人 勤務先情報"
+
+msgid "user.attachment.user.file_attachment"
+msgstr "ご本人様確認書類"
+
+msgid "user.dashboard.user.post_num_1"
+msgstr "Post Num 1"
+
+msgid "user.dashboard.user.post_num_2"
+msgstr "Post Num 2"
+
+msgid "user.dashboard.user.month_worked"
+msgstr "Month worked"
+
+msgid "user.dashboard.user.year_worked"
+msgstr "Month worked"
 
 
 

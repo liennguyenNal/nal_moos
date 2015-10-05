@@ -593,7 +593,8 @@
     });
     jQuery.extend(jQuery.validator.messages, {
         email: "<?php echo __('global.errors.email'); ?>",
-        equalTo: "<?php echo __('global.errors.equalTo'); ?>"
+        equalTo: "<?php echo __('global.errors.equalTo'); ?>",
+        number: "<?php echo __('global.errors.number'); ?>"
   });
 </script>
 

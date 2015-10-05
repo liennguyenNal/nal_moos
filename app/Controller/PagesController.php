@@ -77,8 +77,10 @@ class PagesController extends AppController {
 	public function index(){
 		$this->layout = 'default_new';
 		//print_r("this is hom page"); die;
-		// $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>4));
-		// $this->set('articles', $articles);
+		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>3));
+		 
+		 $this->set('articles', $articles);
+		 //var_dump($articles); die;
 
 	}
 	public function faq(){

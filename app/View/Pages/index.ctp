@@ -64,11 +64,12 @@
       <div class="title-news">
         <span class="icon"></span>
         <h3>最新のお知らせ</h3>
-      </div>
+      </div> 
       <ul>
-        <li><span>2015.0.0</span><a href="#">サービスを開始いたしました。</a></li>
-        <li><span>2015.0.0</span><a href="#">サービスを開始いたしました。</a></li>
-        <li><span>2015.0.0</span><a href="#">サービスを開始いたしました。</a></li>
+      <?php foreach($articles as $article){ $article['Article']['created']= date("Y.m.d", strtotime($article['Article']['created']));//var_dump($articles); die; ?>
+        <li><span style="width:50%; text-align:right;"><?php echo $article['Article']['created']; ?></span><a style="text-align:left; width:50%;" href="<?php echo $this->webroot; ?>articles/view/<?php echo $article['Article']['id']; ?>"><?php echo $article['Article']['title']; ?></a></li>
+
+      <?php } ?>
       </ul>
     </div>
   </div>

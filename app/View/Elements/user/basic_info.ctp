@@ -650,9 +650,9 @@
         <?php if($user['User']['status_id'] == 2){?>
           <div class="button-tab">
             <!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
-            <button type="button" class="link-tab-1a" id="btn-edit-user-info" >Update</button>
-            <button type="submit" class="link-tab-1a" id="btn-save-user-info" >Save</button>
-            <button type="button" class="link-tab-1a" id="btn-cancel-user-info" >Cancel</button>
+            <button type="button" class="link-tab-1a" id="btn-edit-user-info"><img src="<?php echo $this->webroot; ?>img/front/Update.png" alt="Update"></button>
+            <button type="submit" class="link-tab-1a" id="btn-save-user-info"><img src="<?php echo $this->webroot; ?>img/front/Save.png" alt="Save"></button>
+            <button type="button" class="link-tab-1b" id="btn-cancel-user-info"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
           </div>
         <?php }
             else {?>

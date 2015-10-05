@@ -377,9 +377,9 @@
 
           <?php if($user['User']['status_id'] == 2){?>
           <div class="button-tab">
-            <button type="button" class="link-tab-1a" id="btn-edit-partner" >Update</button>
-            <button type="submit" class="link-tab-1a" id="btn-save-partner" >Save</button>
-            <button type="button" class="link-tab-1a" id="btn-cancel-partner" >Cancel</button>
+            <button type="button" class="link-tab-1a" id="btn-edit-partner"><img src="<?php echo $this->webroot; ?>img/front/Update.png" alt="Update"></button>
+            <button type="submit" class="link-tab-1a" id="btn-save-partner"><img src="<?php echo $this->webroot; ?>img/front/Save.png" alt="Save"></button>
+            <button type="button" class="link-tab-1b" id="btn-cancel-partner"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
           </div>
            <?php } else { ?>
           <script type="text/javascript" charset="utf-8" async defer></script>
@@ -452,7 +452,7 @@
     rules: {
       'data[UserPartner][phone]': {
         number: true,
-        phone_number: true
+        phone_number: "^0[0-9]{9}"
       },
       'data[UserPartner][company_post_num_1]': {
         number: true,
@@ -466,7 +466,7 @@
       },
       'data[UserPartner][company_phone]': {
         number: true,
-        phone_number: true
+        phone_number: "^0[0-9]{9}"
       },
       'data[UserPartner][company_fax]': {
         number: true
@@ -478,22 +478,7 @@
       'data[UserPartner][salary_date]': {number: true}
     },
     messages: {
-      'data[UserGuarantor][post_num_1]': {
-        minlength: "<?php echo __('global.errors.minlength_3'); ?>",
-        maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
-      },
-      'data[UserGuarantor][post_num_2]': {
-        minlength: "<?php echo __('global.errors.minlength_4'); ?>",
-        maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
-      },
-      'data[UserGuarantor][company_post_num_1]': {
-        minlength: "<?php echo __('global.errors.minlength_3'); ?>",
-        maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
-      },
-      'data[UserGuarantor][company_post_num_2]': {
-        minlength: "<?php echo __('global.errors.minlength_4'); ?>",
-        maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
-      }
+
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

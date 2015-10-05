@@ -1,51 +1,36 @@
-<div class="page-header">
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="bs-component">
-         <ul class="breadcrumb">
-            <li><a href="<?php echo $this->webroot;?>">Home</a></li>
-            <li><a href="<?php echo $this->webroot;?>articles/">News</a></li>
-            <li class="active">View ID: <?php echo $article['Article']['id'] ?></li>
-          </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <!-- Headings -->
 
-    <div class="row">
-      
-
-    <!-- Blockquotes -->
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="type-blockquotes"><?php echo $article['Article']['title']?></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="bs-component">
-          <blockquote>
-            <p>
-              <?php echo $article['Article']['short_content']?>
-            </p>
-            <small><?php echo $article['Article']['author']?></small>
-          </blockquote>
-          <?php if($article['Article']['large_image']){?>
-          <div style="margin: auto; padding: 10px;">
-            <img width="800px" src="<?php echo $this->webroot?>images/upload/news/big/<?php echo $article['Article']['large_image']?>"/>
-          </div>
-          <?php } ?>
-           <p>
-              <?php echo $article['Article']['short_content']?>
-            </p>
-            <?php echo nl2br($article['Article']['content']); ?>
-          
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo $this->webroot; ?>css/common.css" type="text/css" media="screen" />
+     
+    <section id="content-container">
+      <div class="welcome-sup-page">
+        <div class="container-fluid">
+          <h2>ようこそ<a href="#">MOOS</a>様</h2>
         </div>
       </div>
-      
-    </div>
-    
-  </div>
-</div>
+      <div class="news-detail">
+        <div class="container-fluid">
+          <div class="content-news-detail">
+            <div class="block-title-news">
+              <h3 class="title-news"><?php echo $article['Article']['title']?></h3>
+              <span class="times-days"><?php echo $article['Article']['created']?></span>
+            </div>
+            <p><?php echo nl2br($article['Article']['content']); ?></p>
+          </div>
+          <div class="block-list-news-detail">
+            <h3>日本自動車:</h3>
+            <ul>
+              <?php for($i=0; $i<5; $i++){ 
+                    if($articles[$i]['Article']['id']){ ?>
+                      
+                      <li><span class="times-days"><?php echo $articles[$i]['Article']['created']; ?></span><a  href="<?php echo $this->webroot; ?>articles/view/<?php echo $articles[$i]['Article']['id']; ?>"><?php echo $articles[$i]['Article']['title']; ?></a></li>
+                   <?php }}
+                  ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+

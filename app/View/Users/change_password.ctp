@@ -145,6 +145,7 @@
         },
         'data[User][confirm_password]': {
           required: true,
+          password: "^[a-z0-9_.-]",
           equalTo: "#password"
         }
       },

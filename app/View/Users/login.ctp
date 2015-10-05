@@ -53,7 +53,7 @@
         <div class="from-login">
           <div class="container-fluid">
             <?php if($login_error_msg){?>
-              <div class="block-warning">
+              <div class="block-warning" id="warning-error">
                 <?php echo $login_error_msg;?>
               </div>
             <?php } ?>
@@ -141,6 +141,7 @@
         var errors = validator.numberOfInvalids();
         if (errors) {
           $("#error-section").show();
+          $("#warning-error").hide();
         } else {
           $("#error-section").hide();
         }
