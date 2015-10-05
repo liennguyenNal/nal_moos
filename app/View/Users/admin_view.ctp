@@ -34,28 +34,28 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label for="inputEmail">申込人氏名<span style="color:red">*</span></label>
+                  <label for="inputEmail"><?php echo __('user.register.username') ;?><span style="color:red">*</span></label>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'山田','div'=>false))?>
+                      <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,"placeholder"=>'山田','div'=>false))?>
                    
-                      <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'雪','div'=>false))?>
+                      <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>__('user.register.lastname'), 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', "placeholder"=>'雪','div'=>false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false))?>              
+                      <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', "placeholder"=>'ヤマダ','div'=>false))?>              
                                        
-                      <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'ユキ','div'=>false))?>
+                      <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px',"placeholder"=>'ユキ','div'=>false))?>
                     </div>
                   </div>
                 </td>
               </tr>
              <tr>
-             <td> <label for="inputEmail">性的<span style="color:red">*</span></label></td>
+             <td> <label for="inputEmail">__('user.register.gender')<span style="color:red">*</span></label></td>
               <td>
                 <div class="form-group">
                 
@@ -68,28 +68,28 @@
               </td>
               </tr>
               <tr>
-                <td> <label for="inputEmail" >生年月日<span style="color:red">*</span></label></td>
+                <td> <label for="inputEmail" ><?php echo __('user.register.birthday')?><span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                    
                     <div class="col-lg-10">
                       
-                      年
+                      <?php echo __('user.register.year')?>
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
                       echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year', 'onchange'=>'calculate_age()'));
                     ?>
-                    月
+                    <?php echo __('user.register.month')?>
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
                       echo $this->Form->select('month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
                     ?>
-                    日
+                    <?php echo __('user.register.day')?>
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
                       echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
                     ?>
-                      歳 : <span id="age">0</span>
+                      <?php echo __('user.register.age')?> : <span id="age">0</span>
                     <script type="text/javascript">
 
                     function calculate_age(){
@@ -103,7 +103,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" >婚姻<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.married')?><span style="color:red">*</span></label></td>
                 <td>
                 <div class="form-group">
                 
@@ -120,7 +120,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" >現住所<span style="color:red">*</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address')?><span style="color:red">*</span></td>
                 <td>
                   <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">〒</label>
@@ -132,7 +132,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
+                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref')?></label>
                 <div class="col-lg-10">
                   <?php 
                   echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県'));
@@ -140,7 +140,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
+                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.city')?></label>
                 <div class="col-lg-10">
                   <?php 
                     echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control','div'=>false));
@@ -148,13 +148,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">番地</label>
+                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.street')?></label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
+                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.house')?></label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false))?>
                 </div>
@@ -162,7 +162,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail">メールアドレス<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.register.email')?><span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -179,9 +179,9 @@
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', "placeholder"=>'09001234567','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
+                      <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>__('user.register.mobiphone'), 'class'=>'form-control', "placeholder"=>'','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
                    
-                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control', "placeholder"=>'0398765432','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
+                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>__('user.register.homephone'), 'class'=>'form-control', "placeholder"=>'','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
                     </div>
                   </div>
                   </td>
@@ -199,11 +199,11 @@
               <!-- <hr style="border: 0; height: 1px;background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);" /> -->
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work')?></label>
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+                    echo $this->Form->select('UserCompany.working_status_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>
@@ -334,11 +334,11 @@
 			          resizable: true,
 			          modal: true,
 			          buttons: {
-			            "Delete": function() {
+			            "削除する": function() {
 			             $( "#dialog-reconfirm-delete" ).dialog("open");
 			              $( this ).dialog( "close" );
 			            },
-			            Cancel: function() {
+			            'キャンセル': function() {
 			              agree = false;
 			              $( this ).dialog( "close" );
 			            }
@@ -349,11 +349,11 @@
 			          resizable: true,
 			          modal: true,
 			          buttons: {
-			            "Delete": function() {
+			            "削除する": function() {
 			              window.location.href='<?php echo $this->webroot;?>admin/users/delete/<?php echo $user['User']['id']?>';
 			              $( this ).dialog( "close" );
 			            },
-			            Cancel: function() {
+			             'キャンセル': function() {
 			              agree = false;
 			              $( this ).dialog( "close" );
 			            }
@@ -364,11 +364,11 @@
 			          resizable: true,
 			          modal: true,
 			          buttons: {
-			            "Reject": function() {
+			            "却下する": function() {
 			             	window.location.href='<?php echo $this->webroot;?>admin/users/reject_register/<?php echo $user['User']['id']?>';
 			              $( this ).dialog( "close" );
 			            },
-			            Cancel: function() {
+			             'キャンセル': function() {
 			              agree = false;
 			              $( this ).dialog( "close" );
 			            }
@@ -380,11 +380,11 @@
 			          resizable: true,
 			          modal: true,
 			          buttons: {
-			            "Approve": function() {
+			            "承認する": function() {
 			              window.location.href='<?php echo $this->webroot;?>admin/users/approve_register/<?php echo $user['User']['id']?>';
 			              $( this ).dialog( "close" );
 			            },
-			            Cancel: function() {
+			             'キャンセル': function() {
 			              agree = false;
 			              $( this ).dialog( "close" );
 			            }
@@ -401,17 +401,17 @@
     </div>
 
   </div>
-  <div id="dialog-confirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
+  <div id="dialog-confirm-delete" title="<?php echo __('admin.user.delete_button')?>">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>
   </div>
-  <div id="dialog-reconfirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+  <div id="dialog-reconfirm-delete" title="<?php echo __('admin.user.delete_button')?>">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると2度と復元できません。</p>
   </div>
-   <div id="dialog-confirm-approve" title="Approve?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be approved. Are you sure?</p>
+   <div id="dialog-confirm-approve" title="会員登録承認">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>会員登録を承認しますか？</p>
   </div>
-  <div id="dialog-confirm-reject" title="Reject?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Reject this user. Are you sure?</p>
+  <div id="dialog-confirm-reject" title="却下">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを却下しますか？</p>
   </div>
   </div>
 

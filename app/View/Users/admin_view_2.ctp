@@ -5,9 +5,7 @@
  <div class="col-lg-4">
     <div class="bs-component">
      <ul class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="<?php echo $this->webroot?>admin/users/">Customers</a></li>
-        <li class="active">View Customer </li>
+        <li><a href="<?php echo $this->webroot?>admin/users/"><?php echo __('admin.register_users')?></a></li>
       </ul>
   </div>
 </div>
@@ -119,11 +117,11 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Delete": function() {
+                  "削除する": function() {
                    $( "#dialog-reconfirm-delete" ).dialog("open");
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                   'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -134,11 +132,11 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Delete": function() {
+                  "削除する": function() {
                     window.location.href='<?php echo $this->webroot;?>admin/users/delete/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                   'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -153,7 +151,7 @@
                     window.location.href='<?php echo $this->webroot;?>admin/users/reject/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                   'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -165,11 +163,11 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Approve": function() {
+                  "承認する": function() {
                     window.location.href='<?php echo $this->webroot;?>admin/users/approve/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                   'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -202,8 +200,8 @@
                 width: 650,
                 modal: true,
                 buttons: {
-                  "Return": return_user,
-                  Cancel: function() {
+                  "差戻す": return_user,
+                   'キャンセル': function() {
                     dialog_return.dialog( "close" );
                   }
                 }
@@ -224,8 +222,8 @@
                 width: 400,
                 modal: true,
                 buttons: {
-                  "Update": edit_max_payment_user,
-                  Cancel: function() {
+                  "設定する": edit_max_payment_user,
+                  '<?php __("admin.user.cancel_button")?>': function() {
                     dialog_set_max_payment.dialog( "close" );
                   }
                 }
@@ -241,26 +239,28 @@
             });
           </script>
   </div>
-   <div id="dialog-confirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
+   <div id="dialog-confirm-delete" title="<?php echo __('admin.user.delete_button')?>">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>
   </div>
-  <div id="dialog-reconfirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+  <div id="dialog-reconfirm-delete" title="<?php echo __('admin.user.delete_button')?>">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると2度と復元できません。</p>
   </div>
-   <div id="dialog-confirm-approve" title="Approve?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be approved. Are you sure?</p>
+
+   <div id="dialog-confirm-approve" title="審査承認">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>審査を承認しますか？</p>
   </div>
-  <div id="dialog-confirm-reject" title="Reject?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Reject this user. Are you sure?</p>
+  <div id="dialog-confirm-reject" title="却下">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを却下しますか？</p>
   </div>
   
-  <div id="dialog-confirm-return" class="modal-dialog" title="Return Customer">
+  <div id="dialog-confirm-return" class="modal-dialog" title="差戻し">
     <p>This account will be return the customer </p>
     <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
       <fieldset>
-        
-        <?php echo $this->Form->input('required', array('type'=>'select', 'multiple'=>'checkbox', 'options'=>array(1=>'Update Info', 2=>'Add more guarantor', 3=>'Upload more file'), 'class' => 'checkbox dialog-checkox', 'style' => 'width:100px; display:inline','label'=>false, 'div'=>false)); ?>
+        <p>差し戻し理由をチェックをいれ、ひつ料にい応じて差し戻しメール</p>
+        <p>に追加する文章をテキストボックスに入力してください。</p>
+        <?php echo $this->Form->input('required', array('type'=>'select', 'multiple'=>'checkbox', 'options'=>array(1=>'添付ファイルの追加', 2=>'入寮区内容の修正', 3=>'保証人の追加'), 'class' => 'checkbox dialog-checkox', 'style' => 'width:100px; display:inline','label'=>false, 'div'=>false)); ?>
         <textarea name="data[User][comment]" id="comment" style="width: 439px; height: 80px;margin-top:20px" ></textarea>
         
         <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

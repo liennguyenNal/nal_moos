@@ -49,22 +49,23 @@
 
               <table class="table table-striped table-hover ">
                 <thead>
-                  <th>Object</th>
-                  <th>Information</th>
-                  <th>Status</th>
-                  <th>Fields Error</th>
+                  <th><?php echo "情報種別"?></th>
+                  <th><?php echo "項目"?></th>
+                  <th><?php echo "登録状況"?></th>
+                  <th><?php echo "未記入項目"?></th>
+                  
                 </thead>
               	<tbody>
                   
                           <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "Customer Info"; ?></td>
+                          <td><?php if($i == 1) echo "申込人情報"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed"?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
                             </td>
 
                              <td>
@@ -77,12 +78,12 @@
                           <?php $i = 0; foreach ($validations['UserPartner'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "Partner/Relation"; ?></td>
+                          <td><?php if($i == 1) echo "配偶者/同居人情報"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed" ?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
                             </td>
 
                              <td>
@@ -95,12 +96,12 @@
                           <?php $i = 0; foreach ($validations['UserGuarantor'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "Guarantor"; ?></td>
+                          <td><?php if($i == 1) echo "連帯保証人情報"; ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo "Un-completed"; else echo "Completed"?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
                             </td>
 
                              <td>
@@ -112,12 +113,12 @@
                           <?php } ?>
 
                           <tr>
-                            <td>Attachment</td>
+                            <td>添付書類</td>
                             <td>
                               <?php echo $validations['UserAttachment']['key'];?>
                             </td>
                             <td>
-                              <?php if($validations['UserAttachment']['error']) echo "Un-completed"; else echo "Completed" ?>
+                              <?php if($validations['UserAttachment']['error'])  echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
                             </td>
                             <td><?php if($validations['UserAttachment']['error']) echo $validations['UserAttachment']['error_msg'] ; ?></td>
                           </tr>

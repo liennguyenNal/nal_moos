@@ -219,7 +219,7 @@ msgid "user.my_page.attachment"
 msgstr "添付書類"
 
 msgid "admin.user.view.set_max_payment_button"
-msgstr "Thay đổi giá thuê tối đa"
+msgstr "上限賃料を変更する"
 
 msgid "login.errors"
 msgstr "IDとパスワードが一致しませんでした。</br>ご確認の上、再度ご登録いただいた情報を入力してください。"
@@ -379,20 +379,26 @@ msgstr "Register Users"
 msgid "admin.user.reject_button"
 msgstr "Reject User"
 
+msgid "admin.user.reject_register.button"
+msgstr "拒絶します"
+
 msgid "admin.user.approve_button"
 msgstr "Register Users"
 
+msgid "admin.user.approve_register_button"
+msgstr "Register Users"
+
 msgid "admin.user.delete_button"
-msgstr "Delete"
+msgstr "削除します"
 
 msgid "admin.user.charged_button"
 msgstr "Charged"
 
 msgid "admin.user.back_button"
-msgstr "Charged"
+msgstr "一覧へ戻る"
 
 msgid "admin.user.cancel_button"
-msgstr "Cancel"
+msgstr "キャンセル"
 
 msgid "admin.user.status"
 msgstr "申し込み状況"
@@ -501,10 +507,10 @@ msgid "user.guarantor.user.address"
 msgstr "保証人 住所情報"
 
 msgid "user.guarantor.user.company"
-msgstr "保証人 連絡先情報"
+msgstr "保証人 勤務先情報"
 
 msgid "user.guarantor.user.contact"
-msgstr "保証人 勤務先情報"
+msgstr "保証人 連絡先情報"
 
 msgid "user.attachment.user.file_attachment"
 msgstr "ご本人様確認書類"
@@ -519,7 +525,101 @@ msgid "user.dashboard.user.month_worked"
 msgstr "Month worked"
 
 msgid "user.dashboard.user.year_worked"
-msgstr "Month worked"
+msgstr "Year worked"
+
+
+msgid "user.register.update_basic_info.successfull"
+msgstr "Updated successful"
+
+msgid "user.register.update_partner.successfull"
+msgstr "Updated successful"
+
+msgid "user.register.update_gurantor.successfull"
+msgstr "Updated successful"
+
+msgid "user.create_password.fail"
+msgstr "Cannot create password"
+
+msgid "user.create_password.password_confirm_not_match"
+msgstr "Password Confirmation is not match"
+
+msgid "admin.user.reject.successful"
+msgstr "申込審査を却下しました。"
+
+
+msgid "admin.user.reject_reister.successful"
+msgstr "申込審査を却下しました。"
+
+msgid "admin.user.reject.failed"
+msgstr "申込審査の却下に失敗しました。"
+
+msgid "admin.user.reject_register.failed"
+msgstr "申込審査の却下に失敗しました。"
+
+msgid "admin.user.delete.successful"
+msgstr "会員を削除しました。"
+
+msgid "admin.user.delete.failed"
+msgstr "会員削除に失敗しました。"
+
+msgid "admin.user.delete_users.successful"
+msgstr "会員を削除しました。"
+
+msgid "admin.user.delete_users.failed"
+msgstr "会員削除に失敗しました。"
+
+msgid "admin.user.approve.successful"
+msgstr "申込審査を承認しました。"
+
+msgid "admin.user.approve.failed"
+msgstr "申込審査承認に失敗しました。"
+
+msgid "admin.user.approve_register.successful"
+msgstr "申込審査を承認しました。"
+
+msgid "admin.user.approve_register.failed"
+msgstr "申込審査承認に失敗しました。"
+
+msgid "admin.user.return.successful"
+msgstr "Return User Successful"
+
+msgid "admin.user.return.failed"
+msgstr "Return  User Failed"
+
+msgid "admin.user.not_exist"
+msgstr "User is not exist in system"
+
+msgid "admin.user.set_max_payment.successful"
+msgstr "Set Max Payment Successful"
+
+msgid "admin.user.set_max_payment.failed"
+msgstr "Set Max Payment Failed"
+
+msgid "admin.user.process_payment.successful"
+msgstr "Proccess Payment Successful"
+
+msgid "admin.user.process_payment.failed"
+msgstr "Proccess Payment Failed"
+
+msgid "user.my_page.object"
+msgstr "情報種別"
+
+msgid "user.my_page.information"
+msgstr "項目"
+
+msgid "user.my_page.status"
+msgstr "登録状況"
+
+msgid "user.my_page.error_fields"
+msgstr "未記入項目"
+
+msgid "user.my_page.status.completed"
+msgstr "完了"
+
+msgid "user.my_page.status.un_completed"
+msgstr "未完成"
+
+
 
 
 

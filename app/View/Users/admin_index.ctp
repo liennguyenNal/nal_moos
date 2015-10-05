@@ -314,10 +314,10 @@
 
   </div>
   <div id="dialog-confirm-delete" title="<?php echo __('admin.user.delete_button')?>">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>
   </div>
   <div id="dialog-reconfirm-delete" title="<?php echo __('admin.user.delete_button')?>">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると2度と復元できません。</p>
   </div>
   
    <div id="dialog-confirm-export" title="Do you want to export CSV file?">

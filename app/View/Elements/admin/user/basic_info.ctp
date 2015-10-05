@@ -20,20 +20,20 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label for="inputEmail">申込人氏名<span style="color:red">*</span></label>
+                  <label for="inputEmail"> <?php echo __('user.register.username') ?><span style="color:red">*</span></label>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>
+                      <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=> __('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>
                    
-                      <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false))?>
+                      <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=> __('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>              
+                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=> __('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>              
                                        
                       <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
                     </div>
@@ -113,7 +113,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail">Num Children<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.num_children'); ?><span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -131,7 +131,7 @@
         <div class="well bs-component">
            
             <fieldset>
-              <legend>Address</legend>
+              <legend>申込人住所情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
                 <td><label for="inputEmail" >現住所<span style="color:red">*</span></td>
@@ -189,7 +189,7 @@
               </tr>
                
                <tr>
-                <td><label for="inputEmail">Year Residence<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?><span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -201,7 +201,7 @@
               </tr>
                
                <tr>
-                <td><label for="inputEmail">House Cost<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.house_cost'); ?><span style="color:red">*</span></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -218,7 +218,7 @@
         <div class="well bs-component">
            
             <fieldset>
-              <legend>Contact</legend>
+              <legend>申込人連絡先情報</legend>
               <table class="table table-striped table-hover ">
 	              <tr>
 	                <td><label for="inputEmail">メールアドレス<span style="color:red">*</span></label></td>
@@ -268,7 +268,7 @@
             <div class="well bs-component">
 
 
-             <legend>Company</legend>
+             <legend>申込人勤務先情報</legend>
               <fieldset>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">職業<span style="color:red">*<span></label>
@@ -280,11 +280,11 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Company Name</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.company'); ?></label>
                   <div class="col-lg-10">
-                  Hira
+                  <?php echo __('user.register.company_name'); ?>
                     <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"company-name", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
-                    Kana
+                    <?php echo __('user.register.company_name_kana'); ?>
                     <?php echo $this->Form->input('UserCompany.name_kana', array('type'=>'text', 'id'=>"company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>
                 </div>
@@ -292,7 +292,7 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" >Company Address<span style="color:red">*</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red">*</span></td>
                 <td>
                   <div class="form-group">
 	                <label for="inputEmail" class="col-lg-2 control-label">〒</label>
@@ -336,13 +336,13 @@
               </table>
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.contact.company-phone'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Fax</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.contact.fax'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
@@ -356,20 +356,20 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Description</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.description'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.description', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false,'required'=>false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Department</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.department'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
                 </div>
 
                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Position</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.position'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
@@ -383,19 +383,19 @@
                 </div>
                
                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.tax'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Salary Year</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.salary_year'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.register.yen'); ?>
                   </div>
                 </div>
                 <div class="form-group">
-                	 <label for="inputEmail" class="col-lg-2 control-label">Salary Type</label>
+                	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
                   <div class="col-lg-10">
                     <?php 
                 		echo $this->Form->radio('UserCompany.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'change_type($(this))', 'required'=>false));
@@ -426,7 +426,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Note</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.note'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
@@ -437,23 +437,23 @@
              <div class="well bs-component">
 
 
-             <legend>Debt</legend>
+             <legend><?php echo __('user.my_page.basic_info.debt'); ?></legend>
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Debt Count</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.debt_count'); ?></label>
                   <div class="col-lg-10">
                    
                     <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Debt Total Value</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.debt_total'); ?></label>
                   <div class="col-lg-10">
                  <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>
                 </div>
                  <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Debt Pay per Month</label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.debt_month'); ?></label>
                   <div class="col-lg-10">
                  <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>

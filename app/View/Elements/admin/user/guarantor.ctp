@@ -118,7 +118,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail">Num Children<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.num_children'); ?><span style="color:red">*</span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -131,7 +131,7 @@
 	                  </td>
 	               </tr>
 	               <tr>
-	                <td><label for="inputEmail">Relationship<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.relation'); ?><span style="color:red">*</span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -206,7 +206,7 @@
 	              </tr>
 	               
 	               <tr>
-	                <td><label for="inputEmail">Year<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.year_residence'); ?><span style="color:red">*</span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -218,7 +218,7 @@
 	              </tr>
 	               
 	               <tr>
-	                <td><label for="inputEmail">House Fee<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.house_cost'); ?><span style="color:red">*</span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -235,7 +235,7 @@
 	        <div class="well bs-component">
 	           
 	            <fieldset>
-	              <legend>Contact</legend>
+	              <legend>連帯保証人連絡先情報</legend>
 	              <table class="table table-striped table-hover ">
 		              <!-- <tr>
 		                <td><label for="inputEmail">メールアドレス<span style="color:red">*</span></label></td>
@@ -285,7 +285,7 @@
 	        <div class="well bs-component">
 
 
-	             <legend>Company</legend>
+	             <legend>連帯保証人連絡先情報</legend>
 	              <fieldset>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label">職業<span style="color:red">*<span></label>
@@ -297,11 +297,11 @@
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Company Name</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.address'); ?></label>
 	                  <div class="col-lg-10">
-	                  Hira
+	                  <?php echo __('user.my_page.basic_info.company_name'); ?>
 	                    <?php echo $this->Form->input('UserGuarantor.company', array('type'=>'text', 'id'=>"g-company", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
-	                    Kana
+	                    <?php echo __('user.my_page.basic_info.company_name_kana'); ?>
 	                    <?php echo $this->Form->input('UserGuarantor.company_kana', array('type'=>'text', 'id'=>"g-company-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false))?>
 	                  </div>
 	                </div>
@@ -310,7 +310,7 @@
 	                    
 	            <table class="table table-striped table-hover ">
 	              <tr>
-	                <td><label for="inputEmail" >Company Address<span style="color:red">*</span></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red">*</span></td>
 	                <td>
 	                  <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label">〒</label>
@@ -354,13 +354,13 @@
 	              </table>
 
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.contact.company-phone'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Fax</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.fax'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
@@ -374,20 +374,20 @@
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Description</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.description'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Department</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.department'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 
 	               <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Position</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.position'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>
@@ -401,19 +401,19 @@
 	                </div>
 	               
 	               <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Salary Month</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.tax'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Salary Year</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                	 <label for="inputEmail" class="col-lg-2 control-label">Salary Type</label>
+	                	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php 
 	                		echo $this->Form->radio('UserGuarantor.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
@@ -453,7 +453,7 @@
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">Note</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.note'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('UserGuarantor.note', array('type'=>'textarea', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 	                  </div>

@@ -294,7 +294,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                    <td class="label-text"><label><?php echo __('user.register.company'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
