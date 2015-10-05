@@ -30,8 +30,8 @@
             ?>
             
             <label style="margin-left:20px;" for="title" ><?php echo __('admin.contact.created_date'); ?></label>
-            <input style="width:150px; display:inline;" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-             -- <input style="width:150px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
+            <input style="width:150px; display:inline;" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
+             -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
             <div style="margin-top:20px;">
             <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.username'); ?></label>
             <input style="width:250px; display:inline; " type="text" id="keyword" class="form-control"  value="<?php echo $keyword; ?>">
