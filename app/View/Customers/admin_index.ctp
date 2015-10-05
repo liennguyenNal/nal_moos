@@ -27,8 +27,8 @@
               //echo $this->Form->input('type', array('options' => array(1=>"Normal",2=> "Media",3=>"Contruction Company", 4=> "Others"), 'empty' => '-- All --', 'class'=>'form-control', 'style'=>"width:250px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
             ?>
             
-            <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> <input style="width:150px; display:inline;" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            -- <input style="width:150px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
+            <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> <input style="width:150px; display:inline;" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
+            -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
             <div style="margin-top:20px;">
              <label style="margin-left:20px;" for="title" >申込人氏名</label>
              <input style="width:250px; display:inline; " type="text" id="keyword" class="form-control"  value="<?php echo $keyword; ?>">
