@@ -50,9 +50,15 @@
         <td RowSpan="7" class="color-b"><?php echo __('user.my_page.customer'); ?></td>
         <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?> 
         <td><?php echo $value['key']?></td>
+        <?php if ($value['error'] == 1) { ?>
         <td class="color-b">
-          <?php if($value['error'] == 1) echo __('user.my_page.status.un_completed'); else echo __('user.my_page.status.completed')?>
+          <span><?php echo __('user.my_page.status.un_completed'); ?></span>
         </td>
+        <?php } else { ?>
+        <td class="color-b">
+          <?php echo __('user.my_page.status.completed'); ?>
+        </td>
+        <?php } ?>
         <td>
           <?php foreach ($value['fields'] as $value) {
             echo $value . ", ";

@@ -233,7 +233,7 @@
 									<div class="block-input fix-padding">
 										<div class="div-style">
 											<span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-											<?php echo $this->Form->input('UserGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('UserGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
 											?>
 										</div>
 										<div class="div-style">
@@ -273,7 +273,7 @@
 								<td>
 									<div class="select">
 										<?php 
-						                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right'));
+						                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right','required'=>false));
 						                ?>
 									</div>
 								</td>
@@ -409,7 +409,7 @@
 										<?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
-										<?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false))
+										<?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.month'); ?></span>
 									</div>
@@ -595,16 +595,16 @@
     	},
     	'data[UserGuarantor][year_residence]': {number: true},
     	'data[UserGuarantor][phone]': {
-    		required: function(element) {
-                return !$("#home_phone").val();
-             },
+    		// required: function(element) {
+      //           return !$("#home_phone").val();
+      //        },
                 number: true,
                 phone_number: "^0[0-9]{9}"
     		},
     	'data[UserGuarantor][home_phone]': {
-    		required: function(element) {
-                return  !$("#phone").val();
-              },
+    		// required: function(element) {
+      //           return  !$("#phone").val();
+      //         },
                 number: true,
                 phone_number: "[0-9]{11}"
         },
