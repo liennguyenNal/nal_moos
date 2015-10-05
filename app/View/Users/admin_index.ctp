@@ -12,7 +12,11 @@
 	</div>
    <div class="form-group" >
       <div class="col-lg-12">
-        <button type="button" class="btn btn-primary" id="btn-export" > <?php echo __('admin.user.export_csv')?></button>
+      <?php
+          //echo __('admin.user.export_csv')
+         echo $this->Html->link("CSVデータダウンロード)",array('controller'=>'users','action'=>'download'), array('target'=>'_blank','class'=>"btn btn-primary", 'id'=>"btn-export"));
+        ?>
+        
      </div>
    </div>
     <div class="col-lg-12" style="padding-top:20px">
@@ -286,6 +290,8 @@
             "<?php echo __('admin.user.export_csv')?>": function() {
               
               $( this ).dialog( "close" );
+              window.location.href="<?php echo $this->webroot;?>admin/users/download";
+
             },
             <?php echo __('admin.user.cancel_button')?>: function() {
               agree = false;
@@ -294,7 +300,8 @@
           }
         });
 
-        $('#btn-export').on('click', function() {
+        $('#btn-export').on('click', function(event) {
+              event.preventDefault();
           
              $( "#dialog-confirm-export" ).dialog("open");
           

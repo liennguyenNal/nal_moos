@@ -1,0 +1,2885 @@
+2015-10-05 09:08:33 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:33 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 34]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 34
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 46]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 51]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined variable: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 26]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 28]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 29]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 29
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:40 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:44 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:56 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 42]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: company in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 47]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 47
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 52]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: type in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 57]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 57
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 63]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 63
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 68]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 68
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 25]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: type in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 28]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 31]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 32]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 32
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: company in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:08:57 Notice: Notice (8): Undefined variable: contact in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 128]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 128
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:01 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:14 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:17 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:17 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:18 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:21 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:09:56 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 26]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 26
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 31]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 31
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 37]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 44]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 44
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 49]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 49
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 55]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 60]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 60
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:10:13 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:16 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 42]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: company in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 47]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 47
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 52]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: type in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 57]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 57
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 63]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 63
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ContactsController.php, line 68]
+Trace:
+ContactsController::admin_index() - APP/Controller/ContactsController.php, line 68
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 25]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: type in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 28]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 31]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 32]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 32
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: company in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:18 Notice: Notice (8): Undefined variable: contact in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Contacts/admin_index.ctp, line 128]
+Trace:
+include - APP/View/Contacts/admin_index.ctp, line 128
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:20 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 34]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 34
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 46]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 51]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined variable: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 26]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 28]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 29]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 29
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:21 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/CustomersController.php, line 25]
+Trace:
+CustomersController::admin_index() - APP/Controller/CustomersController.php, line 25
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: email in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/CustomersController.php, line 30]
+Trace:
+CustomersController::admin_index() - APP/Controller/CustomersController.php, line 30
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/CustomersController.php, line 38]
+Trace:
+CustomersController::admin_index() - APP/Controller/CustomersController.php, line 38
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/CustomersController.php, line 43]
+Trace:
+CustomersController::admin_index() - APP/Controller/CustomersController.php, line 43
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Customers/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Customers/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Customers/admin_index.ctp, line 37]
+Trace:
+include - APP/View/Customers/admin_index.ctp, line 37
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Customers/admin_index.ctp, line 38]
+Trace:
+include - APP/View/Customers/admin_index.ctp, line 38
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:23 Notice: Notice (8): Undefined variable: email in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Customers/admin_index.ctp, line 39]
+Trace:
+include - APP/View/Customers/admin_index.ctp, line 39
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 34]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 34
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 39]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 39
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 46]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined index: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/ArticlesController.php, line 51]
+Trace:
+ArticlesController::admin_index() - APP/Controller/ArticlesController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined variable: is_published in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 26]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined variable: date_from in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 28]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined variable: date_to in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 29]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 29
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:24 Notice: Notice (8): Undefined variable: keyword in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Articles/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Articles/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:15:26 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 30]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 30
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 33]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:22 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 36]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 36
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:34 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:34 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:17:34 Notice: Notice (8): Use of undefined constant ’0′ - assumed '’0′' in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 33]
+Trace:
+UsersController::admin_download() - APP/Controller/UsersController.php, line 33
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+ExceptionRenderer::_getController() - CORE/Cake/Error/ExceptionRenderer.php, line 155
+ExceptionRenderer::__construct() - CORE/Cake/Error/ExceptionRenderer.php, line 92
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 126
+call_user_func - [internal], line ??
+ErrorHandler::handleFatalError() - CORE/Cake/Error/ErrorHandler.php, line 274
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 213
+call_user_func - [internal], line ??
+App::_checkFatalError() - CORE/Cake/Core/App.php, line 933
+App::shutdown() - CORE/Cake/Core/App.php, line 906
+[main] - [internal], line ??
+
+2015-10-05 09:19:58 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+ExceptionRenderer::_getController() - CORE/Cake/Error/ExceptionRenderer.php, line 155
+ExceptionRenderer::__construct() - CORE/Cake/Error/ExceptionRenderer.php, line 92
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 126
+call_user_func - [internal], line ??
+ErrorHandler::handleFatalError() - CORE/Cake/Error/ErrorHandler.php, line 274
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 213
+call_user_func - [internal], line ??
+App::_checkFatalError() - CORE/Cake/Core/App.php, line 933
+App::shutdown() - CORE/Cake/Core/App.php, line 906
+[main] - [internal], line ??
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 37]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 37
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:20:06 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 40]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 40
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 37]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 37
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:03 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 40]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 40
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:21:06 Notice: Notice (8): Use of undefined constant ’0′ - assumed '’0′' in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 33]
+Trace:
+UsersController::admin_download() - APP/Controller/UsersController.php, line 33
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:11 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:11 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 37]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 37
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:12 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 40]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 40
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:15 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:15 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:22:15 Notice: Notice (8): Use of undefined constant ’0′ - assumed '’0′' in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 33]
+Trace:
+UsersController::admin_download() - APP/Controller/UsersController.php, line 33
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 41]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 41
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 46]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 52]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: from_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 59]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 59
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: to_register in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 64]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: from_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 70]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 70
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined index: to_approve in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 75]
+Trace:
+UsersController::admin_index() - APP/Controller/UsersController.php, line 75
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined variable: status in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 34]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined variable: pref in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 37]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 37
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:06 Notice: Notice (8): Undefined variable: city in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 40]
+Trace:
+include - APP/View/Users/admin_index.ctp, line 40
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::render() - CORE/Cake/View/View.php, line 473
+Controller::render() - CORE/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:08 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 676
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:08 Notice: Notice (8): Undefined index: username in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/Component/LoginComponent.php, line 52]
+Trace:
+LoginComponent::initialize() - APP/Controller/Component/LoginComponent.php, line 52
+LoginComponent::startup() - APP/Controller/Component/LoginComponent.php, line 20
+ObjectCollection::trigger() - CORE/Cake/Utility/ObjectCollection.php, line 128
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 243
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 677
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 189
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-10-05 09:26:08 Notice: Notice (8): Use of undefined constant ’0′ - assumed '’0′' in [/Applications/MAMP/htdocs/moos_moi/moos/app/Controller/UsersController.php, line 33]
+Trace:
+UsersController::admin_download() - APP/Controller/UsersController.php, line 33
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

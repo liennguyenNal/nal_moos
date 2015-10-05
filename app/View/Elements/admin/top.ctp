@@ -11,8 +11,9 @@
 	  <div class="navbar-collapse collapse" id="navbar-main">
 	    <ul class="nav navbar-nav">
 	      <li class="<?php  if($menu == 'contact') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/contacts">Contact</a></li>
-	      <li class="<?php  if($menu == 'customer') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/users/">Customers</a></li>
+	      <li class="<?php  if($menu == 'user') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/users/">Registered</a></li>
 	      <li class="<?php  if($menu == 'article') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/articles/">News</a></li>
+	      <li class="<?php  if($menu == 'customer') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/customers/">Customers</a></li>
 
 	      
 	    </ul>

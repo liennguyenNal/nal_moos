@@ -11,12 +11,27 @@ class UsersController extends AppController{
       'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'WorkRequired',
       'Status');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
-    var $helpers = array('Html' , 'Js');
+    //var $helpers = array('Html' , 'Js');
      
     /**
      * ADMIN VIEW FUNCTION
      * @return response
      */
+    var $helpers = array('Html', 'Form','Csv'); 
+    public function beforeFilter(){
+        parent::beforeFilter();
+        $this->set('menu' , 'user');
+    }
+
+    
+    function admin_download()
+    {
+        $this->set('users', $this->User->find('all'));
+        //var_dump($this->User->find('all')); die;
+        $this->layout = null;
+       $this->autoLayout = false;
+      Configure::write('debug', ’0′);
+    }
     function admin_index(){
       $statuses = $this->Status->find('list', array('conditions'=>array('Status.id <> 0')));
       $this->set('statuses', $statuses);

@@ -1,0 +1,10 @@
+2015-10-05 09:19:58 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Applications/MAMP/htdocs/moos_moi/moos/app/View/Users/admin_index.ctp, line 17]
+2015-10-05 09:19:58 Error: [InternalErrorException] Internal Server Error
+Request URL: /moos_moi/moos/admin/users/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/moos_moi/moos/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 17, Array)
+#2 /Applications/MAMP/htdocs/moos_moi/moos/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 17, Array)
+#3 /Applications/MAMP/htdocs/moos_moi/moos/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
