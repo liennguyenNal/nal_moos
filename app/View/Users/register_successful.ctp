@@ -20,7 +20,7 @@
                   <p class="note fix-font">※ ご会員登録に成功しました。</p>
                   <div class="block-note">
                     <div class="block-button">
-                      <button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ" onclick="location.href='<?php echo $this->webroot; ?>'"/></button>
+                      <a href="<?php echo Router::url('/', true); ?>/users/login"><button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>
                     </div>
                   </div>
                 </div>

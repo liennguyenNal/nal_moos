@@ -167,7 +167,7 @@
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
-                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
+                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right'));
                               ?>
                               </div>
                             </div>
@@ -234,7 +234,7 @@
                           <td>
                             <div class="select">
                               <?php 
-                                echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'works', 'empty'=>'正社員', 'data-placement' => 'right'));
+                                echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'works', 'empty'=>'--------', 'data-placement' => 'right'));
                               ?>
                             </div>
                           </td>
@@ -293,7 +293,7 @@
                               <span class="w78"><?php echo __('user.register.pref'); ?></span>
                               <div class="select">
                               <?php 
-                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
+                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right'));
                               ?>
                               </div>
                             </div>
@@ -501,7 +501,6 @@
         'data[UserAddress][pref_id]': {required: true},
         'data[UserAddress][city]': {required: true},
         'data[UserAddress][address]': {required: true},
-        'data[UserAddress][house_name]': {required: true},
         'data[User][phone]': {
           required: function(element) {
             return !$("#home_phone").val();
@@ -567,7 +566,6 @@
         'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[UserAddress][address]': {required: "<?php echo __('global.errors.required'); ?>"},
-        'data[UserAddress][house_name]': {required: '必須項目です。全角で入力してください。'},
         'data[User][phone]': { required: "<?php echo __('global.errors.required'); ?>" },
         'data[User][home_phone]': { required: "<?php echo __('global.errors.required'); ?>" },
         'data[User][email]': {required: "<?php echo __('global.errors.required'); ?>"},

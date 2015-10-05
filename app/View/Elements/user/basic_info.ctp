@@ -152,28 +152,25 @@
                         <?php 
                             echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
                         ?>
-                        <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
+                        <a class="style-link" type="button" id="btn-find-address"><?php echo __('user.register.findaddress'); ?></a>
                           <!-- Script tim dia chi buu dien -->
                           <script type="text/javascript">
-                            function find_address(obj){
-                             var p =  obj.parent().parent().parent();
-                             var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
-                                
-                              $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
-                                function(json) {
-                                  p.find("select[id*='pref_id']").val(json.pref_id);
-                                  p.find("input[id*='city']").val(json.ward);
-                                  p.find("input[id*='address']").val(json.addr1);
-                              });
-                          }
-                          </script>
+                        $('#btn-find-address').on('click', function() {
+                            $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#post_num_1').val().trim() + $('#post_num_2').val().trim()}, 
+                              function(json) {
+                                $("#pref_id").val(json.pref_id);
+                                $("#city").val(json.ward);
+                                $("#address").val(json.addr1);
+                            });
+                        });
+                      </script>
                           <!-- End script -->
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.pref'); ?></span>
                         <div class="select">
                             <?php 
-                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'data-placement' => 'right'));
+                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right'));
                             ?>
                         </div>
                       </div>
@@ -199,7 +196,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="select">
-                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right')); 
+                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------')); 
                         ?>
                       </div>
                     </td>
@@ -291,7 +288,7 @@
                     <td>
                       <div class="select">
                         <?php 
-                            echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'----', 'data-placement'=>'right'));
+                            echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right'));
                         ?>
                       </div>
                     </td>
@@ -321,28 +318,26 @@
                         <span class="w-auto1">-</span>
                         <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'data-placement'=>'right'))
                         ?>
-                      <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-company-address" onclick="javascript:find_company($(this));"><?php echo __('user.register.findaddress'); ?></a>
+                      <a type="button" class="style-link" id="btn-find-company-address"><?php echo __('user.register.findaddress'); ?></a>
                           <!-- Script -->
-                          <script type="text/javascript">
-                            function find_company(obj){
-                             var p =  obj.parent().parent().parent();
-                             var zip_code = p.find("input[id*='company_post_num_1']").val().trim() + p.find("input[id*='company_post_num_2']").val().trim();
-                                
-                              $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
-                                function(json) {
-                                  p.find("select[id*='company_pref_id']").val(json.pref_id);
-                                  p.find("input[id*='company_city']").val(json.ward);
-                                  p.find("input[id*='company_address']").val(json.addr1);
-                              });
-                          }
-                          </script>
+                          <!-- <button type="button" class="btn btn-primary" id="btn-find-company-address">郵使番号から住所を検索</button> -->
+                      <script type="text/javascript">
+                        $('#btn-find-company-address').on('click', function() {
+                            $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: $('#company_post_num_1').val().trim() + $('#company_post_num_2').val().trim()}, 
+                              function(json) {
+                                $("#company_pref_id").val(json.pref_id);
+                                $("#company_city").val(json.ward);
+                                $("#company_address").val(json.addr1);
+                            });
+                        });
+                      </script>
                           <!-- End script -->
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.pref'); ?></span>
                         <div class="select">
                             <?php 
-                              echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'青森県', 'data-placement'=>'right'));
+                              echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'--------', 'data-placement'=>'right'));
                             ?>
                         </div>
                       </div>
@@ -392,7 +387,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.career'); ?></label></td>
                     <td>
                       <div class="select">
-                        <?php echo $this->Form->select('UserCompany.career_id', $careers, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'青森県', 'data-placement'=>'right'));
+                        <?php echo $this->Form->select('UserCompany.career_id', $careers, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'--------', 'data-placement'=>'right'));
                         ?>
                       </div>
                     </td>
@@ -568,15 +563,11 @@
           </div>
           <section id="expect-area">
           <?php $i = 0; foreach($user['ExpectArea'] as $item){ $i++;?>
-                
                 <div class="content-from-how" id="expect-area-content-<?php echo $i; ?>">
                 <?php if($i > 1){?>
                      <div class="link-form style" >
                         <div class="block-link">
-                           
-                           
-                                <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
-                           
+                            <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
                         </div>
                     </div>
                 <?php }?>
@@ -595,7 +586,7 @@
                             <span class="w-auto1">-</span>
                             <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
-                            <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
+                            <a type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.pref'); ?></span>
@@ -620,62 +611,34 @@
                     </tbody>
                   </table>
                 </div>
-              
               <?php } ?>
           </section>
 
             <div class="link-form style">
                 <div class="block-link">
                     <a href="javascript:void(0)" class="style-link" id='btn-add'>+ 希望エリアを追加</a>
-                   
-                        
-                   
                 </div>
             </div>
+
             <section id="remove" style="display:none">
-                
-            
-            <div class="link-form style" >
-                <div class="block-link">
-                   
-                   
+                <div class="link-form style" >
+                    <div class="block-link">
                         <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
-                   
+                    </div>
                 </div>
-            </div>
             </section>
-<!-- 
-          <div class="link-form style">
-            <div class="block-link">
-              <a href="javascript:void(0)" class="style-link" id='btn-add' ><?php echo __('user.register.add'); ?></a>
-            </div>
-              <div id='remove' style="display:none">
-                <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
-              </div>
-          </div> -->
 
-          
           <?php echo $this->Form->hidden('User.id')?>
-
             <!-- SCRIPT -->
             <script type="text/javascript">
-              
                 $(this).autoKana('#first_name', '#first_name_kana', {katakana:true, toggle:false});
                 $(this).autoKana('#last_name', '#last_name_kana', {katakana:true, toggle:false});
-
-               
-                
                 function find_address(obj){
                    var p =  obj.parent().parent().parent();
                    var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
-                   var loader = p.find("div[id*='loader']");
-                        
-                      loader.show();
                       
                     $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
                       function(json) {
-                        loader.hide();
-                        //alert(p.find("select[id*='pref_id']").val());
                         p.find("select[id*='pref_id']").val(json.pref_id);
                         p.find("input[id*='city']").val(json.ward);
                         p.find("input[id*='address']").val(json.addr1);
@@ -904,7 +867,10 @@
             // 'data[ExpectArea][1][city]': {required: true}
         },
         messages: {
-
+            'data[UserAddress][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
+            'data[UserAddress][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
+            'data[UserCompany][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
+            'data[UserCompany][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"}
         },
         tooltip_options: {
           
@@ -936,3 +902,4 @@
           number: "<?php echo __('global.errors.number'); ?>"
       });
 </script>
+<!-- END SCRIPT VALIDATION -->
