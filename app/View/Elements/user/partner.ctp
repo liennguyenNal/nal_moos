@@ -452,7 +452,7 @@
     rules: {
       'data[UserPartner][phone]': {
         number: true,
-        phone: true
+        phone_number: true
       },
       'data[UserPartner][company_post_num_1]': {
         number: true,
@@ -466,7 +466,7 @@
       },
       'data[UserPartner][company_phone]': {
         number: true,
-        phone: true
+        phone_number: true
       },
       'data[UserPartner][company_fax]': {
         number: true
@@ -475,8 +475,7 @@
       'data[UserPartner][month_worked]': {number: true},
       'data[UserPartner][income_month]': {number: true},
       'data[UserPartner][income_year]': {number: true},
-      'data[UserPartner][salary_date]': {number: true},
-      'data[UserRelation][0][phone]': {number: true}
+      'data[UserPartner][salary_date]': {number: true}
     },
     messages: {
       'data[UserGuarantor][post_num_1]': {

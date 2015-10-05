@@ -93,7 +93,7 @@ class AppController extends Controller {
                 //$this->set('s_fullname', $this->s_fullname);
               
             }
-            $this->layout = 'default';
+            $this->layout = 'default_new';
         }
         
     }
