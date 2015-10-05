@@ -27,8 +27,8 @@ App::uses('CakeEmail', 'Network/Email');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package     app.Controller
+ * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
     var $is_admin = 0;
@@ -93,7 +93,7 @@ class AppController extends Controller {
                 //$this->set('s_fullname', $this->s_fullname);
               
             }
-            $this->layout = 'default';
+            $this->layout = 'default_new';
         }
         
     }
@@ -110,7 +110,7 @@ class AppController extends Controller {
                 else $this->Upload->upload($file, $destination . '/', null, array('type' => 'resizemin', 'output' => 'jpg'));
                     if(!$this->Upload->errors)
                     {
-                            $image = $this->Upload->result;	
+                            $image = $this->Upload->result; 
                     }
             }
 
