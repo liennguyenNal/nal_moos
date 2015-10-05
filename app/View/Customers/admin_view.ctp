@@ -2,15 +2,7 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <div class="page-header" id="banner">
- <div class="col-lg-4">
-    <div class="bs-component">
-     <ul class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="<?php echo $this->webroot?>admin/customers/">Customers</a></li>
-        <li class="active">View Customer </li>
-      </ul>
-  </div>
-</div>
+
 
 <div class="row">
 
@@ -193,84 +185,8 @@
 
              
 
-            <div class="well bs-component">
-
-
-              <!-- <hr style="border: 0; height: 1px;background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);" /> -->
-              <fieldset>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
-                  <div class="col-lg-10">
-                   
-                    <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
-                  ?>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                  </div>
-                </div>
-
-               
-                    
-                 
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">税込月収</label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
-                  </div>
-                </div>
-                
-
-               
-              </fieldset>
-          
-            </div>
-            <h4>ご希望エリア　※最大５エリアまで</h4>
-            <section id="expect-area">
-            <?php foreach ($user['ExpectArea'] as $item) {?>
-            <div class="well bs-component" id='expect-area-content' >
-              <fieldset>
-
-                  <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*</span></label>
-                  <div class="col-lg-10" >
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false, 'value'=>$item["post_num_1"]))?>
-                    <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false, 'value'=>$item["post_num_2"]))?>
-                    
-                   
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                    <?php 
-                    echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'value'=>$item["pref_id"] , 'empty'=>'青森県'));
-                  ?>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                     <?php echo $this->Form->input('ExpectArea.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["city"]))?>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">地城<span style="color:red">*</span></label>
-                  <div class="col-lg-10">
-                    <?php echo $this->Form->input("ExpectArea.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["address"]))?>
-                  </div>
-                </div>
-              </fieldset>
-              
-            </div>
-            <?php } ?>
-            </section>
+            
+            
             <div >
 
 
@@ -318,11 +234,11 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Delete": function() {
+                  "削除する": function() {
                    $( "#dialog-reconfirm-delete" ).dialog("open");
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                  'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -333,11 +249,11 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Delete": function() {
+                  "削除する": function() {
                     window.location.href='<?php echo $this->webroot;?>admin/customers/delete/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                  Cancel: function() {
+                  'キャンセル': function() {
                     agree = false;
                     $( this ).dialog( "close" );
                   }
@@ -355,11 +271,13 @@
     </div>
 
   </div>
-  <div id="dialog-confirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This user will be deleted. Are you sure?</p>
+  <div id="dialog-confirm-delete" title="削除">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>お知らせを削除しますか？</p>
   </div>
-  <div id="dialog-reconfirm-delete" title="Delete?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>If you delete user, all related data also deleted . Are you sure?</p>
+
+  <div id="dialog-reconfirm-delete" title="削除">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>お知らせを削除すると2度と復元できません。
+お知らせを削除しますか？</p>
   </div>
 
   </div>

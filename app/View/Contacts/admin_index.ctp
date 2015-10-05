@@ -5,14 +5,12 @@
 <div class="page-header">
   <div class="row">
     <div class="col-lg-4">
-      <div class="bs-component">
-         <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            
-            <li class="active">Contacts</li>
-          </ul>
-      </div>
+    <div class="bs-component">
+       
+          <h4 class="active">問合せ一覧</h4>
+        
     </div>
+  </div>
   </div>
   <div class="row">
     <div class="col-lg-12">
@@ -21,17 +19,24 @@
       
       <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
+            <label style="margin-left:20px;" for="title" ><?php echo __('admin.contact.status'); ?></label>
             <?php 
-              echo $this->Form->input('status', array('options' => array(1=>"No Processing",2=> "Processing",3=>"Completed"), 'empty' => '-- All --', 'class'=>'form-control', 'div'=>false,'style'=>"width:250px; display:inline;", 'label'=>false, 'id'=>'status', 'value'=>$status));
+              echo $this->Form->input('status', array('options' => array(1=>"No Processing",2=> "Processing",3=>"Completed"), 'empty' => '', 'class'=>'form-control', 'div'=>false,'style'=>"width:100px; display:inline;", 'label'=>false, 'id'=>'status', 'value'=>$status));
             ?>
+
+            <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.type-company'); ?></label>
             <?php 
-              echo $this->Form->input('type', array('options' => array(1=>"Normal",2=> "Media",3=>"Contruction Company", 4=> "Others"), 'empty' => '-- All --', 'class'=>'form-control', 'style'=>"width:250px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
+              echo $this->Form->input('type', array('options' => array(1=>"一殷のお客様",2=> "メディア関係",3=>"建設会社", 4=> "その他"), 'empty' => '', 'class'=>'form-control', 'style'=>"width:100px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
             ?>
             
-            From: <input style="width:250px; display:inline;" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            To: <input style="width:250px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
-            <div style="margin-top:20px;">Name<input style="width:250px; display:inline; " type="text" id="keyword" class="form-control" placeholder="Search" value="<?php echo $keyword; ?>">
-            Company Name<input style="width:250px; display:inline;" type="text" id="company" class="form-control" placeholder="Search" value="<?php echo $company; ?>"></div>
+            <label style="margin-left:20px;" for="title" ><?php echo __('admin.contact.created_date'); ?></label>
+            <input style="width:150px; display:inline;" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
+             -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
+            <div style="margin-top:20px;">
+            <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.username'); ?></label>
+            <input style="width:250px; display:inline; " type="text" id="keyword" class="form-control"  value="<?php echo $keyword; ?>">
+            <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.company-name'); ?></label>
+            <input style="width:250px; display:inline;" type="text" id="company" class="form-control"  value="<?php echo $company; ?>"></div>
             <!-- <select class="form-control" id="select" name="status">
                     <option value=""><font><font>All </font></font></option>
                     <option value="1"><font><font>No process yet</font></font></option>
@@ -41,7 +46,9 @@
             </select> -->
             
           </div>
-          <button style="float:right" type="button" class="btn btn-primary" id="btn-search" onclick="search()">Search</button>
+          <div>
+          <button style="float:right; margin-top:20px;" type="button" class="btn btn-primary" id="btn-search" onclick="search()"><?php echo __('admin.articles.search_button'); ?></button>
+          </div>
           <script type="text/javascript">
             function search(){
               
@@ -77,18 +84,18 @@
             <tr>
               <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
 
-              <th>No</th>
-              <th>Created</th>
-              <th>Full Name</th>
-              <th>Company</th>
-              <th>Type</th>
-              <th>Phone</th>
-              <th>Email</th>
+              <th>番号</th>
+              <th><?php echo __('admin.contact.created_date'); ?></th>
+              <th><?php echo __('user.contact.username'); ?></th>
+              <th><?php echo __('user.contact.company-name'); ?></th>
+              <th><?php echo __('user.contact.type-company'); ?></th>
+              <th><?php echo __('user.contact.company-phone'); ?></th>
+              <th><?php echo __('user.register.email'); ?></th>
               
               
               
-              <th>Status</th>
-              <th>Action</th>
+              <th><?php echo __('admin.contact.status'); ?></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -106,7 +113,7 @@
               <td><?php echo $contact['Contact']['created'] ?></td>
               <td><?php echo $contact['Contact']['first_name'].' '.$contact['Contact']['last_name']?></td>
               <td><?php echo $contact['Contact']['company'] ?></td>
-              <td><?php echo $contact['Contact']['type'] ?></td>
+              <td><?php if($contact['Contact']['type']==1) echo '一殷のお客様'; if($contact['Contact']['type']==2) echo 'メディア関係'; if($contact['Contact']['type']==3) echo '建設会社'; if($contact['Contact']['type']==4) echo 'その他';  ?></td>
               <td><?php echo $contact['Contact']['phone'] ?></td>
               <td><?php echo $contact['Contact']['email'] ?></td>
               
@@ -114,12 +121,12 @@
               
               
               <td><?php if($contact['Contact']['status']==1){echo 'No Processing';} if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></td>
-              <td><a href="<?php echo $this->webroot;?>admin/contacts/change_confirm/<?php echo $contact['Contact']['id'] ?>">View</a> </td>
+              <td><a class="btn btn-default" href="<?php echo $this->webroot;?>admin/contacts/change_confirm/<?php echo $contact['Contact']['id'] ?>"><?php echo __('admin.articles.view_button'); ?></a> </td>
             </tr>
           <?php } ?>
           </tbody>
         </table> 
-        <input id="btn-delete" type="submit" value="Delete">
+        <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="<?php echo __('admin.user.delete_button'); ?>">
         </form>
         
 
@@ -132,15 +139,16 @@
   <?php echo $this->element('admin/paginate');?>
 
 </div>
-<div id="dialog-confirm-delete" title="Delete this users?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All selected user will be deleted. Are you sure?</p>
+<div id="dialog-confirm-delete" title="削除">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>問い合わせを削除しますか？</p>
   </div>
 
   <div id="dialog-confirm-delete1" title="Confirm delete this users?">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure?</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>A問い合わせを削除すると2度と復元できません。
+問い合わせを削除しますか？</p>
   </div>
 
-  <div id="dialog-delete-message" title="Download complete">
+  <div id="dialog-delete-message" title="Delete Alert">
   <p>
     <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
     Select least one user to delete.
@@ -179,12 +187,12 @@ $(function() {
           resizable: true,
           modal: true,
           buttons: {
-            "Delete": function() {
+            "削除する": function() {
               $( "#dialog-confirm-delete1" ).dialog("open");
               $( this ).dialog( "close" );
               event.preventDefault();
             },
-            Cancel: function() {
+            'キャンセル': function() {
               agree = false;
               $( this ).dialog( "close" );
             }
@@ -195,12 +203,12 @@ $(function() {
           resizable: true,
           modal: true,
           buttons: {
-            "Delete": function() {
+            "削除する": function() {
               
               $( this ).dialog( "close" );
               $('#form').submit();
             },
-            Cancel: function() {
+            'キャンセル': function() {
               agree = false;
               $( this ).dialog( "close" );
             }
