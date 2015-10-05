@@ -441,7 +441,7 @@
 				                    </table>
 				                  </div>
 				                  </section>
-				                  
+
 				                  	<div class="link-form style">
 						                <div class="block-link">
 						                    <a href="javascript:void(0)" class="style-link" id='btn-add'><?php echo __('user.register.add'); ?></a>
@@ -698,8 +698,16 @@
 		        'data[User][month_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[User][day_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[User][married_status_id]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserAddress][post_num_1]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserAddress][post_num_2]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[UserAddress][post_num_1]': {
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+		        	maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+		        },
+		        'data[UserAddress][post_num_2]': {
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+		        	maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+		        },
 		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.required'); ?>"},
@@ -711,8 +719,16 @@
 		        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserCompany][month_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[ExpectArea][1][post_num_1]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[ExpectArea][1][post_num_2]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[ExpectArea][1][post_num_1]': {
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+		        	maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+		        },
+		        'data[ExpectArea][1][post_num_2]': {
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+		        	maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+		        },
 		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},

@@ -30,8 +30,8 @@
               echo $this->Form->input('is_published', array( 'options' => array(0=> "Draft", 1=>"Published"), 'empty' => '', 'class'=>'form-control', 'div'=>false, 'label'=>false,'style'=>'width:100px; display:inline', 'id'=>'is_published', 'value'=>$is_published));
             ?>
             <label style="margin-left:20px;" for="title" >公開日 </label>
-            <input style="width:150px; display:inline" id="date_from" name"date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            -- <input style="width:150px; display:inline;" id="date_to" name"date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>"><br/>
+            <input style="width:150px; display:inline" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
+            -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>"><br/>
             <div style="margin-top:20px;">
             <label style="margin-left:20px;" for="title" ><?php echo __('admin.articles.title'); ?></label>
             <?php echo $this->Form->input('keyword', array('type'=>'text', 'id'=>"keyword", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'value'=>$keyword, 'style'=>"width:250px; display:inline; " ))?>

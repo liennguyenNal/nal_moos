@@ -49,10 +49,10 @@
 
               <table class="table table-striped table-hover ">
                 <thead>
-                  <th><?php echo "情報種別"?></th>
-                  <th><?php echo "項目"?></th>
-                  <th><?php echo "登録状況"?></th>
-                  <th><?php echo "未記入項目"?></th>
+                  <th><?php echo __('user.my_page.object'); ?></th>
+                  <th><?php echo __('user.my_page.infomation'); ?></th>
+                  <th><?php echo __('user.my_page.status'); ?></th>
+                  <th><?php echo __('user.my_page.error_fields'); ?></th>
                   
                 </thead>
               	<tbody>
@@ -60,7 +60,7 @@
                           <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "申込人情報"; ?></td>
+                          <td><?php if($i == 1) echo __('user.my_page.customer'); ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
@@ -78,7 +78,7 @@
                           <?php $i = 0; foreach ($validations['UserPartner'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "配偶者/同居人情報"; ?></td>
+                          <td><?php if($i == 1) echo __('user.my_page.partner'); ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>
@@ -96,7 +96,7 @@
                           <?php $i = 0; foreach ($validations['UserGuarantor'] as $key => $value) { $i++; ?>
                          
                           <tr>
-                          <td><?php if($i == 1) echo "連帯保証人情報"; ?></td>
+                          <td><?php if($i == 1) echo __('user.my_page.guarantor'); ?></td>
                             <td>
                              <?php echo $value['key']?>
                             </td>

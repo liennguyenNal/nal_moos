@@ -113,6 +113,9 @@ msgstr "都道府県"
 msgid "user.register.pref"
 msgstr "都道府県"
 
+msgid "user.register.company"	
+msgstr "会社名"
+
 msgid "user.contact.username"
 msgstr "お名前"
 

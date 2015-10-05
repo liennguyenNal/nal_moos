@@ -20,22 +20,22 @@
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td>
-	                  <label for="inputEmail">申込人氏名<span style="color:red">*</span></label>
+	                  <label for="inputEmail"><?php echo __('user.register.username'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
 	                </td>
 	                <td>
 	                  <div class="form-group">
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.first_name', array('type'=>'text', 'id'=>"g_first_name", 'label'=>"姓", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('UserGuarantor.first_name', array('type'=>'text', 'id'=>"g_first_name", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false, 'required'=>false))?>
 	                   
-	                      <?php echo $this->Form->input('UserGuarantor.last_name', array('type'=>'text', 'id'=>"g_last_name", 'label'=>"名", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false , 'required'=>false))?>
+	                      <?php echo $this->Form->input('UserGuarantor.last_name', array('type'=>'text', 'id'=>"g_last_name", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false , 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('UserGuarantor.first_name_kana', array('type'=>'text', 'id'=>"g_first_name_kana", 'label'=>"セイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required'=>false))?>              
+	                      <?php echo $this->Form->input('UserGuarantor.first_name_kana', array('type'=>'text', 'id'=>"g_first_name_kana", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required'=>false))?>              
 	                                       
-	                      <?php echo $this->Form->input('UserGuarantor.last_name_kana', array('type'=>'text', 'id'=>"g_last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('UserGuarantor.last_name_kana', array('type'=>'text', 'id'=>"g_last_name_kana", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                </td>
@@ -45,41 +45,41 @@
 	                </script>
 	              </tr>
 	             <tr>
-		             <td> <label for="inputEmail">性的<span style="color:red">*</span></label></td>
+		             <td> <label for="inputEmail"><?php echo __('user.register.gender'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 		              <td>
 		                <div class="form-group">
 		                
 		                  <div class="col-lg-10">
 		                    <?php 
-		                		echo $this->Form->radio('UserGuarantor.gender', array('male'=>"男性",'female'=> "女性"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
+		                		echo $this->Form->radio('UserGuarantor.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
 		              		?>	
 		                  </div>
 		                </div>
 		              </td>
 	              </tr>
 	              <tr>
-	                <td> <label for="inputEmail" >生年月日<span style="color:red">*</span></label></td>
+	                <td> <label for="inputEmail" ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                   
 	                    <div class="col-lg-10">
 	                    	
-	                      年
+	                      <?php echo __('user.register.year'); ?>
 	                      <?php 
 	                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
 	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year',  'required'=>false));
 	                		?>
-	    	              月
+	    	              <?php echo __('user.register.month'); ?>
 	    	              <?php 
 	    	              	$months = array_combine(range(1, 12), range(1, 12));
 	                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false));
 	                		?>
-	    	              日
+	    	              <?php echo __('user.register.day'); ?>
 	    	              <?php 
 	    	              $dates = array_combine(range(1, 31), range(1, 31));
 	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
-	                      歳 : <span id="g-age-1">0</span>
+	                      <?php echo __('user.register.age'); ?> : <span id="g-age-1">0</span>
 	                    
 	                    	 <script type="text/javascript">
 		                    var d = new Date();
@@ -92,20 +92,20 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail" >同居家族<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                <div class="form-group">
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>"有り" ,"2"=> "無し"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"2"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail" >婚姻<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                <div class="form-group">
 	                
@@ -118,7 +118,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.num_children'); ?><span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.num_children'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -131,7 +131,7 @@
 	                  </td>
 	               </tr>
 	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.relation'); ?><span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.guarantor.relationship'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -152,10 +152,10 @@
 	              <legend>Address</legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
-	                <td><label for="inputEmail" >現住所<span style="color:red">*</span></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red"><?php echo __('global.require'); ?></span></td>
 	                <td>
 	                  <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*<span></label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?><span style="color:red">*<span></label>
 		                <div class="col-lg-10" >
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_1', array('type'=>'text', 'id'=>"g_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_2', array('type'=>'text', 'id'=>"g_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
@@ -164,15 +164,15 @@
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*<span></label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                  echo $this->Form->select('UserGuarantor.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_pref_id', 'empty'=>'青森県', 'required'=>false));
+		                  echo $this->Form->select('UserGuarantor.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_pref_id', 'empty'=>'--------', 'required'=>false));
 		                ?>
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*<span></label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.city'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php 
 		                    echo $this->Form->input('UserGuarantor.city', array('type'=>'text', 'id'=>"g_city", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false));
@@ -180,13 +180,13 @@
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">番地<span style="color:red">*<span></label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.street'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php echo $this->Form->input('UserGuarantor.address', array('type'=>'text', 'id'=>"g_address", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.house'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php echo $this->Form->input('UserGuarantor.house_name', array('type'=>'text', 'id'=>"g_house_name", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
 		                </div>
@@ -194,7 +194,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail">居住形態<span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.residence'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -250,26 +250,26 @@
 		              </tr> -->
 		               
 		              <tr>
-		                <td><label for="inputEmail">電話番号<span style="color:red">*</span></label></td>
+		                <td><label for="inputEmail"><?php echo __('user.contact.company-phone'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 		                <td>
 		                  <div class="form-group">
 		                    
 		                    <div class="col-lg-10">
-		                      <?php echo $this->Form->input('UserGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', 'div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
+		                      <?php echo $this->Form->input('UserGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>__('user.register.mobiphone'), 'class'=>'form-control', 'div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
 		                   
-		                      <?php echo $this->Form->input('UserGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
+		                      <?php echo $this->Form->input('UserGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>__('user.register.homephone'), 'class'=>'form-control','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
 		                    </div>
 		                  </div>
 		                  </td>
 		                </tr>
 		                <tr>
-				             <td> <label for="inputEmail">日中連絡先 <span style="color:red">*</span></label></td>
+				             <td> <label for="inputEmail"><?php echo __('user.my_page.basic_info.contact_type'); ?> <span style="color:red"><?php echo __('global.require'); ?></span></label></td>
 				              <td>
 				                <div class="form-group">
 				                
 				                  <div class="col-lg-10">
 				                    <?php 
-				                		echo $this->Form->radio('UserGuarantor.contact_type_id', array('1'=>"携帯",'2'=> "自宅",'3'=> "勤務先"), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+				                		echo $this->Form->radio('UserGuarantor.contact_type_id', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
 				              		?>	
 				                  </div>
 				                </div>
@@ -288,11 +288,11 @@
 	             <legend>連帯保証人連絡先情報</legend>
 	              <fieldset>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">職業<span style="color:red">*<span></label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
-	                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝'));
+	                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------'));
 	                  ?>
 	                  </div>
 	                </div>
@@ -313,7 +313,7 @@
 	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red">*</span></td>
 	                <td>
 	                  <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">〒</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
 		                <div class="col-lg-10" >
 		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"g_company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false))?>
 		                  <?php echo $this->Form->input('UserGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"g_company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
@@ -322,15 +322,15 @@
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php 
-		                  echo $this->Form->select('UserGuarantor.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_company_pref_id', 'empty'=>'青森県'));
+		                  echo $this->Form->select('UserGuarantor.company_pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'g_company_pref_id', 'empty'=>'--------'));
 		                ?>
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.city'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php 
 		                    echo $this->Form->input('UserGuarantor.company_city', array('type'=>'text', 'id'=>"g_company_city", 'label'=>false, 'class'=>'form-control', 'div'=>false));
@@ -338,13 +338,13 @@
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">番地</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.street'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php echo $this->Form->input('UserGuarantor.company_address', array('type'=>'text', 'id'=>"g_company_address", 'label'=>false, 'class'=>'form-control','div'=>false))?>
 		                </div>
 		              </div>
 		              <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label">建物</label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.house'); ?></label>
 		                <div class="col-lg-10">
 		                  <?php echo $this->Form->input('UserGuarantor.company_house_name', array('type'=>'text', 'id'=>"g_company_house_name", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
 		                </div>
@@ -368,9 +368,9 @@
 	                
 
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">職業</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.career'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->select('UserGuarantor.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'青森県', 'required'=>false));?>
+	                    <?php echo $this->Form->select('UserGuarantor.career_id', $careers, array('class'=>'form-control','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'--------', 'required'=>false));?>
 	                  </div>
 	                </div>
 	                <div class="form-group">
@@ -393,10 +393,10 @@
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.experience'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-	                    <?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.year'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.month'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
 	                  </div>
 	                </div>
 	               
@@ -416,7 +416,7 @@
 	                	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php 
-	                		echo $this->Form->radio('UserGuarantor.salary_type', array('1'=>"固定給",'2'=> "一部歩合制 ", '3'=>"完全歩合制", "4"=>"その他" ), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
+	                		echo $this->Form->radio('UserGuarantor.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
 	                		echo $this->Form->input('UserGuarantor.salary_type_other', array('type'=>'text', 'id'=>"g_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'required'=>false))
 	              		?>	
 	                  </div>
@@ -434,21 +434,21 @@
 
 
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">給料日</label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_receive'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php 
-		                		echo $this->Form->radio('UserGuarantor.salary_receive_id', array('1'=>"日払い",'2'=> "週払い", '3'=>'月払い'), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
-		                		echo $this->Form->input('UserGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'form-control','div'=>false, 'required'=>false))
+		                		echo $this->Form->radio('UserGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+		                		echo $this->Form->input('UserGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('user.my_page.basic_info.salary_date'), 'class'=>'form-control','div'=>false, 'required'=>false))
 		              		?>	
 	                  </div>
 	                </div>
 
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label">健康保険種別<span style="color:red">*</span></label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
-	                    echo $this->Form->select('UserGuarantor.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'正社貝', 'required'=>false));
+	                    echo $this->Form->select('UserGuarantor.insurance_id', $insurances, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'required'=>false));
 	                  ?>
 	                  </div>
 	                </div>
