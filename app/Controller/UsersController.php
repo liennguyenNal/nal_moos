@@ -990,7 +990,7 @@ class UsersController extends AppController{
      * @return response
      */
     function my_page(){
-      //$this->layout=null;
+      $this->layout="user";
       $id = $this->s_user_id;
       if($id){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 

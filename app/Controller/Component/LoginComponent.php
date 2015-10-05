@@ -66,7 +66,7 @@ class LoginComponent extends Object
        if($email && $password){
             $user = $this->controller->User->find('first', array ( 
                 'fields'=>array ( 'id', 'email', 'first_name',  'last_name', 'first_name_kana', 'last_name_kana', 'status_id' ),
-                'conditions'=>array( "User.email" => $email, "User.password" => md5($password) ) ) );
+                'conditions'=>array( "User.email" => $email, "User.password" => md5($password), 'User.is_deleted'=>0 ) ) );
         
         	if($user)
         	{
