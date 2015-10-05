@@ -8,7 +8,16 @@ if(sizeof($user['UserRelation']) >0 )
 	$len = sizeof($user['UserRelation']);
 else $len = 1;
 for($i =0; $i< $len; $i++){?>
-	<div class="content-from-block" id="relation-area-content">
+	<section id="relation-area-content">
+		
+	<section id="remove" style="display:none">
+	    <div class="link-form style" >
+	        <div class="block-link">
+	            <a href="javascript:void(0)" class="style-link" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));">- 希望エリアを削除</a>
+	        </div>
+	    </div>
+	</section>
+	<div class="content-from-block" >
 	  <div class="content-from-how">
 	    <table class="from" id="theform">
 	      <tbody>
@@ -82,14 +91,14 @@ for($i =0; $i< $len; $i++){?>
 	               		$("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
 	              			function calculate_relation_age(obj){
 	                	var age = n - obj.val();
-	                	obj.parent().parent().find('span').html(age);
+	                	obj.parent().parent().find("span[id*='p-age-<?php echo $i?>']").html(age);
 	              }
 	              </script>
 	            </div>
 	          </td>
 	        </tr>
 	        <tr>
-	          <td class="label-text"><label><?php echo __('user.my_page.guaranto.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
+	          <td class="label-text"><label><?php echo __('user.my_page.partner.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
 	          <td>
 	            <div class="block-input">
 	              <?php echo $this->Form->input("UserRelation.$i.relate", array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>"right"))
@@ -128,6 +137,7 @@ for($i =0; $i< $len; $i++){?>
 	    </table>
 	  </div>
 	</div>
+	</section>
 	<?php } ?>
 </div>
 
@@ -145,13 +155,7 @@ for($i =0; $i< $len; $i++){?>
 		</div>
 	</section> -->
 
-	<section id="remove" style="display:none">
-	    <div class="link-form style" >
-	        <div class="block-link">
-	            <a href="javascript:void(0)" class="style-link" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));">- 希望エリアを削除</a>
-	        </div>
-	    </div>
-	</section>
+	
 
 	<script type="text/javascript">
 	 	$(this).autoKana('#r_first_name_<?php echo $i?>', '#r_first_name_kana_<?php echo $i?>', {katakana:true, toggle:false});
@@ -174,9 +178,12 @@ for($i =0; $i< $len; $i++){?>
     	
       if( num_area2 < 5 ){
        var area = $('#relation-area-content').clone();
+
         area.html(area.html().replace(/\[0\]/g, '['+ order_object2 + ']' ).replace(/_0/g, '_'+ order_object2));
        	area.find("input").val('');
-       	area.prepend($('#remove').clone().html());
+       	var btn_remove = $('#remove').clone();
+       	 btn_remove.find('a').show();
+       	area.find("section").show();
        	$('<script>' + kana_script +'</' + 'script>').appendTo(area);    
         $('#relation-area').append(area);
         order_object2++;
@@ -192,7 +199,7 @@ for($i =0; $i< $len; $i++){?>
 
     function _remove_relation (obj) {
       num_area2--; 
-      obj.parent().parent().parent().remove();
+      obj.parent().parent().parent().parent().remove();
       $('#btn-add-relation').show();
     }
 	</script>
