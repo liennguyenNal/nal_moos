@@ -76,7 +76,7 @@
                 <th>番号</th>
                 <th>メールアドレス</th>
                 <th>申込人氏名</th>
-                <th>Age</th>
+                
                 <th>電話番号</th>
                 <th>性的</th>
                 <th><?php echo __('admin.user.list_header.register_date'); ?></th>
@@ -88,13 +88,13 @@
             </thead>
             <tbody>
             <?php $i = 0; foreach ($users as $user) { ?>
-            <?php if($user['User']['status_id']==2 and $user['User']['is_deleted']==0) { $i++; ?>
+            <?php if($user['User']['status_id']>=2 and $user['User']['is_deleted']==0) { $i++; ?>
               <tr>
               <td><input class="check_box" type="checkbox" name="customer_id[]" value ="<?php echo $user['User']['id'];?>" hiddenField = "false"></td>
                 <td><?php echo $i;?></td>
                 <td><?php echo $user['User']['email']; ?></td>
                 <td><?php echo $user['User']['first_name'].' '.$user['User']['last_name']; ?></td>
-                <td><?php echo $user['User']['year_of_birth']; ?></td>
+                
                  <td><?php echo $user['User']['phone']; ?></td>
                 <td><?php echo $user['User']['gender']; ?></td>
                 <td><?php echo $user['User']['created']; ?></td>
