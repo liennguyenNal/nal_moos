@@ -152,13 +152,11 @@
       <div class="col-lg-12">
       
 
-        <div class="page-header">
-          <h1 id="tables">Customers</h1>
-        </div>
+        
         <?php echo $this->element('flash');?>
         <div class="bs-component">
           
-          <table class="table table-striped table-hover ">
+          <table class="table table-striped table-hover " id="tbl_users">
             <thead>
               <tr>
                 <th><input type="checkbox" id="chk-all"></th>
@@ -221,11 +219,27 @@
           });
         
 
-            $('#btn-delete').on('click', function() {
+        $('#btn-delete').on('click', function() {
+             if ($("#tbl_users").find('input[name="ids[]"]:checked').length > 0){
+             $( "#dialog-confirm-delete" ).dialog("open");
+           }
+           else {
+             $( "#dialog-no-choose" ).dialog("open");
+           }
+         
+        });
+
+        $( "#dialog-no-choose" ).dialog({
+            autoOpen: false,
+            resizable: true,
+            modal: true,
+            buttons: {
               
-                 $( "#dialog-confirm-delete" ).dialog("open");
-             
-            });
+              OK: function() {
+                $( this ).dialog( "close" );
+              }
+            }
+          });
         $( "#dialog-confirm-delete" ).dialog({
             autoOpen: false,
             resizable: true,
@@ -340,6 +354,9 @@
     <?php echo $this->element('admin/paginate');?>
   </div>
 
+  </div>
+  <div id="dialog-no-choose" title="<?php echo __('admin.user.delete_button')?>">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Please choose least one items</p>
   </div>
   <div id="dialog-confirm-delete" title="<?php echo __('admin.user.delete_button')?>">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>

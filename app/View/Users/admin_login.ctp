@@ -31,9 +31,7 @@
     <div class="login-help">
       <p>Forgot your password? <a href="reset_password">Click here to reset it</a>.</p>
     </div>
-     <div class="login-help">
-      <p>You don't have an account? <a href="register">Click here to register it</a>.</p>
-    </div>
+     
   </section>
 
 </body>

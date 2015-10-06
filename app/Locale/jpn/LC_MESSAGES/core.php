@@ -266,7 +266,7 @@
  * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
-	//date_default_timezone_set('UTC');
+	date_default_timezone_set('UTC');
 
 /**
  * `Config.timezone` is available in which you can set users' timezone string.
@@ -383,5 +383,3 @@ Cache::config('_cake_model_', array(
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
 ));
-
-

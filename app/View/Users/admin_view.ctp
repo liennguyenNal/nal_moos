@@ -74,22 +74,25 @@
                    
                     <div class="col-lg-10">
                       
-                      <?php echo __('user.register.year')?>
+                     
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
                       echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year', 'onchange'=>'calculate_age()'));
                     ?>
-                    <?php echo __('user.register.month')?>
+                     <?php echo __('user.register.year')?>
+                    
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
                       echo $this->Form->select('month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
                     ?>
-                    <?php echo __('user.register.day')?>
+                    <?php echo __('user.register.month')?>
+                    
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
                       echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
                     ?>
-                      <?php echo __('user.register.age')?> : <span id="age">0</span>
+                    <?php echo __('user.register.day')?>
+                      &nbsp;&nbsp;&nbsp;<span id="age">0</span> <?php echo __('user.register.age')?>
                     <script type="text/javascript">
 
                     function calculate_age(){
@@ -203,7 +206,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.working_status_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'-----'));
+                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'work', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>

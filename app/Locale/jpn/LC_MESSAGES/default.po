@@ -393,7 +393,7 @@ msgid "admin.user.delete_button"
 msgstr "削除します"
 
 msgid "admin.user.charged_button"
-msgstr "Charged"
+msgstr "入金確認する"
 
 msgid "admin.user.back_button"
 msgstr "一覧へ戻る"
@@ -585,7 +585,7 @@ msgid "admin.user.approve_register.failed"
 msgstr "申込審査承認に失敗しました。"
 
 msgid "admin.user.return.successful"
-msgstr "Return User Successful"
+msgstr "差戻し【完了】"
 
 msgid "admin.user.return.failed"
 msgstr "Return  User Failed"
@@ -594,12 +594,12 @@ msgid "admin.user.not_exist"
 msgstr "User is not exist in system"
 
 msgid "admin.user.set_max_payment.successful"
-msgstr "Set Max Payment Successful"
+msgstr "上限賃金設定【完了】"
 
 msgid "admin.user.set_max_payment.failed"
 msgstr "Set Max Payment Failed"
 
-msgid "admin.user.process_payment.successful"
+msgid "保証金入金確認済み"
 msgstr "Proccess Payment Successful"
 
 msgid "admin.user.process_payment.failed"
@@ -687,6 +687,8 @@ msgstr "詳細"
 msgid "admin.articles.content"
 msgstr "内容"
 
+msgid "admin.user.save.successful"
+msgstr "保存しました"
 
 
 

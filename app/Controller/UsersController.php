@@ -73,12 +73,12 @@ class UsersController extends AppController{
           //'recursive' => 3,
           //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city'), 
           ));
-      Configure::write('debug', '2');
+      //Configure::write('debug', 0);
         $this->set('users', $users);
         var_dump($users); die;
         $this->layout = null;
        $this->autoLayout = false;
-      Configure::write('debug', ’0′);
+      Configure::write('debug', 0);
 
     }
     function admin_index(){
@@ -108,23 +108,23 @@ class UsersController extends AppController{
        if($this->params['named']['from_register']){
         $from_register = $this->params['named']['from_register'];
         $criteria .= " AND User.created > '$from_register'" ;
-        //$this->set('status', $status);
+        $this->set('from_register', $from_register);
       }
        if($this->params['named']['to_register']){
         $to_register = $this->params['named']['to_register'];
         $criteria .= " AND User.created < '$to_register'" ;
-        //$this->set('status', $status);
+        $this->set('to_register', $to_register);
       }
      
       if($this->params['named']['from_approve']){
         $from_approve = $this->params['named']['from_approve'];
         $criteria .= " AND User.approved_date > '$from_approve'" ;
-        //$this->set('status', $status);
+        $this->set('from_approve', $from_approve);
       }
       if($this->params['named']['to_approve']){
         $to_approve = $this->params['named']['to_approve'];
         $criteria .= " AND User.approved_date > '$to_approve'" ;
-        //$this->set('status', $status);
+        $this->set('to_approve', $to_approve);
       }
       //echo $criteria; die;
         $this->paginate = array(
@@ -678,10 +678,10 @@ class UsersController extends AppController{
             $this->data = $user;
             $this->set('user', $user);
           } else {
-            echo "Khong duoc 1";
+            //echo "Khong duoc 1";
           }
         } else {
-          echo "Khong co access_token va email";
+          //echo "Khong co access_token va email";
         }
       }
     }
@@ -715,18 +715,18 @@ class UsersController extends AppController{
                 }
                 else {
                   $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
-                  echo "Khong the thay doi password";
+                 // echo "Khong the thay doi password";
                 }
               }
               else {
                   $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
-                  echo "Password confirm khong dung";
+                  //echo "Password confirm khong dung";
                 }
             }
             else {
               $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
                 array('class' => 'alert alert-dismissible alert-info'));
-              echo "Do dai password sai";
+              //echo "Do dai password sai";
             }
           }
         }
@@ -741,19 +741,25 @@ class UsersController extends AppController{
      * @return response
      */
     function email_change_password() {
-      $this->layout = 'default_new';
+      //$this->layout = 'default_new';
       $user = $this->Session->read('User');
-      $user['User']['access_token'] = md5(rand(0,100));
-      $this->User->save($user, false);
+      if($user){
+        $user['User']['access_token'] = sha1($user['User']['id'].microtime());
+        if($this->User->save($user, false)){
 
-      $Email = new CakeEmail("gmail");
-      $Email->template('user_change_password');
-      $Email->emailFormat('html');
-      $Email->to($user['User']['email']);
-      $Email->from('moos@nal.vn');
-      $Email->subject("【家賃でもらえる家】パスワードの変更");
-      $Email->viewVars(array('user' => $user));
-      $Email->send();
+          $Email = new CakeEmail("gmail");
+          $Email->template('user_change_password');
+          $Email->emailFormat('html');
+          $Email->to($user['User']['email']);
+          $Email->from('moos@nal.vn');
+          $Email->subject("【家賃でもらえる家】パスワードの変更");
+          $Email->viewVars(array('user' => $user));
+          $Email->send();
+        }
+      }
+      else {
+
+      }
     }
 
 
@@ -789,7 +795,7 @@ class UsersController extends AppController{
       if($this->data['email']){
         $user = $this->User->find('first', array('conditions'=>array('User.email'=>$this->data['email']), 'contain'=>array('id')));
         if($user){
-          $hash=sha1($user['User']['username'].rand(0,100));
+          $hash=sha1($user['User']['id'].microtime());
           $this->User->id = $user['User']['id']; 
           $this->User->saveField('access_token', $hash);
 
@@ -937,9 +943,13 @@ class UsersController extends AppController{
         $this->User->set( $this->data );
         $this->UserAddress->set( $this->data );
         $this->UserCompany->set( $this->data );
-        if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
-          $this->Session->write( 'user_register', $this->data );
+        if( $this->User->validates() ){
+          //if($this->UserAddress->validates() && $this->UserCompany->validates())
+           $this->Session->write( 'user_register', $this->data );
           $this->redirect( "register_confirmation" );
+        }
+        else {
+          $this->Session->setFlash(__('global.errors.reset.email'));
         }
       }
     }
@@ -994,7 +1004,7 @@ class UsersController extends AppController{
                   $Email = new CakeEmail("gmail");
                   $Email->template('admin_register_success');
                   $Email->emailFormat('html');
-                  $Email->to('thanhvunguyenbkdn@gmail.com');
+                  $Email->to(ADMIN_EMAIL);
                   $Email->from('moos@nal.vn');
                   $Email->subject("【MOOS】会員登録通知");
                   $Email->viewVars(array('user' => $user));
@@ -1112,15 +1122,47 @@ class UsersController extends AppController{
             if($this->data['User']){              
               //update user info
               $user_info = $this->data;
+              //print_r($user_info['ExpectArea']); die;
               if($this->User->save($user_info['User'], false) && $this->UserAddress->save($user_info['UserAddress'], false) && $this->UserCompany->save($user_info['UserCompany'], false)){
-                //print_r($user_info);die;
+                $this->ExpectArea->create();
+                $old_areas = $this->ExpectArea->find('all', array('conditions'=>array('ExpectArea.user_id'=>$id)));
+                //print_r($user_info['ExpectArea']); die;
+                //delete first
+                //print_r( $user_info['ExpectArea'] ); 
+                //echo "<br>";
+                $expect_ids = array();
                 foreach ($user_info['ExpectArea'] as $item) {
 
-                  $item['user_id'] = $id;
+                  if($item['id']){
+                    array_push($expect_ids, $item['id']);
+                    //echo $item['id'];
+                  };
+                }
+              // die;
+               foreach ($old_areas as $area) {
+                  if(in_array($area['ExpectArea']['id'], $expect_ids)){
+                    //echo "Update:" .$area['ExpectArea']['id']. "<br>";
+                  }
+                  else {
+                    //echo "BI xoa:" . $area['ExpectArea']['id'] . "<br>";
+                    $this->ExpectArea->create();
+                    $this->ExpectArea->delete($area['ExpectArea']['id']);
+                  }
+                  
+                }
+                //die;
+                $num_area =  $this->ExpectArea->find('count', array('conditions'=>array('ExpectArea.user_id'=>$id)));
+                //echo $num_area;
+
+                foreach ($user_info['ExpectArea'] as $item) {
+                  if($num_area < MAX_NUM_AREA || $item['id']){
+                    $item['user_id'] = $id;
+                
                   //if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
                     $this->ExpectArea->create();
                     $this->ExpectArea->save($item, false);
                   //}
+                  }
                 }
                 //reload data
                 $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
@@ -1129,7 +1171,7 @@ class UsersController extends AppController{
                 $this->data = $user;
                 $this->Session->setFlash(__('user.register.update_basic_info.successfull'),'default', array('class' => 'alert alert-dismissible alert-success'));
               }
-                    
+              
              
               
             }
@@ -1197,7 +1239,7 @@ class UsersController extends AppController{
             'UserContact'=> array('key'=>__('user.dashboard.user.contact'), 'error'=>0, 'fields'=>array()),
             'UserCompany'=> array('key'=>__('user.dashboard.user.company'), 'error'=>0, 'fields'=>array()),
             'UserDebt'=> array('key'=>__('user.dashboard.user.debt'), 'error'=>0, 'fields'=>array()),
-            'UserResidence'=>array('key'=>__('user.dashboard.user.residence'), 'error'=>0, 'fields'=>array()),
+            //'UserResidence'=>array('key'=>__('user.dashboard.user.residence'), 'error'=>0, 'fields'=>array()),
             'ExpectArea'=>array('key'=>__('user.dashboard.user.expect_area'), 'error'=>0, 'fields'=>array())
           ),
         'UserPartner'=>array(
@@ -1315,15 +1357,20 @@ class UsersController extends AppController{
         if( !$this->ExpectArea->validates()){
           $result['error'] = 1;
           foreach ($this->ExpectArea->invalidFields() as $key => $value) {
+            //echo $key;
             if(array_key_exists($key, $user_expect_area_fields)){
                  array_push($result['User']['ExpectArea']['fields'], $user_expect_area_fields[$key]);
                 $result['User']['ExpectArea']['error'] = 1;
              }
           }
+          //die;
         }
       }
       else {
         $result['User']['ExpectArea']['error'] = 1;
+         foreach ($user_expect_area_fields as $key => $value) {
+            array_push($result['User']['ExpectArea']['fields'], $value);
+         }
       }
 
 
@@ -1588,7 +1635,7 @@ class UsersController extends AppController{
             $result['UserAttachment']['error'] = 1;
             $result['UserAttachment']['error_msg'] = "";
       }
-
+      //print_r($result['UserAttachment']); die;
 
       return $result;
     }    
@@ -1646,10 +1693,11 @@ class UsersController extends AppController{
       }
     }
 
+    // submit register 2
     function update_account_info(){
        $id = $this->s_user_id;
       if($id){
-       //echo $id; die;
+        //echo $id; die;
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
         $this->data = $user;
         //validate before save
