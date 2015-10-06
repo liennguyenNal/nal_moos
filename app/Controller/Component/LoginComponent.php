@@ -87,6 +87,7 @@ class LoginComponent extends Object
                         $this->controller->redirect('/users/my_page');
                 }
         		else {
+                    $this->controller->Session->delete('User');
                     $this->controller->set('login_error_msg', 'This account is reject by admin');
                        
                 }

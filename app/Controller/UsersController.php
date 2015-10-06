@@ -972,49 +972,58 @@ class UsersController extends AppController{
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
                 $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
-                if( $this->User->save( $user, false ) ){
-                  $user_id = $this->User->getLastInsertId();
-                  foreach ($user['ExpectArea'] as $item) {
-                    $item['user_id'] = $user_id;
-                    $this->ExpectArea->create();
-                    $this->ExpectArea->save($item, false);
+                $this->User->set($user);
+                if($this->User->save->validates()){
+                  if( $this->User->save( $user, false ) ){
+                    $user_id = $this->User->getLastInsertId();
+                    foreach ($user['ExpectArea'] as $item) {
+                      $item['user_id'] = $user_id;
+                      $this->ExpectArea->create();
+                      $this->ExpectArea->save($item, false);
+                    }
+
+                    $user = $this->User->read(null, $user_id);
+                    $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
+                    $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
+
+                    /**
+                     * SEND EMAIL TO CUSTOMER
+                     * @var CakeEmail
+                     */
+                    $Email = new CakeEmail("gmail");
+                    $Email->template('user_register_success');
+                    $Email->emailFormat('html');
+                    $Email->to($user['User']['email']);
+                    $Email->from('moos@nal.vn');
+                    $Email->subject("【家賃でもらえる家】無料会員登録");
+                    $Email->viewVars(array('user' => $user));
+                    $Email->send();
+
+                    /**
+                     * SEND EMAIL TO ADMIN
+                     * @var CakeEmail
+                     */
+                    $Email = new CakeEmail("gmail");
+                    $Email->template('admin_register_success');
+                    $Email->emailFormat('html');
+                    $Email->to(ADMIN_EMAIL);
+                    $Email->from('moos@nal.vn');
+                    $Email->subject("【MOOS】会員登録通知");
+                    $Email->viewVars(array('user' => $user));
+                    $Email->send();
+
+                    $this->redirect( "register_successful" );
+                  } else {
+                    $this->UserAddress->delete($this->UserAddress->getLastInsertId());
+                    $this->UserCompany->delete($this->UserCompany->getLastInsertId());
+                    $this->redirect( "register" );
                   }
-
-                  $user = $this->User->read(null, $user_id);
-                  $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
-                  $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
-
-                  /**
-                   * SEND EMAIL TO CUSTOMER
-                   * @var CakeEmail
-                   */
-                  $Email = new CakeEmail("gmail");
-                  $Email->template('user_register_success');
-                  $Email->emailFormat('html');
-                  $Email->to($user['User']['email']);
-                  $Email->from('moos@nal.vn');
-                  $Email->subject("【家賃でもらえる家】無料会員登録");
-                  $Email->viewVars(array('user' => $user));
-                  $Email->send();
-
-                  /**
-                   * SEND EMAIL TO ADMIN
-                   * @var CakeEmail
-                   */
-                  $Email = new CakeEmail("gmail");
-                  $Email->template('admin_register_success');
-                  $Email->emailFormat('html');
-                  $Email->to(ADMIN_EMAIL);
-                  $Email->from('moos@nal.vn');
-                  $Email->subject("【MOOS】会員登録通知");
-                  $Email->viewVars(array('user' => $user));
-                  $Email->send();
-
-                  $this->redirect( "register_successful" );
-                } else {
-                  $this->UserAddress->delete($this->UserAddress->getLastInsertId());
-                  $this->UserCompany->delete($this->UserCompany->getLastInsertId());
+                }
+                else {
+                  $this->data = $user;
+                   $this->Session->setFlash(__('global.errors.reset.email'));
                   $this->redirect( "register" );
+
                 }
             } else {
               $this->data = $user;
