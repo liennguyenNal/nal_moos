@@ -66,10 +66,10 @@
              <?php if($user['User']['status_id'] == "3"){?>
               <button type="button" class="btn btn-warning" id="btn-reject"> <?php echo __('admin.user.reject_button')?></button>
 
-              <button type="button" class="btn btn-success" id="btn-approve"><?php echo __('admin.user.approve_main_button')?></button>
+              <button type="button" class="btn btn-success" id="btn-approve"><?php echo __('admin.user.approve_button')?></button>
               <button type="button" class="btn btn-primary" id="btn-return"><?php echo __('admin.user.return_button')?></button>
               <?php } else if($user['User']['status_id'] == "4"){?>
-                       <button type="button" class="btn btn-primary" id="btn-return"><?php echo __('admin.user.charged_button')?></button>
+                       <button type="button" class="btn btn-primary" id="btn-charged"><?php echo __('admin.user.charged_button')?></button>
               <?php }?>
             <?php } ?>   
               <button type="button" class="btn btn-default" id="btn-cancel" style="float:right"><?php echo __('admin.user.back_button')?></button>
@@ -147,7 +147,7 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "Reject": function() {
+                  "却下": function() {
                     window.location.href='<?php echo $this->webroot;?>admin/users/reject/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
@@ -254,7 +254,7 @@
   </div>
   
   <div id="dialog-confirm-return" class="modal-dialog" title="差戻し">
-    <p>This account will be return the customer </p>
+ 
     <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
       <fieldset>

@@ -378,16 +378,16 @@ msgid "admin.register_users.infomation"
 msgstr "Register Users"
 
 msgid "admin.user.reject_button"
-msgstr "Reject User"
+msgstr "拒絶します"
 
 msgid "admin.user.reject_register.button"
 msgstr "拒絶します"
 
 msgid "admin.user.approve_button"
-msgstr "Register Users"
+msgstr "承認する"
 
 msgid "admin.user.approve_register_button"
-msgstr "Register Users"
+msgstr "承認する"
 
 msgid "admin.user.delete_button"
 msgstr "削除します"
@@ -400,6 +400,9 @@ msgstr "一覧へ戻る"
 
 msgid "admin.user.cancel_button"
 msgstr "キャンセル"
+
+msgid "admin.user.return_button"
+msgstr "差戻す"
 
 msgid "admin.user.status"
 msgstr "申し込み状況"
