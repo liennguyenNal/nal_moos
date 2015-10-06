@@ -332,12 +332,12 @@
                       <div class="form-w">
                         <div class="block-input-radio">
                         <?php 
-                          echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right')); 
+                          echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'id'=>'salary_receive')); 
                         ?>
                         </div>
                         <div class="style-a">
                           <label ><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
-                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>'日', 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right" ))
+                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right" ))
                           ?> 
                           <label><?php echo __('global.date'); ?></label>
                         </div>
@@ -682,15 +682,25 @@
       'data[UserPartner][company_fax]': {
         number: true
       },
+      'data[UserPartner][salary_type_other]': {
+        required: function(element){
+          return $("#salary_type").val()!="4";
+        }
+      },
+      'data[UserPartner][salary_date]': {
+        required: function(element){
+          return $("#salary_receive").val()!="3";
+        }
+      },
       'data[UserPartner][year_worked]': {number: true},
       'data[UserPartner][month_worked]': {number: true},
       'data[UserPartner][income_month]': {number: true},
       'data[UserPartner][income_year]': {number: true},
-      'data[UserPartner][salary_date]': {number: true},
       'data[UserRelation][0][phone]': {number: true}
     },
     messages: {
-
+      'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+      'data[UserPartner][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

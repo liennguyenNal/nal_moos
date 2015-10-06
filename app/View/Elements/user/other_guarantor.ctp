@@ -468,7 +468,7 @@
 										<div class="form-w">
 											<div class="block-input-radio">
 												<?php 
-							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right')); 
+							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'id'=>'salary_receive')); 
 							                	?>
 											</div>
 											<div class="style-a">
@@ -640,7 +640,16 @@
         'data[OtherGuarantor][month_worked]': {number: true},
         'data[OtherGuarantor][income_month]': {number: true},
         'data[OtherGuarantor][income_year]': {number: true},
-        'data[OtherGuarantor][salary_date]': {number: true}
+        'data[OtherGuarantor][salary_type_other]': {
+        required: function(element){
+          		return $("#salary_type").val()!="4";
+        	}
+      	},
+      	'data[OtherGuarantor][salary_date]': {
+        	required: function(element){
+          	return $("#salary_receive").val()!="3";
+        	}
+      	}
     },
     messages: {
     	'data[OtherGuarantor][post_num_1]': {
@@ -658,7 +667,9 @@
     	'data[OtherGuarantor][company_post_num_2]': {
     		minlength: "<?php echo __('global.errors.minlength_4'); ?>",
     		maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
-    	}
+    	},
+    	'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+    	'data[OtherGuarantor][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();
@@ -671,24 +682,24 @@
     submitHandler: function(form) {
        var url = "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor"; // the script where you handle the form input.
 
-                      $.ajax({
-                             type: "POST",
-                             url: url,
-                             data: $("#OtherGuarantorEdit").serialize(), // serializes the form's elements.
-                             success: function(result)
-                             {
-                                 og_edit = 0;
-                                 $('#other_guarantor').html(result);
-                                 $.ajax({
-                                   url: "<?php echo $this->webroot?>users/reload_dashboard",
-                                    success: function(result){
-                                      $('#home').html(result);
-                                    }
-                                });
-                             }
-                           });
+      $.ajax({
+             type: "POST",
+             url: url,
+             data: $("#OtherGuarantorEdit").serialize(), // serializes the form's elements.
+             success: function(result)
+             {
+                 og_edit = 0;
+                 $('#other_guarantor').html(result);
+                 $.ajax({
+                   url: "<?php echo $this->webroot?>users/reload_dashboard",
+                    success: function(result){
+                      $('#home').html(result);
+                    }
+                });
+             }
+           });
 
-                      return false; // avoid to execute the actual submit of the form.
+      return false; // avoid to execute the actual submit of the form.
     }
   });
   jQuery.extend(jQuery.validator.messages, {

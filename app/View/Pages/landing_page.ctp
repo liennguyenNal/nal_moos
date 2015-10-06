@@ -158,7 +158,7 @@
 				              <div class="block-warning" id="error-section" style="display:none">
 				                <?php echo __('global.errors'); ?>
 				              </div>
-				              <?php echo $this->Form->create('Page', array('action'=>'/landing_page', 'id' => 'lp-register', 'inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after' )))); ?>
+				              <?php echo $this->Form->create('Page', array('action'=>'/landing_page', 'id' => 'lp-register', 'inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false )))); ?>
 				                <div class="content-from-block">
 				                  <div class="content-from-how">
 				                    <table class="from">
@@ -540,8 +540,8 @@
 		    if( num_area < 5 ){
 		      var area = $('#expect-area-content').clone(true, true);
 		      area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
-		      area.prepend($('#remove').clone().html());
-      		  $('#expect-area').append(area);
+		      area.prepend($('#remove').clone(true, true).html());
+		      $('#expect-area').append(area);
 		      $('#form-register').validate();
 		      $("[id^='post_num_1']").each(function() {
 		          $(this).rules("add", 
@@ -603,8 +603,7 @@
 		    }
 		  });
 
-		  $.validator.addMethod(
-		    "phone_number",
+		  $.validator.addMethod( "phone_number",
 		    function(value, element, regexp) {
 		        var re = new RegExp(regexp);
 		        return this.optional(element) || re.test(value);
@@ -612,12 +611,29 @@
 		    "携帯電話を正しく入力してください。"
 		  );
 
+		  $.validator.addMethod("nospace", 
+		    function(value, element) { 
+		      return value.indexOf(" ") < 0 && value != ""; 
+		    }, "スペースは入力しないでください。");
+
 		  $("#lp-register").validate({
 		      rules: {
-		        'data[Page][first_name]': {required: true},
-		        'data[Page][last_name]': {required: true},
-		        'data[Page][first_name_kana]': {required: true},
-		        'data[Page][last_name_kana]': {required: true},
+		        'data[Page][first_name]': {
+		          required: true,
+		          nospace: true
+		        },
+		        'data[Page][last_name]': {
+		          required: true,
+		          nospace: true
+		        },
+		        'data[Page][first_name_kana]': {
+		          required: true,
+		          nospace: true
+		        },
+		        'data[Page][last_name_kana]': {
+		          required: true,
+		          nospace: true
+		        },
 		        'data[Page][gender]': {required: true},
 		        'data[Page][year_of_birth]': {required: true},
 		        'data[Page][month_of_birth]': {required: true},
@@ -665,7 +681,9 @@
 		        },
 		        'data[UserCompany][month_worked]': {
 		          required: true,
-		          number: true
+		          number: true,
+		          min: 0,
+		          max: 11
 		        },
 		        'data[UserCompany][salary_year]': {
 		          required: true,
@@ -699,14 +717,14 @@
 		        'data[Page][day_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][married_status_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][post_num_1]': {
-		        	required: "<?php echo __('global.errors.required'); ?>",
-		        	minlength: "<?php echo __('global.errors.minlength_3'); ?>",
-		        	maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+		          required: "<?php echo __('global.errors.required'); ?>",
+		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+		          maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		        },
 		        'data[UserAddress][post_num_2]': {
-		        	required: "<?php echo __('global.errors.required'); ?>",
-		        	minlength: "<?php echo __('global.errors.minlength_4'); ?>",
-		        	maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+		          required: "<?php echo __('global.errors.required'); ?>",
+		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
 		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
@@ -717,28 +735,31 @@
 		        'data[User][email_confirm]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserCompany][month_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[UserCompany][month_worked]': {
+		          required: "<?php echo __('global.errors.required'); ?>",
+		          min: "<?php echo __('global.errors.month.min'); ?>",
+		          max: "<?php echo __('global.errors.month.max') ?>"
+		        },
 		        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][post_num_1]': {
-		        	required: "<?php echo __('global.errors.required'); ?>",
-		        	minlength: "<?php echo __('global.errors.minlength_3'); ?>",
-		        	maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+		          required: "<?php echo __('global.errors.required'); ?>",
+		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+		          maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		        },
 		        'data[ExpectArea][1][post_num_2]': {
-		        	required: "<?php echo __('global.errors.required'); ?>",
-		        	minlength: "<?php echo __('global.errors.minlength_4'); ?>",
-		        	maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+		          required: "<?php echo __('global.errors.required'); ?>",
+		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
 		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[User][agree]': {required: "<?php echo __('global.errors.required'); ?>"}
+		        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
 		      },
 		      invalidHandler: function(event, validator) {
 		        var errors = validator.numberOfInvalids();
 		        if (errors) {
 		          $("#error-section").show();
-		          $('#form-contact').find('.tooltip-inner').append('<p></p>');
 		        } else {
 		          $("#error-section").hide();
 		        }
@@ -750,6 +771,8 @@
 		        number: "<?php echo __('global.errors.number'); ?>"
 		  });
 		</script>
+
+		
 
 	</div>
 	<footer id="footer-container">

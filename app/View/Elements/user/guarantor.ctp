@@ -469,7 +469,7 @@
 										<div class="form-w">
 											<div class="block-input-radio">
 												<?php 
-							                		echo $this->Form->radio('UserGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right')); 
+							                		echo $this->Form->radio('UserGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'id'=>'salary_receive')); 
 							                	?>
 											</div>
 											<div class="style-a">
@@ -628,7 +628,17 @@
         'data[UserGuarantor][year_worked]': {number: true},
         'data[UserGuarantor][month_worked]': {number: true},
         'data[UserGuarantor][income_month]': {number: true},
-        'data[UserGuarantor][income_year]': {number: true}
+        'data[UserGuarantor][income_year]': {number: true},
+        'data[UserGuarantor][salary_type_other]': {
+        required: function(element){
+          		return $("#salary_type").val()!="4";
+        	}
+      	},
+      	'data[UserGuarantor][salary_date]': {
+        	required: function(element){
+          	return $("#salary_receive").val()!="3";
+        	}
+      	}
     },
     messages: {
     	'data[UserGuarantor][post_num_1]': {
@@ -646,7 +656,9 @@
     	'data[UserGuarantor][company_post_num_2]': {
     		minlength: "<?php echo __('global.errors.minlength_4'); ?>",
     		maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
-    	}
+    	},
+    	'data[UserGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+    	'data[UserGuarantor][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();
