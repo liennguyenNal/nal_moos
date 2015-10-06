@@ -6,7 +6,7 @@
   </div>
   <div class="title-sup-page">
     <div class="container-fluid">
-      <h3>Email successfully</h3>
+      <h3><?php echo __('user.email_change_password.label_successful'); ?></h3>
     </div>
   </div>
   <div class="from-login">
@@ -17,10 +17,10 @@
             <div class="content-from">
               <form action="">
                 <div class="content-from-block">
-                  <p class="note fix-font">※ A email to change password be sent to your email.</p>
+                  <p class="note fix-font"><?php echo __('user.email_change_password.message_successful'); ?></p>
                   <div class="block-note">
                     <div class="block-button">
-                      <button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ" onclick="location.href='<?php echo $this->webroot; ?>'"/></button>
+                      <a href="<?php echo $this->webroot; ?>/users/login"><button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>
                     </div>
                   </div>
                 </div>

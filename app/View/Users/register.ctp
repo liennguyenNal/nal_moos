@@ -30,7 +30,8 @@
               <div class="block-warning" id="error-section" style="display:none">
                 <?php echo __('global.errors'); ?>
               </div>
-              <?php echo $this->Form->create('User', array('action'=>'/register', 'id' => 'form-register')); ?>
+              <?php echo $this->Form->create('User', array('action'=>'/register', 'id' => 'form-register', 'inputDefaults' => array(
+        'format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false)))); ?>
                 <div class="content-from-block">
                   <div class="content-from-how">
                     <table class="from">
@@ -87,7 +88,7 @@
                           <td>
                             <div class="select">
                               <?php 
-                                $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
+                                $years = array_combine(range(1900, date("Y")), range(1900, date("Y")));
                                 echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
                               ?>
                               <span><?php echo __('user.register.year'); ?></span>
@@ -175,7 +176,7 @@
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
                               <?php 
-                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right'));
+                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
                               ?>
                             </div>
                             <div class="block-input">
@@ -216,7 +217,7 @@
                           <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right'))
+                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
                             ?>    
                             <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
                           </td>
@@ -356,8 +357,6 @@
                         $('#btn-add').show();
                     }
 
-                  
-                  
                 </script>
                 <!-- End script -->
 
@@ -473,8 +472,7 @@
     }
   });
 
-  $.validator.addMethod(
-    "phone_number",
+  $.validator.addMethod( "phone_number",
     function(value, element, regexp) {
         var re = new RegExp(regexp);
         return this.optional(element) || re.test(value);
@@ -482,12 +480,29 @@
     "携帯電話を正しく入力してください。"
   );
 
+  $.validator.addMethod("nospace", 
+    function(value, element) { 
+      return value.indexOf(" ") < 0 && value != ""; 
+    }, "スペースは入力しないでください。");
+
   $("#form-register").validate({
       rules: {
-        'data[User][first_name]': {required: true},
-        'data[User][last_name]': {required: true},
-        'data[User][first_name_kana]': {required: true},
-        'data[User][last_name_kana]': {required: true},
+        'data[User][first_name]': {
+          required: true,
+          nospace: true
+        },
+        'data[User][last_name]': {
+          required: true,
+          nospace: true
+        },
+        'data[User][first_name_kana]': {
+          required: true,
+          nospace: true
+        },
+        'data[User][last_name_kana]': {
+          required: true,
+          nospace: true
+        },
         'data[User][gender]': {required: true},
         'data[User][year_of_birth]': {required: true},
         'data[User][month_of_birth]': {required: true},
@@ -535,7 +550,9 @@
         },
         'data[UserCompany][month_worked]': {
           required: true,
-          number: true
+          number: true,
+          min: 0,
+          max: 11
         },
         'data[UserCompany][salary_year]': {
           required: true,
@@ -587,7 +604,11 @@
         'data[User][email_confirm]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
-        'data[UserCompany][month_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
+        'data[UserCompany][month_worked]': {
+          required: "<?php echo __('global.errors.required'); ?>",
+          min: "<?php echo __('global.errors.month.min'); ?>",
+          max: "<?php echo __('global.errors.month.max') ?>"
+        },
         'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[ExpectArea][1][post_num_1]': {
           required: "<?php echo __('global.errors.required'); ?>",
@@ -602,7 +623,7 @@
         'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.required'); ?>"},
         'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
-        'data[User][agree]': {required: "<?php echo __('global.errors.required'); ?>"}
+        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
       },
       invalidHandler: function(event, validator) {
         var errors = validator.numberOfInvalids();
@@ -620,6 +641,7 @@
         number: "<?php echo __('global.errors.number'); ?>"
   });
 </script>
+
 
 
 

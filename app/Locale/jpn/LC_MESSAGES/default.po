@@ -159,9 +159,6 @@ msgstr "必須項目です。</br>全角で入力してください。"
 msgid "global.errors.email"
 msgstr "メールアドレスを正しく入力してください。"
 
-msgid "global.errors.email"
-msgstr "メールアドレスを正しく入力してください。"
-
 msgid "global.errors.password"
 msgstr "必須項目です。</br>半角英数字で入力してください。</br>8文字以上で入力してください。"
 
@@ -348,6 +345,9 @@ msgstr "３桁以下にご入力ください。"
 msgid "global.errors.minlength_4"	
 msgstr "４桁以下にご入力ください。"
 
+msgid "global.errors.maxlength_2"	
+msgstr "2桁以下にご入力ください。"
+
 msgid "user.my_page.guarantor.relationship"	
 msgstr "申込人との関係"
 
@@ -409,7 +409,6 @@ msgstr "申し込み状況"
 
 msgid "admin.user.pref"
 msgstr "都道府県"
-
 
 msgid "admin.user.list_header.no"
 msgstr "番号"
@@ -474,17 +473,11 @@ msgstr "申込人 住所情報"
 msgid "user.dashboard.user.contact"
 msgstr "申込人 連絡先情報"
 
-msgid "user.dashboard.user.contact"
-msgstr "申込人 住所情報"
-
 msgid "user.dashboard.user.company"
 msgstr "申込人 住所情報"
 
 msgid "user.dashboard.user.debt"
 msgstr "申込人 借入金情報"
-
-msgid "user.dashboard.user.debt"
-msgstr "申込人 住所情報"
 
 msgid "user.dashboard.user.residence"
 msgstr "申込人 住所情報"
@@ -520,17 +513,16 @@ msgid "user.attachment.user.file_attachment"
 msgstr "ご本人様確認書類"
 
 msgid "user.dashboard.user.post_num_1"
-msgstr "Post Num 1"
+msgstr "郵便番号"
 
 msgid "user.dashboard.user.post_num_2"
-msgstr "Post Num 2"
+msgstr "郵便番号"
 
 msgid "user.dashboard.user.month_worked"
-msgstr "Month worked"
+msgstr "勤続年数"
 
 msgid "user.dashboard.user.year_worked"
-msgstr "Year worked"
-
+msgstr "勤続月数"
 
 msgid "user.register.update_basic_info.successfull"
 msgstr "Updated successful"
@@ -549,7 +541,6 @@ msgstr "Password Confirmation is not match"
 
 msgid "admin.user.reject.successful"
 msgstr "申込審査を却下しました。"
-
 
 msgid "admin.user.reject_reister.successful"
 msgstr "申込審査を却下しました。"
@@ -594,7 +585,7 @@ msgid "admin.user.not_exist"
 msgstr "User is not exist in system"
 
 msgid "admin.user.set_max_payment.successful"
-msgstr "上限賃金設定【完了】"
+msgstr "上限賃料設定【完了】"
 
 msgid "admin.user.set_max_payment.failed"
 msgstr "Set Max Payment Failed"
@@ -653,7 +644,6 @@ msgstr "新規作成"
 msgid "admin.articles.search_button"
 msgstr "検索"
 
-
 msgid "admin.articles.view_button"
 msgstr "詳細"
 
@@ -687,10 +677,36 @@ msgstr "詳細"
 msgid "admin.articles.content"
 msgstr "内容"
 
+<<<<<<< HEAD
+msgid "global.errors.required_checkbox"
+msgstr "上記内容に同意します。※"
+
+msgid "global.errors.month.min"
+msgstr "０より大きいな数字をご入力ください。"
+
+msgid "global.errors.month.max"
+msgstr "11より小さいな数字をご入力ください。"
+
+msgid "global.errors.reset.email"
+msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
+
+msgid "global.errors.create.password"
+msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
+
+msgid "user.contact_successful.message_successful"
+msgstr "フォームで入力されたメールアドレス宛に確認メールが送信されておりますので、ご確認ください。後ほど、弊社担当者よりご連絡差し上げます。</br>※お問い合わせの内容により、回答に時間がかかる場合がございます。また、いただいたメールすべてにお返事を差し上げられない場合があります。あらかじめご了承下さい。"
+
+msgid "user.contact_successful.label_successful"
+msgstr "お問合せ変更"
+
 msgid "admin.user.save.successful"
 msgstr "保存しました"
 
+msgid "user.email_change_password.label_successful"
+msgstr "パスワード変更"
 
+msgid "user.email_change_password.message_successful"
+msgstr "ご登録頂いたメールアドレスに、パスワード設定用野’リンクを送信しました。メールに記載されたリンクをクリックし、パスワードを設定してください。"
 
 
 

@@ -481,7 +481,7 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'required'=>false)); 
+                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'required'=>false, 'id'=>'salary_receive')); 
                             ?>
                           </div>
                           <div class="style-a">
@@ -812,6 +812,11 @@
         return this.optional(element) || re.test(value);
     }, "携帯電話を正しく入力してください。" );
 
+    $.validator.addMethod("integer_number", function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }, "Please enter positive integer number" );
+
     $("#UserEditBasicInfo").validate({
         rules: {
             // 'data[User][first_name]': {required: true},
@@ -824,7 +829,11 @@
             // 'data[User][day_of_birth]': {required: true},
             // 'data[User][married_status_id]': {required: true},
             // 'data[User][live_with_family]': {required: true},
-            'data[User][num_child]': {number: true},
+            'data[User][num_child]': {
+              number: true,
+              maxlength: 2,
+              integer_number: "^[0-9]*$"
+            },
             'data[UserAddress][post_num_1]': {number: true, minlength: 3, maxlength: 3},
             'data[UserAddress][post_num_2]': {number: true, minlength: 4, maxlength: 4},
             // 'data[UserAddress][city]': {required: true},
@@ -861,10 +870,18 @@
             // 'data[UserCompany][position]': {required: true},
             'data[UserCompany][year_worked]': {number: true},
             'data[UserCompany][month_worked]': {number: true},
-            // 'data[UserCompany][salary_type_other]': {required: true},
+            'data[UserCompany][salary_type_other]': {
+              required: function(element){
+                return $("#salary_type").val()!="4";
+              }
+            },
             'data[UserCompany][salary_month]': {number: true},
             'data[UserCompany][salary_year]': {number: true},
-            'data[UserCompany][salary_date]': {number: true},
+            'data[UserCompany][salary_date]': {
+              required: function(element){
+                return $("#salary_receive").val()!="3";
+              }
+            },
             'data[User][debt_count]': {number: true},
             'data[User][debt_total_value]': {number: true},
             'data[User][debt_pay_per_month]': {number: true},
@@ -877,7 +894,10 @@
             'data[UserAddress][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
             'data[UserAddress][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
             'data[UserCompany][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
-            'data[UserCompany][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"}
+            'data[UserCompany][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
+            'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+            'data[UserCompany][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
+            'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
         },
         tooltip_options: {
           

@@ -949,7 +949,7 @@ class UsersController extends AppController{
           $this->redirect( "register_confirmation" );
         }
         else {
-          $this->Session->setFlash(__('global.errors.reset.email'));
+          $this->Session->setFlash(__('global.errors.reset.email'), 'default');
         }
       }
     }

@@ -111,9 +111,12 @@ class PagesController extends AppController {
         $this->User->set( $this->data );
         $this->UserAddress->set( $this->data );
         $this->UserCompany->set( $this->data );
-        if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
+        if( $this->User->validates() ){
           $this->Session->write( 'user_register', $this->data );
           $this->redirect( "register_successful" );
+        }
+        else {
+          $this->Session->setFlash(__('global.errors.reset.email'), 'default');
         }
       }
 	}

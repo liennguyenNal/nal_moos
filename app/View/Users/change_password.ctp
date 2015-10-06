@@ -129,23 +129,29 @@
   <!-- SCRIPT VALIDATION -->
   <script>
     $.validator.addMethod(
-      "password",
+      "password_regex",
       function(value, element, regexp) {
           var re = new RegExp(regexp);
           return this.optional(element) || re.test(value);
       },
-      "Please type valid password"
+      "必須項目です。</br>半角英数字で入力してください。</br>8文字以上で入力してください。"
     );
+
+    $.validator.addMethod("nospace", 
+      function(value, element) { 
+        return value.indexOf(" ") < 0 && value != ""; 
+      }, "スペースは入力しないでください。");
+
     $("#form-change-password").validate({
       rules: {
         'data[User][password]': {
           required: true,
-          password: "^[a-z0-9_.-]",
+          password_regex: "^[a-z0-9_.-]",
+          nospace: true,
           minlength: 8
         },
         'data[User][confirm_password]': {
           required: true,
-          password: "^[a-z0-9_.-]",
           equalTo: "#password"
         }
       },

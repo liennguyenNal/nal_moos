@@ -200,13 +200,15 @@
         required: function(element) {
           return !$("#home_phone").val();
         },
-        phone_number: "^0[0-9]{9}",
+        number: true,
+        phone_number: "^0[0-9]{9}"
       },
       'data[Contact][home_phone]': {
         required: function(element) {
            return  !$("#phone").val();
         },
-        phone_number: "[0-9]{11}",
+        number: true,
+        phone_number: "[0-9]{11}"
       },
       'data[Contact][email]': { required: true, email: true },
       'data[Contact][email_confirm]': { required: true, equalTo: '#email' },
@@ -224,7 +226,7 @@
       'data[Contact][email]': { required: "<?php echo __('global.errors.required'); ?>" },
       'data[Contact][email_confirm]': { required: "<?php echo __('global.errors.required'); ?>" },
       'data[Contact][content]': { required: "<?php echo __('global.errors.required'); ?>" },
-      'data[Contact][agree]': { required: "<?php echo __('global.errors.required'); ?>" },
+      'data[Contact][agree]': { required: "<?php echo __('global.errors.required_checkbox'); ?>" },
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();
@@ -237,6 +239,7 @@
   });
   jQuery.extend(jQuery.validator.messages, {
       email: "<?php echo __('global.errors.email'); ?>",
-      equalTo: "<?php echo __('global.errors.equalTo'); ?>"
+      equalTo: "<?php echo __('global.errors.equalTo'); ?>",
+      number: "<?php echo __('global.errors.number'); ?>"
   });
 </script>
