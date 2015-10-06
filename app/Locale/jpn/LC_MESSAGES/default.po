@@ -393,7 +393,7 @@ msgid "admin.user.delete_button"
 msgstr "削除します"
 
 msgid "admin.user.charged_button"
-msgstr "Charged"
+msgstr "入金確認する"
 
 msgid "admin.user.back_button"
 msgstr "一覧へ戻る"
@@ -576,7 +576,7 @@ msgid "admin.user.approve_register.failed"
 msgstr "申込審査承認に失敗しました。"
 
 msgid "admin.user.return.successful"
-msgstr "Return User Successful"
+msgstr "差戻し【完了】"
 
 msgid "admin.user.return.failed"
 msgstr "Return  User Failed"
@@ -590,7 +590,7 @@ msgstr "上限賃料設定【完了】"
 msgid "admin.user.set_max_payment.failed"
 msgstr "Set Max Payment Failed"
 
-msgid "admin.user.process_payment.successful"
+msgid "保証金入金確認済み"
 msgstr "Proccess Payment Successful"
 
 msgid "admin.user.process_payment.failed"
@@ -677,6 +677,7 @@ msgstr "詳細"
 msgid "admin.articles.content"
 msgstr "内容"
 
+<<<<<<< HEAD
 msgid "global.errors.required_checkbox"
 msgstr "上記内容に同意します。※"
 
@@ -697,6 +698,9 @@ msgstr "フォームで入力されたメールアドレス宛に確認メール
 
 msgid "user.contact_successful.label_successful"
 msgstr "お問合せ変更"
+
+msgid "admin.user.save.successful"
+msgstr "保存しました"
 
 msgid "user.email_change_password.label_successful"
 msgstr "パスワード変更"

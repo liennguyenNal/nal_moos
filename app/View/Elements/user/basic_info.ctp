@@ -513,6 +513,7 @@
                       ?>
                     </td>
                   </tr>
+                  <?php echo $this->Form->hidden('UserCompany.id')?>
                 </tbody>
               </table>
             </div>
@@ -586,7 +587,7 @@
                             <span class="w-auto1">-</span>
                             <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
-                            <a type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
+                            <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_area_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.pref'); ?></span>
@@ -634,8 +635,10 @@
                 $(this).autoKana('#first_name', '#first_name_kana', {katakana:true, toggle:false});
                 $(this).autoKana('#last_name', '#last_name_kana', {katakana:true, toggle:false});
                 $(this).autoKana("#b_company_name", "#b_company_name_kana", {katakana:true, toggle:false});
-                function find_address(obj){
-                   var p =  obj.parent().parent().parent();
+                function find_area_address(obj){
+                  //alert('find_area_address');
+                   var p =  obj.parent().parent();
+                   //alert(p.html());
                    var zip_code = p.find("input[id*='post_num_1']").val().trim() + p.find("input[id*='post_num_2']").val().trim();
                       
                     $.getJSON('<?php echo $this->webroot;?>zipcode/find_address', {zipcode: zip_code}, 
@@ -676,14 +679,15 @@
                 $('#btn-cancel-user-info').show();
                 $('#btn-save-user-info').show();
                   
-                 
+               
                 $('#btn-edit-user-info').hide();
               }
             });
 
                $('#btn-edit-user-info').on('click', function() {
                   
-                  $('#UserEditBasicInfo').find(':input').prop('disabled',false);
+                  $('#UserEditBasicInfo').find(':input:not(#email)').prop('disabled',false);
+
                   $('#UserEditBasicInfo').find('a').show();
                   $('#btn-cancel-user-info').show();
                   $('#btn-save-user-info').show();
@@ -727,6 +731,7 @@
 
     $('#btn-add').on('click', function() {
        // alert(num_area);
+      order_object1++;
     if( num_area1 < 5 ){
       var area = $('#expect-area-content-1').clone();
       area.html(area.html().replace(/\[1\]/g, '['+ order_object1 + ']' ));
@@ -785,7 +790,7 @@
       //       }
       //     });
       // });
-      order_object1++;
+      
       num_area1++;
       if(num_area1 == 5){
         $('#btn-add').hide();

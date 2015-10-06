@@ -85,15 +85,26 @@ class AppController extends Controller {
             $user = $this->Session->read('User');
             //print_r($user);die;
             if($user){
+                 $this->layout = 'user';
                  $this->set('s_user_id', $this->s_user_id);
                 $this->set('s_first_name', $this->s_first_name);
                 $this->set('s_last_name', $this->s_last_name);
                 //$this->set('s_first_name_kana', $this->s_first_name);
                 //$this->set('s_first_name', $this->s_first_name);
                 //$this->set('s_fullname', $this->s_fullname);
-              
+                //
+                //echo $this->action; die;
+                if(!$this->request->is('ajax')){
+                    if($this->action != "my_page" && $this->action != "logout" &&
+                         $this->action != "change_password_successful" && $this->action != "email_change_password" && $this->action != "update_account_info"){
+                        //echo 1111; die;   
+                        $this->redirect("/users/my_page");
+                    }
+                }
+
             }
-            $this->layout = 'default_new';
+            else 
+                $this->layout = 'default_new';
         }
         
     }

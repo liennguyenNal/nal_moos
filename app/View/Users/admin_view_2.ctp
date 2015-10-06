@@ -106,6 +106,11 @@
                    $( "#dialog-confirm-approve" ).dialog("open");
                 
               });
+                $('#btn-charged').on('click', function() {
+                
+                   $( "#dialog-confirm-charged" ).dialog("open");
+                
+              });
                $('#btn-cancel').on('click', function() {
                 
                    window.location.href='<?php echo $this->webroot;?>admin/users';
@@ -173,7 +178,21 @@
                   }
                 }
               });
-
+              $( "#dialog-confirm-charged" ).dialog({
+                autoOpen: false,
+                resizable: true,
+                modal: true,
+                buttons: {
+                  "確認する": function() {
+                    window.location.href='<?php echo $this->webroot;?>admin/users/process_payment/<?php echo $user['User']['id']?>';
+                    $( this ).dialog( "close" );
+                  },
+                   'キャンセル': function() {
+                    agree = false;
+                    $( this ).dialog( "close" );
+                  }
+                }
+              });
 
               function return_user(){
                 // var required_update = $('#chk-required-update').val();
@@ -278,6 +297,9 @@
         <?php $this->Form->hidden('User.id')?>
       </fieldset>
     </form>
+  </div>
+  <div id="dialog-confirm-charged" title="保証金入金確認">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>保証金入金を確認しますか？</p>
   </div>
   <style type="text/css" media="screen">
     .dialog-checkox {

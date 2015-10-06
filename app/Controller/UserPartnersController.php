@@ -45,16 +45,49 @@ class UserPartnersController extends AppController {
 
 						// $valid = $this->UserPartner->validates();
 						// if($valid){
-							
+						$relation_ids = array();
 						if($this->UserPartner->save($user_partner, false)){
+							$old_relations = $this->UserRelation->find('all', array('conditions'=>array('UserRelation.user_id'=>$user_id)));
+							//delete first
 							foreach ($user_partner['UserRelation'] as $item) {
-								//print_r($item); die;
-			                    $item['user_id'] = $user_id;
-			                    $this->UserRelation->create();
-			                    if(!$this->UserRelation->save($item, false)) {
+								if($item['id'])array_push($relation_ids, $item['id']);
+							}
+							 foreach ($old_relations as $relation) {
+			                	if(in_array($relation['UserRelation']['id'], $relation_ids)){
+			                		
+			                	}
+			                	else {
+			                		
+			                		$this->UserRelation->create();
+			                		$this->UserRelation->delete($relation['UserRelation']['id']);
+			                	}
+			                	
+			                }
 
-			                    }
-			                  }
+
+							$num_relation =  $this->UserRelation->find('count', array('conditions'=>array('UserRelation.user_id'=>$user_id)));
+							//echo $num_relation;
+							//save thong tin nguoi o cung
+							foreach ($user_partner['UserRelation'] as $item) {
+								if($num_relation < MAX_NUM_RELATION || $item['id'] ){
+				                    $item['user_id'] = $user_id;
+				                    
+				                    $this->UserRelation->create();
+
+				                    if($this->UserRelation->save($item, false)) {
+
+				                    	if(!$item['id']){
+				                    		$relation_id = $this->UserRelation->getLastInsertId();
+				                    		$num_relation++;
+				                    	}
+				                    	else $relation_id = $item['id'];
+				                    	
+				                    }
+				                }
+			                }
+			                //print_r($relation_ids);die;
+			               
+			                //die;
 
 							if(!$partner_id)
 								$partner_id = $this->UserPartner->getLastInsertId();
@@ -68,10 +101,6 @@ class UserPartnersController extends AppController {
 							}
 						}
 							
-						
-
-					
-
 
 				}
 				else {
