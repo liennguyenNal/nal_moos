@@ -3,7 +3,7 @@
   <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
       <div class="welcome-sup-page">
         <div class="container-fluid">
-          <h2>ようこそ<a href="#">MOOS</a>様</h2>
+          <h2>ようこそ<a href="#"><?php echo $user['User']['first_name'];?></a>様</h2>
         </div>
       </div>
       <div class="content-tab">
