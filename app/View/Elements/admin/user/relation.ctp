@@ -15,7 +15,7 @@ for($i =0; $i< $len; $i++){?>
 	      <table class="table table-striped table-hover ">
 	        <tr>
 	          <td>
-	            <label><?php echo __('user.partner.name'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
+	            <label><?php echo __('user.partner.name'); ?></label>
 	          </td>
 	          <td>
 	            <div class="form-group">
@@ -36,7 +36,7 @@ for($i =0; $i< $len; $i++){?>
 	          </td>
 	        </tr>
 	        <tr>
-	           <td> <label ><?php echo __('user.register.gender'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	           <td> <label ><?php echo __('user.register.gender'); ?></label></td>
 	            <td>
 	              <div class="form-group">
 	              
@@ -49,7 +49,7 @@ for($i =0; $i< $len; $i++){?>
 	            </td>
 	          </tr>
 	          <tr>
-	            <td> <label ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	            <td> <label ><?php echo __('user.register.birthday'); ?></label></td>
 	            <td>
 	              <div class="form-group">
 	               
@@ -102,7 +102,7 @@ for($i =0; $i< $len; $i++){?>
 	              </td>
 	            </tr>
 	            <tr>
-	            <td><label for="company"><?php echo __('user.partner.info'); ?><span style="color:red">*</span></label></td>
+	            <td><label for="company"><?php echo __('user.partner.info'); ?></label></td>
 	            <td>
 	              <div class="form-group">
 	                

@@ -1,5 +1,5 @@
 <script src="<?php echo $this->webroot;?>js/jquery.fileupload.js"></script>
-<?php echo $this->element('flash');?>
+<?php echo $this->element('flash_success');?>
 <div class="title-tab">
   <h3>会員マイページトップ</h3>
 </div>
@@ -46,24 +46,28 @@
       </tr>
 
       <!-- Basic info --> 
+      <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?> 
       <tr>
-        <td RowSpan="6" class="color-b"><?php echo __('user.my_page.customer'); ?></td>
-        <?php $i = 0; foreach ($validations['User'] as $key => $value) { $i++; ?> 
+        <?php if($i == 1){?>
+          <td RowSpan="6" class="color-b"><?php echo __('user.my_page.customer'); ?></td>
+        <?php }?>
+        <?php if($value['key']){?>
         <td><?php echo $value['key']?></td>
         <?php if ($value['error'] == 1) { ?>
-        <td class="color-b">
-          <span><?php echo __('user.my_page.status.un_completed'); ?></span>
-        </td>
+          <td class="color-b">
+            <span><?php echo __('user.my_page.status.un_completed'); ?></span>
+          </td>
         <?php } else { ?>
-        <td class="color-b">
-          <?php echo __('user.my_page.status.completed'); ?>
-        </td>
+          <td class="color-b">
+            <?php echo __('user.my_page.status.completed'); ?>
+          </td>
         <?php } ?>
         <td>
           <?php foreach ($value['fields'] as $value) {
             echo $value . ", ";
           }?>
         </td>
+        <?php }?>
       </tr>
       <?php } ?>
       <!-- End basic info -->
