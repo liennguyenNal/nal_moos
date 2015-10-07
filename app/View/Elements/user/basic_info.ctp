@@ -438,15 +438,15 @@
                             <script type="text/javascript">
                                 function change_type(obj){
                                     if(obj.val() == '4')
-                                    $('#salary_type_other').prop('disabled',false);
+                                      $('#salary_type_other').prop('disabled',false);
                                     else {
-                                      $('#salary_type_other').prop('disabled',true);
+                                      $('#salary_type_other').val("").prop('disabled',true);
                                     }
                                 }
                             </script>  
                           </div>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'required'=>false, 'style'=>'width: 100px'))
+                                echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=> $user['UserCompany']['salary_type'] == 4? false: true , 'data-placement'=>'right', 'required'=>false, 'style'=>'width: 100px'))
                             ?>
                         </div>
                         </div>
@@ -489,14 +489,14 @@
                                   if(obj.val() == '3')
                                   $('#salary_date').prop('disabled',false);
                                   else {
-                                    $('#salary_date').prop('disabled',true);
+                                    $('#salary_date').val("").prop('disabled',true);
                                   }
                               }
                           </script>
                           <div class="style-a">
                             <label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'required'=>false)) 
+                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'required'=>false, 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
                             ?>
                             <label for="11"><?php echo __('global.date'); ?></label>
                           </div>
@@ -574,7 +574,7 @@
           <section id="expect-area">
           <?php $i = 0; foreach($user['ExpectArea'] as $item){ $i++;?>
                 <div class="content-from-how" id="expect-area-content-<?php echo $i; ?>">
-                <?php if($i > 1){?>
+                <?php if( $i > 1 ) {?>
                      <div class="link-form style" >
                         <div class="block-link">
                             <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));">- 希望エリアを削除</a>
@@ -591,28 +591,28 @@
                         <td>
                           <div class="block-input">
                             <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', 'div'=>false, 'value'=>$item['post_num_1'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1_" . $i,'label'=>false, 'class'=>'w40', 'div'=>false, 'value'=>$item['post_num_1'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
                             <span class="w-auto1">-</span>
-                            <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2_" . $i,  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
                             <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_area_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.pref'); ?></span>
                             <div class="select">
-                                <?php echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'value'=>$item['pref_id'], 'required'=>false, 'data-placement'=>'right'));
+                                <?php echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id' . $i, 'empty'=>'--------', 'value'=>$item['pref_id'], 'required'=>false, 'data-placement'=>'right'));
                                 ?>
                             </div>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.city'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false))
+                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city". $i, 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false))
                             ?>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.street'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', 'div'=>false, 'value'=>$item['address'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address". $i, 'label'=>false, 'class'=>'w198', 'div'=>false, 'value'=>$item['address'], 'required'=>false, 'data-placement'=>'right'))
                             ?>
                             <?php echo $this->Form->hidden("ExpectArea.$i.id", array('value'=>$item['id']))?>
                           </div>
@@ -697,11 +697,13 @@
                   
                   $('#UserEditBasicInfo').find(':input:not(#email)').prop('disabled',false);
 
+                  $('#salary_type_other').prop('disabled', $('input[name="data[UserCompany][salary_type]"]:checked').val() != "4" );
+
+                  $('#salary_date').prop('disabled', $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() != "3" );
+
                   $('#UserEditBasicInfo').find('a').show();
                   $('#btn-cancel-user-info').show();
                   $('#btn-save-user-info').show();
-                  
-                 
                   $('#btn-edit-user-info').hide();
                   edit = 1;
 
@@ -743,13 +745,14 @@
       order_object1++;
     if( num_area1 < 5 ){
       var area = $('#expect-area-content-1').clone();
-      area.html(area.html().replace(/\[1\]/g, '['+ order_object1 + ']' ));
-      area.find("input").val('');
+
+      area.html(area.html().replace(/\[1\]/g, '['+ order_object1 + ']' ).replace('id="post_num_1_1"', 'id="post_num_1_'+ order_object1  + '"' ).replace('id="post_num_2_1"', 'id="post_num_2_'+ order_object1  + '"' ) );
+
+ area.find("input").val('');
       area.prepend($('#remove').clone().html());
       $('#expect-area').append(area);
       $('#UserEditBasicInfo').validate();
-      $("[id^='post_num_1']").each(function() {
-          $(this).rules("add", 
+      $("#post_num_1_" + order_object1 ).rules("add", 
           { 
             number: true,
             minlength: 3,
@@ -759,9 +762,7 @@
                 maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
             }
           });
-      });
-      $("[id^='post_num_2']").each(function() {
-          $(this).rules("add", 
+      $("#post_num_2_" + order_object1 ).rules("add", 
           { 
             number: true,
             minlength: 4,
@@ -771,8 +772,7 @@
               maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
             }
           });
-      });
-      // $("[id^='pref_id']").each(function() {
+            // $("[id^='pref_id']").each(function() {
       //     $(this).rules("add", 
       //     { 
       //       required: true,
@@ -828,10 +828,10 @@
 
     $("#UserEditBasicInfo").validate({
         rules: {
-            'data[User][first_name]': {required: true},
-            'data[User][last_name]': {required: true},
-            'data[User][first_name_kana]': {required: true},
-            'data[User][last_name_kana]': {required: true},
+            //'data[User][first_name]': {required: true},
+            //'data[User][last_name]': {required: true},
+            //'data[User][first_name_kana]': {required: true},
+            //'data[User][last_name_kana]': {required: true},
             // 'data[User][gender]': {required: true},
             // 'data[User][year_of_birth]': {required: true},
             // 'data[User][month_of_birth]': {required: true},
@@ -917,8 +917,10 @@
             'data[User][debt_count]': {number: true},
             'data[User][debt_total_value]': {number: true},
             'data[User][debt_pay_per_month]': {number: true},
-            'data[ExpectArea][1][post_num_1]': {number: true, minlength: 3, maxlength: 3},
-            'data[ExpectArea][1][post_num_2]': {number: true, minlength: 4, maxlength: 4}
+            <?php for( $i = 1; $i <= sizeof($user['ExpectArea']); ++$i ) {  ?>
+            'data[ExpectArea][<?php echo $i ?>][post_num_1]': {number: true, minlength: 3, maxlength: 3},
+            'data[ExpectArea][<?php echo $i ?>][post_num_2]': {number: true, minlength: 4, maxlength: 4},
+            <?php } ?>
             // 'data[ExpectArea][1][pref_id]': {required: true},
             // 'data[ExpectArea][1][city]': {required: true}
         },

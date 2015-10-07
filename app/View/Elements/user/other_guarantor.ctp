@@ -428,13 +428,13 @@
 					                                    if(obj.val() == '4')
 					                                    $('#og_salary_type_other').prop('disabled',false);
 					                                    else {
-					                                      $('#og_salary_type_other').prop('disabled',true);
+					                                      $('#og_salary_type_other').val("").prop('disabled',true);
 					                                    }
 					                                }
 					                            </script>  
 					                          </div>
 					                            <?php 
-					                                echo $this->Form->input('OtherGuarantor.salary_type_other', array('type'=>'text', 'id'=>"og_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'style'=>'width: 100px'))
+					                                echo $this->Form->input('OtherGuarantor.salary_type_other', array('type'=>'text', 'id'=>"og_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=> $user['OtherGuarantor']['salary_type'] != 4, 'data-placement'=>'right', 'style'=>'width: 100px'))
 					                            ?>
 											</div>
 										</div>
@@ -476,14 +476,14 @@
 				                                    if(obj.val() == '3')
 				                                    $('#og_salary_date').prop('disabled',false);
 				                                    else {
-				                                      $('#og_salary_date').prop('disabled',true);
+				                                      $('#og_salary_date').val("").prop('disabled',true);
 				                                    }
 				                                }
 				                            </script>  
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>
@@ -559,9 +559,9 @@
                       $('#OtherGuarantorEdit').find('a').show();
                       $('#btn-cancel-other-guarantor').show();
                       $('#btn-save-other-guarantor').show();
-                      
-                     
                       $('#btn-edit-other-guarantor').hide();
+                      $('#og_salary_type_other').prop('disabled', $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() != 4);
+                		$('#og_salary_date').prop('disabled', $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() != 3);
                       og_edit = 1;
 
                    });
@@ -600,9 +600,19 @@
     },
     "携帯電話を正しく入力してください。"
   );
+
+  	$.validator.addMethod("integer_number", function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }, "半角数字で入力してください。" );
+
   $("#OtherGuarantorEdit").validate({
     rules: {
-    	'data[OtherGuarantor][num_child]': {number: true},
+    	'data[OtherGuarantor][num_child]': {
+    		number: true,
+          	maxlength: 2,
+          	integer_number: "^[0-9]*$"
+    	},
     	'data[OtherGuarantor][post_num_1]': {
     		number: true,
     		minlength: 3,
@@ -692,7 +702,8 @@
     	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
     	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
     	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
-    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"}
+    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
+    	'data[OtherGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

@@ -280,28 +280,19 @@
                             echo $this->Form->radio('UserPartner.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'p_change_type($(this))', 'data-placement'=>'right'));
                           ?>
                         <script type="text/javascript">
-                            function g_change_type(obj){
+                            function p_change_type(obj){
                                 if(obj.val() == '4')
-                                $('#g_salary_type_other').prop('disabled',false);
+                                $('#p_salary_type_other').prop('disabled',false);
                                 else {
-                                  $('#g_salary_type_other').prop('disabled',true);
+                                  $('#p_salary_type_other').val("").prop('disabled',true);
                                 }
                             }
                         </script>  
                       </div>
                         <?php 
-                            echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'style'=>'width: 100px', 'required'=>false))
+                            echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=> $user['UserPartner']['salary_type'] != 4, 'data-placement'=>'right', 'style'=>'width: 100px', 'required'=>false))
                         ?>
                       </div>
-                      <script type="text/javascript">
-                          function p_change_type(obj){
-                              if(obj.val() == '4')
-                              $('#p_salary_type_other').prop('disabled',false);
-                              else {
-                                $('#p_salary_type_other').prop('disabled',true);
-                              }
-                          }
-                      </script>
                     </div>
                   </td>
                 </tr>
@@ -340,13 +331,13 @@
                               if(obj.val() == '3')
                               $('#p_salary_date').prop('disabled',false);
                               else {
-                                $('#p_salary_date').prop('disabled',true);
+                                $('#p_salary_date').val("").prop('disabled',true);
                               }
                           }
                       </script>
                         <div class="style-a">
                           <label ><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
-                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right" ))
+                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right", 'disabled'=> $user['UserPartner']['salary_receive_id'] != 3 ))
                           ?> 
                           <label><?php echo __('global.date'); ?></label>
                         </div>
@@ -584,6 +575,10 @@
                 $('#btn-cancel-partner').show();
                 $('#btn-save-partner').show();
                 $('#btn-edit-partner').hide();
+
+                $('#p_salary_type_other').prop('disabled', $('input[name="data[UserPartner][salary_type]"]:checked').val() != 4);
+                $('#p_salary_date').prop('disabled', $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() != "3");
+                
                 pedit = 1;
              });
 
