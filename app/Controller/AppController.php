@@ -96,7 +96,8 @@ class AppController extends Controller {
                 //echo $this->action; die;
                 if(!$this->request->is('ajax')){
                     if($this->action != "my_page" && $this->action != "logout" &&
-                         $this->action != "change_password_successful" && $this->action != "email_change_password" && $this->action != "update_account_info"){
+                         $this->action != "change_password_successful" && $this->action != "email_change_password" && $this->action != "update_account_info" 
+                         && $this->action != "reset_password" && $this->action != "reset_link" && $this->action != "reset_link_after"){
                         //echo 1111; die;   
                         $this->redirect("/users/my_page");
                     }

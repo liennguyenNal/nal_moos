@@ -320,7 +320,7 @@ class UsersController extends AppController{
       //$id = $this->s_user_id;
       if($id){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
-          'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+          'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'OtherGuarantor','UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
         $this->data = $user;
 
         $married_statuses = $this->MarriedStatus->find( 'list' );
@@ -509,8 +509,11 @@ class UsersController extends AppController{
       }
     }
     function admin_return($user_id){
+
       $user = $this->User->read(null, $user_id);
+      //print_r($this->data); die;
       if($user['User']['status_id'] == "3"){
+        
         if($this->data){
           $comment = $this->data['User']['comment']; 
          $requireds =  $this->data['User']['required'] ;
@@ -519,7 +522,7 @@ class UsersController extends AppController{
               $user['User']['need_more_guarantor'] = 1;
             }  
           }
-     
+         // print_r($this->data); die;
 
           $user['User']['status_id'] = 2;
           if($this->User->save($user, false)){
@@ -1719,16 +1722,31 @@ class UsersController extends AppController{
         //validate before save
         $validations = $this->_validate($user);
         if(!$validations['error']){
+          //echo 2; die;
           $user['User']['status_id'] = 3;
           $user['User']['updated_date'] = DboSource::expression('NOW()');
           if($this->User->save($user, false)){
-            //send mail
+            //send mail to user
             $Email = new CakeEmail('gmail');
             $Email->template('update_account');
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
             $Email->from('moos@nal.vn');
             $Email->subject(__('admin.email.update_account.title'));
+            $Email->viewVars(array('user' => $user));
+            $Email->send();
+
+            //send mail to admin
+            $Email = new CakeEmail('gmail');
+            $Email->template('admin_update_account');
+            $Email->emailFormat('html');
+            $Email->to(ADMIN_EMAIL);
+            $Email->from('moos@nal.vn');
+            $Email->subject(__('admin.email.update_account.title'));
+             $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
+              'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment', 'ExpectArea.Pref'),
+              'recursive'=>3
+              ));
             $Email->viewVars(array('user' => $user));
             $Email->send();
 
@@ -1740,6 +1758,12 @@ class UsersController extends AppController{
           else {
             $this->Session->setFlash("Cannot Save Data", 'default',array('class' => 'alert alert-dismissible alert-info"'));
           }
+
+        }
+        else {
+          echo 111; die;
+          $this->Session->setFlash('Cannot submit account','default', array('class' => 'alert alert-dismissible alert-info'));
+          $this->redirect('my_page');
 
         }
       }

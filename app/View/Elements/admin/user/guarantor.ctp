@@ -209,7 +209,7 @@
 	              </tr>
 	               
 	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?><span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -220,17 +220,7 @@
 	                </td>
 	              </tr>
 	               
-	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.house_cost'); ?></label></td>
-	                <td>
-	                  <div class="form-group">
-	                    
-	                    <div class="col-lg-10">                 
-	                      <?php echo $this->Form->input('UserGuarantor.housing_cost', array('type'=>'text', 'id'=>"housing_cost",'label'=>false, 'class'=>'form-control', 'div'=>false, 'required'=>false))?>
-	                    </div>
-	                  </div>
-	                </td>
-	              </tr>
+	             
 	               
 	              </table>
 	            </fieldset>
