@@ -66,7 +66,7 @@ class User extends AppModel {
             
         ), 
         'num_child' => array(
-               'rule' => 'notBlank',
+               'rule' => 'check_married',
                 'message'=>'This field is required'
             
         ), 
@@ -185,6 +185,14 @@ class User extends AppModel {
          if($check) return true; 
          return false;
        //return true;
+    }
+
+    function check_married(){
+        if($this->data[$this->alias]['married_status_id'] == 1){
+            if($this->data[$this->alias]['num_child'])return true;
+            else return false;
+        }
+        return true;
     }
 
 

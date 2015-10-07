@@ -38,12 +38,26 @@ class CustomersController extends AppController {
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
         $criteria .= " AND User.created >= '$date_from'" ;
-        $this->set('date_from', $date_from);
+        $date_form_1= explode('-',$date_from);
+        $from_year_register= $date_form_1[0];
+        $from_month_register= $date_form_1[1];
+        $from_day_register= $date_form_1[2];
+
+        $this->set('from_year_register', $from_year_register);
+        $this->set('from_month_register', $from_month_register);
+        $this->set('from_day_register', $from_day_register);
       }
       if($this->params['named']['date_to']){
         $date_to = $this->params['named']['date_to'];
         $criteria .= " AND User.created <= '$date_to' " ;
-        $this->set('date_to', $date_to);
+        $date_to_1= explode('-',$date_to);
+        $to_year_register= $date_to_1[0];
+        $to_month_register= $date_to_1[1];
+        $to_day_register= $date_to_1[2];
+
+        $this->set('to_year_register', $to_year_register);
+        $this->set('to_month_register', $to_month_register);
+        $this->set('to_day_register', $to_day_register);
       }
       
         $this->paginate = array(

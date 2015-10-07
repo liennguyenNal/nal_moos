@@ -27,8 +27,34 @@
               //echo $this->Form->input('type', array('options' => array(1=>"Normal",2=> "Media",3=>"Contruction Company", 4=> "Others"), 'empty' => '-- All --', 'class'=>'form-control', 'style'=>"width:250px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
             ?>
             
-            <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> <input style="width:150px; display:inline;" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>">
+            <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> 
+            <?php 
+              $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+              echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_year_register));
+            ?>
+           
+            <?php 
+              $months = array_combine(range(1, 12), range(1, 12));
+              echo $this->Form->select('from_month_register', $months, array('id'=>'from-month-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_month_register));
+            ?>
+            <?php 
+                $dates = array_combine(range(1, 31), range(1, 31));
+                echo $this->Form->select('from_day_register', $dates, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_day_register));
+              ?>  
+            <p style="width:50px; display:inline; padding:10px"> <b>~ </b> </p>
+                <?php 
+                  $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+                  echo $this->Form->select('to_year_register', $years, array('id'=>'to-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$to_year_register));
+                ?>
+               
+                <?php 
+                  $months = array_combine(range(1, 12), range(1, 12));
+                  echo $this->Form->select('to_month_register', $months, array('id'=>'to-month-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$to_month_register));
+                ?>
+                <?php 
+                    $dates = array_combine(range(1, 31), range(1, 31));
+                    echo $this->Form->select('to_day_register', $dates, array('id'=>'to-day-register', 'data-placement' => 'right','empty'=>"-----",  'value'=>$to_day_register));
+                  ?> 
             <div style="margin-top:20px;">
              <label style="margin-left:20px;" for="title" >申込人氏名</label>
              <input style="width:250px; display:inline; " type="text" id="keyword" class="form-control"  value="<?php echo $keyword; ?>">
@@ -36,15 +62,24 @@
              <input style="width:150px; display:inline;" type="text" id="email" class="form-control"  value="<?php echo $email; ?>"></div>
             
           </div>
-          <div style="margin-top:10px;"><button style="float:right" type="button" class="btn btn-primary" id="btn-search" onclick="search()"><?php echo __('admin.articles.search_button'); ?></button></div>
+          <button style=" margin-left:50px; float:right" type="button" class="btn btn-primary" id="btn-search" onclick="search()"><?php echo __('admin.articles.search_button'); ?></button>
           <script type="text/javascript">
             function search(){
+
+              var from_register ;
+                    if($("#from-year-register").val() && $("#from-month-register").val() && $("#from-day-register").val()){
+                      from_register = $("#from-year-register").val() + "-" + $("#from-month-register").val() + "-" + $("#from-day-register").val();
+                    }
+
+            var to_register ;
+                    if($("#to-year-register").val() && $("#to-month-register").val()  && $("#to-day-register").val())
+                      to_register= $("#to-year-register").val() + "-" + $("#to-month-register").val() + "-" + $("#to-day-register").val();
               
               var url = '<?php echo $this->webroot; ?>admin/customers/index';
               if($('#keyword').val() != '') url = url + '/keyword:' + $('#keyword').val();
               if($('#email').val() != '') url = url + '/email:' + $('#email').val();
-              if($('#date_from').val() != '') url = url + '/date_from:' + $('#date_from').val();
-              if($('#date_to').val() != '') url = url + '/date_to:' + $('#date_to').val();
+              if(from_register) url = url + '/date_from:' + from_register;
+              if(to_register) url = url + '/date_to:' + to_register;
 
 
               window.location.href = url ;
@@ -116,7 +151,7 @@
           <div class="form-group">
                 <div class="col-lg-12 col-lg-offset-0">
                  
-                  <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="<?php echo __('admin.user.delete_button'); ?>">
+                  <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
                 </div>
               </div>
           </div>

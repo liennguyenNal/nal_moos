@@ -63,12 +63,28 @@ class ContactsController extends AppController {
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
         $criteria .= " AND Contact.created >= '$date_from'" ;
-        $this->set('date_from', $date_from);
+        $date_form_1= explode('-',$date_from);
+        $from_year_register= $date_form_1[0];
+        $from_month_register= $date_form_1[1];
+        $from_day_register= $date_form_1[2];
+
+        $this->set('from_year_register', $from_year_register);
+        $this->set('from_month_register', $from_month_register);
+        $this->set('from_day_register', $from_day_register);
+        //$this->set('date_from', $date_from);
       }
       if($this->params['named']['date_to']){
         $date_to = $this->params['named']['date_to'];
         $criteria .= " AND Contact.created <= '$date_to' " ;
-        $this->set('date_to', $date_to);
+        $date_to_1= explode('-',$date_to);
+        $to_year_register= $date_to_1[0];
+        $to_month_register= $date_to_1[1];
+        $to_day_register= $date_to_1[2];
+
+        $this->set('to_year_register', $to_year_register);
+        $this->set('to_month_register', $to_month_register);
+        $this->set('to_day_register', $to_day_register);
+        //$this->set('date_to', $date_to);
       }
 
       // $conditions = array();
@@ -157,8 +173,9 @@ class ContactsController extends AppController {
 
           $this->Contact->id = $contact['Contact']['id']; 
           $this->Contact->saveField('status', $contact['Contact']['status']);
+          $this->Contact->saveField('updated', date("Y-m-d H:i:s"));
           $this->Contact->saveField('comment', $contact['Contact']['comment']);
-          $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
+          $this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
           $this->redirect( 'change_confirm/'.$contact['Contact']['id'] );
 
         }
@@ -191,7 +208,7 @@ class ContactsController extends AppController {
          if($contact){
           //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            $this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("view/".$this->data['Contact']['id']);
           }
         }
@@ -215,7 +232,7 @@ class ContactsController extends AppController {
         if($contact){
           //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            $this->Session->setFlash('You have update status for this Contact','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            $this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("index");
           }
         }

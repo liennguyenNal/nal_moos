@@ -387,7 +387,7 @@ msgid "admin.user.approve_register_button"
 msgstr "承認する"
 
 msgid "admin.user.delete_button"
-msgstr "削除します"
+msgstr "削除"
 
 msgid "admin.user.charged_button"
 msgstr "入金確認する"
@@ -408,19 +408,19 @@ msgid "admin.user.pref"
 msgstr "都道府県"
 
 msgid "admin.user.list_header.no"
-msgstr "番号"
+msgstr "登録NO"
 
 msgid "admin.user.list_header.id"
-msgstr "番号"
+msgstr "UserID (e-mail)"
 
 msgid "admin.user.list_header.name"
-msgstr "番号"
+msgstr "名前"
 
 msgid "admin.user.list_header.work"
-msgstr "番号"
+msgstr "職業"
 
 msgid "admin.user.list_header.age"
-msgstr "番号"
+msgstr "年齢"
 
 msgid "admin.user.list_header.pref"
 msgstr "都道府県"
@@ -429,10 +429,10 @@ msgid "admin.user.list_header.city"
 msgstr "市区町村"
 
 msgid "admin.user.list_header.income_month"
-msgstr "月収"
+msgstr "収入"
 
 msgid "admin.user.list_header.status"
-msgstr "申し込み状況"
+msgstr "申込み状況"
 
 msgid "admin.user.list_header.register_date"
 msgstr "登録申込日"
@@ -806,6 +806,7 @@ msgstr "全角カタカナで入力してください。"
 
 msgid "global.errors.basic_info.lastnamekana"	
 msgstr "全角カタカナで入力してください。"
+
 
 
 

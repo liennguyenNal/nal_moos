@@ -15,7 +15,7 @@
       	<?php echo $this->Form->create("Contact", array('action'=>'index', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
-              <legend>お問い合わせフオ一ム <?php if($contact['Contact']['status']==1){echo 'No Processing';}if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></legend>
+              <legend>問合せ 変更</legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label"><?php echo __('user.contact.username'); ?></label>
                 <div class="col-lg-10">
@@ -98,6 +98,12 @@
                 <div class="col-lg-10">
                   <?php echo $contact['Contact']['created'];?>
                 </div>
+              </div> 
+              <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">更新日時</label>
+                <div class="col-lg-10">
+                  
+                </div>
               </div>            
               
              
@@ -125,9 +131,9 @@
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
 
-                      <button type="submit" class="btn btn-primary" id="btn-change">Edit Contact</button>
+                      <button type="submit" class="btn btn-primary" id="btn-change">確認画面へ</button>
                       
-                      <button type="button" class="btn btn-default" id="btn-cancel" >一覧へ戻る</button>
+                      <button type="button" class="btn btn-default" id="btn-cancel" >キャンセル</button>
                     </div>
                     <script type="text/javascript">
                       $(document).ready(function(){ 

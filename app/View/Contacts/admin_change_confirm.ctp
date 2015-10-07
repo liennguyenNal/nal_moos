@@ -9,13 +9,14 @@
 <div class="row">
 
     <div class="col-lg-12">
+    <?php echo $this->element('flash');?>
       
       <div class="bs-component">
       	
       	<?php echo $this->Form->create("Contact", array('action'=>'change_confirm', 'id'=>'form', 'class'=>'form-horizontal')) ?>
             <fieldset>
              
-              <legend>お問い合わせフオ一ム <?php if($contact['Contact']['status']==1){echo 'No Processing';}if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></legend>
+              <legend>問合せ 詳細</legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label"><?php echo __('user.contact.username'); ?></label>
                 <div class="col-lg-10">
@@ -90,6 +91,12 @@
                 <div class="col-lg-10">
                   <?php echo $contact['Contact']['created'];?>
                 </div>
+              </div> 
+              <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">更新日時</label>
+                <div class="col-lg-10">
+                  <?php echo $contact['Contact']['updated'];?>
+                </div>
               </div>            
               
              
@@ -115,7 +122,7 @@
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
                      
-                      <button type="button" class="btn btn-danger" id="btn-delete"><?php echo __('admin.user.delete_button'); ?></button>
+                      <button type="button" class="btn btn-danger" id="btn-delete">削除する</button>
                       <button type="submit" class="btn btn-primary" id="btn-change">変更する</button>
                       
                       <button type="button" class="btn btn-default" id="btn-cancel" >一覧へ戻る</button>

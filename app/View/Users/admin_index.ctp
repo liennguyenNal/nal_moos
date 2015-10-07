@@ -38,7 +38,7 @@
               
               <label style="padding-left:20px"><?php echo __('admin.user.list_header.city')?> </label>
               <input class="form-control" style="width:250px; display:inline" id="city" value="<?php echo $city;?>">
-              <button type="button" style="float:right" class="btn btn-primary" id="btn-search">Search</button>
+              <button type="button" style="float:right" class="btn btn-primary" id="btn-search"><?php echo __("admin.user.search");?></button>
               <script type="text/javascript">
                 $(document).ready(function(){ 
                   $('#btn-search').on('click', function() {
@@ -76,67 +76,92 @@
                     });
                   });
                 </script>
-            </td>
+            </td> 
           </tr>
           <tr style="height:100px">
              <td>
                 <label><?php echo __('admin.user.list_header.register_date')?> </label>
+              <?php if($from_register){
+                  $arr_from = explode("-", $from_register);
+                  $from_year_register = $arr_from[0];
+                  $from_month_register = $arr_from[1];
+                  $from_day_register = $arr_from[2];
+                }
+                if($to_register){
+                  $arr_to = explode("-", $to_register);
+                  $to_year_register = $arr_to[0];
+                  $to_month_register = $arr_to[1];
+                  $to_day_register = $arr_to[2];
+                }
+                if($from_approve){
+                  $arr_from_approve = explode("-", $from_approve);
+                  $from_year_approve = $arr_from_approve[0];
+                  $from_month_approve = $arr_from_approve[1];
+                  $from_day_approve = $arr_from_approve[2];
+                }
+                if($to_approve){
+                  $arr_to_approve = explode("-", $to_approve);
+                  $to_year_approve = $arr_to_approve[0];
+                  $to_month_approve = $arr_to_approve[1];
+                  $to_day_approve = $arr_to_approve[2];
+                }
+                ?>
               <?php 
                   $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
-                  echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_year_register));
                 ?>
                
                 <?php 
                   $months = array_combine(range(1, 12), range(1, 12));
-                  echo $this->Form->select('from_month_register', $months, array('id'=>'from-month-register', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('from_month_register', $months, array('id'=>'from-month-register', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_month_register));
                 ?>
                 <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                    echo $this->Form->select('from_day_register', $dates, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----"));
+                    echo $this->Form->select('from_day_register', $dates, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_day_register));
                   ?>    
                <p style="width:50px; display:inline; padding:10px"> <b>~ </b> </p>
                 <?php 
                   $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
-                  echo $this->Form->select('from_day_register', $years, array('id'=>'to-year-register', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('to_year_register', $years, array('id'=>'to-year-register', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$to_year_register));
                 ?>
                
                 <?php 
                   $months = array_combine(range(1, 12), range(1, 12));
-                  echo $this->Form->select('from_day_register', $months, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('to_month_register', $months, array('id'=>'to-month-register', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$to_month_register));
                 ?>
                 <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                    echo $this->Form->select('to_day_register', $dates, array('id'=>'to-day-register', 'data-placement' => 'right','empty'=>"-----"));
+                    echo $this->Form->select('to_day_register', $dates, array('id'=>'to-day-register', 'data-placement' => 'right','empty'=>"-----", 'value'=>$to_day_register));
                   ?>    
             
              <label><?php echo __('admin.user.list_header.approve_date')?> </label>
              <?php 
                   $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
-                  echo $this->Form->select('from_year_approve', $years, array('id'=>'from-year-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('from_year_approve', $years, array('id'=>'from-year-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_year_approve));
                 ?>
                
                 <?php 
                   $months = array_combine(range(1, 12), range(1, 12));
-                  echo $this->Form->select('from_month_approve', $months, array('id'=>'from-month-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('from_month_approve', $months, array('id'=>'from-month-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_month_approve));
                 ?>
                 <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                    echo $this->Form->select('from_month_approve', $dates, array('id'=>'from-month-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                    echo $this->Form->select('from_month_approve', $dates, array('id'=>'from-day-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$from_day_approve));
                   ?>    
               
                <p style="width:50px; display:inline; padding:10px"> <b>~ </b> </p>
               <?php 
                   $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
-                  echo $this->Form->select('to_year_approve', $years, array('id'=>'to-year-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('to_year_approve', $years, array('id'=>'to-year-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$to_year_approve));
                 ?>
                
                 <?php 
                   $months = array_combine(range(1, 12), range(1, 12));
-                  echo $this->Form->select('to_month_aprove', $months, array('id'=>'to-month-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                  echo $this->Form->select('to_month_aprove', $months, array('id'=>'to-month-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$to_month_approve));
                 ?>
                 <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                    echo $this->Form->select('to_day_approve', $dates, array('id'=>'to-day-approve', 'data-placement' => 'right', 'empty'=>"-----"));
+                    echo $this->Form->select('to_day_approve', $dates, array('id'=>'to-day-approve', 'data-placement' => 'right', 'empty'=>"-----", 'value'=>$to_day_approve));
                   ?>    
               
             </td>
@@ -192,7 +217,7 @@
                 </td>
                 <td>
                   <button type="button" class="btn btn-default" style="float:right" id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/users/view/<?php echo $user['User']['id']?>'"> 
-                    View
+                    <?php echo __("admin.articles.view_button")?>
                   </button>
                 </td>
               </tr>
@@ -202,7 +227,7 @@
           <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                  
-                  <button type="button" class="btn btn-primary" style="float:right" id="btn-delete"> Delete</button>
+                  <button type="button" class="btn btn-primary" style="float:right" id="btn-delete"> <?php echo __("admin.user.delete_button")?></button>
                 </div>
               </div>
           </div>
@@ -356,7 +381,7 @@
 
   </div>
   <div id="dialog-no-choose" title="<?php echo __('admin.user.delete_button')?>">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Please choose least one items</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>削除項目を選んでください！</p>
   </div>
   <div id="dialog-confirm-delete" title="<?php echo __('admin.user.delete_button')?>">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>
@@ -366,6 +391,6 @@
   </div>
   
    <div id="dialog-confirm-export" title="CSVデータダウンロード">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Export all user to CSV file. Are you sure?</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Do you want to download CSV file?</p>
   </div>
 </div>

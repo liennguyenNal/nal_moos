@@ -7,7 +7,7 @@
       <div class="col-lg-12">
         <div class="well bs-component">
         <?php echo $this->element('admin/flash');?>
-        <legend>Confirm Edit</legend>
+        <legend><?php if($article['Article']['id']) echo 'お知らせ 変更'; else echo 'お知らせ 新規作成'; ?></legend>
          <!--  <form class="form-horizontal"> -->
           <?php echo $this->Form->create("Article", array('action'=>'edit_confirm', 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data')) ?>
             <fieldset>
@@ -24,7 +24,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label"><?php echo __('admin.articles.content'); ?></span></label>
+                <label for="textArea" class="col-lg-2 control-label">内容</span></label>
                 <div class="col-lg-10">
                   <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Content', 'rows'=>10,'div'=>false, 'disabled'))?>
                   
@@ -42,23 +42,38 @@
               </div>
               
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">公開日</label>
+                <label for="inputEmail" class="col-lg-2 control-label">公開日（表示順序）</label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('created', array('type'=>'text', 'id'=>"created_date", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'))?>
+                  <?php 
+                    
+                    
+                    $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+                    echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$article['Article']['from_year_register'], 'disabled'));
+                  ?>
+                 
+                  <?php 
+                    $months = array_combine(range(1, 12), range(1, 12));
+                    echo $this->Form->select('from_month_register', $months, array('id'=>'from-month-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$article['Article']['from_month_register'], 'disabled'));
+                  ?>
+                  <?php 
+                      $dates = array_combine(range(1, 31), range(1, 31));
+                      echo $this->Form->select('from_day_register', $dates, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$article['Article']['from_day_register'], 'disabled'));
+                    ?>
+                  
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
                   
                   
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label"></label>
+                <label for="inputPassword" class="col-lg-2 control-label">公開状況</label>
                 <div class="col-lg-10">
                   
                   <div class="checkbox">
                     <label>
                       <?php $options = array(
-                      '0' => 'Unpublished',
-                      '1' => 'Published'
+                      '0' => '非公開',
+                      '1' => '公開'
                   );
 
                   $attributes = array(
@@ -80,7 +95,7 @@
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                 <button type="submit" class="btn btn-primary">保存する</button>
-                  <button id="btn-cancel" type="reset" class="btn btn-default">キャンセル</button>
+                  <button id="btn-cancel" type="reset" class="btn btn-default"><?php if($article['Article']['id']) echo 'キャンセル'; else echo '戻る'; ?></button>
                   
                 </div>
               </div>
