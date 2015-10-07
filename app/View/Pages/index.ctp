@@ -66,10 +66,14 @@
         <h3>最新のお知らせ</h3>
       </div> 
       <ul>
-      <?php foreach($articles as $article){ $article['Article']['created']= date("Y.m.d", strtotime($article['Article']['created']));//var_dump($articles); die; ?>
+      <?php
+      $i=0;
+       foreach($articles as $article){ 
+        if($i<3){ $i++;
+        $article['Article']['created']= date("Y.m.d", strtotime($article['Article']['created']));//var_dump($articles); die; ?>
         <li><span style="width:50%; text-align:right;"><?php echo $article['Article']['created']; ?></span><a style="text-align:left; width:50%;" href="<?php echo $this->webroot; ?>articles/view/<?php echo $article['Article']['id']; ?>"><?php echo $article['Article']['title']; ?></a></li>
 
-      <?php } ?>
+      <?php }} ?>
       </ul>
     </div>
   </div>

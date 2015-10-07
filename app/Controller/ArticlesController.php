@@ -200,11 +200,14 @@ class ArticlesController extends AppController{
          $article['Article']['created']= date('Y-m-d',strtotime($article['Article']['created']));
          $time= ($article['Article']['created']);
          $arts = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
-          
+          $i=0;
           foreach($arts as $art){
-            if(strtotime($article['Article']['created']) >= strtotime($art['Article']['created']) and $art['Article']['id']!=$id){
-              $art['Article']['created']= date('Y-m-d',strtotime($art['Article']['created']));
-              $articles_new[]= $art;
+            if($i<4){ 
+              if(strtotime($article['Article']['created']) >= strtotime($art['Article']['created']) and $art['Article']['id']!=$id){
+                $i++;
+                $art['Article']['created']= date('Y-m-d',strtotime($art['Article']['created']));
+                $articles_new[]= $art;
+              }
             }
           }
           //var_dump($articles_new); die;
@@ -239,6 +242,7 @@ class ArticlesController extends AppController{
          
         // we are using the 'User' model
         $articles = $this->paginate('Article');
+        //var_dump($articles; die;
          
         // pass the value to our view.ctp
         $this->set('articles', $articles);
