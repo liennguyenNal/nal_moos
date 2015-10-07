@@ -127,13 +127,14 @@
                 <td><?php echo $user['User']['email']; ?></td>
                 <td><?php echo $user['User']['first_name'].' '.$user['User']['last_name']; ?></td>
                 <td><?php echo $user['User']['phone']; ?></td>
-                <td><?php echo $user['User']['gender']; ?></td>
+                <td><?php if ($user['User']['gender']=='male') echo '男性'; else echo '女性'; ?></td>
                 <td><?php echo $user['User']['created']; ?></td>
                 <td><?php 
-                  if($user['User']['status_id'] == 0) echo "Reject"; 
-                   if($user['User']['status_id'] == 1) echo "Register"; 
-                   else if($user['User']['status_id'] == 2) echo "Confirm Registered";
-                    else if($user['User']['status_id'] == 3) echo "Completed";
+
+                  if($user['User']['status_id'] == 2) echo "審査申し込み待ち"; 
+                   if($user['User']['status_id'] == 3) echo "審査待ち"; 
+                    if($user['User']['status_id'] == 4) echo "保証金入金待ち";
+                     if($user['User']['status_id'] == 5) echo "保証金入金確認済み";
                    ?>
                 </td>
                 <td>
