@@ -42,7 +42,7 @@ class ArticlesController extends AppController{
         //var_dump($is_published); die;
 
         $criteria .= " AND Article.is_published = '$is_published'" ;
-        $this->set('is_published1', $is_published);
+        $this->set('is_published', $is_published);
       }
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
