@@ -1,4 +1,4 @@
-<p><?php echo $user['User']['first_name'].$user['User']['last_name']; ?>様</p>
+<p><?php echo $user['User']['first_name']; ?>様</p>
 <p>「家賃でもらえる家」への無料会員登録ありがとうございます。</p>
 
 <p>※会員登録はまだ完了しておりません。</p>

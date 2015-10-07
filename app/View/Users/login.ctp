@@ -76,7 +76,7 @@
                               <td>
                                 <div class="block-input">
                                   <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
-                                  <input class="w198" type="text" name="data[User][email]" value="" placeholder="" data-placement="right">
+                                  <input class="w198" type="text" name="data[User][email]" value="<?php echo $email;?>" placeholder="" data-placement="right">
                                 </div>
                               </td>
                             </tr>

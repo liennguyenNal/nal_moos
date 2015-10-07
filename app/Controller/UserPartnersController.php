@@ -95,7 +95,7 @@ class UserPartnersController extends AppController {
 								$user = $this->User->find('first', array('conditions'=>array('User.id'=>$user_id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea', 'UserRelation' )));
       							$this->data = $user;
       							$this->set('user', $user);
-								$this->Session->setFlash('Partner Info has been saved successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+								$this->Session->setFlash(__('user.register.update_partner.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
 							}
 						}
 							

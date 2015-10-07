@@ -172,8 +172,7 @@
                     window.location.href='<?php echo $this->webroot;?>admin/users/approve/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                   'キャンセル': function() {
-                    agree = false;
+                   '<?php echo __("admin.user.cancel_button")?>': function() {
                     $( this ).dialog( "close" );
                   }
                 }
@@ -187,8 +186,7 @@
                     window.location.href='<?php echo $this->webroot;?>admin/users/process_payment/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
-                   'キャンセル': function() {
-                    agree = false;
+                   '<?php echo __("admin.user.cancel_button")?>': function() {
                     $( this ).dialog( "close" );
                   }
                 }
@@ -220,7 +218,7 @@
                 modal: true,
                 buttons: {
                   "差戻す": return_user,
-                   'キャンセル': function() {
+                   '<?php echo __("admin.user.cancel_button")?>': function() {
                     dialog_return.dialog( "close" );
                   }
                 }

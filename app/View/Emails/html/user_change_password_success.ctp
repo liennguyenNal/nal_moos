@@ -4,7 +4,7 @@
 
 <p>以下のログイン画面より、ユーザーID(ご登録のメールアドレス)と設定いただいたパスワードを入力し、マイページにログインしてください。</p>
 
-<p><a href="www.moos.nal.vn/users/login">www.moos.nal.vn/users/login</a></p>
+<p><a href="http://<?php echo Router::url('/', true) ?>users/login"><?php echo Router::url('/', true) ?>users/login</a></p>
 
 <p>※このメールにお心当たりの無い方は、誠にお手数ですが<a href="http://<?php echo Router::url('/', true) ?>contact">お問い合わせフォーム</a>よりご連絡下さい。</p>
 
