@@ -578,7 +578,7 @@
 
                 $('#p_salary_type_other').prop('disabled', $('input[name="data[UserPartner][salary_type]"]:checked').val() != 4);
                 $('#p_salary_date').prop('disabled', $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() != "3");
-                
+
                 pedit = 1;
              });
 
@@ -725,6 +725,7 @@
       }
     },
     submitHandler: function(form) {
+        $('#btn-save-partner').prop('disabled', true);
         var url = "<?php echo $this->webroot;?>user_partners/edit";
         $.ajax({
          type: "POST",
@@ -741,9 +742,11 @@
                 }
             });
          }
-       });
-      return false;
-    }
+       }).done(function() {
+             $('#btn-save-partner').prop('disabled', false);
+            });
+            return false;
+        }
   });
   jQuery.extend(jQuery.validator.messages, {
       number: "<?php echo __('global.errors.number'); ?>"

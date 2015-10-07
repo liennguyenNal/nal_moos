@@ -962,6 +962,7 @@
           }
         },
         submitHandler: function(form) {
+            $('#btn-save-user-info').prop('disabled', true);
             var url = "<?php echo $this->webroot;?>users/update_basic_info";
             $.ajax({
                 type: "POST",
@@ -971,7 +972,10 @@
                 {
                     edit = 0;
                     $('#basic').html(result);
+                    $('#btn-save-user-info').prop('disabled', false);
                 }
+            }).done(function() {
+             $('#btn-save-user-info').prop('disabled', false);
             });
             return false;
         }

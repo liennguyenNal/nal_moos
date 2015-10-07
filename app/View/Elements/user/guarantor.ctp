@@ -706,6 +706,7 @@
       }
     },
     submitHandler: function(form) {
+    	$('#btn-save-guarantor').prop('disabled', true);
         var url = "<?php echo $this->webroot;?>user_guarantors/edit";
       	$.ajax({
             type: "POST",
@@ -722,9 +723,11 @@
                     }
                 });
              }
-           });
-      return false;
-    }
+           }).done(function() {
+             $('#btn-save-guarantor').prop('disabled', false);
+            });
+            return false;
+        }
   });
   jQuery.extend(jQuery.validator.messages, {
     	number: "<?php echo __('global.errors.number'); ?>"

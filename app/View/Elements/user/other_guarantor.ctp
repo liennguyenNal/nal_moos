@@ -714,7 +714,8 @@
       }
     },
     submitHandler: function(form) {
-       var url = "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor"; // the script where you handle the form input.
+    	$('#btn-save-other-guarantor').prop('disabled', true);
+       var url = "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor";
 
       $.ajax({
              type: "POST",
@@ -731,11 +732,12 @@
                     }
                 });
              }
-           });
-
-      return false; // avoid to execute the actual submit of the form.
-    }
-  });
+           }).done(function() {
+             $('#btn-save-other-guarantor').prop('disabled', false);
+            });
+            return false;
+        }  
+    });
   jQuery.extend(jQuery.validator.messages, {
     	number: "<?php echo __('global.errors.number'); ?>"
   });
