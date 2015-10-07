@@ -1,4 +1,4 @@
-
+<?php //var_dump($from_year_register); die;?>
 <div class="page-header">
 <div >
     <div class="bs-component">
@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-lg-12">
       
-       <?php echo $this->element('flash');?>
+       <?php //echo $this->element('flash');?>
       
       <!-- <form class="navbar-form navbar-left" role="search"> -->
       <?php echo $this->Form->create('Article', array('action'=>'index', 'class'=>'navbar-form navbar-left', 'role'=>'search', 'type' => 'get'))?>
@@ -27,23 +27,65 @@
             <!-- <input type="text" name="keyword" class="form-control" placeholder="Search"> -->
             <label style="margin-left:20px;" for="title" >公開状況 </label>
             <?php 
-              echo $this->Form->input('is_published', array( 'options' => array(0=> "Draft", 1=>"Published"), 'empty' => '', 'class'=>'form-control', 'div'=>false, 'label'=>false,'style'=>'width:100px; display:inline', 'id'=>'is_published', 'value'=>$is_published));
+              echo $this->Form->input('is_published', array( 'options' => array(0=> "非公開", 1=>"公開"), 'empty' => '', 'class'=>'form-control', 'div'=>false, 'label'=>false,'style'=>'width:100px; display:inline', 'id'=>'is_published', 'value'=>$is_published));
             ?>
             <label style="margin-left:20px;" for="title" >公開日 </label>
-            <input style="width:150px; display:inline" id="date_from" name="date_from" type="text" class="datepicker" value="<?php echo $date_from; ?>">
-            -- <input style="width:150px; display:inline;" id="date_to" name="date_to" type="text" class="datepicker" value="<?php echo $date_to; ?>"><br/>
+
+            <?php 
+              $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+              echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_year_register));
+            ?>
+           
+            <?php 
+              $months = array_combine(range(1, 12), range(1, 12));
+              echo $this->Form->select('from_month_register', $months, array('id'=>'from-month-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_month_register));
+            ?>
+            <?php 
+                $dates = array_combine(range(1, 31), range(1, 31));
+                echo $this->Form->select('from_day_register', $dates, array('id'=>'from-day-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_day_register));
+              ?>  
+            <p style="width:50px; display:inline; padding:10px"> <b>~ </b> </p>
+                <?php 
+                  $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+                  echo $this->Form->select('to_year_register', $years, array('id'=>'to-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$to_year_register));
+                ?>
+               
+                <?php 
+                  $months = array_combine(range(1, 12), range(1, 12));
+                  echo $this->Form->select('to_month_register', $months, array('id'=>'to-month-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$to_month_register));
+                ?>
+                <?php 
+                    $dates = array_combine(range(1, 31), range(1, 31));
+                    echo $this->Form->select('to_day_register', $dates, array('id'=>'to-day-register', 'data-placement' => 'right','empty'=>"-----",  'value'=>$to_day_register));
+                  ?> 
+
+            <br/>
             <div style="margin-top:20px;">
             <label style="margin-left:20px;" for="title" ><?php echo __('admin.articles.title'); ?></label>
             <?php echo $this->Form->input('keyword', array('type'=>'text', 'id'=>"keyword", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'value'=>$keyword, 'style'=>"width:250px; display:inline; " ))?>
             </div>
           </div>
-          <div><button style="float:right" type="button" class="btn btn-primary" id="btn-search" onclick="javascript:search();"><?php echo __('admin.articles.search_button'); ?></button> </div>
+          <button style="float:right; margin-left:50px;" type="button" class="btn btn-primary" id="btn-search" onclick="javascript:search();"><?php echo __('admin.articles.search_button'); ?></button>
           <script type="text/javascript">
-            function search(){ //alert($('#is_published').val());
+          
+
+          
+
+            function search(){
+            var from_register ;
+                    if($("#from-year-register").val() && $("#from-month-register").val() && $("#from-day-register").val()){
+                      from_register = $("#from-year-register").val() + "-" + $("#from-month-register").val() + "-" + $("#from-day-register").val();
+                    }
+
+            var to_register ;
+                    if($("#to-year-register").val() && $("#to-month-register").val()  && $("#to-day-register").val())
+                      to_register= $("#to-year-register").val() + "-" + $("#to-month-register").val() + "-" + $("#to-day-register").val();
+
+            //alert(from_register);
               var url = '<?php echo $this->webroot; ?>admin/articles/index';
               if($('#keyword').val() != '') url = url + '/keyword:' + $('#keyword').val();
-              if($('#date_from').val() != '') url = url + '/date_from:' + $('#date_from').val();
-              if($('#date_to').val() != '') url = url + '/date_to:' + $('#date_to').val();
+              if(from_register) url = url + '/date_from:' + from_register;
+              if(to_register) url = url + '/date_to:' + to_register;
               if($('#is_published').val() != '') url = url + '/is_published:' + $('#is_published').val();
 
               //if($('#is_published').val()==1) url = url + '/is_published:' + $('#is_published').val();
@@ -88,9 +130,9 @@
               <td><?php echo $i;?></td>
               <td><?php echo $article['Article']['created']; ?></td>
               <td><?php echo $article['Article']['title'] ?></td>
-              <td><?php if ($article['Article']['small_image']) echo 'Yes'; else echo 'No'; ?></td>
+              <td><?php if ($article['Article']['small_image']) echo '有り'; else echo '無し'; ?></td>
               
-              <td><?php if($article['Article']['is_published']) echo "Published"; else echo "Draft"; ?></td>
+              <td><?php if($article['Article']['is_published']) echo "公開"; else echo "非公開"; ?></td>
               <td>
                 <!--<a href="<?php echo $this->webroot?>admin/articles/view/<?php echo $article['Article']['id'] ?>">View</a> 
                 <a href="<?php echo $this->webroot?>admin/articles/delete/<?php echo $article['Article']['id'] ?>" onclick="return confirm('Do you want delete this news?')">Delete</a> -->
@@ -99,7 +141,7 @@
           <?php } ?>
           </tbody>
         </table> 
-        <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="<?php echo __('admin.user.delete_button'); ?>">
+        <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
         
         </form>
       </div><!-- /example -->

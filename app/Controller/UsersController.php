@@ -136,6 +136,7 @@ class UsersController extends AppController{
         );
         $users = $this->paginate('User');
         $this->set('users', $users);
+        //var_dump($users); die;
         //print_r($users[0]['UserCompany']['Work']);die;
     }
 

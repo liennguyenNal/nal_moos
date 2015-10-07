@@ -29,6 +29,7 @@ class ArticlesController extends AppController{
       //    $conditions = array("Article.title LIKE '%$keyword%'" );
       //    $this->set('keyword', $keyword);
       // }
+      //var_dump($this->params['named']['date_from']); die;
 
       $criteria = "1=1 ";
       if($this->params['named']['keyword']){
@@ -41,17 +42,34 @@ class ArticlesController extends AppController{
         //var_dump($is_published); die;
 
         $criteria .= " AND Article.is_published = '$is_published'" ;
-        $this->set('is_published', $is_published);
+        $this->set('is_published1', $is_published);
       }
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
         $criteria .= " AND Article.created >= '$date_from'" ;
-        $this->set('date_from', $date_from);
+        $date_form_1= explode('-',$date_from);
+        $from_year_register= $date_form_1[0];
+        $from_month_register= $date_form_1[1];
+        $from_day_register= $date_form_1[2];
+
+        $this->set('from_year_register', $from_year_register);
+        $this->set('from_month_register', $from_month_register);
+        $this->set('from_day_register', $from_day_register);
+        //$this->set('date_from', $date_from);
+
       }
       if($this->params['named']['date_to']){
         $date_to = $this->params['named']['date_to'];
         $criteria .= " AND Article.created <= '$date_to' " ;
-        $this->set('date_to', $date_to);
+        $date_to_1= explode('-',$date_to);
+        $to_year_register= $date_to_1[0];
+        $to_month_register= $date_to_1[1];
+        $to_day_register= $date_to_1[2];
+
+        $this->set('to_year_register', $to_year_register);
+        $this->set('to_month_register', $to_month_register);
+        $this->set('to_day_register', $to_day_register);
+        //$this->set('date_to', $date_to);
       }
       //$this->Paginator->settings['paramType'] = 'querystring';
       //print_r($this->params['named']['keyword']); die;
@@ -226,7 +244,7 @@ class ArticlesController extends AppController{
         $this->set('articles', $articles);
     }
     function admin_edit_confirm(){ 
-    if($_POST['view']==1){
+    if($_POST['view']==1){ 
     $article = $this->data;
     //var_dump($this->data); die;
 
@@ -258,6 +276,7 @@ class ArticlesController extends AppController{
     }
     else{
       $article= unserialize($this->data['article_confirm']);
+      $article['Article']['created'] = $article['Article']['from_year_register'].'-'.$article['Article']['from_month_register'].'-'.$article['Article']['from_day_register'];
       if($this->Article->save($article, false)){
                   $this->Session->setFlash( 'Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
                   $this->redirect( "view/".$article['Article']['id'] );

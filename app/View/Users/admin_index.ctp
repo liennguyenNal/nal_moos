@@ -76,7 +76,7 @@
                     });
                   });
                 </script>
-            </td>
+            </td> 
           </tr>
           <tr style="height:100px">
              <td>
