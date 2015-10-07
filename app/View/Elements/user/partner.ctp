@@ -68,7 +68,7 @@
                     <td>
                       <div class="select">
                         <?php 
-                          $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+                          $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
                           echo $this->Form->select('UserPartner.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false, 'data-placement'=>'right'));
                         ?>
                         <span><?php echo __('user.register.year'); ?></span>
@@ -448,7 +448,7 @@
                       <td>
                         <div class="select">
                           <?php 
-                            $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+                            $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
                             echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false));
                           ?>
                           <span><?php echo __('user.register.year'); ?></span>
@@ -714,7 +714,15 @@
       'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-      'data[UserPartner][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"}
+      'data[UserPartner][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+      'data[UserPartner][company_post_num_1]': {
+        minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+        maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+      },
+      'data[UserPartner][company_post_num_2]': {
+        minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+        maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+      }
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

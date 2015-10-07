@@ -27,7 +27,7 @@
       </div>
       <div class="content-video">
         <div class="content-video-how">
-          <object width="550" height="266" data="https://www.youtube.com/embed/chwADnoFDng"></object>
+          <iframe width="550" height="266" src="https://www.youtube-nocookie.com/embed/chwADnoFDng" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>

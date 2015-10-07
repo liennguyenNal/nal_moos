@@ -62,7 +62,7 @@
 									<td>
 										<div class="select">
 											<?php 
-						                      	$years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+						                      	$years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
 						                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'og−year', 'onchange'=>'og_calculate_age()', 'required'=>false, 'data-placement'=>'right'));
 						                	?>
 											<span><?php echo __('user.register.year'); ?></span>

@@ -37,6 +37,13 @@
 			<div class="header-lin">
 				<div class="banner-ld-page">
 					<img src="<?php echo $this->webroot; ?>img/images/banner.png" alt="banner"/>
+					<div class="container-fluid">
+						<div class="content-video">
+							<div class="content-video-how">
+								<iframe width="242" height="140" src="https://www.youtube-nocookie.com/embed/chwADnoFDng" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>	
 			<div class="training">
@@ -285,6 +292,9 @@
 				                                      p.find("select[id*='pref_id']").val(json.pref_id);
 				                                      p.find("input[id*='city']").val(json.ward);
 				                                      p.find("input[id*='address']").val(json.addr1);
+				                                    	p.find("select[id*='pref_id']").valid();
+							                            p.find("input[id*='city']").valid();
+							                            p.find("input[id*='address']").valid();
 				                                  });
 				                              }
 				                              </script>
@@ -475,6 +485,9 @@
 				                            p.find("select[id*='pref_id']").val(json.pref_id);
 				                            p.find("input[id*='city']").val(json.ward);
 				                            p.find("input[id*='address']").val(json.addr1);
+				                            p.find("select[id*='pref_id']").valid();
+				                            p.find("input[id*='city']").valid();
+				                            p.find("input[id*='address']").valid();
 				                        });
 				                    }
 
@@ -784,6 +797,14 @@
 		        equalTo: "<?php echo __('global.errors.equalTo'); ?>",
 		        number: "<?php echo __('global.errors.number'); ?>"
 		  });
+
+		    $('#phone').on('change', function() {
+		      $('#home_phone').valid(); 
+		    });
+		    $('#home_phone').on('change', function() {
+		      $('#phone').valid(); 
+		    });
+
 		</script>
 
 		

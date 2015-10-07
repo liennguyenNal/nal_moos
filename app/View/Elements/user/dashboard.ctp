@@ -42,7 +42,7 @@
         <td class="color-a"><?php echo __('user.my_page.object'); ?></td>
         <td><?php echo __('user.my_page.infomation'); ?></td> 
         <td class="color-a"><?php echo __('user.my_page.status'); ?></td>
-        <td><?php echo __('user.my_page.error_fields'); ?></td>
+        <td style="width:40%"><?php echo __('user.my_page.error_fields'); ?></td>
       </tr>
 
       <!-- Basic info --> 

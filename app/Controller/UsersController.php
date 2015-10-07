@@ -815,6 +815,8 @@ class UsersController extends AppController{
           if($Email->send()){
             return $this->render("reset_password_successful");
           }
+        } else {
+          $this->Session->setFlash(__('global.errors.reset_password.email_unique'), 'default');
         }
       }
     }

@@ -186,17 +186,21 @@
       'data[Contact][last_name_kana]':{ required: true },
       'data[Contact][type]': { required: true },
       'data[Contact][phone]': {
-        required: function(element) {
-          return !$("#home_phone").val();
+        required: {
+          depends:  function() {
+            return !$("#home_phone").val();
+          }
         },
         number: true,
         maxlength: 11,
         phone_number: "^0[0-9]"
       },
       'data[Contact][home_phone]': {
-        required: function(element) {
-           return  !$("#phone").val();
-        },
+        required: {
+          depends:  function() {
+            return !$("#phone").val();
+          }
+        },        
         number: true,
         maxlength: 10,
         phone_number: "^0[0-9]"
@@ -239,4 +243,12 @@
       equalTo: "<?php echo __('global.errors.equalTo'); ?>",
       number: "<?php echo __('global.errors.number'); ?>"
   });
+
+  $('#phone').on('change', function() {
+    $('#home_phone').valid(); 
+  });
+  $('#home_phone').on('change', function() {
+    $('#phone').valid(); 
+  });
+  
 </script>

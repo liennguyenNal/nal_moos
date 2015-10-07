@@ -155,6 +155,36 @@ img {
 .banner-ld-page img {
   display: inline-block;
 }
+.banner-ld-page .container-fluid {
+  position: relative;
+}
+.banner-ld-page .content-video {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 402px;
+  height: 246px;
+  padding-top: 86px;
+  z-index: 99999;
+  background: url('../img/front/video-lp.png') no-repeat center center;
+}
+.banner-ld-page .content-video .content-video-how {
+  display: inline-block;
+  padding: 5px;
+  background: url('../img/front/br-video.png') repeat center center;
+}
+.banner-ld-page .content-video .content-video-how object {
+  display: block;
+  background-color: #fff;
+  width: 242px;
+  height: 140px;
+}
+@media (max-width: 690px) {
+  .banner-ld-page .content-video {
+    position: static;
+    width: 100%;
+  }
+}
 .training {
   height: 216px;
   background: url('../img/front/br-01.png') repeat-x 0px 0px;

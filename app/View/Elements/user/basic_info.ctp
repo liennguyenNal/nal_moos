@@ -63,7 +63,7 @@
                       <td>
                         <div class="select">
                             <?php 
-                                $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
+                                $years = array_combine(range(1900, date("Y")), range(1900, date("Y")));
                                 echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
                             ?>
                           <span><?php echo __('user.register.year'); ?></span>
@@ -929,10 +929,22 @@
             'data[User][last_name]': {required: "<?php echo __('global.errors.basic_info.lastname'); ?>"},
             'data[User][first_name_kana]': {required: "<?php echo __('global.errors.basic_info.firstnamekana'); ?>"},
             'data[User][last_name_kana]': {required: "<?php echo __('global.errors.basic_info.lastnamekana'); ?>"},
-            'data[UserAddress][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
-            'data[UserAddress][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
-            'data[UserCompany][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
-            'data[UserCompany][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
+            'data[UserAddress][post_num_1]': {
+              minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+            },
+            'data[UserAddress][post_num_2]': {
+              minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+            },
+            'data[UserCompany][post_num_1]': {
+              minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
+            },
+            'data[UserCompany][post_num_2]': {
+              minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+            },
             'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[UserCompany][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"},

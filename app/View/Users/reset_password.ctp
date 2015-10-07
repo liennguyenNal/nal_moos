@@ -51,6 +51,7 @@
 					<div class="from-ldpage">
 						<div class="content">
 							<div class="container-fluid">
+							<?php echo $this->element('flash'); ?>
 							<div class="block-warning" id="error-section" style="display:none">
 			                    <?php echo __('global.errors'); ?>
 			                </div>
@@ -136,19 +137,7 @@
         } else {
           $("#error-section").hide();
       } 
-  	},
-      submitHandler: function(form) {
-      	$("#error-section").hide();
-     	jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){
-				if(result== 'not'){
-					$('#error-section').show().html("<?php echo __('global.errors.reset_password.email_unique'); ?>");
-				}
-				else{
-					$('#error-section').hide();
-					jQuery('#form_reset').submit();
-				}
-			}});
-		}
+  	}
     });
     jQuery.extend(jQuery.validator.messages, {
       email: "<?php echo __('global.errors.email'); ?>"
