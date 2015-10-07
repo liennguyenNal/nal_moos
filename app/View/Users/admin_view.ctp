@@ -20,7 +20,7 @@
       
       <div class="bs-component">
       	
-
+      <?php echo $this->element('/admin/flash');?>
     	
        <?php echo $this->Form->create("User", array('action'=>'register', 'id'=>'form', 'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after',  'error'  ) ) ) ) ?>

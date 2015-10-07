@@ -22,4 +22,4 @@
 <p>----------------------------------------------------</p>
 <p></p>
 <p>登録内容の確認を行い、承認・却下手続きを管理画面から行ってください。</p>
-<p><a href="http://<?php echo Router::url('/', true) ;?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
+<p><a href="http://<?php echo Router::url('/', true) ;?>admin/users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
