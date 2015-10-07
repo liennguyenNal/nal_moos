@@ -98,9 +98,7 @@
       <div class="col-lg-12">
       
 
-        <div class="page-header">
-          <h1 id="tables">Customers</h1>
-        </div>
+        
         <?php echo $this->element('flash');?>
         <div class="bs-component">
           

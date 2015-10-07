@@ -103,9 +103,7 @@
     
   <div class="row">
     <div class="col-lg-12">
-      <div class="page-header">
-        <h1 id="tables">News</h1>
-      </div>
+      
 
       <div class="bs-component">
       <?php echo $this->Form->create('Article',array('id' =>'form','url' => array('controller' => 'articles', 'action' => 'multi_delete'))); ?>
