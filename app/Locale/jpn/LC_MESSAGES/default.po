@@ -685,7 +685,7 @@ msgid "global.errors.month.max"
 msgstr "11より小さいな数字をご入力ください。"
 
 msgid "global.errors.reset.email"
-msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
+msgstr "送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
 
 msgid "global.errors.create.password"
 msgstr "入力内容に不備があります。</br>赤く表示された該当項目を修正してください。"
@@ -793,7 +793,7 @@ msgid "global.errors.reset_password.email"
 msgstr "必須項目です。</br>半角英数字で入力してください。"
 
 msgid "global.errors.reset_password.email_unique"	
-msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
+msgstr "送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
 
 msgid "global.errors.basic_info.firstname"	
 msgstr "全角で入力してください。"

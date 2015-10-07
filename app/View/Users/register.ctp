@@ -410,29 +410,33 @@
       $("[id^='post_num_1']").each(function() {
           $(this).rules("add", 
           { 
-            //required: true,
+            required: true,
             minlength: 3,
             maxlength: 3,
             messages: {
-              required: "<?php echo __('global.errors.required'); ?>"
+              required: "<?php echo __('global.errors.required'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
             }
           });
       });
       $("[id^='post_num_2']").each(function() {
           $(this).rules("add", 
           { 
-            //required: true,
+            required: true,
             minlength: 4,
             maxlength: 4,
             messages: {
-              required: "<?php echo __('global.errors.required'); ?>"
+              required: "<?php echo __('global.errors.required'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+              maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
             }
           });
       });
       $("[id^='pref_id']").each(function() {
           $(this).rules("add", 
           { 
-            //required: true,
+            required: true,
             messages: {
               required: "<?php echo __('global.errors.required'); ?>"
             }
@@ -441,7 +445,7 @@
       $("[id^='city']").each(function() {
           $(this).rules("add", 
           { 
-            //required: true,
+            required: true,
             messages: {
               required: "<?php echo __('global.errors.required'); ?>"
             }
@@ -450,7 +454,7 @@
       $("[id^='address']").each(function() {
           $(this).rules("add", 
           { 
-            //required: true,
+            required: true,
             messages: {
               required: "<?php echo __('global.errors.required'); ?>"
             }
@@ -524,7 +528,7 @@
           },
           number: true,
           maxlength: 11,
-          phone_number: "^0[0-9]{9}"
+          phone_number: "^0[0-9]"
         },
         'data[User][home_phone]': {
           required: function(element) {
@@ -532,7 +536,7 @@
           },
           number: true,
           maxlength: 10,
-          phone_number: "[0-9]{11}"
+          phone_number: "^0[0-9]"
         },
         'data[User][email]': { 
           required: true, 
@@ -635,7 +639,6 @@
         var errors = validator.numberOfInvalids();
         if (errors) {
           $("#error-section").show();
-          $('#form-contact').find('.tooltip-inner').append('<p></p>');
         } else {
           $("#error-section").hide();
         }

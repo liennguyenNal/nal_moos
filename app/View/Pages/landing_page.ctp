@@ -43,7 +43,7 @@
 				<div class="container-fluid">
 					<img class="img-banner" src="<?php echo $this->webroot; ?>img/images/banner-01.png" alt="banner"/>
 					<div class="block-link">
-						<a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
+						<a href="#" id="scroll-lp"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
 					</div>
 				</div>
 			</div>
@@ -148,12 +148,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="from-ldpage">
+			<div class="from-ldpage" id="formRegister">
 				<div class="title-from"></div>
 				<div class="content">
 					<div class="container-fluid">
 						<div class="title-content"></div>
-						<div class="content-from">
+						<div class="content-from" >
 				              <?php echo $this->element('flash'); ?>
 				              <div class="block-warning" id="error-section" style="display:none">
 				                <?php echo __('global.errors'); ?>
@@ -303,7 +303,7 @@
 				                              <span class="w78"><?php echo __('user.register.city'); ?></span>
 				                              <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
 				                              <?php 
-				                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false));
+				                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
@@ -542,7 +542,7 @@
 		      area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
 		      area.prepend($('#remove').clone(true, true).html());
 		      $('#expect-area').append(area);
-		      $('#form-register').validate();
+		      $('#lp-register').validate();
 		      $("[id^='post_num_1']").each(function() {
 		          $(this).rules("add", 
 		          { 
@@ -550,7 +550,9 @@
 		            minlength: 3,
 		            maxlength: 3,
 		            messages: {
-		              required: "<?php echo __('global.errors.required'); ?>"
+		              required: "<?php echo __('global.errors.required'); ?>",
+		              minlength: "<?php echo __('global.errors.minlength_3'); ?>",
+		          	  maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		            }
 		          });
 		      });
@@ -561,7 +563,9 @@
 		            minlength: 4,
 		            maxlength: 4,
 		            messages: {
-		              required: "<?php echo __('global.errors.required'); ?>"
+		              required: "<?php echo __('global.errors.required'); ?>",
+		              minlength: "<?php echo __('global.errors.minlength_4'); ?>",
+		          	  maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		            }
 		          });
 		      });
@@ -658,13 +662,17 @@
 		          required: function(element) {
 		            return !$("#home_phone").val();
 		          },
-		          phone_number: "^0[0-9]{9}"
+		          number: true,
+		          maxlength: 11,
+		          phone_number: "^0[0-9]"
 		        },
 		        'data[User][home_phone]': {
 		          required: function(element) {
 		             return  !$("#phone").val();
 		          },
-		          phone_number: "[0-9]{11}"
+		          number: true,
+		          maxlength: 10,
+		          phone_number: "[0-9]"
 		        },
 		        'data[User][email]': { 
 		          required: true, 
@@ -729,8 +737,14 @@
 		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[User][phone]': { required: "<?php echo __('global.errors.required'); ?>" },
-		        'data[User][home_phone]': { required: "<?php echo __('global.errors.required'); ?>" },
+		        'data[User][phone]': { 
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
+		        },
+		        'data[User][home_phone]': { 
+		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
+		        	 },
 		        'data[User][email]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[User][email_confirm]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.required'); ?>"},
