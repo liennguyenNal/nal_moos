@@ -21,7 +21,7 @@
           <div class="form-group">
             <label style="margin-left:20px;" for="title" ><?php echo __('admin.contact.status'); ?></label>
             <?php 
-              echo $this->Form->input('status', array('options' => array(1=>"No Processing",2=> "Processing",3=>"Completed"), 'empty' => '', 'class'=>'form-control', 'div'=>false,'style'=>"width:100px; display:inline;", 'label'=>false, 'id'=>'status', 'value'=>$status));
+              echo $this->Form->input('status', array('options' => array(1=>"未対応",2=> "対応中",3=>"対応済"), 'empty' => '', 'class'=>'form-control', 'div'=>false,'style'=>"width:100px; display:inline;", 'label'=>false, 'id'=>'status', 'value'=>$status));
             ?>
 
             <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.type-company'); ?></label>
@@ -151,7 +151,7 @@
               
               
               
-              <td><?php if($contact['Contact']['status']==1){echo 'No Processing';} if($contact['Contact']['status']==2){echo 'Processing';} if($contact['Contact']['status']==3){echo 'Completed';} ?></td>
+              <td><?php if($contact['Contact']['status']==1){echo '未対応';} if($contact['Contact']['status']==2){echo '対応中';} if($contact['Contact']['status']==3){echo '対応済';} ?></td>
               <td><a class="btn btn-default" href="<?php echo $this->webroot;?>admin/contacts/change_confirm/<?php echo $contact['Contact']['id'] ?>"><?php echo __('admin.articles.view_button'); ?></a> </td>
             </tr>
           <?php } ?>

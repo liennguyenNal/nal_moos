@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="well bs-component">
-        <?php echo $this->element('admin/flash');?>
+        <?php //echo $this->element('admin/flash');?>
          <!--  <form class="form-horizontal"> -->
           
             <legend>お知らせ 詳細</legend>

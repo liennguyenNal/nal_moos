@@ -111,7 +111,7 @@
                 <label for="textArea" class="col-lg-2 control-label"><?php echo __('admin.contact.status'); ?></span></label>
                 <div class="col-lg-10">
                   <?php 
-                  $statuses = array(1=>"No Processing",2=> "Processing",3=>"Completed");
+                  $statuses = array(1=>"未対応",2=> "対応中",3=>"対応済");
 
                     //$statuses = array("2"=>"解決します", "3"=>"拒絶します");
                   echo $this->Form->select('status', $statuses, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'status' , ));?>

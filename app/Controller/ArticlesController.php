@@ -239,6 +239,7 @@ class ArticlesController extends AppController{
          
         // we are using the 'User' model
         $articles = $this->paginate('Article');
+        //var_dump($articles; die;
          
         // pass the value to our view.ctp
         $this->set('articles', $articles);

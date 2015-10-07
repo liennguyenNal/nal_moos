@@ -77,10 +77,18 @@ class PagesController extends AppController {
 	public function index(){
 		$this->layout = 'default_new';
 		//print_r("this is hom page"); die;
-		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC'), 'limit'=>3));
+		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
 		 
-		 $this->set('articles', $articles);
-		 //var_dump($articles); die;
+		 //var_dump($articles);var_dump(date("Y-m-d")); die;
+		  
+		 foreach($articles as $article){
+		 	if($article['Article']['created'] <= date("Y-m-d")){
+		 		$arts[]= $article;
+		 	}
+
+		 }
+		 $this->set('articles', $arts);
+		 
 
 	}
 	public function faq(){
