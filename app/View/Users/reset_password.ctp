@@ -77,7 +77,7 @@
 											<p class="note note-fix">※会員登録されていないメールアドレスを入力した場合、メールは送信されません。</br>※受信拒否設定を行っている方は、MOOSからのメールが受信できる様、設定ください。</br>※メールが受信・発見できない場合、迷惑メールボックスに振り分けられていないかご確認ください。</p>
 											<div class="block-note">
 												<div class="block-button">
-													<button class="submit" type="button"><img src="<?php echo $this->webroot;?>img/front/text-from-a.png" alt="送信する"/></button>
+													<button type="submit"><img src="<?php echo $this->webroot;?>img/front/text-from-a.png" alt="送信する"/></button>
 												</div>
 											</div>
 										</div>
@@ -135,28 +135,24 @@
           $("#error-section").show();
         } else {
           $("#error-section").hide();
-        }
-      }
+      } 
+  	},
+      submitHandler: function(form) {
+      	$("#error-section").hide();
+     	jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){
+				if(result== 'not'){
+					$('#error-section').show().html("<?php echo __('global.errors.reset_password.email_unique'); ?>");
+				}
+				else{
+					$('#error-section').hide();
+					jQuery('#form_reset').submit();
+				}
+			}});
+		}
     });
     jQuery.extend(jQuery.validator.messages, {
       email: "<?php echo __('global.errors.email'); ?>"
     });
   </script>
-
-  <script type="text/javascript">
-	jQuery(document).ready(function() { 
-	    jQuery('.submit').click(function(event){
-		    jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){
-	        	if(result== 'not'){
-	        		$('#error-section').show().html("<?php echo __('global.errors.reset_password.email_unique'); ?>");
-	        	}
-	        	else{
-	        		$('#error-section').hide();
-	        		jQuery('#form_reset').submit();
-	        	}
-			}});
-	    });
-	});
-	</script>
 </body>
 </html>

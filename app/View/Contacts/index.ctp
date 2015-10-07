@@ -191,7 +191,7 @@
         },
         number: true,
         maxlength: 11,
-        phone_number: "^0[0-9]{9}"
+        phone_number: "^0[0-9]"
       },
       'data[Contact][home_phone]': {
         required: function(element) {
@@ -199,7 +199,7 @@
         },
         number: true,
         maxlength: 10,
-        phone_number: "[0-9]{11}"
+        phone_number: "^0[0-9]"
       },
       'data[Contact][email]': { required: true, email: true },
       'data[Contact][email_confirm]': { required: true, equalTo: '#email' },

@@ -83,7 +83,11 @@
           echo "$('#fileupload-$i').fileupload({
               url: url + '$i',
               dataType: 'json',
+              send: function(){
+                $('#fileupload-$i').prop('disabled', true);
+              },
               done: function (e, data) {
+                $('#fileupload-$i').prop('disabled', false);
                 if(data.result.error == '0'){
                   $('<p/>').html(data.result.filename + '<a class=\'delete-file\' onclick=\'delete_file($i);\' href=\'#\'>&nbsp;x</a>').appendTo('#file-$i');
                   $('#fileupload-$i').parent().find('.sp-hide').hide();
