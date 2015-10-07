@@ -180,7 +180,7 @@
 			$this->_destination = $destination;
 			if (!is_null($rules)) $this->_rules = $rules;
 			
-			if (!is_null($allowed)) { $this->_allowed = $allowed; } else { $this->_allowed = array('jpg','jpeg','gif','png', 'JPG', 'JPEG', 'PNG', 'GIF'); }
+			if (!is_null($allowed)) { $this->_allowed = $allowed; } else { $this->_allowed = array('jpg','jpeg','gif','png', 'JPG', 'JPEG', 'PNG', 'GIF','doc', 'pdf', 'txt', 'docx','xls', 'xlsx', 'csv', 'pdf'); }
 			
 			// -- hack dir if / not provided
 			if (substr($this->_destination,-1) != '/') {
