@@ -83,7 +83,7 @@ class UserGuarantorsController extends AppController {
 									'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserGuarantor', 'ExpectArea', 'UserRelation' )));
       							$this->data = $user;
       							$this->set('user', $user);
-								$this->Session->setFlash(__('admin.user.save.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
+								$this->Session->setFlash(__('user.register.update_gurantor.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
 							}
 						}
 							
@@ -169,7 +169,7 @@ class UserGuarantorsController extends AppController {
 								'UserGuarantor', 'OtherGuarantor','ExpectArea', 'UserRelation' )));
   							$this->data = $user;
   							$this->set('user', $user);
-							$this->Session->setFlash('Guarantor Info has been saved successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+							$this->Session->setFlash(__('user.register.update_gurantor.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
 						}
 					}
 							

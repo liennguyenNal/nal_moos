@@ -15,7 +15,7 @@
 <p><a href="https://youtu.be/chwADnoFDng">動画URL</a></p>
 
 <p>☆家賃でもらえる家とは</p>
-<p><a href="http://<?php echo Router::url('/', true) ?>">ホームページ「家賃でもらえる家とは」ページのURL</a></p>
+<p><a href="http://<?php echo Router::url('/', true) ?>introduction">ホームページ「家賃でもらえる家とは」ページのURL</a></p>
 
 <p>☆お申し込みの流れ</p>
 <p><a href="http://<?php echo Router::url('/', true) ?>work_flow">ホームページ「お申し込みの流れ」ページのURL</a></p>

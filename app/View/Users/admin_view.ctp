@@ -20,7 +20,7 @@
       
       <div class="bs-component">
       	
-
+      <?php echo $this->element('/admin/flash');?>
     	
        <?php echo $this->Form->create("User", array('action'=>'register', 'id'=>'form', 'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after',  'error'  ) ) ) ) ?>
@@ -75,7 +75,7 @@
                       
                      
                       <?php 
-                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+                      $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
                       echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year', 'onchange'=>'calculate_age()'));
                     ?>
                      <?php echo __('user.register.year')?>
@@ -223,7 +223,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">税込月収</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.tax_of_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
+                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
                   </div>
                 </div>
                 
