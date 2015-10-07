@@ -52,7 +52,7 @@
 						<div class="content">
 							<div class="container-fluid">
 							<div class="block-warning" id="error-section" style="display:none">
-			                    <?php echo __('global.errors.reset.password'); ?>
+			                    <?php echo __('global.errors'); ?>
 			                </div>
 								<div class="content-from">
 									<form id="form_reset" action="reset_password" method="POST" >
@@ -126,7 +126,7 @@
       },
       messages: {
         'email': {
-          required: "<?php echo __('global.errors.required'); ?>"
+          required: "<?php echo __('global.errors.reset_password.email'); ?>"
         }
       },
       invalidHandler: function(event, validator) {
@@ -148,7 +148,7 @@
 	    jQuery('.submit').click(function(event){
 		    jQuery.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_password_reset/", type: 'POST', cache: false, data: 'email='+jQuery('#reset_email').val(),  success: function(result){
 	        	if(result== 'not'){
-	        		$('#error-section').show().html("<?php echo __('global.errors.reset.email'); ?>");
+	        		$('#error-section').show().html("<?php echo __('global.errors.reset_password.email_unique'); ?>");
 	        	}
 	        	else{
 	        		$('#error-section').hide();

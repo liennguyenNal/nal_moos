@@ -10,7 +10,7 @@
             <div class="block-warning" id="error-section" style="display:none">
                 <?php echo __('global.errors'); ?>
             </div>
-          <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after' ) ))) ?>
+          <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ))) ?>
             <div class="content-from-block">
               <div class="content-from-how">
                 <table class="from" id="theform">
@@ -177,7 +177,7 @@
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.city'); ?></span>
                         <?php 
-                            echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false));
+                            echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
                         ?>
                       </div>
                       <div class="block-input">
@@ -344,7 +344,7 @@
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.city'); ?></span>
                         <?php 
-                            echo $this->Form->input('UserCompany.city', array('type'=>'text', 'id'=>"company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false));
+                            echo $this->Form->input('UserCompany.city', array('type'=>'text', 'id'=>"company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'maxlength'=>false));
                         ?>
                       </div>
                       <div class="block-input">
@@ -446,7 +446,7 @@
                             </script>  
                           </div>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'required'=>false))
+                                echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'required'=>false, 'style'=>'width: 100px'))
                             ?>
                         </div>
                         </div>
@@ -481,9 +481,18 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'required'=>false, 'id'=>'salary_receive')); 
+                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'required'=>false, 'id'=>'salary_receive', 'onchange'=>'change_type_date($(this))')); 
                             ?>
                           </div>
+                          <script type="text/javascript">
+                              function change_type_date(obj){
+                                  if(obj.val() == '3')
+                                  $('#salary_date').prop('disabled',false);
+                                  else {
+                                    $('#salary_date').prop('disabled',true);
+                                  }
+                              }
+                          </script>
                           <div class="style-a">
                             <label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
                             <?php 
@@ -598,7 +607,7 @@
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.city'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false))
                             ?>
                           </div>
                           <div class="block-input">
@@ -815,14 +824,14 @@
     $.validator.addMethod("integer_number", function(value, element, regexp) {
         var re = new RegExp(regexp);
         return this.optional(element) || re.test(value);
-    }, "Please enter positive integer number" );
+    }, "半角数字で入力してください。" );
 
     $("#UserEditBasicInfo").validate({
         rules: {
-            // 'data[User][first_name]': {required: true},
-            // 'data[User][last_name]': {required: true},
-            // 'data[User][first_name_kana]': {required: true},
-            // 'data[User][last_name_kana]': {required: true},
+            'data[User][first_name]': {required: true},
+            'data[User][last_name]': {required: true},
+            'data[User][first_name_kana]': {required: true},
+            'data[User][last_name_kana]': {required: true},
             // 'data[User][gender]': {required: true},
             // 'data[User][year_of_birth]': {required: true},
             // 'data[User][month_of_birth]': {required: true},
@@ -846,6 +855,7 @@
                 return !$("#home_phone").val();
               },
                 number: true,
+                maxlength: 10,
                 phone_number: "^0[0-9]{9}"
             },
             'data[User][home_phone]': {
@@ -853,6 +863,7 @@
                 return  !$("#phone").val();
               },
                 number: true,
+                maxlength: 10,
                 phone_number: "[0-9]{11}"
             },
             // 'data[User][contact_type]': {required: true},
@@ -863,24 +874,45 @@
             'data[UserCompany][post_num_2]': {number: true, minlength: 4, maxlength: 4},
             // 'data[UserCompany][pref_id]': {required: true},
             // 'data[UserCompany][city]': {required: true},
-            'data[UserCompany][phone]': {number: true, phone_number: "^0[0-9]{9}"},
-            'data[UserCompany][fax]': {number: true},
+            'data[UserCompany][phone]': {
+              number: true,
+              maxlength: 10, 
+              phone_number: "^0[0-9]{9}"
+            },
+            'data[UserCompany][fax]': {
+              number: true,
+              maxlength: 10
+            },
             // 'data[UserCompany][description]': {required: true},
             // 'data[UserCompany][department]': {required: true},
             // 'data[UserCompany][position]': {required: true},
-            'data[UserCompany][year_worked]': {number: true},
-            'data[UserCompany][month_worked]': {number: true},
+            'data[UserCompany][year_worked]': {
+              number: true,
+              min: 0
+            },
+            'data[UserCompany][month_worked]': {
+              required: true,
+              number: true,
+              min: 0,
+              max: 11
+            },
             'data[UserCompany][salary_type_other]': {
-              required: function(element){
-                return $("#salary_type").val()!="4";
-              }
+              required: {
+                depends: function() {
+                  return $('input[name="data[UserCompany][salary_type]"]:checked').val() == '4';
+                }
+              },
+              number: true            
             },
             'data[UserCompany][salary_month]': {number: true},
             'data[UserCompany][salary_year]': {number: true},
             'data[UserCompany][salary_date]': {
-              required: function(element){
-                return $("#salary_receive").val()!="3";
-              }
+              required: {
+                depends:  function() {
+                  return $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() == '3';
+                }
+              },
+              number: true
             },
             'data[User][debt_count]': {number: true},
             'data[User][debt_total_value]': {number: true},
@@ -891,13 +923,30 @@
             // 'data[ExpectArea][1][city]': {required: true}
         },
         messages: {
+            'data[User][first_name]': {required: "<?php echo __('global.errors.basic_info.firstname'); ?>"},
+            'data[User][last_name]': {required: "<?php echo __('global.errors.basic_info.lastname'); ?>"},
+            'data[User][first_name_kana]': {required: "<?php echo __('global.errors.basic_info.firstnamekana'); ?>"},
+            'data[User][last_name_kana]': {required: "<?php echo __('global.errors.basic_info.lastnamekana'); ?>"},
             'data[UserAddress][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
             'data[UserAddress][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
             'data[UserCompany][post_num_1]': {minlength: "<?php echo __('global.errors.minlength_3'); ?>"},
             'data[UserCompany][post_num_2]': {minlength: "<?php echo __('global.errors.minlength_4'); ?>"},
             'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[UserCompany][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
-            'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
+            'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"},
+            'data[User][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[User][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[UserCompany][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[UserCompany][fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[UserCompany][month_worked]': {
+              required: "<?php echo __('global.errors.required'); ?>",
+              min: "<?php echo __('global.errors.month.min'); ?>",
+              max: "<?php echo __('global.errors.month.max') ?>"
+            },
+            'data[UserCompany][year_worked]': {
+              required: "<?php echo __('global.errors.required'); ?>",
+              min: "<?php echo __('global.errors.month.min'); ?>"
+            }
         },
         tooltip_options: {
           

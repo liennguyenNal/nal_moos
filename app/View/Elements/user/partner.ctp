@@ -10,7 +10,7 @@
         <div class="block-warning" id="error-section" style="display:none">
             <?php echo __('global.errors'); ?>
         </div>
-        <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserPartnerEdit','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after' ) ) ) ) 
+        <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserPartnerEdit','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ) ) ) 
         ?>
           <div class="content-from-block">
             <div class="content-from-how">
@@ -189,7 +189,7 @@
                     <div class="block-input">
                       <span class="w78"><?php echo __('user.register.city'); ?></span>
                       <?php 
-                        echo $this->Form->input('UserPartner.company_city', array('type'=>'text', 'id'=>"p_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required' => false, 'data-placement'=>"right"));
+                        echo $this->Form->input('UserPartner.company_city', array('type'=>'text', 'id'=>"p_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required' => false, 'data-placement'=>"right", 'maxlength'=>false));
                       ?>
                     </div>
                     <div class="block-input">
@@ -290,7 +290,7 @@
                         </script>  
                       </div>
                         <?php 
-                            echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'style'=>'width: 100px'))
+                            echo $this->Form->input('UserPartner.salary_type_other', array('type'=>'text', 'id'=>"p_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'style'=>'width: 100px', 'required'=>false))
                         ?>
                       </div>
                       <script type="text/javascript">
@@ -332,12 +332,21 @@
                       <div class="form-w">
                         <div class="block-input-radio">
                         <?php 
-                          echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'id'=>'salary_receive')); 
+                          echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'id'=>'salary_receive', 'onchange'=>'p_change_type_date($(this))')); 
                         ?>
                         </div>
+                        <script type="text/javascript">
+                          function p_change_type_date(obj){
+                              if(obj.val() == '3')
+                              $('#p_salary_date').prop('disabled',false);
+                              else {
+                                $('#p_salary_date').prop('disabled',true);
+                              }
+                          }
+                      </script>
                         <div class="style-a">
                           <label ><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
-                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right" ))
+                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required' => false, 'data-placement'=>"right" ))
                           ?> 
                           <label><?php echo __('global.date'); ?></label>
                         </div>
@@ -677,20 +686,28 @@
       },
       'data[UserPartner][company_phone]': {
         number: true,
+        maxlength: 10,
         phone_number: "^0[0-9]{9}"
       },
       'data[UserPartner][company_fax]': {
-        number: true
+        number: true,
+        maxlength: 10
       },
       'data[UserPartner][salary_type_other]': {
-        required: function(element){
-          return $("#salary_type").val()!="4";
-        }
+        required: {
+          depends: function() {
+            return $('input[name="data[UserPartner][salary_type]"]:checked').val() == '4';
+          }
+        },
+        number: true     
       },
       'data[UserPartner][salary_date]': {
-        required: function(element){
-          return $("#salary_receive").val()!="3";
-        }
+        required: {
+          depends:  function() {
+            return $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() == '3';
+          }
+        },
+        number: true
       },
       'data[UserPartner][year_worked]': {number: true},
       'data[UserPartner][month_worked]': {number: true},
@@ -700,7 +717,9 @@
     },
     messages: {
       'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
-      'data[UserPartner][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"}
+      'data[UserPartner][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
+      'data[UserPartner][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+      'data[UserPartner][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

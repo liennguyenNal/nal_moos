@@ -58,7 +58,7 @@
               </div>
             <?php } ?>
             <div class="block-warning" id="error-section" style="display:none">
-              <?php echo __('login.errors'); ?>
+              <?php echo __('login.errors.invalid'); ?>
             </div>
             <div class="from-ldpage">
               <div class="content">

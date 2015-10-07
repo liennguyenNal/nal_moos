@@ -183,7 +183,7 @@
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.city'); ?></span>
 										<?php 
-						                    echo $this->Form->input('OtherGuarantor.city', array('type'=>'text', 'id'=>"og_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'));
+						                    echo $this->Form->input('OtherGuarantor.city', array('type'=>'text', 'id'=>"og_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false));
 						                ?>
 									</div>
 									<div class="block-input">
@@ -330,7 +330,7 @@
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.city'); ?></span>
 										<?php 
-						                    echo $this->Form->input('OtherGuarantor.company_city', array('type'=>'text', 'id'=>"og_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right'));
+						                    echo $this->Form->input('OtherGuarantor.company_city', array('type'=>'text', 'id'=>"og_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'maxlength'=>false));
 						                ?>
 									</div>
 									<div class="block-input">
@@ -468,13 +468,22 @@
 										<div class="form-w">
 											<div class="block-input-radio">
 												<?php 
-							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'id'=>'salary_receive')); 
+							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'id'=>'salary_receive', 'onchange'=>'og_change_type_date($(this))')); 
 							                	?>
 											</div>
+											<script type="text/javascript">
+				                                function og_change_type(obj){
+				                                    if(obj.val() == '3')
+				                                    $('#og_salary_date').prop('disabled',false);
+				                                    else {
+				                                      $('#og_salary_date').prop('disabled',true);
+				                                    }
+				                                }
+				                            </script>  
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right'))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>
@@ -610,6 +619,7 @@
       //           return !$("#home_phone").val();
       //        },
                 number: true,
+                maxlength: 10,
                 phone_number: "^0[0-9]{9}"
     		},
     	'data[OtherGuarantor][home_phone]': {
@@ -617,6 +627,7 @@
       //           return  !$("#phone").val();
       //         },
                 number: true,
+                maxlength: 10,
                 phone_number: "[0-9]{11}"
         },
         'data[OtherGuarantor][company_post_num_1]': {
@@ -631,24 +642,32 @@
         },
         'data[OtherGuarantor][company_phone]': {
         	number: true,
+        	maxlength: 10,
         	phone_number: "^0[0-9]{9}"
         },
         'data[OtherGuarantor][company_fax]': {
-        	number: true
+        	number: true,
+        	maxlength: 10
         },
         'data[OtherGuarantor][year_worked]': {number: true},
         'data[OtherGuarantor][month_worked]': {number: true},
         'data[OtherGuarantor][income_month]': {number: true},
         'data[OtherGuarantor][income_year]': {number: true},
         'data[OtherGuarantor][salary_type_other]': {
-        required: function(element){
-          		return $("#salary_type").val()!="4";
-        	}
+        	required: {
+                depends: function() {
+                  return $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() == '4';
+                }
+            },
+            number: true
       	},
       	'data[OtherGuarantor][salary_date]': {
-        	required: function(element){
-          	return $("#salary_receive").val()!="3";
-        	}
+        	required: {
+                depends:  function() {
+                  return $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() == '3';
+                }
+            },
+            number: true
       	}
     },
     messages: {
@@ -669,7 +688,11 @@
     		maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
     	},
     	'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
-    	'data[OtherGuarantor][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"}
+    	'data[OtherGuarantor][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
+    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
+    	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
+    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
+    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();

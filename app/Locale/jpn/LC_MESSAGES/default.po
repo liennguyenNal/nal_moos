@@ -219,11 +219,8 @@ msgstr "添付書類"
 msgid "admin.user.view.set_max_payment_button"
 msgstr "上限賃料を変更する"
 
-msgid "login.errors"
-msgstr "IDとパスワードが一致しませんでした。</br>ご確認の上、再度ご登録いただいた情報を入力してください。"
-
 msgid "login.errors.invalid"
-msgstr "Incorrect username or password. Please try again!"
+msgstr "IDとパスワードが一致しませんでした。</br>ご確認の上、再度ご登録いただいた情報を入力してください。"
 
 msgid "user.my_page.basic_info.family"	
 msgstr "家族との居住状況"
@@ -679,7 +676,7 @@ msgstr "内容"
 
 <<<<<<< HEAD
 msgid "global.errors.required_checkbox"
-msgstr "上記内容に同意します。※"
+msgstr "必須項目です。</br>チェックしてください。"
 
 msgid "global.errors.month.min"
 msgstr "０より大きいな数字をご入力ください。"
@@ -708,14 +705,107 @@ msgstr "パスワード変更"
 msgid "user.email_change_password.message_successful"
 msgstr "ご登録頂いたメールアドレスに、パスワード設定用野’リンクを送信しました。メールに記載されたリンクをクリックし、パスワードを設定してください。"
 
+msgid "global.errors.maxlength_10"	
+msgstr "10桁以下にご入力ください。"
 
+msgid "global.errors.firstname"	
+msgstr "必須項目です。</br>全角で入力してください。"
 
+msgid "global.errors.lastname"	
+msgstr "必須項目です。</br>全角で入力してください。"
 
+msgid "global.errors.firstnamekana"	
+msgstr "必須項目です。</br>全角カタカナで入力してください。"
 
+msgid "global.errors.lastnamekana"	
+msgstr "必須項目です。</br>全角カタカナで入力してください。"
 
+msgid "global.errors.gender"	
+msgstr "必須項目です。</br>選択してください。"
 
+msgid "global.errors.married"	
+msgstr "必須項目です。</br>選択してください。"
 
+msgid "global.errors.birthday"	
+msgstr "必須項目です。</br>選択してください。"
 
+msgid "global.errors.post_num_1"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
+
+msgid "global.errors.post_num_2"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
+
+msgid "global.errors.pref"	
+msgstr "必須項目です。</br>全角で入力してください。"
+
+msgid "global.errors.city"	
+msgstr "必須項目です。</br>全角で入力してください。"
+
+msgid "global.errors.address"	
+msgstr "必須項目です。"
+
+msgid "global.errors.phone"	
+msgstr "必須項目です。(自宅が入力されている場合は表示しない)</br>半角数字で入力してください。</br>11桁で入力してください"
+
+msgid "global.errors.home_phone"	
+msgstr "必須項目です。(携帯電話が入力されている場合は表示しない)</br>半角数字で入力してください。</br>10桁で入力してください"
+
+msgid "global.errors.register.email"	
+msgstr "必須項目です。</br>半角英数字で入力してください。"
+
+msgid "global.errors.register.confirm_email"	
+msgstr "入力したメールアドレスと一致しません。</br>再度メールアドレスを正確に入力してください。"
+
+msgid "global.errors.work_id"	
+msgstr "必須項目です。</br>選択してください。"
+
+msgid "global.errors.year_worked"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
+
+msgid "global.errors.salary_year"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
+
+msgid "global.errors.maxlength_11"	
+msgstr "11桁以下にご入力ください。"
+
+msgid "global.errors.contact_type"	
+msgstr "必須項目です。</br>選択してください。"
+
+msgid "global.errors.contact.phone"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
+
+msgid "global.errors.contact.email"	
+msgstr "必須項目です。</br>半角英数字で入力してください。"
+
+msgid "global.errors.contact.confirm_email"	
+msgstr "入力したメールアドレスと一致しません。</br>再度メールアドレスを正確に入力してください。"
+
+msgid "global.errors.contact.content"	
+msgstr "必須項目です。"
+
+msgid "global.errors.create_password.password"	
+msgstr "必須項目です。</br>半角英数字で入力してください。</br>8文字以上で入力してください。"
+
+msgid "global.errors.create_password.confirm_password"	
+msgstr "入力したパスワードと一致しません。</br>再度パスワードを正確に入力してください。"
+
+msgid "global.errors.reset_password.email"	
+msgstr "必須項目です。</br>半角英数字で入力してください。"
+
+msgid "global.errors.reset_password.email_unique"	
+msgstr "※メールアドレスの登録がDB上になかった場合</br>送信いただいたメールアドレスは登録されておりません。</br>お問い合わせいただくか、再度無料会員登録を行ってください。"
+
+msgid "global.errors.basic_info.firstname"	
+msgstr "全角で入力してください。"
+
+msgid "global.errors.basic_info.lastname"	
+msgstr "全角で入力してください。"
+
+msgid "global.errors.basic_info.firstnamekana"	
+msgstr "全角カタカナで入力してください。"
+
+msgid "global.errors.basic_info.lastnamekana"	
+msgstr "全角カタカナで入力してください。"
 
 
 
