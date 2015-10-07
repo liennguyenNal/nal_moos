@@ -360,6 +360,8 @@ msgstr "【家賃でもらえる家】審査結果のご連絡"
 msgid "admin.email.project_payment.title"
 msgstr "家賃でもらえる家】審査結果のご連絡"
 
+msgid "admin.email.update_account.title"
+msgstr "【家賃でもらえる家】審査申し込み"
 
 msgid "admin.register_users"
 msgstr "会員一覧"
@@ -521,14 +523,14 @@ msgstr "勤続年数"
 msgid "user.dashboard.user.year_worked"
 msgstr "勤続月数"
 
-msgid "user.register.update_basic_info.successfull"
-msgstr "Updated successful"
+msgid "user.register.update_basic_info.successful"
+msgstr "保存しました"
 
-msgid "user.register.update_partner.successfull"
-msgstr "Updated successful"
+msgid "user.register.update_partner.successful"
+msgstr "保存しました"
 
-msgid "user.register.update_gurantor.successfull"
-msgstr "Updated successful"
+msgid "user.register.update_gurantor.successful"
+msgstr "保存しました"
 
 msgid "user.create_password.fail"
 msgstr "Cannot create password"
@@ -674,7 +676,6 @@ msgstr "詳細"
 msgid "admin.articles.content"
 msgstr "内容"
 
-<<<<<<< HEAD
 msgid "global.errors.required_checkbox"
 msgstr "必須項目です。</br>チェックしてください。"
 

@@ -94,7 +94,7 @@ class LoginComponent extends Object
         	}
         	else 
         	{
-        		$this->controller->set('username', $username);
+        		$this->controller->set('email', $email);
                 $this->controller->set('login_error_msg', __('login.errors.invalid'));
         	}
         }

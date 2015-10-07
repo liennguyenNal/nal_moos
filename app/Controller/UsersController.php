@@ -763,7 +763,7 @@ class UsersController extends AppController{
         }
       }
       else {
-
+        $this->redirect( 'login' );
       }
     }
 
@@ -993,7 +993,12 @@ class UsersController extends AppController{
                     $user = $this->User->read(null, $user_id);
                     $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
                     $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
-
+                    $user =  $this->User->find('first', array('conditions'=>array('User.id'=>$user_id), 
+                      'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'OtherGuarantor',
+                          'UserPartner', 'ExpectArea', 'ExpectArea.Pref' ,'UserRelation', 'UserAttachment'), 
+                        'recursive'=>3
+                      ));
+                    
                     /**
                      * SEND EMAIL TO CUSTOMER
                      * @var CakeEmail
@@ -1019,10 +1024,10 @@ class UsersController extends AppController{
                     $Email->subject("【MOOS】会員登録通知");
                     $Email->viewVars(array('user' => $user));
                     $Email->send();
-
+                    $this->Session->delete('user_register');
                     $this->redirect( "register_successful" );
                   } else {
-                    $this->UserAddress->delete($this->UserAddress->getLastInsertId());
+                    
                     $this->UserCompany->delete($this->UserCompany->getLastInsertId());
                     $this->redirect( "register" );
                   }
@@ -1047,7 +1052,10 @@ class UsersController extends AppController{
             $this->data = $user;
           }
       }
-      else {}
+      else {
+        //$this->data = $user;
+              $this->redirect( "register" );
+      }
     }
 
 
@@ -1188,7 +1196,7 @@ class UsersController extends AppController{
                   'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
                 $this->set('user', $user);
                 $this->data = $user;
-                $this->Session->setFlash(__('user.register.update_basic_info.successfull'),'default', array('class' => 'alert alert-dismissible alert-success'));
+                $this->Session->setFlash(__('user.register.update_basic_info.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
               }
               
              
@@ -1717,7 +1725,10 @@ class UsersController extends AppController{
        $id = $this->s_user_id;
       if($id){
         //echo $id; die;
-        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
+          'contain'=>array('UserAddress', 'UserCompany','UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea', 'ExpectArea.Pref' ,'UserRelation', 'UserAttachment'),
+          'recursive'=>3,
+          ));
         $this->data = $user;
         //validate before save
         $validations = $this->_validate($user);

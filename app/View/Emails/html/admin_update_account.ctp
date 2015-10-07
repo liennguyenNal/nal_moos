@@ -11,7 +11,7 @@
 <p>性別：<?php echo $user['User']['gender']?></p>
 <p>婚姻：<?php echo $user['MarriedStatus']['name']?></p>
 <p>職業：<?php echo $user['UserCompany']['Work']['name']?></p>
-<p>勤務年月：<?php echo $user['UserCompany']['year_worked'] ?></p>
+<p>勤務年月：<?php echo $user['UserCompany']['year_worked'] ?> 年<?php echo $user['UserCompany']['year_worked'] ?>月</p>
 <p>月収：<?php echo $user['UserCompany']['salary_month'] ?></p>
 <p></p>
 <p>▼希望エリア1</p>
@@ -28,4 +28,4 @@
 <p>----------------------------------------------------</p>
 <p></p>
 <p>審査申し込み内容の確認を行い、承認・却下・差戻し手続きを管理画面から行ってください。</p>
-<p><a href="http://<?php echo Router::url('/', true) ;?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
+<p><a href="http://<?php echo Router::url('/', true) ;?>users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
