@@ -7,7 +7,9 @@
 <p></p>
 <p>▼会員情報概要</p>
 <p>年齢：<?php echo $user['User']['age_of_birth']; ?></p>
-<p>性別：<?php echo if($user['User']['gender'] == "male") echo __("user.register.male"); else echo  __("user.register.female")?></p> 
+<p>性別：<?php if($user['User']['gender'] == "male") echo __("user.register.male"); 
+					else echo  __("user.register.female")?>
+</p> 
 <p>婚姻：<?php echo $user['User']['married_status_id']; ?></p>
 <p>職業：<?php echo $user['UserCompany']['Work']['name']; ?></p>
 <p>勤務年月：<?php echo $user['UserCompany']['year_worked']; ?>年 <?php echo $user['UserCompany']['month_worked']; ?>月</p>

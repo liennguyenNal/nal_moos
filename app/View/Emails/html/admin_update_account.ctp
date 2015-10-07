@@ -8,7 +8,8 @@
 <p></p>
 <p>▼会員情報概要</p>
 <p>年齢：<?php echo date("Y") - $user['User']['year_of_birth'];?></p>
-<p>性別：<?php echo $user['User']['gender']?></p>
+<p>性別：<?php if($user['User']['gender'] == "male") echo __("user.register.male"); 
+					else echo  __("user.register.female")?>
 <p>婚姻：<?php echo $user['MarriedStatus']['name']?></p>
 <p>職業：<?php echo $user['UserCompany']['Work']['name']?></p>
 <p>勤務年月：<?php echo $user['UserCompany']['year_worked'] ?> 年<?php echo $user['UserCompany']['year_worked'] ?>月</p>

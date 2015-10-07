@@ -973,7 +973,9 @@ class UsersController extends AppController{
           $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
           $user['User']['access_token'] = md5(rand(0,100));
           $this->set('user', $user);
+
           if($this->data){
+             print_r($user['User']['year_of_birth']); die;
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
                 $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
