@@ -99,7 +99,7 @@
       
 
         
-        <?php echo $this->element('flash');?>
+        <?php //echo $this->element('flash');?>
         <div class="bs-component">
           
           <table class="table table-striped table-hover ">
