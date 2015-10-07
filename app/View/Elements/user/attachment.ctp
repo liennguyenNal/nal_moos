@@ -48,7 +48,7 @@
                        </div>
                      <?php } else { ?>  
                       <div class="upload-file">
-                           <div id="file-<?php echo $i ?>"> <a href="<?php echo $this->webroot;?>files/upload/<?php echo $file_name;?>"> <?php echo $file_name;?> </a>
+                           <div id="file-<?php echo $i ?>"> <a href="<?php echo $this->webroot;?>files/upload/<?php echo $file_name;?>" class="link-download"> <?php echo $file_name;?> </a>
                             <a onclick='delete_file(<?php echo $i ?>);' href='javascript:void(0)' class="delete-file">&nbsp;x</a>
                            </div>
                            <section id="section-upload-<?php echo $i ?>" style="display:none">
@@ -67,6 +67,7 @@
       <script type="text/javascript" charset="utf-8">
         $('#UserAttachForm').find(':input').hide();
         $('#UserAttachForm').find('a').hide();
+         $('#UserAttachForm').find('.link-download').show();
       </script>
     <?php } ?>
 

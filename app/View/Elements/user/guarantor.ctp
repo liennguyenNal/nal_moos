@@ -6,7 +6,7 @@
 					<h3>連帯保証人基本情報</h3>
 				</div>
 				<!-- FORM -->
-				<?php echo $this->element('flash');?>
+				<?php echo $this->element('flash_success');?>
 	            <div class="block-warning" id="error-section" style="display:none">
 	                <?php echo __('global.errors'); ?>
 	            </div>

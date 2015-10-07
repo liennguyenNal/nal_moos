@@ -5,9 +5,8 @@
  <div class="col-lg-4">
     <div class="bs-component">
 		 <ul class="breadcrumb">
-		    <li><a href="#">Home</a></li>
-		    <li><a href="<?php echo $this->webroot?>admin/users/">Customers</a></li>
-		    <li class="active">View Customer </li>
+		   <li><a href="<?php echo $this->webroot?>admin/users/"><?php echo __('admin.register_users')?></a></li>
+		   
 		  </ul>
 	</div>
 </div>
@@ -34,7 +33,7 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label for="inputEmail"><?php echo __('user.register.username') ;?><span style="color:red">*</span></label>
+                  <label for="inputEmail"><?php echo __('user.register.username') ;?></label>
                 </td>
                 <td>
                   <div class="form-group">
@@ -55,7 +54,7 @@
                 </td>
               </tr>
              <tr>
-             <td> <label for="inputEmail">__('user.register.gender')<span style="color:red">*</span></label></td>
+             <td> <label for="inputEmail"><?php echo __('user.register.gender'); ?></label></td>
               <td>
                 <div class="form-group">
                 
@@ -68,7 +67,7 @@
               </td>
               </tr>
               <tr>
-                <td> <label for="inputEmail" ><?php echo __('user.register.birthday')?><span style="color:red">*</span></label></td>
+                <td> <label for="inputEmail" ><?php echo __('user.register.birthday')?></label></td>
                 <td>
                   <div class="form-group">
                    
@@ -106,7 +105,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.married')?><span style="color:red">*</span></label></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.married')?></label></td>
                 <td>
                 <div class="form-group">
                 
@@ -123,7 +122,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address')?><span style="color:red">*</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address')?></td>
                 <td>
                   <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">〒</label>
@@ -165,7 +164,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail"><?php echo __('user.register.email')?><span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.register.email')?></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -177,7 +176,7 @@
               </tr>
                
               <tr>
-                <td><label for="inputEmail">電話番号<span style="color:red">*</span></label></td>
+                <td><label for="inputEmail">電話番号</label></td>
                 <td>
                   <div class="form-group">
                     
@@ -233,14 +232,14 @@
               </fieldset>
           
             </div>
-            <h4>ご希望エリア　※最大５エリアまで</h4>
+            <!-- <h4>ご希望エリア　※最大５エリアまで</h4> -->
             <section id="expect-area">
             <?php foreach ($user['ExpectArea'] as $item) {?>
             <div class="well bs-component" id='expect-area-content' >
               <fieldset>
 
                   <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">〒<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">〒</label>
                   <div class="col-lg-10" >
                     <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false, 'value'=>$item["post_num_1"]))?>
                     <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false, 'value'=>$item["post_num_2"]))?>
@@ -249,7 +248,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">都道府県<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">都道府県</label>
                   <div class="col-lg-10">
                     <?php 
                     echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'value'=>$item["pref_id"] , 'empty'=>'青森県'));
@@ -257,14 +256,14 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">市区町村<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">市区町村</label>
                   <div class="col-lg-10">
                      <?php echo $this->Form->input('ExpectArea.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["city"]))?>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">地城<span style="color:red">*</span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">地城</label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input("ExpectArea.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'value'=>$item["address"]))?>
                   </div>

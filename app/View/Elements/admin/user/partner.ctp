@@ -20,7 +20,7 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label><?php echo __('user.register.username'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
+                  <label><?php echo __('user.register.username'); ?></span></label>
                 </td>
                 <td>
                   <div class="form-group">
@@ -45,7 +45,7 @@
                   </script>
               </tr>
              <tr>
-               <td> <label ><?php echo __('user.register.gender') ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+               <td> <label ><?php echo __('user.register.gender') ?></span></label></td>
                 <td>
                   <div class="form-group">
                   
@@ -58,28 +58,31 @@
                 </td>
               </tr>
               <tr>
-                <td> <label ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td> <label ><?php echo __('user.register.birthday'); ?></span></label></td>
                 <td>
                   <div class="form-group">
                    
                     <div class="col-lg-10">
                       
-                      <?php echo __('user.register.year'); ?>
+                      
                       <?php 
                       $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
                       echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year',  'required' => false));
                     ?>
-                    <?php echo __('user.register.month'); ?>
+                    <?php echo __('user.register.year'); ?>
+                    
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
                       echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required' => false));
                     ?>
-                    <?php echo __('user.register.day'); ?>
+                    <?php echo __('user.register.month'); ?>
+                    
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
                       echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required' => false));
                     ?>
-                      歳 : <span id="p-age">0</span>
+                    <?php echo __('user.register.day'); ?>
+                      &nbsp;&nbsp; <span id="p-age">0</span> &nbsp;歳 
                     <script type="text/javascript">
                     var d = new Date();
                       var n = d.getFullYear();
@@ -103,7 +106,7 @@
                
                  
                 <tr>
-                  <td><label for="phone"><?php echo __('user.partner.phone'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                  <td><label for="phone"><?php echo __('user.partner.phone'); ?></span></label></td>
                   <td>
                     <div class="form-group">
                       
@@ -129,7 +132,7 @@
              <legend>配偶者連絡先情報</legend>
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span></label>
                   <div class="col-lg-10">
                    
                     <?php 
@@ -151,7 +154,7 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red"><?php echo __('global.require'); ?></span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></span></td>
                 <td>
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -275,7 +278,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?></span></label>
                   <div class="col-lg-10">
                    
                     <?php 

@@ -75,14 +75,13 @@ class UsersController extends AppController{
           ));
       //Configure::write('debug', 0);
         $this->set('users', $users);
-        //var_dump($users); die;
+        var_dump($users); die;
         $this->layout = null;
        $this->autoLayout = false;
       Configure::write('debug', 0);
 
     }
     function admin_index(){
-      //Configure::write('debug', 2);
       $statuses = $this->Status->find('list', array('conditions'=>array('Status.id <> 0')));
       $this->set('statuses', $statuses);
       $prefs = $this->Pref->find('list');
@@ -137,7 +136,6 @@ class UsersController extends AppController{
         );
         $users = $this->paginate('User');
         $this->set('users', $users);
-        //var_dump($users); die;
         //print_r($users[0]['UserCompany']['Work']);die;
     }
 
@@ -975,10 +973,7 @@ class UsersController extends AppController{
                 $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
                 $this->User->set($user);
-                //if($this->User->save->validates()){
-                $email = $this->user['User']['email'];
-                $user_email = $this->User->find('first', array('conditions'=>array('User.email'=>$email)));
-                if(!$user_email){
+                if($this->User->save->validates()){
                   if( $this->User->save( $user, false ) ){
                     $user_id = $this->User->getLastInsertId();
                     foreach ($user['ExpectArea'] as $item) {
@@ -1023,13 +1018,13 @@ class UsersController extends AppController{
                     $this->UserCompany->delete($this->UserCompany->getLastInsertId());
                     $this->redirect( "register" );
                   }
-               }
-               else {
-                   $this->data = $user;
-                    $this->Session->setFlash(__('global.errors.reset.email'));
-                   $this->redirect( "register" );
+                }
+                else {
+                  $this->data = $user;
+                   $this->Session->setFlash(__('global.errors.reset.email'));
+                  $this->redirect( "register" );
 
-                 }
+                }
             } else {
               $this->data = $user;
               $this->redirect( "register" );
@@ -1464,7 +1459,7 @@ class UsersController extends AppController{
           $item = $user['UserRelation'][0];
           //print_r($item);die;
            $result['UserPartner']['UserPartnerRelation']['fields'] = array();
-           $user_partner_relation_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'year_of_birthday'=>__('user.register.year'), 'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'relate'=>__('user.partner.user.relation'));
+           $user_partner_relation_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'year_of_birthday'=>__('user.register.year'), 'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'relate'=>__('user.partner.user.relation"'));
         $this->UserRelation->set($item);
         if( !$this->UserRelation->validates()){
           $result['error'] = 1;
@@ -1658,7 +1653,7 @@ class UsersController extends AppController{
 
     // validate work type
     function _validate_work_type($obj, $result){
-      $company_required_fields = array( 'company'=>__('user.my_page.basic_info.company_name'), 'company_kana'=>__('user.my_page.basic_info.company_name_kana'), 'company_post_num_1'=>__('user.dashboard.user.post_num_1'), 'company_post_num_2'=>__('user.dashboard.user.post_num_2'), 'company_pref_id' =>__('user.register.pref'),
+      $company_required_fields = array( 'company'=>__('user.my_page.basic_info.company'), 'company_kana'=>__('user.my_page.basic_info.company_name_kana'), 'company_post_num_1'=>__('user.dashboard.user.post_num_1'), 'company_post_num_2'=>__('user.dashboard.user.post_num_2'), 'company_pref_id' =>__('user.register.pref'),
           'company_city'=>__('user.register.city'), 'company_address'=>__('user.register.address'), 'company_phone'=>__('user.register.phone'), 'company_fax'=>__('user.my_page.basic_info.fax'), 'career_id'=>__('user.my_page.basic_info.career'), 'company_position'=>__('user.my_page.basic_info.position'), 'company_department'=>__('user.my_page.basic_info.department'), 'company_job_desc'=>__('user.my_page.basic_info.description'), 
           'month_worked'=>__('user.dashboard.user.month_worked'), 'year_worked'=>__('user.dashboard.user.year_worked'), 'income_month'=>__('user.my_page.basic_info.salary_month'), 'income_year'=>__('user.my_page.basic_info.salary_year'), 'salary_receive_id' =>__('user.my_page.basic_info.salary_receive'), 'salary_type'=>__('user.my_page.basic_info.salary_type'), 'insurance_id'=>__('user.my_page.basic_info.insurances'));
           

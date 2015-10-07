@@ -20,7 +20,7 @@
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td>
-	                  <label for="inputEmail"><?php echo __('user.register.username'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
+	                  <label for="inputEmail"><?php echo __('user.register.username'); ?></label>
 	                </td>
 	                <td>
 	                  <div class="form-group">
@@ -45,7 +45,7 @@
 	                </script>
 	              </tr>
 	             <tr>
-		             <td> <label for="inputEmail"><?php echo __('user.register.gender'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+		             <td> <label for="inputEmail"><?php echo __('user.register.gender'); ?></label></td>
 		              <td>
 		                <div class="form-group">
 		                
@@ -58,28 +58,31 @@
 		              </td>
 	              </tr>
 	              <tr>
-	                <td> <label for="inputEmail" ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td> <label for="inputEmail" ><?php echo __('user.register.birthday'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                   
 	                    <div class="col-lg-10">
 	                    	
-	                      <?php echo __('user.register.year'); ?>
+	                      
 	                      <?php 
 	                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
 	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year',  'required'=>false));
 	                		?>
-	    	              <?php echo __('user.register.month'); ?>
+	                		<?php echo __('user.register.year'); ?>
+	    	              
 	    	              <?php 
 	    	              	$months = array_combine(range(1, 12), range(1, 12));
 	                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false));
 	                		?>
-	    	              <?php echo __('user.register.day'); ?>
+	                		<?php echo __('user.register.month'); ?>
+	    	              
 	    	              <?php 
 	    	              $dates = array_combine(range(1, 31), range(1, 31));
 	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
-	                      <?php echo __('user.register.age'); ?> : <span id="g-age-1">0</span>
+	                		<?php echo __('user.register.day'); ?>
+	                     	&nbsp;&nbsp;<span id="g-age-1">0</span>&nbsp; <?php echo __('user.register.age'); ?>
 	                    
 	                    	 <script type="text/javascript">
 		                    var d = new Date();
@@ -92,7 +95,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?></label></td>
 	                <td>
 	                <div class="form-group">
 	                
@@ -105,7 +108,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?></label></td>
 	                <td>
 	                <div class="form-group">
 	                
@@ -118,7 +121,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.num_children'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.num_children'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -131,7 +134,7 @@
 	                  </td>
 	               </tr>
 	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.my_page.guarantor.relationship'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.guarantor.relationship'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -149,13 +152,13 @@
 	        <div class="well bs-component">
 	           
 	            <fieldset>
-	              <legend>Address</legend>
+	              <legend><?php echo __('user.register.address'); ?></legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red"><?php echo __('global.require'); ?></span></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
 	                <td>
 	                  <div class="form-group">
-		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?><span style="color:red">*<span></label>
+		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
 		                <div class="col-lg-10" >
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_1', array('type'=>'text', 'id'=>"g_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
 		                  <?php echo $this->Form->input('UserGuarantor.post_num_2', array('type'=>'text', 'id'=>"g_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
@@ -194,7 +197,7 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.residence'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.residence'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -206,7 +209,7 @@
 	              </tr>
 	               
 	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.year_residence'); ?><span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?><span style="color:red">*</span></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -218,7 +221,7 @@
 	              </tr>
 	               
 	               <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.house_cost'); ?><span style="color:red">*</span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.house_cost'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -250,7 +253,7 @@
 		              </tr> -->
 		               
 		              <tr>
-		                <td><label for="inputEmail"><?php echo __('user.contact.company-phone'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+		                <td><label for="inputEmail"><?php echo __('user.contact.company-phone'); ?></label></td>
 		                <td>
 		                  <div class="form-group">
 		                    
@@ -263,7 +266,7 @@
 		                  </td>
 		                </tr>
 		                <tr>
-				             <td> <label for="inputEmail"><?php echo __('user.my_page.basic_info.contact_type'); ?> <span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+				             <td> <label for="inputEmail"><?php echo __('user.my_page.basic_info.contact_type'); ?> </label></td>
 				              <td>
 				                <div class="form-group">
 				                
@@ -288,7 +291,7 @@
 	             <legend>連帯保証人連絡先情報</legend>
 	              <fieldset>
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?></label>
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
@@ -310,7 +313,7 @@
 	                    
 	            <table class="table table-striped table-hover ">
 	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red">*</span></td>
+	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
 	                <td>
 	                  <div class="form-group">
 		                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -444,7 +447,7 @@
 	                </div>
 
 	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label>
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?></label>
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 

@@ -242,7 +242,7 @@
                 modal: true,
                 buttons: {
                   "設定する": edit_max_payment_user,
-                  '<?php __("admin.user.cancel_button")?>': function() {
+                  '<?php echo __("admin.user.cancel_button")?>': function() {
                     dialog_set_max_payment.dialog( "close" );
                   }
                 }
@@ -287,11 +287,11 @@
       </fieldset>
     </form>
   </div>
-  <div id="dialog-set-max_payment" class="modal-dialog" title="Set max payment">
-    <p>Set max payment for user </p>
+  <div id="dialog-set-max_payment" class="modal-dialog" title="上限賃料設定">
+    
     <?php echo $this->Form->create("User", array('action'=>'edit_max_payment','id'=>'EditMaxPaymentUserForm' ,'class'=>'form-horizontal' ) ) ?>
       <fieldset>
-        
+        <p>上限賃料</p>
         <input name="data[User][max_payment]" id="max_payment"  value="<?php echo $user['User']['max_payment'];?>" />
         
         <?php $this->Form->hidden('User.id')?>

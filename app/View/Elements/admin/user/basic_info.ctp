@@ -20,7 +20,7 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label for="inputEmail"> <?php echo __('user.register.username') ?><span style="color:red">*</span></label>
+                  <label for="inputEmail"> <?php echo __('user.register.username') ?></label>
                 </td>
                 <td>
                   <div class="form-group">
@@ -41,7 +41,7 @@
                 </td>
               </tr>
              <tr>
-	             <td> <label for="inputEmail"><?php echo __('user.register.gender') ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	             <td> <label for="inputEmail"><?php echo __('user.register.gender') ?></label></td>
 	              <td>
 	                <div class="form-group">
 	                
@@ -54,7 +54,7 @@
 	              </td>
               </tr>
               <tr>
-                <td> <label for="inputEmail" ><?php echo __('user.register.birthday'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td> <label for="inputEmail" ><?php echo __('user.register.birthday'); ?></span></label></td>
                 <td>
                   <div class="form-group">
                    
@@ -90,7 +90,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?></span></label></td>
                 <td>
                 <div class="form-group">
                 
@@ -103,7 +103,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?></span></label></td>
                 <td>
                 <div class="form-group">
                 
@@ -116,7 +116,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.num_children'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.num_children'); ?></span></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -137,7 +137,7 @@
               <legend>申込人住所情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red"><?php echo __('global.require'); ?></span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></span></td>
                 <td>
                   <div class="form-group">
 	                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -180,7 +180,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -192,7 +192,7 @@
               </tr>
                
                <tr>
-                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?><span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -204,7 +204,7 @@
               </tr>
                
                <tr>
-                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.house_cost'); ?><span style="color:red">*</span></label></td>
+                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.house_cost'); ?></label></td>
                 <td>
                   <div class="form-group">
                     
@@ -224,7 +224,7 @@
               <legend>申込人連絡先情報</legend>
               <table class="table table-striped table-hover ">
 	              <tr>
-	                <td><label for="inputEmail"><?php echo __('user.register.email'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.register.email'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -236,7 +236,7 @@
 	              </tr>
 	               
 	              <tr>
-	                <td><label for="inputEmail"><?php echo __('user.contact.company-phone'); ?><span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+	                <td><label for="inputEmail"><?php echo __('user.contact.company-phone'); ?></label></td>
 	                <td>
 	                  <div class="form-group">
 	                    
@@ -249,7 +249,7 @@
 	                  </td>
 	                </tr>
 	                <tr>
-			             <td> <label for="inputEmail"><?php echo __('user.my_page.basic_info.contact_type'); ?> <span style="color:red"><?php echo __('global.require'); ?></span></label></td>
+			             <td> <label for="inputEmail"><?php echo __('user.my_page.basic_info.contact_type'); ?> </label></td>
 			              <td>
 			                <div class="form-group">
 			                
@@ -274,7 +274,7 @@
              <legend>申込人勤務先情報</legend>
               <fieldset>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span></label>
                   <div class="col-lg-10">
                    
                     <?php 
@@ -285,9 +285,9 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.company'); ?></label>
                   <div class="col-lg-10">
-                  <?php echo __('user.register.company_name'); ?>
+                  <?php echo __('user.my_page.basic_info.company_name'); ?>
                     <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"company-name", 'label'=>false, 'class'=>'form-control', 'display:inline', 'div'=>false))?>
-                    <?php echo __('user.register.company_name_kana'); ?>
+                    <?php echo __('user.my_page.basic_info.company_name_kana'); ?>
                     <?php echo $this->Form->input('UserCompany.name_kana', array('type'=>'text', 'id'=>"company-name-kana", 'label'=>false, 'class'=>'form-control', 'style'=>'display:inline', 'div'=>false, 'required'=>false))?>
                   </div>
                 </div>
@@ -295,7 +295,7 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?><span style="color:red">*</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
                 <td>
                   <div class="form-group">
 	                <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -345,7 +345,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.contact.fax'); ?></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.fax'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>
                   </div>
@@ -392,7 +392,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.salary_year'); ?></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.register.yen'); ?>
                   </div>
@@ -420,7 +420,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?><span style="color:red"><?php echo __('global.require'); ?><span></label>
+                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.insurances'); ?></label>
                   <div class="col-lg-10">
                    
                     <?php 
@@ -463,7 +463,7 @@
                 </div>
                 </fieldset>
             </div>
-            <h4>ご希望エリア　※最大５エリアまで</h4>
+           
             <section id="expect-area">
             <?php $i = 0; foreach($user['ExpectArea'] as $item){ $i++;?>
             <div class="well bs-component" id="expect-area-content-<?php echo $i; ?>" >
