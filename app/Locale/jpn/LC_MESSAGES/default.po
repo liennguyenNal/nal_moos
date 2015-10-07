@@ -807,7 +807,8 @@ msgstr "全角カタカナで入力してください。"
 msgid "global.errors.basic_info.lastnamekana"	
 msgstr "全角カタカナで入力してください。"
 
-
+msgid "global.errors.basic_info.post_num_1"	
+msgstr "半角数字で入力してください。"
 
 
 

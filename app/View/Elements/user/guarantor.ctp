@@ -427,15 +427,15 @@
 					                            <script type="text/javascript">
 					                                function g_change_type(obj){
 					                                    if(obj.val() == '4')
-					                                    $('#g_salary_type_other').prop('disabled',false);
+					                                    	$('#g_salary_type_other').prop('disabled',false);
 					                                    else {
-					                                      $('#g_salary_type_other').prop('disabled',true);
+					                                      	$('#g_salary_type_other').val("").prop('disabled',true);
 					                                    }
 					                                }
 					                            </script>  
 					                          </div>
 					                            <?php 
-					                                echo $this->Form->input('UserGuarantor.salary_type_other', array('type'=>'text', 'id'=>"g_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=>true, 'data-placement'=>'right', 'style'=>'width: 100px'))
+					                                echo $this->Form->input('UserGuarantor.salary_type_other', array('type'=>'text', 'id'=>"g_salary_type_other", 'label'=>false, 'class'=>'w40 input-style fix-pd','div'=>false, 'disabled'=> $user['UserGuarantor']['salary_type'] != 4, 'data-placement'=>'right', 'style'=>'width: 100px'))
 					                            ?>
 											</div>
 										</div>
@@ -477,14 +477,14 @@
 					                                  if(obj.val() == '3')
 					                                  $('#g_salary_date').prop('disabled',false);
 					                                  else {
-					                                    $('#g_salary_date').prop('disabled',true);
+					                                    $('#g_salary_date').val("").prop('disabled',true);
 					                                  }
 					                              }
 					                          </script>
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('UserGuarantor.salary_date', array('type'=>'text', 'id'=>"g_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+													echo $this->Form->input('UserGuarantor.salary_date', array('type'=>'text', 'id'=>"g_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['UserGuarantor']['salary_receive_id'] != 3))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>
@@ -548,12 +548,15 @@
 	                });
 
                     $('#btn-edit-guarantor').on('click', function() {
+                    	
                       	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').show();
                       	$('#UserGuarantorEdit').find(':input').prop('disabled',false);
                       	$('#UserGuarantorEdit').find('a').show();
                       	$('#btn-cancel-guarantor').show();
                       	$('#btn-save-guarantor').show();
                       	$('#btn-edit-guarantor').hide();
+                      	$('#g_salary_type_other').prop('disabled', $('input[name="data[UserGuarantor][salary_type]"]:checked').val() != 4);
+                		$('#g_salary_date').prop('disabled', $('input[name="data[UserGuarantor][salary_receive_id]"]:checked').val() != 3);
                       	edit = 1;
                    	});
 	                   
@@ -589,9 +592,19 @@
     },
     "携帯電話を正しく入力してください。"
   );
+
+  	$.validator.addMethod("integer_number", function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }, "半角数字で入力してください。" );
+
   $("#UserGuarantorEdit").validate({
     rules: {
-    	'data[UserGuarantor][num_child]': {number: true},
+    	'data[UserGuarantor][num_child]': {
+    		number: true,
+          	maxlength: 2,
+          	integer_number: "^[0-9]*$"
+    	},
     	'data[UserGuarantor][post_num_1]': {
     		number: true,
     		minlength: 3,
@@ -681,7 +694,8 @@
     	'data[UserGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
     	'data[UserGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
     	'data[UserGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-    	'data[UserGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"}
+    	'data[UserGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[UserGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {
       var errors = validator.numberOfInvalids();
