@@ -21,7 +21,7 @@ $(document).ready(function(){
 	  $('[data-toggle="tooltip"]').tooltip('show');
 	})
 	
-	$("#scroll-lp").on("click", function(e){
+	$(".scroll-lp").on("click", function(e){
 		e.preventDefault();
 		$("html, body").animate({ scrollTop: $("#formRegister").offset().top }, "slow");
 

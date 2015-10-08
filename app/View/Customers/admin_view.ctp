@@ -1,3 +1,4 @@
+<?php //var_dump($user);var_dump($prefs); die; ?>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
@@ -173,7 +174,7 @@
                     <div class="col-lg-10">
                       <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>'携帯電話', 'class'=>'form-control', "placeholder"=>'09001234567','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px', 'required'=>false))?>
                    
-                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control', "placeholder"=>'0398765432','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
+                      <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>'自宅', 'class'=>'form-control','div'=>false, 'style'=>'display:inline; width:150px; margin-left:10px; margin-right:10px'))?>
                     </div>
                   </div>
                   </td>

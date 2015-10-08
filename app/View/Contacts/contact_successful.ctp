@@ -49,11 +49,11 @@
                   <form action="">
                     <div class="content-from-block">
                       <p class="note fix-font"><?php echo __('user.contact_successful.message_successful'); ?></p>
-                      <div class="block-note">
+                      <!-- <div class="block-note">
                         <div class="block-button">
                           <a href="<?php echo $this->webroot; ?>"><button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </form>
                 </div>

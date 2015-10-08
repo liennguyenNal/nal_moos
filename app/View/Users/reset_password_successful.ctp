@@ -51,7 +51,11 @@
 											<p class="note fix-font">※パスワード設定が完了致しました。</p>
 											<div class="block-note">
 												<div class="block-button">
+<<<<<<< HEAD
 													<a href="<?php echo $this->webroot; ?>users/login"><button type="button" class="style"><img src="<?php echo $this->webroot;?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>
+=======
+													<a href="<?php echo Router::url('/', true); ?>users/login"><button type="button" class="style"><img src="<?php echo $this->webroot;?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>
+>>>>>>> da23d27dcc7ca41ab365542c5e8942b51e444255
 												</div>
 											</div>
 										</div>

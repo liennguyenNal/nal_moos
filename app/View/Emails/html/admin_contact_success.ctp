@@ -15,4 +15,4 @@
 <p>----------------------------------------------------</p>
 <p></p>
 <p>問い合わせに対する回答・対応を行ってください。</p>
-<p><a href="http://<?php echo Router::url('/', true) ?>admin/contacts/">管理画面 問い合わせ一覧ページURL </a></p>
+<p><a href="<?php echo Router::url('/', true) ?>admin/contacts/">管理画面 問い合わせ一覧ページURL </a></p>

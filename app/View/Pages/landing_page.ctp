@@ -50,7 +50,7 @@
 				<div class="container-fluid">
 					<img class="img-banner" src="<?php echo $this->webroot; ?>img/images/banner-01.png" alt="banner"/>
 					<div class="block-link">
-						<a href="#" id="scroll-lp"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
+						<a href="#" class="scroll-lp"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
 					</div>
 				</div>
 			</div>
@@ -88,7 +88,7 @@
 				<div class="container-fluid">
 					<img class="img-banner" src="<?php echo $this->webroot; ?>img/images/banner-01.png" alt="banner"/>
 					<div class="block-link">
-						<a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
+						<a href="#" class="scroll-lp"><img src="<?php echo $this->webroot; ?>img/front/button-01.png" alt="会員登録"/></a>
 					</div>
 				</div>
 			</div>

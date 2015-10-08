@@ -855,8 +855,8 @@
                 return !$("#home_phone").val();
               },
                 number: true,
-                maxlength: 10,
-                phone_number: "^0[0-9]{9}"
+                maxlength: 11,
+                phone_number: "^0[0-9]"
             },
             'data[User][home_phone]': {
                 required: function(element) {
@@ -864,7 +864,7 @@
               },
                 number: true,
                 maxlength: 10,
-                phone_number: "[0-9]{11}"
+                phone_number: "^0[0-9]"
             },
             // 'data[User][contact_type]': {required: true},
             // 'data[UserCompany][work_id]': {required: true},
@@ -877,7 +877,7 @@
             'data[UserCompany][phone]': {
               number: true,
               maxlength: 10, 
-              phone_number: "^0[0-9]{9}"
+              phone_number: "^0[0-9]"
             },
             'data[UserCompany][fax]': {
               number: true,
@@ -948,8 +948,14 @@
             'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[UserCompany][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"},
-            'data[User][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-            'data[User][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[User][phone]': {
+              required: "<?php echo __('global.errors.required'); ?>",
+              maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+            },
+            'data[User][home_phone]': {
+              required: "<?php echo __('global.errors.required'); ?>",
+              maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
+            },
             'data[UserCompany][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
             'data[UserCompany][fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
             'data[UserCompany][month_worked]': {

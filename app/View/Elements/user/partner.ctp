@@ -667,7 +667,8 @@
     rules: {
       'data[UserPartner][phone]': {
         number: true,
-        phone_number: "^0[0-9]{9}"
+        maxlength: 11,
+        phone_number: "^0[0-9]"
       },
       'data[UserPartner][company_post_num_1]': {
         number: true,
@@ -681,8 +682,8 @@
       },
       'data[UserPartner][company_phone]': {
         number: true,
-        maxlength: 10,
-        phone_number: "^0[0-9]{9}"
+        maxlength: 11,
+        phone_number: "^0[0-9]"
       },
       'data[UserPartner][company_fax]': {
         number: true,
@@ -711,9 +712,10 @@
       'data[UserRelation][0][phone]': {number: true}
     },
     messages: {
+      'data[UserPartner][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
       'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
-      'data[UserPartner][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+      'data[UserPartner][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
       'data[UserPartner][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
       'data[UserPartner][company_post_num_1]': {
         minlength: "<?php echo __('global.errors.minlength_3'); ?>",

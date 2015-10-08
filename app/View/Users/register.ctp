@@ -475,6 +475,7 @@
     else {
       alert('Cannot add more item');
     }
+    $("#agree").valid();
   });
 
   $.validator.addMethod( "phone_number",
@@ -613,7 +614,7 @@
           maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
         },
         'data[User][home_phone]': { 
-          required: "<?php echo __('global.errors.required'); ?>",
+          required: "<?php echo __('global.errors.home_phone'); ?>",
           maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
         },
         'data[User][email]': {required: "<?php echo __('global.errors.register.email'); ?>"},

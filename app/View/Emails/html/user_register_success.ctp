@@ -15,16 +15,16 @@
 <p><a href="https://youtu.be/chwADnoFDng">動画URL</a></p>
 
 <p>☆家賃でもらえる家とは</p>
-<p><a href="http://<?php echo Router::url('/', true) ?>introduction">ホームページ「家賃でもらえる家とは」ページのURL</a></p>
+<p><a href="<?php echo Router::url('/', true) ?>introduction">ホームページ「家賃でもらえる家とは」ページのURL</a></p>
 
 <p>☆お申し込みの流れ</p>
-<p><a href="http://<?php echo Router::url('/', true) ?>work_flow">ホームページ「お申し込みの流れ」ページのURL</a></p>
+<p><a href="<?php echo Router::url('/', true) ?>work_flow">ホームページ「お申し込みの流れ」ページのURL</a></p>
 
 <p>=================================</p>
 <p>リネシス株式会社　家賃でもらえる家運営事務局</p>
 
 <p>〒108-0074 </p>
 <p>東京都港区高輪２丁目１４－１７　グレイス高輪ビル８階</p>
-<p>お問い合わせ：<a href="http://<?php echo Router::url('/', true) ?>">HP問い合わせへのLink</a></p>
+<p>お問い合わせ：<a href="<?php echo Router::url('/', true) ?>">HP問い合わせへのLink</a></p>
 <p>=================================</p>
 

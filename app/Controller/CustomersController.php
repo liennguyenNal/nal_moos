@@ -126,6 +126,8 @@ class CustomersController extends AppController {
         // }
       	$user = $this->User->read( null, $id );
       	if($user){ 
+          $prefs = $this->Pref->find('list');
+      $this->set('prefs', $prefs);
 
       		$this->set( 'user', $user ); 
           //var_dump($contact); die;

@@ -23,9 +23,34 @@ class ContactsController extends AppController {
            $valid = $this->Contact->validates();
            if($valid){ 
 
-               $contact = $this->data;               
+               $contact = $this->data;
                if($this->Contact->save( $contact, false) ) {
-                	//$this->Session->setFlash('Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
+                $contact['Contact']['id'] = $this->Contact->getLastInsertId();
+                	/**
+                   * EMAIL REJECT USER REGISTRATION
+                   */
+                  $Email = new CakeEmail('gmail');
+                  $Email->template('user_contact_success');
+                  $Email->emailFormat('html');
+                  $Email->to($contact['Contact']['email']);
+                  $Email->from('moos@nal.vn');
+                  $Email->subject('【家賃でもらえる家】お問い合わせ');
+                  $Email->viewVars(array('contact' => $contact));
+                  $Email->send();
+
+                  /**
+                   * SEND EMAIL TO ADMIN
+                   * @var CakeEmail
+                   */
+                  $Email = new CakeEmail("gmail");
+                  $Email->template('admin_contact_success');
+                  $Email->emailFormat('html');
+                  $Email->to(ADMIN_EMAIL);
+                  $Email->from('moos@nal.vn');
+                  $Email->subject("【MOOS】問い合わせ通知");
+                  $Email->viewVars(array('contact' => $contact));
+                  $Email->send();
+
                   $this->redirect("contact_successful");
                }
 
