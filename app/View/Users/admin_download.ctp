@@ -18,7 +18,7 @@
       $line['市区町村	'] = $user['UserAddress']['city'];
       $line['申込み状況'] = $user['Status']['name'];
       $line['登録申込日'] = $user['User']['created'];
-      $line['登録申込日'] = $user['User']['approved_date'];
+      $line['審査申込日'] = $user['User']['approved_date'];
       if($i==0){
  			$this->CSV->addRow(array_keys($line));
  		}
