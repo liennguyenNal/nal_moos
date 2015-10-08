@@ -88,7 +88,7 @@ class LoginComponent extends Object
                 }
         		else {
                     $this->controller->Session->delete('User');
-                    $this->controller->set('login_error_msg', 'This account is reject by admin');
+                    $this->controller->set('login_error_msg', __('global.errors.account_rejected'));
                        
                 }
         	}

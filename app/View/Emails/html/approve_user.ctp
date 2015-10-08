@@ -17,5 +17,5 @@
 <p></p>
 <p>〒108-0074 </p>
 <p>東京都港区高輪２丁目１４－１７　グレイス高輪ビル８階</p>
-<p>お問い合わせ：<a href="http://<?php echo Router::url('/', true) ?>">HP問い合わせへのLink</a></p>
+<p>お問い合わせ：<a href="<?php echo Router::url('/', true) ?>">HP問い合わせへのLink</a></p>
 <p>=================================</p>

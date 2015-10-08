@@ -85,19 +85,9 @@
                         <tr>
                           <td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label><span>必須</span></td>
                           <td>
-                            <div class="block-input fix-padding">
-                              <div class="div-style">
-                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-                                <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>"09012345678", 'required'=>false, 'data-placement' => 'right'))
-                                ?>
-                              </div>
-                              <div class="div-style">
-                                <span class="w43"><?php echo __('user.register.homephone'); ?></span>
-                                <?php echo $this->Form->input('home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>"0312345678", 'required'=>false, 'data-placement' => 'right'))
-                                ?>
-                              </div>
-                            </div>
-                            <span class="black">※どちらかひとつ必須</span>
+                              <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>"09012345678", 'required'=>false, 'data-placement' => 'right'))
+                              ?>
+                            <span class="black1">※”-”ハイフンなしで入力してください。</span>
                           </td>
                         </tr>
                         <tr>
@@ -250,5 +240,5 @@
   $('#home_phone').on('change', function() {
     $('#phone').valid(); 
   });
-  
+
 </script>

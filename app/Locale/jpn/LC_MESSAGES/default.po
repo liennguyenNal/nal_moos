@@ -63,7 +63,7 @@ msgid "user.register.house"
 msgstr "建物"
 
 msgid "user.register.phone"
-msgstr "婚姻"
+msgstr "電話番号"
 
 msgid "user.register.mobiphone"
 msgstr "携帯電話"
@@ -811,7 +811,8 @@ msgstr "全角カタカナで入力してください。"
 msgid "global.errors.basic_info.post_num_1"	
 msgstr "半角数字で入力してください。"
 
-
+msgid "global.errors.account_rejected"	
+msgstr "アカウント承認されていないか、アカウントとパスワードの組み合わせは間違っています。"
 
 
 
