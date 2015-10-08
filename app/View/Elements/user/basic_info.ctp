@@ -21,24 +21,24 @@
                         <div class="block-input">
                           <div class="div-style">
                             <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-                            <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'山田'))
                             ?>
                           </div>
                           <div class="div-style">
                             <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
-                            <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'太郎'))
                             ?>
                           </div>
                         </div>
                         <div class="block-input">
                           <div class="div-style">
                             <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
-                            <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'ヤマダ'))
                             ?>
                           </div>
                           <div class="div-style">
                             <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
-                            <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'タロウ'))
                             ?>
                           </div>
                         </div>
@@ -124,7 +124,7 @@
                       <td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="block-input">
-                          <?php echo $this->Form->input('User.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                          <?php echo $this->Form->input('User.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'00'))
                           ?>
                           <span class="w-auto1"><?php echo __('user.my_page.basic_info.person'); ?></span>
                         </div>
@@ -146,11 +146,11 @@
                       <div class="block-input">
                         <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
                         <?php 
-                            echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>'101','div'=>false, 'data-placement' => 'right', 'required'=>false))
                         ?>
                         <span class="w-auto1">-</span>
                         <?php 
-                            echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                            echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>'0000','div'=>false, 'data-placement' => 'right', 'required'=>false))
                         ?>
                         <a class="style-link" type="button" id="btn-find-address"><?php echo __('user.register.findaddress'); ?></a>
                           <!-- Script tim dia chi buu dien -->
@@ -177,17 +177,17 @@
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.city'); ?></span>
                         <?php 
-                            echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
+                            echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'千代田区神田多町', 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
                         ?>
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.street'); ?></span>
-                        <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>'2-14-17', 'data-placement' => 'right', 'required'=>false))
                         ?>
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.house'); ?></span>
-                        <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'グレイス高輪ビル８階','div'=>false, 'data-placement' => 'right', 'required'=>false))
                         ?>
                       </div>
                     </td>
@@ -205,7 +205,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.year_residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserAddress.year_residence', array('type'=>'text', 'id'=>"year_residence",'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', "required"=>false))
+                        <?php echo $this->Form->input('UserAddress.year_residence', array('type'=>'text', 'id'=>"year_residence",'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', "required"=>false, 'placeholder'=>'00'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                       </div>
@@ -215,7 +215,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                       </div>
@@ -239,12 +239,12 @@
                       <div class="block-input fix-padding">
                         <div class="div-style">
                           <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-                          <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                          <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'09012345678'))
                           ?>
                         </div>
                         <div class="div-style">
                           <span class="w43"><?php echo __('user.register.homephone'); ?></span>
-                          <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                          <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'0312345678'))
                           ?>
                         </div>
                       </div>
@@ -254,7 +254,7 @@
                   <tr>
                     <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
-                        <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'required'=>false, 'disabled'=>'true'))
+                        <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'required'=>false, 'disabled'=>'true', 'placeholder'=>'sample@gmail.com'))
                         ?>
                     </td>
                   </tr>
@@ -298,12 +298,12 @@
                     <td>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"b_company_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"b_company_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'株式会社ヤチンデモラエル'))
                         ?>
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.my_page.basic_info.company_name_kana'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.name_kana', array('type'=>'text', 'id'=>"b_company_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.name_kana', array('type'=>'text', 'id'=>"b_company_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'カブシキガイシャヤチンデモラエル'))
                         ?>
                       </div>
                     </td>

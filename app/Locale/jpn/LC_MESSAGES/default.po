@@ -811,13 +811,83 @@ msgstr "全角カタカナで入力してください。"
 msgid "global.errors.basic_info.post_num_1"	
 msgstr "半角数字で入力してください。"
 
-
-
 msgid "user.register.salary_month"
 msgstr "税込月収"
 
 msgid "global.errors.account_rejected"	
 msgstr "アカウント承認されていないか、アカウントとパスワードの組み合わせは間違っています。"
+
+msgid "global.placeholder.first_name"
+msgstr "家賃"
+
+msgid "global.placeholder.last_name"
+msgstr "太郎"
+
+msgid "global.placeholder.first_name_kana"
+msgstr "ヤチン"
+
+msgid "global.placeholder.last_name_kana"
+msgstr "タロウ"
+
+msgid "global.placeholder.post_num_1"
+msgstr "108"
+
+msgid "global.placeholder.post_num_2"
+msgstr "0074"
+
+msgid "global.placeholder.pref"
+msgstr "東京都"
+
+msgid "global.placeholder.city"
+msgstr "港区高輪"
+
+msgid "global.placeholder.street"
+msgstr "2-14-17"
+
+msgid "global.placeholder.house"
+msgstr "グレイス高輪ビル８階"
+
+msgid "global.placeholder.mobiphone"
+msgstr "09012345678"
+
+msgid "global.placeholder.home_phone"
+msgstr "0312345678"
+
+msgid "global.placeholder.email"
+msgstr "sample@gmail.com"
+
+msgid "global.placeholder.confirm_email"
+msgstr "sample@gmail.com"
+
+msgid "global.placeholder.year"
+msgstr "00"
+
+msgid "global.placeholder.month"
+msgstr "00"
+
+msgid "global.placeholder.salary_year"
+msgstr "000,000"
+
+msgid "global.placeholder.num_child"
+msgstr "00"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

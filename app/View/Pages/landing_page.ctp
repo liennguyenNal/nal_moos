@@ -176,28 +176,24 @@
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="山田"> -->
-				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
-				                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'太郎','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                            </div>
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
-				                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤチン','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
-				                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'タロウ','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                            </div>
@@ -274,11 +270,11 @@
 				                            <div class="block-input">
 				                              <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
 				                              <?php 
-				                                echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'w40', "placeholder"=>'108','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1">-</span>
 				                              <?php 
-				                                echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'w80', "placeholder"=>'0074','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
 				                              <!-- Script tim dia chi buu dien -->
@@ -303,7 +299,6 @@
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.pref'); ?></span>
 				                              <div class="select">
-				                              <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
 				                              <?php 
 				                                echo $this->Form->select('UserAddress.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right', 'required'=>false));
 				                              ?>
@@ -311,21 +306,18 @@
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.city'); ?></span>
-				                              <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
 				                              <?php 
-				                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
+				                                echo $this->Form->input('UserAddress.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'港区高輪', 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false));
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.street'); ?></span>
-				                              <!-- <input class="w198" type="text" name="" value="" placeholder="2-5-1"> -->
-				                              <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserAddress.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198','div'=>false, 'placeholder'=>'2-14-17', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.house'); ?></span>
-				                              <!-- <input class="w198" type="text" name="" value="" placeholder="神田ビルディング2001号"> -->
-				                              <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserAddress.house_name', array('type'=>'text', 'id'=>"house_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'グレイス高輪ビル８階','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                          </td>
@@ -336,14 +328,12 @@
 				                            <div class="block-input fix-padding">
 				                              <div class="div-style">
 				                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="09012345678"> -->
-				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'required'=>false, 'data-placement' => 'right'))
+				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false, 'data-placement' => 'right'))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
 				                                <span class="w43"><?php echo __('user.register.homephone'); ?></span>
-				                                <!-- <input class="w198" type="text" name="" value="" placeholder="0312345678"> -->
-				                                <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('User.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'0312345678','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                            </div>
@@ -353,8 +343,7 @@
 				                        <tr>
 				                          <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
-				                            <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                            ?>    
 				                            <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
 				                          </td>
@@ -362,8 +351,7 @@
 				                        <tr>
 				                          <td class="label-text"><label><?php echo __('user.register.confirmemail'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
-				                            <!-- <input class="w40 input-style" type="text" name="" value="" placeholder="sample@gmail.com"> -->
-				                            <?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                            <?php echo $this->Form->input('User.email_confirm', array('type'=>'text', 'id'=>"email_confirm", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                            ?>
 				                          </td>
 				                        </tr>
@@ -381,12 +369,10 @@
 				                          <td class="label-text"><label><?php echo __('user.register.experience'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
 				                            <div class="block-input">
-				                              <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
-				                              <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
-				                              <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
-				                              <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
 				                            </div>
@@ -396,8 +382,7 @@
 				                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
 				                            <div class="block-input">
-				                              <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-				                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'000,000', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 				                            </div>
@@ -420,10 +405,10 @@
 				                          <td>
 				                            <div class="block-input">
 				                              <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-				                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>'108','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1">-</span>
-				                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0074','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
 				                            </div>
@@ -437,12 +422,12 @@
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.city'); ?></span>
-				                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'港区高輪','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.street'); ?></span>
-				                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>false,'div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                          </td>

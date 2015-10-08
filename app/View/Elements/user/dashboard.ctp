@@ -24,7 +24,7 @@
   <li>
     <p>
       <span><?php echo __('user.my_page.max_payment'); ?> : </span>
-      <span><?php echo $user['User']['max_payment'];?></span>
+      <span><?php echo $user['User']['max_payment'];?>&nbsp;<?php echo __('user.register.yen'); ?></span>
     </p>
     <p>
       <span><?php echo __('user.my_page.payment_date'); ?> : </span>
