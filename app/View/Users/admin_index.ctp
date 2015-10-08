@@ -184,19 +184,19 @@
           <table class="table table-striped table-hover " id="tbl_users">
             <thead>
               <tr>
-                <th><input type="checkbox" id="chk-all"></th>
-                <th><?php echo __('admin.user.list_header.no'); ?></th>
-                <th><?php echo __('admin.user.list_header.id'); ?></th>
-                <th><?php echo __('admin.user.list_header.name'); ?></th>
-                <th><?php echo __('admin.user.list_header.age'); ?></th>
-                <th><?php echo __('admin.user.list_header.work'); ?></th>
-                <th><?php echo __('admin.user.list_header.income_month'); ?></th>
-                <th><?php echo __('admin.user.list_header.pref'); ?></th>
-                <th><?php echo __('admin.user.list_header.city'); ?></th>
-                <th><?php echo __('admin.user.list_header.status'); ?></th>
-                <th><?php echo __('admin.user.list_header.register_date'); ?></th>
-                <th><?php echo __('admin.user.list_header.approve_date'); ?></th>
-                <th></th>
+                <th width="3%"><input type="checkbox" id="chk-all"></th>
+                <th width="6%"><?php echo __('admin.user.list_header.no'); ?></th>
+                <th width="8%"><?php echo __('admin.user.list_header.id'); ?></th>
+                <th width="8%"><?php echo __('admin.user.list_header.name'); ?></th>
+                <th width="5%"><?php echo __('admin.user.list_header.age'); ?></th>
+                <th width="8%"><?php echo __('admin.user.list_header.work'); ?></th>
+                <th width="8%"><?php echo __('admin.user.list_header.income_month'); ?></th>
+                <th width="8%"><?php echo __('admin.user.list_header.pref'); ?></th>
+                <th width="10%"><?php echo __('admin.user.list_header.city'); ?></th>
+                <th width="15%"><?php echo __('admin.user.list_header.status'); ?></th>
+                <th width="10%"><?php echo __('admin.user.list_header.register_date'); ?></th>
+                <th width="10%"><?php echo __('admin.user.list_header.approve_date'); ?></th>
+                <th width="5%"></th>
               </tr>
             </thead>
             <tbody>
