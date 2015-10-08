@@ -65,7 +65,7 @@
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.un_completed"); else echo __("user.my_page.status.completed")?>
                             </td>
 
                              <td>
@@ -83,7 +83,7 @@
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.un_completed"); else echo __("user.my_page.status.completed")?>
                             </td>
 
                              <td>
@@ -101,7 +101,7 @@
                              <?php echo $value['key']?>
                             </td>
                              <td>
-                                <?php if($value['error'] == 1) echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
+                                <?php if($value['error'] == 1) echo __("user.my_page.status.un_completed"); else echo __("user.my_page.status.completed")?>
                             </td>
 
                              <td>
@@ -118,7 +118,7 @@
                               <?php echo $validations['UserAttachment']['key'];?>
                             </td>
                             <td>
-                              <?php if($validations['UserAttachment']['error'])  echo __("user.my_page.status.completed"); else echo __("user.my_page.status.un_completed")?>
+                              <?php if($validations['UserAttachment']['error'])  echo __("user.my_page.status.un_completed"); else echo __("user.my_page.status.completed")?>
                             </td>
                             <td><?php if($validations['UserAttachment']['error']) echo $validations['UserAttachment']['error_msg'] ; ?></td>
                           </tr>

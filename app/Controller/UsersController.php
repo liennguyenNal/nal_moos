@@ -346,9 +346,11 @@ class UsersController extends AppController{
         $this->set('user', $user);
 
         if($user['User']['status_id'] > 1) {
-            
+          $this->data = $user;
           $validations = $this->_validate($user);
           $this->set('validations', $validations);
+          // $validations = $this->_validate($user);
+          // $this->set('validations', $validations);
             $this->render('admin_view_2');
         }
       }
@@ -1085,10 +1087,11 @@ class UsersController extends AppController{
       if($id){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 
           'UserGuarantor', 'OtherGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
-        //print_r($user['OtherGuarantor']); die;
+        //print_r($user['UserCompany']); die;
         $this->data = $user;
         $validations = $this->_validate($user);
         $this->set('validations', $validations);
+        
         $married_statuses = $this->MarriedStatus->find( 'list' );
         $this->set( 'married_statuses', $married_statuses);
 
@@ -1325,7 +1328,9 @@ class UsersController extends AppController{
           
         }
       }
-
+      if(!$user['UserCompany']['month_worked']  && $user['UserCompany']['year_worked'] )$user['UserCompany']['month_worked'] = "100";
+      if($user['UserCompany']['month_worked']  && !$user['UserCompany']['year_worked'] )$user['UserCompany']['year_worked'] = "100";
+      //print_r($user['UserCompany']);die;
       $this->UserCompany->set($user);
       //if(!$this->UserCompany->validates()){
       //  $result['error'] = 1;
@@ -1346,7 +1351,8 @@ class UsersController extends AppController{
             foreach ($requireds['WorkRequired'] as $key => $value) {
               //echo $key;
               if($value){
-                if(!$user['UserCompany'][$key]){
+                if(!isset($user['UserCompany'][$key])){
+                  //echo $key;
                    array_push($result['User']['UserCompany']['fields'], $user_comapany_required_fields[$key]);
                    $result['User']['UserCompany']['error'] = 1;
                    $result['error'] = 1;
@@ -1363,7 +1369,7 @@ class UsersController extends AppController{
               $result['User']['UserCompany']['error'] = 1;
             }
           }
-          
+          //print_r($result['User']['UserCompany']['fields']); die;
       //}
       $this->UserAddress->set($user);
       if(!$this->UserAddress->validates()){
@@ -1681,16 +1687,18 @@ class UsersController extends AppController{
       $company_required_fields = array( 'company'=>__('user.my_page.basic_info.company_name'), 'company_kana'=>__('user.my_page.basic_info.company_name_kana'), 'company_post_num_1'=>__('user.dashboard.user.post_num_1'), 'company_post_num_2'=>__('user.dashboard.user.post_num_2'), 'company_pref_id' =>__('user.register.pref'),
           'company_city'=>__('user.register.city'), 'company_address'=>__('user.register.address'), 'company_phone'=>__('user.register.phone'), 'company_fax'=>__('user.my_page.basic_info.fax'), 'career_id'=>__('user.my_page.basic_info.career'), 'company_position'=>__('user.my_page.basic_info.position'), 'company_department'=>__('user.my_page.basic_info.department'), 'company_job_desc'=>__('user.my_page.basic_info.description'), 
           'month_worked'=>__('user.dashboard.user.month_worked'), 'year_worked'=>__('user.dashboard.user.year_worked'), 'income_month'=>__('user.my_page.basic_info.salary_month'), 'income_year'=>__('user.my_page.basic_info.salary_year'), 'salary_receive_id' =>__('user.my_page.basic_info.salary_receive'), 'salary_type'=>__('user.my_page.basic_info.salary_type'), 'insurance_id'=>__('user.my_page.basic_info.insurances'));
-          
+        if(!$obj['month_worked']  && $obj['year_worked'] )$obj['month_worked'] = "100";
+        if($obj['month_worked']  && !$obj['year_worked'] )$obj['year_worked'] = "100";
           if( $obj['work_id'] ){
             $requireds = $this->GuarantorWorkRequired->find('first', array('conditions'=>array('GuarantorWorkRequired.work_id'=>$obj['work_id'] )));
            //$requireds = $this->WorkRequired->find('first', array('conditions'=>array('WorkRequired.work_id'=>$obj['work_id'])));
            //print_r($requireds['GuarantorWorkRequired'] ); die;
            //$t = array("10"=>'a', "20"=>'b');
+           //
            foreach ($requireds['GuarantorWorkRequired'] as $key => $value) {
               //echo $key;
               if($value){
-                if(!$obj[$key]){
+                if(!isset($obj[$key])){
                    array_push($result['fields'], $company_required_fields[$key]);
                    $result['error'] = 1;
                 }

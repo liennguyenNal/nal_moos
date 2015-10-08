@@ -16,7 +16,7 @@
          <!--  <form class="form-horizontal"> -->
            
             <fieldset>
-              <legend>会員登録フォ一ム</legend>
+              <legend>配偶者基本情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
@@ -101,7 +101,7 @@
         <div class="well bs-component">
            
             <fieldset>
-              <legend>配偶者連絡先情報</legend>
+              <legend>配偶者勤務先情報</legend>
               <table class="table table-striped table-hover ">
                
                  

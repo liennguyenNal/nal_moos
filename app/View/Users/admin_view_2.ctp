@@ -193,23 +193,15 @@
               });
 
               function return_user(){
-                // var required_update = $('#chk-required-update').val();
-                // var required_guarantor = $('#chk-required-guarantor').val();
-                // var required_file = $('#chk-required-file').val();
-                // $.ajax({
-                //     url: "<?php echo $this->webroot?>admin/users/return_user/<?php echo $user['User']['id']?>", 
-                //     'method':'POST',
-                //     'data':"data[User][required_update]=" + required_update + "data[User][required_update]=" + required_guarantor + "data[User][required_file]=" + required_file ,
-                //     success: function(result){
-                //       $("#basic").html(result);
-                //       $.ajax({
-                //          url: "<?php echo $this->webroot?>admin/users/reload_dashboard",
-                //           success: function(result){
-                //             $('#home').html(result);
-                //           }
-                //       });
-                //     }});
-                $('#ReturnUserForm').submit();
+             
+                if($('#ReturnUserForm :checkbox:checked').length > 0)
+                {
+                  $('#return_error_not_choose').show();
+                  $('#ReturnUserForm').submit();
+                }
+                else {
+                  $('#return_error_not_choose').show();
+                }
               }
               dialog_return = $( "#dialog-confirm-return" ).dialog({
                 autoOpen: false,
@@ -282,6 +274,7 @@
  
     <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
+        <p style="display:none; color:red" id="return_error_not_choose">Please select one</p>
       <fieldset>
         <p>差し戻し理由をチェックをいれ、ひつ料にい応じて差し戻しメール</p>
         <p>に追加する文章をテキストボックスに入力してください。</p>
