@@ -1,10 +1,7 @@
 <!-- Swiper -->
 <div class="swiper-container">
   <!-- slider -->
-  <div class="swiper-wrapper">
-    <div class="swiper-slide slider-1"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-1.png" alt="silder1"/></div></div>      
-    <div class="swiper-slide slider-2"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-2.png" alt="silder1"/></div></div>      
-    <div class="swiper-slide slider-3"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-3.png" alt="silder1"/></div></div>    
+  <div class="swiper-wrapper">   
     <div class="swiper-slide slider-4"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-4.png" alt="silder1"/></div></div>    
     <div class="swiper-slide slider-4"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-5.png" alt="silder1"/></div></div>    
     <div class="swiper-slide slider-4"><div class="container-fluid"><img src="<?php echo $this->webroot; ?>img/images/img-slider-6.png" alt="silder1"/></div></div>    

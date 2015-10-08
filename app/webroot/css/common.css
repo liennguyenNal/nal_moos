@@ -432,7 +432,8 @@ img {
 }
 .list-ldpage .content-list ul li .block-2 p span {
   color: #e78721;
-  font-size: 16px;
+  font-size: 25px;
+  line-height: 30px;
 }
 .from-ldpage .title-from {
   margin-top: -157px;
@@ -868,7 +869,7 @@ img {
   text-align: center;
 }
 .from-ldpage .content .content-from .block-note .block-button .red {
-  color: #ce506f;
+  color: #e78821;
   font-size: 14px;
   display: inline-block;
   overflow: hidden;
@@ -929,6 +930,21 @@ img {
   transition: all .4s linear;
 }
 .from-ldpage .content .content-from .block-note .block-button button.style:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)";
+}
+.from-ldpage .content .content-from .block-note .block-button button.button-1b {
+  background-color: #c7c7c7;
+  box-shadow: 0px 6px 0px #bbbbbb;
+  padding: 13px 77px;
+  border-radius: 3px;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+}
+.from-ldpage .content .content-from .block-note .block-button button.button-1b:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
   -ms-filter: "alpha(opacity=70)";
