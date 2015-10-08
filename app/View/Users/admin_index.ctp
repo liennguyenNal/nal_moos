@@ -6,7 +6,7 @@
 	<div class="col-lg-4">
 		<div class="bs-component">
 			 
-			    <h4 class="active"><?php echo __('admin.register_users')?></h4>
+			    <h4 class="active">申込み一覧</h4>
 			  
 		</div>
 	</div>

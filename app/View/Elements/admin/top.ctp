@@ -2,6 +2,9 @@
 	<div class="container">
 	  <div class="navbar-header">
 	    <!-- <a href="<?php echo $this->webroot; ?>" class="navbar-brand">Home</a> -->
+	    <img src="<?php echo $this->webroot;?>img/front/logo-h.png" style="padding-right:15px">
+	    	
+	    
 	    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>

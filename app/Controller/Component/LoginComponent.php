@@ -70,26 +70,17 @@ class LoginComponent extends Object
         
         	if($user)
         	{
-        		//print_r($user); die;
         		$this->session = $user;
-        		
-        		$this->controller->Session->write('User', $this->session);    		
-        		
-        		//echo $user['User']['status_id']; die; 
+        	
         		if ($user['User']['status_id'] >= 2){
-                   //  $is_first_login = false;
-                   //  if(!$user['User']['last_login_time'])$is_first_login = true;
-                   // //update last login IP & time
-                   //  $this->controller->User->query("update users set last_login_time=now(), last_login_ip='". $_SERVER['REMOTE_ADDR'] . "' where id='" . $user['User']['id'] . "'");
-                   //  if($is_first_login) 
-                   //      $this->controller->redirect('/users/create_password');
-                   //  else 
+                    $this->controller->Session->write('User', $this->session);      
+                 
                         $this->controller->redirect('/users/my_page');
                 }
         		else {
                     $this->controller->Session->delete('User');
 
-                    $this->controller->set('login_error_msg', __('global.errors.account_rejected'));
+                    $this->controller->set('login_error_msg', __('login.errors.invalid'));
 
                        
                 }

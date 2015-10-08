@@ -220,7 +220,7 @@ msgid "admin.user.view.set_max_payment_button"
 msgstr "上限賃料を変更する"
 
 msgid "login.errors.invalid"
-msgstr "IDとパスワードが一致しませんでした。</br>ご確認の上、再度ご登録いただいた情報を入力してください。"
+msgstr "IDとパスワードが一致しませんでした。</br>またはまだアカウント承認されていない可能性あります。 </br>ご確認の上、再度ご登録いただいた情報を入力してください。"
 
 msgid "user.my_page.basic_info.family"	
 msgstr "家族との居住状況"
