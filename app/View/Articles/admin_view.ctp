@@ -23,14 +23,14 @@
                 <label  class="col-lg-2 control-label"><?php echo __('admin.articles.title'); ?><span></span></label>
                 <div class="col-lg-10">
                  <!--  <textarea class="form-control" rows="5" id="textArea"></textarea> -->
-                  <?php echo $this->Form->input('title', array('type'=>'textbox', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Title','div'=>false, 'disabled'))?>
+                  <?php echo $this->Form->input('title', array('type'=>'textbox', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'))?>
                   
                 </div>
               </div>
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">内容</span></label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Content', 'rows'=>10,'div'=>false, 'disabled'))?>
+                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', 'rows'=>10,'div'=>false, 'disabled'))?>
                   
                 </div>
               </div>

@@ -19,14 +19,14 @@
                 <label for="textArea" class="col-lg-2 control-label"><?php echo __('admin.articles.title'); ?><span></span></label>
                 <div class="col-lg-10">
                  <!--  <textarea class="form-control" rows="5" id="textArea"></textarea> -->
-                  <?php echo $this->Form->input('title', array('type'=>'textbox', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Title','div'=>false))?>
+                  <?php echo $this->Form->input('title', array('type'=>'textbox', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                   
                 </div>
               </div>
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">内容</span></label>
                 <div class="col-lg-10">
-                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Content', 'rows'=>10,'div'=>false))?>
+                  <?php echo $this->Form->input('content', array('type'=>'textarea', 'id'=>"content", 'label'=>false, 'class'=>'form-control', 'rows'=>10,'div'=>false))?>
                   
                 </div>
               </div>
@@ -34,7 +34,7 @@
                 <label for="inputEmail" class="col-lg-2 control-label">添付ファイル</label>
                 <div class="col-lg-10">
                   <!-- <input type="text" class="form-control" id="inputEmail" placeholder="Title of News"> -->
-                  <?php echo $this->Form->input('small_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control', "placeholder"=>'Small Image','div'=>false))?>
+                  <?php echo $this->Form->input('small_image_file', array('type'=>'file', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>
                   <?php if( $article['Article']['large_image']){ ?>
                   <button type="button" class="btn btn-default" ><a target="_blank" href="<?php echo $this->webroot; ?>images/upload/news/big/<?php echo $article['Article']['large_image']; ?>"><?php echo $article['Article']['large_image']; ?></a></button>
                   <?php } ?>
