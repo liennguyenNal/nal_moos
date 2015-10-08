@@ -724,7 +724,7 @@
              success: function(result)
              {
                  og_edit = 0;
-                 if($result != "0"){
+                 if(result != "0"){
 	                 $('#other_guarantor').html(result);
 	                 $.ajax({
 	                   url: "<?php echo $this->webroot?>users/reload_dashboard",

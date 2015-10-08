@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Login Form</title>
+  <title>管理者ページログイン - MOOS</title>
   <link rel="stylesheet" href="<?php echo $this->webroot;?>css/login_style.css">
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -14,20 +14,20 @@
 <body>
   <section class="container">
     <div class="login">
-      <h1>Admin Login - Moos</h1>
+      <h1>管理者ページログイン - MOOS</h1>
       <?php if($login_error_msg){?>
-      <p class=".error" style="color:red"><?php echo $login_error_msg;?></p>
+      <p class=".error" style="color:red">ユーザー名あるいはパースワードが異なります。</p>
       <?php }?>
       <?php echo $this->Form->create("User", array('action'=>'login')) ?>
-        <p><input type="text" name="data[User][username]" value="" placeholder="Username"></p>
-        <p><input type="password" name="data[User][password]" value="" placeholder="Password"></p>
-        <p class="remember_me">
+        <p><input type="text" name="data[User][username]" value="<?php ?>" placeholder="ユーザー名"></p>
+        <p><input type="password" name="data[User][password]" value="" placeholder="パスワード"></p>
+        <!-- <p class="remember_me">
           <label>
             <input type="checkbox" name="remember_me" id="remember_me">
             Remember me on this computer
           </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        </p> -->
+        <p class="submit"><input type="submit" name="commit" value="ログイン"></p>
       </form>
     </div>
 

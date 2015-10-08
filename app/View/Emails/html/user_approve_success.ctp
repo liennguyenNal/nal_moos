@@ -6,8 +6,8 @@
 <p>運営事務局にて、お客様の登録内容に不備が無いことを確認致しました。</p>
 <p>下記URLのリンクをクリックし、パスワードの設定をお願いいたします。</p>
 
-<p><a href="<?php echo Router::url('/', true); ?>users/create_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?>"><?php echo $_SERVER['HTTP_HOST'] . $this->webroot; ?>users/create_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?></a></p>
-<p>※ドメインなどは例</p>
+<p><a href="<?php echo Router::url('/', true); ?>users/create_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?>"><?php echo Router::url('/', true); ?>users/create_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?></a></p>
+
 
 <p>パスワード設定後、ログイン画面よりご登録いただきましたメールアドレスをユーザーIDとしてご入力いただき、設定したパスワードでログインすることができます。</p>
 

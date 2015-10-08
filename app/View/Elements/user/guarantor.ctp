@@ -714,6 +714,7 @@
             data: $("#UserGuarantorEdit").serialize(),
             success: function(result)
             {
+                edit =0;
                 if(result!= "0"){
 	                $('#guarantor').html(result);
 	                $.ajax({
