@@ -75,7 +75,7 @@
                     if($("#to-year-register").val() && $("#to-month-register").val()  && $("#to-day-register").val())
                       to_register= $("#to-year-register").val() + "-" + $("#to-month-register").val() + "-" + $("#to-day-register").val();
               
-              var url = '<?php echo $this->webroot; ?>admin/customers/index';
+              var url = '<?php echo $this->webroot; ?>admin/members/index';
               if($('#keyword').val() != '') url = url + '/keyword:' + $('#keyword').val();
               if($('#email').val() != '') url = url + '/email:' + $('#email').val();
               if(from_register) url = url + '/date_from:' + from_register;
@@ -93,7 +93,7 @@
 
 
 
-<?php echo $this->Form->create('Customer',array('id' =>'form','url' => array('controller' => 'customers', 'action' => 'multi_delete'))); ?>
+<?php echo $this->Form->create('Member',array('id' =>'form','url' => array('controller' => 'members', 'action' => 'multi_delete'))); ?>
     <div class="row">
       <div class="col-lg-12">
       
@@ -120,7 +120,7 @@
             </thead>
             <tbody>
             <?php $i = 0; foreach ($users as $user) { ?>
-            <?php if($user['User']['status_id']>=2 and $user['User']['is_deleted']==0) { $i++; ?>
+            <?php  $i++; ?>
               <tr>
               <td><input class="check_box" type="checkbox" name="customer_id[]" value ="<?php echo $user['User']['id'];?>" hiddenField = "false"></td>
                 <td><?php echo $i;?></td>
@@ -138,12 +138,12 @@
                    ?>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-default"  id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/customers/view/<?php echo $user['User']['id']?>'"> 
+                  <button type="button" class="btn btn-default"  id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/members/view/<?php echo $user['User']['id']?>'"> 
                     <?php echo __('admin.articles.view_button'); ?>
                   </button>
                 </td>
               </tr>
-              <?php } ?>
+              
             <?php } ?>
             </tbody>
           </table> 

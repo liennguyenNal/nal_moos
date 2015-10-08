@@ -1249,7 +1249,7 @@ class UsersController extends AppController{
 
            if( $this->User->validates()  && $this->UserAddress->validates() && $this->UserCompany->validates()){
             if($this->User->save($this->data['User'], false) && $this->UserAddress->save($this->data['UserAddress'], false) && $this->UserCompany->save($this->data['UserCompany'], false)){
-              $this->Session->setFlash('Your Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+              $this->Session->setFlash(__('global.mypage.update.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
               $this->redirect( "my_page" );
             }
           }
@@ -1778,7 +1778,7 @@ class UsersController extends AppController{
             $Email->viewVars(array('user' => $user));
             $Email->send();
 
-            $this->Session->setFlash('Your Account Information has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+            $this->Session->setFlash(__('global.mypage.update.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
               $this->redirect( "my_page" );
             $this->redirect('My Page');
 

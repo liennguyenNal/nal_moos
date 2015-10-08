@@ -24,12 +24,6 @@
   <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery.autoKana.js"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
-  <style>
-    [disabled] {
-      color:#933;
-      background-color:#ffc;
-    }
-  </style>
 </head>
 <body class="page">
   <div id="wrapper">    

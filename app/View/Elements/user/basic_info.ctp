@@ -313,10 +313,10 @@
                     <td>
                       <div class="block-input">
                         <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.post_num_1', array('type'=>'text', 'id'=>"company_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.post_num_1', array('type'=>'text', 'id'=>"company_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'101'))
                         ?>
                         <span class="w-auto1">-</span>
-                        <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'0000'))
                         ?>
                       <a type="button" class="style-link" id="btn-find-company-address"><?php echo __('user.register.findaddress'); ?></a>
                           <!-- Script -->
@@ -344,17 +344,17 @@
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.city'); ?></span>
                         <?php 
-                            echo $this->Form->input('UserCompany.city', array('type'=>'text', 'id'=>"company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'maxlength'=>false));
+                            echo $this->Form->input('UserCompany.city', array('type'=>'text', 'id'=>"company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'maxlength'=>false, 'placeholder'=>'千代田区神田多町'));
                         ?>
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.street'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.address', array('type'=>'text', 'id'=>"company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.address', array('type'=>'text', 'id'=>"company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'2-14-17'))
                         ?>
                       </div>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.register.house'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.house_name', array('type'=>'text', 'id'=>"company_house_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.house_name', array('type'=>'text', 'id'=>"company_house_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'グレイス高輪ビル８階'))
                         ?>
                       </div>
                     </td>
@@ -364,7 +364,7 @@
                     <td>
                       <div class="block-input fix-padding">
                         <div class="div-style">
-                          <?php echo $this->Form->input('UserCompany.phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                          <?php echo $this->Form->input('UserCompany.phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'09012345678'))
                           ?>
                           <span class="style">※”-”ハイフンなしで入力してください。</span>
                         </div>
@@ -376,7 +376,7 @@
                     <td>
                       <div class="block-input fix-padding">
                         <div class="div-style">
-                          <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                          <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'0312345678'))
                           ?>
                           <span class="style">※”-”ハイフンなしで入力してください。</span>
                         </div>
@@ -395,21 +395,21 @@
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.description', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.description', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
                         ?>
                     </td>
                   </tr>
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'営業部 第一営業課'))
                         ?>
                     </td>
                   </tr>
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'部長、課長、次長、係長、主任など'))
                         ?>
                     </td>
                   </tr>
@@ -417,10 +417,10 @@
                     <td class="label-text"><label><?php echo __('user.register.experience'); ?></label></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"year_worked", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'00'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"month_worked", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'00'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
                       </div>
@@ -458,7 +458,7 @@
                     <td class="label-text"><label><?php echo __('user.register.tax'); ?></label></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                       </div>
@@ -468,7 +468,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false))
+                        <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
                       </div>
@@ -496,7 +496,7 @@
                           <div class="style-a">
                             <label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'required'=>false, 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
+                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'placeholder'=>'25', 'required'=>false, 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
                             ?>
                             <label for="11"><?php echo __('global.date'); ?></label>
                           </div>
@@ -538,7 +538,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_count'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+                        <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.count'); ?></span>
                       </div>
@@ -548,7 +548,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_total'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+                        <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
                       </div>
@@ -558,7 +558,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_month'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+                        <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                       </div>
@@ -591,10 +591,10 @@
                         <td>
                           <div class="block-input">
                             <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1_" . $i,'label'=>false, 'class'=>'w40', 'div'=>false, 'value'=>$item['post_num_1'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1_" . $i,'label'=>false, 'class'=>'w40', 'div'=>false, 'value'=>$item['post_num_1'], 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'101'))
                             ?>
                             <span class="w-auto1">-</span>
-                            <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2_" . $i,  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2_" . $i,  'label'=>false, 'class'=>'w80', 'div'=>false, 'value'=>$item['post_num_2'], 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0000'))
                             ?>
                             <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_area_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                           </div>
@@ -607,12 +607,12 @@
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.city'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city". $i, 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false))
+                            <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city". $i, 'label'=>false, 'class'=>'w198','div'=>false, 'value'=>$item['city'], 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false, 'placeholder'=>'港区高輪'))
                             ?>
                           </div>
                           <div class="block-input">
                             <span class="w78"><?php echo __('user.register.street'); ?></span>
-                            <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address". $i, 'label'=>false, 'class'=>'w198', 'div'=>false, 'value'=>$item['address'], 'required'=>false, 'data-placement'=>'right'))
+                            <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address". $i, 'label'=>false, 'class'=>'w198', 'div'=>false, 'value'=>$item['address'], 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'2丁目'))
                             ?>
                             <?php echo $this->Form->hidden("ExpectArea.$i.id", array('value'=>$item['id']))?>
                           </div>
@@ -826,6 +826,12 @@
         return this.optional(element) || re.test(value);
     }, "半角数字で入力してください。" );
 
+    $.validator.addMethod("check_zero", function(value, element) {
+        a = $('#month_worked').val();
+        b = $('#year_worked').val();
+        return (a == "" && b == "") || ( parseInt(a) > 0 || parseInt(b) > 0 );
+      },"<?php echo __('global.errors.required'); ?>");
+
     $("#UserEditBasicInfo").validate({
         rules: {
             //'data[User][first_name]': {required: true},
@@ -887,11 +893,19 @@
             // 'data[UserCompany][department]': {required: true},
             // 'data[UserCompany][position]': {required: true},
             'data[UserCompany][year_worked]': {
+              check_zero: true,
               number: true,
               min: 0
             },
             'data[UserCompany][month_worked]': {
-              required: true,
+              // required: function(element) {
+              //   if($('#year_worked').val() == "0" || $('#year_worked').val() == "") {
+              //     return true;
+              //   } else {
+              //     return false;
+              //   }
+              // },
+              check_zero: true,
               number: true,
               min: 0,
               max: 11
@@ -912,7 +926,9 @@
                   return $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() == '3';
                 }
               },
-              number: true
+              number: true,
+              min: 1,
+              max: 30
             },
             'data[User][debt_count]': {number: true},
             'data[User][debt_total_value]': {number: true},
@@ -946,7 +962,11 @@
               maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
             },
             'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
-            'data[UserCompany][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
+            'data[UserCompany][salary_date]': {
+              required: "<?php echo __('global.errors.required'); ?>",
+              min: "<?php echo __('global.errors.salary_date.min'); ?>",
+              max: "<?php echo __('global.errors.salary_date.max') ?>"
+            },
             'data[User][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"},
             'data[User][phone]': {
               required: "<?php echo __('global.errors.required'); ?>",
