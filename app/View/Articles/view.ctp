@@ -24,7 +24,7 @@
             <p><?php echo nl2br($article['Article']['content']); ?></p>
           </div>
           <div class="block-list-news-detail">
-            <h3>日本自動車:</h3>
+            <h3>Other News:</h3>
             <ul>
               <?php for($i=0; $i<5; $i++){ 
                     if($articles[$i]['Article']['id']){ ?>

@@ -36,7 +36,7 @@ class CsvHelper extends AppHelper
     function renderHeaders() 
     {
         header('Content-Type: text/csv');
-        header("Content-type:application/vnd.ms-excel");
+        header("Content-type:application/vnd.ms-excel,charset=UTF-8");
         header("Content-disposition:attachment;filename=".$this->filename);
     }
 
