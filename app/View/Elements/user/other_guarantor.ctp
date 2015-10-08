@@ -21,24 +21,24 @@
 										<div class="block-input">
 											<div class="div-style">
 												<span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-												<?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+												<?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'山田'))
 												?>
 											</div>
 											<div class="div-style">
 												<span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
-												<?php echo $this->Form->input('OtherGuarantor.last_name', array('type'=>'text', 'id'=>"og_last_name", 'label'=>false, 'class'=>'w198', 'div'=>false , 'required'=>false, 'data-placement'=>'right'))
+												<?php echo $this->Form->input('OtherGuarantor.last_name', array('type'=>'text', 'id'=>"og_last_name", 'label'=>false, 'class'=>'w198', 'div'=>false , 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'太郎'))
 												?>
 											</div>
 										</div>
 										<div class="block-input">
 											<div class="div-style">
 												<span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
-												<?php echo $this->Form->input('OtherGuarantor.first_name_kana', array('type'=>'text', 'id'=>"og_first_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+												<?php echo $this->Form->input('OtherGuarantor.first_name_kana', array('type'=>'text', 'id'=>"og_first_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'ヤマダ'))
 												?>
 											</div>
 											<div class="div-style">
 												<span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
-												<?php echo $this->Form->input('OtherGuarantor.last_name_kana', array('type'=>'text', 'id'=>"og_last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))?>
+												<?php echo $this->Form->input('OtherGuarantor.last_name_kana', array('type'=>'text', 'id'=>"og_last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'タロウ'))?>
 											</div>
 										</div>
 									</td>
@@ -123,7 +123,7 @@
 									<td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
-											<?php echo $this->Form->input('OtherGuarantor.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 											?>
 											<span class="w-auto1"><?php echo __('user.my_page.basic_info.person'); ?></span>
 										</div>
@@ -133,7 +133,7 @@
 									<td class="label-text"><label><?php echo __('user.my_page.guarantor.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
-											<?php echo $this->Form->input('OtherGuarantor.relate', array('type'=>'text', 'id'=>"relate", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.relate', array('type'=>'text', 'id'=>"relate", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'長男、次女、父、母、叔父など'))
 											?>
 										</div>
 									</td>
@@ -153,10 +153,10 @@
 								<td>
 									<div class="block-input">
 										<span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.post_num_1', array('type'=>'text', 'id'=>"og_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.post_num_1', array('type'=>'text', 'id'=>"og_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'101'))
 										?>
 										<span class="w-auto1">-</span>
-										<?php echo $this->Form->input('OtherGuarantor.post_num_2', array('type'=>'text', 'id'=>"og_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.post_num_2', array('type'=>'text', 'id'=>"og_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0000'))
 										?>
 										<a href="javascript:void(0)" type="button" class="style-link" id="btn-g-find-address" onclick="javascript:find_og_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
 										<!-- Script tim dia chi buu dien -->
@@ -183,17 +183,17 @@
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.city'); ?></span>
 										<?php 
-						                    echo $this->Form->input('OtherGuarantor.city', array('type'=>'text', 'id'=>"og_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false));
+						                    echo $this->Form->input('OtherGuarantor.city', array('type'=>'text', 'id'=>"og_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'maxlength'=>false, 'placeholder'=>'千代田区神田多町'));
 						                ?>
 									</div>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.street'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.address', array('type'=>'text', 'id'=>"og_address", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.address', array('type'=>'text', 'id'=>"og_address", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'2-14-17'))
 										?>
 									</div>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.house'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.house_name', array('type'=>'text', 'id'=>"og_house_name", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>right))
+										<?php echo $this->Form->input('OtherGuarantor.house_name', array('type'=>'text', 'id'=>"og_house_name", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>right, 'placeholder'=>'グレイス高輪ビル８階'))
 										?>
 									</div>
 								</td>
@@ -210,7 +210,7 @@
 									<td class="label-text"><label><?php echo __('user.my_page.basic_info.year_residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
-											<?php echo $this->Form->input('OtherGuarantor.year_residence', array('type'=>'text', 'id'=>"year_residence", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.year_residence', array('type'=>'text', 'id'=>"year_residence", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 											?>
 											<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
 										</div>
@@ -232,12 +232,12 @@
 									<div class="block-input fix-padding">
 										<div class="div-style">
 											<span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-											<?php echo $this->Form->input('OtherGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'09012345678'))
 											?>
 										</div>
 										<div class="div-style">
 											<span class="w43"><?php echo __('user.register.homephone'); ?></span>
-											<?php echo $this->Form->input('OtherGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.home_phone', array('type'=>'text', 'id'=>"home_phone", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0312345678'))
 											?>
 										</div>
 									</div>
@@ -278,16 +278,16 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.register.address'); ?></label><span><?php echo __('global.require'); ?></span></td>
+								<td class="label-text"><label><?php echo __('user.partner.company'); ?></label><span><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company', array('type'=>'text', 'id'=>"og-company", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company', array('type'=>'text', 'id'=>"og-company", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'placeholder'=>'株式会社ヤチンデモラエル'))
 										?>
 									</div>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.my_page.basic_info.company_name_kana'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company_kana', array('type'=>'text', 'id'=>"og-company-kana", 'label'=>false, 'class'=>'w198', 'div'=>false))
+										<?php echo $this->Form->input('OtherGuarantor.company_kana', array('type'=>'text', 'id'=>"og-company-kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'placeholder'=>'カブシキガイシャヤチンデモラエル'))
 										?>
 									</div>
 									<script type="text/javascript">
@@ -296,14 +296,14 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.register.address'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.guarantor.address'); ?></label></td>
 								<td>
 									<div class="block-input">
 										<span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"og_company_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company_post_num_1', array('type'=>'text', 'id'=>"og_company_post_num_1", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'placeholder'=>'101'))
 										?>
 										<span class="w-auto1">-</span>
-										<?php echo $this->Form->input('OtherGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"og_company_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company_post_num_2', array('type'=>'text', 'id'=>"og_company_post_num_2", 'label'=>false, 'class'=>'w80', 'div'=>false, 'data-placement'=>'right', 'placeholder'=>'0000'))
 										?>
 										<a href="javascript:void(0)" type="button" class="style-link" id="btn-guarantor-company-address" onclick="javascript:find_address2($(this));"><?php echo __('user.register.findaddress'); ?></a>
 										<!-- Script tim dia chi buu dien -->
@@ -330,17 +330,17 @@
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.city'); ?></span>
 										<?php 
-						                    echo $this->Form->input('OtherGuarantor.company_city', array('type'=>'text', 'id'=>"og_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'maxlength'=>false));
+						                    echo $this->Form->input('OtherGuarantor.company_city', array('type'=>'text', 'id'=>"og_company_city", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'maxlength'=>false, 'placeholder'=>'千代田区神田多町'));
 						                ?>
 									</div>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.street'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company_address', array('type'=>'text', 'id'=>"og_company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company_address', array('type'=>'text', 'id'=>"og_company_address", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'placeholder'=>'2-14-17'))
 										?>
 									</div>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.register.house'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company_house_name', array('type'=>'text', 'id'=>"og_company_house_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company_house_name', array('type'=>'text', 'id'=>"og_company_house_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'グレイス高輪ビル８階'))
 										?>
 									</div>
 								</td>
@@ -350,7 +350,7 @@
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
-										<?php echo $this->Form->input('OtherGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'09012345678'))
 										?>
 										<span class="style">※”-”ハイフンなしで入力してください。</span>
 										</div>
@@ -362,7 +362,7 @@
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
-											<?php echo $this->Form->input('OtherGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+											<?php echo $this->Form->input('OtherGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0312345678'))
 											?>
 											<span class="style">※”-”ハイフンなしで入力してください。</span>
 										</div>
@@ -381,7 +381,7 @@
 							<tr>
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label></td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+									<?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
 									?>
 								</td>
 							</tr>
@@ -390,14 +390,14 @@
 									<label><?php echo __('user.my_page.basic_info.department'); ?></label>
 								</td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+									<?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'営業部 第一営業課'))
 									?>
 								</td>
 							</tr>
 							<tr>
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label></td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+									<?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'部長、課長、次長、係長、主任など'))
 									?>
 								</td>
 							</tr>
@@ -405,10 +405,10 @@
 								<td class="label-text"><label><?php echo __('user.register.experience'); ?></label></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.month'); ?></span>
 									</div>
@@ -445,7 +445,7 @@
 								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 									</div>
@@ -455,7 +455,7 @@
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right'))
+										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
 									</div>
@@ -472,7 +472,7 @@
 							                	?>
 											</div>
 											<script type="text/javascript">
-				                                function og_change_type(obj){
+				                                function og_change_type_date(obj){
 				                                    if(obj.val() == '3')
 				                                    $('#og_salary_date').prop('disabled',false);
 				                                    else {
@@ -483,7 +483,7 @@
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
+													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>
@@ -560,7 +560,7 @@
                       $('#btn-cancel-other-guarantor').show();
                       $('#btn-save-other-guarantor').show();
                       $('#btn-edit-other-guarantor').hide();
-                      $('#og_salary_type_other').prop('disabled', $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() != 4);
+                      	$('#og_salary_type_other').prop('disabled', $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() != 4);
                 		$('#og_salary_date').prop('disabled', $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() != 3);
                       og_edit = 1;
 
@@ -677,7 +677,9 @@
                   return $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() == '3';
                 }
             },
-            number: true
+            number: true,
+            min: 1,
+            max: 30
       	}
     },
     messages: {
@@ -698,7 +700,11 @@
     		maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
     	},
     	'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
-    	'data[OtherGuarantor][salary_date]': {required: "<?php echo __('global.errors.required'); ?>"},
+    	'data[OtherGuarantor][salary_date]': {
+    		required: "<?php echo __('global.errors.required'); ?>",
+    		min: "<?php echo __('global.errors.salary_date.min'); ?>",
+            max: "<?php echo __('global.errors.salary_date.max') ?>"
+    	},
     	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
     	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
     	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
@@ -724,7 +730,7 @@
              success: function(result)
              {
                  og_edit = 0;
-                 if($result != "0"){
+                 if(result != "0"){
 	                 $('#other_guarantor').html(result);
 	                 $.ajax({
 	                   url: "<?php echo $this->webroot?>users/reload_dashboard",

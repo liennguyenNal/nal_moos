@@ -277,7 +277,7 @@ msgid "user.my_page.basic_info.position"
 msgstr "役職"
 
 msgid "user.my_page.basic_info.salary_type"	
-msgstr "日中連絡先"
+msgstr "給与形態"
 
 msgid "user.my_page.basic_info.salary_fix"	
 msgstr "固定給"
@@ -473,7 +473,7 @@ msgid "user.dashboard.user.contact"
 msgstr "申込人 連絡先情報"
 
 msgid "user.dashboard.user.company"
-msgstr "申込人 住所情報"
+msgstr "申込人 勤務先情報"
 
 msgid "user.dashboard.user.debt"
 msgstr "申込人 借入金情報"
@@ -871,9 +871,17 @@ msgstr "000,000"
 msgid "global.placeholder.num_child"
 msgstr "00"
 
+msgid "user.guarantor.address"
+msgstr "所在地"
 
+msgid "global.mypage.update.successful"
+msgstr "審査申込を成功しました。"
 
+msgid "global.errors.salary_date.min"
+msgstr "1より大きいな数字をご入力ください。"
 
+msgid "global.errors.salary_date.max"
+msgstr "30より小さいな数字をご入力ください。"
 
 
 

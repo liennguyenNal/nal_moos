@@ -561,6 +561,20 @@ img {
   cursor: default;
   background-color: #FBFBFB;
 }
+.from-ldpage .content .content-from .content-from-how .from tr td input:disabled::-webkit-input-placeholder {
+  color: transparent;
+}
+.from-ldpage .content .content-from .content-from-how .from tr td input:disabled:-moz-placeholder {
+  /* Firefox 18- */
+  color: transparent;
+}
+.from-ldpage .content .content-from .content-from-how .from tr td input:disabled::-moz-placeholder {
+  /* Firefox 19+ */
+  color: transparent;
+}
+.from-ldpage .content .content-from .content-from-how .from tr td input:disabled:-ms-input-placeholder {
+  color: transparent;
+}
 .from-ldpage .content .content-from .content-from-how .from tr td textarea {
   border: 1px solid #e5e5e4;
   padding: 7px;
