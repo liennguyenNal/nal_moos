@@ -212,11 +212,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label><?php echo __('user.register.salary_month'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'', "value"=>$user['UserCompany']['salary_year']))
+                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'', "value"=>$user['UserCompany']['salary_year']))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
@@ -285,8 +285,8 @@
                 <div class="block-note">
                   <div class="block-button">
                     <input type="hidden" name="data[User][Confirm]" value="1">
-                    <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3.png" alt="変更する"></button>
-                    <button type="button" class="link-tab-1b" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"/></button>
+                    <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/register.png" alt="登録する"></button>
+                    <button type="button" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"/></button>
                   </div>
                 </div>
               </form> 
