@@ -6,7 +6,7 @@
  */
 
 
-class CustomersController extends AppController {
+class MembersController extends AppController {
     var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
     //var $helpers = array('Html' , 'Js');
@@ -14,14 +14,14 @@ class CustomersController extends AppController {
      
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->set('menu' , 'customer');
+        $this->set('menu' , 'member');
     }
 
     
 
     function admin_index(){ //$this->layout= null;
         
-      $criteria = "1=1 ";
+      $criteria = "User.is_deleted='0' AND User.status_id >='2' ";
       if($this->params['named']['keyword']){
         $keyword = $this->params['named']['keyword'];
         $criteria .= " AND (User.first_name LIKE '%$keyword%' OR User.last_name LIKE '%$keyword%') " ;
@@ -80,7 +80,7 @@ class CustomersController extends AppController {
       if($_POST['customer_id']){
         foreach($ids as $id){
           $this->User->id = $id; 
-          $this->User->saveField('is_deleted', 0);
+          $this->User->saveField('is_deleted', 1);
           //$this->User->delete($id);
         }
       $this->Session->setFlash('Selected Customers are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
@@ -100,7 +100,7 @@ class CustomersController extends AppController {
     function admin_delete($id){
         if($id){
             $this->User->id = $id; 
-            $this->User->saveField('is_deleted', 0);
+            $this->User->saveField('is_deleted', 1);
             $this->redirect('index');
         }
     }

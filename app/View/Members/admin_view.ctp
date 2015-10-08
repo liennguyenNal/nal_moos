@@ -226,7 +226,7 @@
               
                $('#btn-cancel').on('click', function() {
                 
-                   window.location.href='<?php echo $this->webroot;?>admin/customers';
+                   window.location.href='<?php echo $this->webroot;?>admin/members';
                 
               });
 
@@ -251,7 +251,7 @@
                 modal: true,
                 buttons: {
                   "削除する": function() {
-                    window.location.href='<?php echo $this->webroot;?>admin/customers/delete/<?php echo $user['User']['id']?>';
+                    window.location.href='<?php echo $this->webroot;?>admin/members/delete/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
                   'キャンセル': function() {

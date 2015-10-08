@@ -18,7 +18,7 @@
 	      
 	      <li class="<?php  if($menu == 'article') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/articles/">お知らせ一覧</a></li>
 	           <li class="<?php  if($menu == 'contact') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/contacts"><?php echo "問合せ一覧"?></a></li>
-	      <li class="<?php  if($menu == 'customer') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/customers/">会員管理</a></li>
+	      <li class="<?php  if($menu == 'member') echo 'active'?>"><a href="<?php echo $this->webroot;?>admin/members/">会員管理</a></li>
 
 	      
 	    </ul>
