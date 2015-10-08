@@ -813,10 +813,14 @@ class UsersController extends AppController{
           $Email->viewVars(array('user' => $user, 'hash'=>$hash));
 
           if($Email->send()){
-            return $this->render("reset_password_successful");
+            return $this->render("reset_password_email");
           }
         }
       }
+    }
+
+    function reset_password_email() {
+      $this->layout = null;
     }
 
 

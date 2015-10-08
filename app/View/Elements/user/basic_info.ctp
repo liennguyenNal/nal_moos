@@ -212,7 +212,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label></td>
                     <td>
                       <div class="block-input">
                         <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false))
