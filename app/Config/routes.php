@@ -26,7 +26,7 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 
-	Router::connect('/admin/', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/admin/', array('controller' => 'users','prefix'=>'admin' ,'action' => 'index'));
 
 	Router::connect('/contact', array('controller' => 'contacts', 'action' => 'index'));
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'faq'));

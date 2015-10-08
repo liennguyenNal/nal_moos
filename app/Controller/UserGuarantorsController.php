@@ -9,6 +9,7 @@ class UserGuarantorsController extends AppController {
 	function edit(){
 		
 		if($this->request->is('ajax')){
+			
 			$married_statuses = $this->MarriedStatus->find( 'list' );
 	      	$this->set( 'married_statuses', $married_statuses);
 
@@ -104,7 +105,7 @@ class UserGuarantorsController extends AppController {
 
 			}
 			else {
-				//echo "1111"; die;
+				echo "0"; die;
 			}
 		} 
 		else {
@@ -119,6 +120,7 @@ class UserGuarantorsController extends AppController {
 	function edit_other_guarantor(){
 		
 		if($this->request->is('ajax')){
+
 			$married_statuses = $this->MarriedStatus->find( 'list' );
 	      	$this->set( 'married_statuses', $married_statuses);
 
@@ -183,7 +185,7 @@ class UserGuarantorsController extends AppController {
 
 			}
 			else {
-				
+				echo "0"; die;
 			}
 		} 
 		else {

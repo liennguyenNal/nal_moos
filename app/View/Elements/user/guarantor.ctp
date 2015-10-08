@@ -714,14 +714,18 @@
             data: $("#UserGuarantorEdit").serialize(),
             success: function(result)
             {
-                edit = 0;
-                $('#guarantor').html(result);
-                $.ajax({
-                    url: "<?php echo $this->webroot?>users/reload_dashboard",
-                    success: function(result){
-                      $('#home').html(result);
-                    }
-                });
+                if(result!= "0"){
+	                $('#guarantor').html(result);
+	                $.ajax({
+	                    url: "<?php echo $this->webroot?>users/reload_dashboard",
+	                    success: function(result){
+	                      $('#home').html(result);
+	                    }
+	                });
+            	}
+            	else {
+            		window.location.href = "<?php echo $this->webroot?>users/login"
+            	}
              }
            }).done(function() {
              $('#btn-save-guarantor').prop('disabled', false);

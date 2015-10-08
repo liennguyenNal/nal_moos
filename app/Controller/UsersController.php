@@ -1215,8 +1215,11 @@ class UsersController extends AppController{
             }
             $this->render('ajax_update_basic_info');
         }
-         
-      }
+        else {
+         echo "0";
+          }
+        }
+        else $this->redirect("/users/login");
 
     }
 
