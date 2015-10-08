@@ -22,6 +22,11 @@
               <span class="times-days"><?php echo $article['Article']['created']?></span>
             </div>
             <p><?php echo nl2br($article['Article']['content']); ?></p>
+             
+              <?php if( $article['Article']['large_image']){ ?>
+                  <div>添付ファイル：<a target="_blank" href="<?php echo $this->webroot; ?>images/upload/news/big/<?php echo $article['Article']['large_image']; ?>"><?php echo $article['Article']['large_image']; ?></a></div>
+                  <?php } ?>
+
           </div>
           <div class="block-list-news-detail">
             <h3>Other News:</h3>
