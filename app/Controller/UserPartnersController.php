@@ -28,7 +28,7 @@ class UserPartnersController extends AppController {
 	      $this->set('insurances', $insurances);
 
 			 $id = $this->s_user_id;
-       //echo $id; die;
+       		//echo "0"; die;
          	$user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
         	 $this->set('user', $user);
       
@@ -110,7 +110,7 @@ class UserPartnersController extends AppController {
 
 			}
 			else {
-				echo ""; die;
+				echo "0"; die;
 			} 
 			
 		}
