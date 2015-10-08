@@ -53,11 +53,14 @@ class UserAddress extends AppModel {
 
     );
     
-    function checkResidence($check){
-        if($this->data[$this->alias]['pref_id'] == 1 || $this->data[$this->alias]['pref_id'] == 2){
-            if($check) return true;
-            else 
+    function checkResidence(){
+        if($this->data[$this->alias]['residence_id'] != 1 && $this->data[$this->alias]['residence_id'] != 2){
+            //echo $this->data[$this->alias]['housing_costs']; die;
+            if($this->data[$this->alias]['housing_costs']) return true;
+            else {
+                //echo 1111; die;
                 return false;
+            }
         }
         return true;
     }

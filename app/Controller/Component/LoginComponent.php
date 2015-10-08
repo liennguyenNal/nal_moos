@@ -88,7 +88,7 @@ class LoginComponent extends Object
                 }
         		else {
                     $this->controller->Session->delete('User');
-                    $this->controller->set('login_error_msg', 'This account is reject by admin');
+                    $this->controller->set('login_error_msg',  __('login.errors.invalid'));
                        
                 }
         	}
@@ -99,7 +99,7 @@ class LoginComponent extends Object
         	}
         }
         else {
-            $this->controller->set('login_error_msg', 'Please enter username and password');
+            $this->controller->set('login_error_msg',  __('login.errors.invalid'));
         }
     }
 
@@ -131,13 +131,13 @@ class LoginComponent extends Object
                
             }
             else {                    
-                   $this->controller->set('login_error_msg', 'Incorrect username or password. Please try again!');
+                   $this->controller->set('login_error_msg',  __('login.errors.invalid'));
             }
         }
         else 
         {
             $this->controller->set('username', $username);
-            $this->controller->set('login_error_msg', 'Incorrect username or password. Please try again!');
+            $this->controller->set('login_error_msg',  __('login.errors.invalid'));
         }
     }
     function logout()

@@ -60,14 +60,14 @@
     <div class="form-group">
        
         <div class="col-lg-10 ">
-          <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> <?php echo __('admin.user.delete_button')?></button>
+          <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> 削除する</button>
           <div class="col-lg-offset-2" style="padding-left:150px">
              <?php if($user['User']['status_id']){?>
              <?php if($user['User']['status_id'] == "3"){?>
-              <button type="button" class="btn btn-warning" id="btn-reject"> <?php echo __('admin.user.reject_button')?></button>
+              <button type="button" class="btn btn-warning" id="btn-reject"> 却下する</button>
 
-              <button type="button" class="btn btn-success" id="btn-approve"><?php echo __('admin.user.approve_button')?></button>
-              <button type="button" class="btn btn-primary" id="btn-return"><?php echo __('admin.user.return_button')?></button>
+              <button type="button" class="btn btn-success" id="btn-approve">審査承認する</button>
+              <button type="button" class="btn btn-primary" id="btn-return">差戻す</button>
               <?php } else if($user['User']['status_id'] == "4"){?>
                        <button type="button" class="btn btn-primary" id="btn-charged"><?php echo __('admin.user.charged_button')?></button>
               <?php }?>
@@ -152,7 +152,7 @@
                 resizable: true,
                 modal: true,
                 buttons: {
-                  "却下": function() {
+                  "却下する": function() {
                     window.location.href='<?php echo $this->webroot;?>admin/users/reject/<?php echo $user['User']['id']?>';
                     $( this ).dialog( "close" );
                   },
@@ -249,10 +249,18 @@
                 dialog_set_max_payment.dialog( "open" );
               });
               function edit_max_payment_user(){
-                 $('#EditMaxPaymentUserForm').submit();
+                if(isNumeric($("#max_payment").val())){
+                  $('#error_max_payment_input').hide();
+                  $('#EditMaxPaymentUserForm').submit();
+                }
+                else {
+                  $('#error_max_payment_input').show();
+                }
                 
               }
-              
+              function isNumeric(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+              }
             });
           </script>
   </div>
@@ -289,8 +297,9 @@
     
     <?php echo $this->Form->create("User", array('action'=>'edit_max_payment','id'=>'EditMaxPaymentUserForm' ,'class'=>'form-horizontal' ) ) ?>
       <fieldset>
-        <p>上限賃料</p>
-        <input name="data[User][max_payment]" id="max_payment"  value="<?php echo $user['User']['max_payment'];?>" />
+        <p style="display:none; color:red" id="error_max_payment_input"><?php echo __('global.errors.number')?></p>
+        <p>上限賃料
+          <input name="data[User][max_payment]" id="max_payment"  value="<?php echo $user['User']['max_payment'];?>" /> 円</p>
         
         <?php $this->Form->hidden('User.id')?>
       </fieldset>

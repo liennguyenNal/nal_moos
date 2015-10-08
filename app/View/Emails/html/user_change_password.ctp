@@ -1,4 +1,4 @@
-<p><?php echo $user['User']['first_name'].$user['User']['last_name']; ?>様</p>
+<p><?php echo $user['User']['first_name']; ?>様</p>
 <p>パスワード変更のご依頼ありがとうございます。</p>
 
 <p>※パスワード変更はまだ完了しておりません。</p>

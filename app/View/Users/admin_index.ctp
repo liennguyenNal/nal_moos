@@ -202,20 +202,20 @@
             <tbody>
             <?php $i = 0; foreach ($users as $user) { $i++;?>
               <tr>
-              <td><input type="checkbox" id="chk[]" name="ids[]" value="<?php echo $user['User']['id']?>" class="checkbox"></td>
-                <td><?php echo $i;?></td>
-                <td><?php echo $user['User']['email'] ?></td>
-                <td><?php echo $user['User']['first_name'].$user['User']['last_name'] ?></td>
-                <td><?php echo date("Y") - $user['User']['year_of_birth'] ;?></td>
-                <td><?php echo $user['UserCompany']['Work']['name'] ?></td>
-                <td><?php echo $user['UserCompany']['salary_month'] ?></td>
-                <td><?php echo  $user['UserAddress']['Pref']['name'] ?></td>
-                <td><?php echo  $user['UserAddress']['city'] ?></td>
-                <td><?php echo $user['Status']['name']; ?>
-                <td><?php echo $user['User']['created']; ?>
-                <td><?php echo $user['User']['approved_date']; ?>
+              <td width="3%"><input type="checkbox" id="chk[]" name="ids[]" value="<?php echo $user['User']['id']?>" class="checkbox"></td>
+              <td width="6%"><?php echo $user['User']['id'];?></td>
+              <td width="8%"><?php echo $user['User']['email'] ?></td>
+                <td width="8%"><?php echo $user['User']['first_name'].$user['User']['last_name'] ?></td>
+                <td width="5%"><?php echo date("Y") - $user['User']['year_of_birth'] ;?></td>
+                <td width="8%"><?php echo $user['UserCompany']['Work']['name'] ?></td>
+                <td width="8%"><?php echo $user['UserCompany']['salary_month'] ?></td>
+                <td width="8%"><?php echo  $user['UserAddress']['Pref']['name'] ?></td>
+                <td width="10%"><?php echo  $user['UserAddress']['city'] ?></td>
+                <td width="15%"><?php echo $user['Status']['name']; ?>
+                <td width="10%"><?php echo substr($user['User']['created'],0, 10); ?>
+                <td width="10%"><?php echo substr($user['User']['approved_date'], 0,10); ?>
                 </td>
-                <td>
+                <td width="5%">
                   <button type="button" class="btn btn-default" style="float:right" id="btn-view" onclick="location.href='<?php echo $this->webroot;?>admin/users/view/<?php echo $user['User']['id']?>'"> 
                     <?php echo __("admin.articles.view_button")?>
                   </button>
@@ -391,6 +391,6 @@
   </div>
   
    <div id="dialog-confirm-export" title="CSVデータダウンロード">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Do you want to download CSV file?</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>CSVファイルをダウンロードしますか。</p>
   </div>
 </div>

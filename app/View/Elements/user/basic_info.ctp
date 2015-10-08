@@ -985,6 +985,13 @@
                     edit = 0;
                     $('#basic').html(result);
                     $('#btn-save-user-info').prop('disabled', false);
+                    //reload dashboard
+                    $.ajax({
+                        url: "<?php echo $this->webroot?>users/reload_dashboard",
+                        success: function(result){
+                          $('#home').html(result);
+                        }
+                    });
                 }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);

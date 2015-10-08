@@ -15,6 +15,9 @@
   <section class="container">
     <div class="login">
       <h1>Admin Login - Moos</h1>
+      <?php if($login_error_msg){?>
+      <p class=".error" style="color:red"><?php echo $login_error_msg;?></p>
+      <?php }?>
       <?php echo $this->Form->create("User", array('action'=>'login')) ?>
         <p><input type="text" name="data[User][username]" value="" placeholder="Username"></p>
         <p><input type="password" name="data[User][password]" value="" placeholder="Password"></p>
@@ -28,10 +31,10 @@
       </form>
     </div>
 
-    <div class="login-help">
+    <!-- <div class="login-help">
       <p>Forgot your password? <a href="reset_password">Click here to reset it</a>.</p>
     </div>
-     
+      -->
   </section>
 
 </body>

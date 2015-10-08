@@ -404,7 +404,7 @@ msgid "admin.user.return_button"
 msgstr "差戻す"
 
 msgid "admin.user.status"
-msgstr "申し込み状況"
+msgstr "申込み状況"
 
 msgid "admin.user.pref"
 msgstr "都道府県"
@@ -431,7 +431,7 @@ msgid "admin.user.list_header.city"
 msgstr "市区町村"
 
 msgid "admin.user.list_header.income_month"
-msgstr "収入"
+msgstr "月収"
 
 msgid "admin.user.list_header.status"
 msgstr "申込み状況"
@@ -440,7 +440,7 @@ msgid "admin.user.list_header.register_date"
 msgstr "登録申込日"
 
 msgid "admin.user.list_header.approve_date"
-msgstr "登録申込日"
+msgstr "審査申込日"
 
 msgid "admin.user.export_csv"
 msgstr "CSVデータダウンロード"
@@ -569,7 +569,7 @@ msgid "admin.user.approve.failed"
 msgstr "申込審査承認に失敗しました。"
 
 msgid "admin.user.approve_register.successful"
-msgstr "申込審査を承認しました。"
+msgstr "会員登録を承認しました。"
 
 msgid "admin.user.approve_register.failed"
 msgstr "申込審査承認に失敗しました。"
@@ -812,6 +812,8 @@ msgid "global.errors.basic_info.post_num_1"
 msgstr "半角数字で入力してください。"
 
 
+msgid "user.register.salary_month"
+msgstr "税込月収"
 
 
 

@@ -130,7 +130,7 @@ class UsersController extends AppController{
       //echo $criteria; die;
         $this->paginate = array(
             'conditions' => $criteria,
-            'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
+            'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status', 'UserAddress.Pref'),
             'limit' => 20,
             'recursive' => 3,
             'order' => array('id' => 'desc')
@@ -815,8 +815,6 @@ class UsersController extends AppController{
           if($Email->send()){
             return $this->render("reset_password_successful");
           }
-        } else {
-          $this->Session->setFlash(__('global.errors.reset_password.email_unique'), 'default');
         }
       }
     }
@@ -977,7 +975,7 @@ class UsersController extends AppController{
           $this->set('user', $user);
 
           if($this->data){
-             print_r($user['User']['year_of_birth']); die;
+             //print_r($user['User']['year_of_birth']); die;
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
                 $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
@@ -1364,17 +1362,17 @@ class UsersController extends AppController{
       if(!$this->UserAddress->validates()){
         
           $result['error'] = 1;
-          $user_address_fields = array('post_num_1'=>__('user.dashboard.user.post_num_1'), 'post_num_2'=>__('user.dashboard.user.post_num_2'), 'pref_id' =>__('user.register.pref'), 'city'=>__('user.register.city'), 'address'=>__('user.register.house'));
-          $user_residence_fields = array( 'residence_id' =>__('user.my_page.basic_info.residence'), 'housing_costs' =>__('user.my_page.basic_info.house_cost'),'year_residence' =>__('user.my_page.basic_info.year_residence'));
+          $user_address_fields = array('post_num_1'=>__('user.dashboard.user.post_num_1'), 'post_num_2'=>__('user.dashboard.user.post_num_2'), 'pref_id' =>__('user.register.pref'), 'city'=>__('user.register.city'), 'address'=>__('user.register.house'),
+              'residence_id' =>__('user.my_page.basic_info.residence'), 'housing_costs' =>__('user.my_page.basic_info.house_cost'),'year_residence' =>__('user.my_page.basic_info.year_residence'));
           foreach ($this->UserAddress->invalidFields() as $key => $value) {
              if(array_key_exists($key, $user_address_fields)){
                  array_push($result['User']['UserAddress']['fields'], $user_address_fields[$key]);
                 $result['User']['UserAddress']['error'] = 1;
              }
-             else if(array_key_exists($key, $user_residence_fields)){
-                array_push($result['User']['UserResidence']['fields'], $user_residence_fields[$key]);
-                $result['User']['UserResidence']['error'] = 1;
-             }
+             // else if(array_key_exists($key, $user_residence_fields)){
+             //    array_push($result['User']['UserResidence']['fields'], $user_residence_fields[$key]);
+             //    $result['User']['UserResidence']['error'] = 1;
+             // }
           }
       }
       

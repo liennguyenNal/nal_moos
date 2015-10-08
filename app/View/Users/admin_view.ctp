@@ -1,21 +1,13 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-<div class="page-header" id="banner">
- <div class="col-lg-4">
-    <div class="bs-component">
-		 <ul class="breadcrumb">
-		   <li><a href="<?php echo $this->webroot?>admin/users/"><?php echo __('admin.register_users')?></a></li>
-		   
-		  </ul>
-	</div>
-</div>
+
 
 <div class="row">
 
     <div class="col-lg-12">
       <div class="page-header">
-        <h1 id="tables">お客様</h1>
+        <h1 id="tables">申込み詳細（会員登録承認待ち）</h1>
       </div>
       
       <div class="bs-component">
@@ -29,7 +21,7 @@
          
          
             <fieldset>
-              <legend>会員登録フォ一ム</legend>
+             
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
@@ -93,11 +85,12 @@
                     <?php echo __('user.register.day')?>
                       &nbsp;&nbsp;&nbsp;<span id="age">0</span> <?php echo __('user.register.age')?>
                     <script type="text/javascript">
-
-                    function calculate_age(){
-                      var d = new Date();
+                    var d = new Date();
                       var n = d.getFullYear();
-                      $("#age").html(n - $("#year").val());
+                    $("#age").html(n - $("#year").val());
+                    function calculate_age(){
+                      
+                      
                     }
                     </script>
                     </div>
@@ -286,11 +279,11 @@
 		       
 		        <div class="form-group">
 		            <div class="col-lg-10 ">
-			            <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> 削除します</button>
+			            <button type="button" class="btn btn-danger" id="btn-delete" style="float:left">削除します</button>
 			            <div class="col-lg-offset-2" style="padding-left:150px">
 			            	 <?php if($user['User']['status_id'] == 1){?>
-				            <button type="button" class="btn btn-warning" id="btn-reject"> 拒絶します</button>
-			              	<button type="button" class="btn btn-primary" id="btn-approve">会員登碌を承認すます</button>
+				            <button type="button" class="btn btn-warning" id="btn-reject">却下する</button>
+			              	<button type="button" class="btn btn-primary" id="btn-approve">会員登録を承認する</button>
 			              	<?php } ?>
 			              	<button type="button" class="btn btn-default" id="btn-cancel" style="float:right">一覧へ戻る</button>
 		              	</div>
@@ -407,7 +400,7 @@
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除しますか？</p>
   </div>
   <div id="dialog-reconfirm-delete" title="<?php echo __('admin.user.delete_button')?>">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると2度と復元できません。</p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>申込みを削除すると２度と復元出来ません。<br> 申込みを削除しますか？</p>
   </div>
    <div id="dialog-confirm-approve" title="会員登録承認">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>会員登録を承認しますか？</p>

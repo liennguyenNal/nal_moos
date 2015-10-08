@@ -30,7 +30,7 @@
               <tr>
                 <td>
                   <?php echo __('user.my_page.max_payment'); ?> 
-                   <?php echo $user['User']['max_payment'];?>
+                   <?php echo $user['User']['max_payment'];?>円
                    <button type="button" class="btn btn-success" id="btn-set-max-payment"><?php echo __('admin.user.view.set_max_payment_button')?></button>
                 </td>
                 <td colspan="2">

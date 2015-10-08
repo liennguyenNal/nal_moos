@@ -175,4 +175,11 @@ class AppController extends Controller {
       $Email->subject($subject);
       $Email->send($content);
     }
+
+    function beforeRender() {
+        if($this->name == 'CakeError') {
+            //echo 1111; die;
+            $this->layout = null;
+        }
+    }
 }

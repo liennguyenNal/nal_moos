@@ -212,11 +212,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                          <td class="label-text"><label><?php echo __('user.register.salary_month'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'', "value"=>$user['UserCompany']['salary_year']))
+                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'', "value"=>$user['UserCompany']['salary_year']))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
