@@ -454,7 +454,7 @@
                         <div class="select">
                           <?php 
                             $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false, 'empty'=>'----'));
+                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>"p-year-$i", 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false, 'empty'=>'----'));
                           ?>
                           <span><?php echo __('user.register.year'); ?></span>
                           <?php 
@@ -477,8 +477,7 @@
                               } else {
                                 $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
                               }
-                              
-                                function calculate_relation_age(obj){
+                              function calculate_relation_age(obj){
                               var age = n - obj.val();
                               obj.parent().parent().find("span[id*='p-age-<?php echo $i?>']").html(age);
                           }
