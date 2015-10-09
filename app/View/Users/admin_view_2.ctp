@@ -274,7 +274,7 @@
  
     <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
-        <p style="display:none; color:red" id="return_error_not_choose">Please select one</p>
+        <p style="display:none; color:red" id="return_error_not_choose">差戻し理由をご選択ください。</p>
       <fieldset>
         <p>差し戻し理由をチェックをいれ、ひつ料にい応じて差し戻しメール</p>
         <p>に追加する文章をテキストボックスに入力してください。</p>
