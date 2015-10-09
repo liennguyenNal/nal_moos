@@ -141,7 +141,7 @@ class ArticlesController extends AppController{
           $this->Article->delete($id);
         }
 
-      $this->Session->setFlash('Selected News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+      //$this->Session->setFlash('Selected News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect('index');
 
@@ -163,7 +163,7 @@ class ArticlesController extends AppController{
       }
         if($id){
             $this->Article->delete( $id );
-            $this->Session->setFlash('News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+            //$this->Session->setFlash('News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
             $this->redirect( 'index' );
         }
@@ -183,12 +183,12 @@ class ArticlesController extends AppController{
           $this->set( 'article', $article );
          }
          else {
-            $this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+            //$this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
             $this->redirect( "index" );
          }
       }
       else {
-        $this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
+        //$this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
         $this->redirect( "index" );
       }
     }

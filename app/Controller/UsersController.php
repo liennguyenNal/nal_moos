@@ -251,6 +251,7 @@ class UsersController extends AppController{
      * @return response
      */
     function admin_change_password() {
+
       $admin = $this->Session->read('Administrator');
       if ( $admin ){
         $admin = $this->Administrator->find('first', array('conditions'=>array('Administrator.id'=>$admin['Administrator']['id'])));
@@ -261,25 +262,25 @@ class UsersController extends AppController{
               if ($this->data['User']['password'] == $this->data['User']['confirm_password']){
                 $admin['Administrator']['password'] = md5($this->data['User']['password']);
                 if ($this->Administrator->save($admin, true) ){
-                  $this->Session->setFlash('Your Password has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
+                  $this->Session->setFlash('パスワード変更は完了しました。','default', array('class' => 'alert alert-dismissible alert-success'));
                   //$this->redirect('profile');
                 }
                 else {
-                  $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                  $this->Session->setFlash("パスワード変更はできませんでした。", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                 }
               }
               else {
-                  $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+                  $this->Session->setFlash("パスワードが異なります。", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                 }
             }
             else {
-              $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
+              $this->Session->setFlash("パスワードが短すぎます。（3～6文字)", 'default',
                 array('class' => 'alert alert-dismissible alert-info"'));
             }
 
           }
           else {
-             $this->Session->setFlash("Old Password is not match", 'default',
+             $this->Session->setFlash("現在のパスワードが異なります。", 'default',
                 array('class' => 'alert alert-dismissible alert-info"'));
           }
         }

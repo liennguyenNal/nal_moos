@@ -180,7 +180,7 @@ class ContactsController extends AppController {
           }
       	}
       	else {
-      		$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+      		//$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
       		$this->redirect( 'index' );
       	}
       }
@@ -216,7 +216,7 @@ class ContactsController extends AppController {
         foreach($ids as $id){
           $this->Contact->delete($id);
         }
-      $this->Session->setFlash('Selected Contacts are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+     // $this->Session->setFlash('Selected Contacts are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect( 'index');
 
@@ -238,7 +238,7 @@ class ContactsController extends AppController {
           }
         }
         else {
-          $this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+          //$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
           $this->redirect( 'index' );
         }
     
@@ -262,7 +262,7 @@ class ContactsController extends AppController {
           }
         }
         else {
-          $this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+          //$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
           $this->redirect( 'index' );
         }
     

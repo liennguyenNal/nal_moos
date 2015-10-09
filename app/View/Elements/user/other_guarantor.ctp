@@ -276,13 +276,13 @@
 								<td>
 									<div class="select">
 										<?php 
-						                    echo $this->Form->select('OtherGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'data-placement'=>'right', 'required'=>false));
+						                    echo $this->Form->select('OtherGuarantor.work_id', $works, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'og_work_id', 'empty'=>'--------', 'data-placement'=>'right', 'required'=>false, 'onchange'=>'show_og_company_required_field()'));
 						                ?>
 									</div>
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.partner.company'); ?></label><span><?php echo __('global.require'); ?></span></td>
+								<td class="label-text"><label><?php echo __('user.partner.company'); ?></label><span id="og_company_required_label_0"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
@@ -300,7 +300,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.guarantor.address'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.guarantor.address'); ?></label><span id="og_company_required_label_1"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<span class="w-auto1"><?php echo __('user.register.post'); ?></span>
@@ -350,7 +350,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label><span id="og_company_required_label_2"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
@@ -362,7 +362,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.fax'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.fax'); ?></label><span id="og_company_required_label_3"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
@@ -374,7 +374,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.career'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.career'); ?></label><span id="og_company_required_label_4"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="select">
 										<?php echo $this->Form->select('OtherGuarantor.career_id', $careers, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'carrer_id', 'empty'=>'--------', 'required'=>false, 'data-placement'=>'right'));
@@ -383,7 +383,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label><span id="og_company_required_label_5"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
 									?>
@@ -391,7 +391,7 @@
 							</tr>
 							<tr>
 								<td class="label-text">
-									<label><?php echo __('user.my_page.basic_info.department'); ?></label>
+									<label><?php echo __('user.my_page.basic_info.department'); ?></label><span id="og_company_required_label_6"><?php echo __('global.require'); ?></span>
 								</td>
 								<td>
 									<?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'営業部 第一営業課'))
@@ -399,14 +399,14 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label><span id="og_company_required_label_7"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'部長、課長、次長、係長、主任など'))
 									?>
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.register.experience'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.register.experience'); ?></label><span id="og_company_required_label_8"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
@@ -419,7 +419,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_type'); ?></label><span><?php echo __('global.require'); ?></span></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_type'); ?></label><span id="og_company_required_label_9"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="form-radio">
 										<div class="form-w">
@@ -446,7 +446,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="og_company_required_label_10"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
@@ -456,7 +456,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label><span id="og_company_required_label_11"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
 										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
@@ -466,7 +466,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_receive'); ?></label></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_receive'); ?></label><span id="og_company_required_label_12"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="form-radio">
 										<div class="form-w">
@@ -496,7 +496,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="label-text"><label><?php echo __('user.my_page.basic_info.insurances'); ?></label><span><?php echo __('global.require'); ?></span></td>
+								<td class="label-text"><label><?php echo __('user.my_page.basic_info.insurances'); ?></label><span id="og_company_required_label_13"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="select">
 										<?php 
@@ -516,6 +516,44 @@
 						</tbody>
 						<?php echo $this->Form->hidden('OtherGuarantor.id')?>
 					</table>
+					<script type="text/javascript">
+		                show_og_company_required_field();
+		               //function check required
+		               function show_og_company_required_field(){
+		                  var work_id = $("#og_work_id").val();
+		                  if(work_id){
+		                    var work = new Array(13, 13);
+		                 
+		                    work[1] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+		                    work[2] =  Array(1, 1, 1, 0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1);
+		                    work[3] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+		                    work[4] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+		                    work[5] =  Array(0, 1, 0, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);
+		                    work[6] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+		                    work[7] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);               
+		                    work[8] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+		                    work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 1, 1, 1, 1, 1);
+		                    work[10] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+		                    work[11] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+		                    for(i=0; i< work[work_id].length; i++){
+		                      if(work[work_id][i] == 0){
+		                        $("#og_company_required_label_"+i).hide();
+
+		                      }
+		                      else $("#og_company_required_label_"+i).show();
+		                    }
+		                  }
+		                  else {
+		                    for(i=0; i< 14; i++){
+		                      
+		                        $("#og_company_required_label_"+i).hide();
+
+		                        
+		                    }
+		                    $("#og_company_required_label_13").show();
+		                  }
+		               }
+		          </script>
 				</div>
 				<?php if($user['User']['status_id'] == 2){?>
               <div class="button-tab">

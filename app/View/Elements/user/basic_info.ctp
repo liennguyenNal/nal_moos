@@ -197,10 +197,10 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label></td>
+                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="select">
-                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false)); 
+                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false, 'onchange'=>'load_required_label_house_cost()')); 
                         ?>
                       </div>
                     </td>
@@ -216,7 +216,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?><span id="house_cost_required" style="display:none"><?php echo __('global.require'); ?></span></label></td>
+                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label><span id="house_cost_required" style="display:none"><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
                         <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
@@ -225,6 +225,17 @@
                       </div>
                     </td>
                   </tr>
+                  <script type="text/javascript">
+                  load_required_label_house_cost();
+                  function load_required_label_house_cost(){                    
+                    if($("#residence_id"). val() == 1 || $("#residence_id"). val() == 2){
+                      $("#house_cost_required").hide();
+                    }
+                    else {
+                      $("#house_cost_required").show();
+                    }
+                  }
+                  </script>
                 </tbody>
               </table>
               <?php echo $this->Form->hidden('UserAddress.id')?>
