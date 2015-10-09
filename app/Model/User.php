@@ -189,7 +189,7 @@ class User extends AppModel {
 
     function check_married(){
         if($this->data[$this->alias]['married_status_id'] == 1){
-            if($this->data[$this->alias]['num_child'])return true;
+            if(!isset($this->data[$this->alias]['num_child']))return true;
             else return false;
         }
         return true;

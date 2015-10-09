@@ -524,7 +524,7 @@ class UsersController extends AppController{
               $user['User']['need_more_guarantor'] = 1;
             }  
           }
-         // print_r($this->data); die;
+          //print_r($requireds); die;
 
           $user['User']['status_id'] = 2;
           if($this->User->save($user, false)){
