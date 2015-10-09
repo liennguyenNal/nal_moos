@@ -282,7 +282,7 @@ class ArticlesController extends AppController{
       $article= unserialize($this->data['article_confirm']);
       $article['Article']['created'] = $article['Article']['from_year_register'].'-'.$article['Article']['from_month_register'].'-'.$article['Article']['from_day_register'];
       if($this->Article->save($article, false)){
-                  $this->Session->setFlash( 'Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
+                  //$this->Session->setFlash( 'Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
                   $this->redirect( "view/".$article['Article']['id'] );
                }
       $article1 = $this->Article->find('first', array('conditions'=>array('Article.id'=>$article['Article']['id']), 'contain'=>array('id'))); 

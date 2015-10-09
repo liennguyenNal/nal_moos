@@ -802,6 +802,7 @@ class UsersController extends AppController{
       if($this->data['email']){
         $user = $this->User->find('first', array('conditions'=>array('User.email'=>$this->data['email']), 'contain'=>array('id')));
         if($user){
+
           $hash=sha1($user['User']['id'].microtime());
           $this->User->id = $user['User']['id']; 
           $this->User->saveField('access_token', $hash);
@@ -815,8 +816,11 @@ class UsersController extends AppController{
           $Email->viewVars(array('user' => $user, 'hash'=>$hash));
 
           if($Email->send()){
+            //echo 111; die;
             return $this->render("reset_password_email");
           }
+        } else {
+           $this->Session->setFlash(__('global.errors.reset_password.email_unique'), 'default');
         }
       }
     }

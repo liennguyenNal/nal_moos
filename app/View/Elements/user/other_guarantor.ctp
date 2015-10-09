@@ -629,8 +629,8 @@
       //           return !$("#home_phone").val();
       //        },
                 number: true,
-                maxlength: 10,
-                phone_number: "^0[0-9]{9}"
+                maxlength: 11,
+                phone_number: "^0[0-9]"
     		},
     	'data[OtherGuarantor][home_phone]': {
     		// required: function(element) {
@@ -638,7 +638,7 @@
       //         },
                 number: true,
                 maxlength: 10,
-                phone_number: "[0-9]{11}"
+                phone_number: "[0-9]"
         },
         'data[OtherGuarantor][company_post_num_1]': {
         	number: true,
@@ -652,8 +652,8 @@
         },
         'data[OtherGuarantor][company_phone]': {
         	number: true,
-        	maxlength: 10,
-        	phone_number: "^0[0-9]{9}"
+        	maxlength: 11,
+        	phone_number: "^0[0-9]"
         },
         'data[OtherGuarantor][company_fax]': {
         	number: true,
@@ -705,10 +705,10 @@
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
-    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
-    	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
-    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
-    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.minlength_10'); ?>"},
+    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_11'); ?>"},
+    	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_11'); ?>"},
+    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
     	'data[OtherGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {

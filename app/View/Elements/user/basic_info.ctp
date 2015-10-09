@@ -882,7 +882,7 @@
             // 'data[UserCompany][city]': {required: true},
             'data[UserCompany][phone]': {
               number: true,
-              maxlength: 10, 
+              maxlength: 11, 
               phone_number: "^0[0-9]"
             },
             'data[UserCompany][fax]': {
@@ -976,7 +976,7 @@
               required: "<?php echo __('global.errors.required'); ?>",
               maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
             },
-            'data[UserCompany][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[UserCompany][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
             'data[UserCompany][fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
             'data[UserCompany][month_worked]': {
               required: "<?php echo __('global.errors.required'); ?>",
