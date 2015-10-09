@@ -286,7 +286,7 @@
                   <div class="block-button">
                     <input type="hidden" name="data[User][Confirm]" value="1">
                     <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/register.png" alt="登録する"></button>
-                    <button type="button" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"/></button>
+                    <button type="button" class="button-1b" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"/></button>
                   </div>
                 </div>
               </form> 

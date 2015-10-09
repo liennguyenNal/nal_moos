@@ -621,8 +621,8 @@
       //           return !$("#home_phone").val();
       //        },
                 number: true,
-                maxlength: 10,
-                phone_number: "^0[0-9]{9}"
+                maxlength: 11,
+                phone_number: "^0[0-9]"
     		},
     	'data[UserGuarantor][home_phone]': {
     		// required: function(element) {
@@ -630,7 +630,7 @@
       //         },
                 number: true,
                 maxlength: 10,
-                phone_number: "[0-9]{11}"
+                phone_number: "[0-9]"
         },
         'data[UserGuarantor][company_post_num_1]': {
         	number: true,
@@ -644,8 +644,8 @@
         },
         'data[UserGuarantor][company_phone]': {
         	number: true,
-        	maxlength: 10,
-        	phone_number: "^0[0-9]{9}"
+        	maxlength: 11,
+        	phone_number: "^0[0-9]"
         },
         'data[UserGuarantor][company_fax]': {
         	number: true,
@@ -697,9 +697,9 @@
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
-    	'data[UserGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[UserGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
     	'data[UserGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-    	'data[UserGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[UserGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
     	'data[UserGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
     	'data[UserGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
@@ -720,9 +720,7 @@
             data: $("#UserGuarantorEdit").serialize(),
             success: function(result)
             {
-
                 edit = 0;
-
                 if(result!= "0"){
 	                $('#guarantor').html(result);
 	                $.ajax({
