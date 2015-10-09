@@ -705,9 +705,9 @@
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
-    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.minlength_11'); ?>"},
+    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
     	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.minlength_11'); ?>"},
+    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
     	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
     	'data[OtherGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
