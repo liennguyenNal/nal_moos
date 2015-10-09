@@ -57,7 +57,7 @@ for($i =0; $i< $len; $i++){?>
 	                  
 	                  <?php echo __('user.register.year'); ?>
 	                  <?php 
-	                  $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+	                  $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
 	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))'));
 	                ?>
 	                <?php echo __('user.register.month'); ?>

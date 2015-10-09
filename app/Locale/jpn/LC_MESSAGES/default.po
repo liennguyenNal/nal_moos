@@ -589,8 +589,8 @@ msgstr "上限賃料設定【完了】"
 msgid "admin.user.set_max_payment.failed"
 msgstr "Set Max Payment Failed"
 
-msgid "保証金入金確認済み"
-msgstr "Proccess Payment Successful"
+msgid "admin.user.process_payment.successful"
+msgstr "保証金入金確認済み"
 
 msgid "admin.user.process_payment.failed"
 msgstr "Proccess Payment Failed"
