@@ -20,7 +20,13 @@ class UsersController extends AppController{
     var $helpers = array('Html', 'Form','Csv'); 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->set('menu' , 'user');
+        if(substr($this->here, -15)=='change_password' || substr($this->here, -7)=='profile'){
+          $this->set('menu' , 'user1');
+        }
+        else{
+          $this->set('menu' , 'user');
+        }
+        //$this->set('menu' , 'user');
     }
 
     
@@ -256,7 +262,7 @@ class UsersController extends AppController{
                 $admin['Administrator']['password'] = md5($this->data['User']['password']);
                 if ($this->Administrator->save($admin, true) ){
                   $this->Session->setFlash('Your Password has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
-                  $this->redirect('profile');
+                  //$this->redirect('profile');
                 }
                 else {
                   $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));

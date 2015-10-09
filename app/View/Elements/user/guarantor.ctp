@@ -83,7 +83,11 @@
 				                            <script type="text/javascript">
 							                    var d = new Date();
 							                    var n = d.getFullYear();
-							                    $("#g-age-1").html("00");
+							                    if ($("#g1−year").val() == "") {
+							                    	$("#g-age-1").html("00");
+							                    } else {
+							                    	$("#g-age-1").html(n - $("#g1−year").val());
+							                    }
 							                    function g_calculate_age1(){
 							                      $("#g-age-1").html(n - $("#g1−year").val());
 							                    }

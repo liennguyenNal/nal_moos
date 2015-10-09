@@ -64,17 +64,17 @@
                         <div class="select">
                             <?php 
                                 $years = array_combine(range(1900, date("Y")), range(1900, date("Y")));
-                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
+                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right', 'empty'=>'----', 'required'=>false));
                             ?>
                           <span><?php echo __('user.register.year'); ?></span>
                             <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
-                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right'));
+                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false));
                             ?>
                           <span><?php echo __('user.register.month'); ?></span>
                             <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
-                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right'));
+                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false));
                             ?>
                           <span><?php echo __('user.register.day'); ?></span>
                           <span class="style" id="age">0</span>
@@ -83,7 +83,11 @@
                             <script type="text/javascript">
                                 var d = new Date();
                                 var n = d.getFullYear();
-                                $("#age").html(n - $("#year").val());
+                                if ($("#year").val() == "") {
+                                  $("#age").html("00");
+                                } else {
+                                  $("#age").html(n - $("#year").val());
+                                }
                                 function calculate_age(){
                                     $("#age").html(n - $("#year").val());
                                 }
@@ -911,6 +915,7 @@
               },
                 number: true,
                 maxlength: 11,
+                minlength: 11,
                 phone_number: "^0[0-9]"
             },
             'data[User][home_phone]': {
@@ -919,6 +924,7 @@
               },
                 number: true,
                 maxlength: 10,
+                minlength: 10,
                 phone_number: "^0[0-9]"
             },
             // 'data[User][contact_type]': {required: true},
@@ -932,11 +938,13 @@
             'data[UserCompany][phone]': {
               number: true,
               maxlength: 11, 
+              minlength: 11,
               phone_number: "^0[0-9]"
             },
             'data[UserCompany][fax]': {
               number: true,
-              maxlength: 10
+              maxlength: 10,
+              minlength: 10
             },
             // 'data[UserCompany][description]': {required: true},
             // 'data[UserCompany][department]': {required: true},
@@ -1020,13 +1028,21 @@
             'data[User][phone]': {
               required: "<?php echo __('global.errors.required'); ?>",
               maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_11'); ?>"
             },
             'data[User][home_phone]': {
               required: "<?php echo __('global.errors.required'); ?>",
-              maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
+              maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_10'); ?>"
             },
-            'data[UserCompany][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-            'data[UserCompany][fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+            'data[UserCompany][phone]': {
+              maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+            },
+            'data[UserCompany][fax]': {
+              maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+              minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+            },
             'data[UserCompany][month_worked]': {
               required: "<?php echo __('global.errors.required'); ?>",
               min: "<?php echo __('global.errors.month.min'); ?>",

@@ -141,7 +141,7 @@ class ArticlesController extends AppController{
           $this->Article->delete($id);
         }
 
-      $this->Session->setFlash('Selected News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+      //$this->Session->setFlash('Selected News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect('index');
 
@@ -163,7 +163,7 @@ class ArticlesController extends AppController{
       }
         if($id){
             $this->Article->delete( $id );
-            $this->Session->setFlash('News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+            //$this->Session->setFlash('News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
             $this->redirect( 'index' );
         }
@@ -183,12 +183,12 @@ class ArticlesController extends AppController{
           $this->set( 'article', $article );
          }
          else {
-            $this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+            //$this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
             $this->redirect( "index" );
          }
       }
       else {
-        $this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
+        //$this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
         $this->redirect( "index" );
       }
     }
@@ -196,7 +196,8 @@ class ArticlesController extends AppController{
     function view( $id ){
       $this->layout = 'default_new';
       if($id){
-         $article = $this->Article->read( null, $id );
+          $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
+
          $article['Article']['created']= date('Y-m-d',strtotime($article['Article']['created']));
          $time= ($article['Article']['created']);
          $arts = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
@@ -212,41 +213,42 @@ class ArticlesController extends AppController{
           }
           //var_dump($articles_new); die;
           $this->set('articles', $articles_new);
+          //var_dump($article);  die;
          
-         if( $article ){
+         if( $article['Article']['is_published'] ==1 and $article['Article']['created']<= date("Y-m-d")){
           $this->set( 'article', $article);
          }
          else {
-            $this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
-            $this->redirect("index");
+            //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+            $this->redirect("/");
          }
       }
       else {
-        $this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
-        $this->redirect("index");
+        //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+        $this->redirect("/");
       }
     }
 
-    function index(){
+    // function index(){
       
-      $conditions = array();
-      if($this->request->query['keyword']){
-        $keyword = $this->request->query['keyword'];
-         $conditions = array("Article.title LIKE '%$keyword%' AND Article.is_published = 1" );
-      }
-        $this->paginate = array(
-            'conditions' => $conditions,
-            'limit' => 20,
-            'order' => array('id' => 'desc')
-        );
+    //   $conditions = array();
+    //   if($this->request->query['keyword']){
+    //     $keyword = $this->request->query['keyword'];
+    //      $conditions = array("Article.title LIKE '%$keyword%' AND Article.is_published = 1" );
+    //   }
+    //     $this->paginate = array(
+    //         'conditions' => $conditions,
+    //         'limit' => 20,
+    //         'order' => array('id' => 'desc')
+    //     );
          
-        // we are using the 'User' model
-        $articles = $this->paginate('Article');
-        //var_dump($articles; die;
+    //     // we are using the 'User' model
+    //     $articles = $this->paginate('Article');
+    //     //var_dump($articles; die;
          
-        // pass the value to our view.ctp
-        $this->set('articles', $articles);
-    }
+    //     // pass the value to our view.ctp
+    //     $this->set('articles', $articles);
+    // }
     function admin_edit_confirm(){ 
     if($_POST['view']==1){ 
     $article = $this->data;
