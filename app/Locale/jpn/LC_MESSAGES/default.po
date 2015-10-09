@@ -889,6 +889,8 @@ msgstr "11桁以下にご入力ください。"
 msgid "global.errors.minlength_10"	
 msgstr "10桁以下にご入力ください。"
 
+msgid "user.register.area.street"
+msgstr "地域"
 
 
 

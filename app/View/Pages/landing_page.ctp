@@ -257,7 +257,7 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
+				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>1));
 				                                  ?> 
 				                                </div>
 				                              </div>
@@ -426,7 +426,7 @@
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
-				                              <span class="w78"><?php echo __('user.register.street'); ?></span>
+				                              <span class="w78"><?php echo __('user.register.area.street'); ?></span>
 				                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
