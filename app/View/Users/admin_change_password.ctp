@@ -46,7 +46,7 @@
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                  <button type="submit" class="btn btn-primary">パスワード変更</button>
-                  <button type="reset" class="btn btn-default" onclick="location.href='<?php echo $this->webroot;?>admin/users/profile'">キャンセル</button>
+                  <button type="reset" class="btn btn-default" onclick="location.href='<?php echo $this->webroot;?>admin/users'">キャンセル</button>
                  
                 </div>
               </div>

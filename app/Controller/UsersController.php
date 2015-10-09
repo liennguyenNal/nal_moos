@@ -262,7 +262,7 @@ class UsersController extends AppController{
                 $admin['Administrator']['password'] = md5($this->data['User']['password']);
                 if ($this->Administrator->save($admin, true) ){
                   $this->Session->setFlash('Your Password has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
-                  $this->redirect('profile');
+                  //$this->redirect('profile');
                 }
                 else {
                   $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
