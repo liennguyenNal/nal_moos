@@ -883,7 +883,11 @@ msgstr "1より大きいな数字をご入力ください。"
 msgid "global.errors.salary_date.max"
 msgstr "30より小さいな数字をご入力ください。"
 
+msgid "global.errors.minlength_11"	
+msgstr "11桁以下にご入力ください。"
 
+msgid "global.errors.minlength_10"	
+msgstr "10桁以下にご入力ください。"
 
 
 

@@ -69,17 +69,17 @@
                       <div class="select">
                         <?php 
                           $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                          echo $this->Form->select('UserPartner.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false, 'data-placement'=>'right'));
+                          echo $this->Form->select('UserPartner.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false, 'data-placement'=>'right', 'empty'=>'----'));
                         ?>
                         <span><?php echo __('user.register.year'); ?></span>
                         <?php 
                           $months = array_combine(range(1, 12), range(1, 12));
-                          echo $this->Form->select('UserPartner.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required' => false, 'data-placement'=>'right'));
+                          echo $this->Form->select('UserPartner.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required' => false, 'data-placement'=>'right', 'empty'=>'--'));
                         ?>
                         <span><?php echo __('user.register.month'); ?></span>
                         <?php 
                           $dates = array_combine(range(1, 31), range(1, 31));
-                            echo $this->Form->select('UserPartner.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required' => false, 'data-placement'=>'right'));
+                            echo $this->Form->select('UserPartner.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required' => false, 'data-placement'=>'right', 'empty'=>'--'));
                         ?>
                         <span><?php echo __('user.register.day'); ?></span>
                         <span class="style" id="p-age">0</span>
@@ -87,7 +87,12 @@
                         <script type="text/javascript">
                             var d = new Date();
                             var n = d.getFullYear();
-                            $("#p-age").html(n - $("#p-year").val());
+                            if ($("#p-year").val() == "") {
+                              $("#p-age").val() == "00";
+                            } else {
+                              $("#p-age").html(n - $("#p-year").val());
+                            }
+
                             function calculate_p_age(){
                               $("#p-age").html(n - $("#p-year").val());
                           }
@@ -449,17 +454,17 @@
                         <div class="select">
                           <?php 
                             $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false));
+                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false, 'empty'=>'----'));
                           ?>
                           <span><?php echo __('user.register.year'); ?></span>
                           <?php 
                             $months = array_combine(range(1, 12), range(1, 12));
-                            echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'data-placement'=>'right', 'required'=>false));
+                            echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'data-placement'=>'right', 'required'=>false, 'empty'=>'--'));
                           ?>
                           <span><?php echo __('user.register.month'); ?></span>
                           <?php 
                           $dates = array_combine(range(1, 31), range(1, 31));
-                            echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'data-placement'=>'right', 'required'=>false));
+                            echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'data-placement'=>'right', 'required'=>false, 'empty'=>'--'));
                           ?>
                           <span><?php echo __('user.register.day'); ?></span>
                           <span class="style" id="p-age-<?php echo $i?>">0</span>
@@ -467,7 +472,12 @@
                           <script type="text/javascript">
                               var d = new Date();
                               var n = d.getFullYear();
-                              $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
+                              if ($("#p-year-<?php echo $i?>").val() == "") {
+                                $("#p-age-<?php echo $i?>").html("00");
+                              } else {
+                                $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
+                              }
+                              
                                 function calculate_relation_age(obj){
                               var age = n - obj.val();
                               obj.parent().parent().find("span[id*='p-age-<?php echo $i?>']").html(age);
@@ -634,7 +644,9 @@
           $(this).rules("add", 
           { 
             number: true,
-            phone_number: "^0[0-9]{9}"
+            minlength: 11,
+            maxlength: 11,
+            phone_number: "^0[0-9]"
           });
         });
         order_object3++;
@@ -668,6 +680,7 @@
       'data[UserPartner][phone]': {
         number: true,
         maxlength: 11,
+        minlength: 11,
         phone_number: "^0[0-9]"
       },
       'data[UserPartner][company_post_num_1]': {
@@ -683,11 +696,13 @@
       'data[UserPartner][company_phone]': {
         number: true,
         maxlength: 11,
+        minlength: 11,
         phone_number: "^0[0-9]"
       },
       'data[UserPartner][company_fax]': {
         number: true,
-        maxlength: 10
+        maxlength: 10,
+        minlength: 10
       },
       'data[UserPartner][salary_type_other]': {
         required: {
@@ -711,18 +726,32 @@
       'data[UserPartner][month_worked]': {number: true},
       'data[UserPartner][income_month]': {number: true},
       'data[UserPartner][income_year]': {number: true},
-      'data[UserRelation][0][phone]': {number: true}
+      'data[UserRelation][0][phone]': {
+        number: true,
+        minlength: 11,
+        maxlength: 11,
+        phone_number: "^0[0-9]"
+      }
     },
     messages: {
-      'data[UserPartner][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
+      'data[UserPartner][phone]': {
+        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+        minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+      },
       'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][salary_date]': {
         required: "<?php echo __('global.errors.required'); ?>",
         min: "<?php echo __('global.errors.salary_date.min'); ?>",
         max: "<?php echo __('global.errors.salary_date.max') ?>"
       },
-      'data[UserPartner][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-      'data[UserPartner][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+      'data[UserPartner][company_phone]': {
+        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+        minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+      },
+      'data[UserPartner][company_fax]': {
+        maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+        minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+      },
       'data[UserPartner][company_post_num_1]': {
         minlength: "<?php echo __('global.errors.minlength_3'); ?>",
         maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
@@ -730,6 +759,10 @@
       'data[UserPartner][company_post_num_2]': {
         minlength: "<?php echo __('global.errors.minlength_4'); ?>",
         maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
+      },
+      'data[UserRelation][0][phone]': {
+        minlength: "<?php echo __('global.errors.minlength_11'); ?>",
+        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
       }
     },
     invalidHandler: function(event, validator) {

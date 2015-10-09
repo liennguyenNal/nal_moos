@@ -63,26 +63,26 @@
 										<div class="select">
 											<?php 
 						                      	$years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-						                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'og−year', 'onchange'=>'og_calculate_age()', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'og−year', 'onchange'=>'og_calculate_age()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
 						                	?>
 											<span><?php echo __('user.register.year'); ?></span>
 											<?php 
 						    	              	$months = array_combine(range(1, 12), range(1, 12));
-						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.month'); ?></span>
 											<?php 
 						    	              	$dates = array_combine(range(1, 31), range(1, 31));
-						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.day'); ?></span>
-											<span class="style" id="og-age">0</span>
+											<span class="style" id="og-age">00</span>
 											<span class="style"><?php echo __('user.register.age'); ?></span>
 											<!-- Script tinh tuoi -->
 				                            <script type="text/javascript">
 							                    var d = new Date();
 							                    var n = d.getFullYear();
-							                    $("#og-age").html(n - $("#og−year").val());
+							                    $("#og-age").html("00");
 							                    function og_calculate_age(){
 							                      $("#og-age").html(n - $("#og−year").val());
 							                    }
@@ -630,6 +630,7 @@
       //        },
                 number: true,
                 maxlength: 11,
+                minlength: 11,
                 phone_number: "^0[0-9]"
     		},
     	'data[OtherGuarantor][home_phone]': {
@@ -638,6 +639,7 @@
       //         },
                 number: true,
                 maxlength: 10,
+                minlength: 10,
                 phone_number: "[0-9]"
         },
         'data[OtherGuarantor][company_post_num_1]': {
@@ -653,11 +655,13 @@
         'data[OtherGuarantor][company_phone]': {
         	number: true,
         	maxlength: 11,
+        	minlength: 11,
         	phone_number: "^0[0-9]"
         },
         'data[OtherGuarantor][company_fax]': {
         	number: true,
-        	maxlength: 10
+        	maxlength: 10,
+        	minlength: 10
         },
         'data[OtherGuarantor][year_worked]': {number: true},
         'data[OtherGuarantor][month_worked]': {number: true},
@@ -705,10 +709,22 @@
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
-    	'data[OtherGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-    	'data[OtherGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-    	'data[OtherGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-    	'data[OtherGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[OtherGuarantor][company_phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    	},
+    	'data[OtherGuarantor][company_fax]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+    	},
+    	'data[OtherGuarantor][phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    	},
+    	'data[OtherGuarantor][home_phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+    	},
     	'data[OtherGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {

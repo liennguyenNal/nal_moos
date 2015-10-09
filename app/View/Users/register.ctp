@@ -535,6 +535,7 @@
           },
           number: true,
           maxlength: 11,
+          minlength: 11,
           phone_number: "^0[0-9]"
         },
         'data[User][home_phone]': {
@@ -543,6 +544,7 @@
           },
           number: true,
           maxlength: 10,
+          minlength: 10,
           phone_number: "^0[0-9]"
         },
         'data[User][email]': { 
@@ -611,11 +613,13 @@
         'data[UserAddress][address]': {required: "<?php echo __('global.errors.address'); ?>"},
         'data[User][phone]': { 
           required: "<?php echo __('global.errors.phone'); ?>",
-          maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
+          maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+          minlength: "<?php echo __('global.errors.minlength_11'); ?>"
         },
         'data[User][home_phone]': { 
           required: "<?php echo __('global.errors.home_phone'); ?>",
-          maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
+          maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+          minlength: "<?php echo __('global.errors.minlength_10'); ?>"
         },
         'data[User][email]': {required: "<?php echo __('global.errors.register.email'); ?>"},
         'data[User][email_confirm]': {required: "<?php echo __('global.errors.register.confirm_email'); ?>"},

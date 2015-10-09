@@ -64,17 +64,17 @@
 										<div class="select">
 											<?php 
 						                      	$years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-						                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'g1−year', 'onchange'=>'g_calculate_age1()', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'g1−year', 'onchange'=>'g_calculate_age1()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
 						                	?>
 											<span><?php echo __('user.register.year'); ?></span>
 											<?php 
 						    	              	$months = array_combine(range(1, 12), range(1, 12));
-						                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.month'); ?></span>
 											<?php 
 						    	              	$dates = array_combine(range(1, 31), range(1, 31));
-						                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right'));
+						                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.day'); ?></span>
 											<span class="style" id="g-age-1">0</span>
@@ -83,7 +83,7 @@
 				                            <script type="text/javascript">
 							                    var d = new Date();
 							                    var n = d.getFullYear();
-							                    $("#g-age-1").html(n - $("#g1−year").val());
+							                    $("#g-age-1").html("00");
 							                    function g_calculate_age1(){
 							                      $("#g-age-1").html(n - $("#g1−year").val());
 							                    }
@@ -622,6 +622,7 @@
       //        },
                 number: true,
                 maxlength: 11,
+                minlength: 11,
                 phone_number: "^0[0-9]"
     		},
     	'data[UserGuarantor][home_phone]': {
@@ -630,6 +631,7 @@
       //         },
                 number: true,
                 maxlength: 10,
+                minlength: 10,
                 phone_number: "[0-9]"
         },
         'data[UserGuarantor][company_post_num_1]': {
@@ -645,11 +647,13 @@
         'data[UserGuarantor][company_phone]': {
         	number: true,
         	maxlength: 11,
+        	minlength: 11,
         	phone_number: "^0[0-9]"
         },
         'data[UserGuarantor][company_fax]': {
         	number: true,
-        	maxlength: 10
+        	maxlength: 10,
+        	minlength: 10
         },
         'data[UserGuarantor][year_worked]': {number: true},
         'data[UserGuarantor][month_worked]': {number: true},
@@ -697,10 +701,22 @@
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
-    	'data[UserGuarantor][company_phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-    	'data[UserGuarantor][company_fax]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
-    	'data[UserGuarantor][phone]': {maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"},
-    	'data[UserGuarantor][home_phone]': {maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"},
+    	'data[UserGuarantor][company_phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    	},
+    	'data[UserGuarantor][company_fax]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+    	},
+    	'data[UserGuarantor][phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    	},
+    	'data[UserGuarantor][home_phone]': {
+    		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+    		minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+    	},
     	'data[UserGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {
