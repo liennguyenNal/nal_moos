@@ -196,7 +196,7 @@
              
                 if($('#ReturnUserForm :checkbox:checked').length > 0)
                 {
-                  $('#return_error_not_choose').show();
+                  $('#return_error_not_choose').hide();
                   $('#ReturnUserForm').submit();
                 }
                 else {
