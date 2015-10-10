@@ -161,7 +161,9 @@
 					<div class="container-fluid">
 						<div class="title-content"></div>
 						<div class="content-from" >
-				              <?php echo $this->element('flash'); ?>
+							  <section id="section-flash-msg">
+								<?php echo $this->element('flash'); ?>
+							  </section>
 				              <div class="block-warning" id="error-section" style="display:none">
 				                <?php echo __('global.errors'); ?>
 				              </div>
@@ -257,7 +259,7 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
+				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>'1'));
 				                                  ?> 
 				                                </div>
 				                              </div>
@@ -374,7 +376,7 @@
 				                              <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
 				                              <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>'00', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
-				                              <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+				                              <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
 				                            </div>
 				                          </td>
 				                        </tr>
@@ -382,7 +384,7 @@
 				                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
 				                            <div class="block-input">
-				                              <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'000,000', 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'000,000', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 				                            </div>
@@ -426,7 +428,7 @@
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
-				                              <span class="w78"><?php echo __('user.register.street'); ?></span>
+				                              <span class="w78"><?php echo __('user.register.area.street'); ?></span>
 				                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
@@ -491,7 +493,7 @@
 				                <div class="block-note">
 				                  <p>個人情報の取り扱いについて</p>
 				                  <div class="block-input-radio">
-				                    ◯ ご記入いただきました個人情報は、本申込書に関するお客様へのご連絡、商品の情報提供、弊社が主催・実施する個別相談会・イベント情報などをご提供する場合に使用させていただきます。 また、これらの個人情報は、適切な安全対策のもと管理しております。</label>
+				                    ◯ ご入力いただきました個人情報は、お客様からのお問い合わせ、ご依頼への対応、商品の情報提供、弊社が主催・実施する個別相談会・イベント情報などをご提供する場合に使用させていただきます。 また、これらの個人情報は、適切な安全対策のもと管理しております。</label>
 				                  </div>
 				                  <div class="block-input-radio">
 				                    ◯ 原則としてお客様の同意なく第三者へ開示・提供いたしません。</label>
@@ -771,6 +773,7 @@
 		      invalidHandler: function(event, validator) {
 		        var errors = validator.numberOfInvalids();
 		        if (errors) {
+		          //$("html, body").animate({ scrollTop: $("#formRegister").offset().top }, 2000);
 		          $("#error-section").show();
 		        } else {
 		          $("#error-section").hide();
@@ -790,6 +793,10 @@
 		      $('#phone').valid(); 
 		    });
 
+		    // if($("#section-flash-msg").html() != ""){
+		    // 	$("html, body").animate({ scrollTop: $("#formRegister").offset().top }, "slow");
+		    // }
+
 		</script>
 
 		
@@ -799,7 +806,7 @@
 		<div class="container-fluid">		
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<p>Copyright © GLOBAL SHIFT Inc All Rights Reserved</p>
+					<p>Copyright © RENESYS All Rights Reserved</p>
 				</div>
 			</div>
 		</div>

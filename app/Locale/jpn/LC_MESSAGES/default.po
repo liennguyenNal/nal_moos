@@ -96,7 +96,7 @@ msgid "user.register.area"
 msgstr "希望エリア"
 
 msgid "user.register.remove"
-msgstr " - 希望エリアを追加"
+msgstr " - 希望エリアを削除"
 
 msgid "user.register.add"
 msgstr " + 希望エリアを追加"
@@ -888,6 +888,15 @@ msgstr "11桁以下にご入力ください。"
 
 msgid "global.errors.minlength_10"	
 msgstr "10桁以下にご入力ください。"
+
+msgid "user.register.area.street"
+msgstr "地域"
+
+msgid "user.landing-page.month"
+msgstr "ヶ月"
+
+msgid "global.errors.landing-page.email.unique"
+msgstr "送信いただいたメールアドレスは既に登録されているため申し込みできません。</br>お問い合わせいただくか、再度別のメールアドレスにて無料会員登録を行ってください。"
 
 
 

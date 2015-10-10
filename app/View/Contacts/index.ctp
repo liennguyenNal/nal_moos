@@ -36,7 +36,7 @@
                             <div class="block-input">
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"山田",'div'=>false, 'data-placement' => 'right'))
+                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"例）山田",'div'=>false, 'data-placement' => 'right'))
                                 ?>
                               </div>
                               <div class="div-style">
@@ -85,7 +85,7 @@
                         <tr>
                           <td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label><span>必須</span></td>
                           <td>
-                              <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>"09012345678", 'required'=>false, 'data-placement' => 'right'))
+                              <?php echo $this->Form->input('phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>"例）09012345678", 'required'=>false, 'data-placement' => 'right'))
                               ?>
                             <span class="black1">※”-”ハイフンなしで入力してください。</span>
                           </td>
@@ -93,7 +93,7 @@
                         <tr>
                           <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
                           <td>
-                            <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'required'=>false, 'data-placement' => 'right', 'placeholder'=>"sample@gmail.com"))
+                            <?php echo $this->Form->input('email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', 'div'=>false, 'required'=>false, 'data-placement' => 'right', 'placeholder'=>"例）sample@gmail.com"))
                             ?>
                             <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
                           </td>

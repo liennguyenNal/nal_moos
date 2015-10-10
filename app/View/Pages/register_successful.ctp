@@ -17,7 +17,7 @@
             <div class="content-from">
               <form action="">
                 <div class="content-from-block">
-                  <p class="note fix-font">※ ご会員登録に成功しました。</p>
+                  <p class="note fix-font">※ 会員登録に成功しました。</p>
                   <div class="block-note">
                     <div class="block-button">
                       <a href="<?php echo Router::url('/', true); ?>/users/login"><button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>

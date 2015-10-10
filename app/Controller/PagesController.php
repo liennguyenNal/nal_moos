@@ -104,7 +104,7 @@ class PagesController extends AppController {
 	}
 
 	public function landing_page(){
-  		$this->layout = null;
+  	  $this->layout = null;
       $married_statuses = $this->MarriedStatus->find( 'list' );
       $this->set( 'married_statuses', $married_statuses);
 
@@ -124,7 +124,7 @@ class PagesController extends AppController {
           $this->redirect( "register_successful" );
         }
         else {
-          $this->Session->setFlash(__('global.errors.reset.email'), 'default');
+          $this->Session->setFlash(__('global.errors.landing-page.email.unique'), 'default');
         }
       }
 	}
