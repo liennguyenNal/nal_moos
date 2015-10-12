@@ -16,7 +16,7 @@
 	         <!--  <form class="form-horizontal"> -->
 	           
 	            <fieldset>
-	              <legend>会員登録フォ一ム</legend>
+	              <legend>連帯保証人基本情報</legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td>
@@ -388,21 +388,21 @@
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.experience'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.year'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-	                    <?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.month'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('UserGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?><?php echo __('user.register.year') ?>
+	                    <?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>ヶ月
 	                  </div>
 	                </div>
 	               
 	               <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.tax'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+	                    <?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false,'style'=>'width:150px; display:inline;' , 'required'=>false))?>円
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>万円
+	                    <?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false,'style'=>'width:150px; display:inline;' , 'required'=>false))?>万円
 	                  </div>
 	                </div>
 	                <div class="form-group">

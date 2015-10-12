@@ -70,7 +70,7 @@ for($i =0; $i< $len; $i++){?>
 	                $dates = array_combine(range(1, 31), range(1, 31));
 	                  echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
 	                ?>
-	                  <?php echo __('user.register.age'); ?> : <span id="p-age-<?php echo $i?>">0</span>
+	                    <span id="p-age-<?php echo $i?>">0</span><?php echo __('user.register.age'); ?>
 	                <script type="text/javascript">
 	                var d = new Date();
 	                  var n = d.getFullYear();
