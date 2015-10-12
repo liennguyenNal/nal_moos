@@ -197,7 +197,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label></td>
+                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="select">
                         <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false)); 
@@ -302,7 +302,7 @@
                     <td>
                       <div class="block-input">
                         <span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-                        <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"b_company_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'株式会社ヤチンデモラエル'))
+                        <?php echo $this->Form->input('UserCompany.name', array('type'=>'text', 'id'=>"b_company_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）株式会社ヤチンデモラエル'))
                         ?>
                       </div>
                       <div class="block-input">
@@ -368,7 +368,7 @@
                     <td>
                       <div class="block-input fix-padding">
                         <div class="div-style">
-                          <?php echo $this->Form->input('UserCompany.phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'09012345678'))
+                          <?php echo $this->Form->input('UserCompany.phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）09012345678'))
                           ?>
                           <span class="style">※”-”ハイフンなしで入力してください。</span>
                         </div>
@@ -380,7 +380,7 @@
                     <td>
                       <div class="block-input fix-padding">
                         <div class="div-style">
-                          <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'0312345678'))
+                          <?php echo $this->Form->input('UserCompany.fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）0312345678'))
                           ?>
                           <span class="style">※”-”ハイフンなしで入力してください。</span>
                         </div>
@@ -399,21 +399,21 @@
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label><span id="company_required_label_5"><?php echo __('global.require'); ?></span></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.description', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
+                        <?php echo $this->Form->input('UserCompany.description', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
                         ?>
                     </td>
                   </tr>
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label><span id="company_required_label_6"><?php echo __('global.require'); ?></span></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'営業部 第一営業課'))
+                        <?php echo $this->Form->input('UserCompany.department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）営業部 第一営業課'))
                         ?>
                     </td>
                   </tr>
                   <tr>
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label><span id="company_required_label_7"><?php echo __('global.require'); ?></span></td>
                     <td>
-                        <?php echo $this->Form->input('UserCompany.position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'部長、課長、次長、係長、主任など'))
+                        <?php echo $this->Form->input('UserCompany.position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'例）部長、課長、次長、係長、主任など'))
                         ?>
                     </td>
                   </tr>
@@ -426,7 +426,7 @@
                         <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                         <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"month_worked", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'00'))
                         ?>
-                        <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+                        <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
                       </div>
                     </td>
                   </tr>
@@ -485,7 +485,7 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'required'=>false, 'id'=>'salary_receive', 'onchange'=>'change_type_date($(this))')); 
+                                echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"3", 'data-placement'=>'right', 'required'=>false, 'id'=>'salary_receive', 'onchange'=>'change_type_date($(this))')); 
                             ?>
                           </div>
                           <script type="text/javascript">
@@ -582,6 +582,7 @@
                         <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.count'); ?></span>
+                        <span class="style">※借り入れがない場合 "0” を入力してください。</span>
                       </div>
                     </td>
                   </tr>
@@ -592,6 +593,7 @@
                         <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
+                        <span class="style">※借り入れがない場合 "0” を入力してください。</span>
                       </div>
                     </td>
                   </tr>
@@ -602,6 +604,7 @@
                         <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
+                        <span class="style">※借り入れがない場合 "0” を入力してください。</span>
                       </div>
                     </td>
                   </tr>
@@ -672,9 +675,9 @@
             </div>
 
             <section id="remove" style="display:none">
-                <div class="link-form style" >
+                <div class="link-form" >
                     <div class="block-link">
-                        <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                        <a href="javascript:void(0)" class="style-b" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
                     </div>
                 </div>
             </section>
@@ -927,7 +930,7 @@
             'data[UserCompany][phone]': {
               number: true,
               maxlength: 11, 
-              minlength: 11,
+              minlength: 10,
               phone_number: "^0[0-9]"
             },
             'data[UserCompany][fax]': {
@@ -1025,8 +1028,8 @@
               minlength: "<?php echo __('global.errors.minlength_10'); ?>"
             },
             'data[UserCompany][phone]': {
-              maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
-              minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+              maxlength: "<?php echo __('global.errors.company.phone'); ?>",
+              minlength: "<?php echo __('global.errors.company.phone'); ?>"
             },
             'data[UserCompany][fax]': {
               maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",

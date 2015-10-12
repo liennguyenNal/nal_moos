@@ -21,7 +21,7 @@
 										<div class="block-input">
 											<div class="div-style">
 												<span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-												<?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'山田'))
+												<?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）山田'))
 												?>
 											</div>
 											<div class="div-style">
@@ -137,7 +137,7 @@
 									<td class="label-text"><label><?php echo __('user.my_page.guarantor.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
-											<?php echo $this->Form->input('OtherGuarantor.relate', array('type'=>'text', 'id'=>"relate", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'長男、次女、父、母、叔父など'))
+											<?php echo $this->Form->input('OtherGuarantor.relate', array('type'=>'text', 'id'=>"relate", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）長男、次女、父、母、叔父など'))
 											?>
 										</div>
 									</td>
@@ -236,7 +236,7 @@
 									<div class="block-input fix-padding">
 										<div class="div-style">
 											<span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-											<?php echo $this->Form->input('OtherGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'09012345678'))
+											<?php echo $this->Form->input('OtherGuarantor.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）09012345678'))
 											?>
 										</div>
 										<div class="div-style">
@@ -286,7 +286,7 @@
 								<td>
 									<div class="block-input">
 										<span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-										<?php echo $this->Form->input('OtherGuarantor.company', array('type'=>'text', 'id'=>"og-company", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'placeholder'=>'株式会社ヤチンデモラエル'))
+										<?php echo $this->Form->input('OtherGuarantor.company', array('type'=>'text', 'id'=>"og-company", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>'right', 'placeholder'=>'例）株式会社ヤチンデモラエル'))
 										?>
 									</div>
 									<div class="block-input">
@@ -354,7 +354,7 @@
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
-										<?php echo $this->Form->input('OtherGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'09012345678'))
+										<?php echo $this->Form->input('OtherGuarantor.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）09012345678'))
 										?>
 										<span class="style">※”-”ハイフンなしで入力してください。</span>
 										</div>
@@ -366,7 +366,7 @@
 								<td>
 									<div class="block-input fix-padding">
 										<div class="div-style">
-											<?php echo $this->Form->input('OtherGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0312345678'))
+											<?php echo $this->Form->input('OtherGuarantor.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）0312345678'))
 											?>
 											<span class="style">※”-”ハイフンなしで入力してください。</span>
 										</div>
@@ -385,7 +385,7 @@
 							<tr>
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label></td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
+									<?php echo $this->Form->input('OtherGuarantor.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
 									?>
 								</td>
 							</tr>
@@ -394,14 +394,14 @@
 									<label><?php echo __('user.my_page.basic_info.department'); ?></label>
 								</td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'営業部 第一営業課'))
+									<?php echo $this->Form->input('OtherGuarantor.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）営業部 第一営業課'))
 									?>
 								</td>
 							</tr>
 							<tr>
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label></td>
 								<td>
-									<?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'部長、課長、次長、係長、主任など'))
+									<?php echo $this->Form->input('OtherGuarantor.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'例）部長、課長、次長、係長、主任など'))
 									?>
 								</td>
 							</tr>
@@ -414,7 +414,7 @@
 										<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
 										<?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 										?>
-										<span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+										<span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
 									</div>
 								</td>
 							</tr>
@@ -659,7 +659,7 @@
         'data[OtherGuarantor][company_phone]': {
         	number: true,
         	maxlength: 11,
-        	minlength: 11,
+        	minlength: 10,
         	phone_number: "^0[0-9]"
         },
         'data[OtherGuarantor][company_fax]': {
@@ -714,8 +714,8 @@
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
     	'data[OtherGuarantor][company_phone]': {
-    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
-    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    		maxlength: "<?php echo __('global.errors.company.phone'); ?>",
+    		minlength: "<?php echo __('global.errors.company.phone'); ?>"
     	},
     	'data[OtherGuarantor][company_fax]': {
     		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",

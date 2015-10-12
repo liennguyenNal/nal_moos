@@ -2,7 +2,7 @@
 	<div class="menu-sup-page">
 		<div class="container-fluid">
 			<ul>
-				<li><a href="#">トップページ</a></li>
+				<li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
 				<li><span>よくあるご質問</span></li>
 			</ul>
 		</div>
@@ -61,7 +61,7 @@
 					<div class="container-fluid">
 						<div class="block-1">
 							<span class="icon"></span>
-							<p><span>コンセプトとしておりますので、気軽にお申込みください。</span></p>
+							<p><span>住所は選べますか？</span></p>
 						</div>
 						<div class="block-2">
 							<span class="icon"></span>

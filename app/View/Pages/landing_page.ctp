@@ -157,10 +157,15 @@
 			</div>
 			<div class="from-ldpage" id="formRegister">
 				<div class="title-from"></div>
+				
 				<div class="content">
 					<div class="container-fluid">
 						<div class="title-content"></div>
 						<div class="content-from" >
+							<div class="content-from-title">
+			                	<h2>営業活動は一切ありません</h2>
+			                	<span>以下の登録フォームより会員登録をお願いいたします。</span>
+			                </div>
 							  <section id="section-flash-msg">
 								<?php echo $this->element('flash'); ?>
 							  </section>
@@ -178,7 +183,7 @@
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
@@ -330,7 +335,7 @@
 				                            <div class="block-input fix-padding">
 				                              <div class="div-style">
 				                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false, 'data-placement' => 'right'))
+				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）09012345678','div'=>false, 'required'=>false, 'data-placement' => 'right'))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
@@ -339,13 +344,13 @@
 				                                ?>
 				                              </div>
 				                            </div>
-				                            <span class="black">※どちらかひとつ必須</span>
+				                            <span class="black">※どちらか一つ必須。"-"ハイフンなしで入力してください</span>
 				                          </td>
 				                        </tr>
 				                        <tr>
 				                          <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
-				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'例）sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                            ?>    
 				                            <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
 				                          </td>
@@ -446,9 +451,9 @@
 						            </div>
 
 						            <section id="remove" style="display:none">
-						                <div class="link-form style" >
+						                <div class="link-form" >
 						                    <div class="block-link">
-						                        <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+						                        <a href="javascript:void(0)" class="style-b" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
 						                    </div>
 						                </div>
 						            </section>
@@ -711,63 +716,63 @@
 		        },
 		        'data[ExpectArea][1][pref_id]': {required: true},
 		        'data[ExpectArea][1][city]': {required: true},
-		        'data[ExpectArea][1][address]': {required: true},
+		        //'data[ExpectArea][1][address]': {required: true},
 		        'data[User][agree]': {required: true}
 		      },
 		      messages: {
 		        'data[Page][first_name]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][last_name]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.landing-page.firstnamekana'); ?>"},
+		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.landing-page.lastnamekana'); ?>"},
 		        'data[Page][gender]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][year_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][month_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][day_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][married_status_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][post_num_1]': {
-		          required: "<?php echo __('global.errors.required'); ?>",
+		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		        },
 		        'data[UserAddress][post_num_2]': {
-		          required: "<?php echo __('global.errors.required'); ?>",
+		          required: "<?php echo __('global.errors.post_num_2'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
 		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.landing-page.address'); ?>"},
 		        'data[User][phone]': { 
-		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	required: "<?php echo __('global.errors.landing-page.mobiphone'); ?>",
 		        	maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
 		        },
 		        'data[User][home_phone]': { 
-		        	required: "<?php echo __('global.errors.required'); ?>",
+		        	required: "<?php echo __('global.errors.landing-page.homephone'); ?>",
 		        	maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
 		        	 },
-		        'data[User][email]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[User][email_confirm]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[User][email]': {required: "<?php echo __('global.errors.register.email'); ?>"},
+		        'data[User][email_confirm]': {required: "<?php echo __('global.errors.register.confirm_email'); ?>"},
+		        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.work_id'); ?>"},
+		        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.year_worked'); ?>"},
 		        'data[UserCompany][month_worked]': {
-		          required: "<?php echo __('global.errors.required'); ?>",
+		          required: "<?php echo __('global.errors.month_worked'); ?>",
 		          min: "<?php echo __('global.errors.month.min'); ?>",
 		          max: "<?php echo __('global.errors.month.max') ?>"
 		        },
 		        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[ExpectArea][1][post_num_1]': {
-		          required: "<?php echo __('global.errors.required'); ?>",
+		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		        },
 		        'data[ExpectArea][1][post_num_2]': {
-		          required: "<?php echo __('global.errors.required'); ?>",
+		          required: "<?php echo __('global.errors.post_num_2'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
-		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.city'); ?>"},
+		        //'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
 		      },
 		      invalidHandler: function(event, validator) {

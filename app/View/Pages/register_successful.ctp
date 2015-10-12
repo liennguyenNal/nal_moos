@@ -6,7 +6,7 @@
   </div>
   <div class="title-sup-page">
     <div class="container-fluid">
-      <h3>ご会員登録に成功しました</h3>
+      <h3>会員情報を登録しました</h3>
     </div>
   </div>
   <div class="from-login">
@@ -17,7 +17,8 @@
             <div class="content-from">
               <form action="">
                 <div class="content-from-block">
-                  <p class="note fix-font">※ 会員登録に成功しました。</p>
+                  <p class="note fix-font">※登録いただいたお客様のメールアドレスに、ご登録内容の確認と今後の手続きに関する情報を送信しました。</br>
+                  <p class="note fix-font">内容をご確認ください。</p>
                   <div class="block-note">
                     <div class="block-button">
                       <a href="<?php echo Router::url('/', true); ?>/users/login"><button type="button" class="style"><img src="<?php echo $this->webroot; ?>img/front/text-from-b.png" alt="ログイン画面へ"/></button></a>

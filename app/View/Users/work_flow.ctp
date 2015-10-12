@@ -1,7 +1,7 @@
 <div class="menu-sup-page">
 	<div class="container-fluid">
 		<ul>
-			<li><a href="#">トップページ</a></li>
+			<li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
 			<li><span>申し込みの流れ</span></li>
 		</ul>
 	</div>
