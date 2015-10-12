@@ -89,19 +89,19 @@ class UsersController extends AppController{
     }
     function admin_index(){
       //Configure::write('debug', 2);
-      $statuses = $this->Status->find('list', array('conditions'=>array('Status.id <> 0')));
+      $statuses = $this->Status->find('list');
       $this->set('statuses', $statuses);
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
       $criteria = " User.is_deleted != 1 ";
-       if($this->params['named']['status']){
+       if(isset($this->params['named']['status'])){
         $status_id = $this->params['named']['status'];
         $criteria .= " AND User.status_id = '$status_id'" ;
         $this->set('status', $status_id);
       }
       if($this->params['named']['city']){
         $city = $this->params['named']['city'];
-         $criteria .= " AND UserAddress.city = '$city'" ;
+         $criteria .= " AND UserAddress.city LIKE '%$city%'" ;
         
         $this->set('city', $city);
       }
@@ -352,13 +352,13 @@ class UsersController extends AppController{
         $this->set('attachment_types', $attachment_types);
         $this->set('user', $user);
 
-        if($user['User']['status_id'] > 1) {
+        if($user['User']['status_id'] != 1 && $user['User']['status_id'] != -1) {
           $this->data = $user;
           $validations = $this->_validate($user);
           $this->set('validations', $validations);
           // $validations = $this->_validate($user);
           // $this->set('validations', $validations);
-            $this->render('admin_view_2');
+          $this->render('admin_view_2');
         }
       }
     }
@@ -1505,7 +1505,7 @@ class UsersController extends AppController{
         }
     }
       //print_r( $result['UserPartner']); die;
-    if($user['User']['live_with_family']){
+    if($user['User']['live_with_family'] || !isset($user['User']['live_with_family'])){
       if($user['UserRelation']){
         //foreach ($user['User']['UserRelation'] as $item) {
           $item = $user['UserRelation'][0];
@@ -1523,6 +1523,13 @@ class UsersController extends AppController{
           }
         }
        
+      }
+      else {
+        $result['error'] = 1;
+        $result['UserPartner']['UserPartnerRelation']['error'] = 1;
+        foreach ($user_partner_relation_fields as $key => $value) {
+           array_push($result['UserPartner']['UserPartnerRelation']['fields'], $value);
+        }
       }
     }
 

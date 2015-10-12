@@ -833,3 +833,5 @@ ALTER TABLE `zipcodes`
 
 -- add is_deleteed field to table users 
 ALTER TABLE `users` ADD `is_deleted` BOOLEAN NULL DEFAULT FALSE AFTER `max_payment`;
+
+ALTER TABLE `contacts` ADD `code` VARCHAR(20) NULL AFTER `id`;

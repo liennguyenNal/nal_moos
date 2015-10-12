@@ -274,11 +274,12 @@
  
     <?php echo $this->Form->create("User", array('action'=>'return','id'=>'ReturnUserForm' ,'class'=>'form-horizontal', 'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
+
         <p style="display:none; color:red" id="return_error_not_choose">パスワード変更は完了しました。</p>
       <fieldset>
-        <p>差し戻し理由をチェックをいれ、ひつ料にい応じて差し戻しメール</p>
-        <p>に追加する文章をテキストボックスに入力してください。</p>
-        <?php echo $this->Form->input('required', array('type'=>'select', 'multiple'=>'checkbox', 'options'=>array(1=>'添付ファイルの追加', 2=>'入寮区内容の修正', 3=>'保証人の追加'), 'class' => 'checkbox dialog-checkox', 'style' => 'width:100px; display:inline','label'=>false, 'div'=>false)); ?>
+        <p>差し戻し理由にチェックを入れ、必要に応じてユーザーに送信される差し戻しメール</p>
+        <p>に追加する文章を、以下のテキストボックスに入力してください。</p>
+        <?php echo $this->Form->input('required', array('type'=>'select', 'multiple'=>'checkbox', 'options'=>array(1=>'添付ファイルの追加', 2=>'入力内容の修正', 3=>'保証人の追加'), 'class' => 'checkbox dialog-checkox', 'style' => 'width:100px; display:inline','label'=>false, 'div'=>false)); ?>
         <textarea name="data[User][comment]" id="comment" style="width: 439px; height: 80px;margin-top:20px" ></textarea>
         
         <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

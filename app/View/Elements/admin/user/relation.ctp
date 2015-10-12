@@ -20,17 +20,17 @@ for($i =0; $i< $len; $i++){?>
 	          <td>
 	            <div class="form-group">
 	              <div class="col-lg-10">
-	                <?php echo $this->Form->input("UserRelation.$i.first_name", array('type'=>'text', 'id'=>"r_first_name_$i", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.first_name", array('type'=>'text', 'id'=>"r_first_name_$i", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ' ,'div'=>false))?>
 	             
-	                <?php echo $this->Form->input("UserRelation.$i.last_name", array('type'=>'text', 'id'=>"r_last_name_$i", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.last_name", array('type'=>'text', 'id'=>"r_last_name_$i", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ', 'div'=>false))?>
 	              </div>
 	            </div>
 	            <div class="form-group">
 	              
 	              <div class="col-lg-10">
-	                <?php echo $this->Form->input("UserRelation.$i.first_name_kana", array('type'=>'text', 'id'=>"r_first_name_kana_$i", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>              
+	                <?php echo $this->Form->input("UserRelation.$i.first_name_kana", array('type'=>'text', 'id'=>"r_first_name_kana_$i", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ', 'div'=>false))?>              
 	                                 
-	                <?php echo $this->Form->input("UserRelation.$i.last_name_kana", array('type'=>'text', 'id'=>"r_last_name_kana_$i", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>
+	                <?php echo $this->Form->input("UserRelation.$i.last_name_kana", array('type'=>'text', 'id'=>"r_last_name_kana_$i", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ', 'div'=>false))?>
 	              </div>
 	            </div>
 	          </td>
@@ -42,7 +42,7 @@ for($i =0; $i< $len; $i++){?>
 	              
 	                <div class="col-lg-10">
 	                  <?php 
-	                  echo $this->Form->radio("UserRelation.$i.gender", array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+	                  echo $this->Form->radio("UserRelation.$i.gender", array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
 	                ?>  
 	                </div>
 	              </div>
@@ -55,30 +55,32 @@ for($i =0; $i< $len; $i++){?>
 	               
 	                <div class="col-lg-10">
 	                  
-	                  <?php echo __('user.register.year'); ?>
+	                  
 	                  <?php 
 	                  $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))'));
-	                ?>
-	                <?php echo __('user.register.month'); ?>
+	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>'));
+	                ?><?php echo __('user.register.year'); ?>
+	                
 	                <?php 
 	                  $months = array_combine(range(1, 12), range(1, 12));
 	                  echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
-	                ?>
-	                <?php echo __('user.register.day'); ?>
+	                ?><?php echo __('user.register.month'); ?>
+	               
 	                <?php 
 	                $dates = array_combine(range(1, 31), range(1, 31));
 	                  echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
-	                ?>
-	                  <?php echo __('user.register.age'); ?> : <span id="p-age-<?php echo $i?>">0</span>
+	                ?> <?php echo __('user.register.day'); ?>
+	                    <span id="p-age-<?php echo $i?>">0</span><?php echo __('user.register.age'); ?>
 	                <script type="text/javascript">
 	                var d = new Date();
 	                  var n = d.getFullYear();
+	                  if($("#p-year-<?php echo $i?>").val() == ""){
+	                  	$("#p-age-<?php echo $i?>").html("00");
+	                  }
+	                  else{
 	                 $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
-	                function calculate_relation_age(obj){
-	                	var age = n - obj.val();
-	                	obj.parent().parent().find('span').html(age);
-	                }
+	             }
+	                
 	                </script>
 	                </div>
 	              </div>

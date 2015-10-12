@@ -41,15 +41,18 @@
                       <div class="upload-file">
                       
                          
-                         
+                         <?php if($user['User']['status_id'] == 2 || ($user['User']['status_id'] != 2 && !$type['AttachmentType']['is_required']) ) { ?>
                          <div id="file-<?php echo $i ?>"></div>
                            <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span>
                            <input class="sp-hide" id="fileupload-<?php echo $i ?>" type="file" name="data[Attachment][file][<?php echo $i ?>]" />
                        </div>
+                       <?php } ?>
                      <?php } else { ?>  
                       <div class="upload-file">
                            <div id="file-<?php echo $i ?>"> <a href="<?php echo $this->webroot;?>files/upload/<?php echo $file_name;?>" class="link-download"> <?php echo $file_name;?> </a>
+                            <?php if($user['User']['status_id'] == 2 || ($user['User']['status_id'] != 2 && !$type['AttachmentType']['is_required']) ) { ?>
                             <a onclick='delete_file(<?php echo $i ?>);' href='javascript:void(0)' class="delete-file">&nbsp;x</a>
+                            <?php } ?>
                            </div>
                            <section id="section-upload-<?php echo $i ?>" style="display:none">
                              <span class="style-a sp-hide" id="spfileupload-<?php echo $i ?>">ファイルを選択する</span>
@@ -65,9 +68,10 @@
     
     <?php if($user['User']['status_id']!= 2) {?>
       <script type="text/javascript" charset="utf-8">
-        $('#UserAttachForm').find(':input').hide();
-        $('#UserAttachForm').find('a').hide();
-         $('#UserAttachForm').find('.link-download').show();
+        //$('#UserAttachForm').find(':input').hide();
+        //$('#UserAttachForm').find('a').hide();
+
+        //$('#UserAttachForm').find('.link-download').show();
       </script>
     <?php } ?>
 
@@ -78,6 +82,7 @@
         var url = "<?php echo $this->webroot;?>attachments/upload/";
         var reload_url = "<?php echo $this->webroot?>users/reload_dashboard";
         <?php foreach($attachment_types as $type){
+          $imag_url = $this->webroot . "files/upload/";
           $i = $type['AttachmentType']['id'];
 
           echo "$('#fileupload-$i').fileupload({
@@ -89,7 +94,7 @@
               done: function (e, data) {
                 $('#fileupload-$i').prop('disabled', false);
                 if(data.result.error == '0'){
-                  $('<p/>').html(data.result.filename + '<a class=\'delete-file\' onclick=\'delete_file($i);\' href=\'#\'>&nbsp;x</a>').appendTo('#file-$i');
+                  $('<p/>').html('<a href=\'$imag_url' + data.result.filename + '\'>' + data.result.filename + '</a><a class=\'delete-file\' onclick=\'delete_file($i);\' href=\'#\'>&nbsp;x</a>').appendTo('#file-$i');
                   $('#fileupload-$i').parent().find('.sp-hide').hide();
 
                   $.ajax({

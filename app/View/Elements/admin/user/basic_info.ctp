@@ -2,6 +2,11 @@
   .error-message {
     color: red;
     padding-left: 10px;
+
+  }
+  td {
+
+        padding-bottom: 0px !important;
   }
 </style>
 <div class="page-header">
@@ -16,7 +21,7 @@
          <!--  <form class="form-horizontal"> -->
            
             <fieldset>
-              <legend>会員登録フォ一ム</legend>
+              <legend>申込人基本情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
@@ -25,17 +30,17 @@
                 <td>
                   <div class="form-group">
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=> __('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false))?>
+                      <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=> __('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px', 'div'=>false))?>
                    
-                      <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=> __('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false))?>
+                      <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=> __('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px;', 'div'=>false))?>
                     </div>
                   </div>
                   <div class="form-group">
                     
                     <div class="col-lg-10">
-                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=> __('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>              
+                      <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=> __('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px;','div'=>false, 'required'=>false))?>              
                                        
-                      <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
+                      <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>"メイ", 'class'=>'form-control', 'style'=>'display:inline; width:150px; ','div'=>false, 'required'=>false))?>
                     </div>
                   </div>
                 </td>
@@ -47,7 +52,7 @@
 	                
 	                  <div class="col-lg-10">
 	                    <?php 
-	                		echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male",'required'=>false));
+	                		echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px; margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male",'required'=>false));
 	              		?>	
 	                  </div>
 	                </div>
@@ -78,13 +83,20 @@
                   		echo $this->Form->select('User.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day','required'=>false));
                 		?>
                      <?php echo __('user.register.day'); ?>
-                      &nbsp;&nbsp;&nbsp;<span id="age">0</span> <?php echo __('user.register.age'); ?>
+                     <span class="style" id="age">0</span>
+                     <span class="style"><?php echo __('user.register.age'); ?></span>
+                            <!-- Script tinh tuoi -->
                     <script type="text/javascript">
-                    var d = new Date();
-                      var n = d.getFullYear();
-                      $("#age").html(n - $("#year").val());
-                    
+                        var d = new Date();
+                        var n = d.getFullYear();
+                        if ($("#year").val() == "") {
+                          $("#age").html("00");
+                        } else {
+                          $("#age").html(n - $("#year").val());
+                        }
+                        
                     </script>
+                      
                     </div>
                   </div>
                 </td>
@@ -96,7 +108,7 @@
                 
                   <div class="col-lg-10">
                    <?php 
-                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family'), 2=> __('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
+                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family'), 2=> __('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
                   ?>  
                   </div>
                 </div>
@@ -109,7 +121,7 @@
                 
                   <div class="col-lg-10">
                    <?php 
-                    echo $this->Form->radio('User.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
+                    echo $this->Form->radio('User.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
                   ?>  
                   </div>
                 </div>
@@ -180,7 +192,7 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.year_residence'); ?></label></td>
+                <td><label for="inputEmail">居住形態</label></td>
                 <td>
                   <div class="form-group">
                     
@@ -255,7 +267,7 @@
 			                
 			                  <div class="col-lg-10">
 			                    <?php 
-			                		echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=> __('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'required'=>false));
+			                		echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=> __('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'required'=>false));
 			              		?>	
 			                  </div>
 			                </div>
@@ -378,30 +390,30 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.experience'); ?></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">勤続年数</label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false,'required'=>false))?><?php echo __('user.register.year') ?>
-                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?> <?php echo __('user.register.month');?>
+                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?> ヶ月
                   </div>
                 </div>
                
                <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.tax'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+                    <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text','style'=>'width:150px; display:inline;' , 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>万円
+                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year",'style'=>'width:150px; display:inline;' , 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>万円
                   </div>
                 </div>
                 <div class="form-group">
                 	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                		echo $this->Form->radio('UserCompany.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'change_type($(this))', 'required'=>false));
+                		echo $this->Form->radio('UserCompany.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'change_type($(this))', 'required'=>false));
 
                 		echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:200px; display:inline', 'required'=>false))
               		?>	
@@ -413,7 +425,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_receive'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-	                		echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+	                		echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
 	                		echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'form-control','div'=>false, 'style'=>'width:200px; display:inline'))
 	              		?>日
                   </div>
@@ -464,9 +476,12 @@
                 </fieldset>
             </div>
            
+           
             <section id="expect-area">
+
             <?php $i = 0; foreach($user['ExpectArea'] as $item){ $i++;?>
             <div class="well bs-component" id="expect-area-content-<?php echo $i; ?>" >
+            <legend>希望エリア</legend>
               <fieldset>
 
                   <div class="form-group">
