@@ -65,11 +65,11 @@ class User extends AppModel {
                 'message'=>'This field is required'
             
         ), 
-        'num_child' => array(
-               'rule' => 'check_married',
-                'message'=>'This field is required'
+        // 'num_child' => array(
+        //        'rule' => 'check_married',
+        //         'message'=>'This field is required'
             
-        ), 
+        // ), 
         'phone' => array(
             'rule2'=>array(
                      'rule' => 'validate_phone',

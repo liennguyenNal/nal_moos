@@ -117,7 +117,7 @@
                           <div class="form-w">
                             <div class="block-input-radio">
                                 <?php 
-                                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family') ,2=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'data-placement' => 'right', 'required'=>false));
+                                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family') ,0=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'data-placement' => 'right', 'required'=>false, 'default'=>1));
                                 ?> 
                             </div>
                           </div>
@@ -200,7 +200,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.residence'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="select">
-                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false)); 
+                        <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false, 'onchange'=>'change_residence()')); 
                         ?>
                       </div>
                     </td>
@@ -216,7 +216,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?><span id="house_cost_required" style="display:none"><?php echo __('global.require'); ?></span></label></td>
+                    <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label><span id="house_cost_required" style="display:none"><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
                         <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
@@ -227,6 +227,27 @@
                   </tr>
                 </tbody>
               </table>
+              
+              <script  type="text/javascript" >
+                  var residence_id = $('#residence_id').val();
+                  if(residence_id == 1 || residence_id == 2){
+                    $("#house_cost_required").hide();
+                  }
+                  else { 
+                     $("#house_cost_required").show();
+                  }
+
+                  function change_residence(){
+                    residence_id = $('#residence_id').val();
+                    if(residence_id == 1 || residence_id == 2){
+                      $("#house_cost_required").hide();
+                    }
+                    else { 
+                       $("#house_cost_required").show();
+                    }
+                  }
+
+              </script>
               <?php echo $this->Form->hidden('UserAddress.id')?>
             </div>
 
@@ -269,7 +290,7 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                                echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'required'=>false));
+                                echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'data-placement'=>'right', 'required'=>false, 'default'=>'1'));
                             ?>  
                           </div>
                         </div>
@@ -542,11 +563,11 @@
                     work[2] =  Array(1, 1, 1, 0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1);
                     work[3] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
                     work[4] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
-                    work[5] =  Array(0, 1, 0, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);
+                    work[5] =  Array(0, 1, 1, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);
                     work[6] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
-                    work[7] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);               
+                    work[7] =  Array(1, 1, 1, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);               
                     work[8] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
-                    work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 1, 1, 1, 1, 1);
+                    work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 1, 1, 0, 1);
                     work[10] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
                     work[11] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
                     for(i=0; i< work[work_id].length; i++){
@@ -717,7 +738,7 @@
         <?php }?>
         <!-- MAIN SCRIPT -->
         <script type="text/javascript" >
-            var edit;
+            
             $( document ).ready(function() {
               if(edit != 1){
                 
@@ -762,7 +783,7 @@
                        url: "<?php echo $this->webroot;?>users/update_basic_info",
                         success: function(result){
                           edit = 0;
-                          $('#guarantor').html(result);
+                          $('#basic').html(result);
                         }
                     });
                });

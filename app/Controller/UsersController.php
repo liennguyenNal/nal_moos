@@ -586,6 +586,7 @@ class UsersController extends AppController{
       $user = $this->User->read(null, $user_id);
       if($user['User']['status_id'] == 4){
           $user['User']['status_id'] = 5;
+          $user['User']['payment_date'] = DboSource::expression('NOW()');
           if($this->User->save($user, false)){
               /**
              * EMAIL Aprrove User Step 2
@@ -1311,20 +1312,21 @@ class UsersController extends AppController{
         'UserGuarantor'=>array(
             'UserGuarantorInfo'=> array('key'=>__('user.guarantor.user.info'), 'error'=>0, 'fields'=>array()),
             'UserGuarantorAddress'=> array('key'=>__('user.guarantor.user.address'), 'error'=>0, 'fields'=>array()),
-            'UserGuarantorCompany'=> array('key'=>__('user.guarantor.user.company'), 'error'=>0, 'fields'=>array()),
-            'UserGuarantorContact'=> array('key'=>__('user.guarantor.user.contact'), 'error'=>0, 'fields'=>array())
+            
+            'UserGuarantorContact'=> array('key'=>__('user.guarantor.user.contact'), 'error'=>0, 'fields'=>array()),
+            'UserGuarantorCompany'=> array('key'=>__('user.guarantor.user.company'), 'error'=>0, 'fields'=>array())
           ),
         'OtherGuarantor'=>array(
             'UserGuarantorInfo'=> array('key'=>__('user.guarantor.user.info'), 'error'=>0, 'fields'=>array()),
-            'UserGuarantorAddress'=> array('key'=>__('user.guarantor.user.address'), 'error'=>0, 'fields'=>array()),
-            'UserGuarantorCompany'=> array('key'=>__('user.guarantor.user.company'), 'error'=>0, 'fields'=>array()),
-            'UserGuarantorContact'=> array('key'=>__('user.guarantor.user.contact'), 'error'=>0, 'fields'=>array())
+            'UserGuarantorAddress'=> array('key'=>__('user.guarantor.user.address'), 'error'=>0, 'fields'=>array()),            
+            'UserGuarantorContact'=> array('key'=>__('user.guarantor.user.contact'), 'error'=>0, 'fields'=>array()),
+            'UserGuarantorCompany'=> array('key'=>__('user.guarantor.user.company'), 'error'=>0, 'fields'=>array())
           ),
         'UserAttachment'=> array('key'=>__('user.attachment.user.file_attachment'), 'error'=>0, 'fields'=>array())
       );
       $this->User->set($user);
       if(!$this->User->validates()){
-        $user_info_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'gender'=>__('user.register.gender'), 'live_with_family' =>__('user.my_page.basic_info.family'), 'num_child' =>__('user.my_page.basic_info.num_children'));
+        $user_info_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'gender'=>__('user.register.gender'), 'live_with_family' =>__('user.my_page.basic_info.family'));
         
         $user_contact_fields = array('email'=>__('user.register.email'), 'phone'=>__('user.register.mobiphone'), 'home_phone'=>__('user.register.homephone'), 'contact_type'=>__('user.contact.type-company'));
        
@@ -1504,31 +1506,38 @@ class UsersController extends AppController{
             $result['UserPartner']['UserPartnerCompany']['fields'] = $partner_validate['fields'];
         }
     }
-      //print_r( $result['UserPartner']); die;
-    if($user['User']['live_with_family'] || !isset($user['User']['live_with_family'])){
-      if($user['UserRelation']){
-        //foreach ($user['User']['UserRelation'] as $item) {
-          $item = $user['UserRelation'][0];
-          //print_r($item);die;
-           $result['UserPartner']['UserPartnerRelation']['fields'] = array();
-           $user_partner_relation_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'year_of_birthday'=>__('user.register.year'), 'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'relate'=>__('user.partner.user.relation'));
-        $this->UserRelation->set($item);
-        if( !$this->UserRelation->validates()){
-          $result['error'] = 1;
-          foreach ($this->UserRelation->invalidFields() as $key => $value) {
-            if(array_key_exists($key, $user_partner_relation_fields)){
-                 array_push($result['UserPartner']['UserPartnerRelation']['fields'], $user_partner_relation_fields[$key]);
-                $result['UserPartner']['UserPartnerRelation']['error'] = 1;
-             }
+     $user_partner_relation_fields = array('first_name'=>__('user.register.firstname'), 'last_name' =>__('user.register.lastname'), 
+            'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'year_of_birthday'=>__('user.register.year'), 
+            'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'relate'=>__('user.partner.user.relation'));
+    if(!is_null($user['User']['live_with_family'])){
+      //echo $user['User']['live_with_family']; die;
+      if($user['User']['live_with_family']){
+        if($user['UserRelation']){
+          //foreach ($user['User']['UserRelation'] as $item) {
+            $item = $user['UserRelation'][0];
+            //print_r($item);die;
+             $result['UserPartner']['UserPartnerRelation']['fields'] = array();
+
+          $this->UserRelation->set($item);
+          if( !$this->UserRelation->validates()){
+            $result['error'] = 1;
+            foreach ($this->UserRelation->invalidFields() as $key => $value) {
+              if(array_key_exists($key, $user_partner_relation_fields)){
+                   array_push($result['UserPartner']['UserPartnerRelation']['fields'], $user_partner_relation_fields[$key]);
+                  $result['UserPartner']['UserPartnerRelation']['error'] = 1;
+               }
+            }
           }
+         
         }
-       
-      }
-      else {
-        $result['error'] = 1;
-        $result['UserPartner']['UserPartnerRelation']['error'] = 1;
-        foreach ($user_partner_relation_fields as $key => $value) {
-           array_push($result['UserPartner']['UserPartnerRelation']['fields'], $value);
+        else {
+          //echo 333; die;
+          $result['error'] = 1;
+          $result['UserPartner']['UserPartnerRelation']['error'] = 1;
+          foreach ($user_partner_relation_fields as $key => $value) {
+             array_push($result['UserPartner']['UserPartnerRelation']['fields'], $value);
+          }
+          //print_r($result['UserPartner']['UserPartnerRelation']['fields']);
         }
       }
     }
@@ -1541,7 +1550,7 @@ class UsersController extends AppController{
             'year_of_birthday'=>__('user.register.year'), 'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'gender'=>__('user.register.gender'), 'live_with_family' =>__('user.my_page.basic_info.family'), 'married_status' =>__('user.register.married'), 'relate'=>__('user.my_page.guarantor.relationship'));
           $user_guarantor_company_fields = array('work_id'=>__('user.register.work'), 'insurance_id'=>__('user.my_page.basic_info.insurances'));
           $user_guarantor_address_fields = array('post_num_1'=>__('user.dashboard.user.post_num_1'), 'post_num_2'=>__('user.dashboard.user.post_num_2'), 'pref_id' =>__('user.register.pref'), 'city'=>__('user.register.city'), 
-            'address'=>__('user.register.house'),'residence_id' =>__('user.my_page.basic_info.residence'),'year_residence'=>__('user.my_page.basic_info.year_residence'), 'housing_cost' =>__('user.my_page.basic_info.house_cost'));
+            'address'=>__('user.register.house'),'residence_id' =>__('user.my_page.basic_info.residence'),'year_residence'=>__('user.my_page.basic_info.year_residence'));
           $user_guarantor_contact_fields = array('phone'=>__('user.register.mobiphone'), 'home_phone'=>__('user.register.homephone'), 'contact_type_id'=>__('user.my_page.basic_info.contact_type'));  
       if($guarantor){
         //print_r($guarantor); die;

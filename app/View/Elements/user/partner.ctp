@@ -136,17 +136,17 @@
                   <td>
                     <div class="select">
                       <?php 
-                        echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------', 'required' => false));
+                        echo $this->Form->select('UserPartner.work_id', $works, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'p_work_id', 'empty'=>'--------', 'required' => false, 'onchange'=>'show_p_company_required_field()'));
                       ?>
                     </div>
                   </td>
                 </tr> 
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.partner.company'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.partner.company'); ?></label><span id="p_company_required_label_0"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-                      <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'w198',  'div'=>false, 'required' => false, 'data-placement'=>'right', 'placeholder'=>'例）株式会社ヤチンデモラエル'))
+                      <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'w198',  'div'=>false, 'required' => false, 'data-placement'=>'right', 'placeholder'=>'株式会社ヤチンデモラエル'))
                       ?>
                     </div>
                     <div class="block-input">
@@ -160,7 +160,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.register.address'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span id="p_company_required_label_1"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
@@ -210,11 +210,11 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.contact.company-phone'); ?></label><span id="p_company_required_label_2"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input fix-padding">
                       <div class="div-style">
-                        <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）09012345678'))
+                        <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'09012345678'))
                         ?>
                         <span class="style">※”-”ハイフンなしで入力してください。</span>
                       </div>
@@ -222,11 +222,11 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.fax'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.fax'); ?></label><span id="p_company_required_label_3"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input fix-padding">
                       <div class="div-style">
-                        <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）0312345678'))
+                        <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'0312345678'))
                         ?>
                         <span class="style">※”-”ハイフンなしで入力してください。</span>
                       </div>
@@ -234,7 +234,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.career'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.career'); ?></label><span id="p_company_required_label_4"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="select">
                       <?php echo $this->Form->select('UserPartner.career_id', $careers, array('class'=>'w198','div'=>false, 'label'=>false, 'id'=>'p_carrer_id', 'empty'=>'--------', 'required' => false, 'data-placement'=>'right'));
@@ -243,27 +243,27 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label><span id="p_company_required_label_5"><?php echo __('global.require'); ?></span></td>
                   <td>
-                  <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
+                  <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
                   ?>
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label></td>
-                  <td><?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）営業部 第一営業課'))
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label><span id="p_company_required_label_6"><?php echo __('global.require'); ?></span></td>
+                  <td><?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'営業部 第一営業課'))
                   ?>
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label><span id="p_company_required_label_7"><?php echo __('global.require'); ?></span></td>
                   <td>
-                  <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）部長、課長、次長、係長、主任など'))
+                  <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'部長、課長、次長、係長、主任など'))
                   ?>
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.register.experience'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.register.experience'); ?></label><span id="p_company_required_label_8"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <?php echo $this->Form->input('UserPartner.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'00'))
@@ -271,12 +271,12 @@
                       <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                       <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40',  'div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'00'))
                       ?>
-                      <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
+                      <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_type'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_type'); ?></label><span id="p_company_required_label_9"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="form-radio">
                       <div class="form-w">
@@ -302,7 +302,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.register.tax'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="p_company_required_label_10"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
@@ -312,7 +312,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label><span id="p_company_required_label_11"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
@@ -322,7 +322,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_receive'); ?></label></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_receive'); ?></label><span id="p_company_required_label_12"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="form-radio">
                       <div class="form-w">
@@ -351,7 +351,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.insurances'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                  <td class="label-text"><label><?php echo __('user.my_page.basic_info.insurances'); ?></label><span id="p_company_required_label_13"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="select">
                       <?php 
@@ -370,6 +370,43 @@
                 </tr>
               </tbody>
             </table>
+            <script type="text/javascript">
+                show_p_company_required_field();
+               //function check required
+               function show_p_company_required_field(){
+                  var work_id = $("#p_work_id").val();
+                  if(work_id){
+                    var work = new Array(13, 13);
+                   work[1] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[2] =  Array(1, 1, 1, 0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1);
+                    work[3] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[4] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[5] =  Array(0, 1, 1, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);
+                    work[6] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[7] =  Array(1, 1, 1, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);               
+                    work[8] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+                    work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 1, 1, 0, 1);
+                    work[10] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+                    work[11] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+                    for(i=0; i< work[work_id].length; i++){
+                      if(work[work_id][i] == 0){
+                        $("#p_company_required_label_"+i).hide();
+
+                      }
+                      else $("#p_company_required_label_"+i).show();
+                    }
+                  }
+                  else {
+                    for(i=0; i< 14; i++){
+                      
+                        $("#p_company_required_label_"+i).hide();
+
+                        
+                    }
+                    $("#p_company_required_label_13").show();
+                  }
+               }
+          </script>
           </div>
 
           <!-- RELATIONSHIP -->
@@ -559,9 +596,9 @@
                   
         <!-- MAIN SCRIPT -->         
         <script type="text/javascript" >
-            var pedit;
+            //var pedit;
             $( document ).ready(function() {
-              if(pedit != 1){
+              if(p_edit != 1){
                 //alert(edit);
                 $('#btn-edit-partner').show();
                 $('#btn-save-partner').hide();
@@ -588,7 +625,7 @@
                 $('#p_salary_type_other').prop('disabled', $('input[name="data[UserPartner][salary_type]"]:checked').val() != 4);
                 $('#p_salary_date').prop('disabled', $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() != "3");
 
-                pedit = 1;
+                p_edit = 1;
              });
 
              $('#btn-cancel-partner').on('click', function() {
@@ -600,7 +637,7 @@
                 $.ajax({
                      url: "<?php echo $this->webroot;?>user_partners/edit",
                       success: function(result){
-                        pedit = 0;
+                        p_edit = 0;
                         $('#partner').html(result);
                       }
                   });
@@ -781,7 +818,7 @@
          data: $("#UserPartnerEdit").serialize(),
          success: function(result)
          {
-             pedit = 0;
+             p_edit = 0;
              if(result != "0"){
                $('#partner').html(result);
                $.ajax({

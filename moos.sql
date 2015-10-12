@@ -835,3 +835,5 @@ ALTER TABLE `zipcodes`
 ALTER TABLE `users` ADD `is_deleted` BOOLEAN NULL DEFAULT FALSE AFTER `max_payment`;
 
 ALTER TABLE `contacts` ADD `code` VARCHAR(20) NULL AFTER `id`;
+
+ALTER TABLE `users` CHANGE `live_with_family` `live_with_family` INT(11) NOT NULL DEFAULT '1';

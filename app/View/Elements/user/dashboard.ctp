@@ -18,7 +18,7 @@
     </p>
     <p>
       <span><?php echo __('user.my_page.approve_date'); ?> : </span>
-      <span><?php echo $user['User']['approved_date'];?></span>
+      <span><?php echo substr($user['User']['approved_date'], 0, 10);?></span>
     </p>
   </li>
   <li>

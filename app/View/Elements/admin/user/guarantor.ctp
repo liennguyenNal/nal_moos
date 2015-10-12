@@ -101,7 +101,7 @@
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"2"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('UserGuarantor.live_with_family', array(1=>__('user.my_page.basic_info.have_family'),0=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
@@ -262,7 +262,7 @@
 				                
 				                  <div class="col-lg-10">
 				                    <?php 
-				                		echo $this->Form->radio('UserGuarantor.contact_type_id', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+				                		echo $this->Form->radio('UserGuarantor.contact_type_id', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'1'));
 				              		?>	
 				                  </div>
 				                </div>
