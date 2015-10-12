@@ -54,7 +54,8 @@
         </div>
       </div>
       <script type="text/javascript">
-      var current_tab = "home";
+      var current_tab = "#home";
+      var old_tab  = "#home";
       var g_edit;
       var p_edit;
       var edit;
@@ -62,44 +63,60 @@
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
           var target = $(e.target).attr("href"); // activated tab
           //alert(current_tab);
+          
           if(current_tab != target){
             //alert(edit);
             if(current_tab == "#basic"){
               if(edit){
+                //old_tab = "#basic"; 
                 //alert('basic Info is modified, please save or cancle it.');
-                $('#myModal').modal()                      // initialized with defaults
-                $('#myModal').find('p').html('Basic Data is modified, please save or cancle it.');
-                $('#myModal').modal('show')
+                                    // initialized with defaults
+                //$('#myModal').find('p').html('Basic Data is modified, please save or cancle it.');
+                $('#myModal').modal() ;
+                $('#myModal').modal('show');
+                $('#myModal').on('hidden.bs.modal', function () {
+                    $('.nav-tabs a[href="#basic"]').tab('show');
+                });
               }
             }
             if(current_tab == "#partner"){
               if(p_edit){
                 //alert('Partner Tab is modified, please save or cancle it.');
-                // $('#myModal').modal()                      // initialized with defaults
-                $('#myModal').find('p').html('Partner Data is modified, please save or cancle it.');
-                $('#myModal').modal('show')
+                 $('#myModal').modal()                      // initialized with defaults
+                //old_tab = "#partner"; 
+                $('#myModal').modal('show');
+                $('#myModal').on('hidden.bs.modal', function () {
+                  $('.nav-tabs a[href="#partner"]').tab('show');
+                });
               }
             }
             if(current_tab == "#guarantor"){
               if(g_edit){
                 //alert('guarantor Tab is modified, please save or cancle it.');
-                // $('#myModal').modal()                      // initialized with defaults
-                $('#myModal').find('p').html('Gurantor Data is modified, please save or cancle it.');
-                $('#myModal').modal('show')
+                 $('#myModal').modal()                      // initialized with defaults
+                //old_tab = "#guarantor"; 
+                $('#myModal').modal('show');
+                $('#myModal').on('hidden.bs.modal', function () {
+                  $('.nav-tabs a[href="#guarantor"]').tab('show');
+                });
               }
             }
             if(current_tab == "#other_guarantor"){
               if(og_edit){
                 //alert('Other_guarantor Tab is modified, please save or cancle it.');
-                // $('#myModal').modal()                      // initialized with defaults
-                $('#myModal').find('p').html('Other Gurantor Data is modified, please save or cancle it.');
-                $('#myModal').modal('show')
+                 $('#myModal').modal()                      // initialized with defaults
+                //old_tab = "#other_guarantor"; 
+                $('#myModal').modal('show');
+                $('#myModal').on('hidden.bs.modal', function () {
+                  $('.nav-tabs a[href="#other_guarantor"]').tab('show');
+                });
               }
             }
             current_tab = target;
           }
-          e
+          
         });
+       
       </script>
 
 
@@ -114,7 +131,11 @@
         <h4 class="modal-title">Warning</h4>
       </div>
       <div class="modal-body">
-        <p id="msg">Please save data</p>
+        <p id="msg">変更内容はまだ保存されておりません。</br>
+変更内容を保存するためには、各画面の一番下にある</br>
+「保存する」ボタンを押してください。</br>
+また、保存が必要ない場合は「キャンセル」ボタンを</br>
+押してください。</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">OK</button>
