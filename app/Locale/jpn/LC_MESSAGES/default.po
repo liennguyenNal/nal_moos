@@ -898,9 +898,11 @@ msgstr "ヶ月"
 msgid "global.errors.landing-page.email.unique"
 msgstr "送信いただいたメールアドレスは既に登録されているため申し込みできません。</br>お問い合わせいただくか、再度別のメールアドレスにて無料会員登録を行ってください。"
 
+msgid "global.errors.landing-page.firstnamekana"
+msgstr "必須項目です。</br>全角カタカナで入力してください。"
 
-
-
+msgid "global.errors.landing-page.lastnamekana"
+msgstr "必須項目です。</br>全角カタカナで入力してください。"
 
 
 

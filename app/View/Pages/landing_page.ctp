@@ -178,7 +178,7 @@
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
@@ -330,7 +330,7 @@
 				                            <div class="block-input fix-padding">
 				                              <div class="div-style">
 				                                <span class="w78"><?php echo __('user.register.mobiphone'); ?></span>
-				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'09012345678','div'=>false, 'required'=>false, 'data-placement' => 'right'))
+				                                <?php echo $this->Form->input('User.phone', array('type'=>'text', 'id'=>"phone", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）09012345678','div'=>false, 'required'=>false, 'data-placement' => 'right'))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
@@ -345,7 +345,7 @@
 				                        <tr>
 				                          <td class="label-text"><label><?php echo __('user.register.email'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
-				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                            <?php echo $this->Form->input('User.email', array('type'=>'text', 'id'=>"email", 'label'=>false, 'class'=>'w40 input-style', "placeholder"=>'例）sample@gmail.com','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                            ?>    
 				                            <span class="black1">※ご登録後ユーザーIDとして利用します。</br>普段利用しているメールアドレスを入力ください。</span>
 				                          </td>
@@ -717,8 +717,8 @@
 		      messages: {
 		        'data[Page][first_name]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][last_name]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.landing-page.firstnamekana'); ?>"},
+		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.landing-page.lastnamekana'); ?>"},
 		        'data[Page][gender]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][year_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
 		        'data[Page][month_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
