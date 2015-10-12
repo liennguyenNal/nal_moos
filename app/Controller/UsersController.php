@@ -965,14 +965,22 @@ class UsersController extends AppController{
         $this->User->set( $this->data );
         $this->UserAddress->set( $this->data );
         $this->UserCompany->set( $this->data );
+         $this->Session->write( 'user_register', $this->data );
         if( $this->User->validates() ){
           //if($this->UserAddress->validates() && $this->UserCompany->validates())
-           $this->Session->write( 'user_register', $this->data );
+          
           $this->redirect( "register_confirmation" );
         }
         else {
+          $this->set('user', $this->data); 
           $this->Session->setFlash(__('global.errors.reset.email'), 'default');
         }
+      }
+      else {
+        //$user = $this->Session->read( 'user_register');
+        // if($user) {
+        //   $this->set('user', $user); 
+        // }
       }
     }
 
@@ -984,12 +992,13 @@ class UsersController extends AppController{
     function register_confirmation(){
       $this->layout = "default_new";
       $user = $this->Session->read( 'user_register' );
+      //print_r($user['ExpectArea'][2]); die;
       if( $user ) {
           $user['User']['married_status'] = $this->MarriedStatus->getNameById($user['User']['married_status_id']);
           $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
           $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
-          $user['User']['access_token'] = md5(rand(0,100));
-          $this->set('user', $user);
+          //$user['User']['access_token'] = md5(rand(0,100));
+          //$this->set('user', $user);
 
           if($this->data){
              //print_r($user['User']['year_of_birth']); die;
@@ -1069,6 +1078,7 @@ class UsersController extends AppController{
             $prefs = $this->Pref->find('list');
             $this->set('prefs', $prefs);
             $this->data = $user;
+            $this->set('user', $user);
           }
       }
       else {
