@@ -618,15 +618,15 @@
 		            }
 		          });
 		      });
-		      $("[id^='address']").each(function() {
-		          $(this).rules("add", 
-		          { 
-		            required: true,
-		            messages: {
-		              required: "<?php echo __('global.errors.required'); ?>"
-		            }
-		          });
-		      });
+		      // $("[id^='address']").each(function() {
+		      //     $(this).rules("add", 
+		      //     { 
+		      //       required: true,
+		      //       messages: {
+		      //         required: "<?php echo __('global.errors.required'); ?>"
+		      //       }
+		      //     });
+		      // });
 		      order_object++;
 		      num_area++;
 		      if(num_area == 5){
@@ -695,6 +695,7 @@
 		          },
 		          number: true,
 		          maxlength: 11,
+		          minlength: 11,
 		          phone_number: "^0[0-9]"
 		        },
 		        'data[User][home_phone]': {
@@ -703,6 +704,7 @@
 		          },
 		          number: true,
 		          maxlength: 10,
+		          minlength: 10,
 		          phone_number: "[0-9]"
 		        },
 		        'data[User][email]': { 
@@ -743,18 +745,19 @@
 		        'data[ExpectArea][1][pref_id]': {required: true},
 		        'data[ExpectArea][1][city]': {required: true},
 		        //'data[ExpectArea][1][address]': {required: true},
-		        'data[User][agree]': {required: true}
+		        'data[User][agree]': {required: true},
+		        'data[UserCompany][salary_month]': {required: true}
 		      },
 		      messages: {
-		        'data[Page][first_name]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][last_name]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.landing-page.firstnamekana'); ?>"},
-		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.landing-page.lastnamekana'); ?>"},
-		        'data[Page][gender]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][year_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][month_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][day_of_birth]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[Page][married_status_id]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[Page][first_name]': {required: "<?php echo __('global.errors.firstname'); ?>"},
+		        'data[Page][last_name]': {required: "<?php echo __('global.errors.lastname'); ?>"},
+		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.firstnamekana'); ?>"},
+		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.lastnamekana'); ?>"},
+		        'data[Page][gender]': {required: "<?php echo __('global.errors.gender'); ?>"},
+		        'data[Page][year_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[Page][month_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[Page][day_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[Page][married_status_id]': {required: "<?php echo __('global.errors.gender'); ?>"},
 		        'data[UserAddress][post_num_1]': {
 		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
@@ -765,27 +768,29 @@
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
-		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.required'); ?>"},
-		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.landing-page.address'); ?>"},
+		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.city'); ?>"},
+		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.address'); ?>"},
 		        'data[User][phone]': { 
-		        	required: "<?php echo __('global.errors.landing-page.mobiphone'); ?>",
-		        	maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
+		        	required: "<?php echo __('global.errors.phone'); ?>",
+		        	maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_11'); ?>"
 		        },
 		        'data[User][home_phone]': { 
-		        	required: "<?php echo __('global.errors.landing-page.homephone'); ?>",
-		        	maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"
-		        	 },
+		        	required: "<?php echo __('global.errors.home_phone'); ?>",
+		        	maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
+		        	minlength: "<?php echo __('global.errors.minlength_10'); ?>"
+		        },
 		        'data[User][email]': {required: "<?php echo __('global.errors.register.email'); ?>"},
 		        'data[User][email_confirm]': {required: "<?php echo __('global.errors.register.confirm_email'); ?>"},
 		        'data[UserCompany][work_id]': {required: "<?php echo __('global.errors.work_id'); ?>"},
 		        'data[UserCompany][year_worked]': {required: "<?php echo __('global.errors.year_worked'); ?>"},
 		        'data[UserCompany][month_worked]': {
-		          required: "<?php echo __('global.errors.month_worked'); ?>",
+		          required: "<?php echo __('global.errors.year_worked'); ?>",
 		          min: "<?php echo __('global.errors.month.min'); ?>",
 		          max: "<?php echo __('global.errors.month.max') ?>"
 		        },
-		        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
 		        'data[ExpectArea][1][post_num_1]': {
 		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
@@ -798,7 +803,7 @@
 		        },
 		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
 		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.city'); ?>"},
-		        //'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.required'); ?>"},
+		        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.address'); ?>"},
 		        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
 		      },
 		      invalidHandler: function(event, validator) {

@@ -25,17 +25,17 @@
 	                <td>
 	                  <div class="form-group">
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px' ,'div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.first_name', array('type'=>'text', 'id'=>"og_first_name", 'label'=>__('user.register.firstname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ' ,'div'=>false, 'required'=>false))?>
 	                   
-	                      <?php echo $this->Form->input('OtherGuarantor.last_name', array('type'=>'text', 'id'=>"og_last_name", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px; margin:20px', 'div'=>false , 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.last_name', array('type'=>'text', 'id'=>"og_last_name", 'label'=>__('user.register.lastname'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ', 'div'=>false , 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                  <div class="form-group">
 	                    
 	                    <div class="col-lg-10">
-	                      <?php echo $this->Form->input('OtherGuarantor.first_name_kana', array('type'=>'text', 'id'=>"og_first_name_kana", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px', 'div'=>false, 'required'=>false))?>              
+	                      <?php echo $this->Form->input('OtherGuarantor.first_name_kana', array('type'=>'text', 'id'=>"og_first_name_kana", 'label'=>__('user.register.firstnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ', 'div'=>false, 'required'=>false))?>              
 	                                       
-	                      <?php echo $this->Form->input('OtherGuarantor.last_name_kana', array('type'=>'text', 'id'=>"og_last_name_kana", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; margin:10px','div'=>false, 'required'=>false))?>
+	                      <?php echo $this->Form->input('OtherGuarantor.last_name_kana', array('type'=>'text', 'id'=>"og_last_name_kana", 'label'=>__('user.register.lastnamekana'), 'class'=>'form-control', 'style'=>'display:inline; width:150px; ','div'=>false, 'required'=>false))?>
 	                    </div>
 	                  </div>
 	                </td>
@@ -51,7 +51,7 @@
 		                
 		                  <div class="col-lg-10">
 		                    <?php 
-		                		echo $this->Form->radio('OtherGuarantor.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
+		                		echo $this->Form->radio('OtherGuarantor.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required'=>false));
 		              		?>	
 		                  </div>
 		                </div>
@@ -82,17 +82,20 @@
 	                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.day'); ?>
-	                      &nbsp;&nbsp;<span id="og-age">0</span>&nbsp;<?php echo __('user.register.age'); ?>
-	                    
-	                    	 <script type="text/javascript">
-		                    var d = new Date();
-		                      var n = d.getFullYear();
-		                      $("#og-age").html(n - $("#og−year").val());
-		                    function g_calculate_age1(){
-		                      
-		                      $("#og-age").html(n - $("#og−year").val());
-		                    }
+	                		<span class="style" id="og-age">0</span>
+		                     <span class="style"><?php echo __('user.register.age'); ?></span>
+		                            <!-- Script tinh tuoi -->
+		                    <script type="text/javascript">
+		                        var d = new Date();
+		                        var n = d.getFullYear();
+		                        if ($("#og−year").val() == "") {
+		                          $("#og-age").html("00");
+		                        } else {
+		                          $("#og-age").html(n - $("#og−year").val());
+		                        }
+		                        
 		                    </script>
+	                      
 	                    </div>
 	                  </div>
 	                </td>
@@ -104,7 +107,11 @@
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
+<<<<<<< HEAD
 	                    echo $this->Form->radio('OtherGuarantor.live_with_family', array(1=>__('user.my_page.basic_info.have_family'),0=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+=======
+	                    echo $this->Form->radio('OtherGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"2"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+>>>>>>> f6755a31652b02768de2fde9df043ea7c4a4172f
 	                  ?>  
 	                  </div>
 	                </div>
@@ -117,7 +124,7 @@
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('OtherGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('OtherGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
@@ -269,7 +276,7 @@
 				                
 				                  <div class="col-lg-10">
 				                    <?php 
-				                		echo $this->Form->radio('OtherGuarantor.contact_type_id', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+				                		echo $this->Form->radio('OtherGuarantor.contact_type_id', array('1'=>__('user.register.mobiphone'),'2'=>__('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
 				              		?>	
 				                  </div>
 				                </div>
@@ -414,8 +421,8 @@
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.experience'); ?></label>
 	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.year'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
-	                    <?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>__('user.register.month'), 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>
+	                    <?php echo $this->Form->input('OtherGuarantor.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?><?php echo __('user.register.year') ?>
+	                    <?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>ヶ月
 	                  </div>
 	                </div>
 	               
@@ -435,7 +442,7 @@
 	                	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php 
-	                		echo $this->Form->radio('OtherGuarantor.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
+	                		echo $this->Form->radio('OtherGuarantor.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'g_change_type($(this))'));
 	                		echo $this->Form->input('OtherGuarantor.salary_type_other', array('type'=>'text', 'id'=>"g_salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'required'=>false))
 	              		?>	
 	                  </div>
@@ -456,7 +463,7 @@
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_receive'); ?></label>
 	                  <div class="col-lg-10">
 	                    <?php 
-		                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+		                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
 		                		echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('user.my_page.basic_info.salary_date'), 'class'=>'form-control','div'=>false, 'required'=>false))
 		              		?>	
 	                  </div>

@@ -24,7 +24,7 @@
             <p><?php echo nl2br($article['Article']['content']); ?></p>
              
               <?php if( $article['Article']['large_image']){ ?>
-                  <div>添付ファイル：<a target="_blank" href="<?php echo $this->webroot; ?>images/upload/news/big/<?php echo $article['Article']['large_image']; ?>"><?php echo $article['Article']['large_image']; ?></a></div>
+                  <div  style="font-size:15px;"><span  style="font-weight:bold;">添付ファイル：</span><a target="_blank" href="<?php echo $this->webroot; ?>images/upload/news/big/<?php echo $article['Article']['large_image']; ?>"><?php echo $article['Article']['large_image']; ?></a></div>
                   <?php } ?>
 
           </div>

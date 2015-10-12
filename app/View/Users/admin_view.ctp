@@ -198,15 +198,15 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'work', 'empty'=>'-----'));
+                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:200px;','div'=>false, 'label'=>false, 'id'=>'work', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 年' , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
-                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>' 月', 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?><?php echo __('user.register.year') ?>
+                    <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>ヶ月
                   </div>
                 </div>
 
@@ -216,7 +216,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">税込月収</label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
+                    <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text','style'=>'width:150px; display:inline;' , 'id'=>"title", 'label'=>false, 'class'=>'form-control','div'=>false))?>円
                   </div>
                 </div>
                 

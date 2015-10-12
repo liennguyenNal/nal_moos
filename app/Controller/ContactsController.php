@@ -16,25 +16,35 @@ class ContactsController extends AppController {
         $this->set('menu' , 'contact');
     }
 
-    public function index(){
+    public function index(){ //var_dump($this->data);die;
+      if($this->data){
+        $this->Session->write('contact', $this->data);
+
+        //var_dump($contact); die;
+            $this->redirect("confirm");
+      }
+        else{
     	$this->layout = "default_new";
-    	if($this->data){
-           $this->Contact->set( $this->data );
+    	}
+    }
+    function confirm(){
+
+     //var_dump($_POST); die;
+      
+      if($_POST){//die('s');
+            $contact = $this->Session->read( 'contact' );
+            //var_dump($contact); die;
+            //$this->layout = "default_new";
+            //$this->set( 'contact', $contact ); 
+
+           $this->Contact->set( $contact );
            $valid = $this->Contact->validates();
            if($valid){ 
 
-               $contact = $this->data;
+               //$contact = $contact;
                if($this->Contact->save( $contact, false) ) {
-                $contact_id = $this->Contact->getLastInsertId();
                 $contact['Contact']['id'] = $this->Contact->getLastInsertId();
-                
-                if($contact_id < 10) $contact_id = "00". $contact_id;
-                else if($contact_id < 100) $contact_id = "0". $contact_id;
-
-                $contact['Contact']['code'] = date("Ymd"). "-" . $contact_id;
-                $this->Contact->create();
-                $this->Contact->save( $contact, false);
-                	/**
+                  /**
                    * EMAIL REJECT USER REGISTRATION
                    */
                   $Email = new CakeEmail('gmail');
@@ -47,7 +57,9 @@ class ContactsController extends AppController {
                   $Email->send();
 
                   /**
-                   * SEND EMAIL TO ADMIN
+                   * 
+                   */
+                   /** SEND EMAIL TO ADMIN
                    * @var CakeEmail
                    */
                   $Email = new CakeEmail("gmail");
@@ -63,10 +75,14 @@ class ContactsController extends AppController {
                }
 
            }
-           else {
+           
+       }
+       else { //die('ss');
+            $contact = $this->Session->read( 'contact' );
+            $this->layout = "default_new";
+            $this->set( 'contact', $contact ); 
               // echo 1111; die;
            }
-       }
     }
 
     function admin_index(){ //var_dump($this->params['named']['keyword']); die('ss');
@@ -282,7 +298,7 @@ class ContactsController extends AppController {
   }
 
   function contact_successful() {
-    $this->layout = null;
+    $this->layout = "default_new";
   }
 
 }

@@ -572,7 +572,7 @@ msgid "admin.user.approve_register.failed"
 msgstr "申込審査承認に失敗しました。"
 
 msgid "admin.user.return.successful"
-msgstr "差戻し【完了】"
+msgstr "差し戻しを完了しました。"
 
 msgid "admin.user.return.failed"
 msgstr "Return  User Failed"
@@ -581,7 +581,7 @@ msgid "admin.user.not_exist"
 msgstr "User is not exist in system"
 
 msgid "admin.user.set_max_payment.successful"
-msgstr "上限賃料設定【完了】"
+msgstr "上限賃料の設定が完了しました。"
 
 msgid "admin.user.set_max_payment.failed"
 msgstr "Set Max Payment Failed"
@@ -608,7 +608,7 @@ msgid "user.my_page.status.completed"
 msgstr "完了"
 
 msgid "user.my_page.status.un_completed"
-msgstr "未完成"
+msgstr "未完了"
 
 msgid "user.register.company"	
 msgstr "会社名"

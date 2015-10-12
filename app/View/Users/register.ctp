@@ -14,7 +14,7 @@
   </div>
   <div class="title-clause">
     <div class="container-fluid">
-      <h4>営業活動は一切ありません。</h4>
+      <h4>営業活動は一切ありません</h4>
       <p>以下の登録フォームより会員登録をお願いいたします。</p>
     </div>
   </div>
@@ -246,7 +246,7 @@
                                 ?>
                               </div>
                             </div>
-                            <span class="black">※どちらかひとつ必須</span>
+                            <span class="black">※どちらか一つ必須。"-"ハイフンなしで入力してください</span>
                           </td>
                         </tr>
                         <tr>
@@ -285,7 +285,7 @@
                               <!-- <input class="w40" type="text" name="" value="" placeholder="00"> -->
                               <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'placeholder'=>"00", 'data-placement' => 'right', 'required'=>false))
                               ?>
-                              <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+                              <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
                             </div>
                           </td>
                         </tr>
@@ -351,7 +351,7 @@
                               ?>
                             </div>
                             <div class="block-input">
-                              <span class="w78"><?php echo __('user.register.street'); ?></span>
+                              <span class="w78"><?php echo __('user.register.area.street'); ?></span>
                               <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>"1〜4丁目、◯◯◯中学校区",'div'=>false, 'data-placement' => 'right', 'required'=>false, "value"=>$item['address']))
                               ?>
                             </div>
@@ -512,15 +512,15 @@
             }
           });
       });
-      $("[id^='address']").each(function() {
-          $(this).rules("add", 
-          { 
-            required: true,
-            messages: {
-              required: "<?php echo __('global.errors.required'); ?>"
-            }
-          });
-      });
+      // $("[id^='address']").each(function() {
+      //     $(this).rules("add", 
+      //     { 
+      //       required: true,
+      //       messages: {
+      //         required: "<?php echo __('global.errors.required'); ?>"
+      //       }
+      //     });
+      // });
       order_object++;
       num_area++;
       if(num_area == 5){
@@ -625,22 +625,23 @@
           required: true,
           number: true
         },
-        'data[ExpectArea][1][post_num_1]': {
+        'data[ExpectArea][0][post_num_1]': {
           required: true,
           number: true,
           minlength: 3,
           maxlength: 3
         },
-        'data[ExpectArea][1][post_num_2]': {
+        'data[ExpectArea][0][post_num_2]': {
           required: true,
           number: true,
           minlength: 4,
           maxlength: 4
         },
-        'data[ExpectArea][1][pref_id]': {required: true},
-        'data[ExpectArea][1][city]': {required: true},
-        'data[ExpectArea][1][address]': {required: true},
-        'data[User][agree]': {required: true}
+        'data[ExpectArea][0][pref_id]': {required: true},
+        'data[ExpectArea][0][city]': {required: true},
+        //'data[ExpectArea][0][address]': {required: true},
+        'data[User][agree]': {required: true},
+        'data[UserCompany][salary_month]': {required: true}
       },
       messages: {
         'data[User][first_name]': {required: "<?php echo __('global.errors.firstname'); ?>"},
@@ -685,20 +686,20 @@
           min: "<?php echo __('global.errors.month.min'); ?>",
           max: "<?php echo __('global.errors.month.max') ?>"
         },
-        'data[UserCompany][salary_year]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
-        'data[ExpectArea][1][post_num_1]': {
+        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
+        'data[ExpectArea][0][post_num_1]': {
           required: "<?php echo __('global.errors.post_num_1'); ?>",
           minlength: "<?php echo __('global.errors.minlength_3'); ?>",
           maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
         },
-        'data[ExpectArea][1][post_num_2]': {
+        'data[ExpectArea][0][post_num_2]': {
           required: "<?php echo __('global.errors.post_num_2'); ?>",
           minlength: "<?php echo __('global.errors.minlength_4'); ?>",
           maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
         },
-        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
-        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.city'); ?>"},
-        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.address'); ?>"},
+        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+        'data[ExpectArea][0][city]': {required: "<?php echo __('global.errors.city'); ?>"},
+        'data[ExpectArea][0][address]': {required: "<?php echo __('global.errors.address'); ?>"},
         'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
       },
       invalidHandler: function(event, validator) {
@@ -723,11 +724,8 @@
       $('#phone').valid(); 
     });
 
-    if($("#section-flash-msg").html().trim() != ""){
-      //alert(123);
-      $('html, body').animate({
-                        scrollTop: $("#section-flash-msg").offset().top
-                    }, 500);
+    if($("#section-flash-msg").html() != ""){
+      $('html, body').animate({scrollTop: $("#section-flash-msg").offset().top}, 500);
     }
   
 </script>
