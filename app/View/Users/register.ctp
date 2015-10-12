@@ -2,7 +2,7 @@
   <div class="menu-sup-page">
     <div class="container-fluid">
       <ul>
-        <li><a href="#">トップページ</a></li>
+        <li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
         <li><span>無料会員登録</span></li>
       </ul>
     </div>
@@ -15,7 +15,7 @@
   <div class="title-clause">
     <div class="container-fluid">
       <h4>営業活動は一切ありません。</h4>
-      <p>以下のメールフォームより会員登録をお願いいたします。</p>
+      <p>以下の登録フォームより会員登録をお願いいたします。</p>
     </div>
   </div>
 
@@ -370,9 +370,9 @@
                   </div>
 
                   <section id="remove" style="display:none">
-                      <div class="link-form style" >
+                      <div class="link-form" >
                           <div class="block-link">
-                              <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                              <a href="javascript:void(0)" class="style-b" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
                           </div>
                       </div>
                   </section>

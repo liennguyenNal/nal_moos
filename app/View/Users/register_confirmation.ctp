@@ -14,8 +14,7 @@
   </div>
   <div class="title-clause">
     <div class="container-fluid">
-      <h4>営業活動は一切ありません。</h4>
-      <p>以下のメールフォームより会員登録をお願いいたします。</p>
+      <h4>登録内容の確認</h4>
     </div>
   </div>
 

@@ -56,7 +56,7 @@
                         <div class="form-w">
                           <div class="block-input-radio">
                             <?php 
-                              echo $this->Form->radio('UserPartner.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false, 'data-placement'=>'right'));
+                              echo $this->Form->radio('UserPartner.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"female", 'required' => false, 'data-placement'=>'right'));
                             ?>
                           </div>
                         </div>
@@ -160,7 +160,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                  <td class="label-text"><label><?php echo __('user.register.address'); ?></label></td>
                   <td>
                     <div class="block-input">
                       <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
@@ -271,7 +271,7 @@
                       <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                       <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40',  'div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'00'))
                       ?>
-                      <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+                      <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
                     </div>
                   </td>
                 </tr>
@@ -386,17 +386,17 @@
             <section id="relation-area-content">
               
             <section id="remove" style="display:none">
-                <div class="link-form style" >
+                <div class="link-form" >
                     <div class="block-link">
-                        <a href="javascript:void(0)" class="style-link" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));">- 希望エリアを削除</a>
+                        <a href="javascript:void(0)" class="style-b" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));"><?php echo __('user.partner.button.remove'); ?></a>
                     </div>
                 </div>
             </section>
             <?php if($i> 0){?>
             <section>
-              <div class="link-form style" >
+              <div class="link-form" >
                     <div class="block-link">
-                        <a href="javascript:void(0)" class="style-link" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));">- 希望エリアを削除</a>
+                        <a href="javascript:void(0)" class="style-b" id='btn-remove-relation' onclick="javascript:_remove_relation($(this));"><?php echo __('user.partner.button.remove'); ?></a>
                     </div>
                 </div>
             </section>
@@ -441,7 +441,7 @@
                           <div class="form-w">
                             <div class="block-input-radio">
                               <?php 
-                                echo $this->Form->radio("UserRelation.$i.gender", array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'required'=>false));
+                                echo $this->Form->radio("UserRelation.$i.gender", array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"female", 'data-placement'=>'right', 'required'=>false));
                               ?>
                             </div>
                           </div>
@@ -536,7 +536,7 @@
 
             <div class="link-form style">
               <div class="block-link">
-                <a href="javascript:void(0)" class="style-link" id='btn-add-relation'>+ 希望エリアを追加</a>
+                <a href="javascript:void(0)" class="style-link" id='btn-add-relation'><?php echo __('user.partner.button.add') ?></a>
               </div>
             </div>
           <!-- END RELATIONSHIP -->
@@ -695,7 +695,7 @@
       'data[UserPartner][company_phone]': {
         number: true,
         maxlength: 11,
-        minlength: 11,
+        minlength: 10,
         phone_number: "^0[0-9]"
       },
       'data[UserPartner][company_fax]': {
@@ -744,8 +744,8 @@
         max: "<?php echo __('global.errors.salary_date.max') ?>"
       },
       'data[UserPartner][company_phone]': {
-        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
-        minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+        maxlength: "<?php echo __('global.errors.company.phone'); ?>",
+        minlength: "<?php echo __('global.errors.company.phone'); ?>"
       },
       'data[UserPartner][company_fax]': {
         maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",

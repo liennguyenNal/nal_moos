@@ -415,7 +415,7 @@
 										<span class="w-auto1"><?php echo __('user.register.year'); ?></span>
 										<?php echo $this->Form->input('UserGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
 										?>
-										<span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+										<span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
 									</div>
 								</td>
 							</tr>
@@ -651,7 +651,7 @@
         'data[UserGuarantor][company_phone]': {
         	number: true,
         	maxlength: 11,
-        	minlength: 11,
+        	minlength: 10,
         	phone_number: "^0[0-9]"
         },
         'data[UserGuarantor][company_fax]': {
@@ -706,8 +706,8 @@
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
     	'data[UserGuarantor][company_phone]': {
-    		maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
-    		minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+    		maxlength: "<?php echo __('global.errors.company.phone'); ?>",
+    		minlength: "<?php echo __('global.errors.company.phone'); ?>"
     	},
     	'data[UserGuarantor][company_fax]': {
     		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",

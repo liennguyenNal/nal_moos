@@ -1,7 +1,7 @@
 <div class="menu-sup-page">
 	<div class="container-fluid">
 		<ul>
-			<li><a href="#">トップページ</a></li>
+			<li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
 			<li><span>家賃でもらえる家とは</span></li>
 		</ul>
 	</div>

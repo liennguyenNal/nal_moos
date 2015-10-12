@@ -45,7 +45,7 @@ msgid "user.register.married"
 msgstr "婚姻"
 
 msgid "user.register.address"
-msgstr "現住所"
+msgstr "所在地"
 
 msgid "user.register.post"
 msgstr "〒"
@@ -223,7 +223,7 @@ msgid "login.errors.invalid"
 msgstr "IDとパスワードが一致しませんでした。</br>またはまだアカウント承認されていない可能性あります。 </br>ご確認の上、再度ご登録いただいた情報を入力してください。"
 
 msgid "user.my_page.basic_info.family"	
-msgstr "家族との居住状況"
+msgstr "同居"
 
 msgid "user.my_page.basic_info.have_family"	
 msgstr "同居"
@@ -337,10 +337,10 @@ msgid "global.errors.number"
 msgstr "数字をご入力ください。"
 
 msgid "global.errors.minlength_3"	
-msgstr "３桁以下にご入力ください。"
+msgstr "3桁でご入力ください。"
 
 msgid "global.errors.minlength_4"	
-msgstr "４桁以下にご入力ください。"
+msgstr "4桁でご入力ください。"
 
 msgid "global.errors.maxlength_2"	
 msgstr "2桁以下にご入力ください。"
@@ -451,9 +451,6 @@ msgstr "検索"
 msgid "user.partner.phone"	
 msgstr "携帯電話番号"
 
-msgid "user.partner.company"	
-msgstr "会社名・屋号"
-
 msgid "user.partner.name"	
 msgstr "同居人氏名"
 
@@ -461,7 +458,7 @@ msgid "user.partner.info"
 msgstr "会社名・学校"
 
 msgid "user.partner.company"	
-msgstr "会社名・学校"
+msgstr "会社名"
 
 msgid "user.dashboard.user.basic_info"
 msgstr "申込人 基本情報"
@@ -616,11 +613,11 @@ msgstr "未完成"
 msgid "user.register.company"	
 msgstr "会社名"
 
-msgid "global.errors.minlength_3"	
-msgstr "３桁以下にご入力ください。"
+msgid "global.errors.maxlength_3"	
+msgstr "3桁でご入力ください。"
 
-msgid "global.errors.minlength_4"	
-msgstr "４桁以下にご入力ください。"
+msgid "global.errors.maxlength_4"	
+msgstr "4桁でご入力ください。"
 
 msgid "admin.user.search"
 msgstr "検索"
@@ -707,7 +704,7 @@ msgid "user.email_change_password.message_successful"
 msgstr "ご登録頂いたメールアドレスに、パスワード設定用野’リンクを送信しました。メールに記載されたリンクをクリックし、パスワードを設定してください。"
 
 msgid "global.errors.maxlength_10"	
-msgstr "10桁以下にご入力ください。"
+msgstr "10桁でご入力ください。"
 
 msgid "global.errors.firstname"	
 msgstr "必須項目です。</br>全角で入力してください。"
@@ -767,7 +764,7 @@ msgid "global.errors.salary_year"
 msgstr "必須項目です。</br>半角数字で入力してください。"
 
 msgid "global.errors.maxlength_11"	
-msgstr "11桁以下にご入力ください。"
+msgstr "11桁でご入力ください。"
 
 msgid "global.errors.contact_type"	
 msgstr "必須項目です。</br>選択してください。"
@@ -875,7 +872,7 @@ msgid "user.guarantor.address"
 msgstr "所在地"
 
 msgid "global.mypage.update.successful"
-msgstr "審査申込を成功しました。"
+msgstr "審査申込を完了しました。"
 
 msgid "global.errors.salary_date.min"
 msgstr "1より大きいな数字をご入力ください。"
@@ -884,10 +881,10 @@ msgid "global.errors.salary_date.max"
 msgstr "30より小さいな数字をご入力ください。"
 
 msgid "global.errors.minlength_11"	
-msgstr "11桁以下にご入力ください。"
+msgstr "11桁でご入力ください。"
 
 msgid "global.errors.minlength_10"	
-msgstr "10桁以下にご入力ください。"
+msgstr "10桁でご入力ください。"
 
 msgid "user.register.area.street"
 msgstr "地域"
@@ -904,13 +901,26 @@ msgstr "必須項目です。</br>全角カタカナで入力してください�
 msgid "global.errors.landing-page.lastnamekana"
 msgstr "必須項目です。</br>全角カタカナで入力してください。"
 
+msgid "global.errors.landing-page.address"
+msgstr "必須項目です。"
 
+msgid "global.errors.landing-page.mobiphone"
+msgstr "必須項目です。(自宅が入力されている場合は表示しない)</br>半角数字で入力してください。</br>11桁で入力してください"
 
+msgid "global.errors.landing-page.homephone"
+msgstr "必須項目です。(携帯電話が入力されている場合は表示しない)</br>半角数字で入力してください。</br>10桁で入力してください"
 
+msgid "global.errors.month_worked"	
+msgstr "必須項目です。</br>半角数字で入力してください。"
 
+msgid "user.partner.button.add"	
+msgstr "+ 同居人を追加"
 
+msgid "user.partner.button.remove"	
+msgstr "- 同居人を削除する"
 
-
+msgid "global.errors.company.phone"	
+msgstr "10桁もしくは11桁でご入力ください。"
 
 
 
