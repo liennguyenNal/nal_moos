@@ -82,17 +82,20 @@
 	                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.day'); ?>
-	                      &nbsp;&nbsp;<span id="og-age">0</span>&nbsp;<?php echo __('user.register.age'); ?>
-	                    
-	                    	 <script type="text/javascript">
-		                    var d = new Date();
-		                      var n = d.getFullYear();
-		                      $("#og-age").html(n - $("#og−year").val());
-		                    function g_calculate_age1(){
-		                      
-		                      $("#og-age").html(n - $("#og−year").val());
-		                    }
+	                		<span class="style" id="og-age">0</span>
+		                     <span class="style"><?php echo __('user.register.age'); ?></span>
+		                            <!-- Script tinh tuoi -->
+		                    <script type="text/javascript">
+		                        var d = new Date();
+		                        var n = d.getFullYear();
+		                        if ($("#og−year").val() == "") {
+		                          $("#og-age").html("00");
+		                        } else {
+		                          $("#og-age").html(n - $("#og−year").val());
+		                        }
+		                        
 		                    </script>
+	                      
 	                    </div>
 	                  </div>
 	                </td>

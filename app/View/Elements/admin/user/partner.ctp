@@ -82,13 +82,20 @@
                       echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required' => false));
                     ?>
                     <?php echo __('user.register.day'); ?>
-                      &nbsp;&nbsp; <span id="p-age">0</span> &nbsp;歳 
+                    <span class="style" id="p-age">0</span>
+                     <span class="style"><?php echo __('user.register.age'); ?></span>
+                            <!-- Script tinh tuoi -->
                     <script type="text/javascript">
-                    var d = new Date();
-                      var n = d.getFullYear();
-                      $("#p-age").html(n - $("#p-year").val());
-                    
+                        var d = new Date();
+                        var n = d.getFullYear();
+                        if ($("#p-year").val() == "") {
+                          $("#p-age").html("00");
+                        } else {
+                          $("#p-age").html(n - $("#p-year").val());
+                        }
+                        
                     </script>
+                    
                     </div>
                   </div>
                 </td>

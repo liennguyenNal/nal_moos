@@ -82,14 +82,20 @@
 	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.day'); ?>
-	                     	&nbsp;&nbsp;<span id="g-age-1">0</span>&nbsp; <?php echo __('user.register.age'); ?>
-	                    
-	                    	 <script type="text/javascript">
-		                    var d = new Date();
-		                    var n = d.getFullYear();
-		                    $("#g-age-1").html(n - $("#g1−year").val());
-		                   
+	                		<span class="style" id="g-age-1">0</span>
+		                     <span class="style"><?php echo __('user.register.age'); ?></span>
+		                            <!-- Script tinh tuoi -->
+		                    <script type="text/javascript">
+		                        var d = new Date();
+		                        var n = d.getFullYear();
+		                        if ($("#g1−year").val() == "") {
+		                          $("#g-age-1").html("00");
+		                        } else {
+		                          $("#g-age-1").html(n - $("#g1−year").val());
+		                        }
+		                        
 		                    </script>
+	                     	
 	                    </div>
 	                  </div>
 	                </td>

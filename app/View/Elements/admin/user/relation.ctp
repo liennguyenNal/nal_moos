@@ -55,30 +55,32 @@ for($i =0; $i< $len; $i++){?>
 	               
 	                <div class="col-lg-10">
 	                  
-	                  <?php echo __('user.register.year'); ?>
+	                  
 	                  <?php 
 	                  $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>', 'onchange'=>'calculate_relation_age($(this))'));
-	                ?>
-	                <?php echo __('user.register.month'); ?>
+	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>'));
+	                ?><?php echo __('user.register.year'); ?>
+	                
 	                <?php 
 	                  $months = array_combine(range(1, 12), range(1, 12));
 	                  echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
-	                ?>
-	                <?php echo __('user.register.day'); ?>
+	                ?><?php echo __('user.register.month'); ?>
+	               
 	                <?php 
 	                $dates = array_combine(range(1, 31), range(1, 31));
 	                  echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
-	                ?>
+	                ?> <?php echo __('user.register.day'); ?>
 	                    <span id="p-age-<?php echo $i?>">0</span><?php echo __('user.register.age'); ?>
 	                <script type="text/javascript">
 	                var d = new Date();
 	                  var n = d.getFullYear();
+	                  if($("#p-year-<?php echo $i?>").val() == ""){
+	                  	$("#p-age-<?php echo $i?>").html("00");
+	                  }
+	                  else{
 	                 $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
-	                function calculate_relation_age(obj){
-	                	var age = n - obj.val();
-	                	obj.parent().parent().find('span').html(age);
-	                }
+	             }
+	                
 	                </script>
 	                </div>
 	              </div>

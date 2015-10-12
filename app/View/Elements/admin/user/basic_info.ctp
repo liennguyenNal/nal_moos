@@ -83,13 +83,20 @@
                   		echo $this->Form->select('User.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day','required'=>false));
                 		?>
                      <?php echo __('user.register.day'); ?>
-                      &nbsp;&nbsp;&nbsp;<span id="age">0</span> <?php echo __('user.register.age'); ?>
+                     <span class="style" id="age">0</span>
+                     <span class="style"><?php echo __('user.register.age'); ?></span>
+                            <!-- Script tinh tuoi -->
                     <script type="text/javascript">
-                    var d = new Date();
-                      var n = d.getFullYear();
-                      $("#age").html(n - $("#year").val());
-                    
+                        var d = new Date();
+                        var n = d.getFullYear();
+                        if ($("#year").val() == "") {
+                          $("#age").html("00");
+                        } else {
+                          $("#age").html(n - $("#year").val());
+                        }
+                        
                     </script>
+                      
                     </div>
                   </div>
                 </td>
