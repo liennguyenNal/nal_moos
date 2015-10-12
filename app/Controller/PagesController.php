@@ -116,14 +116,33 @@ class PagesController extends AppController {
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
       if( $this->data ){
+      	//delete session before submit form register on LP
+      	$this->Session->delete('User');
         $this->User->set( $this->data );
-        $this->UserAddress->set( $this->data );
-        $this->UserCompany->set( $this->data );
+        //$this->UserAddress->set( $this->data );
+        //$this->UserCompany->set( $this->data );
         if( $this->User->validates() ){
-          $this->Session->write( 'user_register', $this->data );
-          $this->redirect( "register_successful" );
+        	//print_r( $this->data); die;
+          	//$this->Session->write( 'user_register', $this->data );
+          	if($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
+          		$user = $this->data;
+          		$user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
+                $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
+	          	if($this->User->save($user, false)){
+	          		$user_id = $this->User->getLastInsertId();
+	          		foreach($this->data['ExpectArea'] as $item){
+	          			$item['user_id'] = $user_id;
+	          			$this->ExpectArea->create();
+	          			$this->ExpectArea->save($item, false);
+	          		}
+	          		$this->redirect( "register_successful" );
+
+	      		}
+	      	}
         }
         else {
+        	$this->set('user', $this->data);
+        	//print_r( $this->data); die;
           $this->Session->setFlash(__('global.errors.landing-page.email.unique'), 'default');
         }
       }

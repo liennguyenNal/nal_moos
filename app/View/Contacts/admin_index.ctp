@@ -115,7 +115,7 @@
             <tr>
               <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
 
-              <th>番号</th>
+              <th>採番</th>
               <th>問合せ日</th>
               <th>名前</th>
               <th>会社名</th>
@@ -140,7 +140,7 @@
             
 
               
-              <td><?php echo $i;?></td>
+              <td><?php echo $contact['Contact']['code'];?></td>
               <td><?php echo $contact['Contact']['created'] ?></td>
               <td><?php echo $contact['Contact']['first_name'].' '.$contact['Contact']['last_name']?></td>
               <td><?php echo $contact['Contact']['company'] ?></td>

@@ -45,13 +45,13 @@
                             <div class="block-input">
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"例）山田",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                                <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"例）山田",'div'=>false, 'data-placement' => 'right', 'required'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="太郎"> -->
-                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"太郎",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                                <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>"太郎",'div'=>false, 'data-placement' => 'right', 'required'=>false))
                                 ?>
                               </div>
                             </div>
@@ -59,13 +59,13 @@
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="ヤマダ"> -->
-                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>"ヤマダ",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                                <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>"ヤマダ",'div'=>false, 'data-placement' => 'right', 'required'=>false))
                                 ?>
                               </div>
                               <div class="div-style">
                                 <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
                                 <!-- <input class="w198" type="text" name="" value="" placeholder="タロウ"> -->
-                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>"タロウ",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                                <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>"タロウ",'div'=>false, 'data-placement' => 'right', 'required'=>false))
                                 ?>
                               </div>
                             </div>
@@ -78,7 +78,7 @@
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <?php 
-                                    echo $this->Form->radio('gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
+                                    echo $this->Form->radio('User.gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
                                   ?>
                                 </div>
                               </div>
@@ -91,17 +91,17 @@
                             <div class="select">
                               <?php 
                                 $years = array_combine(range(1900, date("Y")), range(1900, date("Y")));
-                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right', 'required'=>false, 'empty'=>'----'));
+                                echo $this->Form->select('User.year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right', 'required'=>false, 'empty'=>'----'));
                               ?>
                               <span><?php echo __('user.register.year'); ?></span>
                               <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
-                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
+                                echo $this->Form->select('User.month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
                               ?>
                               <span><?php echo __('user.register.month'); ?></span>
                               <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
-                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
+                                echo $this->Form->select('User.day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
                               ?>
                               <span><?php echo __('user.register.day'); ?></span>
                               <!-- <span class="style">（00歳）</span> -->
@@ -162,7 +162,7 @@
                               <div class="form-w">
                                 <div class="block-input-radio">
                                   <?php 
-                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'default'=>1, 'required'=>false));
+                                    echo $this->Form->radio('User.married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'default'=>1, 'required'=>false));
                                   ?> 
                                 </div>
                               </div>
@@ -723,7 +723,7 @@
       $('#phone').valid(); 
     });
 
-    if($("#section-flash-msg").html() != ""){
+    if($("#section-flash-msg").html().trim() != ""){
       //alert(123);
       $('html, body').animate({
                         scrollTop: $("#section-flash-msg").offset().top

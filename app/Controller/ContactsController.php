@@ -25,7 +25,15 @@ class ContactsController extends AppController {
 
                $contact = $this->data;
                if($this->Contact->save( $contact, false) ) {
+                $contact_id = $this->Contact->getLastInsertId();
                 $contact['Contact']['id'] = $this->Contact->getLastInsertId();
+                
+                if($contact_id < 10) $contact_id = "00". $contact_id;
+                else if($contact_id < 100) $contact_id = "0". $contact_id;
+
+                $contact['Contact']['code'] = date("Ymd"). "-" . $contact_id;
+                $this->Contact->create();
+                $this->Contact->save( $contact, false);
                 	/**
                    * EMAIL REJECT USER REGISTRATION
                    */
