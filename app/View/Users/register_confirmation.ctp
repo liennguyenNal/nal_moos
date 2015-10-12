@@ -95,7 +95,31 @@
                               <?php echo $this->Form->input('age_of_birth', array('type'=>'hidden', 'id'=>"age", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false, "value"=>$user['User']['age_of_birth']))
                               ?>
                               <script>
-                              $('#s-age').html($('#age').val());
+                              var age = "";
+                              if($("#year").val() && $("#month").val() && $("#day").val()){
+                                    age = calculateAge();
+
+                                  }
+                              $('#s-age').html(age);
+                              function calculateAge(birthMonth, birthDay, birthYear)
+                                {
+                                  todayDate = new Date();
+                                  todayYear = todayDate.getFullYear();
+                                  todayMonth = todayDate.getMonth();
+                                  todayDay = todayDate.getDate();
+                                  age = todayYear - birthYear; 
+
+                                  if (todayMonth < birthMonth - 1)
+                                  {
+                                    age--;
+                                  }
+
+                                  if (birthMonth - 1 == todayMonth && todayDay < birthDay)
+                                  {
+                                    age--;
+                                  }
+                                  return age;
+                                }
                               </script>
                               <span class="style">歳</span>
                             </div>
@@ -231,7 +255,7 @@
                     <span>※最大5エリアまで／※選択条件によりご希望に添えない場合がございます。</span>
                   </div>
                   <section id="expect-area">
-                  <?php $i = 0; foreach ($user['ExpectArea'] as $item) { $i++;?>
+                  <?php $i = 0; foreach ($user['ExpectArea'] as $item) { ?>
                   <div class="content-from-how" id='expect-area-content'>
                     <table class="from">
                       <tbody>
@@ -240,10 +264,10 @@
                           <td>
                             <div class="block-input">
                               <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                              <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', "placeholder"=>'','div'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40', "placeholder"=>'','div'=>false, 'value'=>$item['post_num_1']))
                               ?>
                               <span class="w-auto1">-</span>
-                              <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'','div'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'','div'=>false, 'value'=>$item['post_num_2']))
                               ?>
                               <!-- <a href="#" class="style-link">郵便番号から住所を検索</a> -->
                             </div>
@@ -252,20 +276,20 @@
                               <div class="select">
                               <!-- <input class="w198" type="text" name="" value="" placeholder="東京都"> -->
                               <?php 
-                                echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', ));
+                                echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'value'=>$item['pref_id']));
                               ?>
                               </div>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="千代田区神田多町"> -->
-                              <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false, 'value'=>$item['city']))
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.street'); ?></span>
                               <!-- <input class="w198" type="text" name="" value="" placeholder="1〜4丁目、◯◯◯中学校区"> -->
-                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'','div'=>false,  'value'=>$item['address']))
                               ?>
                             </div>
                           </td>
@@ -273,7 +297,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <?php } ?>
+                  <?php $i++; } ?>
                   </section>
   
                 <script type="text/javascript">

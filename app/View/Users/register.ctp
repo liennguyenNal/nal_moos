@@ -26,7 +26,10 @@
         <div class="content">
           <div class="container-fluid">
             <div class="content-from">
+            <section id="section-flash-msg">
               <?php echo $this->element('flash'); ?>
+            </section>
+              
               <div class="block-warning" id="error-section" style="display:none">
                 <?php echo __('global.errors'); ?>
               </div>
@@ -93,26 +96,59 @@
                               <span><?php echo __('user.register.year'); ?></span>
                               <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
-                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--'));
+                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
                               ?>
                               <span><?php echo __('user.register.month'); ?></span>
                               <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
-                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--'));
+                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'required'=>false, 'empty'=>'--', 'onchange'=>'calculate_age()'));
                               ?>
                               <span><?php echo __('user.register.day'); ?></span>
                               <!-- <span class="style">（00歳）</span> -->
-                              <span class="style" id="s-age">0</span>
+                              <span class="style" id="s-age"></span>
                               <?php echo $this->Form->input('age_of_birth', array('type'=>'hidden', 'id'=>"age", 'label'=>false, 'class'=>'w198', "placeholder"=>'00','div'=>false, 'required'=>false))
                               ?>
                               <span class="style"><?php echo __('user.register.age'); ?></span>
                               <!-- Script tinh tuoi -->
                               <script type="text/javascript">
+                              var age = "";
                                 function calculate_age(){
-                                  var d = new Date();
-                                  var n = d.getFullYear();
-                                  $("#s-age").html(n - $("#year").val());
-                                  $("#age").val(n - $("#year").val());
+                                  // var d = new Date();
+                                  // var n = d.getFullYear();
+                                  // $("#s-age").html(n - $("#year").val());
+                                  // $("#age").val(n - $("#year").val());
+                                  if($("#year").val() && $("#month").val() && $("#day").val()){
+                                   
+                                    age = calculateAge($("#year").val(), $("#month").val(), $("#day").val() );
+
+                                  }
+                                  else {
+                                    age = "";
+                                  }
+
+                                  $("#s-age").html(age);
+                                  $("#age").val(age);
+
+                                }
+                                function calculateAge(birthYear, birthMonth, birthDay)
+                                {
+                                  ;
+                                  todayDate = new Date();
+                                  todayYear = todayDate.getFullYear();
+                                  todayMonth = todayDate.getMonth();
+                                  todayDay = todayDate.getDate();
+                                  age = todayYear - birthYear; 
+
+                                  if (todayMonth < birthMonth - 1)
+                                  {
+                                    age--;
+                                  }
+
+                                  if (birthMonth - 1 == todayMonth && todayDay < birthDay)
+                                  {
+                                    age--;
+                                  }
+                                  return age;
                                 }
                               </script>
                               <!-- End script -->
@@ -273,7 +309,20 @@
                     <span>※最大5エリアまで／※選択条件によりご希望に添えない場合がございます。</span>
                   </div>
                   <section id="expect-area">
+                  <?php 
+                    $num_area = 1;
+                    if(sizeof($user['ExpectArea']))$num_area = sizeof($user['ExpectArea']);
+                  ?>
+                  <?php  for($i = 0; $i < $num_area; $i++) { $item = $user['ExpectArea'][$i];?>
+
                   <div class="content-from-how" id='expect-area-content'>
+                  <?php if($i > 0){?>
+                      <div class="link-form style" >
+                          <div class="block-link">
+                              <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                          </div>
+                      </div>
+                  <?php }?>
                     <table class="from">
                       <tbody>
                         <tr>
@@ -281,10 +330,10 @@
                           <td>
                             <div class="block-input">
                               <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>"101",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>"101",'div'=>false, 'data-placement' => 'right', 'required'=>false, "value"=>$item['post_num_1']))
                               ?>
                               <span class="w-auto1">-</span>
-                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>"0000",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>"0000",'div'=>false, 'data-placement' => 'right', 'required'=>false, "value"=>$item['post_num_2']))
                               ?>
                               <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
                             </div>
@@ -292,18 +341,18 @@
                               <span class="w78"><?php echo __('user.register.pref'); ?></span>
                               <div class="select">
                               <?php 
-                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right', 'required'=>false));
+                                echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right', 'required'=>false, "value"=>$item['pref_id']));
                               ?>
                               </div>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.city'); ?></span>
-                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>"千代田区神田多町",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>"千代田区神田多町",'div'=>false, 'data-placement' => 'right', 'required'=>false, "value"=>$item['city']))
                               ?>
                             </div>
                             <div class="block-input">
                               <span class="w78"><?php echo __('user.register.street'); ?></span>
-                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>"1〜4丁目、◯◯◯中学校区",'div'=>false, 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>"1〜4丁目、◯◯◯中学校区",'div'=>false, 'data-placement' => 'right', 'required'=>false, "value"=>$item['address']))
                               ?>
                             </div>
                           </td>
@@ -311,6 +360,7 @@
                       </tbody>
                     </table>
                   </div>
+                  <?php } ?>
                   </section>
 
                   <div class="link-form style">
@@ -401,16 +451,21 @@
 <!-- SCRIPT VALIDATION -->
 <script>
   var num_area = 1;
-  var order_object = 2;
+  var order_object = 1;
 
   function replaceAll(find, replace, str) {
     return str.replace(new RegExp(find, 'g'), replace);
   }
   $('#btn-add').on('click', function() {
     if( num_area < 5 ){
-      var area = $('#expect-area-content').clone(true, true);
-      area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
+      var area = $('#expect-area-content').clone(false, false);
+      
+      area.html(area.html().replace(/\[0\]/g, '['+ order_object + ']' ));
+      area.find("select[id*='pref_id']").val('');
+      area.find("input").val('');
+
       area.prepend($('#remove').clone(true, true).html());
+
       $('#expect-area').append(area);
       $('#form-register').validate();
       $("[id^='post_num_1']").each(function() {
@@ -667,6 +722,13 @@
     $('#home_phone').on('change', function() {
       $('#phone').valid(); 
     });
+
+    if($("#section-flash-msg").html() != ""){
+      //alert(123);
+      $('html, body').animate({
+                        scrollTop: $("#section-flash-msg").offset().top
+                    }, 500);
+    }
   
 </script>
 
