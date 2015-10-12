@@ -52,7 +52,7 @@
 	                
 	                  <div class="col-lg-10">
 	                    <?php 
-	                		echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male",'required'=>false));
+	                		echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=>__('user.register.female')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px; margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male",'required'=>false));
 	              		?>	
 	                  </div>
 	                </div>
@@ -101,7 +101,7 @@
                 
                   <div class="col-lg-10">
                    <?php 
-                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family'), 2=> __('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
+                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family'), 2=> __('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
                   ?>  
                   </div>
                 </div>
@@ -114,7 +114,7 @@
                 
                   <div class="col-lg-10">
                    <?php 
-                    echo $this->Form->radio('User.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
+                    echo $this->Form->radio('User.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1,'required'=>false));
                   ?>  
                   </div>
                 </div>
@@ -260,7 +260,7 @@
 			                
 			                  <div class="col-lg-10">
 			                    <?php 
-			                		echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=> __('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'required'=>false));
+			                		echo $this->Form->radio('User.contact_type', array('1'=>__('user.register.mobiphone'),'2'=> __('user.my_page.basic_info.home_phone'),'3'=>__('user.my_page.basic_info.work_phone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'required'=>false));
 			              		?>	
 			                  </div>
 			                </div>
@@ -406,7 +406,7 @@
                 	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                		echo $this->Form->radio('UserCompany.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'change_type($(this))', 'required'=>false));
+                		echo $this->Form->radio('UserCompany.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'id'=>'salary_type', 'onchange'=>'change_type($(this))', 'required'=>false));
 
                 		echo $this->Form->input('UserCompany.salary_type_other', array('type'=>'text', 'id'=>"salary_type_other", 'label'=>false, 'class'=>'form-control','div'=>false, 'disabled'=>true, 'style'=>'width:200px; display:inline', 'required'=>false))
               		?>	
@@ -418,7 +418,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_receive'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-	                		echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin:20px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
+	                		echo $this->Form->radio('UserCompany.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px;margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
 	                		echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'form-control','div'=>false, 'style'=>'width:200px; display:inline'))
 	              		?>日
                   </div>
