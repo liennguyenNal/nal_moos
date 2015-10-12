@@ -608,7 +608,7 @@ msgid "user.my_page.status.completed"
 msgstr "完了"
 
 msgid "user.my_page.status.un_completed"
-msgstr "未完成"
+msgstr "未完了"
 
 msgid "user.register.company"	
 msgstr "会社名"

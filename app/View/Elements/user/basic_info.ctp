@@ -500,7 +500,7 @@
                           <div class="style-a">
                             <label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'placeholder'=>'25', 'required'=>false, 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
+                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'placeholder'=>'25', 'required'=>false, 'default'=>'3', 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
                             ?>
                             <label for="11"><?php echo __('global.date'); ?></label>
                           </div>

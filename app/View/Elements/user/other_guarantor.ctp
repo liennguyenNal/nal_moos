@@ -472,7 +472,7 @@
 										<div class="form-w">
 											<div class="block-input-radio">
 												<?php 
-							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'data-placement'=>'right', 'id'=>'salary_receive', 'onchange'=>'og_change_type_date($(this))')); 
+							                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array('class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"3", 'data-placement'=>'right', 'id'=>'salary_receive', 'onchange'=>'og_change_type_date($(this))')); 
 							                	?>
 											</div>
 											<script type="text/javascript">
