@@ -862,3 +862,4 @@
   	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </body>
 </html>
+<!-- Tri Nal!>
