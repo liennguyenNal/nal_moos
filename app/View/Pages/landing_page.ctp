@@ -661,27 +661,27 @@
 
 		  $("#lp-register").validate({
 		      rules: {
-		        'data[Page][first_name]': {
+		        'data[User][first_name]': {
 		          required: true,
 		          nospace: true
 		        },
-		        'data[Page][last_name]': {
+		        'data[User][last_name]': {
 		          required: true,
 		          nospace: true
 		        },
-		        'data[Page][first_name_kana]': {
+		        'data[User][first_name_kana]': {
 		          required: true,
 		          nospace: true
 		        },
-		        'data[Page][last_name_kana]': {
+		        'data[User][last_name_kana]': {
 		          required: true,
 		          nospace: true
 		        },
-		        'data[Page][gender]': {required: true},
-		        'data[Page][year_of_birth]': {required: true},
-		        'data[Page][month_of_birth]': {required: true},
-		        'data[Page][day_of_birth]': {required: true},
-		        'data[Page][married_status_id]': {required: true},
+		        'data[User][gender]': {required: true},
+		        'data[User][year_of_birth]': {required: true},
+		        'data[User][month_of_birth]': {required: true},
+		        'data[User][day_of_birth]': {required: true},
+		        'data[User][married_status_id]': {required: true},
 		        'data[UserAddress][post_num_1]': {
 		          required: true,
 		          number: true,
@@ -757,15 +757,15 @@
 		        'data[UserCompany][salary_month]': {required: true}
 		      },
 		      messages: {
-		        'data[Page][first_name]': {required: "<?php echo __('global.errors.firstname'); ?>"},
-		        'data[Page][last_name]': {required: "<?php echo __('global.errors.lastname'); ?>"},
-		        'data[Page][first_name_kana]': {required: "<?php echo __('global.errors.firstnamekana'); ?>"},
-		        'data[Page][last_name_kana]': {required: "<?php echo __('global.errors.lastnamekana'); ?>"},
-		        'data[Page][gender]': {required: "<?php echo __('global.errors.gender'); ?>"},
-		        'data[Page][year_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
-		        'data[Page][month_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
-		        'data[Page][day_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
-		        'data[Page][married_status_id]': {required: "<?php echo __('global.errors.gender'); ?>"},
+		        'data[User][first_name]': {required: "<?php echo __('global.errors.firstname'); ?>"},
+		        'data[User][last_name]': {required: "<?php echo __('global.errors.lastname'); ?>"},
+		        'data[User][first_name_kana]': {required: "<?php echo __('global.errors.firstnamekana'); ?>"},
+		        'data[User][last_name_kana]': {required: "<?php echo __('global.errors.lastnamekana'); ?>"},
+		        'data[User][gender]': {required: "<?php echo __('global.errors.gender'); ?>"},
+		        'data[User][year_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[User][month_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[User][day_of_birth]': {required: "<?php echo __('global.errors.birthday'); ?>"},
+		        'data[User][married_status_id]': {required: "<?php echo __('global.errors.gender'); ?>"},
 		        'data[UserAddress][post_num_1]': {
 		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
