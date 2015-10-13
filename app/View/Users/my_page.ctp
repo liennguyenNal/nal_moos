@@ -128,7 +128,7 @@
     <div class="modal-content">
       <div class="modal-header modal-header-info">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Warning</h4>
+        <h4 class="modal-title">&nbsp;</h4> 
       </div>
       <div class="modal-body">
         <p id="msg">変更内容はまだ保存されておりません。</br>
@@ -138,7 +138,7 @@
 押してください。</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>
       </div>
     </div>
 
