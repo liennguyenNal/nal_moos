@@ -280,9 +280,7 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-
-				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>1));
-
+				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>'1'));
 				                                  ?> 
 				                                </div>
 				                              </div>
@@ -793,9 +791,9 @@
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
-		        'data[ExpectArea][1][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
-		        'data[ExpectArea][1][city]': {required: "<?php echo __('global.errors.city'); ?>"},
-		        'data[ExpectArea][1][address]': {required: "<?php echo __('global.errors.address'); ?>"},
+		        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+		        'data[ExpectArea][0][city]': {required: "<?php echo __('global.errors.city'); ?>"},
+		        'data[ExpectArea][0][address]': {required: "<?php echo __('global.errors.address'); ?>"},
 		        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}
 		      },
 		      invalidHandler: function(event, validator) {
