@@ -738,20 +738,20 @@
 		          required: true,
 		          number: true
 		        },
-		        'data[ExpectArea][1][post_num_1]': {
+		        'data[ExpectArea][0][post_num_1]': {
 		          required: true,
 		          number: true,
 		          minlength: 3,
 		          maxlength: 3
 		        },
-		        'data[ExpectArea][1][post_num_2]': {
+		        'data[ExpectArea][0][post_num_2]': {
 		          required: true,
 		          number: true,
 		          minlength: 4,
 		          maxlength: 4
 		        },
-		        'data[ExpectArea][1][pref_id]': {required: true},
-		        'data[ExpectArea][1][city]': {required: true},
+		        'data[ExpectArea][0][pref_id]': {required: true},
+		        'data[ExpectArea][0][city]': {required: true},
 		        //'data[ExpectArea][1][address]': {required: true},
 		        'data[User][agree]': {required: true},
 		        'data[UserCompany][salary_month]': {required: true}
