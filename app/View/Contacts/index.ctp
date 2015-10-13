@@ -183,6 +183,7 @@
         },
         number: true,
         maxlength: 11,
+        minlength: 11,
         phone_number: "^0[0-9]"
       },
       'data[Contact][home_phone]': {
@@ -208,8 +209,9 @@
       'data[Contact][type]': { required: "<?php echo __('global.errors.contact_type'); ?>" },
       'data[Contact][phone]': { 
         required: "<?php echo __('global.errors.contact.phone'); ?>",
-        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
-         },
+        maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
+        minlength: "<?php echo __('global.errors.minlength_11'); ?>"
+      },
       'data[Contact][home_phone]': { 
         required: "<?php echo __('global.errors.required'); ?>",
         maxlength: "<?php echo __('global.errors.maxlength_10'); ?>"

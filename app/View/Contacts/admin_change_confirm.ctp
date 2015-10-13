@@ -48,7 +48,7 @@
                   <label for="title" class="col-lg-2 control-label"><?php echo __('user.contact.type-company'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->radio('type', array("1" => "一殷のお客様","2"=> "メディア関係","3"=> "建設会社", "4"=> "その他"), array( 'class'=>'radio','style'=>'display:inline; padding:10px, padding-left:100px;margin:10px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
+                    echo $this->Form->radio('type', array("1" => "一般のお客様","2"=> "メディア関係","3"=> "建設会社", "4"=> "その他"), array( 'class'=>'radio','style'=>'display:inline; padding:10px, padding-left:100px;margin:10px', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1"));
                   ?>  
                   </div>
                 </div>

@@ -231,12 +231,12 @@
 				                              <span><?php echo __('user.register.year'); ?></span>
 				                              <?php 
 				                                $months = array_combine(range(1, 12), range(1, 12));
-				                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right'));
+				                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'onchange'=>'calculate_age()'));
 				                              ?>
 				                              <span><?php echo __('user.register.month'); ?></span>
 				                              <?php 
 				                                $dates = array_combine(range(1, 31), range(1, 31));
-				                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right'));
+				                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'onchange'=>'calculate_age()'));
 				                              ?>
 				                              <span><?php echo __('user.register.day'); ?></span>
 				                              <!-- <span class="style">（00歳）</span> -->
@@ -246,13 +246,29 @@
 				                              <span class="style"><?php echo __('user.register.age'); ?></span>
 				                              <!-- Script tinh tuoi -->
 				                              <script type="text/javascript">
+				                                // function calculate_age(){
+				                                //   var d = new Date();
+				                                //   var n = d.getFullYear();
+				                                //   $("#s-age").html(n - $("#year").val());
+				                                //   $("#age").val(n - $("#year").val());
+				                                // }
 				                                function calculate_age(){
-				                                  var d = new Date();
-				                                  var n = d.getFullYear();
-				                                  $("#s-age").html(n - $("#year").val());
-				                                  $("#age").val(n - $("#year").val());
+				                                  
+				                                  if($("#year").val() && $("#month").val() && $("#day").val()){
+				                                   
+				                                    age = calculateAge($("#year").val(), $("#month").val(), $("#day").val() );
+
+				                                  }
+				                                  else {
+				                                    age = "";
+				                                  }
+
+				                                  $("#s-age").html(age);
+				                                  $("#age").val(age);
+
 				                                }
 				                              </script>
+
 				                              <!-- End script -->
 				                            </div>
 				                          </td>
