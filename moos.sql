@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 4.4.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:8889
--- Generation Time: Oct 02, 2015 at 04:01 AM
--- Server version: 5.5.42
--- PHP Version: 5.6.10
+-- Host: localhost
+-- Generation Time: Oct 09, 2015 at 07:47 AM
+-- Server version: 5.5.41-MariaDB
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `moos`
@@ -21,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `administrator`;
-CREATE TABLE `administrator` (
+CREATE TABLE IF NOT EXISTS `administrator` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
@@ -46,7 +52,7 @@ CREATE TABLE `administrator` (
 --
 
 DROP TABLE IF EXISTS `articles`;
-CREATE TABLE `articles` (
+CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `short_content` text NOT NULL,
@@ -70,7 +76,7 @@ CREATE TABLE `articles` (
 --
 
 DROP TABLE IF EXISTS `attachment_types`;
-CREATE TABLE `attachment_types` (
+CREATE TABLE IF NOT EXISTS `attachment_types` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci,
@@ -84,7 +90,7 @@ CREATE TABLE `attachment_types` (
 --
 
 DROP TABLE IF EXISTS `careers`;
-CREATE TABLE `careers` (
+CREATE TABLE IF NOT EXISTS `careers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
@@ -97,7 +103,7 @@ CREATE TABLE `careers` (
 --
 
 DROP TABLE IF EXISTS `cities`;
-CREATE TABLE `cities` (
+CREATE TABLE IF NOT EXISTS `cities` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
@@ -110,7 +116,7 @@ CREATE TABLE `cities` (
 --
 
 DROP TABLE IF EXISTS `contacts`;
-CREATE TABLE `contacts` (
+CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
@@ -135,7 +141,7 @@ CREATE TABLE `contacts` (
 --
 
 DROP TABLE IF EXISTS `expect_areas`;
-CREATE TABLE `expect_areas` (
+CREATE TABLE IF NOT EXISTS `expect_areas` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `post_num_1` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -149,11 +155,43 @@ CREATE TABLE `expect_areas` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `guarantor_work_requireds`
+--
+
+DROP TABLE IF EXISTS `guarantor_work_requireds`;
+CREATE TABLE IF NOT EXISTS `guarantor_work_requireds` (
+  `id` int(11) NOT NULL,
+  `work_id` int(11) NOT NULL,
+  `company` tinyint(1) NOT NULL DEFAULT '0',
+  `company_kana` int(11) NOT NULL DEFAULT '0',
+  `company_post_num_1` tinyint(1) NOT NULL DEFAULT '0',
+  `company_post_num_2` tinyint(1) NOT NULL DEFAULT '0',
+  `company_pref_id` tinyint(1) NOT NULL DEFAULT '0',
+  `company_city` tinyint(1) NOT NULL DEFAULT '0',
+  `company_address` tinyint(1) NOT NULL DEFAULT '0',
+  `company_phone` tinyint(1) NOT NULL DEFAULT '0',
+  `company_fax` tinyint(1) NOT NULL DEFAULT '0',
+  `career_id` tinyint(1) NOT NULL DEFAULT '0',
+  `company_position` tinyint(1) NOT NULL DEFAULT '0',
+  `company_department` tinyint(1) NOT NULL DEFAULT '0',
+  `company_job_desc` tinyint(1) NOT NULL DEFAULT '0',
+  `month_worked` int(11) NOT NULL DEFAULT '0',
+  `year_worked` int(11) NOT NULL DEFAULT '0',
+  `income_month` int(11) NOT NULL DEFAULT '0',
+  `income_year` int(11) NOT NULL DEFAULT '0',
+  `salary_receive_id` tinyint(1) NOT NULL DEFAULT '0',
+  `salary_type` int(11) NOT NULL DEFAULT '0',
+  `insurance_id` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `insurances`
 --
 
 DROP TABLE IF EXISTS `insurances`;
-CREATE TABLE `insurances` (
+CREATE TABLE IF NOT EXISTS `insurances` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text
@@ -166,7 +204,7 @@ CREATE TABLE `insurances` (
 --
 
 DROP TABLE IF EXISTS `married_statuses`;
-CREATE TABLE `married_statuses` (
+CREATE TABLE IF NOT EXISTS `married_statuses` (
   `id` int(11) NOT NULL,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci
@@ -179,7 +217,7 @@ CREATE TABLE `married_statuses` (
 --
 
 DROP TABLE IF EXISTS `prefs`;
-CREATE TABLE `prefs` (
+CREATE TABLE IF NOT EXISTS `prefs` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL COMMENT '都道府県名'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -191,7 +229,7 @@ CREATE TABLE `prefs` (
 --
 
 DROP TABLE IF EXISTS `residences`;
-CREATE TABLE `residences` (
+CREATE TABLE IF NOT EXISTS `residences` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci
@@ -204,9 +242,10 @@ CREATE TABLE `residences` (
 --
 
 DROP TABLE IF EXISTS `statuses`;
-CREATE TABLE `statuses` (
+CREATE TABLE IF NOT EXISTS `statuses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `admin_status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -217,7 +256,7 @@ CREATE TABLE `statuses` (
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -232,7 +271,7 @@ CREATE TABLE `users` (
   `married_status_id` int(11) NOT NULL,
   `live_with_family` int(11) NOT NULL DEFAULT '0',
   `num_child` int(11) NOT NULL DEFAULT '0',
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `home_phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `contact_type` int(11) DEFAULT NULL,
@@ -255,7 +294,8 @@ CREATE TABLE `users` (
   `approved_register_date` datetime DEFAULT NULL,
   `approved_date` datetime DEFAULT NULL,
   `payment_date` datetime DEFAULT NULL,
-  `max_payment` int(11) DEFAULT NULL
+  `max_payment` int(11) DEFAULT NULL,
+  `is_deleted` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -265,7 +305,7 @@ CREATE TABLE `users` (
 --
 
 DROP TABLE IF EXISTS `user_addresses`;
-CREATE TABLE `user_addresses` (
+CREATE TABLE IF NOT EXISTS `user_addresses` (
   `id` int(11) NOT NULL,
   `residence_id` int(11) DEFAULT NULL,
   `housing_costs` int(11) DEFAULT NULL,
@@ -274,7 +314,7 @@ CREATE TABLE `user_addresses` (
   `post_num_1` int(11) DEFAULT NULL,
   `post_num_2` varchar(20) DEFAULT NULL,
   `pref_id` varchar(255) DEFAULT NULL,
-  `city` varchar(11) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `address_kana` varchar(255) DEFAULT NULL,
   `house_name` varchar(255) DEFAULT NULL,
@@ -288,7 +328,7 @@ CREATE TABLE `user_addresses` (
 --
 
 DROP TABLE IF EXISTS `user_attachments`;
-CREATE TABLE `user_attachments` (
+CREATE TABLE IF NOT EXISTS `user_attachments` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `attachment_type_id` int(11) NOT NULL,
@@ -304,12 +344,12 @@ CREATE TABLE `user_attachments` (
 --
 
 DROP TABLE IF EXISTS `user_companies`;
-CREATE TABLE `user_companies` (
+CREATE TABLE IF NOT EXISTS `user_companies` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `name_kana` varchar(255) DEFAULT NULL,
-  `post_num_1` int(20) DEFAULT NULL,
-  `post_num_2` int(11) DEFAULT NULL,
+  `post_num_1` varchar(11) DEFAULT NULL,
+  `post_num_2` varchar(11) DEFAULT NULL,
   `pref_id` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
@@ -341,7 +381,7 @@ CREATE TABLE `user_companies` (
 --
 
 DROP TABLE IF EXISTS `user_guarantors`;
-CREATE TABLE `user_guarantors` (
+CREATE TABLE IF NOT EXISTS `user_guarantors` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -371,8 +411,8 @@ CREATE TABLE `user_guarantors` (
   `work_id` int(11) NOT NULL,
   `company` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_kana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `company_post_num_1` int(11) DEFAULT NULL,
-  `company_post_num_2` int(11) DEFAULT NULL,
+  `company_post_num_1` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `company_post_num_2` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_pref_id` int(11) DEFAULT NULL,
   `company_city` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -404,7 +444,7 @@ CREATE TABLE `user_guarantors` (
 --
 
 DROP TABLE IF EXISTS `user_guardians`;
-CREATE TABLE `user_guardians` (
+CREATE TABLE IF NOT EXISTS `user_guardians` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
@@ -441,7 +481,7 @@ CREATE TABLE `user_guardians` (
 --
 
 DROP TABLE IF EXISTS `user_partners`;
-CREATE TABLE `user_partners` (
+CREATE TABLE IF NOT EXISTS `user_partners` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -456,8 +496,8 @@ CREATE TABLE `user_partners` (
   `work_id` int(11) DEFAULT NULL,
   `company` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_kana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `company_post_num_1` int(11) DEFAULT NULL,
-  `company_post_num_2` int(11) DEFAULT NULL,
+  `company_post_num_1` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `company_post_num_2` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_pref_id` int(11) DEFAULT NULL,
   `company_city` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company_address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -489,7 +529,7 @@ CREATE TABLE `user_partners` (
 --
 
 DROP TABLE IF EXISTS `user_relations`;
-CREATE TABLE `user_relations` (
+CREATE TABLE IF NOT EXISTS `user_relations` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
@@ -515,7 +555,7 @@ CREATE TABLE `user_relations` (
 --
 
 DROP TABLE IF EXISTS `works`;
-CREATE TABLE `works` (
+CREATE TABLE IF NOT EXISTS `works` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci
@@ -528,7 +568,7 @@ CREATE TABLE `works` (
 --
 
 DROP TABLE IF EXISTS `work_requireds`;
-CREATE TABLE `work_requireds` (
+CREATE TABLE IF NOT EXISTS `work_requireds` (
   `id` int(11) NOT NULL,
   `work_id` int(11) NOT NULL,
   `name` tinyint(1) NOT NULL DEFAULT '0',
@@ -560,7 +600,7 @@ CREATE TABLE `work_requireds` (
 --
 
 DROP TABLE IF EXISTS `zipcodes`;
-CREATE TABLE `zipcodes` (
+CREATE TABLE IF NOT EXISTS `zipcodes` (
   `id` int(11) NOT NULL,
   `zipcode` varchar(7) DEFAULT NULL,
   `pref_id` int(11) DEFAULT NULL,
@@ -652,7 +692,8 @@ ALTER TABLE `statuses`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `user_addresses`
@@ -831,9 +872,11 @@ ALTER TABLE `work_requireds`
 ALTER TABLE `zipcodes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+
 -- add is_deleteed field to table users 
 ALTER TABLE `users` ADD `is_deleted` BOOLEAN NULL DEFAULT FALSE AFTER `max_payment`;
 
 ALTER TABLE `contacts` ADD `code` VARCHAR(20) NULL AFTER `id`;
 
 ALTER TABLE `users` CHANGE `live_with_family` `live_with_family` INT(11) NOT NULL DEFAULT '1';
+

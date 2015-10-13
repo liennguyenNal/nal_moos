@@ -280,7 +280,9 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>'1'));
+
+				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>1));
+
 				                                  ?> 
 				                                </div>
 				                              </div>

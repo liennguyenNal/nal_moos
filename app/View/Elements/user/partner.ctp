@@ -252,6 +252,7 @@
                 <tr>
                   <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label><span id="p_company_required_label_6"><?php echo __('global.require'); ?></span></td>
                   <td><?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）営業部 第一営業課'))
+
                   ?>
                   </td>
                 </tr>
@@ -377,6 +378,7 @@
                   var work_id = $("#p_work_id").val();
                   if(work_id){
                     var work = new Array(13, 13);
+<<<<<<< HEAD
                    work[1] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
                     work[2] =  Array(1, 1, 1, 0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1);
                     work[3] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
@@ -386,6 +388,18 @@
                     work[7] =  Array(1, 1, 1, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);               
                     work[8] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
                     work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 1, 1, 0, 1);
+=======
+                 
+                    work[1] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[2] =  Array(1, 1, 1, 0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1);
+                    work[3] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[4] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[5] =  Array(0, 1, 0, 0, 1, 1 , 0, 0, 1, 1, 1, 1, 1, 1);
+                    work[6] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);
+                    work[7] =  Array(1, 1, 1, 0, 1, 1 , 1, 0, 1, 1, 1, 1, 1, 1);               
+                    work[8] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
+                    work[9] =  Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 1, 1, 1, 1, 1);
+>>>>>>> d8fab3cbab80b41185aab8de39949085a3a47ee0
                     work[10] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
                     work[11] = Array(0, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1);
                     for(i=0; i< work[work_id].length; i++){
