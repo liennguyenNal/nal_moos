@@ -724,7 +724,7 @@
       $('#phone').valid(); 
     });
 
-    if($("#section-flash-msg").html() != ""){
+    if($("#section-flash-msg").html().trim() != ""){
       $('html, body').animate({scrollTop: $("#section-flash-msg").offset().top}, 500);
     }
   
