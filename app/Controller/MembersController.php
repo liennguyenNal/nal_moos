@@ -83,7 +83,7 @@ class MembersController extends AppController {
           $this->User->saveField('is_deleted', 1);
           //$this->User->delete($id);
         }
-      $this->Session->setFlash('Selected Customers are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
+      //$this->Session->setFlash('Selected Customers are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect( 'index');
 
@@ -141,7 +141,7 @@ class MembersController extends AppController {
           // }
       	}
       	else {
-      		$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
+      		//$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
       		$this->redirect( 'index' );
       	}
       }
