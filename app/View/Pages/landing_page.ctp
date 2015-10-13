@@ -799,12 +799,12 @@
 		          max: "<?php echo __('global.errors.month.max') ?>"
 		        },
 		        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
-		        'data[ExpectArea][1][post_num_1]': {
+		        'data[ExpectArea][0][post_num_1]': {
 		          required: "<?php echo __('global.errors.post_num_1'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_3'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_3'); ?>"
 		        },
-		        'data[ExpectArea][1][post_num_2]': {
+		        'data[ExpectArea][0][post_num_2]': {
 		          required: "<?php echo __('global.errors.post_num_2'); ?>",
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
