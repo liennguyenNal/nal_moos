@@ -43,7 +43,11 @@ class ContactsController extends AppController {
 
                //$contact = $contact;
                if($this->Contact->save( $contact, false) ) {
+                $code = date("Ymd"). "-".$this->Contact->getLastInsertId();
                 $contact['Contact']['id'] = $this->Contact->getLastInsertId();
+                $contact['Contact']['code'] = $code;
+                $this->Contact->create();
+                $this->Contact->save( $contact, false);
                   /**
                    * EMAIL REJECT USER REGISTRATION
                    */

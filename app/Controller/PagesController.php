@@ -116,6 +116,7 @@ class PagesController extends AppController {
       $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
       if( $this->data ){
+      	$user = $this->data; 
       	//delete session before submit form register on LP
       	$this->Session->delete('User');
         $this->User->set( $this->data );
