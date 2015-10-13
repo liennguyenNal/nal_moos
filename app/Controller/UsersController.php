@@ -374,6 +374,10 @@ class UsersController extends AppController{
         $user['User']['status_id'] = 2;
         $user['User']['approved_register_date'] =  DboSource::expression('NOW()');
 
+        $password = $this->Util->createRandomPassword(10);
+        $access_token  = $this->Util->createRandomPassword(30);
+        $user['User']['access_token'] = $access_token;
+        
         if ($this->User->save($user, false)) {
           /**
            * SEND MAIL TO CUSTOMER
