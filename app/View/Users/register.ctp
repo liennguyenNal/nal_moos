@@ -317,9 +317,9 @@
 
                   <div class="content-from-how" id='expect-area-content'>
                   <?php if($i > 0){?>
-                      <div class="link-form style" >
+                      <div class="link-form" >
                           <div class="block-link">
-                              <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
+                              <a href="javascript:void(0)" class="style-b" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
                           </div>
                       </div>
                   <?php }?>
