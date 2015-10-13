@@ -23,7 +23,6 @@
   	<script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/jquery.autoKana.js"></script>
   	<script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
-  	<script src="<?php echo $this->webroot; ?>js/common.js"></script>
 </head>
 <body>
 	<div id="wrapper">		
@@ -184,24 +183,24 @@
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstname'); ?></span>
-				                                <?php echo $this->Form->input('User.first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name', array('type'=>'text', 'id'=>"first_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'例）家賃','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.lastname'); ?></span>
-				                                <?php echo $this->Form->input('User.last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'太郎','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('last_name', array('type'=>'text', 'id'=>"last_name", 'label'=>false, 'class'=>'w198', "placeholder"=>'太郎','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                            </div>
 				                            <div class="block-input">
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.firstnamekana'); ?></span>
-				                                <?php echo $this->Form->input('User.first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤチン','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('first_name_kana', array('type'=>'text', 'id'=>"first_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'ヤチン','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                              <div class="div-style">
 				                                <span class="w-auto"><?php echo __('user.register.lastnamekana'); ?></span>
-				                                <?php echo $this->Form->input('User.last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'タロウ','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                                <?php echo $this->Form->input('last_name_kana', array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', "placeholder"=>'タロウ','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                                ?>
 				                              </div>
 				                            </div>
@@ -214,7 +213,7 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-				                                    echo $this->Form->radio('User.gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
+				                                    echo $this->Form->radio('gender', array('male'=> __('user.register.male'), 'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>'male', 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
 				                                  ?>
 				                                </div>
 				                              </div>
@@ -227,40 +226,31 @@
 				                            <div class="select">
 				                              <?php 
 				                                $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
-				                                echo $this->Form->select('User.year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
+				                                echo $this->Form->select('year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
 				                              ?>
 				                              <span><?php echo __('user.register.year'); ?></span>
 				                              <?php 
 				                                $months = array_combine(range(1, 12), range(1, 12));
-				                                echo $this->Form->select('User.month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'onchange'=>'calculate_age()'));
+				                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right'));
 				                              ?>
 				                              <span><?php echo __('user.register.month'); ?></span>
 				                              <?php 
 				                                $dates = array_combine(range(1, 31), range(1, 31));
-				                                echo $this->Form->select('User.day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'onchange'=>'calculate_age()'));
+				                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right'));
 				                              ?>
 				                              <span><?php echo __('user.register.day'); ?></span>
 				                              <!-- <span class="style">（00歳）</span> -->
 				                              <span class="style" id="s-age">0</span>
-				                              <?php echo $this->Form->input('User.age_of_birth', array('type'=>'hidden', 'id'=>"age", 'label'=>false, 'class'=>'w198', "placeholder"=>'00','div'=>false, 'required'=>false))
+				                              <?php echo $this->Form->input('age_of_birth', array('type'=>'hidden', 'id'=>"age", 'label'=>false, 'class'=>'w198', "placeholder"=>'00','div'=>false, 'required'=>false))
 				                              ?>
 				                              <span class="style"><?php echo __('user.register.age'); ?></span>
 				                              <!-- Script tinh tuoi -->
 				                              <script type="text/javascript">
 				                                function calculate_age(){
-				                                  
-				                                  if($("#year").val() && $("#month").val() && $("#day").val()){
-				                                   
-				                                    age = calculateAge($("#year").val(), $("#month").val(), $("#day").val() );
-
-				                                  }
-				                                  else {
-				                                    age = "";
-				                                  }
-
-				                                  $("#s-age").html(age);
-				                                  $("#age").val(age);
-
+				                                  var d = new Date();
+				                                  var n = d.getFullYear();
+				                                  $("#s-age").html(n - $("#year").val());
+				                                  $("#age").val(n - $("#year").val());
 				                                }
 				                              </script>
 				                              <!-- End script -->
@@ -274,7 +264,7 @@
 				                              <div class="form-w">
 				                                <div class="block-input-radio">
 				                                  <?php 
-				                                    echo $this->Form->radio('User.married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>'1'));
+				                                    echo $this->Form->radio('married_status_id', $married_statuses, array('label'=>false, 'div'=>false, 'legend'=>false, 'default'=>false, 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false, 'default'=>'1'));
 				                                  ?> 
 				                                </div>
 				                              </div>
@@ -413,21 +403,8 @@
 				                    <h2>ご希望エリア</h2>
 				                    <span>※最大5エリアまで／※選択条件によりご希望に添えない場合がございます。</span>
 				                  </div>
-				                  
 				                  <section id="expect-area">
-				                  <?php 
-				                    $num_area = 1;
-				                    if(sizeof($user['ExpectArea']))$num_area = sizeof($user['ExpectArea']);
-				                  ?>
-				                  <?php  for($i = 0; $i < $num_area; $i++) { $item = $user['ExpectArea'][$i];?>
 				                  <div class="content-from-how" id='expect-area-content'>
-				                  <?php if($i > 0){?>
-				                      <div class="link-form style" >
-				                          <div class="block-link">
-				                              <a href="javascript:void(0)" class="style-link" id='btn-remove' onclick="javascript:_remove($(this));"><?php echo __('user.register.remove'); ?></a>
-				                          </div>
-				                      </div>
-				                  <?php }?>
 				                    <table class="from">
 				                      <tbody>
 				                        <tr>
@@ -435,10 +412,10 @@
 				                          <td>
 				                            <div class="block-input">
 				                              <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
-				                              <?php echo $this->Form->input("ExpectArea.$i.post_num_1", array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>'108','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.post_num_1', array('type'=>'text', 'id'=>"post_num_1",'label'=>false, 'class'=>'w40 post_num_1', "placeholder"=>'108','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1">-</span>
-				                              <?php echo $this->Form->input("ExpectArea.$i.post_num_2", array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0074','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.post_num_2', array('type'=>'text', 'id'=>"post_num_2",  'label'=>false, 'class'=>'w80', "placeholder"=>'0074','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <a href="javascript:void(0)" type="button" class="style-link" id="btn-find-expect-address" onclick="javascript:find_address($(this));"><?php echo __('user.register.findaddress'); ?></a>
 				                            </div>
@@ -446,18 +423,18 @@
 				                              <span class="w78"><?php echo __('user.register.pref'); ?></span>
 				                              <div class="select">
 				                              <?php 
-				                                echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right', 'required'=>false));
+				                                echo $this->Form->select('ExpectArea.1.pref_id', $prefs, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'--------', 'data-placement' => 'right', 'required'=>false));
 				                              ?>
 				                              </div>
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.city'); ?></span>
-				                              <?php echo $this->Form->input("ExpectArea.$i.city", array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'港区高輪','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.city', array('type'=>'text', 'id'=>"city", 'label'=>false, 'class'=>'w198', "placeholder"=>'港区高輪','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.area.street'); ?></span>
-				                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('ExpectArea.1.address', array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                          </td>
@@ -465,7 +442,6 @@
 				                      </tbody>
 				                    </table>
 				                  </div>
-				                  <?php }?>
 				                  </section>
 
 				                  	<div class="link-form style">
@@ -568,9 +544,7 @@
 		  $('#btn-add').on('click', function() {
 		    if( num_area < 5 ){
 		      var area = $('#expect-area-content').clone(true, true);
-		      area.html(area.html().replace(/\[0\]/g, '['+ order_object + ']' ));
-		      area.find("select[id*='pref_id']").val('');
-      			area.find("input").val('');
+		      area.html(area.html().replace(/\[1\]/g, '['+ order_object + ']' ));
 		      area.prepend($('#remove').clone(true, true).html());
 		      $('#expect-area').append(area);
 		      $('#lp-register').validate();
@@ -629,7 +603,7 @@
 		      // });
 		      order_object++;
 		      num_area++;
-		      if(num_area == 5){
+		      if(num_area == 5) {
 		        $('#btn-add').hide();
 		      }
 		    }
@@ -829,9 +803,8 @@
 		      $('#phone').valid(); 
 		    });
 
-		    if($("#section-flash-msg").html().trim()!= ""){
-		    	//alert($("#section-flash-msg").html());
-		     	$("html, body").animate({ scrollTop: $("#section-flash-msg").offset().top }, 2000);
+		    if($("#section-flash-msg").html() != ""){
+		    	$("html, body").animate({ scrollTop: $("#formRegister").offset().top }, "slow");
 		    }
 
 		</script>

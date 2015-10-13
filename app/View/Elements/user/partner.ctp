@@ -146,7 +146,7 @@
                   <td>
                     <div class="block-input">
                       <span class="w78"><?php echo __('user.my_page.basic_info.company_name'); ?></span>
-                      <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'w198',  'div'=>false, 'required' => false, 'data-placement'=>'right', 'placeholder'=>'株式会社ヤチンデモラエル'))
+                      <?php echo $this->Form->input('UserPartner.company', array('type'=>'text', 'id'=>"p-company-name", 'label'=>false, 'class'=>'w198',  'div'=>false, 'required' => false, 'data-placement'=>'right', 'placeholder'=>'例）株式会社ヤチンデモラエル'))
                       ?>
                     </div>
                     <div class="block-input">
@@ -214,7 +214,7 @@
                   <td>
                     <div class="block-input fix-padding">
                       <div class="div-style">
-                        <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'09012345678'))
+                        <?php echo $this->Form->input('UserPartner.company_phone', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）09012345678'))
                         ?>
                         <span class="style">※”-”ハイフンなしで入力してください。</span>
                       </div>
@@ -226,7 +226,7 @@
                   <td>
                     <div class="block-input fix-padding">
                       <div class="div-style">
-                        <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'0312345678'))
+                        <?php echo $this->Form->input('UserPartner.company_fax', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w198','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）0312345678'))
                         ?>
                         <span class="style">※”-”ハイフンなしで入力してください。</span>
                       </div>
@@ -245,20 +245,20 @@
                 <tr>
                   <td class="label-text"><label><?php echo __('user.my_page.basic_info.description'); ?></label><span id="p_company_required_label_5"><?php echo __('global.require'); ?></span></td>
                   <td>
-                  <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
+                  <?php echo $this->Form->input('UserPartner.company_job_desc', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）病院での薬剤師(医療事務)業務、建設会社での営業(設土木作業)業務など'))
                   ?>
                   </td>
                 </tr>
                 <tr>
                   <td class="label-text"><label><?php echo __('user.my_page.basic_info.department'); ?></label><span id="p_company_required_label_6"><?php echo __('global.require'); ?></span></td>
-                  <td><?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'営業部 第一営業課'))
+                  <td><?php echo $this->Form->input('UserPartner.company_department', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）営業部 第一営業課'))
                   ?>
                   </td>
                 </tr>
                 <tr>
                   <td class="label-text"><label><?php echo __('user.my_page.basic_info.position'); ?></label><span id="p_company_required_label_7"><?php echo __('global.require'); ?></span></td>
                   <td>
-                  <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'部長、課長、次長、係長、主任など'))
+                  <?php echo $this->Form->input('UserPartner.company_position', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 input-style','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'例）部長、課長、次長、係長、主任など'))
                   ?>
                   </td>
                 </tr>
@@ -271,7 +271,7 @@
                       <span class="w-auto1"><?php echo __('user.register.year'); ?></span>
                       <?php echo $this->Form->input('UserPartner.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40',  'div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'00'))
                       ?>
-                      <span class="w-auto1"><?php echo __('user.register.month'); ?></span>
+                      <span class="w-auto1"><?php echo __('user.landing-page.month'); ?></span>
                     </div>
                   </td>
                 </tr>

@@ -51,7 +51,7 @@
                           <div class="form-w">
                             <div class="block-input-radio">
                             <?php 
-                                echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
+                                echo $this->Form->radio('User.gender', array('male'=>__('user.register.male'),'female'=> __('user.register.female')), array( 'class'=>'radio', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"female", 'class'=>'fix-pd', 'data-placement' => 'right', 'required'=>false));
                             ?>  
                             </div>
                           </div>
@@ -117,7 +117,7 @@
                           <div class="form-w">
                             <div class="block-input-radio">
                                 <?php 
-                                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family') ,0=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'data-placement' => 'right', 'required'=>false, 'default'=>1));
+                                    echo $this->Form->radio('User.live_with_family', array(1=>__('user.my_page.basic_info.have_family') ,0=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio fix-pd', 'label'=>false, 'div'=>false, 'legend'=>false, 'data-placement' => 'right', 'required'=>false, 'default'=>"1"));
                                 ?> 
                             </div>
                           </div>
