@@ -201,6 +201,7 @@
                     <td>
                       <div class="select">
                         <?php echo $this->Form->select('UserAddress.residence_id', $residences, array('class'=>'w198', 'div'=>false, 'label'=>false, 'id'=>'residence_id', 'data-placement'=>'right', 'empty'=>'--------', 'required'=>false, 'onchange'=>'change_residence()')); 
+
                         ?>
                       </div>
                     </td>
@@ -225,6 +226,17 @@
                       </div>
                     </td>
                   </tr>
+                  <script type="text/javascript">
+                  load_required_label_house_cost();
+                  function load_required_label_house_cost(){                    
+                    if($("#residence_id"). val() == 1 || $("#residence_id"). val() == 2){
+                      $("#house_cost_required").hide();
+                    }
+                    else {
+                      $("#house_cost_required").show();
+                    }
+                  }
+                  </script>
                 </tbody>
               </table>
               

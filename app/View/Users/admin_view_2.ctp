@@ -276,6 +276,7 @@
         'format' => array('before', 'label', 'between', 'input', 'after') ) ) ) ?>
 
         <p style="display:none; color:red" id="return_error_not_choose">パスワード変更は完了しました。</p>
+
       <fieldset>
         <p>差し戻し理由にチェックを入れ、必要に応じてユーザーに送信される差し戻しメール</p>
         <p>に追加する文章を、以下のテキストボックスに入力してください。</p>
