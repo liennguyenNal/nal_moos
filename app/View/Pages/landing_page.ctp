@@ -40,7 +40,7 @@
 					<div class="container-fluid">
 						<div class="content-video">
 							<div class="content-video-how">
-								<iframe width="242" height="140" src="https://www.youtube-nocookie.com/embed/chwADnoFDng" frameborder="0" allowfullscreen></iframe>
+								<iframe width="242" height="140" src="https://www.youtube.com/embed/NA444TnvNfc" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
