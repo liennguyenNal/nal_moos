@@ -125,7 +125,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></span></td>
                       <td>
                         <div class="block-input">
                           <?php echo $this->Form->input('User.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'00'))
