@@ -2,7 +2,7 @@
   <div class="menu-sup-page">
     <div class="container-fluid">
       <ul>
-        <li><a href="#">トップページ</a></li>
+        <li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
         <li><span>無料会員登録</span></li>
       </ul>
     </div>
