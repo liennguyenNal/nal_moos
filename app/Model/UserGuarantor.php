@@ -2,7 +2,7 @@
 
 class UserGuarantor extends AppModel {
     var $name = 'UserGuarantor';
-    //var $belongsTo = array('Pref');
+    var $belongsTo = array('Pref','Residence','Insurance', 'Work','Career','MarriedStatus');
 
     var $validate = array(         
          'first_name' => array(
@@ -35,9 +35,19 @@ class UserGuarantor extends AppModel {
         'work_id' => array(
             'rule'=>'notBlank'
         ),
+        'pref_id' => array(
+            'rule' => 'notBlank',
+        ),
+        'residence_id' => array(
+            'rule' => 'notBlank',
+        ),
         'insurance_id'=>array(
             'rule'=>'notBlank'
         ), 
+        'married_status_id'=>array(
+            'rule'=>'notBlank'
+        ), 
+        
         'phone' => array(
             'rule2'=>array(
                      'rule' => 'validate_phone',

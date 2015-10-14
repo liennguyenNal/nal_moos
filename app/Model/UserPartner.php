@@ -2,7 +2,7 @@
 
 class UserPartner extends AppModel {
     var $name = 'UserPartner';
-    //var $belongsTo = array('Pref');
+    var $belongsTo = array('Work','Career');
 
     var $validate = array(         
          'first_name' => array(
@@ -39,6 +39,9 @@ class UserPartner extends AppModel {
             'rule'=>'notBlank'
         ),
         'phone'=>array(
+            'rule'=>'notBlank'
+        ),
+        'company_pref_id'=>array(
             'rule'=>'notBlank'
         ),
 
