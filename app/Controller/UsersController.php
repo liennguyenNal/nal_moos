@@ -622,7 +622,7 @@ class UsersController extends AppController{
      * @return response
      */
     function login(){
-      $this->layout = null;
+      $this->layout = "successful";
       $this->Session->delete("Administrator");
       if($this->data){
         $email = $this->data['User']['email'];
@@ -665,7 +665,7 @@ class UsersController extends AppController{
      * @return response
      */
     function create_password($email=null, $access_token=null){
-      $this->layout = null;
+      $this->layout = "successful";
       if ($this->data) {
         $email = $this->data['User']['email'];
         $access_token = $this->data['User']['access_token'];
@@ -711,7 +711,7 @@ class UsersController extends AppController{
      * @return response
      */
     function create_password_successful() {
-      $this->layout = null;
+      $this->layout = "successful";
     }
     
 
@@ -720,7 +720,7 @@ class UsersController extends AppController{
      * @return response
      */
     function change_password(){
-      $this->layout = null;
+      $this->layout = "successful";
       $user = $this->Session->read('User');
       if ( $user ){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
@@ -787,7 +787,7 @@ class UsersController extends AppController{
      * @return response
      */
     function change_password_successful() {
-      $this->layout = null;
+      $this->layout = "successful";
       $user = $this->Session->read('User');
       $user['User']['access_token'] = null;
       $this->User->save($user, false);
@@ -810,7 +810,7 @@ class UsersController extends AppController{
      * @return response
      */
     function reset_password() {
-      $this->layout = null;
+      $this->layout = "successful";
       if($this->data['email']){
         $user = $this->User->find('first', array('conditions'=>array('User.email'=>$this->data['email']), 'contain'=>array('id')));
         if($user){
@@ -838,7 +838,7 @@ class UsersController extends AppController{
     }
 
     function reset_password_email() {
-      $this->layout = null;
+      $this->layout = "successful";
     }
 
 
@@ -865,7 +865,7 @@ class UsersController extends AppController{
       if($_GET['token'] and $_GET['email']){
           $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_GET['token']), 'contain'=>array('id')));
         if($user['User']['email'] == $_GET['email']) {
-          $this->layout = null;
+          $this->layout = "successful";
         }
         else{ 
           return $this->redirect("login");
@@ -900,7 +900,7 @@ class UsersController extends AppController{
      * @return response
      */
     function reset_password_successful(){
-      $this->layout = null;
+      $this->layout = "successful";
     }
 
 
