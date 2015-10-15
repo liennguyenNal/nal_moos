@@ -149,7 +149,7 @@
               <legend>申込人住所情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></span></td>
+                <td><label for="inputEmail" >現住所</span></td>
                 <td>
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -290,7 +290,7 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'----', 'required'=>false));
+                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'----', 'required'=>false));
                   ?>
                   </div>
                 </div>
@@ -508,7 +508,7 @@
                 </div>
                 
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.street'); ?></label>
+                  <label for="inputEmail" class="col-lg-2 control-label">地域</label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'value'=>$item['address'], 'required'=>false))?>
                     <?php echo $this->Form->hidden("ExpectArea.$i.id", array('value'=>$item['id']))?>

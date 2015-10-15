@@ -253,7 +253,7 @@
                
                
                 <div class="form-group">
-                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.contact_type'); ?></label>
+                   <label for="inputEmail" class="col-lg-2 control-label">給与形態</label>
                   <div class="col-lg-10">
                     <?php 
                     echo $this->Form->radio('UserPartner.salary_type', array('1'=>__('user.my_page.basic_info.salary_fix'),'2'=>__('user.my_page.basic_info.salary_bonus'), '3'=>__('user.my_page.basic_info.salary_product'), "4"=>__('global.other')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"1", 'onchange'=>'p_change_type($(this))', 'required' => false));

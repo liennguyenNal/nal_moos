@@ -227,7 +227,7 @@
           <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                  
-                  <button type="button" class="btn btn-primary" style="float:right" id="btn-delete"> <?php echo __("admin.user.delete_button")?></button>
+                  <button type="button" class="btn btn-primary" style="float:right; background-color:red; border:none;" id="btn-delete"> <?php echo __("admin.user.delete_button")?></button>
                 </div>
               </div>
           </div>

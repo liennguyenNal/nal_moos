@@ -1,4 +1,4 @@
-<h4>同居人</h4>
+
 
 <section id="relation-area">
 <?php 
@@ -8,7 +8,7 @@
 for($i =0; $i< $len; $i++){?>
 
 <div class="well bs-component" id="relation-area-content" >
-
+<legend>同居人情報</legend>
 	<fieldset>
 
 	    <div class="form-group">
