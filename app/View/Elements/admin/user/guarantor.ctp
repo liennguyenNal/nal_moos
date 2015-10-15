@@ -158,7 +158,7 @@
 	        <div class="well bs-component">
 	           
 	            <fieldset>
-	              <legend><?php echo __('user.register.address'); ?></legend>
+	              <legend>連帯保証人住所情報</legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
@@ -284,7 +284,7 @@
 	        <div class="well bs-component">
 
 
-	             <legend>連帯保証人連絡先情報</legend>
+	             <legend>連帯保証人勤務先情報</legend>
 	              <fieldset>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?></label>

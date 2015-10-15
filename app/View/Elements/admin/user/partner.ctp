@@ -108,7 +108,7 @@
         <div class="well bs-component">
            
             <fieldset>
-              <legend>配偶者勤務先情報</legend>
+              <legend>配偶者連絡先情報</legend>
               <table class="table table-striped table-hover ">
                
                  
@@ -136,7 +136,7 @@
         <div class="well bs-component">
 
 
-             <legend>配偶者連絡先情報</legend>
+             <legend>配偶者勤務先情報</legend>
               <fieldset>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?><span></label>
