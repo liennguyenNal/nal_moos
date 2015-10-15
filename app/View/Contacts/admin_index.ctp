@@ -140,7 +140,7 @@
             
 
               
-              <td><?php echo $contact['Contact']['code'];?></td>
+              <td><?php echo $contact['Contact']['id'];?></td>
               <td><?php echo $contact['Contact']['created'] ?></td>
               <td><?php echo $contact['Contact']['first_name'].' '.$contact['Contact']['last_name']?></td>
               <td><?php echo $contact['Contact']['company'] ?></td>
