@@ -33,7 +33,7 @@ class UsersController extends AppController{
     function admin_download()
     {
          
-      // $criteria = " User.is_deleted = 0";
+       $criteria = " 1=1";
       //  if($this->params['named']['status']){
       //   $status_id = $this->params['named']['status'];
       //   $criteria .= " AND User.status_id = '$status_id'" ;
@@ -75,13 +75,15 @@ class UsersController extends AppController{
       // }
       $users = $this->User->find('all', 
         array('conditions'=>array($criteria), 
-          //'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
-          //'recursive' => 3,
-          //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city'), 
+          'contain' => array('ExpectArea', 'UserCompany', 'UserAddress', 'UserCompany.Work','OtherGuarantor.Work','UserGuarantor.Work','UserPartner.Work', 'OtherGuarantor.MarriedStatus','UserGuarantor.MarriedStatus','UserPartner.CompanyPref',
+      'MarriedStatus',  'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'UserCompany.Career','OtherGuarantor.Career','UserGuarantor.Career','UserPartner.Career',
+      'Status', 'UserCompany.Work','UserAddress.Pref','UserCompany.Pref', 'ExpectArea.Pref', 'UserGuarantor.Pref','UserGuarantor.Residence','UserGuarantor.Insurance','OtherGuarantor.Residence','OtherGuarantor.Insurance', 'OtherGuarantor', 'OtherGuarantor.Pref', 'UserGuarantor.CompanyPref', 'UserAddress.Residence', 'UserCompany.Insurance')
+          // 'recursive' => 3,
+          //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city')
           ));
       //Configure::write('debug', 0);
         $this->set('users', $users);
-        //var_dump($users); die;
+        //var_dump($users[0]); die;
         $this->layout = null;
        $this->autoLayout = false;
       Configure::write('debug', 0);

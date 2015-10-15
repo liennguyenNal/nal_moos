@@ -8,9 +8,10 @@
 class User extends AppModel {
     var $name = 'User';
     var $hasMany = array('ExpectArea', 'UserRelation', 'UserAttachment');
-    var $belongsTo = array('MarriedStatus',  'UserAddress', 'UserCompany', 'UserPartner', 'UserGuarantor', 'Status', 
+    var $belongsTo = array(  'MarriedStatus',  'UserAddress', 'UserCompany', 'UserPartner', 'UserGuarantor', 'Status', 
         'OtherGuarantor'=> array(
             'className' => 'UserGuarantor',
+            //'belongsTo' = array('Pref'),
             'foreignKey' => 'other_guarantor_id'
         ));
     var $actsAs = array('Containable');

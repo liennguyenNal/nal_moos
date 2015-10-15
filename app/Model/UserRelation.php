@@ -2,7 +2,7 @@
 
 class UserRelation extends AppModel {
     var $name = 'UserRelation';
-    var $belongsTo = array('User');
+    var $belongsTo = array('User','Insurance');
 
     var $validate = array(         
          'first_name' => array(
@@ -34,6 +34,9 @@ class UserRelation extends AppModel {
         
         ),
         'relate'=>array(
+            'rule'=>'notBlank'
+            ),
+        'insurance_id'=>array(
             'rule'=>'notBlank'
         ),
 
