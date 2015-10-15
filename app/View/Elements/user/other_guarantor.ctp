@@ -63,33 +63,51 @@
 										<div class="select">
 											<?php 
 						                      	$years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-						                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'og−year', 'onchange'=>'og_calculate_age()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
+						                  		echo $this->Form->select('OtherGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'og_year', 'onchange'=>'og_calculate_age()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
 						                	?>
 											<span><?php echo __('user.register.year'); ?></span>
 											<?php 
 						    	              	$months = array_combine(range(1, 12), range(1, 12));
-						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'og_month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.month'); ?></span>
 											<?php 
 						    	              	$dates = array_combine(range(1, 31), range(1, 31));
-						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'og_day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
 						                	?>
 											<span><?php echo __('user.register.day'); ?></span>
-											<span class="style" id="og-age">00</span>
+											<span class="style" id="og_age">00</span>
 											<span class="style"><?php echo __('user.register.age'); ?></span>
 											<!-- Script tinh tuoi -->
 				                            <script type="text/javascript">
-							                    var d = new Date();
-							                    var n = d.getFullYear();
-							                    if ($("#og−year").val() == "") {
-							                    	$("#og-age").html("00");
-							                    } else {
-							                    	$("#og-age").html(n - $("#og−year").val());
-							                    }
-							                    function og_calculate_age(){
-							                      $("#og-age").html(n - $("#og−year").val());
-							                    }
+							                    // var d = new Date();
+							                    // var n = d.getFullYear();
+							                    // if ($("#g−year").val() == "") {
+							                    // 	$("#g-age").html("00");
+							                    // } else {
+							                    // 	$("#g-age-1").html(n - $("#g1−year").val());
+							                    // }
+							                    // function g_calculate_age1(){
+							                    //   $("#g-age-1").html(n - $("#g1−year").val());
+							                    // }
+
+						                    og_calculate_age();
+			                                function og_calculate_age(){
+			                                  //alert($("#g−year").val());
+			                                  if($('#og_year').val() && $('#og_month').val() && $('#og_day').val()){
+			                                   
+			                                    age = calculateAge($('#og_year').val(), $('#og_month').val(), $('#og_day').val() );
+			                                    //alert(age);
+
+			                                  }
+			                                  else {
+			                                    age = "";
+			                                  }
+
+			                                  $("#og_age").html(age);
+
+			                                }
+                                			
 						                    </script>
 				                            <!-- End script -->
 										</div>
@@ -449,7 +467,7 @@
 								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="og_company_required_label_10"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
+										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"og_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 									</div>
@@ -459,7 +477,7 @@
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label><span id="og_company_required_label_11"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
+										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"og_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
 									</div>
@@ -810,6 +828,11 @@
     });
   jQuery.extend(jQuery.validator.messages, {
     	number: "<?php echo __('global.errors.number'); ?>"
+  });
+
+  jQuery(function($) {
+      $('#og_income_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      $('#og_income_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
   });
 </script>
 <!-- END SCRIPT VALIDATION -->

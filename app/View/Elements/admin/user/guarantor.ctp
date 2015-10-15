@@ -67,31 +67,37 @@
 	                      
 	                      <?php 
 	                      $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g1−year',  'required'=>false));
+	                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g_year',  'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.year'); ?>
 	    	              
 	    	              <?php 
 	    	              	$months = array_combine(range(1, 12), range(1, 12));
-	                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false));
+	                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g_month', 'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.month'); ?>
 	    	              
 	    	              <?php 
 	    	              $dates = array_combine(range(1, 31), range(1, 31));
-	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false));
+	                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'g_day', 'required'=>false));
 	                		?>
 	                		<?php echo __('user.register.day'); ?>
-	                		<span class="style" id="g-age-1">0</span>
+	                		<span class="style" id="g_age">0</span>
 		                     <span class="style"><?php echo __('user.register.age'); ?></span>
 		                            <!-- Script tinh tuoi -->
 		                    <script type="text/javascript">
-		                        var d = new Date();
-		                        var n = d.getFullYear();
-		                        if ($("#g1−year").val() == "") {
-		                          $("#g-age-1").html("00");
-		                        } else {
-		                          $("#g-age-1").html(n - $("#g1−year").val());
+		                         g_calculate_age();
+		                        function g_calculate_age(){
+		                            if($('#g_year').val() && $('#g_month').val() && $('#g_day').val()){                               
+		                            age = calculateAge($('#g_year').val(), $('#g_month').val(), $('#g_day').val() );
+		                            
+		                          }
+		                          else {
+		                            age = "";
+		                          }
+
+		                          $("#g_age").html(age);
+
 		                        }
 		                        
 		                    </script>
@@ -158,7 +164,7 @@
 	        <div class="well bs-component">
 	           
 	            <fieldset>
-	              <legend><?php echo __('user.register.address'); ?></legend>
+	              <legend>連帯保証人住所情報</legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
@@ -284,7 +290,7 @@
 	        <div class="well bs-component">
 
 
-	             <legend>連帯保証人連絡先情報</legend>
+	             <legend>連帯保証人勤務先情報</legend>
 	              <fieldset>
 	                <div class="form-group">
 	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.work'); ?></label>

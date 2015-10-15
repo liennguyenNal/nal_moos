@@ -10,7 +10,8 @@
 
   <link rel="stylesheet" type="text/css" href="<?php echo $this->webroot; ?>css/admin/bootstrap.css">
   <script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
-<script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
+  <script src="<?php echo $this->webroot;?>js/admin/bootstrap.min.js"></script>
+  <script src="<?php echo $this->webroot;?>js/autoNumeric.js"></script>
   <style type="text/css">
   body { padding-top: 80px; }
   @media ( min-width: 768px ) {

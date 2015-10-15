@@ -87,14 +87,36 @@
                      <span class="style"><?php echo __('user.register.age'); ?></span>
                             <!-- Script tinh tuoi -->
                     <script type="text/javascript">
-                        var d = new Date();
-                        var n = d.getFullYear();
-                        if ($("#year").val() == "") {
-                          $("#age").html("00");
-                        } else {
-                          $("#age").html(n - $("#year").val());
+                       
+                          if($('#year').val() && $('#month').val() && $('#day').val()){                               
+                            age = calculateAge($('#year').val(), $('#month').val(), $('#day').val() );
+                            
+                          }
+                          else {
+                            age = "";
+                          }
+
+                          $("#age").html(age);
+
+                        function calculateAge(birthYear, birthMonth, birthDay)
+                        {
+                          todayDate = new Date();
+                          todayYear = todayDate.getFullYear();
+                          todayMonth = todayDate.getMonth();
+                          todayDay = todayDate.getDate();
+                          age = todayYear - birthYear; 
+
+                          if (todayMonth < birthMonth - 1)
+                          {
+                            age--;
+                          }
+
+                          if (birthMonth - 1 == todayMonth && todayDay < birthDay)
+                          {
+                            age--;
+                          }
+                          return age;
                         }
-                        
                     </script>
                       
                     </div>

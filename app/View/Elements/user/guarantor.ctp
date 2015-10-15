@@ -64,33 +64,51 @@
 										<div class="select">
 											<?php 
 						                      	$years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-						                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'g1−year', 'onchange'=>'g_calculate_age1()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
+						                  		echo $this->Form->select('UserGuarantor.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'g_year', 'onchange'=>'g_calculate_age()', 'required'=>false, 'data-placement'=>'right', 'empty'=>'----'));
 						                	?>
 											<span><?php echo __('user.register.year'); ?></span>
 											<?php 
 						    	              	$months = array_combine(range(1, 12), range(1, 12));
-						                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('UserGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'g_month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'g_calculate_age()'));
 						                	?>
 											<span><?php echo __('user.register.month'); ?></span>
 											<?php 
 						    	              	$dates = array_combine(range(1, 31), range(1, 31));
-						                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('UserGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'g_day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'g_calculate_age()'));
 						                	?>
 											<span><?php echo __('user.register.day'); ?></span>
-											<span class="style" id="g-age-1">0</span>
+											<span class="style" id="g_age">0</span>
 											<span class="style"><?php echo __('user.register.age'); ?></span>
 											<!-- Script tinh tuoi -->
 				                            <script type="text/javascript">
-							                    var d = new Date();
-							                    var n = d.getFullYear();
-							                    if ($("#g1−year").val() == "") {
-							                    	$("#g-age-1").html("00");
-							                    } else {
-							                    	$("#g-age-1").html(n - $("#g1−year").val());
-							                    }
-							                    function g_calculate_age1(){
-							                      $("#g-age-1").html(n - $("#g1−year").val());
-							                    }
+							                    // var d = new Date();
+							                    // var n = d.getFullYear();
+							                    // if ($("#g−year").val() == "") {
+							                    // 	$("#g-age").html("00");
+							                    // } else {
+							                    // 	$("#g-age-1").html(n - $("#g1−year").val());
+							                    // }
+							                    // function g_calculate_age1(){
+							                    //   $("#g-age-1").html(n - $("#g1−year").val());
+							                    // }
+
+						                    g_calculate_age();
+			                                function g_calculate_age(){
+			                                  //alert($("#g−year").val());
+			                                  if($('#g_year').val() && $('#g_month').val() && $('#g_day').val()){
+			                                   
+			                                    age = calculateAge($('#g_year').val(), $('#g_month').val(), $('#g_day').val() );
+			                                    //alert(age);
+
+			                                  }
+			                                  else {
+			                                    age = "";
+			                                  }
+
+			                                  $("#g_age").html(age);
+
+			                                }
+                                			
 						                    </script>
 				                            <!-- End script -->
 										</div>
@@ -450,7 +468,7 @@
 								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="g_company_required_label_10"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
+										<?php echo $this->Form->input('UserGuarantor.income_month', array('type'=>'text', 'id'=>"g_income_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 									</div>
@@ -460,7 +478,7 @@
 								<td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label><span id="g_company_required_label_11"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
+										<?php echo $this->Form->input('UserGuarantor.income_year', array('type'=>'text', 'id'=>"g_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
 									</div>
@@ -802,6 +820,11 @@
   });
   jQuery.extend(jQuery.validator.messages, {
     	number: "<?php echo __('global.errors.number'); ?>"
+  });
+
+  jQuery(function($) {
+      $('#g_income_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      $('#g_income_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
   });
 </script>
 <!-- END SCRIPT VALIDATION -->

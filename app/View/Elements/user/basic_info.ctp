@@ -1,3 +1,4 @@
+  <script src="<?php echo $this->webroot; ?>js/autoNumeric.js"></script>
 <div class="from-login">
     <div class="from-ldpage">
       <div class="content">
@@ -69,27 +70,54 @@
                           <span><?php echo __('user.register.year'); ?></span>
                             <?php 
                                 $months = array_combine(range(1, 12), range(1, 12));
-                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false));
+                                echo $this->Form->select('month_of_birth', $months, array('id'=>'month', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false, 'onchange'=>'calculate_age()'));
                             ?>
                           <span><?php echo __('user.register.month'); ?></span>
                             <?php 
                                 $dates = array_combine(range(1, 31), range(1, 31));
-                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false));
+                                echo $this->Form->select('day_of_birth', $dates, array('id'=>'day', 'data-placement' => 'right', 'empty'=>'--', 'required'=>false, 'onchange'=>'calculate_age()'));
                             ?>
                           <span><?php echo __('user.register.day'); ?></span>
                           <span class="style" id="age">0</span>
                           <span class="style"><?php echo __('user.register.age'); ?></span>
                             <!-- Script tinh tuoi -->
                             <script type="text/javascript">
-                                var d = new Date();
-                                var n = d.getFullYear();
-                                if ($("#year").val() == "") {
-                                  $("#age").html("00");
-                                } else {
-                                  $("#age").html(n - $("#year").val());
-                                }
+                                calculate_age();
                                 function calculate_age(){
-                                    $("#age").html(n - $("#year").val());
+                                  // var d = new Date();
+                                  // var n = d.getFullYear();
+                                  // $("#s-age").html(n - $("#year").val());
+                                  // $("#age").val(n - $("#year").val());
+                                  if($("#year").val() && $("#month").val() && $("#day").val()){
+                                  
+                                    age = calculateAge($("#year").val(), $("#month").val(), $("#day").val() );
+
+                                  }
+                                  else {
+                                    age = "";
+                                  }
+
+                                  $("#age").html(age);
+
+                                }
+                                function calculateAge(birthYear, birthMonth, birthDay)
+                                {
+                                  todayDate = new Date();
+                                  todayYear = todayDate.getFullYear();
+                                  todayMonth = todayDate.getMonth();
+                                  todayDay = todayDate.getDate();
+                                  age = todayYear - birthYear; 
+
+                                  if (todayMonth < birthMonth - 1)
+                                  {
+                                    age--;
+                                  }
+
+                                  if (birthMonth - 1 == todayMonth && todayDay < birthDay)
+                                  {
+                                    age--;
+                                  }
+                                  return age;
                                 }
                             </script>
                             <!-- End script -->
@@ -1108,6 +1136,12 @@
                           $('#home').html(result);
                         }
                     });
+                    $.ajax({
+                        url: "<?php echo $this->webroot?>user_partners/edit",
+                        success: function(result){
+                          $('#partner').html(result);
+                        }
+                    });
                 }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);
@@ -1118,5 +1152,10 @@
       jQuery.extend(jQuery.validator.messages, {
           number: "<?php echo __('global.errors.number'); ?>"
       });
+
+      jQuery(function($) {
+      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      $('#salary_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
+  });
 </script>
 <!-- END SCRIPT VALIDATION -->

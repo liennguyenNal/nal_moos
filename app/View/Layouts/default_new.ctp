@@ -24,6 +24,7 @@
   <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery.autoKana.js"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
+  <script src="<?php echo $this->webroot; ?>js/autoNumeric.js"></script>
 </head>
 <body class="page">
   <div id="wrapper">    
