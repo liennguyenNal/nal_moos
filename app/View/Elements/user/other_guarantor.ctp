@@ -505,7 +505,7 @@
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'default'=>'25', 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
+													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>

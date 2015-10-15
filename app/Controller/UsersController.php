@@ -864,10 +864,11 @@ class UsersController extends AppController{
      * @return [type] [description]
      */
     function reset_link(){
+      $this->layout = "successful";
       if($_GET['token'] and $_GET['email']){
           $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_GET['token']), 'contain'=>array('id')));
         if($user['User']['email'] == $_GET['email']) {
-          $this->layout = "successful";
+          
         }
         else{ 
           return $this->redirect("login");
