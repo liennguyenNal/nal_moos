@@ -294,7 +294,7 @@
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>"00", 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>"00", 'data-placement' => 'right', 'required'=>false, 'maxlength'=>false))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
@@ -686,7 +686,7 @@
           min: "<?php echo __('global.errors.month.min'); ?>",
           max: "<?php echo __('global.errors.month.max') ?>"
         },
-        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_month'); ?>"},
+        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
         'data[ExpectArea][0][post_num_1]': {
           required: "<?php echo __('global.errors.post_num_1'); ?>",
           minlength: "<?php echo __('global.errors.minlength_3'); ?>",

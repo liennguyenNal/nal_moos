@@ -1745,6 +1745,17 @@ class UsersController extends AppController{
                    array_push($result['fields'], $company_required_fields[$key]);
                    $result['error'] = 1;
                 }
+                
+                if($key=="salary_receive_id"){
+                  if($obj['salary_receive_id'] == 3){
+                    if(!$obj['salary_date']){
+                      //echo 1111; die;
+                       array_push($result['fields'], __('user.my_page.basic_info.salary_date'));
+                      $result['error'] = 1;
+                    }
+                  }
+                }
+                
               }
             }
 
