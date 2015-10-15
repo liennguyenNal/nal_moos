@@ -44,7 +44,7 @@ msgstr "歳"
 msgid "user.register.married"
 msgstr "婚姻"
 
-msgid "user.register.address"
+msgid "user.basic_info.company"
 msgstr "所在地"
 
 msgid "user.register.post"
@@ -112,9 +112,6 @@ msgstr "都道府県"
 
 msgid "user.register.pref"
 msgstr "都道府県"
-
-msgid "user.register.company"	
-msgstr "会社名"
 
 msgid "user.contact.username"
 msgstr "お名前"
@@ -875,10 +872,10 @@ msgid "global.mypage.update.successful"
 msgstr "審査申込を完了しました。"
 
 msgid "global.errors.salary_date.min"
-msgstr "1より大きいな数字をご入力ください。"
+msgstr "数字を入力してください。</br>31以下で入力してください"
 
 msgid "global.errors.salary_date.max"
-msgstr "30より小さいな数字をご入力ください。"
+msgstr "数字を入力してください。</br>31以下で入力してください"
 
 msgid "global.errors.minlength_11"	
 msgstr "11桁でご入力ください。"
@@ -922,6 +919,8 @@ msgstr "- 同居人を削除する"
 msgid "global.errors.company.phone"	
 msgstr "10桁もしくは11桁でご入力ください。"
 
+msgid "user.register.address"
+msgstr "現住所"
 
 
 

@@ -346,7 +346,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span id="company_required_label_1"><?php echo __('global.require'); ?></span></td>
+                    <td class="label-text"><label><?php echo __('user.basic_info.company'); ?></label><span id="company_required_label_1"><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
                         <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
@@ -533,7 +533,7 @@
                           <div class="style-a">
                             <label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
                             <?php 
-                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'placeholder'=>'25', 'required'=>false, 'default'=>'3', 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
+                                echo $this->Form->input('UserCompany.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'data-placement'=>'right', 'placeholder'=>'25', 'required'=>false, 'default'=>'25', 'disabled'=> $user['UserCompany']['salary_receive_id'] != 3)) 
                             ?>
                             <label for="11"><?php echo __('global.date'); ?></label>
                           </div>
@@ -688,7 +688,7 @@
                             ?>
                           </div>
                           <div class="block-input">
-                            <span class="w78"><?php echo __('user.register.street'); ?></span>
+                            <span class="w78"><?php echo __('user.register.area.street'); ?></span>
                             <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address". $i, 'label'=>false, 'class'=>'w198', 'div'=>false, 'value'=>$item['address'], 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'2丁目'))
                             ?>
                             <?php echo $this->Form->hidden("ExpectArea.$i.id", array('value'=>$item['id']))?>
@@ -1003,11 +1003,11 @@
             'data[UserCompany][salary_month]': {number: true},
             'data[UserCompany][salary_year]': {number: true},
             'data[UserCompany][salary_date]': {
-              required: {
-                depends:  function() {
-                  return $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() == '3';
-                }
-              },
+              // required: {
+              //   depends:  function() {
+              //     return $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() == '3';
+              //   }
+              // },
               number: true,
               min: 1,
               max: 30
@@ -1045,7 +1045,7 @@
             },
             'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[UserCompany][salary_date]': {
-              required: "<?php echo __('global.errors.required'); ?>",
+              // required: "<?php echo __('global.errors.required'); ?>",
               min: "<?php echo __('global.errors.salary_date.min'); ?>",
               max: "<?php echo __('global.errors.salary_date.max') ?>"
             },
