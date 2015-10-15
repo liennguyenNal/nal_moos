@@ -348,7 +348,7 @@
                       </script>
                         <div class="style-a">
                           <label ><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
-                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required' => false, 'default'=>'25', 'data-placement'=>"right", 'disabled'=> $user['UserPartner']['salary_receive_id'] != 3 ))
+                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required' => false, 'data-placement'=>"right", 'disabled'=> $user['UserPartner']['salary_receive_id'] != 3 ))
                           ?> 
                           <label><?php echo __('global.date'); ?></label>
                         </div>
