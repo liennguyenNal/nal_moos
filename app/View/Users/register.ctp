@@ -294,7 +294,7 @@
                           <td>
                             <div class="block-input">
                               <!-- <input class="w108" type="text" name="" value="" placeholder="00"> -->
-                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>"00", 'data-placement' => 'right', 'required'=>false))
+                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>"00", 'data-placement' => 'right', 'required'=>false))
                               ?>
                               <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                             </div>
@@ -621,9 +621,9 @@
           min: 0,
           max: 11
         },
-        'data[UserCompany][salary_year]': {
+        'data[UserCompany][salary_month]': {
           required: true,
-          number: true
+          //number: true
         },
         'data[ExpectArea][0][post_num_1]': {
           required: true,
@@ -640,8 +640,8 @@
         'data[ExpectArea][0][pref_id]': {required: true},
         'data[ExpectArea][0][city]': {required: true},
         //'data[ExpectArea][0][address]': {required: true},
-        'data[User][agree]': {required: true},
-        'data[UserCompany][salary_month]': {required: true}
+        'data[User][agree]': {required: true}
+        //'data[UserCompany][salary_month]': {required: true}
       },
       messages: {
         'data[User][first_name]': {required: "<?php echo __('global.errors.firstname'); ?>"},
@@ -686,7 +686,7 @@
           min: "<?php echo __('global.errors.month.min'); ?>",
           max: "<?php echo __('global.errors.month.max') ?>"
         },
-        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_year'); ?>"},
+        'data[UserCompany][salary_month]': {required: "<?php echo __('global.errors.salary_month'); ?>"},
         'data[ExpectArea][0][post_num_1]': {
           required: "<?php echo __('global.errors.post_num_1'); ?>",
           minlength: "<?php echo __('global.errors.minlength_3'); ?>",
@@ -727,9 +727,12 @@
     if($("#section-flash-msg").html().trim() != ""){
       $('html, body').animate({scrollTop: $("#section-flash-msg").offset().top}, 500);
     }
-  
+   jQuery(function($) {
+      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});    
+  });
 </script>
 
+  
 
 
 

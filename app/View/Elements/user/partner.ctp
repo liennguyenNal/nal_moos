@@ -69,33 +69,38 @@
                       <div class="select">
                         <?php 
                           $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                          echo $this->Form->select('UserPartner.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'p-year', 'onchange'=>'calculate_p_age()', 'required' => false, 'data-placement'=>'right', 'empty'=>'----'));
+                          echo $this->Form->select('UserPartner.year_of_birth', $years, array('div'=>false, 'label'=>false, 'id'=>'p_year', 'onchange'=>'p_calculate_age()', 'required' => false, 'data-placement'=>'right', 'empty'=>'----'));
                         ?>
                         <span><?php echo __('user.register.year'); ?></span>
                         <?php 
                           $months = array_combine(range(1, 12), range(1, 12));
-                          echo $this->Form->select('UserPartner.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'required' => false, 'data-placement'=>'right', 'empty'=>'--'));
+                          echo $this->Form->select('UserPartner.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'p_month', 'required' => false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'p_calculate_age()'));
                         ?>
                         <span><?php echo __('user.register.month'); ?></span>
                         <?php 
                           $dates = array_combine(range(1, 31), range(1, 31));
-                            echo $this->Form->select('UserPartner.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'required' => false, 'data-placement'=>'right', 'empty'=>'--'));
+                            echo $this->Form->select('UserPartner.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'p_day', 'required' => false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'p_calculate_age()'));
                         ?>
                         <span><?php echo __('user.register.day'); ?></span>
-                        <span class="style" id="p-age">0</span>
+                        <span class="style" id="p_age">0</span>
                         <span class="style"><?php echo __('user.register.age'); ?></span>
                         <script type="text/javascript">
-                            var d = new Date();
-                            var n = d.getFullYear();
-                            if ($("#p-year").val() == "") {
-                              $("#p-age").val() == "00";
-                            } else {
-                              $("#p-age").html(n - $("#p-year").val());
-                            }
+                                 
 
-                            function calculate_p_age(){
-                              $("#p-age").html(n - $("#p-year").val());
-                          }
+                            p_calculate_age();
+                            function p_calculate_age(){
+                                if($('#p_year').val() && $('#p_month').val() && $('#p_day').val()){                               
+                                age = calculateAge($('#p_year').val(), $('#p_month').val(), $('#p_day').val() );
+                                
+                              }
+                              else {
+                                age = "";
+                              }
+
+                              $("#p_age").html(age);
+
+                            }
+                              
                         </script>
                       </div>
                     </td>
@@ -306,7 +311,7 @@
                   <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="p_company_required_label_10"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
-                      <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
+                      <?php echo $this->Form->input('UserPartner.income_month', array('type'=>'text', 'id'=>"p_income_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
                       ?>
                       <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                     </div>
@@ -316,7 +321,7 @@
                   <td class="label-text"><label><?php echo __('user.my_page.basic_info.salary_year'); ?></label><span id="p_company_required_label_11"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
-                      <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
+                      <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"p_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
                       ?>
                       <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
                     </div>
@@ -409,6 +414,15 @@
                     $("#p_company_required_label_13").show();
                   }
                }
+               function calculate_relation_age(i){
+                
+                  if($("#p_year_"+i).val() && $("#p_month_" + i).val()&& $("#p_day_"+i).val() ){
+                    $("#p_age_" + i).html(calculateAge($("#p_year_"+i).val(), $("#p_month_" + i).val(), $("#p_day_"+i).val() ));
+                  }
+                  else {
+                    $("#p_age_" + i).html("");
+                  }
+                }
           </script>
           </div>
 
@@ -494,33 +508,31 @@
                         <div class="select">
                           <?php 
                             $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>"p-year-$i", 'onchange'=>'calculate_relation_age($(this))', 'data-placement'=>'right', 'required'=>false, 'empty'=>'----'));
+                            echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('div'=>false, 'label'=>false, 'id'=>"p_year_$i", 'onchange'=>"calculate_relation_age($i)", 'data-placement'=>'right', 'required'=>false, 'empty'=>'----'));
                           ?>
                           <span><?php echo __('user.register.year'); ?></span>
                           <?php 
                             $months = array_combine(range(1, 12), range(1, 12));
-                            echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('div'=>false, 'label'=>false, 'id'=>'month', 'data-placement'=>'right', 'required'=>false, 'empty'=>'--'));
+                            echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('div'=>false, 'label'=>false, 'id'=>"p_month_$i", 'data-placement'=>'right', 'required'=>false, 'empty'=>'--', 'onchange'=>"calculate_relation_age($i)"));
                           ?>
                           <span><?php echo __('user.register.month'); ?></span>
                           <?php 
                           $dates = array_combine(range(1, 31), range(1, 31));
-                            echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('div'=>false, 'label'=>false, 'id'=>'day', 'data-placement'=>'right', 'required'=>false, 'empty'=>'--'));
+                            echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('div'=>false, 'label'=>false, 'id'=>"p_day_$i", 'data-placement'=>'right', 'required'=>false, 'empty'=>'--', 'onchange'=>"calculate_relation_age($i)"));
                           ?>
                           <span><?php echo __('user.register.day'); ?></span>
-                          <span class="style" id="p-age-<?php echo $i?>">0</span>
+                          <span class="style" id="p_age_<?php echo $i?>">0</span>
                           <span class="style"><?php echo __('user.register.age'); ?></span>
                           <script type="text/javascript">
-                              var d = new Date();
-                              var n = d.getFullYear();
-                              if ($("#p-year-<?php echo $i?>").val() == "") {
-                                $("#p-age-<?php echo $i?>").html("00");
-                              } else {
-                                $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
-                              }
-                              function calculate_relation_age(obj){
-                              var age = n - obj.val();
-                              obj.parent().parent().find("span[id*='p-age-<?php echo $i?>']").html(age);
-                          }
+                              // var d = new Date();
+                              // var n = d.getFullYear();
+                              // if ($("#p-year-<?php echo $i?>").val() != "" && $("#p-month-<?php echo $i?>").val() != "" && $("#p-day-<?php echo $i?>").val() != "") {
+                              //   $("#p-age-<?php echo $i?>").html(calculateAge($("#p-year-<?php echo $i?>").val(), $("#p-month-<?php echo $i?>").val(), $("#p-day-<?php echo $i?>").val() ));
+                              // } else {
+                              //   $("#p-age-<?php echo $i?>").html("");
+                              //   //$("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
+                              // }
+                              calculate_relation_age(<?php echo $i;?>);
                           </script>
                         </div>
                       </td>
@@ -646,6 +658,7 @@
                   });
 
              });
+             
         </script>
         <!-- END MAIN SCRIPT -->
         </form>
@@ -670,9 +683,11 @@
       kana_script += '$(this).autoKana("#r_company_'+　order_object3 +'", "#r_school_'+　order_object3 +'", {katakana:true, toggle:false});'
       
       if( num_area3 < 5 ){
-       var area = $('#relation-area-content').clone();
-        area.html(area.html().replace(/\[0\]/g, '['+ order_object3 + ']' ).replace(/_0/g, '_'+ order_object3));
+       var area = $('#relation-area-content').clone(true, true);
+       area.html(area.html().replace(/\[0\]/g, '['+ order_object3 + ']' ).replace(/_0/g, '_'+ order_object3).replace(/\-0/g, '-'+ order_object3).replace(/\(0\)/g, '('+ order_object3+')' ));
+        //area.html(replaceAll('(0)', '('+order_object3 + ')' , area.html()));
         area.find("input").val('');
+        area.find("select").val('');
         var btn_remove = $('#remove').clone();
         btn_remove.find('a').show();
         area.find("section").show();
@@ -841,6 +856,11 @@
   });
   jQuery.extend(jQuery.validator.messages, {
       number: "<?php echo __('global.errors.number'); ?>"
+  });
+
+  jQuery(function($) {
+      $('#p_income_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      $('#p_income_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
   });
 </script>
 <!-- END SCRIPT VALIDATION -->
