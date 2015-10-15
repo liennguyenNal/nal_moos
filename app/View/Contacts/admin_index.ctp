@@ -26,7 +26,7 @@
 
             <label style="margin-left:20px;" for="title" ><?php echo __('user.contact.type-company'); ?></label>
             <?php 
-              echo $this->Form->input('type', array('options' => array(1=>"一殷のお客様",2=> "メディア関係",3=>"建設会社", 4=> "その他"), 'empty' => '', 'class'=>'form-control', 'style'=>"width:100px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
+              echo $this->Form->input('type', array('options' => array(1=>"一般のお客様",2=> "メディア関係",3=>"建設会社", 4=> "その他"), 'empty' => '', 'class'=>'form-control', 'style'=>"width:100px; display:inline;", 'div'=>false, 'label'=>false, 'id'=>'type', 'value'=>$type));
             ?>
             
             <label style="margin-left:20px;" for="title" >問合せ日</label>
@@ -144,7 +144,7 @@
               <td><?php echo $contact['Contact']['created'] ?></td>
               <td><?php echo $contact['Contact']['first_name'].' '.$contact['Contact']['last_name']?></td>
               <td><?php echo $contact['Contact']['company'] ?></td>
-              <td><?php if($contact['Contact']['type']==1) echo '一殷のお客様'; if($contact['Contact']['type']==2) echo 'メディア関係'; if($contact['Contact']['type']==3) echo '建設会社'; if($contact['Contact']['type']==4) echo 'その他';  ?></td>
+              <td><?php if($contact['Contact']['type']==1) echo '一般のお客様'; if($contact['Contact']['type']==2) echo 'メディア関係'; if($contact['Contact']['type']==3) echo '建設会社'; if($contact['Contact']['type']==4) echo 'その他';  ?></td>
               <td><?php echo $contact['Contact']['phone'] ?></td>
               <td><?php echo $contact['Contact']['email'] ?></td>
               
@@ -157,7 +157,7 @@
           <?php } ?>
           </tbody>
         </table> 
-        <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
+        <input style="float:right; margin-top:20px;background-color:red;border:none;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
         </form>
         
 

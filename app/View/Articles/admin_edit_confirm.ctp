@@ -7,7 +7,7 @@
       <div class="col-lg-12">
         <div class="well bs-component">
         <?php echo $this->element('admin/flash');?>
-        <legend><?php if($article['Article']['id']) echo 'お知らせ 変更'; else echo 'お知らせ 新規作成'; ?></legend>
+        <legend><?php echo 'お知らせ 変更確認'; ?></legend>
          <!--  <form class="form-horizontal"> -->
           <?php echo $this->Form->create("Article", array('action'=>'edit_confirm', 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data')) ?>
             <fieldset>

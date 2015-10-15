@@ -95,7 +95,7 @@
               <input type="hidden" name="view" value="1">
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                <button type="submit" class="btn btn-primary">変更する</button>
+                <button type="submit" class="btn btn-primary">確認する</button>
                   <button id="btn-cancel" type="reset" class="btn btn-default">キャンセル</button>
                   
                   

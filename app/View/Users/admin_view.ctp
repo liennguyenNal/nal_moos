@@ -198,12 +198,12 @@
                   <div class="col-lg-10">
                    
                     <?php 
-                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:200px;','div'=>false, 'label'=>false, 'id'=>'work', 'empty'=>'-----'));
+                    echo $this->Form->select('UserCompany.work_id', $works, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'work', 'empty'=>'-----'));
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">働続年数</label>
+                  <label for="inputEmail" class="col-lg-2 control-label">勤続年数</label>
                   <div class="col-lg-10">
                     <?php echo $this->Form->input('UserCompany.year_worked', array('type'=>'text', 'id'=>"title", 'label'=>false , 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?><?php echo __('user.register.year') ?>
                     <?php echo $this->Form->input('UserCompany.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false))?>ヶ月
