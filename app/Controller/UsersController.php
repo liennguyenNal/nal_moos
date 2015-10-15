@@ -33,46 +33,46 @@ class UsersController extends AppController{
     function admin_download()
     {
          
-       $criteria = " 1=1";
-      //  if($this->params['named']['status']){
-      //   $status_id = $this->params['named']['status'];
-      //   $criteria .= " AND User.status_id = '$status_id'" ;
-      //   $this->set('status', $status_id);
-      // }
-      // if($this->params['named']['city']){
-      //   $city = $this->params['named']['city'];
-      //    $criteria .= " AND UserAddress.city = '$city'" ;
+       $criteria = " User.is_deleted =0 ";
+       if(isset($this->params['named']['status'])){
+        $status_id = $this->params['named']['status'];
+        $criteria .= " AND User.status_id = '$status_id'" ;
+        //$this->set('status', $status_id);
+      }
+      if($this->params['named']['city']){
+        $city = $this->params['named']['city'];
+         $criteria .= " AND UserAddress.city = '$city'" ;
         
-      //   $this->set('city', $city);
-      // }
-      // if($this->params['named']['pref']){
-      //   $pref = $this->params['named']['pref'];
-      //    $criteria .= " AND UserAddress.pref_id = '$pref'" ;
+        //$this->set('city', $city);
+      }
+      if($this->params['named']['pref']){
+        $pref = $this->params['named']['pref'];
+         $criteria .= " AND UserAddress.pref_id = '$pref'" ;
         
-      //   $this->set('pref', $pref);
-      // }
+        //$this->set('pref', $pref);
+      }
       
-      //  if($this->params['named']['from_register']){
-      //   $from_register = $this->params['named']['from_register'];
-      //   $criteria .= " AND User.created > '$from_register'" ;
-      //   //$this->set('status', $status);
-      // }
-      //  if($this->params['named']['to_register']){
-      //   $to_register = $this->params['named']['to_register'];
-      //   $criteria .= " AND User.created < '$to_register'" ;
-      //   //$this->set('status', $status);
-      // }
+       if($this->params['named']['from_register']){
+        $from_register = $this->params['named']['from_register'];
+        $criteria .= " AND User.created > '$from_register'" ;
+        //$this->set('status', $status);
+      }
+       if($this->params['named']['to_register']){
+        $to_register = $this->params['named']['to_register'];
+        $criteria .= " AND User.created < '$to_register'" ;
+        //$this->set('status', $status);
+      }
      
-      // if($this->params['named']['from_approve']){
-      //   $from_approve = $this->params['named']['from_approve'];
-      //   $criteria .= " AND User.approved_date > '$from_approve'" ;
-      //   //$this->set('status', $status);
-      // }
-      // if($this->params['named']['to_approve']){
-      //   $to_approve = $this->params['named']['to_approve'];
-      //   $criteria .= " AND User.approved_date > '$to_approve'" ;
-      //   //$this->set('status', $status);
-      // }
+      if($this->params['named']['from_approve']){
+        $from_approve = $this->params['named']['from_approve'];
+        $criteria .= " AND User.approved_date > '$from_approve'" ;
+        //$this->set('status', $status);
+      }
+      if($this->params['named']['to_approve']){
+        $to_approve = $this->params['named']['to_approve'];
+        $criteria .= " AND User.approved_date > '$to_approve'" ;
+        //$this->set('status', $status);
+      }
       $users = $this->User->find('all', 
         array('conditions'=>array($criteria), 
           'contain' => array('ExpectArea', 'UserCompany', 'UserAddress', 'UserCompany.Work','OtherGuarantor.Work','UserGuarantor.Work','UserPartner.Work', 'OtherGuarantor.MarriedStatus','UserGuarantor.MarriedStatus','UserPartner.CompanyPref',
