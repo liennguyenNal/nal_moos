@@ -5,7 +5,7 @@
     <li><a href="<?php echo $this->webroot; ?>faq">よくある質問</a></li>
     <li><a href="<?php echo $this->webroot; ?>register">無料会員登録</a></li>
     <li><a href="<?php echo $this->webroot; ?>contact">お問い合わせ</a></li>
-    <li><a href="#">運営会社</a></li>
-    <li><a href="#">個人情報保護方針</a></li>
+    <li><a href="http://www.renesys.co.jp/company/">運営会社</a></li>
+    <li><a href="http://www.renesys.co.jp/privacy/">個人情報保護方針</a></li>
   </ul>
 </div>

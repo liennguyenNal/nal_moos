@@ -488,7 +488,7 @@ msgid "user.partner.user.company"
 msgstr "配偶者 勤務先情報"
 
 msgid "user.partner.user.relation"
-msgstr "同居人情報"
+msgstr "申し込み人との関係"
 
 msgid "user.guarantor.user.info"
 msgstr "保証人 基本情報"

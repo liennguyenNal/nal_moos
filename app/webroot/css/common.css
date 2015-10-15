@@ -1300,12 +1300,14 @@ img {
   padding: 10px;
   background: url('../img/front/br-video.png') repeat center center;
 }
-.block-video .content-video .content-video-how object {
+.block-video .content-video .content-video-how object,
+.block-video .content-video .content-video-how iframe {
   display: block;
   background-color: #fff;
 }
 @media (max-width: 690px) {
-  .block-video .content-video .content-video-how object {
+  .block-video .content-video .content-video-how object,
+  .block-video .content-video .content-video-how iframe {
     width: 100%;
     height: auto;
   }
@@ -1588,6 +1590,14 @@ img {
   background: url('../img/front/br-04.png') repeat 0px 0px;
   padding: 30px 0px;
 }
+@media (max-width: 690px) {
+  .from-login {
+    padding: 10px 0px;
+  }
+  .from-login .container-fluid {
+    padding: 0px;
+  }
+}
 .from-login .block-note {
   margin-top: 36px;
 }
@@ -1596,6 +1606,12 @@ img {
 }
 .from-login .from-ldpage .content .content-from {
   padding: 29px 32px 58px 30px;
+}
+@media (max-width: 690px) {
+  .from-login .from-ldpage .content .content-from {
+    padding: 30px 10px;
+    margin: 0px 5px;
+  }
 }
 .from-login .from-ldpage .content .content-from p.note {
   font-size: 14px;
