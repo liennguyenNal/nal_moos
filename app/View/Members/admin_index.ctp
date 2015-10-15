@@ -150,7 +150,7 @@
           <div class="form-group">
                 <div class="col-lg-12 col-lg-offset-0">
                  
-                  <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
+                  <input style="float:right; margin-top:20px;background-color:red;border:none;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
                 </div>
               </div>
           </div>

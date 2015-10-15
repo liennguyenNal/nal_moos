@@ -139,7 +139,7 @@
           <?php } ?>
           </tbody>
         </table> 
-        <input style="float:right; margin-top:20px;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
+        <input style="float:right; margin-top:20px; background-color:red;border:none;" id="btn-delete" class="btn btn-primary" type="submit" value="削除">
         
         </form>
       </div><!-- /example -->

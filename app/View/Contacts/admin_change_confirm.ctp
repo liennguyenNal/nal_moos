@@ -122,7 +122,7 @@
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
                      
-                      <button type="button" class="btn btn-danger" id="btn-delete">削除する</button>
+                      <button type="button" class="btn btn-danger" id="btn-delete">確認する</button>
                       <button type="submit" class="btn btn-primary" id="btn-change">変更する</button>
                       
                       <button type="button" class="btn btn-default" id="btn-cancel" >一覧へ戻る</button>

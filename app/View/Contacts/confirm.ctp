@@ -10,7 +10,7 @@
   </div>
   <div class="title-sup-page">
     <div class="container-fluid">
-      <h3>お問い合わせフォーム</h3>
+      <h3>お問い合わせフォーム(確認)</h3>
     </div>
   </div>
   <div class="from-login">
