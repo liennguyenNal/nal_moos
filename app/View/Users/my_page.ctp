@@ -31,7 +31,9 @@
             </div>
 
             <div id="partner" class="tab-pane fade">
-              <?php echo $this->element('user/partner'); ?>
+              <?php if($user['User']['live_with_family']) echo $this->element('/user/partner');
+                else echo  $this->element('/user/partner_not_married');
+              ?>
             </div>
 
             <div id="guarantor" class="tab-pane fade">

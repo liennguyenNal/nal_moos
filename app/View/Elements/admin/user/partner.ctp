@@ -67,32 +67,39 @@
                       
                       <?php 
                       $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year',  'required' => false));
+                      echo $this->Form->select('UserPartner.year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p_year',  'required' => false));
                     ?>
                     <?php echo __('user.register.year'); ?>
                     
                     <?php 
                       $months = array_combine(range(1, 12), range(1, 12));
-                      echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month', 'required' => false));
+                      echo $this->Form->select('UserPartner.month_of_birth', $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p_month', 'required' => false));
                     ?>
                     <?php echo __('user.register.month'); ?>
                     
                     <?php 
                     $dates = array_combine(range(1, 31), range(1, 31));
-                      echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day', 'required' => false));
+                      echo $this->Form->select('UserPartner.day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p_day', 'required' => false));
                     ?>
                     <?php echo __('user.register.day'); ?>
-                    <span class="style" id="p-age">0</span>
+                    <span class="style" id="p_age">0</span>
                      <span class="style"><?php echo __('user.register.age'); ?></span>
                             <!-- Script tinh tuoi -->
                     <script type="text/javascript">
-                        var d = new Date();
-                        var n = d.getFullYear();
-                        if ($("#p-year").val() == "") {
-                          $("#p-age").html("00");
-                        } else {
-                          $("#p-age").html(n - $("#p-year").val());
+                         p_calculate_age();
+                        function p_calculate_age(){
+                            if($('#p_year').val() && $('#p_month').val() && $('#p_day').val()){                               
+                            age = calculateAge($('#p_year').val(), $('#p_month').val(), $('#p_day').val() );
+                            
+                          }
+                          else {
+                            age = "";
+                          }
+
+                          $("#p_age").html(age);
+
                         }
+                          
                         
                     </script>
                     

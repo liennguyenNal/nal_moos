@@ -58,29 +58,40 @@ for($i =0; $i< $len; $i++){?>
 	                  
 	                  <?php 
 	                  $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
-	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'p-year-<?php echo $i?>'));
+	                  echo $this->Form->select("UserRelation.$i.year_of_birth", $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>"p-year-$i"));
 	                ?><?php echo __('user.register.year'); ?>
 	                
 	                <?php 
 	                  $months = array_combine(range(1, 12), range(1, 12));
-	                  echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'month'));
+	                  echo $this->Form->select("UserRelation.$i.month_of_birth", $months, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>"p-month-$i"));
 	                ?><?php echo __('user.register.month'); ?>
 	               
 	                <?php 
 	                $dates = array_combine(range(1, 31), range(1, 31));
-	                  echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
+	                  echo $this->Form->select("UserRelation.$i.day_of_birth", $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>"p-day-$i"));
 	                ?> <?php echo __('user.register.day'); ?>
 	                    <span id="p-age-<?php echo $i?>">0</span><?php echo __('user.register.age'); ?>
 	                <script type="text/javascript">
-	                var d = new Date();
-	                  var n = d.getFullYear();
-	                  if($("#p-year-<?php echo $i?>").val() == ""){
-	                  	$("#p-age-<?php echo $i?>").html("00");
-	                  }
-	                  else{
-	                 $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
-	             }
+	              //   var d = new Date();
+	              //     var n = d.getFullYear();
+		             //      if($("#p-year-<?php echo $i?>").val() == ""){
+		             //      	$("#p-age-<?php echo $i?>").html("00");
+		             //      }
+		             //      else{
+		             //     $("#p-age-<?php echo $i?>").html("<?php echo date('Y') - $user['UserRelation'][$i]['year_of_birth'] ?>");
+		             // }
 	                
+                        if($('#p-year-<?php echo $i?>').val() && $('#p-month-<?php echo $i?>').val() && $('#p-day-<?php echo $i?>').val()){                               
+                        	age = calculateAge($('#p-year-<?php echo $i?>').val(), $('#p-month-<?php echo $i?>').val(), $('#p-day-<?php echo $i?>').val() );
+                        
+                      }
+                      else {
+                        age = "";
+                      }
+
+                      $("#p-age-<?php echo $i?>").html(age);
+
+                                          
 	                </script>
 	                </div>
 	              </div>

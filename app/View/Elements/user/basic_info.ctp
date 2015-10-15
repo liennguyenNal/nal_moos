@@ -1,3 +1,4 @@
+  <script src="<?php echo $this->webroot; ?>js/autoNumeric.js"></script>
 <div class="from-login">
     <div class="from-ldpage">
       <div class="content">
@@ -1135,6 +1136,12 @@
                           $('#home').html(result);
                         }
                     });
+                    $.ajax({
+                        url: "<?php echo $this->webroot?>user_partners/edit",
+                        success: function(result){
+                          $('#partner').html(result);
+                        }
+                    });
                 }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);
@@ -1145,5 +1152,10 @@
       jQuery.extend(jQuery.validator.messages, {
           number: "<?php echo __('global.errors.number'); ?>"
       });
+
+      jQuery(function($) {
+      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      $('#salary_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
+  });
 </script>
 <!-- END SCRIPT VALIDATION -->
