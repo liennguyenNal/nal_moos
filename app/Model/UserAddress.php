@@ -2,7 +2,7 @@
 
 class UserAddress extends AppModel {
     var $name = 'UserAddress';
-    var $belongsTo = array('Pref');
+    var $belongsTo = array('Pref','Residence');
     
 
     var $validate = array( 
@@ -31,6 +31,7 @@ class UserAddress extends AppModel {
         'pref_id' => array(
             'rule' => 'notBlank',
         ),  
+        
         'city' =>array(
             'rule' => 'notBlank',
         ),

@@ -165,7 +165,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="label-text"><label><?php echo __('user.register.address'); ?></label><span id="p_company_required_label_1"><?php echo __('global.require'); ?></span></td>
+                  <td class="label-text"><label><?php echo __('user.basic_info.company'); ?></label><span id="p_company_required_label_1"><?php echo __('global.require'); ?></span></td>
                   <td>
                     <div class="block-input">
                       <span class="w-auto1"><?php echo __('user.register.post'); ?></span>
@@ -348,7 +348,7 @@
                       </script>
                         <div class="style-a">
                           <label ><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
-                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required' => false, 'data-placement'=>"right", 'disabled'=> $user['UserPartner']['salary_receive_id'] != 3 ))
+                          <?php echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"p_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required' => false, 'default'=>'25', 'data-placement'=>"right", 'disabled'=> $user['UserPartner']['salary_receive_id'] != 3 ))
                           ?> 
                           <label><?php echo __('global.date'); ?></label>
                         </div>
@@ -767,11 +767,11 @@
         number: true     
       },
       'data[UserPartner][salary_date]': {
-        required: {
-          depends:  function() {
-            return $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() == '3';
-          }
-        },
+        // required: {
+        //   depends:  function() {
+        //     return $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() == '3';
+        //   }
+        // },
         number: true,
         min: 1,
         max: 30
@@ -794,7 +794,7 @@
       },
       'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][salary_date]': {
-        required: "<?php echo __('global.errors.required'); ?>",
+        // required: "<?php echo __('global.errors.required'); ?>",
         min: "<?php echo __('global.errors.salary_date.min'); ?>",
         max: "<?php echo __('global.errors.salary_date.max') ?>"
       },

@@ -33,7 +33,7 @@ class UsersController extends AppController{
     function admin_download()
     {
          
-      // $criteria = " User.is_deleted = 0";
+       $criteria = " 1=1";
       //  if($this->params['named']['status']){
       //   $status_id = $this->params['named']['status'];
       //   $criteria .= " AND User.status_id = '$status_id'" ;
@@ -75,13 +75,15 @@ class UsersController extends AppController{
       // }
       $users = $this->User->find('all', 
         array('conditions'=>array($criteria), 
-          //'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status'),
-          //'recursive' => 3,
-          //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city'), 
+          'contain' => array('ExpectArea', 'UserCompany', 'UserAddress', 'UserCompany.Work','OtherGuarantor.Work','UserGuarantor.Work','UserPartner.Work', 'OtherGuarantor.MarriedStatus','UserGuarantor.MarriedStatus','UserPartner.CompanyPref',
+      'MarriedStatus',  'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'UserCompany.Career','OtherGuarantor.Career','UserGuarantor.Career','UserPartner.Career',
+      'Status', 'UserCompany.Work','UserAddress.Pref','UserCompany.Pref', 'ExpectArea.Pref', 'UserGuarantor.Pref','UserGuarantor.Residence','UserGuarantor.Insurance','OtherGuarantor.Residence','OtherGuarantor.Insurance', 'OtherGuarantor', 'OtherGuarantor.Pref', 'UserGuarantor.CompanyPref', 'UserAddress.Residence', 'UserCompany.Insurance')
+          // 'recursive' => 3,
+          //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city')
           ));
       //Configure::write('debug', 0);
         $this->set('users', $users);
-        //var_dump($users); die;
+        //var_dump($users[0]); die;
         $this->layout = null;
        $this->autoLayout = false;
       Configure::write('debug', 0);
@@ -622,7 +624,7 @@ class UsersController extends AppController{
      * @return response
      */
     function login(){
-      $this->layout = null;
+      $this->layout = "successful";
       $this->Session->delete("Administrator");
       if($this->data){
         $email = $this->data['User']['email'];
@@ -665,7 +667,7 @@ class UsersController extends AppController{
      * @return response
      */
     function create_password($email=null, $access_token=null){
-      $this->layout = null;
+      $this->layout = "successful";
       if ($this->data) {
         $email = $this->data['User']['email'];
         $access_token = $this->data['User']['access_token'];
@@ -711,7 +713,7 @@ class UsersController extends AppController{
      * @return response
      */
     function create_password_successful() {
-      $this->layout = null;
+      $this->layout = "successful";
     }
     
 
@@ -720,7 +722,7 @@ class UsersController extends AppController{
      * @return response
      */
     function change_password(){
-      $this->layout = null;
+      $this->layout = "successful";
       $user = $this->Session->read('User');
       if ( $user ){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
@@ -787,7 +789,7 @@ class UsersController extends AppController{
      * @return response
      */
     function change_password_successful() {
-      $this->layout = null;
+      $this->layout = "successful";
       $user = $this->Session->read('User');
       $user['User']['access_token'] = null;
       $this->User->save($user, false);
@@ -810,7 +812,7 @@ class UsersController extends AppController{
      * @return response
      */
     function reset_password() {
-      $this->layout = null;
+      $this->layout = "successful";
       if($this->data['email']){
         $user = $this->User->find('first', array('conditions'=>array('User.email'=>$this->data['email']), 'contain'=>array('id')));
         if($user){
@@ -838,7 +840,7 @@ class UsersController extends AppController{
     }
 
     function reset_password_email() {
-      $this->layout = null;
+      $this->layout = "successful";
     }
 
 
@@ -865,7 +867,7 @@ class UsersController extends AppController{
       if($_GET['token'] and $_GET['email']){
           $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_GET['token']), 'contain'=>array('id')));
         if($user['User']['email'] == $_GET['email']) {
-          $this->layout = null;
+          $this->layout = "successful";
         }
         else{ 
           return $this->redirect("login");
@@ -900,7 +902,7 @@ class UsersController extends AppController{
      * @return response
      */
     function reset_password_successful(){
-      $this->layout = null;
+      $this->layout = "successful";
     }
 
 

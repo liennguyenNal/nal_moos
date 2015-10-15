@@ -505,7 +505,7 @@
 											<div class="style-a">
 												<label for="11"><?php echo __('user.my_page.basic_info.salary_date'); ?></label>
 												<?php 
-													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
+													echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"og_salary_date", 'label'=>false, 'class'=>'w40','div'=>false, 'placeholder'=>'25', 'default'=>'25', 'required'=>false, 'data-placement'=>'right', 'disabled'=> $user['OtherGuarantor']['salary_receive_id'] != 3))
 	              								?>
 												<label for="11"><?php echo __('global.date'); ?></label>
 											</div>
@@ -737,11 +737,11 @@
             number: true
       	},
       	'data[OtherGuarantor][salary_date]': {
-        	required: {
-                depends:  function() {
-                  return $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() == '3';
-                }
-            },
+        	// required: {
+         //        depends:  function() {
+         //          return $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() == '3';
+         //        }
+         //    },
             number: true,
             min: 1,
             max: 30
@@ -766,7 +766,7 @@
     	},
     	'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
     	'data[OtherGuarantor][salary_date]': {
-    		required: "<?php echo __('global.errors.required'); ?>",
+    		// required: "<?php echo __('global.errors.required'); ?>",
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
             max: "<?php echo __('global.errors.salary_date.max') ?>"
     	},
