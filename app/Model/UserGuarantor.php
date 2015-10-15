@@ -2,7 +2,13 @@
 
 class UserGuarantor extends AppModel {
     var $name = 'UserGuarantor';
-    var $belongsTo = array('Pref','Residence','Insurance', 'Work','Career','MarriedStatus');
+    var $belongsTo = array('Pref','Residence','Insurance', 'Work','Career','MarriedStatus',
+        'CompanyPref'=> array(
+            'className' => 'Pref',
+            //'belongsTo' = array('Pref'),
+            'foreignKey' => 'company_pref_id'
+        )
+        );
 
     var $validate = array(         
          'first_name' => array(

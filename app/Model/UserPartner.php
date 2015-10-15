@@ -2,7 +2,13 @@
 
 class UserPartner extends AppModel {
     var $name = 'UserPartner';
-    var $belongsTo = array('Work','Career');
+    var $belongsTo = array('Work','Career',
+        'CompanyPref'=> array(
+            'className' => 'Pref',
+            //'belongsTo' = array('Pref'),
+            'foreignKey' => 'company_pref_id'
+        )
+        );
 
     var $validate = array(         
          'first_name' => array(

@@ -34,7 +34,8 @@ foreach($users as $user){
   $rows[$i]['申込人_家賃']= $user['UserAddress']['housing_costs'];
   $rows[$i]['申込人_携帯電話']= $user['User']['phone'];
   $rows[$i]['申込人_自宅']= $user['User']['home_phone'];
-  $rows[$i]['申込人_日中連絡先']= $user['User']['contact_type'];
+  if($user['User']['contact_type']==1){$rows[$i]['申込人_日中連絡先']='携帯電話';} else if($user['User']['contact_type']==2){$rows[$i]['申込人_日中連絡先']='自宅電話';}else if($user['User']['contact_type']==3){$rows[$i]['申込人_日中連絡先']='勤務先';} else{$rows[$i]['申込人_日中連絡先']='';}
+  
   $rows[$i]['申込人_職業']= $user['UserCompany']['Work']['name'];
   $rows[$i]['申込人_会社名']= $user['UserCompany']['name'];
   $rows[$i]['申込人_会社名カナ']= $user['UserCompany']['name_kana'];
@@ -52,11 +53,13 @@ foreach($users as $user){
   $rows[$i]['申込人_役職']= $user['UserCompany']['position'];
   $rows[$i]['申込人_勤続年数']= $user['UserCompany']['year_worked'];
   $rows[$i]['申込人_勤続月数']= $user['UserCompany']['month_worked'];
-  $rows[$i]['申込人_給与形態']= $user['UserCompany']['salary_type'];
+  if($user['User']['salary_type']==1){$rows[$i]['申込人_給与形態']= '固定給';} else if($user['User']['salary_type']==2){$rows[$i]['申込人_給与形態']= '一部歩合制';}else if($user['User']['salary_type']==3){$rows[$i]['申込人_給与形態']= '完全歩合制';}else if($user['User']['salary_type']==4){$rows[$i]['申込人_給与形態']= 'その他';} else{$rows[$i]['申込人_給与形態']='';}
+  
   $rows[$i]['申込人_給与その他']= $user['UserCompany']['salary_type_other'];
   $rows[$i]['申込人_税込年収']= $user['UserCompany']['salary_year'];
   $rows[$i]['申込人_税込月収']= $user['UserCompany']['salary_month'];
-  $rows[$i]['申込人_給料日']= $user['UserCompany']['salary_receive_id'];
+  if($user['UserCompany']['salary_receive_id']==1){$rows[$i]['申込人_給料日']= '日払い';} else if($user['UserCompany']['salary_receive_id']==2){$rows[$i]['申込人_給料日']= '週払い';}else if($user['UserCompany']['salary_receive_id']==3){$rows[$i]['申込人_給料日']= '月払い';}else if($user['UserCompany']['salary_receive_id']==4){$rows[$i]['申込人_給料日']= '毎月';} else{$rows[$i]['申込人_給料日']='';}
+  
   $rows[$i]['申込人_給料日付']= $user['UserCompany']['salary_date'];
   $rows[$i]['申込人_健康保険']= $user['UserCompany']['Insurance']['name'];
   $rows[$i]['申込人_職業備考']= $user['UserCompany']['note'];
@@ -103,7 +106,7 @@ foreach($users as $user){
   $rows[$i]['配偶者_会社名カナ']= $user['UserPartner']['company_kana'];
   if($user['UserPartner']['company_post_num_1'] and $user['UserPartner']['company_post_num_2']){$rows[$i]['配偶者_勤務先郵便番号']= $user['UserPartner']['company_post_num_1'].'-'.$user['UserPartner']['company_post_num_2'];}else{$rows[$i]['配偶者_勤務先郵便番号']='';}
   
-  $rows[$i]['配偶者_勤務先都道府県']= $user['UserPartner']['company_pref_id'];//note
+  $rows[$i]['配偶者_勤務先都道府県']= $user['UserPartner']['CompanyPref']['name'];//note
   $rows[$i]['配偶者_勤務先市区町村']= $user['UserPartner']['company_city'];
   $rows[$i]['配偶者_勤務先番地']= $user['UserPartner']['company_address'];
   $rows[$i]['配偶者_勤務先建物']= $user['UserPartner']['company_house_name'];
@@ -115,11 +118,13 @@ foreach($users as $user){
   $rows[$i]['配偶者_役職']= $user['UserPartner']['company_position'];
   $rows[$i]['配偶者_勤続年数']= $user['UserPartner']['year_worked'];
   $rows[$i]['配偶者_勤続月数']= $user['UserPartner']['month_worked'];
-  $rows[$i]['配偶者_給与形態']= $user['UserPartner']['salary_type'];
+  if($user['UserPartner']['salary_type']==1){$rows[$i]['配偶者_給与形態']= '固定給';} else if($user['UserPartner']['salary_type']==2){$rows[$i]['配偶者_給与形態']= '一部歩合制';}else if($user['UserPartner']['salary_type']==3){$rows[$i]['配偶者_給与形態']= '完全歩合制';}else if($user['UserPartner']['salary_type']==4){$rows[$i]['配偶者_給与形態']= 'その他';} else{$rows[$i]['配偶者_給与形態']='';}
+  
   $rows[$i]['配偶者_給与その他']= $user['UserPartner']['salary_type_other'];
   $rows[$i]['配偶者_税込年収']= $user['UserPartner']['income_year'];
   $rows[$i]['配偶者_税込月収']= $user['UserPartner']['income_month'];
-  $rows[$i]['配偶者_給料日']= $user['UserPartner']['salary_receive_id'];
+  if($user['UserPartner']['salary_receive_id']==1){$rows[$i]['配偶者_給料日']= '日払い';} else if($user['UserPartner']['salary_receive_id']==2){$rows[$i]['配偶者_給料日']= '週払い';}else if($user['UserPartner']['salary_receive_id']==3){$rows[$i]['配偶者_給料日']= '月払い';}else if($user['UserPartner']['salary_receive_id']==4){$rows[$i]['配偶者_給料日']= '毎月';} else{$rows[$i]['配偶者_給料日']='';}
+  
   $rows[$i]['配偶者_給料日付']= $user['UserPartner']['salary_date'];
   $rows[$i]['配偶者_健康保険']= $user['UserPartner']['Insurance']['name'];
   $rows[$i]['配偶者_備考']= $user['UserPartner']['note'];
@@ -212,13 +217,14 @@ foreach($users as $user){
   $rows[$i]['保証人_居住年数']= $user['UserGuarantor']['year_residence'];
   $rows[$i]['保証人_携帯電話']= $user['UserGuarantor']['phone'];
   $rows[$i]['保証人_自宅']= $user['UserGuarantor']['home_phone'];
-  $rows[$i]['保証人_日中連絡先']= $user['UserGuarantor']['contact_type_id'];
+  if($user['UserGuarantor']['contact_type_id']==1){$rows[$i]['保証人_日中連絡先']='携帯電話';} else if($user['UserGuarantor']['contact_type_id']==2){$rows[$i]['保証人_日中連絡先']='自宅電話';}else if($user['UserGuarantor']['contact_type_id']==3){$rows[$i]['保証人_日中連絡先']='勤務先';}else{$rows[$i]['保証人_日中連絡先']='';}
+  
   $rows[$i]['保証人_職業']= $user['UserGuarantor']['Work']['name'];
   $rows[$i]['保証人_会社名']= $user['UserGuarantor']['company'];
   $rows[$i]['保証人_会社名カナ']= $user['UserGuarantor']['company_kana'];
   if($user['UserGuarantor']['company_post_num_1'] and $user['UserGuarantor']['company_post_num_2']){$rows[$i]['保証人_勤務先郵便番号']= $user['UserGuarantor']['company_post_num_1'].'-'.$user['UserGuarantor']['company_post_num_2'];}else{$rows[$i]['保証人_勤務先郵便番号']='';}
   
-  $rows[$i]['保証人_勤務先都道府県']= $user['UserGuarantor']['company_pref_id'];
+  $rows[$i]['保証人_勤務先都道府県']= $user['UserGuarantor']['CompanyPref']['name'];
   $rows[$i]['保証人_勤務先市区町村']= $user['UserGuarantor']['company_city'];
   $rows[$i]['保証人_勤務先番地']= $user['UserGuarantor']['company_address'];
   $rows[$i]['保証人_勤務先建物']= $user['UserGuarantor']['company_house_name'];
@@ -230,11 +236,13 @@ foreach($users as $user){
   $rows[$i]['保証人_役職']= $user['UserGuarantor']['company_position'];
   $rows[$i]['保証人_勤続年数']= $user['UserGuarantor']['year_worked'];
   $rows[$i]['保証人_勤続月数']= $user['UserGuarantor']['month_worked'];
-  $rows[$i]['保証人_給与形態']= $user['UserGuarantor']['salary_type'];
+  if($user['UserGuarantor']['salary_type']==1){$rows[$i]['保証人_給与形態']= '固定給';} else if($user['UserGuarantor']['salary_type']==2){$rows[$i]['保証人_給与形態']= '一部歩合制';}else if($user['UserGuarantor']['salary_type']==3){$rows[$i]['保証人_給与形態']= '完全歩合制';}else if($user['UserGuarantor']['salary_type']==4){$rows[$i]['保証人_給与形態']= 'その他';} else{$rows[$i]['保証人_給与形態']='';}
+  
   $rows[$i]['保証人_給与形態その他']= $user['UserGuarantor']['salary_type_other'];
   $rows[$i]['保証人_税込年収']= $user['UserGuarantor']['income_year'];
   $rows[$i]['保証人_税込月収']= $user['UserGuarantor']['income_month'];
-  $rows[$i]['保証人_給料日']= $user['UserGuarantor']['salary_receive_id'];
+  if($user['UserGuarantor']['salary_receive_id']==1){$rows[$i]['保証人_給料日']= '日払い';} else if($user['UserGuarantor']['salary_receive_id']==2){$rows[$i]['保証人_給料日']= '週払い';}else if($user['UserGuarantor']['salary_receive_id']==3){$rows[$i]['保証人_給料日']= '月払い';}else if($user['UserGuarantor']['salary_receive_id']==4){$rows[$i]['保証人_給料日']= '毎月';} else{$rows[$i]['保証人_給料日']='';}
+  
   $rows[$i]['保証人_給料日付']= $user['UserGuarantor']['salary_date'];
   $rows[$i]['保証人_健康保険']= $user['UserGuarantor']['Insurance']['name'];
   $rows[$i]['保証人_備考']= $user['UserGuarantor']['note'];
@@ -262,13 +270,14 @@ foreach($users as $user){
   $rows[$i]['保証人2_居住年数']= $user['OtherGuarantor']['year_residence'];
   $rows[$i]['保証人2_携帯電話']= $user['OtherGuarantor']['phone'];
   $rows[$i]['保証人2_自宅']= $user['OtherGuarantor']['home_phone'];
-  $rows[$i]['保証人2_日中連絡先']= $user['OtherGuarantor']['contact_type_id'];
+  if($user['OtherGuarantor']['contact_type_id']==1){$rows[$i]['保証人2_日中連絡先']='携帯電話';} else if($user['OtherGuarantor']['contact_type_id']==2){$rows[$i]['保証人2_日中連絡先']='自宅電話';}else if($user['OtherGuarantor']['contact_type_id']==3){$rows[$i]['保証人2_日中連絡先']='勤務先';} else{$rows[$i]['保証人2_日中連絡先']='';}
+  
   $rows[$i]['保証人2_職業']= $user['OtherGuarantor']['Work']['name'];
   $rows[$i]['保証人2_会社名']= $user['OtherGuarantor']['company'];
   $rows[$i]['保証人2_会社名カナ']= $user['OtherGuarantor']['company_kana'];
   if($user['OtherGuarantor']['company_post_num_1'] and $user['OtherGuarantor']['company_post_num_2']){$rows[$i]['保証人2_勤務先郵便番号']= $user['OtherGuarantor']['company_post_num_1'].'-'.$user['OtherGuarantor']['company_post_num_2'];}else{$rows[$i]['保証人2_勤務先郵便番号']='';}
   
-  $rows[$i]['保証人2_勤務先都道府県']= $user['OtherGuarantor']['company_pref_id'];
+  $rows[$i]['保証人2_勤務先都道府県']= $user['OtherGuarantor']['CompanyPref']['name'];
   $rows[$i]['保証人2_勤務先市区町村']= $user['OtherGuarantor']['company_city'];
   $rows[$i]['保証人2_勤務先番地']= $user['OtherGuarantor']['company_address'];
   $rows[$i]['保証人2_勤務先建物']= $user['OtherGuarantor']['company_house_name'];
@@ -280,12 +289,15 @@ foreach($users as $user){
   $rows[$i]['保証人2_役職']= $user['OtherGuarantor']['company_position'];
   $rows[$i]['保証人2_勤続年数']= $user['OtherGuarantor']['year_worked'];
   $rows[$i]['保証人2_勤続月数']= $user['OtherGuarantor']['month_worked'];
-  $rows[$i]['保証人2_給与形態']= $user['OtherGuarantor']['salary_type'];
+  if($user['OtherGuarantor']['salary_type']==1){$rows[$i]['保証人2_給与形態']= '固定給';} else if($user['OtherGuarantor']['salary_type']==2){$rows[$i]['保証人2_給与形態']= '一部歩合制';}else if($user['OtherGuarantor']['salary_type']==3){$rows[$i]['保証人2_給与形態']= '完全歩合制';}else if($user['OtherGuarantor']['salary_type']==4){$rows[$i]['保証人2_給与形態']= 'その他';} else{$rows[$i]['保証人2_給与形態']='';}
+
+  
   $rows[$i]['保証人2_給与形態その他']= $user['OtherGuarantor']['salary_type_other'];
   $rows[$i]['保証人2_税込年収']= $user['OtherGuarantor']['income_year'];
   $rows[$i]['保証人2_税込月収']= $user['OtherGuarantor']['income_month'];
   $rows[$i]['保証人2_給料日']= $user['OtherGuarantor']['salary_date'];
-  $rows[$i]['保証人2_給料日付']= $user['OtherGuarantor']['salary_receive_id'];
+  if($user['OtherGuarantor']['salary_receive_id']==1){$rows[$i]['保証人2_給料日付']= '日払い';} else if($user['OtherGuarantor']['salary_receive_id']==2){$rows[$i]['保証人2_給料日付']= '週払い';}else if($user['OtherGuarantor']['salary_receive_id']==3){$rows[$i]['保証人2_給料日付']= '月払い';}else if($user['OtherGuarantor']['salary_receive_id']==4){$rows[$i]['保証人2_給料日付']= '毎月';} else{$rows[$i]['保証人2_給料日付']='';}
+  
   $rows[$i]['保証人2_健康保険']= $user['OtherGuarantor']['Insurance']['name'];
   $rows[$i]['保証人2_備考']= $user['OtherGuarantor']['note'];
   $rows[$i]['会員申込日']=$user['User']['created'];

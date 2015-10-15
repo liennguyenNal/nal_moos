@@ -75,9 +75,9 @@ class UsersController extends AppController{
       // }
       $users = $this->User->find('all', 
         array('conditions'=>array($criteria), 
-          'contain' => array('ExpectArea', 'UserCompany', 'UserAddress', 'UserCompany.Work','OtherGuarantor.Work','UserGuarantor.Work','UserPartner.Work', 'OtherGuarantor.MarriedStatus','UserGuarantor.MarriedStatus',
+          'contain' => array('ExpectArea', 'UserCompany', 'UserAddress', 'UserCompany.Work','OtherGuarantor.Work','UserGuarantor.Work','UserPartner.Work', 'OtherGuarantor.MarriedStatus','UserGuarantor.MarriedStatus','UserPartner.CompanyPref',
       'MarriedStatus',  'UserAttachment', 'UserPartner', 'UserGuarantor', 'UserRelation', 'UserCompany.Career','OtherGuarantor.Career','UserGuarantor.Career','UserPartner.Career',
-      'Status', 'UserCompany.Work','UserAddress.Pref','UserCompany.Pref', 'ExpectArea.Pref', 'UserGuarantor.Pref','UserGuarantor.Residence','UserGuarantor.Insurance','OtherGuarantor.Residence','OtherGuarantor.Insurance', 'OtherGuarantor', 'OtherGuarantor.Pref', 'UserAddress.Residence', 'UserCompany.Insurance')
+      'Status', 'UserCompany.Work','UserAddress.Pref','UserCompany.Pref', 'ExpectArea.Pref', 'UserGuarantor.Pref','UserGuarantor.Residence','UserGuarantor.Insurance','OtherGuarantor.Residence','OtherGuarantor.Insurance', 'OtherGuarantor', 'OtherGuarantor.Pref', 'UserGuarantor.CompanyPref', 'UserAddress.Residence', 'UserCompany.Insurance')
           // 'recursive' => 3,
           //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city')
           ));
