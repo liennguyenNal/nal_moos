@@ -121,7 +121,7 @@
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      
                      
-                      <button type="submit" class="btn btn-primary" id="btn-change">保存する</button>
+                      <button type="submit" class="btn btn-primary" id="btn-change">確認する</button>
                       
                       <button type="button" class="btn btn-default" id="btn-cancel" >戻る</button>
                     </div>
