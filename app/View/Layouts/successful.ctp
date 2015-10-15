@@ -19,6 +19,8 @@
 	<link rel="stylesheet" href="<?php echo $this->webroot;?>css/swiper.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot;?>css/common.css" type="text/css" media="screen" />
 	<script src="<?php echo $this->webroot;?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
+  	<script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/swiper.jquery.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/common.js" type="text/javascript"></script>
