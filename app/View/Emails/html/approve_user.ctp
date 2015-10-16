@@ -21,4 +21,4 @@
 <p style=" margin:0px !important">〒108-0074 </p>
 <p style=" margin:0px !important">東京都港区高輪２丁目１４－１７　グレイス高輪ビル８階</p>
 <a href="<?php echo Router::url('/', true) ?>contact">お問い合わせフォーム</a></p>
-=========================================</p>
+<p style=" margin:0px !important">=========================================</p>

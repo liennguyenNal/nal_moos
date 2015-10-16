@@ -7,7 +7,7 @@
 <p style=" margin:0px !important">-----------------------------------------------------------------------------------</p>
 <p style=" margin:0px !important"><?php $arr = array(1=>'添付ファイルの追加', 2=>'入力内容の修正', 3=>'保証人の追加'); ?> 
 <?php foreach ($requireds as $required) {
-	echo "" . $arr[$required].  "</br>";
+	echo "<p style='margin:0px !important'>" . $arr[$required].  "</p>";
 }?>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important"><?php echo nl2br($comment);?></p>

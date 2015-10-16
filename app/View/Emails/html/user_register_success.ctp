@@ -9,7 +9,7 @@
 <p style=" margin:0px !important">運営事務局の確認が終わるまで、暫くお待ち下さい。</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">※このメールは「家賃でもらえる家」無料会員登録にお申し込みいただいた方にお送りしております。</p>
-<p style=" margin:0px !important">※お心当たりの無い方は、誠にお手数ですがお問い合わせフォーム(Link)よりご連絡下さい。</p>
+<p style=" margin:0px !important">※お心当たりの無い方は、誠にお手数ですが<a href="<?php echo Router::url('/', true) ?>contact">お問い合わせフォーム</a>よりご連絡下さい。</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">☆サービス紹介動画</p>
 <p style=" margin:0px !important"><a href="https://www.youtube.com/embed/NA444TnvNfc">1分でわかる「家賃でもらえる家」</a></p>
