@@ -111,7 +111,7 @@
           <thead>
             <tr>
               <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
-              <th>番号</th>
+              <th>登録NO</th>
               <th>公開日</th>
               <th><?php echo __('admin.articles.title'); ?></th>
               <th>添付ファイル</th>
