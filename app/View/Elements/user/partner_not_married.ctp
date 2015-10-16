@@ -627,9 +627,6 @@
 
              });
 
-             <?php if(!$user['User']['live_with_family']){?>
-                $("#relation-area").find(".required").hide();
-              <?php }?>
              
         </script>
         <!-- END MAIN SCRIPT -->
@@ -638,7 +635,13 @@
     </div>
   </div>
 </div>
-
+<?php if(!$user['User']['live_with_family']){?>
+  <script>
+    //alert(1111);
+      $("#relation-area").find(".required").hide();
+  </script>
+  <?php }?>
+             
 <!-- SCRIPT VALIDATION -->
 <script>
 

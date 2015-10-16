@@ -1825,7 +1825,7 @@ class UsersController extends AppController{
             $Email->emailFormat('html');
             $Email->to(ADMIN_EMAIL);
             $Email->from('moos@nal.vn');
-            $Email->subject(__('admin.email.update_account.title'));
+            $Email->subject('【MOOS】審査申し込み通知');
              $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
               'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment', 'ExpectArea.Pref'),
               'recursive'=>3
