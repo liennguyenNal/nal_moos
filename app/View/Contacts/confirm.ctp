@@ -142,7 +142,7 @@
                         <span class="red">※必須</span>
                       </div>
                       <!-- <button type="button"><img src="img/front/contact.png" alt="送信確認"/></button> -->
-                      <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/contact.png" alt="送信確認"/></button>
+                      <button type="submit"><img src="<?php echo $this->webroot; ?>img/front/Send.png" alt="送信確認"/></button>
                       <button type="button" class="button-1b" onclick="window.history.back();"><img src="<?php echo $this->webroot; ?>img/front/link-tab-3b.png" alt="キャンセル"></button>
                     </div>
                   </div>

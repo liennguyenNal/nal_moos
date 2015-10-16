@@ -2,7 +2,7 @@
 
 class UserRelation extends AppModel {
     var $name = 'UserRelation';
-    var $belongsTo = array('User','Insurance');
+    var $belongsTo = array('User');
 
     var $validate = array(         
          'first_name' => array(

@@ -640,7 +640,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_count'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
+                        <?php echo $this->Form->input('User.debt_count', array('type'=>'text', 'id'=>"debt_count", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.count'); ?></span>
                         <span class="style">※借り入れがない場合 "0” を入力してください。</span>
@@ -651,7 +651,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_total'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
+                        <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"debt_total", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
                         <span class="style">※借り入れがない場合 "0” を入力してください。</span>
@@ -662,7 +662,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.debt_month'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
+                        <?php echo $this->Form->input('User.debt_pay_per_month', array('type'=>'text', 'id'=>"debt_month", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                         <span class="style">※借り入れがない場合 "0” を入力してください。</span>
@@ -1156,6 +1156,8 @@
       jQuery(function($) {
       $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
       $('#salary_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
+      $('#debt_total').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});   
+      $('#debt_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});   
   });
 </script>
 <!-- END SCRIPT VALIDATION -->
