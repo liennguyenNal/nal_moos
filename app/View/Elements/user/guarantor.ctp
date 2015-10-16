@@ -143,7 +143,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span></td>
+									<td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label></td>
 									<td>
 										<div class="block-input">
 											<?php echo $this->Form->input('UserGuarantor.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))

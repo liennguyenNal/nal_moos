@@ -460,7 +460,7 @@
                 <table class="from" id="theform">
                   <tbody>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.partner.name'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.partner.name'); ?></label><span class="required"><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="block-input">
                           <div class="div-style">
@@ -489,7 +489,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.register.gender'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.register.gender'); ?></label><span class="required"><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="form-radio">
                           <div class="form-w">
@@ -503,7 +503,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.register.birthday'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.register.birthday'); ?></label><span class="required"><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="select">
                           <?php 
@@ -538,7 +538,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.my_page.guarantor.relationship'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.my_page.guarantor.relationship'); ?></label><span class="required"><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="block-input">
                           <?php echo $this->Form->input("UserRelation.$i.relate", array('type'=>'text', 'id'=>"last_name_kana", 'label'=>false, 'class'=>'w198', 'div'=>false, 'data-placement'=>"right", "required"=>false, 'placeholder'=>'例）長男、次女、父、母、叔父など'))
@@ -658,9 +658,6 @@
                   });
 
              });
-             <?php if(!$user['User']['live_with_family']){?>
-                $("#relation-area").find(".required").hide();
-              <?php }?>
              
              
         </script>
@@ -670,7 +667,12 @@
     </div>
   </div>
 </div>
-
+<?php if(!$user['User']['live_with_family']){?>
+  <script>
+    
+      $("#relation-area").find('.required').hide();
+  </script>
+  <?php }?>
 <!-- SCRIPT VALIDATION -->
 <script>
 
