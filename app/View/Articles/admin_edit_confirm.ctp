@@ -1,5 +1,4 @@
 
-
 <div class="page-header">
     
 
@@ -94,8 +93,8 @@
               <input type="hidden" name="article_confirm" value="<?php echo htmlentities(serialize($article)); ?>">
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                <button type="submit" class="btn btn-primary">確認する</button>
-                  <button id="btn-cancel" type="reset" class="btn btn-default"><?php if($article['Article']['id']) echo 'キャンセル'; else echo '戻る'; ?></button>
+                <button type="submit" class="btn btn-primary">保存する</button>
+                  <button id="btn-cancel" type="reset" class="btn btn-default">戻る</button>
                   
                 </div>
               </div>
