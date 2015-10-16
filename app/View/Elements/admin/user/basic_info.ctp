@@ -171,7 +171,7 @@
               <legend>申込人住所情報</legend>
               <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" >現住所</span></td>
+                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></span></td>
                 <td>
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -329,7 +329,7 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></td>
+                <td><label for="inputEmail" ><?php echo __('user.basic_info.company'); ?></td>
                 <td>
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
