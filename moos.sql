@@ -886,7 +886,7 @@ ALTER TABLE `user_companies` CHANGE `salary_year` `salary_year` VARCHAR(20) NULL
 ALTER TABLE `user_guarantors` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
 ALTER TABLE `user_partners` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
 
-ALTER TABLE `user_companies` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT '25';
-ALTER TABLE `user_partners` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT '25';
-ALTER TABLE `user_guarantors` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT '25';
+ALTER TABLE `user_companies` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `user_partners` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `user_guarantors` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
 

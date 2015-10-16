@@ -354,8 +354,8 @@ msgstr "【家賃でもらえる家】審査結果のご連絡"
 msgid "admin.email.return_user.title"
 msgstr "【家賃でもらえる家】審査結果のご連絡"
 
-msgid "admin.email.project_payment.title"
-msgstr "家賃でもらえる家】審査結果のご連絡"
+msgid "admin.email.process_payment.title"
+msgstr "【家賃でもらえる家】保証金入金確認のご連絡"
 
 msgid "admin.email.update_account.title"
 msgstr "【家賃でもらえる家】審査申し込み"

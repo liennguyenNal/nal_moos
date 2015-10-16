@@ -602,7 +602,7 @@ class UsersController extends AppController{
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
             $Email->from('moos@nal.vn');
-            $Email->subject(__('admin.email.project_payment.title'));
+            $Email->subject(__('admin.email.process_payment.title'));
             $Email->viewVars(array('user' => $user));
             $Email->send();
 
