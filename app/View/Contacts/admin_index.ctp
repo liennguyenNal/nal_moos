@@ -115,7 +115,7 @@
             <tr>
               <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
 
-              <th>採番</th>
+              <th>問合せNo</th>
               <th>問合せ日</th>
               <th>名前</th>
               <th>会社名</th>

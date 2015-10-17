@@ -261,7 +261,7 @@ class ContactsController extends AppController {
          if($contact){
           //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            $this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            //$this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("view/".$this->data['Contact']['id']);
           }
         }
@@ -285,7 +285,7 @@ class ContactsController extends AppController {
         if($contact){
           //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            $this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
+            //$this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("index");
           }
         }

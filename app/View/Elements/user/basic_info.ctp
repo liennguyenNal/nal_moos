@@ -248,7 +248,7 @@
                     <td class="label-text"><label><?php echo __('user.my_page.basic_info.house_cost'); ?></label><span id="house_cost_required" style="display:none"><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
-                        <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
+                        <?php echo $this->Form->input('UserAddress.housing_costs', array('type'=>'text', 'id'=>"housing_costs",'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000', 'maxlength'=>false))
                         ?>
                         <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                       </div>
@@ -1158,6 +1158,8 @@
       $('#salary_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
       $('#debt_total').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});   
       $('#debt_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});   
+      $('#housing_costs').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
+      
   });
 </script>
 <!-- END SCRIPT VALIDATION -->

@@ -885,6 +885,8 @@ ALTER TABLE `users` CHANGE `live_with_family` `live_with_family` INT(11) NOT NUL
 ALTER TABLE `user_companies` CHANGE `salary_year` `salary_year` VARCHAR(20) NULL DEFAULT NULL, CHANGE `salary_month` `salary_month` VARCHAR(20) NULL DEFAULT NULL;
 ALTER TABLE `user_guarantors` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
 ALTER TABLE `user_partners` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
+ALTER TABLE `user_addresses` CHANGE `housing_costs` `housing_costs` VARCHAR(20) NULL DEFAULT NULL;
+ALTER TABLE `users` CHANGE `debt_total_value` `debt_total_value` VARCHAR(20) NULL DEFAULT NULL, CHANGE `debt_pay_per_month` `debt_pay_per_month` VARCHAR(20) NULL DEFAULT NULL;
 
 ALTER TABLE `user_companies` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `user_partners` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;

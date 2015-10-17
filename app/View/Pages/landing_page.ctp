@@ -23,6 +23,7 @@
   	<script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/jquery.autoKana.js"></script>
   	<script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
+  	<script src="<?php echo $this->webroot; ?>js/autoNumeric.js"></script>
 </head>
 <body>
 	<div id="wrapper">		
@@ -40,7 +41,7 @@
 					<div class="container-fluid">
 						<div class="content-video">
 							<div class="content-video-how">
-								<iframe width="242" height="140" src="https://www.youtube.com/embed/NA444TnvNfc" frameborder="0" allowfullscreen></iframe>
+								<iframe width="242" height="136" src="https://www.youtube.com/embed/NA444TnvNfc" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>

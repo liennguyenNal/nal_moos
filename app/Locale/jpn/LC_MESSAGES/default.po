@@ -346,7 +346,7 @@ msgid "user.my_page.guarantor.relationship"
 msgstr "申込人との関係"
 
 msgid "admin.email.approve_user.title"
-msgstr "【家賃でもらえる家】審査申し込み"
+msgstr "【家賃でもらえる家】審査結果のご連絡"
 
 msgid "admin.email.reject_user.title"
 msgstr "【家賃でもらえる家】審査結果のご連絡"

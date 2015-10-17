@@ -68,12 +68,12 @@
 											<span><?php echo __('user.register.year'); ?></span>
 											<?php 
 						    	              	$months = array_combine(range(1, 12), range(1, 12));
-						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'og_month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('OtherGuarantor.month_of_birth', $months, array('div'=>false, 'label'=>false, 'id'=>'og_month', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'og_calculate_age()'));
 						                	?>
 											<span><?php echo __('user.register.month'); ?></span>
 											<?php 
 						    	              	$dates = array_combine(range(1, 31), range(1, 31));
-						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'og_day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--'));
+						                  		echo $this->Form->select('OtherGuarantor.day_of_birth', $dates, array('div'=>false, 'label'=>false, 'id'=>'og_day', 'required'=>false, 'data-placement'=>'right', 'empty'=>'--', 'onchange'=>'og_calculate_age()'));
 						                	?>
 											<span><?php echo __('user.register.day'); ?></span>
 											<span class="style" id="og_age">00</span>

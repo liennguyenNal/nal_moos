@@ -297,7 +297,7 @@
 	                  <div class="col-lg-10">
 	                   
 	                    <?php 
-	                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------'));
+	                    echo $this->Form->select('UserGuarantor.work_id', $works, array('class'=>'form-control', 'style'=>'width:250px;','div'=>false, 'label'=>false, 'id'=>'working_status', 'empty'=>'--------'));
 	                  ?>
 	                  </div>
 	                </div>
