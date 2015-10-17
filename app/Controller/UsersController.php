@@ -783,7 +783,6 @@ class UsersController extends AppController{
       }
     }
 
-
     /**
      * USER CHANGE PASSWORD SUCCESSFUL
      * @return response
@@ -806,7 +805,6 @@ class UsersController extends AppController{
       $Email->send();
     }
 
-
     /**
      * USER RESET PASSWORD FUNCTION
      * @return response
@@ -815,23 +813,18 @@ class UsersController extends AppController{
       $this->layout = "successful";
       if($this->data['email']){
         $user = $this->User->find('first', array('conditions'=>array('User.email'=>$this->data['email']), 'contain'=>array('id')));
-        if($user){
-
-          $hash=sha1($user['User']['id'].microtime());
-          $this->User->id = $user['User']['id']; 
-          $this->User->saveField('access_token', $hash);
-
-          $Email = new CakeEmail("gmail"); 
-          $Email->template('user_reset_password');
-          $Email->emailFormat('html');
-          $Email->from('moos@nal.vn');
-          $Email->to($this->data['email']);
-          $Email->subject('【家賃でもらえる家】パスワードの変更');
-          $Email->viewVars(array('user' => $user, 'hash'=>$hash));
-
-          if($Email->send()){
-            //echo 111; die;
-            return $this->render("reset_password_email");
+        if($user) {
+          $user['User']['access_token'] =sha1($user['User']['id'].microtime());;
+          if ($this->User->save($user, false)) {
+            $Email = new CakeEmail("gmail"); 
+            $Email->template('user_reset_password');
+            $Email->emailFormat('html');
+            $Email->from('moos@nal.vn');
+            $Email->to($this->data['email']);
+            $Email->subject('【家賃でもらえる家】パスワードの変更');
+            $Email->viewVars(array('user' => $user));
+            $Email->send();
+            $this->redirect('reset_password_email');
           }
         } else {
            $this->Session->setFlash(__('global.errors.reset_password.email_unique'), 'default');
@@ -839,25 +832,13 @@ class UsersController extends AppController{
       }
     }
 
-    function reset_password_email() {
-      $this->layout = "successful";
-    }
-
-
     /**
-     * USER AJAX RESET PASSWORD 
+     * USER SEND EMAIL RESET PASSWORD
      * @return [type] [description]
      */
-    function ajax_password_reset(){
-      $user = $this->User->find('first', array('conditions'=>array('User.email'=>$_POST['email']), 'contain'=>array('id')));
-      if($user){
-        die ('ok');
-      }
-      else{
-        die('not');
-      }
-    }
-    
+    function reset_password_email() {
+      $this->layout = "successful";
+    } 
 
     /**
      * USER RESET PASSWORD VIEW
@@ -865,38 +846,21 @@ class UsersController extends AppController{
      */
     function reset_link(){
       $this->layout = "successful";
-      if($_GET['token'] and $_GET['email']){
-          $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_GET['token']), 'contain'=>array('id')));
-        if($user['User']['email'] == $_GET['email']) {
-          
+      if ($_POST['token']) {
+        $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_POST['token']), 'contain'=>array('id')));
+        if ($user) {
+          if ($_POST['password']) {
+            $user['User']['password'] = md5($_POST['password']);
+            $user['User']['access_token'] = null;
+            if ($this->User->save($user, false)) {
+              $this->redirect('reset_password_successful');
+            }
+          } else {
+            echo "Password ko duoc post";
+          }
         }
-        else{ 
-          return $this->redirect("login");
-        }
-      }else{
-        return $this->redirect("login");
       }
     }
-
-
-    /**
-     * USER RESET PASSWORD VIEW 2
-     * @return [type] [description]
-     */
-    function reset_link_after(){
-      if($_POST['token']){
-        $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_POST['token']), 'contain'=>array('id'))); 
-      }
-
-      if($user and $_POST['password']){
-          $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_POST['token']), 'contain'=>array('id')));
-          $this->User->id = $user['User']['id']; 
-          $this->User->saveField('password', md5($_POST['password']));
-          $this->User->saveField('access_token', '');
-          return $this->redirect("reset_password_successful");
-      }
-    }
-
 
     /**
      * USER RESET PASSWORD SUCCESSFUL
@@ -905,25 +869,6 @@ class UsersController extends AppController{
     function reset_password_successful(){
       $this->layout = "successful";
     }
-
-
-    /**
-     * USER AJAX RESET LINK
-     * @return response
-     */
-    function ajax_reset_link(){
-      if($_POST['token']){
-      $user = $this->User->find('first', array('conditions'=>array('User.access_token'=>$_POST['token']), 'contain'=>array('id')));
-      }
-      else {die ('not'); }
-      if($user){
-        die ('ok');
-      }
-      else{
-        die('not');
-      }
-    }
-
 
     /**
      * USER EDIT PROFILE FUNCTION

@@ -24,7 +24,10 @@
 						<div class="content">
 							<div class="container-fluid">
 								<div class="content-from">
-									<form class="form_reset1" action="<?php echo Router::url('/', true); ?>users/reset_link_after" method="POST">
+								<div class="block-warning" id="error-section" style="display:none">
+			                    	<?php echo __('global.errors.create.password'); ?>
+			                  	</div>
+									<form id="form-reset11" action="reset_link" method="POST">
 										<div class="content-from-block">
 											<div class="content-from-how">
 												<table class="from">
@@ -34,7 +37,7 @@
 															<td>
 																<div class="block-input fix-padding">
 																	<div class="div-style">
-																		<input class="w198" type="password" id="password" name="password" />
+																		<input class="w198" type="password" id="password" name="password" data-placement="right"/>
 																		<span class="style">※半角英数字、8文字以上</span>
 																	</div>
 																</div>
@@ -45,7 +48,7 @@
 															<td>
 																<div class="block-input fix-padding">
 																	<div class="div-style">
-																		<input class="w198" type="password" id="confpass"name="confpass" />
+																		<input class="w198" type="password" id="confpass" name="confpass" data-placement="right"/>
 																		<span class="style">※半角英数字、8文字以上</span>
 																	</div>
 																</div>
@@ -58,11 +61,8 @@
 											<p class="note note-fix">※パスワードは、半角英数（a-z）、数字（0-9）、及びピリオド（.）、アンダースコア（_）、ダッシュ（-）を使用することができます。</br>アルファベットと数字を混在させてください。先頭の文字はアルファベットまたは数字にしてください。ピリオドを連続して使用することはできません。</p>
 											<div class="block-note">
 												<div class="block-button">
-
 												    <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
-												    
-												    
-													<button id="button" type="button"><img src="<?php echo $this->webroot;?>img/front/text-from-a.png" alt="送信する"/></button>
+													<button type="submit"><img src="<?php echo $this->webroot;?>img/front/text-from-a.png" alt="送信する"/></button>
 												</div>
 											</div>
 										</div>
@@ -76,42 +76,55 @@
 		</section>
 	</div>
 
-	<script type="text/javascript">
-		 $(document).ready(function() { //jQuery('#form_reset1').submit();
-	    	$('#button').click(function(event){ //alert('aa');
-	    
-		        data = $('#password').val();
-		        var len = data.length;
-		        
-		        if(len < 8) {
-		            $('.alert_reset').html("Password cannot be less than 8 characters");
-		            // Prevent form submission
-		            //event.preventDefault();
-		        }
-		        else{
-			        if($('#password').val() != $('#confpass').val()) {
-			            $('.alert_reset').html("Passwords don't match");
-			            // Prevent form submission
-			            //event.preventDefault();
-			        }
-			        else{
-			        	$.ajax({url: "<?php echo Router::url('/', true); ?>"+"users/ajax_reset_link/", type: 'POST', cache: false, data: 'token='+'<?php echo $_GET['token']; ?>',  success: function(result){ 
-				        	
-				        	if(result== 'not'){
-				        		$('.alert_reset').html("Your link is not correct");
-				        		 
-				        	}
-				        	else{
-				        		$('.alert_reset').html("");
-				        		$('.form_reset1').submit();
-				        	}
-				        	
-					    }});
-				        //alert('sss');
-				        
-			    	}
-		   	 	}
-	         
-	    });
+<!-- SCRIPT VALIDATION -->
+<script>
+	$.validator.addMethod(
+	  "password_regex",
+	  function(value, element, regexp) {
+	      var re = new RegExp(regexp);
+	      return this.optional(element) || re.test(value);
+	  },
+	  "必須項目です。</br>半角英数字で入力してください。</br>8文字以上で入力してください。"
+	);
+
+	$.validator.addMethod("nospace", 
+	  function(value, element) { 
+	    return value.indexOf(" ") < 0 && value != ""; 
+	  }, "スペースは入力しないでください。");
+
+	$("#form-reset11").validate({
+	  rules: {
+	    'password': {
+	      required: true,
+	      password_regex: "^[a-z0-9_.-]",
+	      nospace: true,
+	      minlength: 8
+	    },
+	    'confpass': {
+	      required: true,
+	      equalTo: "#password"
+	    }
+	  },
+	  messages: {
+	    'password': {
+	      required: "<?php echo __('global.errors.required'); ?>"
+	    },
+	    'confpass': {
+	      required: "<?php echo __('global.errors.required'); ?>"
+	    }
+	  },
+	  invalidHandler: function(event, validator) {
+	    var errors = validator.numberOfInvalids();
+	    if (errors) {
+	      $("#error-section").show();
+	    } else {
+	      $("#error-section").hide();
+	    }
+	  }
 	});
-	</script>
+	jQuery.extend(jQuery.validator.messages, {
+	  password: "<?php echo __('global.errors.password'); ?>",
+	  equalTo: "<?php echo __('global.errors.equalTo.password'); ?>",
+	  minlength: "<?php echo __('global.errors.password.minlength'); ?>"
+	});
+</script>

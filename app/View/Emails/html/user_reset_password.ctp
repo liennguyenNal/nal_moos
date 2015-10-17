@@ -5,7 +5,7 @@
 </br>
 下記URLのリンクをクリックし、パスワードの再設定をお願いいたします。</br>
 </br>
-<a href="<?php echo Router::url('/', true).'users/reset_link/?token='.$hash.'&email='.$user['User']['email']; ?>"><?php echo Router::url('/', true).'users/reset_link/?token='.$hash.'&email='.$user['User']['email']; ?></a></br>
+<a href="<?php echo Router::url('/', true).'users/reset_link/?token='.$user['User']['access_token'].'&email='.$user['User']['email']; ?>"><?php echo Router::url('/', true).'users/reset_link/?token='.$user['User']['access_token'].'&email='.$user['User']['email']; ?></a></br>
 ※ドメインなどは例</br>
 </br>
 パスワード再設定後、ログイン画面よりご登録いただきましたメールアドレスをユーザーIDとしてご入力いただき、再設定したパスワードでログインすることができます。</br>
