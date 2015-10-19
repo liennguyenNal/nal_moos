@@ -831,8 +831,8 @@
   });
 
   jQuery(function($) {
-      $('#og_income_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
-      $('#og_income_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
+      $('#og_income_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});  
+      $('#og_income_year').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});      
   });
 </script>
 <!-- END SCRIPT VALIDATION -->
