@@ -467,7 +467,7 @@
 								<td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span id="og_company_required_label_10"><?php echo __('global.require'); ?></span></td>
 								<td>
 									<div class="block-input">
-										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"og_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
+										<?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"og_income_month", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
 										<span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 									</div>
