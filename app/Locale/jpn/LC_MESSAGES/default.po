@@ -922,7 +922,8 @@ msgstr "10桁もしくは11桁でご入力ください。"
 msgid "user.register.address"
 msgstr "現住所"
 
-
+msgid "user.dashboard.partner.relationship"
+msgstr "同居人情報"
 
 
 

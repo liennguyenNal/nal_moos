@@ -5,7 +5,7 @@
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">下記URLのリンクをクリックし、パスワードの再設定をお願いいたします。</p>
 <p style=" margin:0px !important">&nbsp;</p>
-<p style=" margin:0px !important"><a href="<?php echo Router::url('/', true).'users/reset_link/?token='.$hash.'&email='.$user['User']['email']; ?>"><?php echo Router::url('/', true).'users/reset_link/?token='.$hash.'&email='.$user['User']['email']; ?></a></p>
+<p style=" margin:0px !important"><a href="<?php echo Router::url('/', true).'users/reset_link/?token='.$user['User']['access_token'].'&email='.$user['User']['email']; ?>"><?php echo Router::url('/', true).'users/reset_link/?token='.$user['User']['access_token'].'&email='.$user['User']['email']; ?></a></p>
 <p style=" margin:0px !important">※ドメインなどは例</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">パスワード再設定後、ログイン画面よりご登録いただきましたメールアドレスをユーザーIDとしてご入力いただき、再設定したパスワードでログインすることができます。</p>
