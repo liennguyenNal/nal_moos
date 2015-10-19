@@ -1259,7 +1259,7 @@ class UsersController extends AppController{
             'UserPartnerInfo'=> array('key'=>__('user.partner.user.info'), 'error'=>0, 'fields'=>array()),
             'UserPartnerContact'=> array('key'=>__('user.partner.user.contact'), 'error'=>0, 'fields'=>array()),
             'UserPartnerCompany'=> array('key'=>__('user.partner.user.company'), 'error'=>0, 'fields'=>array()),
-            'UserPartnerRelation'=> array('key'=>__('user.partner.user.relation'), 'error'=>0, 'fields'=>array())
+            'UserPartnerRelation'=> array('key'=>__('user.dashboard.partner.relationship'), 'error'=>0, 'fields'=>array())
           ),
         'UserGuarantor'=>array(
             'UserGuarantorInfo'=> array('key'=>__('user.guarantor.user.info'), 'error'=>0, 'fields'=>array()),
