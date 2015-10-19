@@ -301,7 +301,8 @@ foreach($users as $user){
   $rows[$i]['保証人2_健康保険']= $user['OtherGuarantor']['Insurance']['name'];
   $rows[$i]['保証人2_備考']= $user['OtherGuarantor']['note'];
   $rows[$i]['会員申込日']=$user['User']['created'];
-  $rows[$i]['審査申請日']=$user['User']['approved_register_date'];
+  $rows[$i]['会員登録承認日']=$user['User']['approved_register_date'];
+  $rows[$i]['審査申請日']=$user['User']['updated_date'];
   $rows[$i]['審査承認日']=$user['User']['approved_date'];
   $rows[$i]['保証金確認日']=$user['User']['payment_date'];
 
