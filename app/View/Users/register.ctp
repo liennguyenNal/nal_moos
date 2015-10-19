@@ -706,7 +706,7 @@
         var errors = validator.numberOfInvalids();
         if (errors) {
           $("#error-section").show();
-        } else {
+        } else {C
           $("#error-section").hide();
         }
       }
@@ -728,7 +728,7 @@
       $('html, body').animate({scrollTop: $("#section-flash-msg").offset().top}, 500);
     }
    jQuery(function($) {
-      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});    
+      $('#salary_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});    
   });
 </script>
 

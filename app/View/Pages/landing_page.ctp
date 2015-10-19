@@ -844,7 +844,7 @@
 		    }
 
 		    jQuery(function($) {
-			      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});    
+			      $('#salary_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});    
 			  });
 
 		</script>
@@ -853,18 +853,14 @@
 
 	</div>
 	<footer id="footer-container">
-		<div class="container-fluid">		
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<p>Copyright © RENESYS All Rights Reserved</p>
-				</div>
-			</div>
-		</div>
+		<?php echo $this->element('footer')?>
 	</footer>
 	
 	<script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+
+
 </body>
 </html>
 <!-- Tri Nal!>
