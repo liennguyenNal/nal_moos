@@ -46,10 +46,7 @@ class UserPartner extends AppModel {
         ),
         'phone'=>array(
             'rule'=>'notBlank'
-        ),
-        'company_pref_id'=>array(
-            'rule'=>'notBlank'
-        ),
+        )
 
     );
 
