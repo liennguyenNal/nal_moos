@@ -135,10 +135,8 @@
       </div>
       <div class="modal-body">
         <p id="msg">変更内容はまだ保存されておりません。</br>
-変更内容を保存するためには、各画面の一番下にある</br>
-「保存する」ボタンを押してください。</br>
-また、保存が必要ない場合は「キャンセル」ボタンを</br>
-押してください。</p>
+変更内容を保存するためには、各画面の一番下にある「保存する」ボタンを押してください。</br>
+また、保存が必要ない場合は「キャンセル」ボタンを 押してください。</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>

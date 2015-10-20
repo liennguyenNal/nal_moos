@@ -85,7 +85,7 @@
 		</div>
 	</div>
 	<div class="block-link-page block-link-page-fix">
-		<a href="#"><img src="<?php echo $this->webroot; ?>img/front/button-qa.png" alt="無料会員登録"></a>
+		<a href="<?php echo $this->webroot;?>users/register"><img src="<?php echo $this->webroot; ?>img/front/button-qa.png" alt="無料会員登録"></a>
 		<span class="icon-scroll"></span>
 	</div>
 </section>

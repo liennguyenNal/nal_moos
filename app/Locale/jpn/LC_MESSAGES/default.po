@@ -698,7 +698,7 @@ msgid "user.email_change_password.label_successful"
 msgstr "パスワード変更"
 
 msgid "user.email_change_password.message_successful"
-msgstr "ご登録頂いたメールアドレスに、パスワード設定用野’リンクを送信しました。メールに記載されたリンクをクリックし、パスワードを設定してください。"
+msgstr "ご登録頂いたメールアドレスに、パスワード設定用のリンクを送信しました。</br>メールに記載されたリンクをクリックし、パスワードを設定してください。"
 
 msgid "global.errors.maxlength_10"	
 msgstr "10桁でご入力ください。"
