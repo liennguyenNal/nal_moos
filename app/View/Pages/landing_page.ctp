@@ -645,6 +645,7 @@
 		    else {
 		      alert('Cannot add more item');
 		    }
+		    $("#agree").valid();
 		  });
 
 		  $.validator.addMethod( "phone_number",
