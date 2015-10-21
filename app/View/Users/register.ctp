@@ -406,6 +406,7 @@
                         num_area--; 
                         obj.parent().parent().parent().remove();
                         $('#btn-add').show();
+                        $("#agree").valid();
                     }
 
                 </script>
