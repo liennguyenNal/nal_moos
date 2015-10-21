@@ -2249,3 +2249,16 @@ img {
     padding: 0px 5px;
   }
 }
+
+/*button disable*/
+.button-tab .link-tab-1c {
+      background-color: #c7c7c7;
+      border: medium none;
+      border-radius: 3px;
+      box-shadow: 0 6px 0 #bbbbbb;
+      display: inline-block;
+      padding: 16px 0;
+      text-align: center;
+      transition: all 0.4s linear 0s;
+      width: 256px;
+    }

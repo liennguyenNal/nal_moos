@@ -179,8 +179,13 @@
         window.location.href = '<?php echo $this->webroot?>users/update_account_info'
       });
     </script>
-    <?php } ?>
+    <?php } else { ?>
+        <div class="button-tab">
+      <button type="button" class="link-tab-1c" disabled="true"><img src="<?php echo $this->webroot; ?>img/front/link-tab-a.png" alt="審査のお申し込み"/></button>
+    </div>
+    <?php }?>
   </form>
+ 
 </div>
 <!-- <div class="button-tab">
   <a href="#" class="link-tab-1a"><img src="img/front/link-tab-a.png" alt="審査のお申し込み"/></a>
