@@ -1726,7 +1726,7 @@ class UsersController extends AppController{
          $id = $this->s_user_id;
         if($id){
        
-          $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
+          $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status' ,'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
           $this->data = $user;
           $this->set('user', $user);
           $validations = $this->_validate($user);
