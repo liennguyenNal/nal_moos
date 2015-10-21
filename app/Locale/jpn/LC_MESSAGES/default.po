@@ -220,7 +220,7 @@ msgid "login.errors.invalid"
 msgstr "IDとパスワードが一致しませんでした。</br>またはまだアカウント承認されていない可能性あります。 </br>ご確認の上、再度ご登録いただいた情報を入力してください。"
 
 msgid "user.my_page.basic_info.family"	
-msgstr "同居"
+msgstr "家族との居住状況"
 
 msgid "user.my_page.basic_info.have_family"	
 msgstr "同居"
@@ -331,7 +331,7 @@ msgid "user.my_page.basic_info.debt_month"
 msgstr "月々返済額"
 
 msgid "global.errors.number"	
-msgstr "数字をご入力ください。"
+msgstr "半角数字をご入力ください。"
 
 msgid "global.errors.minlength_3"	
 msgstr "3桁でご入力ください。"
@@ -925,7 +925,8 @@ msgstr "現住所"
 msgid "user.dashboard.partner.relationship"
 msgstr "同居人情報"
 
-
+msgid "global.errors.num_child.number"
+msgstr "半角数字をご入力ください。"
 
 
 

@@ -408,7 +408,7 @@
 				                          <td class="label-text"><label><?php echo __('user.register.tax'); ?></label><span><?php echo __('global.require'); ?></span></td>
 				                          <td>
 				                            <div class="block-input">
-				                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'000,000', 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'w108','div'=>false, 'placeholder'=>'00', 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                              <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 				                            </div>

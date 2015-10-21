@@ -323,7 +323,7 @@
                     <div class="block-input">
                       <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"p_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required' => false, 'data-placement'=>"right", 'placeholder'=>'000,000'))
                       ?>
-                      <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
+                      <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                     </div>
                   </td>
                 </tr>
@@ -765,12 +765,12 @@
         minlength: 10
       },
       'data[UserPartner][salary_type_other]': {
-        required: {
-          depends: function() {
-            return $('input[name="data[UserPartner][salary_type]"]:checked').val() == '4';
-          }
-        },
-        number: true     
+        // required: {
+        //   depends: function() {
+        //     return $('input[name="data[UserPartner][salary_type]"]:checked').val() == '4';
+        //   }
+        // },
+        // number: true     
       },
       'data[UserPartner][salary_date]': {
         // required: {
@@ -798,7 +798,7 @@
         maxlength: "<?php echo __('global.errors.maxlength_11'); ?>",
         minlength: "<?php echo __('global.errors.minlength_11'); ?>"
       },
-      'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+      // 'data[UserPartner][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
       'data[UserPartner][salary_date]': {
         // required: "<?php echo __('global.errors.required'); ?>",
         min: "<?php echo __('global.errors.salary_date.min'); ?>",

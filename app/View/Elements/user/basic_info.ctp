@@ -153,7 +153,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></span></td>
+                      <td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span><?php echo __('global.require'); ?></span></td>
                       <td>
                         <div class="block-input">
                           <?php echo $this->Form->input('User.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'data-placement' => 'right', 'required'=>false, 'placeholder'=>'00'))
@@ -535,7 +535,7 @@
                       <div class="block-input">
                         <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'w108','div'=>false, 'data-placement'=>'right', 'required'=>false, 'placeholder'=>'000,000'))
                         ?>
-                        <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
+                        <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                       </div>
                     </td>
                   </tr>
@@ -653,7 +653,7 @@
                       <div class="block-input">
                         <?php echo $this->Form->input('User.debt_total_value', array('type'=>'text', 'id'=>"debt_total", 'label'=>false, 'class'=>'w40 style', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'0'))
                         ?>
-                        <span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
+                        <span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
                         <span class="style">※借り入れがない場合 "0” を入力してください。</span>
                       </div>
                     </td>
@@ -1021,12 +1021,12 @@
               max: 11
             },
             'data[UserCompany][salary_type_other]': {
-              required: {
-                depends: function() {
-                  return $('input[name="data[UserCompany][salary_type]"]:checked').val() == '4';
-                }
-              },
-              number: true            
+              // required: {
+              //   depends: function() {
+              //     return $('input[name="data[UserCompany][salary_type]"]:checked').val() == '4';
+              //   }
+              // },
+                          
             },
             'data[UserCompany][salary_month]': {number: true},
             'data[UserCompany][salary_year]': {number: true},
@@ -1071,7 +1071,7 @@
               minlength: "<?php echo __('global.errors.minlength_4'); ?>",
               maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
             },
-            'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+            // 'data[UserCompany][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
             'data[UserCompany][salary_date]': {
               // required: "<?php echo __('global.errors.required'); ?>",
               min: "<?php echo __('global.errors.salary_date.min'); ?>",

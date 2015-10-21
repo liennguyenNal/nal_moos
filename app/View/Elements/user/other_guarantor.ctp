@@ -142,7 +142,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label></td>
+									<td class="label-text"><label><?php echo __('user.my_page.basic_info.num_children'); ?></label><span><?php echo __('global.require'); ?></span></td>
 									<td>
 										<div class="block-input">
 											<?php echo $this->Form->input('OtherGuarantor.num_child', array('type'=>'text', 'id'=>"num_child", 'label'=>false, 'class'=>'w40', 'div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'00'))
@@ -479,7 +479,7 @@
 									<div class="block-input">
 										<?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"og_income_year", 'label'=>false, 'class'=>'w108','div'=>false, 'required'=>false, 'data-placement'=>'right', 'placeholder'=>'000,000'))
 										?>
-										<span class="w-auto1"><?php echo __('user.my_page.basic_info.salary_man'); ?></span>
+										<span class="w-auto1"><?php echo __('user.register.yen'); ?></span>
 									</div>
 								</td>
 							</tr>
@@ -729,12 +729,12 @@
         'data[OtherGuarantor][income_month]': {number: true},
         'data[OtherGuarantor][income_year]': {number: true},
         'data[OtherGuarantor][salary_type_other]': {
-        	required: {
-                depends: function() {
-                  return $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() == '4';
-                }
-            },
-            number: true
+        	// required: {
+         //        depends: function() {
+         //          return $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() == '4';
+         //        }
+         //    },
+         //    number: true
       	},
       	'data[OtherGuarantor][salary_date]': {
         	// required: {
@@ -764,7 +764,7 @@
     		minlength: "<?php echo __('global.errors.minlength_4'); ?>",
     		maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
     	},
-    	'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
+    	// 'data[OtherGuarantor][salary_type_other]': {required: "<?php echo __('global.errors.required'); ?>"},
     	'data[OtherGuarantor][salary_date]': {
     		// required: "<?php echo __('global.errors.required'); ?>",
     		min: "<?php echo __('global.errors.salary_date.min'); ?>",
