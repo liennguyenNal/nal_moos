@@ -321,19 +321,27 @@ foreach($users as $user){
 
 
 
-if($i==0){
-  $this->CSV->addRow(array_keys($rows[0]));
+// if($i==0){
+//   $this->CSV->addRow(array_keys($rows[0]));
   
+// }
+
+//     $this->CSV->addRow($rows[$i]);
+
+
+
+//   //$this->CSV->addRow($row[$i]);
+   $i++;
 }
 
-    $this->CSV->addRow($rows[$i]);
-
-
-
-  //$this->CSV->addRow($row[$i]);
-  $i++;
+$this->CSV->addRow(array_keys($rows[0]));
+foreach($rows as $row){
+  foreach($row as $value){
+    
+    str_replace("\n","\r\n",$value);
+  }
+  $this->CSV->addRow($row);
 }
-
 //var_dump($rows); die;
  $filename='users';
  echo  $this->CSV->render($filename);

@@ -433,13 +433,13 @@
                <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.tax'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text','style'=>'width:150px; display:inline;' , 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>円
+                    <?php echo $this->Form->input('UserCompany.salary_month', array('type'=>'text','style'=>'width:150px; display:inline;' , 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.register.yen'); ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year",'style'=>'width:150px; display:inline;' , 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?>万円
+                    <?php echo $this->Form->input('UserCompany.salary_year', array('type'=>'text', 'id'=>"salary_year",'style'=>'width:150px; display:inline;' , 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.register.yen'); ?>
                   </div>
                 </div>
                 

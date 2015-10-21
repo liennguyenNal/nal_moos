@@ -278,7 +278,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false,'style'=>'width:150px; display:inline;' , 'required' => false))?><?php echo __('user.my_page.basic_info.salary_man'); ?>
+                    <?php echo $this->Form->input('UserPartner.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false,'style'=>'width:150px; display:inline;' , 'required' => false))?><?php echo __('user.register.yen'); ?>
                   </div>
                 </div>
                 <div class="form-group">
