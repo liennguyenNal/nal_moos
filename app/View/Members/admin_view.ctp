@@ -201,7 +201,7 @@
            
             <div class="form-group">
                 <div class="col-lg-10 ">
-                  <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> 削除します</button>
+                  <button type="button" class="btn btn-danger" id="btn-delete" style="float:left"> 削除する</button>
                   <div class="col-lg-offset-2" style="padding-left:150px">
                      <?php if($user['User']['status_id'] == 1){?>
                     <button type="button" class="btn btn-warning" id="btn-reject"> 拒絶します</button>

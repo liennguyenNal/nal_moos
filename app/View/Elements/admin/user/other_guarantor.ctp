@@ -421,19 +421,6 @@
 	                    <?php echo $this->Form->input('OtherGuarantor.month_worked', array('type'=>'text', 'id'=>"title", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline', 'div'=>false, 'required'=>false))?>ヶ月
 	                  </div>
 	                </div>
-	               
-	               <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_month'); ?></label>
-	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.register.yen'); ?>
-	                  </div>
-	                </div>
-	                <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
-	                  <div class="col-lg-10">
-	                    <?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false))?><?php echo __('user.my_page.basic_info.salary_man'); ?>
-	                  </div>
-	                </div>
 	                <div class="form-group">
 	                	 <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_type'); ?></label>
 	                  <div class="col-lg-10">
@@ -453,6 +440,20 @@
 	                    }
 	                  </script>
 	                </div>
+	               
+	               <div class="form-group">
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_month'); ?></label>
+	                  <div class="col-lg-10">
+	                    <?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false,'style'=>'width:150px; display:inline;'))?><?php echo __('user.register.yen'); ?>
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_year'); ?></label>
+	                  <div class="col-lg-10">
+	                    <?php echo $this->Form->input('OtherGuarantor.income_year', array('type'=>'text', 'id'=>"salary_year", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false,'style'=>'width:150px; display:inline;'))?><?php echo __('user.my_page.basic_info.salary_man'); ?>
+	                  </div>
+	                </div>
+	                
 
 
 	                <div class="form-group">
@@ -461,7 +462,7 @@
 	                    <?php 
 		                		echo $this->Form->radio('OtherGuarantor.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=> __('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male"));
 		                		echo $this->Form->input('OtherGuarantor.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('user.my_page.basic_info.salary_date'), 'class'=>'form-control','div'=>false, 'required'=>false, 'style'=>'width:200px; display:inline;'))
-		              		?>	
+		              		?>日
 	                  </div>
 	                </div>
 

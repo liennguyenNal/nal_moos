@@ -286,8 +286,8 @@
                   <div class="col-lg-10">
                     <?php 
                       echo $this->Form->radio('UserPartner.salary_receive_id', array('1'=>__('user.my_page.basic_info.salary_day'),'2'=>__('user.my_page.basic_info.salary_week'), '3'=>__('user.my_page.basic_info.salary_month')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>"male", 'required' => false));
-                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('global.date'), 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline', 'required' => false ))
-                    ?>  
+                      echo $this->Form->input('UserPartner.salary_date', array('type'=>'text', 'id'=>"salary_date", 'label'=>__('user.my_page.basic_info.salary_date'), 'class'=>'form-control','div'=>false, 'style'=>'width:150px; display:inline', 'required' => false ))
+                    ?>日 
                   </div>
                 </div>
 

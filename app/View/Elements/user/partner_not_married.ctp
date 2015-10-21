@@ -834,8 +834,8 @@
   });
 
   
-  $('#p_income_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});  
-  $('#p_income_year').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});      
+  $('#p_income_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});  
+  $('#p_income_year').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});      
  
 </script>
 

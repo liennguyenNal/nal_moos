@@ -3,8 +3,8 @@
 <head>
 	<title>[:. MOOS .:]</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="mô tả website" />
-	<meta name="keywords" content="những từ khóa của website bạn" />
+	<meta name="description" content="Moos" />
+	<meta name="keywords" content="moos" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -3,8 +3,8 @@
 <head>
 	<title>[:. MOOS .:]</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="mô tả website" />
-	<meta name="keywords" content="những từ khóa của website bạn" />
+	<meta name="description" content="Moos" />
+	<meta name="keywords" content="moos" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -845,7 +845,7 @@
 		    }
 
 		    jQuery(function($) {
-			      $('#salary_month').autoNumeric('init', {aNum: '0123456789',mRound: 'CHF'});    
+			      $('#salary_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});    
 			  });
 
 		</script>
@@ -854,18 +854,14 @@
 
 	</div>
 	<footer id="footer-container">
-		<div class="container-fluid">		
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<p>Copyright © RENESYS All Rights Reserved</p>
-				</div>
-			</div>
-		</div>
+		<?php echo $this->element('footer')?>
 	</footer>
 	
 	<script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
   	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+
+
 </body>
 </html>
 <!-- Tri Nal!>
