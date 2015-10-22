@@ -1,3 +1,4 @@
+<?php //var_dump($user); die; ?>
 <style type="text/css">
   .error-message {
     color: red;

@@ -8,7 +8,7 @@ $rows = array();
 
 foreach($users as $user){
 
-  $rows[$i]['ID']= $user['User']['id'];
+  $rows[$i]['UniqueID']= $user['User']['id'];
   $rows[$i]['申込人_e-mail']= $user['User']['email'];
   $rows[$i]['手続き状況']= $user['Status']['name'];
   $rows[$i]['申込人_姓']= $user['User']['first_name'];
@@ -317,32 +317,28 @@ foreach($users as $user){
   $rows[$i]['保証金確認日']=$user['User']['payment_date'];
 
 
-
-
-
-
-// if($i==0){
-//   $this->CSV->addRow(array_keys($rows[0]));
-  
-// }
-
-//     $this->CSV->addRow($rows[$i]);
-
-
-
-//   //$this->CSV->addRow($row[$i]);
    $i++;
 }
 
-$this->CSV->addRow(array_keys($rows[0]));
+
+$i=0;
 foreach($rows as $row){
-  foreach($row as $value){
+  foreach($row as $key=>$value){
+
+    $rows[$i][$key] =  str_replace(array("\r\n", "\n\r","\n","\r")," ",$value);
     
-    str_replace("\n","\r\n",$value);
+
+  
+
   }
+  $i++;
+  
+}
+$this->CSV->addRow(array_keys($rows[0]));
+foreach ($rows as  $row) {
   $this->CSV->addRow($row);
 }
 //var_dump($rows); die;
  $filename='users';
- echo  $this->CSV->render($filename);
+ echo  $this->CSV->render($filename, "SJIS", "utf-8");
 ?>
