@@ -500,7 +500,7 @@
           { 
             required: true,
             messages: {
-              required: "<?php echo __('global.errors.required'); ?>"
+              required: "<?php echo __('errors.register_form.require.pref'); ?>"
             }
           });
       });
@@ -665,7 +665,7 @@
           minlength: "<?php echo __('global.errors.minlength_4'); ?>",
           maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
         },
-        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+        'data[UserAddress][pref_id]': {required: "<?php echo __('errors.register_form.require.pref'); ?>"},
         'data[UserAddress][city]': {required: "<?php echo __('global.errors.city'); ?>"},
         'data[UserAddress][address]': {required: "<?php echo __('global.errors.address'); ?>"},
         'data[User][phone]': { 
@@ -698,7 +698,7 @@
           minlength: "<?php echo __('global.errors.minlength_4'); ?>",
           maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
         },
-        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('errors.register_form.require.pref'); ?>"},
         'data[ExpectArea][0][city]': {required: "<?php echo __('global.errors.city'); ?>"},
         'data[ExpectArea][0][address]': {required: "<?php echo __('global.errors.address'); ?>"},
         'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}

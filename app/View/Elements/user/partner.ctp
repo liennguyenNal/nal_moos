@@ -428,7 +428,8 @@
 
           <!-- RELATIONSHIP -->
           <div style="margin-top: 20px;" class="title-tab title-tab-fix-mb">
-            <h3>同居人情報</h3>
+            <h3>申込人・配偶者以外の同居人情報</h3>
+            <p>※ 同居人がいらっしゃらない場合には、申込人情報をご記入下さい。</p>
           </div>
 
           <div id="relation-area">

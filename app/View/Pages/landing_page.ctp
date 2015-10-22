@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>[:. MOOS .:]</title>
+	<title>住宅ローン審査のないマイホームの形｜家賃でもらえる家</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="Moos" />
-	<meta name="keywords" content="moos" />
+	<meta name="description" content="「家賃でもらえる家」は、マイホームをあきらめたくないあたなのための全く新しいマイホーム取得システムです。金融機関の住宅ローンが不要で、自分でプランニングした家に20年間賃貸で住み続けるだけで、その家があたなのものになります。" />
+	<meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -13,7 +13,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<!-- <link rel="icon" href="img/front/favicon.ico" type="image/x-icon" /> -->
+	<link rel="icon" href="<?php echo $this->webroot; ?>favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/bootstrap-theme.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->webroot; ?>css/swiper.min.css" type="text/css" media="screen" />
@@ -41,7 +41,7 @@
 					<div class="container-fluid">
 						<div class="content-video">
 							<div class="content-video-how">
-								<iframe width="242" height="136" src="https://www.youtube.com/embed/NA444TnvNfc" frameborder="0" allowfullscreen></iframe>
+								<iframe width="242" height="136" src="https://www.youtube.com/embed/BtGazrbRzY0" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
@@ -613,7 +613,7 @@
 		          { 
 		            required: true,
 		            messages: {
-		              required: "<?php echo __('global.errors.required'); ?>"
+		              required: "<?php echo __('errors.register_form.require.pref'); ?>"
 		            }
 		          });
 		      });
@@ -777,7 +777,7 @@
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
-		        'data[UserAddress][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+		        'data[UserAddress][pref_id]': {required: "<?php echo __('errors.register_form.require.pref'); ?>"},
 		        'data[UserAddress][city]': {required: "<?php echo __('global.errors.city'); ?>"},
 		        'data[UserAddress][address]': {required: "<?php echo __('global.errors.address'); ?>"},
 		        'data[User][phone]': { 
@@ -810,7 +810,7 @@
 		          minlength: "<?php echo __('global.errors.minlength_4'); ?>",
 		          maxlength: "<?php echo __('global.errors.minlength_4'); ?>"
 		        },
-		        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('global.errors.pref'); ?>"},
+		        'data[ExpectArea][0][pref_id]': {required: "<?php echo __('errors.register_form.require.pref'); ?>"},
 		        'data[ExpectArea][0][city]': {required: "<?php echo __('global.errors.city'); ?>"},
 		        'data[ExpectArea][0][address]': {required: "<?php echo __('global.errors.address'); ?>"},
 		        'data[User][agree]': {required: "<?php echo __('global.errors.required_checkbox'); ?>"}

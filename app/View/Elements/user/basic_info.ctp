@@ -1003,8 +1003,8 @@
             // 'data[UserCompany][department]': {required: true},
             // 'data[UserCompany][position]': {required: true},
             'data[UserCompany][year_worked]': {
-              check_zero: true,
               number: true,
+              check_zero: true,
               min: 0
             },
             'data[UserCompany][month_worked]': {
@@ -1015,8 +1015,8 @@
               //     return false;
               //   }
               // },
-              check_zero: true,
               number: true,
+              check_zero: true,
               min: 0,
               max: 11
             },

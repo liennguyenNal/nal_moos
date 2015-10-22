@@ -928,7 +928,8 @@ msgstr "同居人情報"
 msgid "global.errors.num_child.number"
 msgstr "半角数字をご入力ください。"
 
-
+msgid "errors.register_form.require.pref"
+msgstr "必須項目です。</br>選択してください。"
 
 
 
