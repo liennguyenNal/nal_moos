@@ -4,8 +4,8 @@
 <p style=" margin:0px !important">おめでとうございます！！！</p>
 <p style=" margin:0px !important">運営事務局にて審査した結果、<?php echo $user['User']['first_name'] . " " . $user['User']['last_name']?>様は無事「家賃でもらえる家」の入居審査を通過致しました！！</p>
 <p style=" margin:0px !important">　　</p>
-<p style=" margin:0px !important">いよいよ、マイホームのプランニングに移ります%21%21</p>
-<p style=" margin:0px !important">ご家族で、素敵なマイホームプランをご選択下さい%21</p>
+<p style=" margin:0px !important">いよいよ、マイホームのプランニングに移ります！！</p>
+<p style=" margin:0px !important">ご家族で、素敵なマイホームプランをご選択下さい！</p>
 <p style=" margin:0px !important">今後、マイホームプランニングのための資料を送付させていただきます。</p>
 <p style=" margin:0px !important">内容をご精読の上、ご対応宜しくお願い致します！</p>
 <p style=" margin:0px !important">　　</p>
