@@ -1305,7 +1305,7 @@ class UsersController extends AppController{
       }
       if(!$user['UserCompany']['month_worked']  && $user['UserCompany']['year_worked'] )$user['UserCompany']['month_worked'] = "100";
       if($user['UserCompany']['month_worked']  && !$user['UserCompany']['year_worked'] )$user['UserCompany']['year_worked'] = "100";
-      //print_r($user['UserCompany']);die;
+     
       $this->UserCompany->set($user);
       //if(!$this->UserCompany->validates()){
       //  $result['error'] = 1;
@@ -1326,13 +1326,20 @@ class UsersController extends AppController{
             foreach ($requireds['WorkRequired'] as $key => $value) {
               //echo $key;
               if($value){
-                if(!isset($user['UserCompany'][$key])){
-                  //echo $key;
-                   array_push($result['User']['UserCompany']['fields'], $user_comapany_required_fields[$key]);
-                   $result['User']['UserCompany']['error'] = 1;
-                   $result['error'] = 1;
+                if($user['UserCompany'][$key]!= "0"){
+                  if(!$user['UserCompany'][$key]){
+                    
+                    //echo "key $key:" . $user['UserCompany'][$key];
+                    if($user_comapany_required_fields[$key]){
+                       array_push($result['User']['UserCompany']['fields'], $user_comapany_required_fields[$key]);
+                       $result['User']['UserCompany']['error'] = 1;
+                       $result['error'] = 1;
+                    }
+                  }
+                  
                 }
               }
+              
             }
             //die;
           }
@@ -1687,9 +1694,11 @@ class UsersController extends AppController{
            foreach ($requireds['GuarantorWorkRequired'] as $key => $value) {
               //echo $key;
               if($value){
-                if(!isset($obj[$key])){
-                   array_push($result['fields'], $company_required_fields[$key]);
-                   $result['error'] = 1;
+                if($obj[$key] != "0"){
+                  if(!$obj[$key]){
+                     array_push($result['fields'], $company_required_fields[$key]);
+                     $result['error'] = 1;
+                  }
                 }
                 
                 if($key=="salary_receive_id"){
