@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 $i=0;
 $rows = array();
 
@@ -328,8 +325,6 @@ foreach($rows as $row){
     $rows[$i][$key] =  str_replace(array("\r\n", "\n\r","\n","\r")," ",$value);
     
 
-  
-
   }
   $i++;
   
@@ -340,5 +335,5 @@ foreach ($rows as  $row) {
 }
 //var_dump($rows); die;
  $filename='users';
- echo  $this->CSV->render($filename, "SJIS", "utf-8");
+ echo  $this->CSV->render($filename, "sjis-win", "utf-8");
 ?>
