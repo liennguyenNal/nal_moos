@@ -717,8 +717,15 @@
         	maxlength: 10,
         	minlength: 10
         },
-        'data[UserGuarantor][year_worked]': {number: true},
-        'data[UserGuarantor][month_worked]': {number: true},
+        'data[UserGuarantor][year_worked]': {
+        	number: true,
+        	min: 0
+        },
+        'data[UserGuarantor][month_worked]': {
+        	number: true,
+        	min: 0,
+        	max: 11
+        },
         'data[UserGuarantor][income_month]': {number: true},
         'data[UserGuarantor][income_year]': {number: true},
         'data[UserGuarantor][salary_type_other]': {
@@ -779,6 +786,13 @@
     		maxlength: "<?php echo __('global.errors.maxlength_10'); ?>",
     		minlength: "<?php echo __('global.errors.minlength_10'); ?>"
     	},
+    	'data[UserGuarantor][month_worked]': {
+	        min: "<?php echo __('global.errors.month.min'); ?>",
+	        max: "<?php echo __('global.errors.month.max') ?>"
+	    },
+	    'data[UserGuarantor][year_worked]': {
+	        min: "<?php echo __('global.errors.month.min'); ?>"
+	    },
     	'data[UserGuarantor][num_child]': {maxlength: "<?php echo __('global.errors.maxlength_2'); ?>"}
     },
     invalidHandler: function(event, validator) {

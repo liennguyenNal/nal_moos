@@ -783,8 +783,15 @@
         min: 1,
         max: 30
       },
-      'data[UserPartner][year_worked]': {number: true},
-      'data[UserPartner][month_worked]': {number: true},
+      'data[UserPartner][year_worked]': {
+        number: true,
+        min: 0
+      },
+      'data[UserPartner][month_worked]': {
+        number: true,
+        min: 0,
+        max: 11
+      },
       'data[UserPartner][income_month]': {number: true},
       'data[UserPartner][income_year]': {number: true},
       'data[UserRelation][0][phone]': {
@@ -824,6 +831,13 @@
       'data[UserRelation][0][phone]': {
         minlength: "<?php echo __('global.errors.minlength_11'); ?>",
         maxlength: "<?php echo __('global.errors.maxlength_11'); ?>"
+      }, 
+      'data[UserPartner][month_worked]': {
+        min: "<?php echo __('global.errors.month.min'); ?>",
+        max: "<?php echo __('global.errors.month.max') ?>"
+      },
+      'data[UserPartner][year_worked]': {
+        min: "<?php echo __('global.errors.month.min'); ?>"
       }
     },
     invalidHandler: function(event, validator) {
