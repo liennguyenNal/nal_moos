@@ -17,7 +17,7 @@
               <table class="from" id="theform">
                 <tbody>
                   <tr>
-                    <td class="label-text"><label><?php echo __('user.register.username'); ?></label><span><?php echo __('global.require'); ?></span></td>
+                    <td class="label-text"><label><?php echo __('user.partner.fullname'); ?></label><span><?php echo __('global.require'); ?></span></td>
                     <td>
                       <div class="block-input">
                         <div class="div-style">
