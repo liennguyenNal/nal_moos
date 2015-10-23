@@ -18,7 +18,7 @@
         <div class="container-fluid">
           <div class="content-news-detail">
             <div class="block-title-news">
-              <h3 class="title-news"><?php echo $article['Article']['title']?></h3>
+              <h1 class="title-news"><?php echo $article['Article']['title']?></h1>
               <span class="times-days"><?php echo $article['Article']['created']?></span>
             </div>
             <p><?php echo nl2br($article['Article']['content']); ?></p>

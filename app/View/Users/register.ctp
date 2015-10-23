@@ -9,7 +9,7 @@
   </div>
   <div class="title-sup-page-style style-a">
     <div class="container-fluid">
-      <h3>無料会員登録</h3>
+      <h1>無料会員登録</h1>
     </div>
   </div>
   <div class="title-clause">

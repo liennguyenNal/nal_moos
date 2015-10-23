@@ -92,12 +92,12 @@ class PagesController extends AppController {
 
 	}
 	public function faq(){
-		$this->layout = 'default_new';
+		$this->layout = null;
 		//print_r("this is hom page"); die;
 		$this->set('menu','faq');
 	}
 	public function campaign(){
-		$this->layout = 'default_new';
+		//$this->layout = 'default_new';
 		$this->layout = null;
 		//print_r("this is hom page"); die;
 		//$this->set('menu','campaign');

@@ -624,7 +624,7 @@ class UsersController extends AppController{
      * @return response
      */
     function login(){
-      $this->layout = "successful";
+      $this->layout = null;
       $this->Session->delete("Administrator");
       if($this->data){
         $email = $this->data['User']['email'];
@@ -903,7 +903,7 @@ class UsersController extends AppController{
      * @return response
      */
     function register(){
-      $this->layout = "default_new";
+      $this->layout = "register";
       $married_statuses = $this->MarriedStatus->find( 'list' );
       $this->set( 'married_statuses', $married_statuses);
 
@@ -943,7 +943,7 @@ class UsersController extends AppController{
      * @return [type] [description]
      */
     function register_confirmation(){
-      $this->layout = "default_new";
+      $this->layout = "register";
       $user = $this->Session->read( 'user_register' );
       //print_r($user['ExpectArea'][2]); die;
       if( $user ) {
@@ -1046,7 +1046,8 @@ class UsersController extends AppController{
      * @return response
      */
     function register_successful(){
-      $this->layout = "default_new";
+      //$this->layout = "default_new";
+      $this->layout = "register";
       $this->Session->delete('user_register');
     }
 
@@ -1338,6 +1339,27 @@ class UsersController extends AppController{
                   }
                   
                 }
+
+                if($key=="salary_receive_id"){
+                  if($user['UserCompany']['salary_receive_id'] == 3){
+                    if(!$user['UserCompany']['salary_date']){   
+                    //echo 1111; die;                   
+                      array_push($result['User']['UserCompany']['fields'], __('user.my_page.basic_info.salary_date'));
+                       $result['User']['UserCompany']['error'] = 1;
+                      $result['error'] = 1;
+                    }
+                  }
+                }
+                if($key=="salary_type"){
+                  if($user['UserCompany']['salary_type'] == 4){
+                    if(!$user['UserCompany']['salary_type_other']){
+                      //echo 222; die;
+                      array_push($result['User']['UserCompany']['fields'], __('user.my_page.basic_info.salary_type'));
+                       $result['User']['UserCompany']['error'] = 1;
+                      $result['error'] = 1;
+                    }
+                  }
+                }
               }
               
             }
@@ -1469,12 +1491,12 @@ class UsersController extends AppController{
             'first_name_kana'=>__('user.register.firstnamekana'), 'last_name_kana'=>__('user.register.lastnamekana'), 'year_of_birthday'=>__('user.register.year'), 
             'month_of_birth'=>__('user.register.month'), 'day_of_birth'=>__('user.register.day'), 'relate'=>__('user.partner.user.relation'));
     if(!is_null($user['User']['live_with_family'])){
-      //echo $user['User']['live_with_family']; die;
+      
       if($user['User']['live_with_family']){
         if($user['UserRelation']){
           //foreach ($user['User']['UserRelation'] as $item) {
             $item = $user['UserRelation'][0];
-            //print_r($item);die;
+           
              $result['UserPartner']['UserPartnerRelation']['fields'] = array();
 
           $this->UserRelation->set($item);
@@ -1496,7 +1518,7 @@ class UsersController extends AppController{
           foreach ($user_partner_relation_fields as $key => $value) {
              array_push($result['UserPartner']['UserPartnerRelation']['fields'], $value);
           }
-          //print_r($result['UserPartner']['UserPartnerRelation']['fields']);
+          
         }
       }
     }
@@ -1566,7 +1588,6 @@ class UsersController extends AppController{
 
      if($guarantor){
        $guarantor_validate =  $this->_validate_work_type($guarantor['UserGuarantor'], $result['UserGuarantor']['UserGuarantorCompany']);
-      //print_r($guarantor_validate);die;
           //validate guarantor company
         if($guarantor_validate['error'] == 1){
            $result['error'] = 1;
@@ -1574,10 +1595,7 @@ class UsersController extends AppController{
         $result['UserGuarantor']['UserGuarantorCompany']['error'] = $guarantor_validate['error'];
         $result['UserGuarantor']['UserGuarantorCompany']['fields'] = $guarantor_validate['fields'];
      }
-     // echo "<pre>"; 
-     // print_r($result['UserGuarantor']);
-     // echo "</pre>";
-     //  die;
+     
 
       
       if($user['User']['need_more_guarantor']){
@@ -1586,7 +1604,6 @@ class UsersController extends AppController{
         if($other_guarantor){
           $this->UserGuarantor->set($other_guarantor);
           if(!$this->UserGuarantor->validates()){
-            //print_r($this->UserPartner->invalidFields()); die;
             $result['error'] = 1;
             
 
@@ -1638,9 +1655,9 @@ class UsersController extends AppController{
         }
 
         if($other_guarantor){
-           $other_guarantor_validate =  $this->_validate_work_type($other_guarantor['UserGuarantor'], $result['OtherGuarantor']['UserGuarantorCompany']);
-          //print_r($guarantor_validate);die;
-              //validate guarantor company
+          $other_guarantor_validate =  $this->_validate_work_type($other_guarantor['UserGuarantor'], $result['OtherGuarantor']['UserGuarantorCompany']);
+          
+            //validate guarantor company
             if($other_guarantor_validate['error'] == 1){
                $result['error'] = 1;
             }
@@ -1650,10 +1667,7 @@ class UsersController extends AppController{
       }
      
       if($user['UserAttachment']){
-        // $attachments = $this->UserAttachment->find('all', array('conditions'=>array('UserAttachment.user_id'=>$user['User']['id'])));
-        // foreach ($attachments as $attach) {
-        //   $attach['AttachmentType']['is_required']
-        // }
+       
         $attachment_types = $this->AttachmentType->find('all', array('conditions'=>array('AttachmentType.is_required'=>1)));
         foreach ($attachment_types as $type) {
           $attachment= $this->UserAttachment->find('all', array('conditions'=>array('UserAttachment.user_id'=>$user['User']['id'], 'UserAttachment.attachment_type_id'=>$type['AttachmentType']['id'])));
@@ -1704,8 +1718,16 @@ class UsersController extends AppController{
                 if($key=="salary_receive_id"){
                   if($obj['salary_receive_id'] == 3){
                     if(!$obj['salary_date']){
-                      //echo 1111; die;
-                       array_push($result['fields'], __('user.my_page.basic_info.salary_date'));
+                      
+                      array_push($result['fields'], __('user.my_page.basic_info.salary_date'));
+                      $result['error'] = 1;
+                    }
+                  }
+                }
+                if($key=="salary_type"){
+                  if($obj['salary_type'] == 4){
+                    if(!$obj['salary_type_other']){
+                      array_push($result['fields'], __('user.my_page.basic_info.salary_type'));
                       $result['error'] = 1;
                     }
                   }
@@ -1713,8 +1735,7 @@ class UsersController extends AppController{
                 
               }
             }
-
-            //die;
+            
           }
           else {
            
@@ -1724,7 +1745,7 @@ class UsersController extends AppController{
               
             }
           }
-          //print_r($result); die;
+          
           return $result;
     }
 
@@ -1798,7 +1819,7 @@ class UsersController extends AppController{
 
         }
         else {
-          echo 111; die;
+          //echo 111; die;
           $this->Session->setFlash('Cannot submit account','default', array('class' => 'alert alert-dismissible alert-info'));
           $this->redirect('my_page');
 
@@ -1810,11 +1831,11 @@ class UsersController extends AppController{
     }
 
     function introduction() {
-      $this->layout = "default_new";
+      $this->layout = null;
     }
 
     function work_flow() {
-      $this->layout = "default_new";
+      $this->layout = null;
     }
 
 }

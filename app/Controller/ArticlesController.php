@@ -194,7 +194,7 @@ class ArticlesController extends AppController{
     }
 
     function view( $id ){
-      $this->layout = 'default_new';
+      $this->layout = 'news';
       if($id){
           $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
 

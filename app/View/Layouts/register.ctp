@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>家賃でもらえる家とは｜家賃でもらえる家</title>
+  <title>無料会員登録｜家賃でもらえる家</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <meta name="description" content = "「家賃でもらえる家」は、自分好みにプランニングした戸建住宅に20年間賃貸で住み続けると、その家がもらえるという新しいマイホーム取得システムです。金融機関の住宅ローン審査がないので、審査に通らなかった方でも申込みできます。" />
-  <meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム" />
+  <meta name="description" content = "「家賃でもらえる家」の無料会員登録ページです。まずは、簡単な内容にてご登録いただける無料会員にご登録ください。商品・サービスの営業電話、セールス活動は一切行っておりませんので安心してご登録ください。" />
+  <meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム、無料会員" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,12 +26,12 @@
   <script src="<?php echo $this->webroot; ?>js/jquery-ui.js"></script>
   <script src="<?php echo $this->webroot; ?>js/autoNumeric.js"></script>
   <style type="text/css" media="screen">
-  	.title-sup-page-style h1 {
-	    color: #ffffff;
-	    font-size: 27px;
-	    margin-top: 64px;
-	    text-align: center;
-	}	
+    .container-fluid h1 {
+      color: #ffffff;
+      font-size: 27px;
+      margin-top: 64px;
+      text-align: center;
+  } 
   </style>
 </head>
 <body class="page">
@@ -53,35 +53,8 @@
       <?php echo $this->element('menu'); ?>
     </nav>    
     <section id="content-container">
-		<div class="menu-sup-page">
-			<div class="container-fluid">
-				<ul>
-					<li><a href="<?php echo $this->webroot; ?>">トップページ</a></li>
-					<li><span>家賃でもらえる家とは</span></li>
-				</ul>
-			</div>
-		</div>
-		<div class="title-sup-page-style style-c">
-			<div class="container-fluid">
-				<h1>家賃でもらえる家とは</h1>
-			</div>
-		</div>
-		<div class="title-clause">
-			<div class="container-fluid">
-				<img src="<?php echo $this->webroot; ?>img/front/logo-h.png" alt="logo"/>
-			</div>
-		</div>
-		<div class="block-home">
-			<div class="title-block-home"><img src="<?php echo $this->webroot; ?>img/images/home-1.png" alt="logo"/></div>
-			<div class="block-home-step"><img src="<?php echo $this->webroot; ?>img/images/home-2.png" alt="logo"/></div>
-			<div class="block-home-step"><img src="<?php echo $this->webroot; ?>img/images/home-3.png" alt="logo"/></div>
-			<div class="block-home-step"><img src="<?php echo $this->webroot; ?>img/images/home-4.png" alt="logo"/></div>
-		</div>
-		<div class="block-link-page block-link-page-fix">
-			<a href="<?php echo $this->webroot; ?>register"><img src="<?php echo $this->webroot; ?>img/front/button-qa.png" alt="無料会員登録"></a>
-			<span class="icon-scroll"></span>
-		</div>
-	</section>
+      <?php echo $this->fetch('content'); ?>
+    </section>
   </div>
   <div class="block-menu-footer">
     <?php echo $this->element('menu-footer'); ?>
@@ -95,3 +68,4 @@
   <script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
 </body>
 </html>
+

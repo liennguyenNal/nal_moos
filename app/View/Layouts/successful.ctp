@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>[:. MOOS .:]</title>
+	<title>無料会員登録｜家賃でもらえる家</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="Moos" />
-	<meta name="keywords" content="moos" />
+	<meta name="description" content="「家賃でもらえる家」の無料会員登録ページです。まずは、簡単な内容にてご登録いただける無料会員にご登録ください。商品・サービスの営業電話、セールス活動は一切行っておりませんので安心してご登録ください。" />
+	<meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム、無料会員" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,6 +24,14 @@
 	<script src="<?php echo $this->webroot;?>js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/swiper.jquery.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/common.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+  	.title-sup-page-style h1 {
+	    color: #ffffff;
+	    font-size: 27px;
+	    margin-top: 64px;
+	    text-align: center;
+	}	
+  </style>
 </head>
 <body class="page">
 	<!-- CONTENT -->

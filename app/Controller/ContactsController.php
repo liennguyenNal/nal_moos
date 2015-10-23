@@ -24,7 +24,7 @@ class ContactsController extends AppController {
             $this->redirect("confirm");
       }
         else{
-    	$this->layout = "default_new";
+    	$this->layout = "contact";
     	}
     }
     function confirm(){
@@ -83,10 +83,11 @@ class ContactsController extends AppController {
        }
        else { //die('ss');
             $contact = $this->Session->read( 'contact' );
-            $this->layout = "default_new";
+            
             $this->set( 'contact', $contact ); 
               // echo 1111; die;
-           }
+         }
+         $this->layout = "contact";
     }
 
     function admin_index(){ //var_dump($this->params['named']['keyword']); die('ss');
@@ -302,7 +303,7 @@ class ContactsController extends AppController {
   }
 
   function contact_successful() {
-    $this->layout = "default_new";
+    $this->layout = 'contact';
   }
 
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>[:. MOOS .:]</title>
+  <title>住宅ローン審査のないマイホームの形｜家賃でもらえる家</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <meta name="description" content="MOOS" />
-  <meta name="keywords" content="keywords" />
+  <meta name="description" content = "「家賃でもらえる家」は、マイホームをあきらめたくないあたなのための全く新しいマイホーム取得システムです。金融機関の住宅ローンが不要で、自分でプランニングした家に20年間賃貸で住み続けるだけで、その家があたなのものになります。" />
+  <meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
