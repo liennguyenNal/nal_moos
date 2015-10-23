@@ -20,7 +20,7 @@
               <table class="table table-striped table-hover ">
               <tr>
                 <td>
-                  <label><?php echo __('user.register.username'); ?></span></label>
+                  <label>配偶者氏名</span></label>
                 </td>
                 <td>
                   <div class="form-group">

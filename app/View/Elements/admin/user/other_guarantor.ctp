@@ -20,7 +20,7 @@
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td>
-	                  <label for="inputEmail"><?php echo __('user.register.username'); ?></label>
+	                  <label for="inputEmail">連帯保証人氏名</label>
 	                </td>
 	                <td>
 	                  <div class="form-group">
