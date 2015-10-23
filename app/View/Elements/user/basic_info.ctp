@@ -1004,7 +1004,7 @@
             // 'data[UserCompany][position]': {required: true},
             'data[UserCompany][year_worked]': {
               number: true,
-              check_zero: true,
+              //check_zero: true,
               min: 0
             },
             'data[UserCompany][month_worked]': {
@@ -1016,7 +1016,7 @@
               //   }
               // },
               number: true,
-              check_zero: true,
+              //check_zero: true,
               min: 0,
               max: 11
             },
