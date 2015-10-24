@@ -61,7 +61,7 @@
       <div class="title-news">
         <span class="icon"></span>
         <h3>最新のお知らせ</h3>
-      </div> title
+      </div>
       <ul>
       <?php
       $i=0;
