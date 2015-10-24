@@ -193,35 +193,41 @@ class ArticlesController extends AppController{
       }
     }
 
-    function view( $id ){
+    function view( $id, $title = null ){
       $this->layout = 'news';
-      if($id){
-          $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
 
-         $article['Article']['created']= date('Y-m-d',strtotime($article['Article']['created']));
-         $time= ($article['Article']['created']);
-         $arts = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
-          $i=0;
-          foreach($arts as $art){
-            if($i<4){ 
-              if(strtotime($article['Article']['created']) >= strtotime($art['Article']['created']) and $art['Article']['id']!=$id){
-                $i++;
-                $art['Article']['created']= date('Y-m-d',strtotime($art['Article']['created']));
-                $articles_new[]= $art;
+      if($id){
+        if($title){ 
+          $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id, 'Article.title'=>$title))); 
+        }
+        else  $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
+        if($article){
+           $article['Article']['created']= date('Y-m-d',strtotime($article['Article']['created']));
+           $time= ($article['Article']['created']);
+           $arts = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
+            $i=0;
+            foreach($arts as $art){
+              if($i<4){ 
+                if(strtotime($article['Article']['created']) >= strtotime($art['Article']['created']) and $art['Article']['id']!=$id){
+                  $i++;
+                  $art['Article']['created']= date('Y-m-d',strtotime($art['Article']['created']));
+                  $articles_new[]= $art;
+                }
               }
             }
-          }
-          //var_dump($articles_new); die;
-          $this->set('articles', $articles_new);
-          //var_dump($article);  die;
-         
-         if( $article['Article']['is_published'] ==1 and $article['Article']['created']<= date("Y-m-d")){
-          $this->set( 'article', $article);
-         }
-         else {
-            //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
-            $this->redirect("/");
-         }
+            $this->set('articles', $articles_new);
+           
+           if( $article['Article']['is_published'] ==1 and $article['Article']['created']<= date("Y-m-d")){
+            $this->set( 'article', $article);
+           }
+           else {
+              //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+              $this->redirect("/");
+           }
+        }
+        else {
+          $this->redirect("/");
+        }
       }
       else {
         //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));

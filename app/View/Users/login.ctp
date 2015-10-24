@@ -51,7 +51,7 @@
     </div>
     <div class="title-sup-page">
       <div class="container-fluid">
-        <h3>マイページログイン</h3>
+        <h3>入居審査用マイページログイン</h3>
       </div>
     </div>
 

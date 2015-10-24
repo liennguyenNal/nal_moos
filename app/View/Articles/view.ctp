@@ -34,7 +34,7 @@
               <?php for($i=0; $i<5; $i++){ 
                     if($articles[$i]['Article']['id']){ ?>
                       
-                      <li><span class="times-days"><?php echo $articles[$i]['Article']['created']; ?></span><a  href="<?php echo $this->webroot; ?>articles/view/<?php echo $articles[$i]['Article']['id']; ?>"><?php echo $articles[$i]['Article']['title']; ?></a></li>
+                      <li><span class="times-days"><?php echo $articles[$i]['Article']['created']; ?></span><a  href="<?php echo $this->webroot; ?>articles/view/<?php echo $articles[$i]['Article']['id']; ?>/<?php echo $articles[$i]['Article']['title']; ?>"><?php echo $articles[$i]['Article']['title']; ?></a></li>
                    <?php }}
                   ?>
             </ul>
