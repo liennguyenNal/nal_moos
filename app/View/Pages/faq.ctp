@@ -63,7 +63,7 @@
 		</div>
 		<div class="title-sup-page-style style-b">
 			<div class="container-fluid">
-				<h3>よくあるご質問</h3>
+				<h1>よくあるお問い合わせ(FAQ)</h1>
 			</div>
 		</div>
 		<div class="title-clause">
