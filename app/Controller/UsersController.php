@@ -1211,11 +1211,7 @@ class UsersController extends AppController{
       $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus' )));
       $this->set('user', $user);
       if($user['User']['status_id'] == "2"){
-        
-        //echo 111; die;  
-        // $this->data['UserCompany'] = $user['UserCompany'][0];
-        //print_r($this->data); die;
-
+      
         if($this->data){
 
            $this->User->set( $this->data );
@@ -1323,14 +1319,13 @@ class UsersController extends AppController{
           //  }
           if( $user['UserCompany']['work_id'] ){
             $requireds = $this->WorkRequired->find('first', array('conditions'=>array('WorkRequired.work_id'=>$user['UserCompany']['work_id'])));
-            //print_r($requireds['WorkRequired'] ); die;
+            
             foreach ($requireds['WorkRequired'] as $key => $value) {
-              //echo $key;
+              
               if($value){
                 if($user['UserCompany'][$key]!= "0"){
                   if(!$user['UserCompany'][$key]){
                     
-                    //echo "key $key:" . $user['UserCompany'][$key];
                     if($user_comapany_required_fields[$key]){
                        array_push($result['User']['UserCompany']['fields'], $user_comapany_required_fields[$key]);
                        $result['User']['UserCompany']['error'] = 1;
@@ -1342,9 +1337,8 @@ class UsersController extends AppController{
 
                 if($key=="salary_receive_id"){
                   if($user['UserCompany']['salary_receive_id'] == 3){
-                    if(!$user['UserCompany']['salary_date']){   
-                    //echo 1111; die;                   
-                      array_push($result['User']['UserCompany']['fields'], __('user.my_page.basic_info.salary_date'));
+                    if(!$user['UserCompany']['salary_date']){           
+                      array_push($result['User']['UserCompany']['fields'], __('user.my_page.basic_info.salary_receive_date'));
                        $result['User']['UserCompany']['error'] = 1;
                       $result['error'] = 1;
                     }
@@ -1353,7 +1347,6 @@ class UsersController extends AppController{
                 if($key=="salary_type"){
                   if($user['UserCompany']['salary_type'] == 4){
                     if(!$user['UserCompany']['salary_type_other']){
-                      //echo 222; die;
                       array_push($result['User']['UserCompany']['fields'], __('user.my_page.basic_info.salary_type'));
                        $result['User']['UserCompany']['error'] = 1;
                       $result['error'] = 1;
@@ -1363,7 +1356,7 @@ class UsersController extends AppController{
               }
               
             }
-            //die;
+           
           }
           else {
             $result['error'] = 1;
@@ -1373,7 +1366,7 @@ class UsersController extends AppController{
               $result['User']['UserCompany']['error'] = 1;
             }
           }
-          //print_r($result['User']['UserCompany']['fields']); die;
+          
       //}
       $this->UserAddress->set($user);
       if(!$this->UserAddress->validates()){
@@ -1719,7 +1712,7 @@ class UsersController extends AppController{
                   if($obj['salary_receive_id'] == 3){
                     if(!$obj['salary_date']){
                       
-                      array_push($result['fields'], __('user.my_page.basic_info.salary_date'));
+                      array_push($result['fields'], __('user.my_page.basic_info.salary_receive_date'));
                       $result['error'] = 1;
                     }
                   }

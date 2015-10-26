@@ -306,6 +306,8 @@ msgstr "月払い"
 msgid "user.my_page.basic_info.salary_date"	
 msgstr "毎月"
 
+msgid "user.my_page.basic_info.salary_receive_date"	
+msgstr "給料日"
 msgid "global.date"	
 msgstr "日"
 
