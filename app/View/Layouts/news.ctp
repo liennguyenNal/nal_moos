@@ -3,7 +3,7 @@
 <head>
   <title><?php echo $article['Article']['title']?>｜家賃でもらえる家</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <meta name="description" content = "「家賃でもらえる家」のニュースぺーじです。<?php echo $article['Article']['title']?> <?php echo mb_strcut($article['Article']['content'], 0, 50,'UTF-8');?>" />
+  <meta name="description" content = "「家賃でもらえる家」のニュースぺーじです。<?php echo $article['Article']['title']?>" />
   <meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム、マイページ、ログイン" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
