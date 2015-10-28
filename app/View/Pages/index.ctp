@@ -24,7 +24,7 @@
       </div>
       <div class="content-video">
         <div class="content-video-how">
-          <iframe width="550" height="309" src="https://www.youtube.com/embed/BtGazrbRzY0" frameborder="0" allowfullscreen></iframe>
+          <iframe width="550" height="309" src="https://www.youtube.com/embed/qRMXmC94Cl0" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
