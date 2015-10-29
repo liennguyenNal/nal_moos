@@ -38,7 +38,7 @@ class AppController extends Controller {
     var $s_last_name = "";
     var $s_email = "";
     var $uses = array('User', 'Administrator');
-    var $components = array('Login', 'Session', 'Upload');
+    var $components = array('Login', 'Session', 'Upload', 'RequestHandler');
     public $helpers = array('Html', 'Form', 'Session', 'Js' => array('Jquery'));
     public function beforeFilter(){
         parent::beforeFilter();
@@ -92,7 +92,7 @@ class AppController extends Controller {
                 if (!isset($_SERVER['HTTPS'])) {
                         $this->forceSSL();
                 }
-                
+
                 $this->layout = 'user';
                 $this->set('s_user_id', $this->s_user_id);
                 $this->set('s_first_name', $this->s_first_name);
@@ -120,8 +120,8 @@ class AppController extends Controller {
                 }
                 else {
                     if(isset($_SERVER['HTTPS'])){
-                    
-                        $this->unforceSSL();
+                        if(!$this->request->is('ajax'))
+                            $this->unforceSSL();
                     }
                 }
                 $this->layout = 'default_new';
