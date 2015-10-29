@@ -52,7 +52,10 @@ class AppController extends Controller {
                 $prefix = $this->params['prefix'];
                 if($prefix=='admin')
                 {
-                     
+                    if (!isset($_SERVER['HTTPS'])) {
+                            $this->forceSSL();
+                    }
+
                         $this->layout = "/admin/default";
                         $user = $this->Session->read('Administrator');
                         //print_r($user);die;
@@ -71,10 +74,10 @@ class AppController extends Controller {
                            if($this->action != "admin_login")
                                $this->redirect("/admin/users/login");
                            else {
-                               //echo 2323232;die;
+                              
                            }
                         }
-                        //echo $this->action; die;
+                        
                     $this->set('menu', '');
                 }
                 else {
@@ -83,32 +86,46 @@ class AppController extends Controller {
         }
         else {
             $user = $this->Session->read('User');
-            //print_r($user);die;
+            
+
             if($user){
-                 $this->layout = 'user';
-                 $this->set('s_user_id', $this->s_user_id);
+                if (!isset($_SERVER['HTTPS'])) {
+                        $this->forceSSL();
+                }
+                
+                $this->layout = 'user';
+                $this->set('s_user_id', $this->s_user_id);
                 $this->set('s_first_name', $this->s_first_name);
                 $this->set('s_last_name', $this->s_last_name);
-                //$this->set('s_first_name_kana', $this->s_first_name);
-                //$this->set('s_first_name', $this->s_first_name);
-                //$this->set('s_fullname', $this->s_fullname);
-                //
-                //echo $this->action; die;
+                
                 if(!$this->request->is('ajax')){
-                    //echo 111; die;
+                    
                     if($this->action != "my_page"){
                         if($this->action == "login" || $this->action == "register"  || $this->action == "register_confirmation"){
-                            //  $this->action != "change_password_successful" && $this->action != "email_change_password" && $this->action != "update_account_info" 
-                            //  && $this->action != "reset_password" && $this->action != "reset_link" && $this->action != "reset_link_after"){
-                            // //echo 1111; die;   
                             $this->redirect("/users/my_page");
                         }
                     }
                 }
 
             }
-            else 
+            else {
+                //echo $_SERVER['HTTPS']; die;
+                
+                if($this->action == "login" || $this->action == "register"  || $this->action == "register_confirmation" || $this->action == "register_confirmation"){
+                    if(!isset($_SERVER['HTTPS'])){
+                        
+                              $this->forceSSL();
+                        
+                    }
+                }
+                else {
+                    if(isset($_SERVER['HTTPS'])){
+                    
+                        $this->unforceSSL();
+                    }
+                }
                 $this->layout = 'default_new';
+            }
         }
         
     }
@@ -181,5 +198,12 @@ class AppController extends Controller {
             //echo 1111; die;
             $this->layout = null;
         }
+    }
+
+    function forceSSL() {
+        $this->redirect('https://' . $_SERVER['SERVER_NAME'] . $this->here);
+    }
+    function unforceSSL() {
+        $this->redirect('http://' . $_SERVER['SERVER_NAME'] . $this->here);
     }
 }

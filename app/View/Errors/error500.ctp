@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>[:. MOOS .:]</title>
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="mô tả website" />
-	<meta name="keywords" content="những từ khóa của website bạn" />
+	<title>住宅ローン審査のないマイホームの形｜家賃でもらえる家</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content = "「家賃でもらえる家」は、マイホームをあきらめたくないあたなのための全く新しいマイホーム取得システムです。金融機関の住宅ローンが不要で、自分でプランニングした家に20年間賃貸で住み続けるだけで、その家があたなのものになります。" />
+  <meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -68,29 +68,13 @@
 			</div>
 		</section>
 	</div>
+	
 	<div class="block-menu-footer">
-		<div class="container-fluid">
-			<ul>
-				<li><a href="#">家賃でもらえる家とは</a></li>
-				<li><a href="#">申し込みの流れ</a></li>
-				<li><a href="#">よくある質問</a></li>
-				<li><a href="#">無料会員登録</a></li>
-				<li><a href="#">お問い合わせ</a></li>
-				<li><a href="#">運営会社</a></li>
-				<li><a href="#">個人情報保護方針</a></li>
-			</ul>
-		</div>
-	</div>
-	<footer id="footer-container" class="footer-page">
-		<div class="container-fluid">		
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<img src="<?php echo $this->webroot;?>img/front/footer.png" alt=""/>
-					<p>Copyright © RENESYS All rights reserved.</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	    <?php echo $this->element('menu-footer'); ?>
+	  </div>
+	  <footer id="footer-container" class="footer-page">
+	    <?php echo $this->element('footer'); ?>
+	  </footer>
 	<script src="<?php echo $this->webroot;?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot;?>js/swiper.jquery.min.js" type="text/javascript"></script>

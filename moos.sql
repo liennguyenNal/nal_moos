@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2015 at 07:47 AM
+-- Generation Time: Oct 29, 2015 at 10:54 AM
 -- Server version: 5.5.41-MariaDB
 -- PHP Version: 5.4.16
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `moos`
+-- Database: `mooslive`
 --
 
 -- --------------------------------------------------------
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `administrator`
 --
 
-DROP TABLE IF EXISTS `administrator`;
 CREATE TABLE IF NOT EXISTS `administrator` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -51,7 +50,6 @@ CREATE TABLE IF NOT EXISTS `administrator` (
 -- Table structure for table `articles`
 --
 
-DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -75,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Table structure for table `attachment_types`
 --
 
-DROP TABLE IF EXISTS `attachment_types`;
 CREATE TABLE IF NOT EXISTS `attachment_types` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -89,7 +86,6 @@ CREATE TABLE IF NOT EXISTS `attachment_types` (
 -- Table structure for table `careers`
 --
 
-DROP TABLE IF EXISTS `careers`;
 CREATE TABLE IF NOT EXISTS `careers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -102,7 +98,6 @@ CREATE TABLE IF NOT EXISTS `careers` (
 -- Table structure for table `cities`
 --
 
-DROP TABLE IF EXISTS `cities`;
 CREATE TABLE IF NOT EXISTS `cities` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -115,9 +110,9 @@ CREATE TABLE IF NOT EXISTS `cities` (
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(11) NOT NULL,
+  `code` varchar(20) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -140,7 +135,6 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 -- Table structure for table `expect_areas`
 --
 
-DROP TABLE IF EXISTS `expect_areas`;
 CREATE TABLE IF NOT EXISTS `expect_areas` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -158,7 +152,6 @@ CREATE TABLE IF NOT EXISTS `expect_areas` (
 -- Table structure for table `guarantor_work_requireds`
 --
 
-DROP TABLE IF EXISTS `guarantor_work_requireds`;
 CREATE TABLE IF NOT EXISTS `guarantor_work_requireds` (
   `id` int(11) NOT NULL,
   `work_id` int(11) NOT NULL,
@@ -190,7 +183,6 @@ CREATE TABLE IF NOT EXISTS `guarantor_work_requireds` (
 -- Table structure for table `insurances`
 --
 
-DROP TABLE IF EXISTS `insurances`;
 CREATE TABLE IF NOT EXISTS `insurances` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -203,7 +195,6 @@ CREATE TABLE IF NOT EXISTS `insurances` (
 -- Table structure for table `married_statuses`
 --
 
-DROP TABLE IF EXISTS `married_statuses`;
 CREATE TABLE IF NOT EXISTS `married_statuses` (
   `id` int(11) NOT NULL,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
@@ -216,7 +207,6 @@ CREATE TABLE IF NOT EXISTS `married_statuses` (
 -- Table structure for table `prefs`
 --
 
-DROP TABLE IF EXISTS `prefs`;
 CREATE TABLE IF NOT EXISTS `prefs` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL COMMENT '都道府県名'
@@ -228,7 +218,6 @@ CREATE TABLE IF NOT EXISTS `prefs` (
 -- Table structure for table `residences`
 --
 
-DROP TABLE IF EXISTS `residences`;
 CREATE TABLE IF NOT EXISTS `residences` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -241,7 +230,6 @@ CREATE TABLE IF NOT EXISTS `residences` (
 -- Table structure for table `statuses`
 --
 
-DROP TABLE IF EXISTS `statuses`;
 CREATE TABLE IF NOT EXISTS `statuses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -255,7 +243,6 @@ CREATE TABLE IF NOT EXISTS `statuses` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -269,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `year_of_birth` int(11) NOT NULL,
   `gender` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   `married_status_id` int(11) NOT NULL,
-  `live_with_family` int(11) NOT NULL DEFAULT '0',
+  `live_with_family` int(11) NOT NULL DEFAULT '1',
   `num_child` int(11) NOT NULL DEFAULT '0',
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -285,8 +272,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `last_login_time` datetime DEFAULT NULL,
   `access_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `debt_count` int(11) DEFAULT NULL,
-  `debt_total_value` int(11) DEFAULT NULL,
-  `debt_pay_per_month` int(11) DEFAULT NULL,
+  `debt_total_value` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debt_pay_per_month` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_guarantor_id` int(11) DEFAULT NULL,
   `need_more_guarantor` tinyint(1) NOT NULL DEFAULT '0',
   `other_guarantor_id` int(11) DEFAULT NULL,
@@ -304,14 +291,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Table structure for table `user_addresses`
 --
 
-DROP TABLE IF EXISTS `user_addresses`;
 CREATE TABLE IF NOT EXISTS `user_addresses` (
   `id` int(11) NOT NULL,
   `residence_id` int(11) DEFAULT NULL,
-  `housing_costs` int(11) DEFAULT NULL,
+  `housing_costs` varchar(20) DEFAULT NULL,
   `year_residence` int(11) DEFAULT NULL,
   `month_residence` int(11) DEFAULT NULL,
-  `post_num_1` int(11) DEFAULT NULL,
+  `post_num_1` varchar(20) DEFAULT NULL,
   `post_num_2` varchar(20) DEFAULT NULL,
   `pref_id` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
@@ -327,7 +313,6 @@ CREATE TABLE IF NOT EXISTS `user_addresses` (
 -- Table structure for table `user_attachments`
 --
 
-DROP TABLE IF EXISTS `user_attachments`;
 CREATE TABLE IF NOT EXISTS `user_attachments` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -343,7 +328,6 @@ CREATE TABLE IF NOT EXISTS `user_attachments` (
 -- Table structure for table `user_companies`
 --
 
-DROP TABLE IF EXISTS `user_companies`;
 CREATE TABLE IF NOT EXISTS `user_companies` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -365,8 +349,8 @@ CREATE TABLE IF NOT EXISTS `user_companies` (
   `month_worked` int(11) DEFAULT NULL,
   `salary_type` varchar(255) DEFAULT NULL,
   `salary_type_other` varchar(255) DEFAULT NULL,
-  `salary_year` int(11) DEFAULT NULL,
-  `salary_month` int(11) DEFAULT NULL,
+  `salary_year` varchar(20) DEFAULT NULL,
+  `salary_month` varchar(20) DEFAULT NULL,
   `salary_receive_id` int(11) DEFAULT NULL,
   `salary_date` int(11) DEFAULT NULL,
   `insurance_id` int(11) DEFAULT NULL,
@@ -380,7 +364,6 @@ CREATE TABLE IF NOT EXISTS `user_companies` (
 -- Table structure for table `user_guarantors`
 --
 
-DROP TABLE IF EXISTS `user_guarantors`;
 CREATE TABLE IF NOT EXISTS `user_guarantors` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -427,8 +410,8 @@ CREATE TABLE IF NOT EXISTS `user_guarantors` (
   `year_worked` int(11) DEFAULT NULL,
   `salary_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `salary_type_other` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `income_month` int(11) DEFAULT NULL,
-  `income_year` int(11) DEFAULT NULL,
+  `income_month` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `income_year` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `salary_date` int(11) DEFAULT NULL,
   `salary_receive_id` int(11) DEFAULT NULL,
   `insurance_id` int(11) DEFAULT NULL,
@@ -440,47 +423,9 @@ CREATE TABLE IF NOT EXISTS `user_guarantors` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_guardians`
---
-
-DROP TABLE IF EXISTS `user_guardians`;
-CREATE TABLE IF NOT EXISTS `user_guardians` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `first_name_kana` varchar(255) DEFAULT NULL,
-  `last_name_kana` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `date_of_birth` int(11) NOT NULL,
-  `day_of_birth` int(11) DEFAULT NULL,
-  `month_of_birth` int(11) DEFAULT NULL,
-  `year_of_birth` int(11) DEFAULT NULL,
-  `genre` varchar(6) DEFAULT NULL,
-  `married_status` int(11) DEFAULT NULL,
-  `family_structure` int(11) DEFAULT NULL,
-  `relationship_id` int(11) DEFAULT NULL,
-  `post_num` int(11) DEFAULT NULL,
-  `pref_id` int(255) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `address_kana` varchar(255) DEFAULT NULL,
-  `year_residence` int(11) DEFAULT NULL,
-  `month_residence` int(11) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `home_phone` varchar(20) DEFAULT NULL,
-  `residence_status` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `updated` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_partners`
 --
 
-DROP TABLE IF EXISTS `user_partners`;
 CREATE TABLE IF NOT EXISTS `user_partners` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -512,8 +457,8 @@ CREATE TABLE IF NOT EXISTS `user_partners` (
   `year_worked` int(11) DEFAULT NULL,
   `salary_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `salary_type_other` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `income_month` int(11) DEFAULT NULL,
-  `income_year` int(11) DEFAULT NULL,
+  `income_month` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `income_year` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `salary_date` int(11) DEFAULT NULL,
   `salary_receive_id` int(11) DEFAULT NULL,
   `insurance_id` int(11) DEFAULT NULL,
@@ -528,7 +473,6 @@ CREATE TABLE IF NOT EXISTS `user_partners` (
 -- Table structure for table `user_relations`
 --
 
-DROP TABLE IF EXISTS `user_relations`;
 CREATE TABLE IF NOT EXISTS `user_relations` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -554,7 +498,6 @@ CREATE TABLE IF NOT EXISTS `user_relations` (
 -- Table structure for table `works`
 --
 
-DROP TABLE IF EXISTS `works`;
 CREATE TABLE IF NOT EXISTS `works` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -567,7 +510,6 @@ CREATE TABLE IF NOT EXISTS `works` (
 -- Table structure for table `work_requireds`
 --
 
-DROP TABLE IF EXISTS `work_requireds`;
 CREATE TABLE IF NOT EXISTS `work_requireds` (
   `id` int(11) NOT NULL,
   `work_id` int(11) NOT NULL,
@@ -599,7 +541,6 @@ CREATE TABLE IF NOT EXISTS `work_requireds` (
 -- Table structure for table `zipcodes`
 --
 
-DROP TABLE IF EXISTS `zipcodes`;
 CREATE TABLE IF NOT EXISTS `zipcodes` (
   `id` int(11) NOT NULL,
   `zipcode` varchar(7) DEFAULT NULL,
@@ -720,12 +661,6 @@ ALTER TABLE `user_guarantors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_guardians`
---
-ALTER TABLE `user_guardians`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `user_partners`
 --
 ALTER TABLE `user_partners`
@@ -842,11 +777,6 @@ ALTER TABLE `user_companies`
 ALTER TABLE `user_guarantors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `user_guardians`
---
-ALTER TABLE `user_guardians`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `user_partners`
 --
 ALTER TABLE `user_partners`
@@ -871,24 +801,6 @@ ALTER TABLE `work_requireds`
 --
 ALTER TABLE `zipcodes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-
--- add is_deleteed field to table users 
-ALTER TABLE `users` ADD `is_deleted` BOOLEAN NULL DEFAULT FALSE AFTER `max_payment`;
-
-ALTER TABLE `contacts` ADD `code` VARCHAR(20) NULL AFTER `id`;
-
-ALTER TABLE `users` CHANGE `live_with_family` `live_with_family` INT(11) NOT NULL DEFAULT '1';
-
-
--- change currency type
-ALTER TABLE `user_companies` CHANGE `salary_year` `salary_year` VARCHAR(20) NULL DEFAULT NULL, CHANGE `salary_month` `salary_month` VARCHAR(20) NULL DEFAULT NULL;
-ALTER TABLE `user_guarantors` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
-ALTER TABLE `user_partners` CHANGE `income_month` `income_month` VARCHAR(20) NULL DEFAULT NULL, CHANGE `income_year` `income_year` VARCHAR(20) NULL DEFAULT NULL;
-ALTER TABLE `user_addresses` CHANGE `housing_costs` `housing_costs` VARCHAR(20) NULL DEFAULT NULL;
-ALTER TABLE `users` CHANGE `debt_total_value` `debt_total_value` VARCHAR(20) NULL DEFAULT NULL, CHANGE `debt_pay_per_month` `debt_pay_per_month` VARCHAR(20) NULL DEFAULT NULL;
-
-ALTER TABLE `user_companies` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
-ALTER TABLE `user_partners` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
-ALTER TABLE `user_guarantors` CHANGE `salary_date` `salary_date` INT(11) NULL DEFAULT NULL;
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
