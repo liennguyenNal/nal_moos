@@ -16,20 +16,7 @@ class ArticlesController extends AppController{
         $this->set('menu' , 'article');
       }
     function admin_index(){
-      // $articles = $this->Article->find('all', array('conditions'=>array(),
-      //   'order'=>array('Article.created DESC')
-      //   ));
-      // $this->set('articles', $articles);
 
-    // we prepare our query, the cakephp way!
-
-      // $conditions = array();
-      // if($this->params['named']['keyword']){
-      //   $keyword = $this->request->params['named']['keyword'];
-      //    $conditions = array("Article.title LIKE '%$keyword%'" );
-      //    $this->set('keyword', $keyword);
-      // }
-      //var_dump($this->params['named']['date_from']); die;
 
       $criteria = "1=1 ";
       if($this->params['named']['keyword']){
@@ -69,19 +56,8 @@ class ArticlesController extends AppController{
         $this->set('to_year_register', $to_year_register);
         $this->set('to_month_register', $to_month_register);
         $this->set('to_day_register', $to_day_register);
-        //$this->set('date_to', $date_to);
       }
-      //$this->Paginator->settings['paramType'] = 'querystring';
-      //print_r($this->params['named']['keyword']); die;
-      // $urls = $this->request->query; $getv = "";
-      // foreach($urls as $key=>$value)
-      // {
-      // if($key == 'url') continue; // we need to ignor the url field
-      // $getv .= urlencode($key)."=".urlencode($value)."&"; // making the passing parameters
-      // }
-      // $getv = substr_replace($getv ,"",-1); 
-      //  $this->set('getv', $getv);
-      // echo $getv; die;
+
         $this->paginate = array(
             'conditions' => array($criteria),
             'limit' => 10,
@@ -141,7 +117,6 @@ class ArticlesController extends AppController{
           $this->Article->delete($id);
         }
 
-      //$this->Session->setFlash('Selected News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect('index');
 
@@ -163,7 +138,6 @@ class ArticlesController extends AppController{
       }
         if($id){
             $this->Article->delete( $id );
-            //$this->Session->setFlash('News are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
             $this->redirect( 'index' );
         }
@@ -183,12 +157,10 @@ class ArticlesController extends AppController{
           $this->set( 'article', $article );
          }
          else {
-            //$this->Session->setFlash( 'Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
             $this->redirect( "index" );
          }
       }
       else {
-        //$this->Session->setFlash( 'Not found news', 'default', array( 'class' => 'alert alert-dismissible alert-info"' ) );
         $this->redirect( "index" );
       }
     }
@@ -230,31 +202,10 @@ class ArticlesController extends AppController{
         }
       }
       else {
-        //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
         $this->redirect("/");
       }
     }
 
-    // function index(){
-      
-    //   $conditions = array();
-    //   if($this->request->query['keyword']){
-    //     $keyword = $this->request->query['keyword'];
-    //      $conditions = array("Article.title LIKE '%$keyword%' AND Article.is_published = 1" );
-    //   }
-    //     $this->paginate = array(
-    //         'conditions' => $conditions,
-    //         'limit' => 20,
-    //         'order' => array('id' => 'desc')
-    //     );
-         
-    //     // we are using the 'User' model
-    //     $articles = $this->paginate('Article');
-    //     //var_dump($articles; die;
-         
-    //     // pass the value to our view.ctp
-    //     $this->set('articles', $articles);
-    // }
     function admin_edit_confirm(){ 
     if($_POST['view']==1){ 
     $article = $this->data;
@@ -275,22 +226,18 @@ class ArticlesController extends AppController{
                 }
     else{
       $article2 = $this->Article->find('first', array('conditions'=>array('Article.id'=>$article['Article']['id']), 'contain'=>array('id'))); 
-      //var_dump($article2); die;
       if($article2['Article']['small_image']){
         $article['Article']['small_image'] = $article2['Article']['small_image'];
         $article['Article']['large_image'] = $article2['Article']['large_image'];
       }
     }
                 
-    //var_dump($article); die('s');
-    //$article['Article']['small_image_file'] = $this->data['Article']['small_image_file']['name'];
     $this->set( 'article', $article );
     }
     else{
       $article= unserialize($this->data['article_confirm']);
       $article['Article']['created'] = $article['Article']['from_year_register'].'-'.$article['Article']['from_month_register'].'-'.$article['Article']['from_day_register'];
       if($this->Article->save($article, false)){
-                  //$this->Session->setFlash( 'Thanks you, you have been send email successful to administrator.','default', array('class' => 'alert alert-dismissible alert-success' ) );
                   $this->redirect( "view/".$article['Article']['id'] );
                }
       $article1 = $this->Article->find('first', array('conditions'=>array('Article.id'=>$article['Article']['id']), 'contain'=>array('id'))); 
@@ -305,7 +252,6 @@ class ArticlesController extends AppController{
         $file->delete();
         
       }
-      //var_dump(unserialize($this->data['article_confirm'])); die;
 
     }
 

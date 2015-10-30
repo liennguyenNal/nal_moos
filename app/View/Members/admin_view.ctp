@@ -69,7 +69,7 @@
                       
                       年
                       <?php 
-                      $years = array_combine(  range(1930, date("Y")), range(1930, date("Y")));
+                      $years = array_combine(  range(1900, date("Y")), range(1900, date("Y")));
                       echo $this->Form->select('year_of_birth', $years, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'year', 'onchange'=>'calculate_age()'));
                     ?>
                     月
@@ -82,15 +82,26 @@
                     $dates = array_combine(range(1, 31), range(1, 31));
                       echo $this->Form->select('day_of_birth', $dates, array('class'=>'form-control', 'style'=>'width:100px; display:inline','div'=>false, 'label'=>false, 'id'=>'day'));
                     ?>
-                      歳 : <span id="age">0</span>
-                    <script type="text/javascript">
 
-                    function calculate_age(){
-                      var d = new Date();
-                      var n = d.getFullYear();
-                      $("#age").html(n - $("#year").val());
-                    }
-                    </script>
+
+              <?php  $age = 0;
+              if($user['User']['year_of_birth'] && $user['User']['month_of_birth'] && $user['User']['day_of_birth']){
+                $age = date('Y') - $user['User']['year_of_birth']; 
+
+                if (date('m')< $user['User']['month_of_birth'] - 1)
+                {
+                  $age--;
+                }
+
+                if ($user['User']['month_of_birth'] - 1 == date('m') && date('d') < $user['User']['day_of_birth'])
+                {
+                  $age--;
+                }
+              }
+                ?>
+           
+                      歳 : <span id="age"><?php echo $age; ?></span>
+                    
                     </div>
                   </div>
                 </td>

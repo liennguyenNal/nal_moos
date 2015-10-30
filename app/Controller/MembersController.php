@@ -9,7 +9,6 @@
 class MembersController extends AppController {
     var $uses = array('User', 'Administrator',  'Pref' ,'ExpectArea', 'UserCompany', 'UserAddress', 'Work' , 'MarriedStatus', 'Residence', 'Career', 'Insurance', 'AttachmentType', 'UserAttachment');
     var $components = array('Login', 'Util', 'Session', 'RequestHandler');
-    //var $helpers = array('Html' , 'Js');
     var $helpers = array('Html', 'Form','Csv'); 
      
     public function beforeFilter(){
@@ -34,7 +33,6 @@ class MembersController extends AppController {
       }
       
       
-      //var_dump($this->params['named']['date_from']); var_dump($this->params['named']['date_to']); die;
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
         $criteria .= " AND User.created >= '$date_from'" ;
@@ -74,16 +72,13 @@ class MembersController extends AppController {
          
         // pass the value to our view.ctp
         $this->set('users', $users); 
-        //var_dump($users); die('s');
     }
-    function admin_multi_delete(){ $ids= $_POST['customer_id']; //var_dump($ids); die;
+    function admin_multi_delete(){ $ids= $_POST['customer_id']; 
       if($_POST['customer_id']){
         foreach($ids as $id){
           $this->User->id = $id; 
           $this->User->saveField('is_deleted', 1);
-          //$this->User->delete($id);
         }
-      //$this->Session->setFlash('Selected Customers are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect( 'index');
 
@@ -91,10 +86,7 @@ class MembersController extends AppController {
       
     }
 
-    // function admin_deleteall(){
-    //   $subjectsToDelete = $this->request->data['subjects_to_delete'];
-    //   $this->Subject->deleteAll(array('id' => $subjectsToDelete));
-    // }
+
    
     
     function admin_delete($id){
@@ -106,42 +98,20 @@ class MembersController extends AppController {
     }
 
     function admin_view($id){ 
-      if($_POST){ //var_dump($_POST['data']); //die;
-      //var_dump($this->Session); die;
-            //$this->Session->write('contact', $contact);
-        // $contact = $this->Contact->find('first', array('conditions'=>array('Contact.id'=>$_POST['data']['Contact']['id']), 'contain'=>array('id'))); //var_dump($user['User']['id']); die;
-        // $contact['Contact']['status'] = $_POST['data']['Contact']['status'] ;
-        // $contact['Contact']['comment'] = $_POST['data']['Contact']['comment'];
-        // $this->Session->write('contact', $contact);
-
-        // //var_dump($contact); die;
-        //     $this->redirect("edit_confirm");
-
-        //$this->redirect( 'change_confirm' );
-
+      if($_POST){ 
       }
       else{
-        // if(!$id){
-        //    $id = $this->data['User']['id'];
-        // }
+
       	$user = $this->User->read( null, $id );
       	if($user){ 
           $prefs = $this->Pref->find('list');
       $this->set('prefs', $prefs);
 
       		$this->set( 'user', $user ); 
-          //var_dump($contact); die;
           $this->data= $user;
-          // if($this->data){
-           
-          //   $user = $this->user->read( null, $id );
-            
-          //   ///$this->Session->write('contact', $contact);
-          //   //$this->redirect('change_confirm');
-          // }
+
       	}
       	else {
-      		//$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
       		$this->redirect( 'index' );
       	}
       }

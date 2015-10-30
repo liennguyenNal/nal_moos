@@ -29,19 +29,14 @@ class ContactsController extends AppController {
     }
     function confirm(){
 
-     //var_dump($_POST); die;
       
-      if($_POST){//die('s');
+      if($_POST){
             $contact = $this->Session->read( 'contact' );
-            //var_dump($contact); die;
-            //$this->layout = "default_new";
-            //$this->set( 'contact', $contact ); 
 
            $this->Contact->set( $contact );
            $valid = $this->Contact->validates();
            if($valid){ 
 
-               //$contact = $contact;
                if($this->Contact->save( $contact, false) ) {
                 $code = date("Ymd"). "-".$this->Contact->getLastInsertId();
                 $contact['Contact']['id'] = $this->Contact->getLastInsertId();
@@ -138,15 +133,9 @@ class ContactsController extends AppController {
         $this->set('to_year_register', $to_year_register);
         $this->set('to_month_register', $to_month_register);
         $this->set('to_day_register', $to_day_register);
-        //$this->set('date_to', $date_to);
       }
 
-      // $conditions = array();
-      // if($this->params['named']['keyword']){
-      //   $keyword = $this->request->params['named']['keyword'];
-      //    $conditions = array("Article.title LIKE '%$keyword%'" );
-      //    $this->set('keyword', $keyword);
-      // }
+
       
         $this->paginate = array(
             'conditions' => array($criteria),
@@ -176,17 +165,13 @@ class ContactsController extends AppController {
 
     function admin_view($id){ 
       if($_POST){ //var_dump($_POST['data']); //die;
-      //var_dump($this->Session); die;
-            //$this->Session->write('contact', $contact);
         $contact = $this->Contact->find('first', array('conditions'=>array('Contact.id'=>$_POST['data']['Contact']['id']), 'contain'=>array('id'))); //var_dump($user['User']['id']); die;
         $contact['Contact']['status'] = $_POST['data']['Contact']['status'] ;
         $contact['Contact']['comment'] = $_POST['data']['Contact']['comment'];
         $this->Session->write('contact', $contact);
 
-        //var_dump($contact); die;
             $this->redirect("edit_confirm");
 
-        //$this->redirect( 'change_confirm' );
 
       }
       else{
@@ -197,7 +182,6 @@ class ContactsController extends AppController {
       	if($contact){ 
 
       		$this->set( 'contact', $contact ); 
-          //var_dump($contact); die;
           $this->data= $contact;
           if($this->data){
            
@@ -205,23 +189,17 @@ class ContactsController extends AppController {
             $contact['Contact']['status'] = $this->data['Contact']['status'] ;
             $contact['Contact']['comment'] = $this->data['Contact']['comment'] ;
             $this->Session->write('contact', $contact);
-            //$this->redirect('change_confirm');
           }
       	}
       	else {
-      		//$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
       		$this->redirect( 'index' );
       	}
       }
     }
     function admin_edit_confirm(){
             $contact = $this->Session->read( 'contact' );
-           // $this->set( 'contact', $contact ); 
-           // $this->data= $contact;
 
 
-      //var_dump($contact); die;
-      //var_dump($contact); die;
         if($_POST){ 
           
 
@@ -234,7 +212,6 @@ class ContactsController extends AppController {
 
         }
         else{
-          //$contact = $this->Session->read( 'contact' );
            $this->set( 'contact', $contact ); 
            $this->data= $contact;
         }
@@ -245,7 +222,6 @@ class ContactsController extends AppController {
         foreach($ids as $id){
           $this->Contact->delete($id);
         }
-     // $this->Session->setFlash('Selected Contacts are deleted','default', array('class' => 'alert alert-dismissible alert-success'));
 
       $this->redirect( 'index');
 
@@ -257,17 +233,13 @@ class ContactsController extends AppController {
         $contact = $this->Contact->find('first', array('conditions'=>array('Contact.id'=> $id)));
         $this->set( 'contact', $contact ); 
 
-        //var_dump($contact); die;
       if($this->data){
          if($contact){
-          //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            //$this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("view/".$this->data['Contact']['id']);
           }
         }
         else {
-          //$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
           $this->redirect( 'index' );
         }
     
@@ -284,14 +256,11 @@ class ContactsController extends AppController {
 
       
         if($contact){
-          //$contact['Contact']['status'] = $status;
           if ($this->Contact->save( $contact, false ) ){
-            //$this->Session->setFlash('問合せの保存が完了しました','default', array('class' => 'alert alert-dismissible alert-success' ) );
             $this->redirect("index");
           }
         }
         else {
-          //$this->Session->setFlash( "Contact message is not exist in system", 'default',array('class' => 'alert alert-dismissible alert-info"' ) );
           $this->redirect( 'index' );
         }
     

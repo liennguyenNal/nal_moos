@@ -107,19 +107,6 @@
 	                </td>
 	              </tr>
 	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?></label></td>
-	                <td>
-	                <div class="form-group">
-	                
-	                  <div class="col-lg-10">
-	                   <?php 
-	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"2"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
-	                  ?>  
-	                  </div>
-	                </div>
-	                </td>
-	              </tr>
-	              <tr>
 	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?></label></td>
 	                <td>
 	                <div class="form-group">
@@ -131,6 +118,20 @@
 	                  </div>
 	                </div>
 	                </td>
+	              </tr>
+	              <tr>
+	              	<td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?></label></td>
+	                <td>
+	                <div class="form-group">
+	                
+	                  <div class="col-lg-10">
+	                   <?php 
+	                    echo $this->Form->radio('UserGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"0"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                  ?>  
+	                  </div>
+	                </div>
+	                </td>
+	                
 	              </tr>
 	              <tr>
 	                <td><label for="inputEmail"><?php echo __('user.my_page.basic_info.num_children'); ?></label></td>

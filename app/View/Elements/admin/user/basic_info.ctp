@@ -177,8 +177,8 @@
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
                   <div class="col-lg-10" >
-                    <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false))?>
-                    <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false))?>
+                    <?php echo $this->Form->input('UserAddress.post_num_1', array('type'=>'text', 'id'=>"post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
+                    <?php echo $this->Form->input('UserAddress.post_num_2', array('type'=>'text', 'id'=>"post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false))?>
                     
                     
 
@@ -335,8 +335,8 @@
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
                   <div class="col-lg-10" >
-                    <?php echo $this->Form->input('UserCompany.post_num_1', array('type'=>'text', 'id'=>"company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , "placeholder"=>'101','div'=>false, 'required'=>false))?>
-                    <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,"placeholder"=>'0001','div'=>false, 'required'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.post_num_1', array('type'=>'text', 'id'=>"company_post_num_1", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' , 'div'=>false, 'required'=>false))?>
+                    <?php echo $this->Form->input('UserCompany.post_num_2', array('type'=>'text', 'id'=>"company_post_num_2", 'label'=>false, 'class'=>'form-control', 'style'=>'width:150px; display:inline' ,'div'=>false, 'required'=>false))?>
                     
 
                   </div>
@@ -345,7 +345,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'青森県', 'required'=>false));
+                    echo $this->Form->select('UserCompany.pref_id', $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'company_pref_id', 'empty'=>'-----', 'required'=>false));
                   ?>
                   </div>
                 </div>
@@ -520,7 +520,7 @@
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.pref'); ?></label>
                   <div class="col-lg-10">
                     <?php 
-                    echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'青森県', 'value'=>$item['pref_id'], 'required'=>false));
+                    echo $this->Form->select("ExpectArea.$i.pref_id", $prefs, array('class'=>'form-control', 'style'=>'width:150px;','div'=>false, 'label'=>false, 'id'=>'pref_id', 'empty'=>'-----', 'value'=>$item['pref_id'], 'required'=>false));
                   ?>
                   </div>
                 </div>

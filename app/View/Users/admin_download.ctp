@@ -1,5 +1,24 @@
 <?php
 
+function calculateAge($birthYear, $birthMonth, $birthDay)
+            {
+              $age = "";
+              if($birthYear && $birthMonth && $birthDay){
+                $age = date('Y') - $birthYear; 
+
+                if (date('m')< $birthMonth - 1)
+                {
+                  $age--;
+                }
+
+                if ($birthMonth - 1 == date('m') && date('d') < $birthDay)
+                {
+                  $age--;
+                }
+              }
+                return $age;
+            }
+
 $i=0;
 $rows = array();
 
@@ -14,8 +33,10 @@ foreach($users as $user){
   $rows[$i]['申込人_メイ']= $user['User']['last_name_kana'];
   if($user['User']['gender']=='male'){$rows[$i]['申込人_性別']='男性';}else if($user['User']['gender']=='female'){$rows[$i]['申込人_性別']='女性';} else{$rows[$i]['申込人_性別']='';}
   if($user['User']["year_of_birth"] and $user['User']["month_of_birth"] and $user['User']["day_of_birth"]){$rows[$i]['申込人_生年月日']= $user['User']["year_of_birth"].'/'.$user['User']["month_of_birth"].'/'.$user['User']["day_of_birth"];}else{$rows[$i]['申込人_生年月日']='';}
+
+  if($user['User']["year_of_birth"] and $user['User']["month_of_birth"] and $user['User']["day_of_birth"]){$rows[$i]['申込人_年齢']= calculateAge($user['User']["year_of_birth"] , $user['User']["month_of_birth"] , $user['User']["day_of_birth"]);}else{$rows[$i]['申込人_年齢']='';}
   
-  $rows[$i]['申込人_年齢']= $user['User']['age_of_birth'];
+  
   $rows[$i]['申込人_婚姻']= $user['MarriedStatus']['name'];
   if($user['User']['live_with_family']=='1'){$rows[$i]['申込人_同居家族']='同居';}else if($user['User']['live_with_family']=='2'){$rows[$i]['申込人_同居家族']='別居';} else{$rows[$i]['申込人_同居家族']='';}
   
@@ -95,7 +116,10 @@ foreach($users as $user){
   $rows[$i]['配偶者_メイ']= $user['UserPartner']['last_name_kana'];
   if($user['UserPartner']['gender']=='male'){$rows[$i]['配偶者_性別']='男性';}else if($user['UserPartner']['gender']=='female'){$rows[$i]['配偶者_性別']='女性';} else{$rows[$i]['配偶者_性別']='';}
   if($user['UserPartner']["year_of_birth"] and $user['UserPartner']["month_of_birth"] and $user['UserPartner']["day_of_birth"]){$rows[$i]['配偶者_生年月日']= $user['UserPartner']["year_of_birth"].'/'.$user['UserPartner']["month_of_birth"].'/'.$user['UserPartner']["day_of_birth"];}else{$rows[$i]['配偶者_生年月日']='';}
-  if($user['UserPartner']["year_of_birth"]){$rows[$i]['配偶者_年齢']= date("Y") - $user['UserPartner']["year_of_birth"];}else{$rows[$i]['配偶者_年齢']='';}
+
+    if($user['UserPartner']["year_of_birth"] and $user['UserPartner']["month_of_birth"] and $user['UserPartner']["day_of_birth"]){$rows[$i]['配偶者_年齢']= calculateAge($user['UserPartner']["year_of_birth"] , $user['UserPartner']["month_of_birth"] , $user['UserPartner']["day_of_birth"]);}else{$rows[$i]['配偶者_年齢']='';}
+
+  
   
   $rows[$i]['配偶者_携帯電話']= $user['UserPartner']['phone'];
   $rows[$i]['配偶者_職業']= $user['UserPartner']['Work']['name'];
@@ -132,8 +156,10 @@ foreach($users as $user){
   if($user['UserRelation'][0]['gender']=='male'){$rows[$i]['同居人_性別']='男性';}else if($user['UserRelation'][0]['gender']=='female'){$rows[$i]['同居人_性別']='女性';} else{$rows[$i]['同居人_性別']='';}
 
   if($user['UserRelation'][0]["year_of_birth"] and $user['UserRelation'][0]["month_of_birth"] and $user['UserRelation'][0]["day_of_birth"]){$rows[$i]['同居人_生年月日']= $user['UserRelation'][0]["year_of_birth"].'/'.$user['UserRelation'][0]["month_of_birth"].'/'.$user['UserRelation'][0]["day_of_birth"];}else{$rows[$i]['同居人_生年月日']='';}
+
+  if($user['UserRelation'][0]["year_of_birth"] and $user['UserRelation'][0]["month_of_birth"] and $user['UserRelation'][0]["day_of_birth"]){$rows[$i]['同居人_年齢']= calculateAge($user['UserRelation'][0]["year_of_birth"] , $user['UserRelation'][0]["month_of_birth"] , $user['UserRelation'][0]["day_of_birth"]);}else{$rows[$i]['同居人_年齢']='';}
   
-  if($user['UserRelation'][0]["year_of_birth"]){$rows[$i]['同居人_年齢']= date("Y") - $user['UserRelation'][0]["year_of_birth"];}else{$rows[$i]['同居人_年齢']='';}
+
   
   $rows[$i]['同居人_申込人との関係']= $user['UserRelation'][0]['relate'];
   $rows[$i]['同居人_携帯電話']= $user['UserRelation'][0]['phone'];
@@ -146,7 +172,9 @@ foreach($users as $user){
   if($user['UserRelation'][1]['gender']=='male'){$rows[$i]['同居人2_性別']='男性';}else if($user['UserRelation'][1]['gender']=='female'){$rows[$i]['同居人2_性別']='女性';} else{$rows[$i]['同居人2_性別']='';}
   if($user['UserRelation'][1]["year_of_birth"] and $user['UserRelation'][1]["month_of_birth"] and $user['UserRelation'][1]["day_of_birth"]){$rows[$i]['同居人2_生年月日']= $user['UserRelation'][1]["year_of_birth"].'/'.$user['UserRelation'][1]["month_of_birth"].'/'.$user['UserRelation'][1]["day_of_birth"];}else{$rows[$i]['同居人2_生年月日']='';}
 
-  if($user['UserRelation'][1]["year_of_birth"]){$rows[$i]['同居人2_年齢']= date("Y") - $user['UserRelation'][1]["year_of_birth"];}else{$rows[$i]['同居人2_年齢']='';}
+  if($user['UserRelation'][1]["year_of_birth"] and $user['UserRelation'][1]["month_of_birth"] and $user['UserRelation'][1]["day_of_birth"]){$rows[$i]['同居人2_年齢']= calculateAge($user['UserRelation'][1]["year_of_birth"] , $user['UserRelation'][1]["month_of_birth"] , $user['UserRelation'][1]["day_of_birth"]);}else{$rows[$i]['同居人2_年齢']='';}
+
+  
   
   $rows[$i]['同居人2_申込人との関係']= $user['UserRelation'][1]['relate'];
   $rows[$i]['同居人2_携帯電話']= $user['UserRelation'][1]['phone'];
@@ -159,8 +187,10 @@ foreach($users as $user){
   if($user['UserRelation'][2]['gender']=='male'){$rows[$i]['同居人3_性別']='男性';}else if($user['UserRelation'][2]['gender']=='female'){$rows[$i]['同居人3_性別']='女性';} else{$rows[$i]['同居人3_性別']='';}
   
   if($user['UserRelation'][2]["year_of_birth"] and $user['UserRelation'][2]["month_of_birth"] and $user['UserRelation'][2]["day_of_birth"]){$rows[$i]['同居人3_生年月日']= $user['UserRelation'][2]["year_of_birth"].'/'.$user['UserRelation'][2]["month_of_birth"].'/'.$user['UserRelation'][2]["day_of_birth"];}else{$rows[$i]['同居人3_生年月日']='';}
+
+  if($user['UserRelation'][2]["year_of_birth"] and $user['UserRelation'][2]["month_of_birth"] and $user['UserRelation'][2]["day_of_birth"]){$rows[$i]['同居人3_年齢']= calculateAge($user['UserRelation'][2]["year_of_birth"] , $user['UserRelation'][2]["month_of_birth"] , $user['UserRelation'][2]["day_of_birth"]);}else{$rows[$i]['同居人3_年齢']='';}
   
-  if($user['UserRelation'][2]["year_of_birth"]){$rows[$i]['同居人3_年齢']= date("Y") - $user['UserRelation'][2]["year_of_birth"];}else{$rows[$i]['同居人3_年齢']='';}
+  
   
   $rows[$i]['同居人3_申込人との関係']= $user['UserRelation'][2]['relate'];
   $rows[$i]['同居人3_携帯電話']= $user['UserRelation'][2]['phone'];
@@ -174,8 +204,10 @@ foreach($users as $user){
   if($user['UserRelation'][3]['gender']=='male'){$rows[$i]['同居人4_性別']='男性';}else if($user['UserRelation'][3]['gender']=='female'){$rows[$i]['同居人4_性別']='女性';} else{$rows[$i]['同居人4_性別']='';}
   
    if($user['UserRelation'][3]["year_of_birth"] and $user['UserRelation'][3]["month_of_birth"] and $user['UserRelation'][3]["day_of_birth"]){$rows[$i]['同居人4_生年月日']= $user['UserRelation'][3]["year_of_birth"].'/'.$user['UserRelation'][3]["month_of_birth"].'/'.$user['UserRelation'][3]["day_of_birth"];}else{$rows[$i]['同居人4_生年月日']='';}
+
+   if($user['UserRelation'][3]["year_of_birth"] and $user['UserRelation'][3]["month_of_birth"] and $user['UserRelation'][3]["day_of_birth"]){$rows[$i]['同居人4_年齢']= calculateAge($user['UserRelation'][3]["year_of_birth"] , $user['UserRelation'][3]["month_of_birth"] , $user['UserRelation'][3]["day_of_birth"]);}else{$rows[$i]['同居人4_年齢']='';}
   
-  if($user['UserRelation'][3]["year_of_birth"]){$rows[$i]['同居人4_年齢']= date("Y") - $user['UserRelation'][3]["year_of_birth"];}else{$rows[$i]['同居人4_年齢']='';}
+  
   
   $rows[$i]['同居人4_申込人との関係']= $user['UserRelation'][3]['relate'];
   $rows[$i]['同居人4_携帯電話']= $user['UserRelation'][3]['phone'];
@@ -189,8 +221,10 @@ foreach($users as $user){
 
   
   if($user['UserRelation'][4]["year_of_birth"] and $user['UserRelation'][4]["month_of_birth"] and $user['UserRelation'][4]["day_of_birth"]){$rows[$i]['同居人5_生年月日']= $user['UserRelation'][4]["year_of_birth"].'/'.$user['UserRelation'][4]["month_of_birth"].'/'.$user['UserRelation'][4]["day_of_birth"];}else{$rows[$i]['同居人5_生年月日']='';}
+
+  if($user['UserRelation'][4]["year_of_birth"] and $user['UserRelation'][4]["month_of_birth"] and $user['UserRelation'][4]["day_of_birth"]){$rows[$i]['同居人5_年齢']= calculateAge($user['UserRelation'][4]["year_of_birth"] , $user['UserRelation'][4]["month_of_birth"] , $user['UserRelation'][4]["day_of_birth"]);}else{$rows[$i]['同居人5_年齢']='';}
   
-  if($user['UserRelation'][4]["year_of_birth"]){$rows[$i]['同居人5_年齢']= date("Y") - $user['UserRelation'][4]["year_of_birth"];}else{$rows[$i]['同居人5_年齢']='';}
+  
   
   $rows[$i]['同居人5_申込人との関係']= $user['UserRelation'][4]['relate'];
   $rows[$i]['同居人5_携帯電話']= $user['UserRelation'][4]['phone'];
@@ -204,7 +238,10 @@ foreach($users as $user){
   if($user['UserGuarantor']['gender']=='male'){$rows[$i]['保証人_性別']='男性';}else if($user['UserGuarantor']['gender']=='female'){$rows[$i]['保証人_性別']='女性';} else{$rows[$i]['保証人_性別']='';}
 
   if($user['UserGuarantor']["year_of_birth"] and $user['UserGuarantor']["month_of_birth"] and $user['UserGuarantor']["day_of_birth"]){$rows[$i]['保証人_生年月日']= $user['UserGuarantor']["year_of_birth"].'/'.$user['UserGuarantor']["month_of_birth"].'/'.$user['UserGuarantor']["day_of_birth"];}else{$rows[$i]['保証人_生年月日']='';}
-  if($user['UserGuarantor']["year_of_birth"]){$rows[$i]['保証人_年齢']= date("Y") - $user['UserGuarantor']["year_of_birth"];}else{$rows[$i]['保証人_年齢']='';}
+
+  if($user['UserGuarantor']["year_of_birth"] and $user['UserGuarantor']["month_of_birth"] and $user['UserGuarantor']["day_of_birth"]){$rows[$i]['保証人_年齢']= calculateAge($user['UserGuarantor']["year_of_birth"] , $user['UserGuarantor']["month_of_birth"] , $user['UserGuarantor']["day_of_birth"]);}else{$rows[$i]['保証人_年齢']='';}
+
+  
   
   $rows[$i]['保証人_婚姻']= $user['UserGuarantor']['MarriedStatus']['name'];
   if($user['UserGuarantor']['live_with_family']=='1'){$rows[$i]['保証人_同居家族']='同居';}else if($user['UserGuarantor']['live_with_family']=='2'){$rows[$i]['保証人_同居家族']='別居';} else{$rows[$i]['保証人_同居家族']='';}
@@ -258,8 +295,10 @@ foreach($users as $user){
   
 
   if($user['OtherGuarantor']["year_of_birth"] and $user['OtherGuarantor']["month_of_birth"] and $user['OtherGuarantor']["day_of_birth"]){$rows[$i]['保証人2_生年月日']= $user['OtherGuarantor']["year_of_birth"].'/'.$user['OtherGuarantor']["month_of_birth"].'/'.$user['OtherGuarantor']["day_of_birth"];}else{$rows[$i]['保証人2_生年月日']='';}
+
+  if($user['OtherGuarantor']["year_of_birth"] and $user['OtherGuarantor']["month_of_birth"] and $user['OtherGuarantor']["day_of_birth"]){$rows[$i]['保証人2_年齢']= calculateAge($user['OtherGuarantor']["year_of_birth"] , $user['OtherGuarantor']["month_of_birth"] , $user['OtherGuarantor']["day_of_birth"]);}else{$rows[$i]['保証人2_年齢']='';}
   
-  if($user['OtherGuarantor']["year_of_birth"]){$rows[$i]['保証人2_年齢']= date("Y") - $user['OtherGuarantor']["year_of_birth"];}else{$rows[$i]['保証人2_年齢']='';}
+  
 
   
   $rows[$i]['保証人2_婚姻']= $user['OtherGuarantor']['MarriedStatus']['name'];

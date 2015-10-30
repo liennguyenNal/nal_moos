@@ -16,7 +16,7 @@
 	         <!--  <form class="form-horizontal"> -->
 	           
 	            <fieldset>
-	              <legend>会員登録フォ一ム</legend>
+	              <legend>連帯保証人基本情報</legend>
 	              <table class="table table-striped table-hover ">
 	              <tr>
 	                <td>
@@ -101,26 +101,27 @@
 	                </td>
 	              </tr>
 	              <tr>
+	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?></label></td>
+	                <td>
+	                <div class="form-group">
+	                	<div class="col-lg-10">
+	                   <?php 
+	                    echo $this->Form->radio('OtherGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                  ?>  
+	                  </div>
+	                
+	                  
+	                </div>
+	                </td>
+	              </tr>
+	              <tr>
 	                <td><label for="inputEmail" ><?php echo __('user.my_page.basic_info.family'); ?></label></td>
 	                <td>
 	                <div class="form-group">
 	                
 	                  <div class="col-lg-10">
 	                   <?php 
-	                    echo $this->Form->radio('OtherGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"2"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
-	                  ?>  
-	                  </div>
-	                </div>
-	                </td>
-	              </tr>
-	              <tr>
-	                <td><label for="inputEmail" ><?php echo __('user.register.married'); ?></label></td>
-	                <td>
-	                <div class="form-group">
-	                
-	                  <div class="col-lg-10">
-	                   <?php 
-	                    echo $this->Form->radio('OtherGuarantor.married_status_id', $married_statuses, array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
+	                    echo $this->Form->radio('OtherGuarantor.live_with_family', array("1"=>__('user.my_page.basic_info.have_family'),"0"=>__('user.my_page.basic_info.alone')), array( 'class'=>'radio','style'=>'display:inline; padding-left:100px;margin-right:10px; margin-left:20px;', 'label'=>false, 'div'=>false, 'legend'=>false, 'default'=>1, 'required'=>false));
 	                  ?>  
 	                  </div>
 	                </div>
@@ -442,7 +443,7 @@
 	                </div>
 	               
 	               <div class="form-group">
-	                  <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.my_page.basic_info.salary_month'); ?></label>
+	                  <label for="inputEmail" class="col-lg-2 control-label">税込月収</label>
 	                  <div class="col-lg-10">
 	                    <?php echo $this->Form->input('OtherGuarantor.income_month', array('type'=>'text', 'id'=>"salary_month", 'label'=>false, 'class'=>'form-control','div'=>false, 'required'=>false,'style'=>'width:150px; display:inline;'))?><?php echo __('user.register.yen'); ?>
 	                  </div>

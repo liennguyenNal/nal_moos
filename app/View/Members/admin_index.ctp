@@ -29,7 +29,7 @@
             
             <label style="margin-left:20px;" for="title" ><?php echo __('admin.user.list_header.register_date'); ?></label> 
             <?php 
-              $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+              $years = array_combine(range( date("Y"), 1900), range(date("Y"), 1900));
               echo $this->Form->select('from_year_register', $years, array('id'=>'from-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$from_year_register));
             ?>
            
@@ -43,7 +43,7 @@
               ?>  
             <p style="width:50px; display:inline; padding:10px"> <b>~ </b> </p>
                 <?php 
-                  $years = array_combine(range( date("Y"), 1930), range(date("Y"), 1930));
+                  $years = array_combine(range( date("Y"), 1900), range(date("Y"), 1900));
                   echo $this->Form->select('to_year_register', $years, array('id'=>'to-year-register', 'data-placement' => 'right', 'empty'=>"-----",  'value'=>$to_year_register));
                 ?>
                

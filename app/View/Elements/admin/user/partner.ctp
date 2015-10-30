@@ -168,7 +168,7 @@
                     
             <table class="table table-striped table-hover ">
               <tr>
-                <td><label for="inputEmail" ><?php echo __('user.register.address'); ?></span></td>
+                <td><label for="inputEmail" >所在地</span></td>
                 <td>
                   <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.post'); ?></label>
@@ -204,7 +204,7 @@
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label"><?php echo __('user.register.house'); ?></label>
                   <div class="col-lg-10">
-                    <?php echo $this->Form->input('UserPartner.company_house_name', array('type'=>'text', 'id'=>"p_company_house_name", 'label'=>false, 'class'=>'form-control', "placeholder"=>'','div'=>false, 'required' => false))?>
+                    <?php echo $this->Form->input('UserPartner.company_house_name', array('type'=>'text', 'id'=>"p_company_house_name", 'label'=>false, 'class'=>'form-control', 'div'=>false, 'required' => false))?>
                   </div>
                 </div>
                 </td>
