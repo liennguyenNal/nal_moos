@@ -1154,11 +1154,17 @@
       });
 
       jQuery(function($) {
-      $('#salary_month').autoNumeric('init', {aNum: '0123456789',  'vMin':0, 'vMax':99999999999999999999});  
-      $('#salary_year').autoNumeric('init', {aNum: '0123456789',  'vMin':0, 'vMax':99999999999999999999});      
-      $('#debt_total').autoNumeric('init', {aNum: '0123456789',  'vMin':0, 'vMax':99999999999999999999});   
-      $('#debt_month').autoNumeric('init', {aNum: '0123456789',  'vMin':0, 'vMax':99999999999999999999});   
-      $('#housing_costs').autoNumeric('init', {aNum: '0123456789',  'vMin':0, 'vMax':99999999999999999999});  
+      $('#salary_month').val($('#salary_month').val().replace(',', ''));
+      $('#salary_year').val($('#salary_year').val().replace(',', ''));
+      $('#debt_total').val($('#debt_total').val().replace(',', ''));
+      $('#debt_month').val($('#debt_month').val().replace(',', ''));
+      $('#housing_costs').val($('#housing_costs').val().replace(',', ''));
+      
+      $('#salary_month').autoNumeric('init', { 'vMin':0, 'vMax':99999999999999999999});  
+      $('#salary_year').autoNumeric('init', {  'vMin':0, 'vMax':99999999999999999999});      
+      $('#debt_total').autoNumeric('init', {  'vMin':0, 'vMax':99999999999999999999});   
+      $('#debt_month').autoNumeric('init', {  'vMin':0, 'vMax':99999999999999999999});   
+      $('#housing_costs').autoNumeric('init', { 'vMin':0, 'vMax':99999999999999999999});  
       
   });
 </script>

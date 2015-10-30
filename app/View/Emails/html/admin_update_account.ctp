@@ -29,4 +29,4 @@
 <p style=" margin:0px !important">----------------------------------------------------</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">審査申し込み内容の確認を行い、承認・却下・差戻し手続きを管理画面から行ってください。</p>
-<p style=" margin:0px !important"><a href="<?php echo Router::url('/', true) ;?>admin/users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
+<p style=" margin:0px !important"><a href="<?php echo str_replace("http:", "https:" ,Router::url('/', true) ) ;?>admin/users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>

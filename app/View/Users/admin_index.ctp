@@ -199,6 +199,27 @@
                 <th width="5%"></th>
               </tr>
             </thead>
+            <?php 
+
+            function calculateAge($birthYear, $birthMonth, $birthDay)
+            {
+              $age = "";
+              if($birthYear && $birthMonth && $birthDay){
+                $age = date('Y') - $birthYear; 
+
+                if (date('m')< $birthMonth - 1)
+                {
+                  $age--;
+                }
+
+                if ($birthMonth - 1 == date('m') && date('d') < $birthDay)
+                {
+                  $age--;
+                }
+              }
+                return $age;
+            }
+            ?>
             <tbody>
             <?php $i = 0; foreach ($users as $user) { $i++;?>
               <tr>
@@ -206,7 +227,7 @@
               <td width="6%"><?php echo $user['User']['id'];?></td>
               <td width="8%"><?php echo $user['User']['email'] ?></td>
                 <td width="8%"><?php echo $user['User']['first_name'].$user['User']['last_name'] ?></td>
-                <td width="5%"><?php echo date("Y") - $user['User']['year_of_birth'] ;?></td>
+                <td width="5%"><?php echo calculateAge($user['User']['year_of_birth'], $user['User']['month_of_birth'], $user['User']['day_of_birth'] ) ;?></td>
                 <td width="8%"><?php echo $user['UserCompany']['Work']['name'] ?></td>
                 <td width="8%"><?php echo $user['UserCompany']['salary_month'] ?></td>
                 <td width="8%"><?php echo  $user['UserAddress']['Pref']['name'] ?></td>

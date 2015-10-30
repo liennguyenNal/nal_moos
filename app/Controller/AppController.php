@@ -42,7 +42,7 @@ class AppController extends Controller {
     public $helpers = array('Html', 'Form', 'Session', 'Js' => array('Jquery'));
     public function beforeFilter(){
         parent::beforeFilter();
-        //Configure::write('Config.language', 'jpa');
+        
         
         Configure::write('Config.language', 'ja');
 
@@ -58,7 +58,7 @@ class AppController extends Controller {
 
                         $this->layout = "/admin/default";
                         $user = $this->Session->read('Administrator');
-                        //print_r($user);die;
+                        
                         if($user){
                              $this->set('s_admin_id', $this->userid);
                             $this->set('s_username', $this->s_username);
@@ -81,7 +81,7 @@ class AppController extends Controller {
                     $this->set('menu', '');
                 }
                 else {
-                     //$this->layout = "/default";
+                     
                 }
         }
         else {
@@ -109,7 +109,7 @@ class AppController extends Controller {
 
             }
             else {
-                //echo $_SERVER['HTTPS']; die;
+                
                 
                 if($this->action == "login" || $this->action == "register"  || $this->action == "register_confirmation" || $this->action == "register_confirmation"){
                     if(!isset($_SERVER['HTTPS'])){
@@ -167,14 +167,12 @@ class AppController extends Controller {
     {
             $this->Session->setFlash($msg, 'default',
                 array('class' => 'alert alert-error'));
-            //$this->Session->write('Message.type', 'error-msg');
     }
 
     function adminSuccessMsg($msg = 'Information saved.')
     {
             $this->Session->setFlash($msg, 'default',
                 array('class' => 'alert alert-success'));
-            //$this->Session->write('Message.type', 'success-msg');
     }
     function adminWarningMsg($msg = 'Warning!')
     {
@@ -195,7 +193,7 @@ class AppController extends Controller {
 
     function beforeRender() {
         if($this->name == 'CakeError') {
-            //echo 1111; die;
+            
             $this->layout = null;
         }
     }

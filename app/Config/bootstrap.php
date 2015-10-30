@@ -115,6 +115,7 @@ CakeLog::config('error', array(
 
 define("REQUEST_MORE_GUARANTOR_ID", 3);
 define("ADMIN_EMAIL", "vinhbn@nal.vn");
+define("FROM_EMAIL", "noreply@moraeru-house.com");
 define("MAX_NUM_RELATION", 5);
 define("MAX_NUM_AREA", 5);
 

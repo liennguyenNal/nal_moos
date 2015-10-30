@@ -15,4 +15,4 @@
 <p style=" margin:0px !important">----------------------------------------------------</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">問い合わせに対する回答・対応を行ってください。</p>
-<p style=" margin:0px !important"><a href="<?php echo Router::url('/', true) ?>admin/contacts/">管理画面 問い合わせ一覧ページURL </a></p>
+<p style=" margin:0px !important"><a href="<?php echo str_replace("http:", "https:" ,Router::url('/', true) ) ;?>admin/contacts/">管理画面 問い合わせ一覧ページURL </a></p>

@@ -20,7 +20,7 @@ public $default = array(
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);
-
++ Tạo thư mục app/webroot/files/upload/
 + Set permission 777 cho các thư mục sau: 
  - app/tmp/cache/
  - app/tmp/cache/persistent/

@@ -76,10 +76,10 @@ class PagesController extends AppController {
 
 	public function index(){
 		$this->layout = 'default_new';
-		//print_r("this is hom page"); die;
+		
 		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
 		 
-		 //var_dump($articles);var_dump(date("Y-m-d")); die;
+		
 		  
 		 foreach($articles as $article){
 		 	if($article['Article']['created'] <= date("Y-m-d")){
@@ -93,14 +93,13 @@ class PagesController extends AppController {
 	}
 	public function faq(){
 		$this->layout = null;
-		//print_r("this is hom page"); die;
+		
 		$this->set('menu','faq');
 	}
 	public function campaign(){
-		//$this->layout = 'default_new';
+		
 		$this->layout = null;
-		//print_r("this is hom page"); die;
-		//$this->set('menu','campaign');
+		
 	}
 
 	public function landing_page(){
@@ -120,11 +119,9 @@ class PagesController extends AppController {
       	//delete session before submit form register on LP
       	$this->Session->delete('User');
         $this->User->set( $this->data );
-        //$this->UserAddress->set( $this->data );
-        //$this->UserCompany->set( $this->data );
+        
         if( $this->User->validates() ){
-        	//print_r( $this->data); die;
-          	//$this->Session->write( 'user_register', $this->data );
+        	
           	if($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
           		$user = $this->data;
           		$user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
@@ -136,6 +133,34 @@ class PagesController extends AppController {
 	          			$this->ExpectArea->create();
 	          			$this->ExpectArea->save($item, false);
 	          		}
+
+	          		/**
+                     * SEND EMAIL TO CUSTOMER
+                     * @var CakeEmail
+                     */
+                    $Email = new CakeEmail("gmail");
+                    $Email->template('user_register_success');
+                    $Email->emailFormat('html');
+                    $Email->to($user['User']['email']);
+                    $Email->from(FROM_EMAIL);
+                    $Email->subject("【家賃でもらえる家】無料会員登録");
+                    $Email->viewVars(array('user' => $user));
+                    $Email->send();
+
+                    /**
+                     * SEND EMAIL TO ADMIN
+                     * @var CakeEmail
+                     */
+                    $Email = new CakeEmail("gmail");
+                    $Email->template('admin_register_success');
+                    $Email->emailFormat('html');
+                    $Email->to(ADMIN_EMAIL);
+                    $Email->from(FROM_EMAIL);
+                    $Email->subject("【MOOS】会員登録通知");
+                    $Email->viewVars(array('user' => $user));
+                    $Email->send();
+                    
+
 	          		$this->redirect( "register_successful" );
 
 	      		}
@@ -143,7 +168,7 @@ class PagesController extends AppController {
         }
         else {
         	$this->set('user', $this->data);
-        	//print_r( $this->data); die;
+        	
           $this->Session->setFlash(__('global.errors.landing-page.email.unique'), 'default');
         }
       }

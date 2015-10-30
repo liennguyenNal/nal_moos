@@ -96,18 +96,19 @@
                               <script>
                               var age = "";
                               if($("#year").val() && $("#month").val() && $("#day").val()){
-                                    age = calculateAge();
-
+                                    age = calculateAge($("#year").val() , $("#month").val() , $("#day").val());
+                                    
                                   }
                               $('#s-age').html(age);
-                              function calculateAge(birthMonth, birthDay, birthYear)
+                              function calculateAge(birthYear, birthMonth, birthDay)
                                 {
+                                  
                                   todayDate = new Date();
                                   todayYear = todayDate.getFullYear();
                                   todayMonth = todayDate.getMonth();
                                   todayDay = todayDate.getDate();
                                   age = todayYear - birthYear; 
-
+                                  
                                   if (todayMonth < birthMonth - 1)
                                   {
                                     age--;

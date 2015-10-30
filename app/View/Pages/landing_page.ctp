@@ -227,7 +227,7 @@
 				                          <td>
 				                            <div class="select">
 				                              <?php 
-				                                $years = array_combine(range(1930, date("Y")), range(1930, date("Y")));
+				                                $years = array_combine(range(1900, date("Y")), range(1900, date("Y")));
 				                                echo $this->Form->select('User.year_of_birth', $years, array('id'=>'year', 'onchange'=>'calculate_age()', 'data-placement' => 'right'));
 				                              ?>
 				                              <span><?php echo __('user.register.year'); ?></span>

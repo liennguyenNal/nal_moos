@@ -10,7 +10,7 @@
 <p style=" margin:0px !important">性別：<?php if($user['User']['gender'] == "male") echo __("user.register.male"); 
 					else echo  __("user.register.female")?>
 <p style=" margin:0px !important">&nbsp;</p> 
-<p style=" margin:0px !important">婚姻：<?php echo $user['User']['married_status_id']; ?></p>
+<p style=" margin:0px !important">婚姻：<?php echo $user['MarriedStatus']['name']; ?></p>
 <p style=" margin:0px !important">職業：<?php echo $user['UserCompany']['Work']['name']; ?></p>
 <p style=" margin:0px !important">勤務年月：<?php echo $user['UserCompany']['year_worked']; ?>年 <?php echo $user['UserCompany']['month_worked']; ?>月</p>
 <p style=" margin:0px !important">月収：<?php echo $user['UserCompany']['salary_year']; ?></p>
@@ -24,4 +24,4 @@
 <p style=" margin:0px !important">----------------------------------------------------</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">登録内容の確認を行い、承認・却下手続きを管理画面から行ってください。</p>
-<p style=" margin:0px !important"><a href="<?php echo Router::url('/', true) ;?>admin/users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>
+<p style=" margin:0px !important"><a href="<?php echo str_replace("http:", "https:" ,Router::url('/', true) ) ;?>admin/users/view/<?php echo $user['User']['id']?>">管理画面 当該登録Noの申込詳細ページURL</a></p>

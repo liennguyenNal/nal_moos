@@ -37,41 +37,41 @@ class UsersController extends AppController{
        if(isset($this->params['named']['status'])){
         $status_id = $this->params['named']['status'];
         $criteria .= " AND User.status_id = '$status_id'" ;
-        //$this->set('status', $status_id);
+        
       }
       if($this->params['named']['city']){
         $city = $this->params['named']['city'];
          $criteria .= " AND UserAddress.city = '$city'" ;
         
-        //$this->set('city', $city);
+        
       }
       if($this->params['named']['pref']){
         $pref = $this->params['named']['pref'];
          $criteria .= " AND UserAddress.pref_id = '$pref'" ;
         
-        //$this->set('pref', $pref);
+        
       }
       
        if($this->params['named']['from_register']){
         $from_register = $this->params['named']['from_register'];
         $criteria .= " AND User.created > '$from_register'" ;
-        //$this->set('status', $status);
+        
       }
        if($this->params['named']['to_register']){
         $to_register = $this->params['named']['to_register'];
         $criteria .= " AND User.created < '$to_register'" ;
-        //$this->set('status', $status);
+        
       }
      
       if($this->params['named']['from_approve']){
         $from_approve = $this->params['named']['from_approve'];
         $criteria .= " AND User.approved_date > '$from_approve'" ;
-        //$this->set('status', $status);
+        
       }
       if($this->params['named']['to_approve']){
         $to_approve = $this->params['named']['to_approve'];
         $criteria .= " AND User.approved_date > '$to_approve'" ;
-        //$this->set('status', $status);
+        
       }
       $users = $this->User->find('all', 
         array('conditions'=>array($criteria), 
@@ -81,16 +81,16 @@ class UsersController extends AppController{
           // 'recursive' => 3,
           //'fields'=>array('User.first_name', 'User.last_name', 'User.first_name_kana', 'User.last_name_kana', 'User.year_of_birth', 'User.month_of_birth', 'User.day_of_birth','UserCompany.Work.name' , 'UserCompany.salary_month', 'UserAddress.Pref.name', 'UserAddress.Pref.city')
           ));
-      //Configure::write('debug', 0);
+      
         $this->set('users', $users);
-        //var_dump($users[0]); die;
+        
         $this->layout = null;
        $this->autoLayout = false;
       Configure::write('debug', 0);
 
     }
     function admin_index(){
-      //Configure::write('debug', 2);
+     
       $statuses = $this->Status->find('list');
       $this->set('statuses', $statuses);
       $prefs = $this->Pref->find('list');
@@ -135,7 +135,7 @@ class UsersController extends AppController{
         $criteria .= " AND User.approved_date > '$to_approve'" ;
         $this->set('to_approve', $to_approve);
       }
-      //echo $criteria; die;
+      
         $this->paginate = array(
             'conditions' => $criteria,
             'contain' => array('UserCompany', 'UserCompany.Work',  'UserAddress', 'Status', 'UserAddress.Pref'),
@@ -145,8 +145,7 @@ class UsersController extends AppController{
         );
         $users = $this->paginate('User');
         $this->set('users', $users);
-        //var_dump($users); die;
-        //print_r($users[0]['UserCompany']['Work']);die;
+        
     }
 
     
@@ -231,7 +230,7 @@ class UsersController extends AppController{
               $user = $this->data;
 
               $user['Administrator']['id']= $id;
-              //print_r($user);die;
+              
                if($this->Administrator->save($user, false)){
                   $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
                    $this->redirect("profile");
@@ -265,7 +264,7 @@ class UsersController extends AppController{
                 $admin['Administrator']['password'] = md5($this->data['User']['password']);
                 if ($this->Administrator->save($admin, true) ){
                   $this->Session->setFlash('パスワード変更は完了しました。','default', array('class' => 'alert alert-dismissible alert-success'));
-                  //$this->redirect('profile');
+                  
                 }
                 else {
                   $this->Session->setFlash("パスワード変更はできませんでした。", 'default',array('class' => 'alert alert-dismissible alert-info"'));
@@ -325,8 +324,7 @@ class UsersController extends AppController{
      * @return response
      */
     function admin_view($id){
-     //echo date("Y-m-d H:i:s"); die;
-      //$id = $this->s_user_id;
+     
       if($id){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
           'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'OtherGuarantor','UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
@@ -358,8 +356,7 @@ class UsersController extends AppController{
           $this->data = $user;
           $validations = $this->_validate($user);
           $this->set('validations', $validations);
-          // $validations = $this->_validate($user);
-          // $this->set('validations', $validations);
+          
           $this->render('admin_view_2');
         }
       }
@@ -389,7 +386,7 @@ class UsersController extends AppController{
           $Email->template('user_approve_success');
           $Email->emailFormat('html');
           $Email->to($user['User']['email']);
-          $Email->from('moos@nal.vn');
+          $Email->from(FROM_EMAIL);
           $Email->subject('【家賃でもらえる家】会員登録の内容確認完了');
           $Email->viewVars(array('user' => $user));
           $Email->send();
@@ -422,7 +419,7 @@ class UsersController extends AppController{
         $Email->template('user_approve_reject');
         $Email->emailFormat('html');
         $Email->to($user['User']['email']);
-        $Email->from('moos@nal.vn');
+        $Email->from(FROM_EMAIL);
         $Email->subject('【家賃でもらえる家】会員登録の却下');
         $Email->viewVars(array('user' => $user));
         $Email->send();
@@ -475,7 +472,7 @@ class UsersController extends AppController{
           $Email->template('approve_user');
           $Email->emailFormat('html');
           $Email->to($user['User']['email']);
-          $Email->from('moos@nal.vn');
+          $Email->from(FROM_EMAIL);
           $Email->subject(__('admin.email.approve_user.title'));
           $Email->viewVars(array('user' => $user));
           $Email->send();
@@ -505,7 +502,7 @@ class UsersController extends AppController{
             $Email->template('reject_user');
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->subject(__('admin.email.reject_user.title'));
             $Email->viewVars(array('user' => $user));
             $Email->send();
@@ -537,7 +534,7 @@ class UsersController extends AppController{
               $user['User']['need_more_guarantor'] = 1;
             }  
           }
-          //print_r($requireds); die;
+          
 
           $user['User']['status_id'] = 2;
           if($this->User->save($user, false)){
@@ -548,7 +545,7 @@ class UsersController extends AppController{
             $Email->template('return_user');
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->subject(__('admin.email.return_user.title'));
             $Email->viewVars(array('user' => $user, 'requireds'=>$requireds, 'comment'=>$comment));
             $Email->send();
@@ -601,7 +598,7 @@ class UsersController extends AppController{
             $Email->template('process_payment_successful');
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->subject(__('admin.email.process_payment.title'));
             $Email->viewVars(array('user' => $user));
             $Email->send();
@@ -681,15 +678,15 @@ class UsersController extends AppController{
                 $this->redirect('create_password_successful');
               } else {
                 $this->Session->setFlash(__('user.create_password.fail'), 'default',array('class' => 'alert alert-dismissible alert-info"'));
-                //echo "Khong the thay doi password";
+                
               } 
             } else {
               $this->Session->setFlash(__('user.create_password.password_confirm_not_match'), 'default',array('class' => 'alert alert-dismissible alert-info"'));
-              //echo "Password confirm ko dung";
+              
             }
           } else {
             $this->Session->setFlash(__('user.password.lenght_error'), 'default');
-            //echo "Do dai password qua ngan";
+            
           }
         }
       } else {
@@ -699,10 +696,10 @@ class UsersController extends AppController{
             $this->data = $user;
             $this->set('user', $user);
           } else {
-            //echo "Khong duoc 1";
+            
           }
         } else {
-          //echo "Khong co access_token va email";
+          
         }
       }
     }
@@ -736,18 +733,18 @@ class UsersController extends AppController{
                 }
                 else {
                   $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
-                 // echo "Khong the thay doi password";
+                 
                 }
               }
               else {
                   $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
-                  //echo "Password confirm khong dung";
+                  
                 }
             }
             else {
               $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
                 array('class' => 'alert alert-dismissible alert-info'));
-              //echo "Do dai password sai";
+              
             }
           }
         }
@@ -772,7 +769,7 @@ class UsersController extends AppController{
           $Email->template('user_change_password');
           $Email->emailFormat('html');
           $Email->to($user['User']['email']);
-          $Email->from('moos@nal.vn');
+          $Email->from(FROM_EMAIL);
           $Email->subject("【家賃でもらえる家】パスワードの変更");
           $Email->viewVars(array('user' => $user));
           $Email->send();
@@ -799,7 +796,7 @@ class UsersController extends AppController{
       $Email->template('user_change_password_success');
       $Email->emailFormat('html');
       $Email->to($user['User']['email']);
-      $Email->from('moos@nal.vn');
+      $Email->from(FROM_EMAIL);
       $Email->subject("【家賃でもらえる家】パスワードの設定完了");
       $Email->viewVars(array('user' => $user));
       $Email->send();
@@ -819,7 +816,7 @@ class UsersController extends AppController{
             $Email = new CakeEmail("gmail"); 
             $Email->template('user_reset_password');
             $Email->emailFormat('html');
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->to($this->data['email']);
             $Email->subject('【家賃でもらえる家】パスワードの変更');
             $Email->viewVars(array('user' => $user));
@@ -930,10 +927,7 @@ class UsersController extends AppController{
         }
       }
       else {
-        //$user = $this->Session->read( 'user_register');
-        // if($user) {
-        //   $this->set('user', $user); 
-        // }
+        
       }
     }
 
@@ -945,21 +939,20 @@ class UsersController extends AppController{
     function register_confirmation(){
       $this->layout = "register";
       $user = $this->Session->read( 'user_register' );
-      //print_r($user['ExpectArea'][2]); die;
+      
       if( $user ) {
           $user['User']['married_status'] = $this->MarriedStatus->getNameById($user['User']['married_status_id']);
           $user['UserCompany']['work'] = $this->Work->getNameById($user['UserCompany']['work_id']);
           $user['UserAddress']['pref'] = $this->Pref->getNameById($user['UserAddress']['pref_id']);
-          //$user['User']['access_token'] = md5(rand(0,100));
-          //$this->set('user', $user);
+       
 
           if($this->data){
-             //print_r($user['User']['year_of_birth']); die;
+             
              if ($this->UserCompany->save( $user , false ) && $this->UserAddress->save( $user , false )){
                 $user['User']['user_address_id'] = $this->UserAddress->getLastInsertId();
                 $user['User']['user_company_id'] = $this->UserCompany->getLastInsertId();
                 $this->User->set($user);
-                //if($this->User->save->validates()){
+                
                 $email = $this->user['User']['email'];
                 $user_email = $this->User->find('first', array('conditions'=>array('User.email'=>$email)));
                 if(!$user_email){
@@ -988,7 +981,7 @@ class UsersController extends AppController{
                     $Email->template('user_register_success');
                     $Email->emailFormat('html');
                     $Email->to($user['User']['email']);
-                    $Email->from('moos@nal.vn');
+                    $Email->from(FROM_EMAIL);
                     $Email->subject("【家賃でもらえる家】無料会員登録");
                     $Email->viewVars(array('user' => $user));
                     $Email->send();
@@ -1001,7 +994,7 @@ class UsersController extends AppController{
                     $Email->template('admin_register_success');
                     $Email->emailFormat('html');
                     $Email->to(ADMIN_EMAIL);
-                    $Email->from('moos@nal.vn');
+                    $Email->from(FROM_EMAIL);
                     $Email->subject("【MOOS】会員登録通知");
                     $Email->viewVars(array('user' => $user));
                     $Email->send();
@@ -1035,7 +1028,7 @@ class UsersController extends AppController{
           }
       }
       else {
-        //$this->data = $user;
+       
               $this->redirect( "register" );
       }
     }
@@ -1046,7 +1039,7 @@ class UsersController extends AppController{
      * @return response
      */
     function register_successful(){
-      //$this->layout = "default_new";
+      
       $this->layout = "register";
       $this->Session->delete('user_register');
     }
@@ -1062,7 +1055,7 @@ class UsersController extends AppController{
       if($id){
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('Status', 'UserAddress', 'UserCompany', 'MarriedStatus', 
           'UserGuarantor', 'OtherGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment')));
-        //print_r($user['UserCompany']); die;
+        
         $this->data = $user;
         $validations = $this->_validate($user);
         $this->set('validations', $validations);
@@ -1131,48 +1124,42 @@ class UsersController extends AppController{
             if($this->data['User']){              
               //update user info
               $user_info = $this->data;
-              //print_r($user_info['ExpectArea']); die;
+              
               if($this->User->save($user_info['User'], false) && $this->UserAddress->save($user_info['UserAddress'], false) && $this->UserCompany->save($user_info['UserCompany'], false)){
                 $this->ExpectArea->create();
                 $old_areas = $this->ExpectArea->find('all', array('conditions'=>array('ExpectArea.user_id'=>$id)));
-                //print_r($user_info['ExpectArea']); die;
-                //delete first
-                //print_r( $user_info['ExpectArea'] ); 
-                //echo "<br>";
+                
                 $expect_ids = array();
                 foreach ($user_info['ExpectArea'] as $item) {
 
                   if($item['id']){
                     array_push($expect_ids, $item['id']);
-                    //echo $item['id'];
+                    
                   };
                 }
-              // die;
+              
                foreach ($old_areas as $area) {
                   if(in_array($area['ExpectArea']['id'], $expect_ids)){
-                    //echo "Update:" .$area['ExpectArea']['id']. "<br>";
+                    
                   }
                   else {
-                    //echo "BI xoa:" . $area['ExpectArea']['id'] . "<br>";
+                    
                     $this->ExpectArea->create();
                     $this->ExpectArea->delete($area['ExpectArea']['id']);
                   }
                   
                 }
-                //die;
-               
-                //echo $num_area;
-
+                
                 foreach ($user_info['ExpectArea'] as $item) {
                   $this->ExpectArea->create();
                    $num_area =  $this->ExpectArea->find('count', array('conditions'=>array('ExpectArea.user_id'=>$id)));
                   if($num_area < MAX_NUM_AREA || $item['id']){
                     $item['user_id'] = $id;
                 
-                  //if($item['post_num_1'] && $item['post_num_2'] && $item['pref_id'] && $item['city']){
+                  
                     $this->ExpectArea->create();
                     $this->ExpectArea->save($item, false);
-                  //}
+                  
                   }
                 }
                 //reload data
@@ -1311,12 +1298,7 @@ class UsersController extends AppController{
          $user_comapany_required_fields = array( 'name'=>__('user.my_page.basic_info.company_name'), 'name_kana'=>__('user.my_page.basic_info.company_name_kana'), 'post_num_1'=>__('user.dashboard.user.post_num_1'), 'post_num_2'=>__('user.dashboard.user.post_num_2'), 'pref_id' =>__('user.register.pref'),
           'city'=>__('user.register.city'), 'address'=>__('user.register.address'), 'phone'=>__('user.register.phone'), 'fax'=>__('user.my_page.basic_info.fax'), 'career_id'=>__('user.my_page.basic_info.career'), 'position'=>__('user.my_page.basic_info.position'), 'department'=>__('user.my_page.basic_info.department'), 'description'=>__('user.my_page.basic_info.description'), 
           'month_worked'=>__('user.dashboard.user.month_worked'), 'year_worked'=>__('user.dashboard.user.year_worked'), 'salary_month'=>__('user.my_page.basic_info.salary_month'), 'salary_year'=>__('user.my_page.basic_info.salary_year'), 'salary_receive_id' =>__('user.my_page.basic_info.salary_receive'), 'salary_type'=>__('user.my_page.basic_info.salary_type'), 'insurance_id'=>__('user.my_page.basic_info.insurances'));
-          // foreach ($this->UserCompany->invalidFields() as $key => $value) {
-          //    if(array_key_exists($key, $user_company_fields)){
-          //        array_push($result['User']['UserCompany']['fields'], $user_company_fields[$key]);
-          //       $result['User']['UserCompany']['error'] = 1;
-          //    }
-          //  }
+         
           if( $user['UserCompany']['work_id'] ){
             $requireds = $this->WorkRequired->find('first', array('conditions'=>array('WorkRequired.work_id'=>$user['UserCompany']['work_id'])));
             
@@ -1379,10 +1361,7 @@ class UsersController extends AppController{
                  array_push($result['User']['UserAddress']['fields'], $user_address_fields[$key]);
                 $result['User']['UserAddress']['error'] = 1;
              }
-             // else if(array_key_exists($key, $user_residence_fields)){
-             //    array_push($result['User']['UserResidence']['fields'], $user_residence_fields[$key]);
-             //    $result['User']['UserResidence']['error'] = 1;
-             // }
+             
           }
       }
       
@@ -1396,13 +1375,13 @@ class UsersController extends AppController{
         if( !$this->ExpectArea->validates()){
           $result['error'] = 1;
           foreach ($this->ExpectArea->invalidFields() as $key => $value) {
-            //echo $key;
+            
             if(array_key_exists($key, $user_expect_area_fields)){
                  array_push($result['User']['ExpectArea']['fields'], $user_expect_area_fields[$key]);
                 $result['User']['ExpectArea']['error'] = 1;
              }
           }
-          //die;
+          
         }
       }
       else {
@@ -1426,7 +1405,7 @@ class UsersController extends AppController{
         if($partner){
           $this->UserPartner->set($partner);
           if(!$this->UserPartner->validates()){
-            //print_r($this->UserPartner->invalidFields()); die;
+            
             $result['error'] = 1;
            
 
@@ -1505,7 +1484,7 @@ class UsersController extends AppController{
          
         }
         else {
-          //echo 333; die;
+          
           $result['error'] = 1;
           $result['UserPartner']['UserPartnerRelation']['error'] = 1;
           foreach ($user_partner_relation_fields as $key => $value) {
@@ -1527,7 +1506,7 @@ class UsersController extends AppController{
             'address'=>__('user.register.house'),'residence_id' =>__('user.my_page.basic_info.residence'),'year_residence'=>__('user.my_page.basic_info.year_residence'));
           $user_guarantor_contact_fields = array('phone'=>__('user.register.mobiphone'), 'home_phone'=>__('user.register.homephone'), 'contact_type_id'=>__('user.my_page.basic_info.contact_type'));  
       if($guarantor){
-        //print_r($guarantor); die;
+        
         $this->UserGuarantor->set($guarantor);
         if(!$this->UserGuarantor->validates()){
           $result['error'] = 1;
@@ -1541,10 +1520,7 @@ class UsersController extends AppController{
               array_push($result['UserGuarantor']['UserGuarantorInfo']['fields'], $user_guarantor_info_fields[$key]);
               $result['UserGuarantor']['UserGuarantorInfo']['error'] = 1;
             }
-            // else if(array_key_exists($key, $user_guarantor_company_fields)){
-            //      array_push($result['UserGuarantor']['UserGuarantorCompany']['fields'], $user_guarantor_company_fields[$key]);
-            //   $result['UserGuarantor']['UserGuarantorCompany']['error'] = 1;
-            // }
+            
 
             else if(array_key_exists($key, $user_guarantor_address_fields)){
                array_push($result['UserGuarantor']['UserGuarantorAddress']['fields'], $user_guarantor_address_fields[$key]);
@@ -1566,9 +1542,7 @@ class UsersController extends AppController{
            array_push($result['UserGuarantor']['UserGuarantorInfo']['fields'], $value);
         }
         $result['UserGuarantor']['UserGuarantorCompany']['error'] = 1;
-        // foreach ($user_guarantor_company_fields as $key => $value) {
-        //    array_push($result['UserGuarantor']['UserGuarantorCompany']['fields'], $value);
-        // }
+        
         $result['UserGuarantor']['UserGuarantorAddress']['error'] = 1;
         foreach ($user_guarantor_address_fields as $key => $value) {
            array_push($result['UserGuarantor']['UserGuarantorAddress']['fields'], $value);
@@ -1610,10 +1584,7 @@ class UsersController extends AppController{
                 array_push($result['OtherGuarantor']['UserGuarantorInfo']['fields'], $user_guarantor_info_fields[$key]);
                 $result['OtherGuarantor']['UserGuarantorInfo']['error'] = 1;
               }
-              // else if(array_key_exists($key, $user_guarantor_company_fields)){
-              //      array_push($result['OtherGuarantor']['UserGuarantorCompany']['fields'], $user_guarantor_company_fields[$key]);
-              //   $result['OtherGuarantor']['UserGuarantorCompany']['error'] = 1;
-              // }
+              
 
               else if(array_key_exists($key, $user_guarantor_address_fields)){
                  array_push($result['OtherGuarantor']['UserGuarantorAddress']['fields'], $user_guarantor_address_fields[$key]);
@@ -1680,7 +1651,7 @@ class UsersController extends AppController{
             $result['UserAttachment']['error'] = 1;
             $result['UserAttachment']['error_msg'] = "";
       }
-      //print_r($result['UserAttachment']); die;
+      
 
       return $result;
     }    
@@ -1694,12 +1665,9 @@ class UsersController extends AppController{
         if($obj['month_worked']  && !$obj['year_worked'] )$obj['year_worked'] = "100";
           if( $obj['work_id'] ){
             $requireds = $this->GuarantorWorkRequired->find('first', array('conditions'=>array('GuarantorWorkRequired.work_id'=>$obj['work_id'] )));
-           //$requireds = $this->WorkRequired->find('first', array('conditions'=>array('WorkRequired.work_id'=>$obj['work_id'])));
-           //print_r($requireds['GuarantorWorkRequired'] ); die;
-           //$t = array("10"=>'a', "20"=>'b');
-           //
+           
            foreach ($requireds['GuarantorWorkRequired'] as $key => $value) {
-              //echo $key;
+              
               if($value){
                 if($obj[$key] != "0"){
                   if(!$obj[$key]){
@@ -1764,7 +1732,7 @@ class UsersController extends AppController{
     function update_account_info(){
        $id = $this->s_user_id;
       if($id){
-        //echo $id; die;
+        
         $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
           'contain'=>array('UserAddress', 'UserCompany','UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea', 'ExpectArea.Pref' ,'UserRelation', 'UserAttachment'),
           'recursive'=>3,
@@ -1773,7 +1741,7 @@ class UsersController extends AppController{
         //validate before save
         $validations = $this->_validate($user);
         if(!$validations['error']){
-          //echo 2; die;
+          
           $user['User']['status_id'] = 3;
           $user['User']['updated_date'] = DboSource::expression('NOW()');
           if($this->User->save($user, false)){
@@ -1782,7 +1750,7 @@ class UsersController extends AppController{
             $Email->template('update_account');
             $Email->emailFormat('html');
             $Email->to($user['User']['email']);
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->subject(__('admin.email.update_account.title'));
             $Email->viewVars(array('user' => $user));
             $Email->send();
@@ -1792,7 +1760,7 @@ class UsersController extends AppController{
             $Email->template('admin_update_account');
             $Email->emailFormat('html');
             $Email->to(ADMIN_EMAIL);
-            $Email->from('moos@nal.vn');
+            $Email->from(FROM_EMAIL);
             $Email->subject('【MOOS】審査申し込み通知');
              $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
               'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment', 'ExpectArea.Pref'),
@@ -1812,7 +1780,7 @@ class UsersController extends AppController{
 
         }
         else {
-          //echo 111; die;
+          
           $this->Session->setFlash('Cannot submit account','default', array('class' => 'alert alert-dismissible alert-info'));
           $this->redirect('my_page');
 

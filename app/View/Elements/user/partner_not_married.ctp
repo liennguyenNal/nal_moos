@@ -848,7 +848,8 @@
       number: "<?php echo __('global.errors.number'); ?>"
   });
 
-  
+  $('#p_income_month').val($('#p_income_month').val().replace(',', ''));
+  $('#p_income_year').val($('#p_income_year').val().replace(',', ''));
   $('#p_income_month').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});  
   $('#p_income_year').autoNumeric('init', {aNum: '0123456789', 'vMin':0, 'vMax':99999999999999999999});      
  
