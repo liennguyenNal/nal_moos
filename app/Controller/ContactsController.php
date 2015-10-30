@@ -50,7 +50,7 @@ class ContactsController extends AppController {
                   $Email->template('user_contact_success');
                   $Email->emailFormat('html');
                   $Email->to($contact['Contact']['email']);
-                  $Email->from('moos@nal.vn');
+                  $Email->from(FROM_EMAIL);
                   $Email->subject('【家賃でもらえる家】お問い合わせ');
                   $Email->viewVars(array('contact' => $contact));
                   $Email->send();
@@ -65,7 +65,7 @@ class ContactsController extends AppController {
                   $Email->template('admin_contact_success');
                   $Email->emailFormat('html');
                   $Email->to(ADMIN_EMAIL);
-                  $Email->from('moos@nal.vn');
+                  $Email->from(FROM_EMAIL);
                   $Email->subject("【MOOS】問い合わせ通知");
                   $Email->viewVars(array('contact' => $contact));
                   $Email->send();

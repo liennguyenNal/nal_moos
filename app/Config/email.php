@@ -22,10 +22,10 @@ class EmailConfig {
 		//'headerCharset' => 'utf-8',
 	);
 	public $gmail = array(
-        'host' => 'ssl://smtp.gmail.com',
-        'port' => 465,
-        'username' => 'tritd@nal.vn',
-        'password' => 'nalnal123456',
+        'host' => 'smtp4.gmoserver.jp',
+        'port' => 25,
+        'username' => 'noreply@moraeru-house.com',
+        'password' => '8zujTj&K',
         'transport' => 'Smtp',
         'charset' => 'utf-8',
 		'headerCharset' => 'utf-8',
