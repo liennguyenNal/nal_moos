@@ -11,7 +11,7 @@
 <?php $types = array('1'=> __('user.contact.customer'), '2'=> __('user.contact.marketing'), '3' => __('user.contact.constructure'), '4' => __('global.other'));  ?>
 <p style=" margin:0px !important">問い合わせ分類：<?php echo $types[$contact['Contact']['type']]; ?></p>
 <p style=" margin:0px !important">問い合わせ内容：</p>
-<p style=" margin:0px !important"><?php echo $contact['Contact']['content']; ?></p>
+<p style=" margin:0px !important"><?php echo nl2br($contact['Contact']['content']); ?></p>
 <p style=" margin:0px !important">----------------------------------------------------</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">問い合わせに対する回答・対応を行ってください。</p>
