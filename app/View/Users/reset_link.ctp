@@ -107,10 +107,10 @@
 	  },
 	  messages: {
 	    'password': {
-	      required: "<?php echo __('global.errors.required'); ?>"
+	      required: "<?php echo __('user.setting_password.error.password'); ?>"
 	    },
 	    'confpass': {
-	      required: "<?php echo __('global.errors.required'); ?>"
+	      required: "<?php echo __('user.setting_password.error.password_confirm'); ?>"
 	    }
 	  },
 	  invalidHandler: function(event, validator) {

@@ -7,13 +7,33 @@
 <p style=" margin:0px !important">審査申込日時：<?php echo date("Y/m/d H:i", strtotime($user['User']['updated_date']));?></p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">▼会員情報概要</p>
-<p style=" margin:0px !important">年齢：<?php echo date("Y") - $user['User']['year_of_birth'];?></p>
+<?php 
+	function calculateAge($birthYear, $birthMonth, $birthDay)
+            {
+              $age = "";
+              if($birthYear && $birthMonth && $birthDay){
+                $age = date('Y') - $birthYear; 
+
+                if (date('m')< $birthMonth - 1)
+                {
+                  $age--;
+                }
+
+                if ($birthMonth - 1 == date('m') && date('d') < $birthDay)
+                {
+                  $age--;
+                }
+              }
+                return $age;
+            }
+?>
+<p style=" margin:0px !important">年齢：<?php echo calculateAge( $user['User']['year_of_birth'], $user['User']['month_of_birth'], $user['User']['day_of_birth']);?></p>
 <p style=" margin:0px !important">性別：<?php if($user['User']['gender'] == "male") echo __("user.register.male"); 
 					else echo  __("user.register.female")?>
 <p style=" margin:0px !important">婚姻：<?php echo $user['MarriedStatus']['name']?></p>
 <p style=" margin:0px !important">職業：<?php echo $user['UserCompany']['Work']['name']?></p>
-<p style=" margin:0px !important">勤務年月：<?php echo $user['UserCompany']['year_worked'] ?> 年<?php echo $user['UserCompany']['year_worked'] ?>月</p>
-<p style=" margin:0px !important">月収：<?php echo $user['UserCompany']['salary_month'] ?></p>
+<p style=" margin:0px !important">勤務年月：<?php echo $user['UserCompany']['year_worked'] ?> 年<?php echo $user['UserCompany']['year_worked'] ?>ヶ月</p>
+<p style=" margin:0px !important">月収：<?php echo $user['UserCompany']['salary_month'] ?> 円</p>
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">▼希望エリア1</p>
 
@@ -21,7 +41,7 @@
 	
 ?>
 <p style=" margin:0px !important">&nbsp;</p>
-<p style=" margin:0px !important">郵便番号：<?php echo $item['post_num_1'] . $item['post_num_2']?></p>
+<p style=" margin:0px !important">郵便番号：<?php echo $item['post_num_1'] . "-" . $item['post_num_2']?></p>
 <p style=" margin:0px !important">都道府県：<?php echo $item['Pref']['name']; ?></p>
 <p style=" margin:0px !important">市区町村：<?php echo $item['city'] ?></p>
 <p style=" margin:0px !important">エリア：<?php echo $item['address'] ?></p>

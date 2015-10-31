@@ -44,7 +44,7 @@ class AppController extends Controller {
         parent::beforeFilter();
         
         
-        Configure::write('Config.language', 'ja');
+        Configure::write('Config.language', 'jpn');
 
         if(isset($this->params['prefix']))
         {
@@ -199,7 +199,7 @@ class AppController extends Controller {
     }
 
     function forceSSL() {
-        $this->redirect('https://' . $_SERVER['SERVER_NAME'] . $this->here);
+        //$this->redirect('https://' . $_SERVER['SERVER_NAME'] . $this->here);
     }
     function unforceSSL() {
         $this->redirect('http://' . $_SERVER['SERVER_NAME'] . $this->here);

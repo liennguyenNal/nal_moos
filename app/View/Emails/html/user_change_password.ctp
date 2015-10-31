@@ -5,7 +5,7 @@
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">下記URLのリンクをクリックし、パスワードの再設定をお願いいたします。</p>
 <p style=" margin:0px !important">&nbsp;</p>
-<p style=" margin:0px !important"><a href="<?php echo str_replace("https:", "http:", Router::url('/', true) ) ;?>users/change_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?>"><?php echo str_replace("https:", "http:", Router::url('/', true) ) ;?>users/change_password/<?php echo $user['User']['email']; ?>/<?php echo $user['User']['access_token']; ?></a></p>
+<p style=" margin:0px !important"><a href="<?php echo str_replace("https:", "http:" ,Router::url('/', true) ) . 'users/reset_link/?token='.$user['User']['access_token'].'&email='.$user['User']['email']; ?>"><?php echo str_replace("https:", "http:" ,Router::url('/', true) ).'users/reset_link/?token=' . $user['User']['access_token'].'&email='.$user['User']['email']; ?></a></p>
 
 <p style=" margin:0px !important">&nbsp;</p>
 <p style=" margin:0px !important">パスワード再設定後、ログイン画面よりご登録いただきましたメールアドレスをユーザーIDとしてご入力いただき、再設定したパスワードでログインすることができます。</p>

@@ -107,10 +107,10 @@
       },
       messages: {
         'data[User][password]': {
-          required: "<?php echo __('global.errors.required'); ?>"
+          required: "<?php echo __('user.setting_password.error.password'); ?>"
         },
         'data[User][confirm_password]': {
-          required: "<?php echo __('global.errors.required'); ?>"
+          required: "<?php echo __('user.setting_password.error.password_confirm'); ?>"
         }
       },
       invalidHandler: function(event, validator) {

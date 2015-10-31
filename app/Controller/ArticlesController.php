@@ -26,7 +26,7 @@ class ArticlesController extends AppController{
       }
       if($this->params['named']['is_published'] or $this->params['named']['is_published']=='0'){
         $is_published = $this->params['named']['is_published'];
-        //var_dump($is_published); die;
+        
 
         $criteria .= " AND Article.is_published = '$is_published'" ;
         $this->set('is_published', $is_published);
@@ -42,7 +42,7 @@ class ArticlesController extends AppController{
         $this->set('from_year_register', $from_year_register);
         $this->set('from_month_register', $from_month_register);
         $this->set('from_day_register', $from_day_register);
-        //$this->set('date_from', $date_from);
+        
 
       }
       if($this->params['named']['date_to']){
@@ -73,7 +73,7 @@ class ArticlesController extends AppController{
 
         }
         
-        //var_dump($articles); die;
+        
          
         // pass the value to our view.ctp
         $this->set('articles', $articles);
@@ -86,16 +86,12 @@ class ArticlesController extends AppController{
 
       $this->set( 'article', $article );
       
-      
-
-       
-      
           
-           if($id){
-               $article = $this->Article->read( null, $id );
-               $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
-               $this->data = $article;
-           }
+      if($id){
+       $article = $this->Article->read( null, $id );
+       $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
+       $this->data = $article;
+      }
 
       
 
@@ -150,7 +146,7 @@ class ArticlesController extends AppController{
          $article = $this->Article->read( null, $id );
          $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
          $this->set( 'article', $article ); 
-          //var_dump($contact); die;
+          
           $this->data= $article;
          
          if( $article ){
@@ -208,31 +204,30 @@ class ArticlesController extends AppController{
 
     function admin_edit_confirm(){ 
     if($_POST['view']==1){ 
-    $article = $this->data;
-    //var_dump($this->data); die;
-
-    if($this->data['Article']['small_image_file']['name']){
-                    
-                    $path = "images/upload/news/small/";
-                    $image = $this->uploadImage($this->data['Article']['small_image_file'], $path, 200, 400, $errors);
-                    $l_path = "images/upload/news/big/";
-                    $l_image = $this->uploadFile($this->data['Article']['small_image_file'], $l_path, $errors);
-                    //var_dump($image); var_dump($l_image); die;
-                    if(!$errors){
-                        $article['Article']['small_image'] = $image;
-                        $article['Article']['large_image'] = $l_image;
-                    }
-                    
-                }
-    else{
-      $article2 = $this->Article->find('first', array('conditions'=>array('Article.id'=>$article['Article']['id']), 'contain'=>array('id'))); 
-      if($article2['Article']['small_image']){
-        $article['Article']['small_image'] = $article2['Article']['small_image'];
-        $article['Article']['large_image'] = $article2['Article']['large_image'];
+      $article = $this->data;
+     
+      if($this->data['Article']['small_image_file']['name']){
+                      
+          $path = "images/upload/news/small/";
+          $image = $this->uploadImage($this->data['Article']['small_image_file'], $path, 200, 400, $errors);
+          $l_path = "images/upload/news/big/";
+          $l_image = $this->uploadFile($this->data['Article']['small_image_file'], $l_path, $errors);
+          
+          if(!$errors){
+              $article['Article']['small_image'] = $image;
+              $article['Article']['large_image'] = $l_image;
+          }
+          
       }
-    }
-                
-    $this->set( 'article', $article );
+      else {
+        $article2 = $this->Article->find('first', array('conditions'=>array('Article.id'=>$article['Article']['id']), 'contain'=>array('id'))); 
+        if($article2['Article']['small_image']){
+          $article['Article']['small_image'] = $article2['Article']['small_image'];
+          $article['Article']['large_image'] = $article2['Article']['large_image'];
+        }
+      }
+                  
+      $this->set( 'article', $article );
     }
     else{
       $article= unserialize($this->data['article_confirm']);

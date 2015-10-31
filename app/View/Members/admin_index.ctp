@@ -106,11 +106,11 @@
             <thead>
               <tr>
                 <th><input type="checkbox" id="checkAll"  hiddenField = "false"></th>
-                <th>番号</th>
+                <th>会員番号</th>
                 <th>メールアドレス</th>
                 <th>申込人氏名</th>
                 <th>電話番号</th>
-                <th>性的</th>
+                <th><?php echo __('user.register.gender')?></th>
                 <th><?php echo __('admin.user.list_header.register_date'); ?></th>
 
                 <th><?php echo __('admin.user.list_header.status'); ?></th>
@@ -123,7 +123,7 @@
             <?php  $i++; ?>
               <tr>
               <td><input class="check_box" type="checkbox" name="customer_id[]" value ="<?php echo $user['User']['id'];?>" hiddenField = "false"></td>
-                <td><?php echo $i;?></td>
+                <td><?php echo $user['User']['id'];?></td>
                 <td><?php echo $user['User']['email']; ?></td>
                 <td><?php echo $user['User']['first_name'].' '.$user['User']['last_name']; ?></td>
                 <td><?php echo $user['User']['phone']; ?></td>

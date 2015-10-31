@@ -939,9 +939,17 @@ msgstr "配偶者氏名"
 msgid "user.guarantor.fullname"
 msgstr "連帯保証人氏名"
 
+msgid "user.login.error.email.required"
+msgstr "※必須項目です。</br>半角英数で入力してください。"
 
+msgid "user.login.error.password.required"
+msgstr "※必須項目です。</br>半角英数で入力してください。"
 
+msgid "user.setting_password.error.password"
+msgstr "※必須項目です。</br>半角英数で入力してください。"
 
+msgid "user.setting_password.error.password_confirm"
+msgstr "※必須項目です。</br>半角英数で入力してください。"
 
 
 

@@ -12,8 +12,8 @@
 <p style=" margin:0px !important">&nbsp;</p> 
 <p style=" margin:0px !important">婚姻：<?php echo $user['MarriedStatus']['name']; ?></p>
 <p style=" margin:0px !important">職業：<?php echo $user['UserCompany']['Work']['name']; ?></p>
-<p style=" margin:0px !important">勤務年月：<?php echo $user['UserCompany']['year_worked']; ?>年 <?php echo $user['UserCompany']['month_worked']; ?>月</p>
-<p style=" margin:0px !important">月収：<?php echo $user['UserCompany']['salary_year']; ?></p>
+<p style=" margin:0px !important">勤務年月：<?php echo $user['UserCompany']['year_worked']; ?>年 <?php echo $user['UserCompany']['month_worked']; ?>ヶ月</p>
+<p style=" margin:0px !important">月収：<?php echo $user['UserCompany']['salary_month']; ?>円</p>
 <?php $item = $user['ExpectArea'][0];?>
 <p style=" margin:0px !important">▼希望エリア1</p>
 <p style=" margin:0px !important">郵便番号：<?php echo $item['post_num_1']."-".$item['post_num_2']; ?></p>

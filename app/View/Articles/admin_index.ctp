@@ -125,7 +125,7 @@
             ?>
             <tr>
               <td><input class="check_box" type="checkbox" name="article_id[]" value ="<?php echo $article['Article']['id'];?>" hiddenField = "false"></td>
-              <td><?php echo $i;?></td>
+              <td><?php echo $article['Article']['id'];?></td>
               <td><?php echo $article['Article']['created']; ?></td>
               <td><?php echo $article['Article']['title'] ?></td>
               <td><?php if ($article['Article']['small_image']) echo '有り'; else echo '無し'; ?></td>

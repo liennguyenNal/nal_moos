@@ -77,14 +77,14 @@ class PagesController extends AppController {
 	public function index(){
 		$this->layout = 'default_new';
 		
-		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1), 'order'=>array('Article.created DESC')));
+		 $articles = $this->Article->find('all', array('conditions'=>array('Article.is_published'=>1, 'Article.created <= NOW()'), 'order'=>array('Article.created DESC')));
 		 
 		
 		  
 		 foreach($articles as $article){
-		 	if($article['Article']['created'] <= date("Y-m-d")){
+		 	//if($article['Article']['created'] <= date("Y-m-d")){
 		 		$arts[]= $article;
-		 	}
+		 	//}
 
 		 }
 		 $this->set('articles', $arts);

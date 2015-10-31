@@ -131,10 +131,10 @@
       },
       messages: {
         'data[User][email]': {
-          required: "<?php echo __('global.errors.required'); ?>"
+          required: "<?php echo __('user.login.error.email.required'); ?>"
         },
         'data[User][password]': {
-          required: "<?php echo __('global.errors.required'); ?>"
+          required: "<?php echo __('user.login.error.password.required'); ?>"
         }
       },
       invalidHandler: function(event, validator) {

@@ -48,7 +48,7 @@
                 </td>
               </tr>
              <tr>
-             <td> <label for="inputEmail">性的<span style="color:red">*</span></label></td>
+             <td> <label for="inputEmail"><?php echo __('user.register.gender')?><span style="color:red">*</span></label></td>
               <td>
                 <div class="form-group">
                 

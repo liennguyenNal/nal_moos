@@ -850,10 +850,21 @@ class UsersController extends AppController{
             $user['User']['password'] = md5($_POST['password']);
             $user['User']['access_token'] = null;
             if ($this->User->save($user, false)) {
+
+              // Send mail to User
+              $Email = new CakeEmail("gmail");
+              $Email->template('user_change_password_success');
+              $Email->emailFormat('html');
+              $Email->to($user['User']['email']);
+              $Email->from(FROM_EMAIL);
+              $Email->subject("【家賃でもらえる家】パスワードの設定完了");
+              $Email->viewVars(array('user' => $user));
+              $Email->send();
+
               $this->redirect('reset_password_successful');
             }
           } else {
-            echo "Password ko duoc post";
+            //echo "Password ko duoc post";
           }
         }
       }
@@ -972,7 +983,7 @@ class UsersController extends AppController{
                           'UserPartner', 'ExpectArea', 'ExpectArea.Pref' ,'UserRelation', 'UserAttachment'), 
                         'recursive'=>3
                       ));
-                    
+                    $user['User']['age_of_birth'] = $this->Util->calculateAge($user['User']['year_of_birth'], $user['User']['month_of_birth'], $user['User']['day_of_birth']);
                     /**
                      * SEND EMAIL TO CUSTOMER
                      * @var CakeEmail
@@ -1179,9 +1190,9 @@ class UsersController extends AppController{
               $this->data = $user;
             }
             $this->render('ajax_update_basic_info');
-        }
-        else {
-         echo "0";
+          }
+          else {
+            //echo "0";
           }
         }
         else $this->redirect("/users/login");
@@ -1745,6 +1756,10 @@ class UsersController extends AppController{
           $user['User']['status_id'] = 3;
           $user['User']['updated_date'] = DboSource::expression('NOW()');
           if($this->User->save($user, false)){
+            $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
+              'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment', 'ExpectArea.Pref'),
+              'recursive'=>3
+              ));
             //send mail to user
             $Email = new CakeEmail('gmail');
             $Email->template('update_account');
@@ -1762,10 +1777,7 @@ class UsersController extends AppController{
             $Email->to(ADMIN_EMAIL);
             $Email->from(FROM_EMAIL);
             $Email->subject('【MOOS】審査申し込み通知');
-             $user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 
-              'contain'=>array('Status', 'UserAddress', 'UserCompany', 'UserCompany.Work', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea' ,'UserRelation', 'UserAttachment', 'ExpectArea.Pref'),
-              'recursive'=>3
-              ));
+             
             $Email->viewVars(array('user' => $user));
             $Email->send();
 
