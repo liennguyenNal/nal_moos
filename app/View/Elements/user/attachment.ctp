@@ -66,15 +66,6 @@
     </tr>
     <?php } ?>
     
-    <?php if($user['User']['status_id']!= 2) {?>
-      <script type="text/javascript" charset="utf-8">
-        //$('#UserAttachForm').find(':input').hide();
-        //$('#UserAttachForm').find('a').hide();
-
-        //$('#UserAttachForm').find('.link-download').show();
-      </script>
-    <?php } ?>
-
     <script type="text/javascript">
       $(function () {
         'use strict';

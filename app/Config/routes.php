@@ -31,8 +31,8 @@
 	Router::connect('/contact', array('controller' => 'contacts', 'action' => 'index'));
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'faq'));
 	Router::connect('/register', array('controller' => 'users', 'action' => 'register'));
-	Router::connect('/introduction', array('controller' => 'users', 'action' => 'introduction'));
-	Router::connect('/work_flow', array('controller' => 'users', 'action' => 'work_flow'));
+	Router::connect('/introduction', array('controller' => 'pages', 'action' => 'introduction'));
+	Router::connect('/work_flow', array('controller' => 'pages', 'action' => 'work_flow'));
 	Router::connect('/create_password/:email/:access_token', array('controller' => 'users', 'action' => 'create_password'));
 	Router::connect('/change_password/:email/:access_token', array('controller' => 'users', 'action' => 'change_password'));
 	Router::connect('/email_change_password', array('controller' => 'users', 'action' => 'email_change_password'));

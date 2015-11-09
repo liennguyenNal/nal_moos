@@ -39,7 +39,7 @@ class AppController extends Controller {
     var $s_email = "";
     var $uses = array('User', 'Administrator');
     var $components = array('Login', 'Session', 'Upload', 'RequestHandler');
-    public $helpers = array('Html', 'Form', 'Session', 'Js' => array('Jquery'));
+    public $helpers = array('Html', 'Form', 'Session', 'Js' => array('Jquery'), 'Util');
     public function beforeFilter(){
         parent::beforeFilter();
         
@@ -181,15 +181,6 @@ class AppController extends Controller {
             
     }
 
-    
-    function _send_mail($from, $to, $subject, $content){
-
-      $Email = new CakeEmail();
-      $Email->from(array($from => 'MOOS Site'));
-      $Email->to($to);
-      $Email->subject($subject);
-      $Email->send($content);
-    }
 
     function beforeRender() {
         if($this->name == 'CakeError') {
@@ -204,4 +195,28 @@ class AppController extends Controller {
     function unforceSSL() {
         $this->redirect('http://' . $_SERVER['SERVER_NAME'] . $this->here);
     }
+
+    // send mail to user
+    function sendEmailToUser($to_email, $template, $subject, $vars = array()){
+        $Email = new CakeEmail('default');
+        $Email->template($template);
+        $Email->emailFormat('html');
+        $Email->to($to_email);
+        $Email->from(FROM_EMAIL);
+        $Email->subject($subject);
+        $Email->viewVars($vars);
+        $Email->send();
+    } 
+
+    // send mail to admin
+    function sendEmailToAdmin($template, $subject, $vars = array()){
+        $Email = new CakeEmail('default');
+        $Email->template($template);
+        $Email->emailFormat('html');
+        $Email->to(ADMIN_EMAIL);
+        $Email->from(FROM_EMAIL);
+        $Email->subject($subject);
+        $Email->viewVars($vars);
+        $Email->send();
+    } 
 }

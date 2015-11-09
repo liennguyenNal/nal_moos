@@ -347,6 +347,12 @@ msgstr "2桁以下にご入力ください。"
 msgid "user.my_page.guarantor.relationship"	
 msgstr "申込人との関係"
 
+msgid "admin.email.approve_register_user.title"
+msgstr "【家賃でもらえる家】会員登録の内容確認完了"
+
+msgid "admin.email.reject_register_user.title"
+msgstr "【家賃でもらえる家】会員登録の却下"
+
 msgid "admin.email.approve_user.title"
 msgstr "【家賃でもらえる家】審査結果のご連絡"
 
@@ -359,8 +365,32 @@ msgstr "【家賃でもらえる家】審査結果のご連絡"
 msgid "admin.email.process_payment.title"
 msgstr "【家賃でもらえる家】保証金入金確認のご連絡"
 
-msgid "admin.email.update_account.title"
+msgid "user.email.register.title"
+msgstr "【家賃でもらえる家】無料会員登録"
+
+msgid "user.email.admin_register.title"
+msgstr "【MOOS】会員登録通知"
+
+msgid "user.email.contact.title"
+msgstr "【家賃でもらえる家】お問い合わせ"
+
+msgid "user.email.admin_contact.title"
+msgstr "【MOOS】問い合わせ通知"
+
+msgid "user.email.update_account.title"
 msgstr "【家賃でもらえる家】審査申し込み"
+
+msgid "user.email.admin_update_account.title"
+msgstr "【MOOS】審査申し込み通知"
+
+msgid "user.email.reset_password.title"
+msgstr "【家賃でもらえる家】パスワードの変更";
+
+msgid "user.email.change_password.title"
+msgstr "【家賃でもらえる家】パスワードの設定完了";
+
+msgid "user.email.request_change_password.title"
+msgstr "【家賃でもらえる家】パスワードの変更";
 
 msgid "admin.register_users"
 msgstr "会員一覧"
@@ -951,6 +981,7 @@ msgstr "※必須項目です。</br>半角英数で入力してください。"
 msgid "user.setting_password.error.password_confirm"
 msgstr "※必須項目です。</br>半角英数で入力してください。"
 
+msgid ""
 
 
 

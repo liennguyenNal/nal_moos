@@ -134,32 +134,12 @@ class PagesController extends AppController {
 	          			$this->ExpectArea->save($item, false);
 	          		}
 
-	          		/**
-                     * SEND EMAIL TO CUSTOMER
-                     * @var CakeEmail
-                     */
-                    $Email = new CakeEmail("gmail");
-                    $Email->template('user_register_success');
-                    $Email->emailFormat('html');
-                    $Email->to($user['User']['email']);
-                    $Email->from(FROM_EMAIL);
-                    $Email->subject("【家賃でもらえる家】無料会員登録");
-                    $Email->viewVars(array('user' => $user));
-                    $Email->send();
-
-                    /**
-                     * SEND EMAIL TO ADMIN
-                     * @var CakeEmail
-                     */
-                    $Email = new CakeEmail("gmail");
-                    $Email->template('admin_register_success');
-                    $Email->emailFormat('html');
-                    $Email->to(ADMIN_EMAIL);
-                    $Email->from(FROM_EMAIL);
-                    $Email->subject("【MOOS】会員登録通知");
-                    $Email->viewVars(array('user' => $user));
-                    $Email->send();
+	          		
+	          		//send mail to User
+                    $this->sendEmailToUser($user['User']['email'],  'user_register_success', __('user.email.register.title'), array('user'=>$user));
                     
+                    //send mail to Admin
+                    $this->sendEmailToAdmin('admin_register_success', __('user.email.admin_register.title'), array('user'=>$user));                    
 
 	          		$this->redirect( "register_successful" );
 
@@ -169,7 +149,7 @@ class PagesController extends AppController {
         else {
         	$this->set('user', $this->data);
         	
-          $this->Session->setFlash(__('global.errors.landing-page.email.unique'), 'default');
+          	$this->Session->setFlash(__('global.errors.landing-page.email.unique'), 'default');
         }
       }
 	}
@@ -181,5 +161,13 @@ class PagesController extends AppController {
     function register_successful(){
       	$this->layout = "default_new";
       	$this->Session->delete('user_register');
+    }
+
+    function introduction() {
+      $this->layout = null;
+    }
+
+    function work_flow() {
+      $this->layout = null;
     }
 }

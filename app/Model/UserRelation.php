@@ -42,12 +42,7 @@ class UserRelation extends AppModel {
 
     );
 
-function checkRequired($check)
-{
-     if($check) return true; 
-     return false;
-   //return true;
-}
+
 
 
 }

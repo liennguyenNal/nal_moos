@@ -2,9 +2,12 @@
 class EmailConfig {
 
 	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'you@localhost',
-		'charset' => 'utf-8',
+		'host' => 'smtp4.gmoserver.jp',
+        'port' => 25,
+        'username' => 'noreply@moraeru-house.com',
+        'password' => '8zujTj&K',
+        'transport' => 'Smtp',
+        'charset' => 'utf-8',
 		'headerCharset' => 'utf-8',
 	);
 

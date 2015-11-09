@@ -25,8 +25,7 @@ class ArticlesController extends AppController{
         $this->set('keyword', $keyword);
       }
       if($this->params['named']['is_published'] or $this->params['named']['is_published']=='0'){
-        $is_published = $this->params['named']['is_published'];
-        
+        $is_published = $this->params['named']['is_published'];        
 
         $criteria .= " AND Article.is_published = '$is_published'" ;
         $this->set('is_published', $is_published);
@@ -73,26 +72,26 @@ class ArticlesController extends AppController{
 
         }
         
-        
-         
         // pass the value to our view.ctp
         $this->set('articles', $articles);
     }
     
-    function admin_edit($id=null){ //die('s');
+    function admin_edit($id=null){ 
         
       $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
       $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
 
-      $this->set( 'article', $article );
-      
+      $this->set( 'article', $article );      
           
       if($id){
-       $article = $this->Article->read( null, $id );
-       $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
-       $this->data = $article;
+        $article = $this->Article->read( null, $id );
+        $article['Article']['created'] = date ('Y-m-d',strtotime($article['Article']['created']));
+        $this->data = $article;
       }
 
+      else {
+        $this->redirect('index');
+      }
       
 
     }
@@ -120,7 +119,7 @@ class ArticlesController extends AppController{
       
     }
     
-    function admin_delete($id){ //die('ss');
+    function admin_delete($id){ 
       $article = $this->Article->find('first', array('conditions'=>array('Article.id'=>$id), 'contain'=>array('id'))); 
       if($article['Article']['small_image']){
         $file = new File("images/upload/news/small/".$article['Article']['small_image']);
@@ -140,7 +139,6 @@ class ArticlesController extends AppController{
     }
 
     function admin_view($id){
-
 
       if($id){
          $article = $this->Article->read( null, $id );
@@ -189,7 +187,7 @@ class ArticlesController extends AppController{
             $this->set( 'article', $article);
            }
            else {
-              //$this->Session->setFlash('Not found news', 'default',array('class' => 'alert alert-dismissible alert-info"'));
+              
               $this->redirect("/");
            }
         }

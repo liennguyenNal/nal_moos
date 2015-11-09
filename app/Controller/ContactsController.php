@@ -16,11 +16,11 @@ class ContactsController extends AppController {
         $this->set('menu' , 'contact');
     }
 
-    public function index(){ //var_dump($this->data);die;
+    public function index(){ 
       if($this->data){
         $this->Session->write('contact', $this->data);
 
-        //var_dump($contact); die;
+  
             $this->redirect("confirm");
       }
         else{
@@ -46,14 +46,14 @@ class ContactsController extends AppController {
                   /**
                    * EMAIL REJECT USER REGISTRATION
                    */
-                  $Email = new CakeEmail('gmail');
-                  $Email->template('user_contact_success');
-                  $Email->emailFormat('html');
-                  $Email->to($contact['Contact']['email']);
-                  $Email->from(FROM_EMAIL);
-                  $Email->subject('【家賃でもらえる家】お問い合わせ');
-                  $Email->viewVars(array('contact' => $contact));
-                  $Email->send();
+                  // $Email = new CakeEmail('gmail');
+                  // $Email->template('user_contact_success');
+                  // $Email->emailFormat('html');
+                  // $Email->to($contact['Contact']['email']);
+                  // $Email->from(FROM_EMAIL);
+                  // $Email->subject('【家賃でもらえる家】お問い合わせ');
+                  // $Email->viewVars(array('contact' => $contact));
+                  // $Email->send();
 
                   /**
                    * 
@@ -61,31 +61,36 @@ class ContactsController extends AppController {
                    /** SEND EMAIL TO ADMIN
                    * @var CakeEmail
                    */
-                  $Email = new CakeEmail("gmail");
-                  $Email->template('admin_contact_success');
-                  $Email->emailFormat('html');
-                  $Email->to(ADMIN_EMAIL);
-                  $Email->from(FROM_EMAIL);
-                  $Email->subject("【MOOS】問い合わせ通知");
-                  $Email->viewVars(array('contact' => $contact));
-                  $Email->send();
+                  // $Email = new CakeEmail("gmail");
+                  // $Email->template('admin_contact_success');
+                  // $Email->emailFormat('html');
+                  // $Email->to(ADMIN_EMAIL);
+                  // $Email->from(FROM_EMAIL);
+                  // $Email->subject("【MOOS】問い合わせ通知");
+                  // $Email->viewVars(array('contact' => $contact));
+                  // $Email->send();
 
+                  
+                    $this->sendEmailToUser($contact['Contact']['email'],  'user_contact_success', __('user.email.contact.title'), array('contact'=>$contact));
+                                        
+                    $this->sendEmailToAdmin('admin_contact_success', __('user.email.admin_contact.title'), array('user'=>$user));
+                    
                   $this->redirect("contact_successful");
                }
 
            }
            
        }
-       else { //die('ss');
+       else { 
             $contact = $this->Session->read( 'contact' );
             
             $this->set( 'contact', $contact ); 
-              // echo 1111; die;
+              
          }
          $this->layout = "contact";
     }
 
-    function admin_index(){ //var_dump($this->params['named']['keyword']); die('ss');
+    function admin_index(){ 
       
        $criteria = "1=1 ";
       if($this->params['named']['keyword']){
@@ -108,7 +113,7 @@ class ContactsController extends AppController {
         $criteria .= " AND Contact.type = '$type'" ;
         $this->set('type', $type);
       }
-      //var_dump($this->params['named']['date_from']); var_dump($this->params['named']['date_to']); die;
+      
       if($this->params['named']['date_from']){
         $date_from = $this->params['named']['date_from'];
         $criteria .= " AND Contact.created >= '$date_from'" ;
@@ -120,7 +125,7 @@ class ContactsController extends AppController {
         $this->set('from_year_register', $from_year_register);
         $this->set('from_month_register', $from_month_register);
         $this->set('from_day_register', $from_day_register);
-        //$this->set('date_from', $date_from);
+        
       }
       if($this->params['named']['date_to']){
         $date_to = $this->params['named']['date_to'];
@@ -164,7 +169,7 @@ class ContactsController extends AppController {
     }
 
     function admin_view($id){ 
-      if($_POST){ //var_dump($_POST['data']); //die;
+      if($_POST){ 
         $contact = $this->Contact->find('first', array('conditions'=>array('Contact.id'=>$_POST['data']['Contact']['id']), 'contain'=>array('id'))); //var_dump($user['User']['id']); die;
         $contact['Contact']['status'] = $_POST['data']['Contact']['status'] ;
         $contact['Contact']['comment'] = $_POST['data']['Contact']['comment'];

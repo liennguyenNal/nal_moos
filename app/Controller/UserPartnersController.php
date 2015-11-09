@@ -7,7 +7,6 @@ class UserPartnersController extends AppController {
     var $helpers = array('Html', 'Js');
 
 	function edit(){
-		//echo 1111; die;
 		if($this->request->is('ajax')){
 		$married_statuses = $this->MarriedStatus->find( 'list' );
 	      $this->set( 'married_statuses', $married_statuses);
@@ -28,7 +27,7 @@ class UserPartnersController extends AppController {
 	      $this->set('insurances', $insurances);
 
 			 $id = $this->s_user_id;
-       		//echo "0"; die;
+       		
          	$user = $this->User->find('first', array('conditions'=>array('User.id'=>$id), 'contain'=>array('UserAddress', 'UserCompany', 'MarriedStatus', 'UserGuarantor', 'UserPartner', 'ExpectArea')));
         	 $this->set('user', $user);
       
@@ -64,7 +63,7 @@ class UserPartnersController extends AppController {
 			                	
 			                }
 
-							//save thong tin nguoi o cung
+							//save personal information in house
 							foreach ($user_partner['UserRelation'] as $item) {
 								$num_relation =  $this->UserRelation->find('count', array('conditions'=>array('UserRelation.user_id'=>$user_id)));
 								if($num_relation < MAX_NUM_RELATION || $item['id'] ){
@@ -83,10 +82,8 @@ class UserPartnersController extends AppController {
 				                    }
 				                }
 			                }
-			                //print_r($relation_ids);die;
+			                
 			               
-			                //die;
-
 							if(!$partner_id)
 								$partner_id = $this->UserPartner->getLastInsertId();
 							if($partner_id)

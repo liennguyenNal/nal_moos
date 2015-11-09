@@ -34,44 +34,7 @@ class UserCompany extends AppModel {
         	'required'=>true,
         	'on'=>'update'
         )
-        // 'address_kana' =>array(
-        // 	'required'=>true,
-        // 	 'message'=> "This field is required",	
-        // 	'on'=>'update'
-        // ),
-
-        // 'year_worked' => array(
-        //     'rule1'=>array('rule' => 'numeric',
-        //         'message'=>'Must be a numeric'
-        //         ),
-        //     'rule2'=>array(
-        //              'rule' => 'notBlank',
-        //              'message'=> "This field is required"
-        //         )
-            
-        // ),   
-
-        // 'month_worked' => array(
-        //     'rule1'=>array('rule' => 'numeric',
-        //         'message'=>'Must be a numeric'
-        //         ),
-        //     'rule2'=>array(
-        //              'rule' => 'notBlank',
-        //              'message'=> "This field is required"
-        //         )
-            
-        // ),
-
-        // 'tax_of_month' => array(
-        //     'rule1'=>array('rule' => 'numeric',
-        //         'message'=>'Must be a numeric'
-        //         ),
-        //     'rule2'=>array(
-        //              'rule' => 'notBlank',
-        //              'message'=> "This field is required"
-        //         )
-            
-        // ),      
+           
 
     );
 

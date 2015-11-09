@@ -27,7 +27,6 @@ class ExpectArea extends AppModel {
 	{
 	     if($check) return true; 
 	     return false;
-	   //return true;
 	}
 
 
