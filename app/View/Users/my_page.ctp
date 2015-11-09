@@ -1,4 +1,4 @@
-
+    
     <script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
       <div class="welcome-sup-page">
@@ -119,6 +119,10 @@
           }
           
         });
+
+    
+
+     
        
       </script>
 
@@ -145,6 +149,52 @@
 
   </div>
 </div>
+
+<?php if($user['User']['first_login']== 0){ ?>
+
+<!-- Dialog for first login-->
+<div id="first_login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Dialog content-->
+    <div class="modal-content">
+      <div class="modal-header modal-header-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">&nbsp;</h4> 
+      </div>
+      <div class="modal-body">
+        <p id="msg">家賃でもらえる家の建築開始までには、入居審査・各種お手続きが必要となります。</br>
+まずは、下記手順に従って入居審査のお申し込みをお願い致します。</br>
+1.「申込人」タブから順に「配偶者/同居人」「連帯保証人」「添付書類」タブへと、必要情報のご入力と保存をお願いします。各画面では必ず「保存ボタン」を押して登録を完了させてください。</br>
+2.ご入力必須の項目は、マイページトップの「登録状況」が"未完了"となっている項目の右側に「未記入項目」に入力必須の項目名が表示されます。こちらでご確認いただくとともに、必須項目のご入力をお願いたします。</br>
+3.全ての必須項目をご入力いただくと、マイページトップの下にある「審査のお申し込み」ボタンがオレンジ色になり、審査のお申し込みをいただくことが可能となります。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+$( document ).ready(function() { 
+    $('#first_login').modal('show');
+    $.ajax({
+      type:'POST',
+      url: "<?php echo $this->webroot?>users/first_login_update",
+      data: "id=<?php echo $user['User']['id']; ?>",
+      success: function(result){
+        //alert(result);
+        //$('#home').html(result);
+      }
+    });
+    });
+</script>
+<?php } ?>
+
+
+
 <style type="text/css">
  
 .modal-header-info {

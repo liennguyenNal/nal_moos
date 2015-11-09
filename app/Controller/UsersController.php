@@ -1796,6 +1796,16 @@ class UsersController extends AppController{
         $this->redirect('login');
       }
     }
+    function first_login_update(){
+
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$_POST['id']), 'contain'=>array('id')));
+        
+       $user['User']['first_login'] = 1;   
+      if($this->User->save($user, false)){
+        die('ok');
+      }else{die('not');}
+      
+    }
 
    
 

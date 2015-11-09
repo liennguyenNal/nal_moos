@@ -2,6 +2,18 @@
 	<div class="from-ldpage">
 		<div class="content">
 			<div class="content-from">
+			<?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserGuarantorEdit', 'inputDefaults' => array(
+        	'format' => array('before', 'label', 'between', 'input', 'after' )))) ?>
+        	<?php if($user['User']['status_id'] == 2){?>
+				<div class="button-tab">
+					<!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
+					<!-- <a href="#" class="link-tab-1b"><img src="img/front/link-tab-3b.png" alt="キャンセル"/></a> -->
+					<button type="button" class="link-tab-1a" id="btn-edit-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
+		            <button type="submit" class="link-tab-1a" id="btn-save-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
+		            <button type="button" class="link-tab-1b" id="btn-cancel-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
+				</div>
+				 <?php } ?>
+
 				<div class="title-tab title-tab-fix-mb">
 					<h3>連帯保証人基本情報</h3>
 				</div>
@@ -10,8 +22,7 @@
 	            <div class="block-warning" id="error-section" style="display:none">
 	                <?php echo __('global.errors'); ?>
 	            </div>
-	            <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserGuarantorEdit', 'inputDefaults' => array(
-        	'format' => array('before', 'label', 'between', 'input', 'after' )))) ?>
+	            
 				<div class="content-from-block">
 					<div class="content-from-how">
 						<table class="from" id="theform">
@@ -599,24 +610,55 @@
 	                    $('#btn-edit-guarantor').show();
 	                    $('#btn-save-guarantor').hide();
 	                    $('#btn-cancel-guarantor').hide();
-	                    $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-	                    $('#UserGuarantorEdit').find('a:not(#btn-edit-guarantor)').hide();
+
+	                    $('#btn-edit-guarantor_added').show();
+	                    $('#btn-save-guarantor_added').hide();
+	                    $('#btn-cancel-guarantor_added').hide();
+
+	                    $('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').prop('disabled',true);
+	                    $('#UserGuarantorEdit').find('a:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').hide();
 	                  }
 	                  else{
 	                    $('#btn-cancel-guarantor').show();
 	                    $('#btn-save-guarantor').show();
 	                    $('#btn-edit-guarantor').hide();
+
+	                    $('#btn-cancel-guarantor_added').show();
+	                    $('#btn-save-guarantor_added').show();
+	                    $('#btn-edit-guarantor_added').hide();
 	                  }
 	                });
 
                     $('#btn-edit-guarantor').on('click', function() {
                     	
-                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').show();
+                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').show();
                       	$('#UserGuarantorEdit').find(':input').prop('disabled',false);
                       	$('#UserGuarantorEdit').find('a').show();
                       	$('#btn-cancel-guarantor').show();
                       	$('#btn-save-guarantor').show();
                       	$('#btn-edit-guarantor').hide();
+
+                      	$('#btn-cancel-guarantor_added').show();
+                      	$('#btn-save-guarantor_added').show();
+                      	$('#btn-edit-guarantor_added').hide();
+                      	$('#g_salary_type_other').prop('disabled', $('input[name="data[UserGuarantor][salary_type]"]:checked').val() != 4);
+                		$('#g_salary_date').prop('disabled', $('input[name="data[UserGuarantor][salary_receive_id]"]:checked').val() != 3);
+                      	g_edit = 1;
+                   	});
+
+                   	$('#btn-edit-guarantor_added').on('click', function() {
+                    	
+                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').show();
+                      	$('#UserGuarantorEdit').find(':input').prop('disabled',false);
+                      	$('#UserGuarantorEdit').find('a').show();
+                      	$('#btn-cancel-guarantor').show();
+                      	$('#btn-save-guarantor').show();
+                      	$('#btn-edit-guarantor').hide();
+
+                      	$('#btn-cancel-guarantor_added').show();
+                      	$('#btn-save-guarantor_added').show();
+                      	$('#btn-edit-guarantor_added').hide();
+
                       	$('#g_salary_type_other').prop('disabled', $('input[name="data[UserGuarantor][salary_type]"]:checked').val() != 4);
                 		$('#g_salary_date').prop('disabled', $('input[name="data[UserGuarantor][salary_receive_id]"]:checked').val() != 3);
                       	g_edit = 1;
@@ -626,8 +668,33 @@
                       	$('#btn-edit-guarantor').show();
                       	$('#btn-save-guarantor').hide();
                       	$('#btn-cancel-guarantor').hide();
-                      	$('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor)').prop('disabled',true);
-                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor)').hide();
+
+                      	$('#btn-edit-guarantor_added').show();
+                      	$('#btn-save-guarantor_added').hide();
+                      	$('#btn-cancel-guarantor_added').hide();
+
+                      	$('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').prop('disabled',true);
+                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').hide();
+                      	$.ajax({
+                           	url: "<?php echo $this->webroot;?>user_guarantors/edit",
+                            	success: function(result){
+                              	g_edit = 0;
+                              	$('#guarantor').html(result);
+                            	}
+                        	});
+                   		});
+
+                    $('#btn-cancel-guarantor_added').on('click', function() {
+                      	$('#btn-edit-guarantor').show();
+                      	$('#btn-save-guarantor').hide();
+                      	$('#btn-cancel-guarantor').hide();
+
+                      	$('#btn-edit-guarantor_added').show();
+                      	$('#btn-save-guarantor_added').hide();
+                      	$('#btn-cancel-guarantor_added').hide();
+
+                      	$('#UserGuarantorEdit').find(':input:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').prop('disabled',true);
+                      	$('#UserGuarantorEdit').find(':button:not(#btn-edit-guarantor, #btn-edit-guarantor_added)').hide();
                       	$.ajax({
                            	url: "<?php echo $this->webroot;?>user_guarantors/edit",
                             	success: function(result){
@@ -805,6 +872,7 @@
     },
     submitHandler: function(form) {
     	$('#btn-save-guarantor').prop('disabled', true);
+    	$('#btn-save-guarantor_added').prop('disabled', true);
         var url = "<?php echo $this->webroot;?>user_guarantors/edit";
       	$.ajax({
             type: "POST",
@@ -828,6 +896,7 @@
              }
            }).done(function() {
              $('#btn-save-guarantor').prop('disabled', false);
+              $('#btn-save-guarantor_added').prop('disabled', false);
             });
             return false;
         }

@@ -2,6 +2,15 @@
   <div class="from-ldpage">
     <div class="content">
       <div class="content-from">
+      <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserPartnerEdit','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ) ) ) 
+        ?>
+      <?php if($user['User']['status_id'] == 2){ ?>
+          <div class="button-tab">
+            <button type="button" class="link-tab-1a" id="btn-edit-partner_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
+            <button type="submit" class="link-tab-1a" id="btn-save-partner_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
+            <button type="button" class="link-tab-1b" id="btn-cancel-partner_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
+          </div>
+           <?php } ?>
         <div class="title-tab title-tab-fix-mb">
           <h3>配偶者基本情報</h3>
         </div>
@@ -10,8 +19,7 @@
         <div class="block-warning" id="error-section" style="display:none">
             <?php echo __('global.errors'); ?>
         </div>
-        <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserPartnerEdit','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ) ) ) 
-        ?>
+        
           <div class="content-from-block">
             <div class="content-from-how">
               <table class="from" id="theform">
@@ -587,24 +595,55 @@
                 $('#btn-edit-partner').show();
                 $('#btn-save-partner').hide();
                 $('#btn-cancel-partner').hide();
-                $('#UserPartnerEdit').find(':input:not(#btn-edit-partner)').prop('disabled',true);
-                $('#UserPartnerEdit').find('a:not(#btn-edit-partner)').hide();
+
+                $('#btn-edit-partner_added').show();
+                $('#btn-save-partner_added').hide();
+                $('#btn-cancel-partner_added').hide();
+
+                $('#UserPartnerEdit').find(':input:not(#btn-edit-partner, #btn-edit-partner_added)').prop('disabled',true);
+                $('#UserPartnerEdit').find('a:not(#btn-edit-partner, #btn-edit-partner_added)').hide();
                 //alert(edit);
               }
               else{
                 $('#btn-cancel-partner').show();
                 $('#btn-save-partner').show();
                 $('#btn-edit-partner').hide();
+
+                $('#btn-cancel-partner_added').show();
+                $('#btn-save-partner_added').show();
+                $('#btn-edit-partner_added').hide();
               }
             });
 
              $('#btn-edit-partner').on('click', function() {
-                $('#UserPartnerEdit').find(':button:not(#btn-edit-partner)').show();
+                $('#UserPartnerEdit').find(':button:not(#btn-edit-partner, #btn-edit-partner_added)').show();
                 $('#UserPartnerEdit').find(':input').prop('disabled',false);
                 $('#UserPartnerEdit').find('a').show();
                 $('#btn-cancel-partner').show();
                 $('#btn-save-partner').show();
                 $('#btn-edit-partner').hide();
+
+                $('#btn-cancel-partner_added').show();
+                $('#btn-save-partner_added').show();
+                $('#btn-edit-partner_added').hide();
+
+                $('#p_salary_type_other').prop('disabled', $('input[name="data[UserPartner][salary_type]"]:checked').val() != 4);
+                $('#p_salary_date').prop('disabled', $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() != "3");
+
+                p_edit = 1;
+             });
+
+             $('#btn-edit-partner_added').on('click', function() {
+                $('#UserPartnerEdit').find(':button:not(#btn-edit-partner, #btn-edit-partner_added)').show();
+                $('#UserPartnerEdit').find(':input').prop('disabled',false);
+                $('#UserPartnerEdit').find('a').show();
+                $('#btn-cancel-partner').show();
+                $('#btn-save-partner').show();
+                $('#btn-edit-partner').hide();
+
+                $('#btn-cancel-partner_added').show();
+                $('#btn-save-partner_added').show();
+                $('#btn-edit-partner_added').hide();
 
                 $('#p_salary_type_other').prop('disabled', $('input[name="data[UserPartner][salary_type]"]:checked').val() != 4);
                 $('#p_salary_date').prop('disabled', $('input[name="data[UserPartner][salary_receive_id]"]:checked').val() != "3");
@@ -618,6 +657,27 @@
                 $('#btn-cancel-partner').hide();
                 $('#UserPartnerEdit').find(':input:not(#btn-edit-partner)').prop('disabled',true);
                 $('#UserPartnerEdit').find(':button:not(#btn-edit-partner)').hide();
+                $.ajax({
+                     url: "<?php echo $this->webroot;?>user_partners/edit",
+                      success: function(result){
+                        p_edit = 0;
+                        $('#partner').html(result);
+                      }
+                  });
+
+             });
+
+             $('#btn-cancel-partner_added').on('click', function() {
+                $('#btn-edit-partner').show();
+                $('#btn-save-partner').hide();
+                $('#btn-cancel-partner').hide();
+
+                $('#btn-edit-partner_added').show();
+                $('#btn-save-partner_added').hide();
+                $('#btn-cancel-partner_added').hide();
+
+                $('#UserPartnerEdit').find(':input:not(#btn-edit-partner, #btn-edit-partner_added)').prop('disabled',true);
+                $('#UserPartnerEdit').find(':button:not(#btn-edit-partner, #btn-edit-partner_added)').hide();
                 $.ajax({
                      url: "<?php echo $this->webroot;?>user_partners/edit",
                       success: function(result){
@@ -819,6 +879,7 @@
     },
     submitHandler: function(form) {
         $('#btn-save-partner').prop('disabled', true);
+        $('#btn-save-partner_added').prop('disabled', true);
         var url = "<?php echo $this->webroot;?>user_partners/edit";
         $.ajax({
          type: "POST",
@@ -840,6 +901,7 @@
          }
        }).done(function() {
              $('#btn-save-partner').prop('disabled', false);
+             $('#btn-save-partner_added').prop('disabled', false);
             });
             return false;
         }

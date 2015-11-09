@@ -171,6 +171,16 @@
     </table>
 
     <?php if($user['User']['status_id'] == 2   && !$validations['error']) { ?>
+    <textarea rows="10"  style="width:100%;font-size:14px; margin-top:10px;" >【入居審査お申し込みの注意点】
+    １．連帯保証人は、必ずご本人様の同意を得た上でご入力ください。弊社より保証意思確認の電話を差し上げます。
+    ２．申込人、連帯保証人の勤務先へ在籍確認の電話を差し上げる場合がございます。
+    ３．申込内容が事実と相違することが判明した場合、審査をお断りさせて頂く場合がございます。
+    ４．審査の結果、お断りさせて頂く場合がございますので予めご了承ください。なお、その場合の理由や内容については一切開示されません。
+    ５．審査にはご本人様の身分証明書をご提示頂きます。場合により追加で各種証明書をご提出頂く場合がございます。
+    ６．申込人・配偶者・同居人・連帯保証人が、反社会的組織の構成員、若しくはこれに準ずる場合、審査をお断り致します。
+     </textarea>
+     <a href="#">「家賃でもらえる家」にかかる個人情報の取扱いに関する条項</a><br/>
+     <input type="checkbox" >お申し込みの注意点と個人情報の取扱いに関する条項に同意する<br/>
     <div class="button-tab">
       <button type="button" class="link-tab-1a" id='btn-update-info'><img src="<?php echo $this->webroot; ?>img/front/link-tab-a.png" alt="審査のお申し込み"/></button>
     </div>
