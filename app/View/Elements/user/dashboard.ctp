@@ -216,7 +216,7 @@ $("#_all_info").validate({
       },
       messages: {
         
-        'data[User][all_info_checkbox]': {required: "eo biet"}
+        'data[User][all_info_checkbox]': {required: "chua biet"}
         
       },
       invalidHandler: function(event, validator) {
