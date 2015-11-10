@@ -384,13 +384,13 @@ msgid "user.email.admin_update_account.title"
 msgstr "【MOOS】審査申し込み通知"
 
 msgid "user.email.reset_password.title"
-msgstr "【家賃でもらえる家】パスワードの変更";
+msgstr "【家賃でもらえる家】パスワードの変更"
 
 msgid "user.email.change_password.title"
-msgstr "【家賃でもらえる家】パスワードの設定完了";
+msgstr "【家賃でもらえる家】パスワードの設定完了"
 
 msgid "user.email.request_change_password.title"
-msgstr "【家賃でもらえる家】パスワードの変更";
+msgstr "【家賃でもらえる家】パスワードの変更"
 
 msgid "admin.register_users"
 msgstr "会員一覧"
@@ -981,7 +981,6 @@ msgstr "※必須項目です。</br>半角英数で入力してください。"
 msgid "user.setting_password.error.password_confirm"
 msgstr "※必須項目です。</br>半角英数で入力してください。"
 
-msgid ""
 
 
 
