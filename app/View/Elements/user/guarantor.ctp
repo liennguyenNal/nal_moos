@@ -4,7 +4,11 @@
 			<div class="content-from">
 			<?php echo $this->Form->create("User", array('action'=>'edit','id'=>'UserGuarantorEdit', 'inputDefaults' => array(
         	'format' => array('before', 'label', 'between', 'input', 'after' )))) ?>
-        	<?php if($user['User']['status_id'] == 2){?>
+        	
+
+				<div class="title-tab title-tab-fix-mb">
+					<h3 class="float-left">連帯保証人基本情報</h3>
+					<?php if($user['User']['status_id'] == 2){?>
 				<div class="button-tab">
 					<!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
 					<!-- <a href="#" class="link-tab-1b"><img src="img/front/link-tab-3b.png" alt="キャンセル"/></a> -->
@@ -13,9 +17,6 @@
 		            <button type="button" class="link-tab-1b" id="btn-cancel-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
 				</div>
 				 <?php } ?>
-
-				<div class="title-tab title-tab-fix-mb">
-					<h3>連帯保証人基本情報</h3>
 				</div>
 				<!-- FORM -->
 				<?php echo $this->element('flash_success');?>

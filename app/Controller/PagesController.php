@@ -158,6 +158,16 @@ class PagesController extends AppController {
      * USER REGISTER SUCCESSFUL VIEW
      * @return response
      */
+
+	function policy(){
+		$this->layout = 'default_new';
+
+	}
+	function company_info(){
+		$this->layout = 'default_new';
+		
+	}
+
     function register_successful(){
       	$this->layout = "default_new";
       	$this->Session->delete('user_register');

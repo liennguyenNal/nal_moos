@@ -854,6 +854,11 @@
 
 	</div>
 	<footer id="footer-container">
+			<div class="block-menu-foter">
+				<a href="#">にリンク設置</a>
+				<a href="#">にリンク設置</a>
+				<a href="#">にリンク設置</a>
+			</div>
 		<?php echo $this->element('footer')?>
 	</footer>
 	
