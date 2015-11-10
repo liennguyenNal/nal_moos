@@ -10,7 +10,7 @@
         <div class="container-fluid">
           <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">マイページトップ</a></li>
-            <li><a data-toggle="tab" href="#basic">申込人</a></li>
+            <li><a data-toggle="tab"  href="#basic">申込人</a></li>
             <li><a data-toggle="tab" href="#partner">配偶者／同居人</a></li>
             <li><a data-toggle="tab" href="#guarantor">連帯保証人</a></li>
             <?php if($user['User']['need_more_guarantor']){ ?>
@@ -165,7 +165,7 @@
     background-color: #55ad47;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
+    -moz-b  order-radius-topleft: 5px;
     -moz-border-radius-topright: 5px;
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;

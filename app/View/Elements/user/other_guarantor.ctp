@@ -7,7 +7,7 @@
 				<div class="title-tab title-tab-fix-mb">
 					<h3 class="float-left">連帯保証人基本情報</h3>
 					<?php if($user['User']['status_id'] == 2){?>
-              <div class="button-tab">
+              <div class="button-tab button-tab-top">
 					<button type="button" class="link-tab-1a" id="btn-edit-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
 		            <button type="submit" class="link-tab-1a" id="btn-save-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
 		            <button type="button" class="link-tab-1b" id="btn-cancel-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>

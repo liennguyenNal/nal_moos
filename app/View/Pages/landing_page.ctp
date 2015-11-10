@@ -855,9 +855,9 @@
 	</div>
 	<footer id="footer-container">
 			<div class="block-menu-foter">
-				<a href="#">にリンク設置</a>
-				<a href="#">にリンク設置</a>
-				<a href="#">にリンク設置</a>
+				<a href="<?php echo $this->webroot; ?>pages/company_info">運営会社</a>
+				<a href="<?php echo $this->webroot; ?>contact">お問い合わせ</a>
+				<a href="<?php echo $this->webroot; ?>pages/policy">個人情報保護方針</a>
 			</div>
 		<?php echo $this->element('footer')?>
 	</footer>
