@@ -143,7 +143,10 @@
 また、保存が必要ない場合は「キャンセル」ボタンを 押してください。</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>
+        <div class="button-tab">
+      <button type="submit" class="link-tab-1a" id='btn-update-info' data-dismiss="modal"><img src="<?php echo $this->webroot; ?>img/front/closeup.png" alt="閉じる"/></button>
+      </div>
+        
       </div>
     </div>
 

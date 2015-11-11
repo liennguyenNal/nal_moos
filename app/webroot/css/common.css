@@ -2158,12 +2158,12 @@ img {
 #_all_info .tooltip.right .tooltip-arrow {
   border-right-color: #ff0000;
 }
-.button-tab-top{width:60%;}
+
 
 
 @media (max-width: 990px) {
 
-  .button-tab-top{width:100%;}
+
   .content-from .tooltip {
     position: static !important;
     width: 100%;

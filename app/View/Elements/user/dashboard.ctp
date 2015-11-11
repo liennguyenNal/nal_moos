@@ -185,7 +185,7 @@
                   <li>審査にはご本人様の身分証明書をご提示頂きます。場合により追加で各種証明書をご提出頂く場合がございます。</li>
                   <li>申込人・配偶者・同居人・連帯保証人が、反社会的組織の構成員、若しくはこれに準ずる場合、審査をお断り致します。</li>
                 </ul>
-                <a href="#">「家賃でもらえる家」にかかる個人情報の取扱いに関する条項</a>
+                <a target="_blank" href="<?php echo $this->webroot; ?>pages/terms_conditions">「家賃でもらえる家」にかかる個人情報の取扱いに関する条項</a>
                 <div class="block-button">
                   <div class="block-input-check">
                     <div class="block">
@@ -216,7 +216,7 @@ $("#_all_info").validate({
       },
       messages: {
         
-        'data[User][all_info_checkbox]': {required: "chua biet"}
+        'data[User][all_info_checkbox]': {required: "Please agree to all terms and conditions before submitting the application"}
         
       },
       invalidHandler: function(event, validator) {
@@ -259,7 +259,9 @@ $("#_all_info").validate({
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>
+        <div class="button-tab">
+      <button type="submit" class="link-tab-1a" id='btn-update-info' data-dismiss="modal"><img src="<?php echo $this->webroot; ?>img/front/closeup.png" alt="閉じる"/></button>
+      </div>
       </div>
     </div>
 

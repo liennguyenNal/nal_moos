@@ -167,6 +167,10 @@ class PagesController extends AppController {
 		$this->layout = 'default_new';
 		
 	}
+	function terms_conditions(){ 
+		$this->layout = null;
+		
+	}
 
     function register_successful(){
       	$this->layout = "default_new";
