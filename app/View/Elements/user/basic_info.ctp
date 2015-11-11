@@ -6,15 +6,19 @@
         <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ))) ?>
           
           <div class="title-tab title-tab-fix-mb">
-            <h3 class="float-left">申込人基本情報</h3>
+            
             <?php if($user['User']['status_id'] == 2){?>
+            <h3 class="float-left">申込人基本情報</h3>
           <div class="button-tab button-tab-top">
             <!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
             <button type="button" class="link-tab-1a" id="btn-edit-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
             <button type="submit"  class="link-tab-1a" id="btn-save-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
             <button type="button" class="link-tab-1b" id="btn-cancel-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
           </div>  
-        <?php }?>
+        <?php } else{ ?>
+
+          <h3 >申込人基本情報</h3>
+        <?php } ?>
           </div>
           <!-- FORM -->
           <?php echo $this->element('flash_success');?>

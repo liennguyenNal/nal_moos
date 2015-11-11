@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>[:. MOOS .:]</title>
+	<title>住宅ローン審査のないマイホームの形｜家賃でもらえる家</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="mô tả website" />
-	<meta name="keywords" content="những từ khóa của website bạn" />
+	<meta name="description" content="「家賃でもらえる家」は、マイホームをあきらめたくないあたなのための全く新しいマイホーム取得システムです。金融機関の住宅ローンが不要で、自分でプランニングした家に20年間賃貸で住み続けるだけで、その家があたなのものになります。" />
+	<meta name="keywords" content="家、家賃、賃貸、住宅ローン審査、入居審査、マイホーム" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="<?php echo $this->webroot; ?>favicon.ico" type="image/x-icon" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -121,7 +124,7 @@
 											</div>
 											<div class="block-note">
 												<div class="block-button">
-													<button type="button"><img src="<?php echo $this->webroot; ?>img/front/goback.png" alt="戻る"></button>
+													<button id="my_page" type="button"><img src="<?php echo $this->webroot; ?>img/front/goback.png" alt="戻る"></button>
 												</div>
 											</div>
 										</div>
@@ -142,5 +145,10 @@
 	<script src="<?php echo $this->webroot; ?>js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot; ?>js/swiper.jquery.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->webroot; ?>js/common.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$( "#my_page" ).click(function() {
+		  window.location.href = "<?php echo $this->webroot; ?>users/my_page"; 
+		});		
+	</script>
 </body>
 </html>
