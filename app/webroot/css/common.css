@@ -1584,10 +1584,15 @@ img {
 }
 .title-tab h3.float-left {
   float: left;
+  width:24%;
 }
 @media (max-width: 690px) {
   .title-tab h3.float-left {
+    width:100%;
     float: none;
+  }
+  .button-tab-top{
+    width:100% !important;
   }
 }
 .title-tab.title-tab-fix-mb {
@@ -2159,7 +2164,9 @@ img {
   border-right-color: #ff0000;
 }
 
-
+.button-tab-top{
+  width:60%;
+}
 
 @media (max-width: 990px) {
 
