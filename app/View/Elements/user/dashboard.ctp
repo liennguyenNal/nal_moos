@@ -216,7 +216,7 @@ $("#_all_info").validate({
       },
       messages: {
         
-        'data[User][all_info_checkbox]': {required: "Please agree to all terms and conditions before submitting the application"}
+        'data[User][all_info_checkbox]': {required: "必須項目です。<br/>チェックしてください。"}
         
       },
       invalidHandler: function(event, validator) {
