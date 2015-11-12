@@ -1586,14 +1586,22 @@ img {
   float: left;
   width:24%;
 }
+.button-tab-top{
+  width:60%;
+}
 @media (max-width: 690px) {
   .title-tab h3.float-left {
     width:100%;
     float: none;
   }
   .button-tab-top{
-    width:100% !important;
+  width:100%;
+}
+  .dash_board_top_button{
+    width:100% !important; 
+    text-align:center !important;
   }
+
 }
 .title-tab.title-tab-fix-mb {
   margin-bottom: 20px;
@@ -2164,9 +2172,7 @@ img {
   border-right-color: #ff0000;
 }
 
-.button-tab-top{
-  width:60%;
-}
+
 
 @media (max-width: 990px) {
 
