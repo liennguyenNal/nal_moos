@@ -806,4 +806,4 @@ ALTER TABLE `zipcodes`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 ALTER TABLE `users`
-  ADD `first_login` tinyint(1) AFTER `is_deleted`;
+  ADD `first_login` tinyint(1) DEFAULT '0' AFTER `is_deleted`;
