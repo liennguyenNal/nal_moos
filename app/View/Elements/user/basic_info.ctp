@@ -885,7 +885,12 @@
                        url: "<?php echo $this->webroot;?>users/update_basic_info",
                         success: function(result){
                           edit = 0;
-                          $('#basic').html(result);
+                          if(result != "0"){
+                            $('#basic').html(result);
+                          }
+                          else {
+                            window.location.href = "<?php echo $this->webroot?>users/login";
+                          }
                         }
                     });
                });

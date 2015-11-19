@@ -1,3 +1,4 @@
 *.log
-webroot/files/upload/
-webroot/images/upload/news/
+webroot/files/upload/*
+webroot/images/upload/news/*
+tmp/*

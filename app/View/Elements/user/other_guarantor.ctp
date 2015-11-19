@@ -708,8 +708,13 @@
                            url: "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor",
                             success: function(result){
 
-                              og_edit = 0;
-                              $('#other_guarantor').html(result);
+                              	og_edit = 0;
+                              	if(result != "0"){
+                              		$('#other_guarantor').html(result);
+                          		}
+                          		else {
+                          			window.location.href = "<?php echo $this->webroot?>users/login";
+                          		}
                             }
                         });
 

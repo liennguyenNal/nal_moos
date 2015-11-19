@@ -1,0 +1,86 @@
+msgid "user.valid.name.null"
+msgstr "Name is not null"
+
+msgid "user.valid.name.length"
+msgstr "Length name must be 1-255"
+
+msgid "user.valid.alias.null"
+msgstr "Alias is not null"
+
+msgid "user.valid.alias.lenght"
+msgstr "Length alias must be 1-255"
+
+msgid "user.valid.birthday.null"
+msgstr "Birthday is not null"
+
+msgid "user.valid.birthday.format"
+msgstr "Birthday format must be dd/mm/yyyy"
+
+msgid "user.valid.post_code.null"
+msgstr "Post code is not null"
+
+msgid "user.valid.post_code.format"
+msgstr "Post code format must be xxx-xxxx"
+
+msgid "user.valid.gender.null"
+msgstr "Gender is not null"
+
+msgid "user.valid.address1.null"
+msgstr "Address 1 is not null"
+
+msgid "user.valid.email.null"
+msgstr "Email is not null"
+
+msgid "user.valid.email.format"
+msgstr "Email format is invalid"
+
+msgid "user.valid.email.unique"
+msgstr "Email is existed"
+
+msgid "book.valid.title.null"
+msgstr "Title is not null"
+
+msgid "user.valid.phone.null"
+msgstr "Email is not null"
+
+msgid "user.valid.phone.format"
+msgstr "Email format is invalid "
+
+msgid "book.valid.category.null"
+msgstr "Category is not null"
+
+msgid "book.valid.price.null"
+msgstr "Price is not null"
+
+msgid "book.valid.price.format"
+msgstr "Price must be a number"
+
+msgid "book.valid.edit_price.null"
+msgstr "Edit Price is not null"
+
+msgid "book.valid.edit_price.format"
+msgstr "Edit Price must be number"
+
+msgid "book.valid.publish_date.null"
+msgstr "Publish date is not null"
+
+msgid "book.valid.publish_date.null"
+msgstr "Publish date format must be dd/mm/yyy"
+
+msgid "book.valid.book_file.null"
+msgstr "Upload file"
+
+msgid "book.valid.book_file.format"
+msgstr "Upload file type: zip, pdf, doc, xsl"
+
+msgid "matching.valid.edit_price.null"
+msgstr "Edit Price is not null"
+
+msgid "matching.valid.edit_price.format"
+msgstr "Edit Price must be a number"
+
+msgid "matching.valid.sale_percentage.null"
+msgstr "Sale percentage is not null"
+
+msgid "matching.valid.sale_percentage.format"
+msgstr "Sale percentage must be a number from 0 to 99"
