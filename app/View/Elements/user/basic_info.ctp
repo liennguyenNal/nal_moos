@@ -1227,7 +1227,8 @@
                           $('#partner').html(result);
                         }
                     });
-                    $( "body" ).scrollTop(0);                }
+                    $("html, body").animate({ scrollTop: $("#wrapper").offset().top }, 700);               
+                  }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);
              $('#btn-save-user-info_added').prop('disabled', false);
