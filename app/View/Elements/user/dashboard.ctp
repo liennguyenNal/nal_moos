@@ -185,14 +185,14 @@
                   <li>審査にはご本人様の身分証明書をご提示頂きます。場合により追加で各種証明書をご提出頂く場合がございます。</li>
                   <li>申込人・配偶者・同居人・連帯保証人が、反社会的組織の構成員、若しくはこれに準ずる場合、審査をお断り致します。</li>
                 </ul>
-                <a  href="<?php echo $this->webroot; ?>pages/terms_conditions">「家賃でもらえる家」にかかる個人情報</a>
+                <a  href="<?php echo $this->webroot; ?>pages/terms_conditions">「家賃でもらえる家」にかかる個人情報の取扱いに関する条項</a>
                 <div class="block-button">
                   <div class="block-input-check">
                     <div class="block">
                     <?php
                           echo $this->Form->input('User.all_info_checkbox',array('type'=>'checkbox','options'=>array(1),'div'=>false, 'id'=>'all_info_checkbox','label'=>false, 'data-placement' => 'right'));
                         ?>
-                    <label for="all_info_checkbox">注意点の内容に同意する　→　お申し込みの注意点と個人情報の取扱いに関する条項に同意する</label>
+                    <label for="all_info_checkbox">お申し込みの注意点と個人情報の取扱いに関する条項に同意する</label>
                   </div>
                 </div>
               </div>
@@ -253,7 +253,7 @@ $("#_all_info").validate({
 
           <li><p>1.「申込人」タブから順に「配偶者/同居人」「連帯保証人」「添付書類」タブへと、必要情報のご入力と保存をお願いします。各画面では必ず「保存ボタン」を押して登録を完了させてください。</p><br/></li>
 
-          <li><p>2.ご入力必須の項目は、マイページトップの「登録状況」が"未完了"となっている項目の右側に「未記入項目」に入力必須の項目名が表示されます。こちらでご確認いただくとともに、必須項目のご入力をお願いたします。</p><br/></li>
+          <li><p>2.ご入力が必要となる項目は、マイページトップの「登録状況」が"未完了"となっている部分でご確認いただけます。また、具体的な項目名は右側の「未記入項目」に表示されます。こちらで入力必須項目をご確認いただくとともに、必須項目のご入力をお願いいたします。</p><br/></li>
 
           <li><p>3.全ての必須項目をご入力いただくと、マイページトップの下にある「審査のお申し込み」ボタンがオレンジ色になり、審査のお申し込みをいただくことが可能となります。</p></li>
         </ul>

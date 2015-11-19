@@ -1200,7 +1200,7 @@
             $("#error-section").hide();
           }
         },
-        submitHandler: function(form) {
+        submitHandler: function(form) { 
             $('#btn-save-user-info').prop('disabled', true);
             $('#btn-save-user-info_added').prop('disabled', true);
             var url = "<?php echo $this->webroot;?>users/update_basic_info";
@@ -1227,7 +1227,7 @@
                           $('#partner').html(result);
                         }
                     });
-                }
+                    $( "body" ).scrollTop(0);                }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);
              $('#btn-save-user-info_added').prop('disabled', false);
