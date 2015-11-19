@@ -13,10 +13,10 @@ class ZipcodeController extends AppController {
 			$pref_id = $item['Zipcode']['pref_id'];
 			$city = $item['Zipcode']['ward'];
 			$address = $item['Zipcode']['addr1'];
-			//echo $city; die;
+			
 			$pos1 = strrpos($address, "（");
 			$pos2 = strrpos($address, "）");
-			//echo strlen($address); die;
+		
 			if($pos1 && $pos2){
 				$city = $city. ' '. substr_replace($address, '', $pos1);
 

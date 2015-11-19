@@ -8,7 +8,6 @@ class AttachmentsController extends AppController{
 		$user_id = $this->s_user_id;
 		if($user_id){
 			if($this->data['Attachment']['file']){
-				//print_r($this->data['Attachment']['file']);
 				$file_name = $this->uploadFile($this->data['Attachment']['file'][$type], 'files/upload/', $errors);
 				$is_error = 0;
 				$error_msg = "";

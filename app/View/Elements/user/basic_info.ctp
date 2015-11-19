@@ -3,15 +3,29 @@
     <div class="from-ldpage">
       <div class="content">
         <div class="content-from">
+        <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ))) ?>
+          
           <div class="title-tab title-tab-fix-mb">
-            <h3>申込人基本情報</h3>
+            
+            <?php if($user['User']['status_id'] == 2){?>
+            <h3 class="float-left">申込人基本情報</h3>
+          <div class="button-tab button-tab-top">
+            <!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
+            <button type="button" class="link-tab-1a" id="btn-edit-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
+            <button type="submit"  class="link-tab-1a" id="btn-save-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
+            <button type="button" class="link-tab-1b" id="btn-cancel-user-info_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
+          </div>  
+        <?php } else{ ?>
+
+          <h3 >申込人基本情報</h3>
+        <?php } ?>
           </div>
           <!-- FORM -->
           <?php echo $this->element('flash_success');?>
             <div class="block-warning" id="error-section" style="display:none">
                 <?php echo __('global.errors'); ?>
             </div>
-          <?php echo $this->Form->create("User", array('action'=>'update_basic_info','id'=>'UserEditBasicInfo','inputDefaults' => array('format' => array('before', 'label', 'between', 'input', 'after', 'error'=>false ) ))) ?>
+
             <div class="content-from-block">
               <div class="content-from-how">
                 <table class="from" id="theform">
@@ -769,7 +783,7 @@
           <div class="button-tab">
             <!-- <a href="#" class="link-tab-1a"><img src="img/front/link-tab-3.png" alt="変更する"></a> -->
             <button type="button" class="link-tab-1a" id="btn-edit-user-info"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
-            <button type="submit" class="link-tab-1a" id="btn-save-user-info"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
+            <button type="submit"  class="link-tab-1a" id="btn-save-user-info"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
             <button type="button" class="link-tab-1b" id="btn-cancel-user-info"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
           </div>
         <?php }
@@ -780,13 +794,21 @@
         <script type="text/javascript" >
             
             $( document ).ready(function() {
-              if(edit != 1){
+              if(edit != 1){ //alert('s');
                 
                 $('#btn-edit-user-info').show();
                 $('#btn-save-user-info').hide();
                 $('#btn-cancel-user-info').hide();
-                $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info)').prop('disabled',true);
-                $('#UserEditBasicInfo').find('a:not(#btn-edit-user-info)').hide();
+                
+                $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info, #btn-edit-user-info_added)').prop('disabled',true);
+                $('#UserEditBasicInfo').find('a:not(#btn-edit-user-info), a:not(#btn-edit-user-info_added)').hide();
+
+                //for top button
+                $('#btn-edit-user-info_added').show();
+                $('#btn-save-user-info_added').hide();
+                $('#btn-cancel-user-info_added').hide();
+                
+                
                 //alert(edit);
               }
               else{
@@ -795,6 +817,13 @@
                   
                
                 $('#btn-edit-user-info').hide();
+
+                //for top button
+                $('#btn-cancel-user-info_added').show();
+                $('#btn-save-user-info_added').show();
+                  
+               
+                $('#btn-edit-user-info_added').hide();
               }
             });
 
@@ -810,15 +839,69 @@
                   $('#btn-cancel-user-info').show();
                   $('#btn-save-user-info').show();
                   $('#btn-edit-user-info').hide();
+
+                  $('#btn-cancel-user-info_added').show();
+                  $('#btn-save-user-info_added').show();
+                  $('#btn-edit-user-info_added').hide();
                   edit = 1;
 
                });
+
+               //for button top
+
+               $('#btn-edit-user-info_added').on('click', function() {
+                  
+                  $('#UserEditBasicInfo').find(':input:not(#email)').prop('disabled',false);
+
+                  $('#salary_type_other').prop('disabled', $('input[name="data[UserCompany][salary_type]"]:checked').val() != "4" );
+
+                  $('#salary_date').prop('disabled', $('input[name="data[UserCompany][salary_receive_id]"]:checked').val() != "3" );
+
+                  $('#UserEditBasicInfo').find('a').show();
+                  $('#btn-cancel-user-info').show();
+                  $('#btn-save-user-info').show();
+                  $('#btn-edit-user-info').hide();
+
+                  $('#btn-cancel-user-info_added').show();
+                  $('#btn-save-user-info_added').show();
+                  $('#btn-edit-user-info_added').hide();
+                  edit = 1;
+
+               });
+
+
                $('#btn-cancel-user-info').on('click', function() {
                    $('#btn-edit-user-info').show();
                     $('#btn-save-user-info').hide();
                     $('#btn-cancel-user-info').hide();
-                    $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info)').prop('disabled',true);
-                    $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info)').hide();
+                    $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info), :input:not(#btn-edit-user-info_added)').prop('disabled',true);
+                    $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info), :button:not(#btn-edit-user-info_added)').hide();
+
+                    $('#btn-edit-user-info_added').show();
+                    $('#btn-save-user-info_added').hide();
+                    $('#btn-cancel-user-info_added').hide();
+                    
+                    $.ajax({
+                       url: "<?php echo $this->webroot;?>users/update_basic_info",
+                        success: function(result){
+                          edit = 0;
+                          $('#basic').html(result);
+                        }
+                    });
+               });
+
+               //for top button
+               $('#btn-cancel-user-info_added').on('click', function() {
+                   $('#btn-edit-user-info_added').show();
+                    $('#btn-save-user-info_added').hide();
+                    $('#btn-cancel-user-info_added').hide();
+                    $('#UserEditBasicInfo').find(':input:not(#btn-edit-user-info_added), :input:not(#btn-edit-user-info)').prop('disabled',true);
+                    $('#UserEditBasicInfo').find(':button:not(#btn-edit-user-info_added), :button:not(#btn-edit-user-info)').hide();
+
+                    $('#btn-edit-user-info').show();
+                    $('#btn-save-user-info').hide();
+                    $('#btn-cancel-user-info').hide();
+                    
                     $.ajax({
                        url: "<?php echo $this->webroot;?>users/update_basic_info",
                         success: function(result){
@@ -1117,8 +1200,9 @@
             $("#error-section").hide();
           }
         },
-        submitHandler: function(form) {
+        submitHandler: function(form) { 
             $('#btn-save-user-info').prop('disabled', true);
+            $('#btn-save-user-info_added').prop('disabled', true);
             var url = "<?php echo $this->webroot;?>users/update_basic_info";
             $.ajax({
                 type: "POST",
@@ -1129,6 +1213,7 @@
                     edit = 0;
                     $('#basic').html(result);
                     $('#btn-save-user-info').prop('disabled', false);
+                    $('#btn-save-user-info_added').prop('disabled', false);
                     //reload dashboard
                     $.ajax({
                         url: "<?php echo $this->webroot?>users/reload_dashboard",
@@ -1142,10 +1227,15 @@
                           $('#partner').html(result);
                         }
                     });
-                }
+                    $("html, body").animate({ scrollTop: $("#wrapper").offset().top }, 700);               
+                  }
             }).done(function() {
              $('#btn-save-user-info').prop('disabled', false);
+             $('#btn-save-user-info_added').prop('disabled', false);
             });
+
+            
+
             return false;
         }
       });

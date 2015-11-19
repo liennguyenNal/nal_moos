@@ -382,14 +382,16 @@ class UsersController extends AppController{
            * SEND MAIL TO CUSTOMER
            * @var CakeEmail
            */
-          $Email = new CakeEmail('gmail');
-          $Email->template('user_approve_success');
-          $Email->emailFormat('html');
-          $Email->to($user['User']['email']);
-          $Email->from(FROM_EMAIL);
-          $Email->subject('【家賃でもらえる家】会員登録の内容確認完了');
-          $Email->viewVars(array('user' => $user));
-          $Email->send();
+          // $Email = new CakeEmail('gmail');
+          // $Email->template('user_approve_success');
+          // $Email->emailFormat('html');
+          // $Email->to($user['User']['email']);
+          // $Email->from(FROM_EMAIL);
+          // $Email->subject('【家賃でもらえる家】会員登録の内容確認完了');
+          // $Email->viewVars(array('user' => $user));
+          // $Email->send();
+          $this->sendEmailToUser($user['User']['email'], 'approve_register_user', __('admin.email.approve_register_user.title'), array('user' => $user)); 
+          
           $this->Session->setFlash(__("admin.user.approve_register.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
           $this->redirect('view/'.$id);
         } else {
@@ -415,14 +417,16 @@ class UsersController extends AppController{
         /**
          * EMAIL REJECT USER REGISTRATION
          */
-        $Email = new CakeEmail('gmail');
-        $Email->template('user_approve_reject');
-        $Email->emailFormat('html');
-        $Email->to($user['User']['email']);
-        $Email->from(FROM_EMAIL);
-        $Email->subject('【家賃でもらえる家】会員登録の却下');
-        $Email->viewVars(array('user' => $user));
-        $Email->send();
+        // $Email = new CakeEmail('gmail');
+        // $Email->template('user_approve_reject');
+        // $Email->emailFormat('html');
+        // $Email->to($user['User']['email']);
+        // $Email->from(FROM_EMAIL);
+        // $Email->subject('【家賃でもらえる家】会員登録の却下');
+        // $Email->viewVars(array('user' => $user));
+        // $Email->send();
+
+        $this->sendEmailToUser($user['User']['email'], 'reject_register_user', __('admin.email.reject_register_user.title'), array('user' => $user));
 
         //echo "Reject successfully";
          $this->Session->setFlash(__("admin.user.reject.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
@@ -468,15 +472,17 @@ class UsersController extends AppController{
           /**
            * EMAIL Aprrove User Step 2
            */
-          $Email = new CakeEmail('gmail');
-          $Email->template('approve_user');
-          $Email->emailFormat('html');
-          $Email->to($user['User']['email']);
-          $Email->from(FROM_EMAIL);
-          $Email->subject(__('admin.email.approve_user.title'));
-          $Email->viewVars(array('user' => $user));
-          $Email->send();
+          // $Email = new CakeEmail('gmail');
+          // $Email->template('approve_user');
+          // $Email->emailFormat('html');
+          // $Email->to($user['User']['email']);
+          // $Email->from(FROM_EMAIL);
+          // $Email->subject(__('admin.email.approve_user.title'));
+          // $Email->viewVars(array('user' => $user));
+          // $Email->send();
         
+          $this->sendEmailToUser($user['User']['email'], 'approve_user', __('admin.email.approve_user.title'), array('user' => $user));
+
           $this->Session->setFlash(__("admin.user.approve.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
           $this->redirect('view/'. $user_id);
         }
@@ -498,15 +504,17 @@ class UsersController extends AppController{
               /**
              * EMAIL Aprrove User Step 2
              */
-            $Email = new CakeEmail('gmail');
-            $Email->template('reject_user');
-            $Email->emailFormat('html');
-            $Email->to($user['User']['email']);
-            $Email->from(FROM_EMAIL);
-            $Email->subject(__('admin.email.reject_user.title'));
-            $Email->viewVars(array('user' => $user));
-            $Email->send();
-
+            // $Email = new CakeEmail('gmail');
+            // $Email->template('reject_user');
+            // $Email->emailFormat('html');
+            // $Email->to($user['User']['email']);
+            // $Email->from(FROM_EMAIL);
+            // $Email->subject(__('admin.email.reject_user.title'));
+            // $Email->viewVars(array('user' => $user));
+            // $Email->send();
+            
+            $this->sendEmailToUser($user['User']['email'], 'reject_user', __('admin.email.reject_user.title'), array('user' => $user));
+            
             $this->Session->setFlash(__("admin.user.reject.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
             $this->redirect('view/'. $user_id);
           }
@@ -541,14 +549,16 @@ class UsersController extends AppController{
             /**
              * EMAIL Aprrove User Step 2
              */
-            $Email = new CakeEmail('gmail');
-            $Email->template('return_user');
-            $Email->emailFormat('html');
-            $Email->to($user['User']['email']);
-            $Email->from(FROM_EMAIL);
-            $Email->subject(__('admin.email.return_user.title'));
-            $Email->viewVars(array('user' => $user, 'requireds'=>$requireds, 'comment'=>$comment));
-            $Email->send();
+            // $Email = new CakeEmail('gmail');
+            // $Email->template('return_user');
+            // $Email->emailFormat('html');
+            // $Email->to($user['User']['email']);
+            // $Email->from(FROM_EMAIL);
+            // $Email->subject(__('admin.email.return_user.title'));
+            // $Email->viewVars(array('user' => $user, 'requireds'=>$requireds, 'comment'=>$comment));
+            // $Email->send();
+             $this->sendEmailToUser($user['User']['email'], 'return_user', __('admin.email.return_user.title'), array('user' => $user, 'requireds'=>$requireds, 'comment'=>$comment));
+
             $this->Session->setFlash(__("admin.user.return.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
             $this->redirect('view/'. $user_id);
           }
@@ -594,15 +604,15 @@ class UsersController extends AppController{
               /**
              * EMAIL Aprrove User Step 2
              */
-            $Email = new CakeEmail('gmail');
-            $Email->template('process_payment_successful');
-            $Email->emailFormat('html');
-            $Email->to($user['User']['email']);
-            $Email->from(FROM_EMAIL);
-            $Email->subject(__('admin.email.process_payment.title'));
-            $Email->viewVars(array('user' => $user));
-            $Email->send();
-
+            // $Email = new CakeEmail('gmail');
+            // $Email->template('process_payment_successful');
+            // $Email->emailFormat('html');
+            // $Email->to($user['User']['email']);
+            // $Email->from(FROM_EMAIL);
+            // $Email->subject(__('admin.email.process_payment.title'));
+            // $Email->viewVars(array('user' => $user));
+            // $Email->send();
+            $this->sendEmailToUser($user['User']['email'], 'process_payment_successful', __('admin.email.process_payment.title'), array('user' => $user));
             $this->Session->setFlash(__("admin.user.process_payment.successful"), 'default',array('class' => 'alert alert-dismissible alert-success"'));
             $this->redirect('view/'. $user_id);
           }
@@ -714,44 +724,44 @@ class UsersController extends AppController{
     }
     
 
-    /**
-     * USER CHANGE PASSWORD FUNCTION
-     * @return response
-     */
-    function change_password(){
-      $this->layout = "successful";
-      $user = $this->Session->read('User');
-      if ( $user ){
-        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
-        $this->set('user', $user);
-        if($this->data){
-            if($this->data['User']['password'] && strlen($this->data['User']['password']) >= 6){
-              if ($this->data['User']['password'] == $this->data['User']['confirm_password']){
-                $user['User']['password'] = md5($this->data['User']['password']);
-                if ($this->User->save($user, false) ){
-                  $this->redirect('change_password_successful');
-                }
-                else {
-                  $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+    // /**
+    //  * USER CHANGE PASSWORD FUNCTION
+    //  * @return response
+    //  */
+    // function change_password(){
+    //   $this->layout = "successful";
+    //   $user = $this->Session->read('User');
+    //   if ( $user ){
+    //     $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
+    //     $this->set('user', $user);
+    //     if($this->data){
+    //         if($this->data['User']['password'] && strlen($this->data['User']['password']) >= 6){
+    //           if ($this->data['User']['password'] == $this->data['User']['confirm_password']){
+    //             $user['User']['password'] = md5($this->data['User']['password']);
+    //             if ($this->User->save($user, false) ){
+    //               $this->redirect('change_password_successful');
+    //             }
+    //             else {
+    //               $this->Session->setFlash("Cannot change your password", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                  
-                }
-              }
-              else {
-                  $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
+    //             }
+    //           }
+    //           else {
+    //               $this->Session->setFlash("Password Confirmation is not match", 'default',array('class' => 'alert alert-dismissible alert-info"'));
                   
-                }
-            }
-            else {
-              $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
-                array('class' => 'alert alert-dismissible alert-info'));
+    //             }
+    //         }
+    //         else {
+    //           $this->Session->setFlash("Length of password is too short (6 - 30 charracters)", 'default',
+    //             array('class' => 'alert alert-dismissible alert-info'));
               
-            }
-          }
-        }
-      else {
-        $this->redirect( 'login' );
-      }
-    }
+    //         }
+    //       }
+    //     }
+    //   else {
+    //     $this->redirect( 'login' );
+    //   }
+    // }
 
 
     /**
@@ -765,14 +775,15 @@ class UsersController extends AppController{
         $user['User']['access_token'] = sha1($user['User']['id'].microtime());
         if($this->User->save($user, false)){
 
-          $Email = new CakeEmail("gmail");
-          $Email->template('user_change_password');
-          $Email->emailFormat('html');
-          $Email->to($user['User']['email']);
-          $Email->from(FROM_EMAIL);
-          $Email->subject("【家賃でもらえる家】パスワードの変更");
-          $Email->viewVars(array('user' => $user));
-          $Email->send();
+          // $Email = new CakeEmail("gmail");
+          // $Email->template('user_change_password');
+          // $Email->emailFormat('html');
+          // $Email->to($user['User']['email']);
+          // $Email->from(FROM_EMAIL);
+          // $Email->subject("【家賃でもらえる家】パスワードの変更");
+          // $Email->viewVars(array('user' => $user));
+          // $Email->send();
+          $this->sendEmailToUser($user['User']['email'], 'user_change_password',  __('user.email.request_change_password.title'), array('user' => $user));
         }
       }
       else {
@@ -792,14 +803,16 @@ class UsersController extends AppController{
       /**
        * USER THAY DOI PASSWORD THANH CONG -> GUI EMAIL THANH CONG DEN NGUOI DUNG
        */
-      $Email = new CakeEmail("gmail");
-      $Email->template('user_change_password_success');
-      $Email->emailFormat('html');
-      $Email->to($user['User']['email']);
-      $Email->from(FROM_EMAIL);
-      $Email->subject("【家賃でもらえる家】パスワードの設定完了");
-      $Email->viewVars(array('user' => $user));
-      $Email->send();
+      // $Email = new CakeEmail("gmail");
+      // $Email->template('user_change_password_success');
+      // $Email->emailFormat('html');
+      // $Email->to($user['User']['email']);
+      // $Email->from(FROM_EMAIL);
+      // $Email->subject("【家賃でもらえる家】パスワードの設定完了");
+      // $Email->viewVars(array('user' => $user));
+      // $Email->send();
+
+      $this->sendEmailToUser($user['User']['email'], 'user_change_password_success',  __('user.email.change_password.title'), array('user' => $user));
     }
 
     /**
@@ -813,14 +826,17 @@ class UsersController extends AppController{
         if($user) {
           $user['User']['access_token'] =sha1($user['User']['id'].microtime());;
           if ($this->User->save($user, false)) {
-            $Email = new CakeEmail("gmail"); 
-            $Email->template('user_reset_password');
-            $Email->emailFormat('html');
-            $Email->from(FROM_EMAIL);
-            $Email->to($this->data['email']);
-            $Email->subject('【家賃でもらえる家】パスワードの変更');
-            $Email->viewVars(array('user' => $user));
-            $Email->send();
+            // $Email = new CakeEmail("gmail"); 
+            // $Email->template('user_reset_password');
+            // $Email->emailFormat('html');
+            // $Email->from(FROM_EMAIL);
+            // $Email->to($this->data['email']);
+            // $Email->subject('【家賃でもらえる家】パスワードの変更');
+            // $Email->viewVars(array('user' => $user));
+            // $Email->send();
+
+            $this->sendEmailToUser($this->data['email'], 'user_reset_password',  __('user.email.reset_password.title'), array('user' => $user));
+
             $this->redirect('reset_password_email');
           }
         } else {
@@ -852,15 +868,15 @@ class UsersController extends AppController{
             if ($this->User->save($user, false)) {
 
               // Send mail to User
-              $Email = new CakeEmail("gmail");
-              $Email->template('user_change_password_success');
-              $Email->emailFormat('html');
-              $Email->to($user['User']['email']);
-              $Email->from(FROM_EMAIL);
-              $Email->subject("【家賃でもらえる家】パスワードの設定完了");
-              $Email->viewVars(array('user' => $user));
-              $Email->send();
-
+              // $Email = new CakeEmail("gmail");
+              // $Email->template('user_change_password_success');
+              // $Email->emailFormat('html');
+              // $Email->to($user['User']['email']);
+              // $Email->from(FROM_EMAIL);
+              // $Email->subject("【家賃でもらえる家】パスワードの設定完了");
+              // $Email->viewVars(array('user' => $user));
+              // $Email->send();
+              $this->sendEmailToUser($user['User']['email'],  'user_change_password_success', "【家賃でもらえる家】パスワードの設定完了", array('user'=>$user));
               $this->redirect('reset_password_successful');
             }
           } else {
@@ -878,32 +894,7 @@ class UsersController extends AppController{
       $this->layout = "successful";
     }
 
-    /**
-     * USER EDIT PROFILE FUNCTION
-     * @return response
-     */
-    function edit_profile(){
-      $user = $this->Session->read('User');
-      if ( $user ){
-        $user = $this->User->find('first', array('conditions'=>array('User.id'=>$user['User']['id'])));
-        $this->set('user', $user);
-        if($this->data){
-           $this->User->set($this->data);
-           $valid = $this->User->validates();
-           if($valid){
-              $user = $this->data;
-              if($this->User->save($user, false)){
-                $this->Session->setFlash('Your Profile has been changed successful!','default', array('class' => 'alert alert-dismissible alert-success'));
-                $this->redirect("profile");
-              }
-            }
-           else {}
-        }
-        else {
-          $this->data = $user;
-        }
-      }
-    }
+    
 
     
     /**
@@ -988,27 +979,30 @@ class UsersController extends AppController{
                      * SEND EMAIL TO CUSTOMER
                      * @var CakeEmail
                      */
-                    $Email = new CakeEmail("gmail");
-                    $Email->template('user_register_success');
-                    $Email->emailFormat('html');
-                    $Email->to($user['User']['email']);
-                    $Email->from(FROM_EMAIL);
-                    $Email->subject("【家賃でもらえる家】無料会員登録");
-                    $Email->viewVars(array('user' => $user));
-                    $Email->send();
-
+                    // $Email = new CakeEmail("gmail");
+                    // $Email->template('user_register_success');
+                    // $Email->emailFormat('html');
+                    // $Email->to($user['User']['email']);
+                    // $Email->from(FROM_EMAIL);
+                    // $Email->subject("【家賃でもらえる家】無料会員登録");
+                    // $Email->viewVars(array('user' => $user));
+                    // $Email->send();
+                    $this->sendEmailToUser($user['User']['email'],  'user_register_success', __('user.email.register.title'), array('user'=>$user));
                     /**
                      * SEND EMAIL TO ADMIN
                      * @var CakeEmail
                      */
-                    $Email = new CakeEmail("gmail");
-                    $Email->template('admin_register_success');
-                    $Email->emailFormat('html');
-                    $Email->to(ADMIN_EMAIL);
-                    $Email->from(FROM_EMAIL);
-                    $Email->subject("【MOOS】会員登録通知");
-                    $Email->viewVars(array('user' => $user));
-                    $Email->send();
+                    // $Email = new CakeEmail("gmail");
+                    // $Email->template('admin_register_success');
+                    // $Email->emailFormat('html');
+                    // $Email->to(ADMIN_EMAIL);
+                    // $Email->from(FROM_EMAIL);
+                    // $Email->subject("【MOOS】会員登録通知");
+                    // $Email->viewVars(array('user' => $user));
+                    // $Email->send();
+                    
+                    $this->sendEmailToAdmin('admin_register_success', __('user.email.admin_register.title'), array('user'=>$user));
+
                     $this->Session->delete('user_register');
                     $this->redirect( "register_successful" );
                   } else {
@@ -1761,29 +1755,29 @@ class UsersController extends AppController{
               'recursive'=>3
               ));
             //send mail to user
-            $Email = new CakeEmail('gmail');
-            $Email->template('update_account');
-            $Email->emailFormat('html');
-            $Email->to($user['User']['email']);
-            $Email->from(FROM_EMAIL);
-            $Email->subject(__('admin.email.update_account.title'));
-            $Email->viewVars(array('user' => $user));
-            $Email->send();
-
+            // $Email = new CakeEmail('gmail');
+            // $Email->template('update_account');
+            // $Email->emailFormat('html');
+            // $Email->to($user['User']['email']);
+            // $Email->from(FROM_EMAIL);
+            // $Email->subject(__('admin.email.update_account.title'));
+            // $Email->viewVars(array('user' => $user));
+            // $Email->send();
+            $this->sendEmailToUser($user['User']['email'], 'update_account',  __('user.email.update_account.title'), array('user' => $user));
             //send mail to admin
-            $Email = new CakeEmail('gmail');
-            $Email->template('admin_update_account');
-            $Email->emailFormat('html');
-            $Email->to(ADMIN_EMAIL);
-            $Email->from(FROM_EMAIL);
-            $Email->subject('【MOOS】審査申し込み通知');
+            // $Email = new CakeEmail('gmail');
+            // $Email->template('admin_update_account');
+            // $Email->emailFormat('html');
+            // $Email->to(ADMIN_EMAIL);
+            // $Email->from(FROM_EMAIL);
+            // $Email->subject('【MOOS】審査申し込み通知');
              
-            $Email->viewVars(array('user' => $user));
-            $Email->send();
-
+            // $Email->viewVars(array('user' => $user));
+            // $Email->send();
+            $this->sendEmailToAdmin( 'admin_update_account',  __('user.email.admin_update_account.title'), array('user' => $user));
             $this->Session->setFlash(__('global.mypage.update.successful'),'default', array('class' => 'alert alert-dismissible alert-success'));
-              $this->redirect( "my_page" );
-            $this->redirect('My Page');
+            $this->redirect( "my_page" );
+            
 
           } 
           else {
@@ -1802,14 +1796,18 @@ class UsersController extends AppController{
         $this->redirect('login');
       }
     }
+    function first_login_update(){
 
-    function introduction() {
-      $this->layout = null;
+      $user = $this->User->find('first', array('conditions'=>array('User.id'=>$_POST['id']), 'contain'=>array('id')));
+        
+       $user['User']['first_login'] = 1;   
+      if($this->User->save($user, false)){
+        die('ok');
+      }else{die('not');}
+      
     }
 
-    function work_flow() {
-      $this->layout = null;
-    }
+   
 
 }
 ?>

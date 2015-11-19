@@ -18,7 +18,7 @@ class MembersController extends AppController {
 
     
 
-    function admin_index(){ //$this->layout= null;
+    function admin_index(){ 
         
       $criteria = "User.is_deleted='0' AND User.status_id >='2' ";
       if($this->params['named']['keyword']){

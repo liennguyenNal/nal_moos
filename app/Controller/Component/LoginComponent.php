@@ -38,7 +38,7 @@ class LoginComponent extends Object
                 $this->controller->s_email = $this->session['User']['email'] ;
                 $this->controller->s_first_name =  $this->session['User']['first_name'] ;
                 $this->controller->s_last_name =  $this->session['User']['last_name'] ;
-                //print_r($this->session['User']); die;
+                
         }
         else {
             $this->session = $this->controller->Session->read('Administrator');

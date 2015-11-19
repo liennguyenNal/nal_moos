@@ -11,7 +11,6 @@ class User extends AppModel {
     var $belongsTo = array(  'MarriedStatus',  'UserAddress', 'UserCompany', 'UserPartner', 'UserGuarantor', 'Status', 
         'OtherGuarantor'=> array(
             'className' => 'UserGuarantor',
-            //'belongsTo' = array('Pref'),
             'foreignKey' => 'other_guarantor_id'
         ));
     var $actsAs = array('Containable');
@@ -177,7 +176,7 @@ class User extends AppModel {
     }
 
     public function validate_phone() {
-        //echo 123;die;
+       
         return $this->data[$this->alias]['phone'] != "" || $this->data[$this->alias]['home_phone']!="";
     }
 
@@ -185,18 +184,18 @@ class User extends AppModel {
     {
          if($check) return true; 
          return false;
-       //return true;
+      
     }
 
     function check_married(){
         if($this->data[$this->alias]['married_status_id'] == 1){
 
             if(isset($this->data[$this->alias]['num_child'])){
-                //echo $this->data[$this->alias]['num_child']; die;
+                
                 return true;
             }
             else { 
-                //echo "false"; die;
+                
                 return false;
             }
         }

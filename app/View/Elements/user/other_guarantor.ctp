@@ -2,15 +2,27 @@
 	<div class="from-ldpage">
 		<div class="content">
 			<div class="content-from">
+			<?php echo $this->Form->create("User", array('action'=>'edit','id'=>'OtherGuarantorEdit')) ?>
+			
 				<div class="title-tab title-tab-fix-mb">
-					<h3>連帯保証人基本情報</h3>
+					
+					<?php if($user['User']['status_id'] == 2){?>
+					<h3 class="float-left">連帯保証人基本情報</h3>
+              <div class="button-tab button-tab-top">
+					<button type="button" class="link-tab-1a" id="btn-edit-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/change.png" alt="変更する"></button>
+		            <button type="submit" class="link-tab-1a" id="btn-save-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/save-b.png" alt="Save"></button>
+		            <button type="button" class="link-tab-1b" id="btn-cancel-other-guarantor_added"><img src="<?php echo $this->webroot; ?>img/front/Cancel.png" alt="Cancel"></button>
+				</div>
+              <?php }else{ ?>
+              	<h3>連帯保証人基本情報</h3>
+              <?php } ?>
 				</div>
 				<!-- FORM -->
 				<?php echo $this->element('flash_success');?>
 	            <div class="block-warning" id="error-section" style="display:none">
 	                <?php echo __('global.errors'); ?>
 	            </div>
-	            <?php echo $this->Form->create("User", array('action'=>'edit','id'=>'OtherGuarantorEdit')) ?>
+	            
 				<div class="content-from-block">
 					<div class="content-from-how">
 						<table class="from" id="theform">
@@ -598,8 +610,13 @@
                     $('#btn-edit-other-guarantor').show();
                     $('#btn-save-other-guarantor').hide();
                     $('#btn-cancel-other-guarantor').hide();
-                    $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor)').prop('disabled',true);
-                     $('#OtherGuarantorEdit').find('a:not(#btn-edit-other-guarantor)').hide();
+
+                    $('#btn-edit-other-guarantor_added').show();
+                    $('#btn-save-other-guarantor_added').hide();
+                    $('#btn-cancel-other-guarantor_added').hide();
+
+                    $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').prop('disabled',true);
+                     $('#OtherGuarantorEdit').find('a:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').hide();
                   }
                   else{
                     $('#btn-cancel-guarantor').show();
@@ -607,29 +624,86 @@
                       
                      
                     $('#btn-edit-guarantor').hide();
+
+                    $('#btn-cancel-guarantor_added').show();
+                    $('#btn-save-guarantor_added').show();
+                      
+                     
+                    $('#btn-edit-guarantor_added').hide();
                   }
                 });
                  
 
                     
                    $('#btn-edit-other-guarantor').on('click', function() {
-                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').show();
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').show();
                       $('#OtherGuarantorEdit').find(':input').prop('disabled',false);
                       $('#OtherGuarantorEdit').find('a').show();
                       $('#btn-cancel-other-guarantor').show();
                       $('#btn-save-other-guarantor').show();
                       $('#btn-edit-other-guarantor').hide();
+
+                      $('#btn-cancel-other-guarantor_added').show();
+                      $('#btn-save-other-guarantor_added').show();
+                      $('#btn-edit-other-guarantor_added').hide();
+
                       	$('#og_salary_type_other').prop('disabled', $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() != 4);
                 		$('#og_salary_date').prop('disabled', $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() != 3);
                       og_edit = 1;
 
                    });
+
+                   $('#btn-edit-other-guarantor_added').on('click', function() {
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').show();
+                      $('#OtherGuarantorEdit').find(':input').prop('disabled',false);
+                      $('#OtherGuarantorEdit').find('a').show();
+                      $('#btn-cancel-other-guarantor').show();
+                      $('#btn-save-other-guarantor').show();
+                      $('#btn-edit-other-guarantor').hide();
+
+                      $('#btn-cancel-other-guarantor_added').show();
+                      $('#btn-save-other-guarantor_added').show();
+                      $('#btn-edit-other-guarantor_added').hide();
+
+                      	$('#og_salary_type_other').prop('disabled', $('input[name="data[OtherGuarantor][salary_type]"]:checked').val() != 4);
+                		$('#og_salary_date').prop('disabled', $('input[name="data[OtherGuarantor][salary_receive_id]"]:checked').val() != 3);
+                      og_edit = 1;
+
+                   });
+
                    $('#btn-cancel-other-guarantor').on('click', function() {
                       $('#btn-edit-other-guarantor').show();
                       $('#btn-save-other-guarantor').hide();
                       $('#btn-cancel-other-guarantor').hide();
-                      $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor)').prop('disabled',true);
-                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor)').hide();
+
+                      $('#btn-edit-other-guarantor_added').show();
+                      $('#btn-save-other-guarantor_added').hide();
+                      $('#btn-cancel-other-guarantor_added').hide();
+
+                      $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').prop('disabled',true);
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').hide();
+                      $.ajax({
+                           url: "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor",
+                            success: function(result){
+
+                              og_edit = 0;
+                              $('#other_guarantor').html(result);
+                            }
+                        });
+
+                   });
+
+                   $('#btn-cancel-other-guarantor_added').on('click', function() {
+                      $('#btn-edit-other-guarantor').show();
+                      $('#btn-save-other-guarantor').hide();
+                      $('#btn-cancel-other-guarantor').hide();
+
+                      $('#btn-edit-other-guarantor_added').show();
+                      $('#btn-save-other-guarantor_added').hide();
+                      $('#btn-cancel-other-guarantor_added').hide();
+
+                      $('#OtherGuarantorEdit').find(':input:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').prop('disabled',true);
+                      $('#OtherGuarantorEdit').find(':button:not(#btn-edit-other-guarantor, #btn-edit-other-guarantor_added)').hide();
                       $.ajax({
                            url: "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor",
                             success: function(result){
@@ -810,6 +884,7 @@
     },
     submitHandler: function(form) {
     	$('#btn-save-other-guarantor').prop('disabled', true);
+    	$('#btn-save-other-guarantor_added').prop('disabled', true);
        var url = "<?php echo $this->webroot;?>user_guarantors/edit_other_guarantor";
 
       $.ajax({
@@ -831,9 +906,11 @@
 	             else {
 	             	window.location.href = "<?php echo $this->webroot?>users/login"
 	             }
+	             $("html, body").animate({ scrollTop: $("#wrapper").offset().top }, 700); 
              }
            }).done(function() {
              $('#btn-save-other-guarantor').prop('disabled', false);
+             $('#btn-save-other-guarantor_added').prop('disabled', false);
             });
             return false;
         }  

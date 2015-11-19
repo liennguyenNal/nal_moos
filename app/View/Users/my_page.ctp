@@ -1,4 +1,4 @@
-
+    
     <script src="<?php echo $this->webroot; ?>js/jquery.validate.js" type="text/javascript"></script>
   <script src="<?php echo $this->webroot; ?>js/jquery-validate.bootstrap-tooltip.js" type="text/javascript"></script>
       <div class="welcome-sup-page">
@@ -10,7 +10,7 @@
         <div class="container-fluid">
           <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">マイページトップ</a></li>
-            <li><a data-toggle="tab" href="#basic">申込人</a></li>
+            <li><a data-toggle="tab"  href="#basic">申込人</a></li>
             <li><a data-toggle="tab" href="#partner">配偶者／同居人</a></li>
             <li><a data-toggle="tab" href="#guarantor">連帯保証人</a></li>
             <?php if($user['User']['need_more_guarantor']){ ?>
@@ -119,6 +119,10 @@
           }
           
         });
+
+    
+
+     
        
       </script>
 
@@ -139,12 +143,22 @@
 また、保存が必要ない場合は「キャンセル」ボタンを 押してください。</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default center-block button-style" data-dismiss="modal">閉じる</button>
+        <div class="button-tab">
+      <button type="submit" class="link-tab-1a" id='btn-update-info' data-dismiss="modal"><img src="<?php echo $this->webroot; ?>img/front/closeup.png" alt="閉じる"/></button>
+      </div>
+        
       </div>
     </div>
 
   </div>
 </div>
+
+
+
+
+
+
+
 <style type="text/css">
  
 .modal-header-info {
@@ -154,7 +168,7 @@
     background-color: #55ad47;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
+    -moz-b  order-radius-topleft: 5px;
     -moz-border-radius-topright: 5px;
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;

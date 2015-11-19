@@ -5,7 +5,6 @@ class UserPartner extends AppModel {
     var $belongsTo = array('Work','Career',
         'CompanyPref'=> array(
             'className' => 'Pref',
-            //'belongsTo' = array('Pref'),
             'foreignKey' => 'company_pref_id'
         )
         );
