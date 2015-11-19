@@ -906,6 +906,7 @@
 	             else {
 	             	window.location.href = "<?php echo $this->webroot?>users/login"
 	             }
+	             $( "body" ).scrollTop(0); 
              }
            }).done(function() {
              $('#btn-save-other-guarantor').prop('disabled', false);
