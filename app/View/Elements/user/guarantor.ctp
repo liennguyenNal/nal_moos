@@ -702,8 +702,14 @@
                       	$.ajax({
                            	url: "<?php echo $this->webroot;?>user_guarantors/edit",
                             	success: function(result){
-                              	g_edit = 0;
-                              	$('#guarantor').html(result);
+                              		g_edit = 0;
+
+                              		if(result != "0") {
+                              			$('#guarantor').html(result);
+                              		}
+	                          		else {
+	                          			window.location.href = "<?php echo $this->webroot?>users/login";
+	                          		}
                             	}
                         	});
                    		});

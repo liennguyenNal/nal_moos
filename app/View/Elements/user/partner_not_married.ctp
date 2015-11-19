@@ -686,7 +686,12 @@
                      url: "<?php echo $this->webroot;?>user_partners/edit",
                       success: function(result){
                         p_edit = 0;
-                        $('#partner').html(result);
+                        if(result != "0"){
+                          $('#partner').html(result);
+                        }
+                        else {
+                          window.location.href = "<?php echo $this->webroot?>users/login";
+                        }
                       }
                   });
 
