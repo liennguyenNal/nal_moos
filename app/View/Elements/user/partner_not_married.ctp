@@ -906,7 +906,8 @@
                   }
               });
              }
-             else window.location.href = "<?php echo $this->webroot?>users/login"
+             else {window.location.href = "<?php echo $this->webroot?>users/login"}
+              $("html, body").animate({ scrollTop: $("#wrapper").offset().top }, 700);
          }
        }).done(function() {
              $('#btn-save-partner').prop('disabled', false);

@@ -1589,14 +1589,18 @@ img {
 .button-tab-top{
   width:60%;
 }
-@media (max-width: 690px) {
+@media (max-width: 790px) {
   .title-tab h3.float-left {
-    width:100%;
+    width:100% !important;
     float: none;
   }
   .button-tab-top{
-  width:100%;
+  width:100% !important;
 }
+}
+
+@media (max-width: 690px) {
+
   .dash_board_top_button{
     width:100% !important; 
     text-align:center !important;
@@ -2176,7 +2180,14 @@ img {
 
 @media (max-width: 990px) {
 
-
+  .title-tab h3.float-left {
+  float: left;
+  width:20%;
+}
+.button-tab-top{
+  width:80%;
+  margin-left: 0px !important;
+}
   .content-from .tooltip {
     position: static !important;
     width: 100%;
