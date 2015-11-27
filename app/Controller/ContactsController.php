@@ -73,7 +73,7 @@ class ContactsController extends AppController {
                   
                     $this->sendEmailToUser($contact['Contact']['email'],  'user_contact_success', __('user.email.contact.title'), array('contact'=>$contact));
                                         
-                    $this->sendEmailToAdmin('admin_contact_success', __('user.email.admin_contact.title'), array('user'=>$user));
+                    $this->sendEmailToAdmin('admin_contact_success', __('user.email.admin_contact.title'), array('contact'=>$contact));
                     
                   $this->redirect("contact_successful");
                }
