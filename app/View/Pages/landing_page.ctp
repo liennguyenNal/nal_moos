@@ -467,7 +467,7 @@
 				                            </div>
 				                            <div class="block-input">
 				                              <span class="w78"><?php echo __('user.register.area.street'); ?></span>
-				                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'2-14-17','div'=>false, 'data-placement' => 'right', 'required'=>false))
+				                              <?php echo $this->Form->input("ExpectArea.$i.address", array('type'=>'text', 'id'=>"address", 'label'=>false, 'class'=>'w198', "placeholder"=>'１〜４丁目、◯◯◯中学校区など', 'style'=>'line-height: 14px;','div'=>false, 'data-placement' => 'right', 'required'=>false))
 				                              ?>
 				                            </div>
 				                          </td>

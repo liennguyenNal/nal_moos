@@ -131,7 +131,7 @@ img {
 #head-container #logo a {
   display: inline-block;
   width: 358px;
-  height: 75px;
+  height: 79px;
   -webkit-transition: all .0s linear;
   -moz-transition: all .0s linear;
   -o-transition: all .0s linear;
@@ -241,6 +241,11 @@ img {
   -ms-filter: "alpha(opacity=70)";
 }
 @media (max-width: 790px) {
+	.training .block-link a {
+		margin-top: 107px;
+	}
+}
+@media (max-width: 660px) {
   .training .block-link a {
     padding: 2px 18px;
     margin-top: 28px;
@@ -1066,6 +1071,7 @@ img {
   -moz-transition: all .4s linear;
   -o-transition: all .4s linear;
   transition: all .4s linear;
+   margin-bottom: 7px;
 }
 .block-button-header a.link2:hover {
   opacity: 0.7;
@@ -1073,6 +1079,24 @@ img {
   -ms-filter: "alpha(opacity=70)";
 }
 .block-button-header a.link2:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)";
+}
+.block-button-header a.link3 {
+  background-color: transparent;
+  padding: 5px 0px 0px;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+}
+.block-button-header a.link3:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)";
+}
+.block-button-header a.link3:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
   -ms-filter: "alpha(opacity=70)";
