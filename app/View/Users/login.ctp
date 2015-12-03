@@ -79,7 +79,7 @@
                       <table class="from">
                         <tbody>
                           <tr>
-                            <td class="label-text"><label><?php echo __('user.login.id'); ?></label><n style="color:#6C6C6C; font-family:arial;">(ご登録メールアドレス)</n><span><?php echo __('global.require'); ?></span></td>
+                            <td class="label-text"><label><?php echo __('user.login.id'); ?></label><n style="color:#6C6C6C;">(ご登録メールアドレス)</n><span><?php echo __('global.require'); ?></span></td>
                             <td>
                               <div class="block-input">
                                 <!-- <input class="w198" type="text" name="" value="" placeholder=""> -->
