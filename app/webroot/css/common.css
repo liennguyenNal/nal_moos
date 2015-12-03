@@ -1091,16 +1091,7 @@ img {
   -o-transition: all .4s linear;
   transition: all .4s linear;
 }
-.block-button-header a.link3:hover {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  -ms-filter: "alpha(opacity=70)";
-}
-.block-button-header a.link3:hover {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  -ms-filter: "alpha(opacity=70)";
-}
+
 #menu-page {
   position: relative;
 }
