@@ -16,9 +16,9 @@ class ExpectArea extends AppModel {
         'city' =>array(
             'rule'=>'notBlank'
         ),
-        // 'address' =>array(
-        //     'rule'=>'notBlank'
-        // ),
+         'pref_id' =>array(
+             'rule'=>'notBlank'
+         )
      
 
     );
