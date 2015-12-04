@@ -65,7 +65,7 @@
 			<div class="step step2">
 				<img class="img-banner" src="<?php echo $this->webroot; ?>img/front/br-06.png" alt="banner"/>
 			</div>
-			<div class="step step3">
+			<div style="padding-top: 1px;" class="step step3">
 				<img class="img-banner" src="<?php echo $this->webroot; ?>img/front/br-07.png" alt="banner"/>
 			</div>
 			<div class="step step4">
