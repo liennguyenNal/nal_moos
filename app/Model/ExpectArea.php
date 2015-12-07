@@ -17,7 +17,7 @@ class ExpectArea extends AppModel {
             'rule'=>'notBlank'
         ),
          'pref_id' =>array(
-             'rule'=>'notBlank'
+            'rule'=>array('naturalNumber', false)
          )
      
 
