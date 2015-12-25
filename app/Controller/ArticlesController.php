@@ -90,7 +90,7 @@ class ArticlesController extends AppController{
       }
 
       else {
-        $this->redirect('index');
+        //$this->redirect('index');
       }
       
 
