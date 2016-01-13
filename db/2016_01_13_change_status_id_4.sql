@@ -1,0 +1,1 @@
+UPDATE `moos`.`statuses` SET `name` = '本申込待ち', `admin_status` = '本申込待ち', `description` = 'Waiting Payment before: 保証金入金待ち' WHERE `statuses`.`id` = 4;
