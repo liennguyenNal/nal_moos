@@ -190,7 +190,7 @@ class AppController extends Controller {
     }
 
     function forceSSL() {
-        //$this->redirect('https://' . $_SERVER['SERVER_NAME'] . $this->here);
+        $this->redirect('https://' . $_SERVER['SERVER_NAME'] . $this->here);
     }
     function unforceSSL() {
         $this->redirect('http://' . $_SERVER['SERVER_NAME'] . $this->here);
